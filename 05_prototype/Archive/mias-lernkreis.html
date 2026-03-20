@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mias Lernkreis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root {
+  --primary:   #4A2C6E;
+  --accent:    #7B4FA6;
+  --light:     #EDE6F5;
+  --bg:        #F6F4FA;
+  --surface:   #FFFFFF;
+  --border:    #D5C8E8;
+  --text:      #1C1828;
+  --muted:     #7A6E8A;
+  --success:   #1A5C3A;
+  --warning:   #7A4A00;
+  --danger:    #8B1A1A;
+  --green:     #27AE60;
+  --green-bg:  #EAFAF1;
+  --yellow:    #D4870A;
+  --yellow-bg: #FEF9E7;
+  --red:       #C0392B;
+  --red-bg:    #FDEDEC;
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 2px 16px rgba(74,44,110,.10);
+  --shadow-sm: 0 1px 6px rgba(74,44,110,.07);
+  --nav-h:     66px;
+  --font:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased}
+#app{width:100%;max-width:430px;min-height:100vh;display:flex;flex-direction:column;position:relative;background:var(--bg)}
+
+/* ── SCREEN SYSTEM ── */
+.screen{display:none;flex-direction:column;flex:1;overflow-x:hidden}
+.screen.active{display:flex}
+.screen-body{padding:16px 20px 0;flex:1}
+.pb-nav{padding-bottom:calc(var(--nav-h)+12px)}
+
+/* ── TOP BAR ── */
+.topbar{padding:20px 20px 10px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.topbar-logo{font-size:18px;font-weight:800;color:var(--primary);letter-spacing:-.3px}
+.topbar-logo em{color:var(--accent);font-style:normal}
+.topbar-sub{font-size:12px;color:var(--muted)}
+
+/* ── BOTTOM NAV ── */
+#bottom-nav{
+  position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+  width:100%;max-width:430px;height:var(--nav-h);
+  background:var(--surface);border-top:1px solid var(--border);
+  display:none;align-items:center;justify-content:space-around;
+  z-index:100;box-shadow:0 -2px 16px rgba(0,0,0,.06)
+}
+.ni{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 10px;border-radius:12px;cursor:pointer;transition:background .15s}
+.ni:hover{background:var(--light)}
+.ni .icon{font-size:20px;color:#C0B8D0;transition:color .15s}
+.ni .lbl{font-size:10px;color:#C0B8D0;font-weight:500;transition:color .15s}
+.ni.active .icon,.ni.active .lbl{color:var(--primary)}
+.ni.active .lbl{font-weight:700}
+
+/* ── CARDS ── */
+.card{background:var(--surface);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm);margin-bottom:14px;border:1px solid #F0EBF8}
+.card-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:10px}
+.card-title-lg{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:6px}
+
+/* ── TYPOGRAPHY ── */
+.h1{font-size:26px;font-weight:800;color:var(--primary);line-height:1.2}
+.h2{font-size:20px;font-weight:700;color:var(--primary)}
+.h3{font-size:15px;font-weight:600;color:var(--text)}
+.muted{font-size:13px;color:var(--muted);line-height:1.6}
+.greeting{font-size:22px;font-weight:800;color:var(--primary);margin-bottom:3px}
+.greeting-sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+
+/* ── BUTTONS ── */
+.btn{display:block;width:100%;padding:14px 18px;border-radius:var(--radius-sm);border:none;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--font);transition:opacity .15s,transform .1s;text-align:center}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-ghost{background:var(--light);color:var(--primary)}
+.btn-outline{background:transparent;color:var(--primary);border:1.5px solid var(--border)}
+.btn+.btn{margin-top:10px}
+.btn-sm{padding:8px 14px;font-size:13px;border-radius:8px;display:inline-block;width:auto}
+.btn-icon{display:inline-flex;align-items:center;gap:6px}
+
+/* ── BADGES ── */
+.badge{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600}
+.bg-green{background:var(--green-bg);color:var(--success)}
+.bg-yellow{background:var(--yellow-bg);color:var(--warning)}
+.bg-red{background:var(--red-bg);color:var(--danger)}
+.bg-purple{background:var(--light);color:var(--primary)}
+.bg-exam{background:#FFF3E0;color:#BF360C}
+.bg-ki{background:#E3F2FD;color:#0D47A1}
+
+/* ── PROGRESS ── */
+.pb-wrap{margin:5px 0 11px}
+.pb-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:5px}
+.pb-track{height:9px;background:#EDE8F5;border-radius:5px;overflow:hidden}
+.pb-fill{height:100%;border-radius:5px;transition:width .7s ease}
+.fill-g{background:var(--green)}
+.fill-y{background:#F39C12}
+.fill-r{background:var(--red)}
+.fill-p{background:var(--accent)}
+.pb-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ── STATUS SIGNAL ── */
+.signal{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;margin-top:10px;font-size:14px;font-weight:700}
+.signal-g{background:var(--green-bg);color:var(--success)}
+.signal-y{background:var(--yellow-bg);color:var(--warning)}
+.signal-r{background:var(--red-bg);color:var(--danger)}
+
+/* ── FORMS ── */
+.fg{margin-bottom:15px}
+.fg label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
+.fi{width:100%;padding:12px 14px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--surface);font-size:15px;color:var(--text);font-family:var(--font);transition:border-color .15s}
+.fi:focus{outline:none;border-color:var(--accent)}
+textarea.fi{resize:vertical;min-height:80px}
+select.fi{cursor:pointer}
+
+/* ── UPLOAD ZONES ── */
+.uz{border:2px dashed var(--border);border-radius:var(--radius-sm);padding:18px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:10px}
+.uz:hover{border-color:var(--accent);background:var(--light)}
+.uz.done{border-color:var(--green);background:var(--green-bg)}
+.uz-icon{font-size:26px;margin-bottom:6px}
+.uz-title{font-size:14px;font-weight:600;color:var(--primary)}
+.uz-sub{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* ── TOPIC RATING ── */
+.ti{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #F2EEF9}
+.ti:last-child{border-bottom:none}
+.ti-left{flex:1;padding-right:10px}
+.ti-name{font-size:14px;font-weight:500}
+.ti-badges{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.rb{width:34px;height:34px;border-radius:9px;border:2px solid #E8E0F0;background:var(--surface);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.rb-g{background:var(--green-bg)!important;border-color:var(--green)!important}
+.rb-y{background:var(--yellow-bg)!important;border-color:#F39C12!important}
+.rb-r{background:var(--red-bg)!important;border-color:var(--red)!important}
+
+/* ── QUESTIONS ── */
+.qi{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:1px solid #F2EEF9}
+.qi:last-child{border-bottom:none}
+.qi-text{font-size:14px;flex:1;padding-right:12px;line-height:1.5}
+.qi-meta{font-size:11px;color:var(--muted);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.upvote{display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;padding:7px 11px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:12px;font-weight:700;transition:all .15s;min-width:42px}
+.upvote:hover,.upvote.voted{background:var(--light);border-color:var(--accent);color:var(--primary)}
+
+/* ── GROUP MEMBERS ── */
+.mc{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #F2EEF9}
+.mc:last-child{border-bottom:none}
+.av{width:38px;height:38px;border-radius:50%;background:var(--light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+.mi{flex:1}
+.mi-name{font-size:14px;font-weight:600}
+.mi-role{font-size:12px;color:var(--muted)}
+
+/* ── PUZZLE GRID ── */
+.puzzle-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.piece{background:var(--surface);border-radius:14px;padding:16px 12px;border:2px solid #EDE8F5;text-align:center;position:relative;transition:all .2s}
+.piece.assigned{border-color:#D4EDDA}
+.piece.unassigned{border-color:#FFE0B2;background:#FFF8F0}
+.piece.mine{border-color:var(--accent);background:var(--light)}
+.piece-icon{font-size:24px;margin-bottom:6px}
+.piece-name{font-size:13px;font-weight:700;color:var(--text)}
+.piece-topic{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+.piece-status{position:absolute;top:8px;right:8px;font-size:14px}
+
+/* ── CONTRACT ── */
+.ct{background:var(--light);border-radius:12px;padding:14px;margin-bottom:10px;border-left:4px solid var(--accent)}
+.ct-topic{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px}
+.ct-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.ct-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* ── LANDING ── */
+.hero{padding:40px 24px 32px;text-align:center}
+.hero-icon{font-size:56px;margin-bottom:12px;line-height:1}
+.hero-title{font-size:28px;font-weight:800;color:var(--primary);line-height:1.2;margin-bottom:10px}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.65;max-width:320px;margin:0 auto 28px}
+.phases-row{display:flex;justify-content:center;gap:0;margin-bottom:28px}
+.phase-item{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+.phase-dot-line{display:flex;align-items:center;width:100%}
+.phase-circle{width:36px;height:36px;border-radius:50%;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:2px solid var(--border)}
+.phase-line{flex:1;height:2px;background:var(--border)}
+.phase-label{font-size:9px;color:var(--muted);font-weight:600;text-align:center;margin-top:3px;line-height:1.2}
+
+/* ── AUTH ── */
+.auth-body{padding:24px 24px 32px}
+.auth-toggle{text-align:center;font-size:13px;color:var(--muted);margin-top:14px;cursor:pointer}
+.auth-toggle span{color:var(--accent);font-weight:600}
+
+/* ── ONBOARDING STEP ── */
+.ob-header{padding:24px 24px 16px;text-align:center}
+.ob-step{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.5px;margin-bottom:6px;text-transform:uppercase}
+.ob-title{font-size:22px;font-weight:800;color:var(--primary);margin-bottom:6px}
+.ob-sub{font-size:14px;color:var(--muted);line-height:1.6}
+.ob-body{padding:0 20px 24px}
+
+/* ── MODE CARDS ── */
+.mode-card{background:var(--surface);border-radius:var(--radius);padding:20px;border:2.5px solid var(--border);cursor:pointer;margin-bottom:12px;transition:all .2s;display:flex;align-items:flex-start;gap:14px}
+.mode-card:hover,.mode-card.sel{border-color:var(--primary);background:var(--light)}
+.mode-icon{font-size:30px;flex-shrink:0;margin-top:2px}
+.mode-title{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:4px}
+.mode-sub{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ── LOADING ── */
+.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;padding:48px 24px;text-align:center;gap:24px}
+.spinner{width:52px;height:52px;border:4px solid var(--light);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-size:18px;font-weight:700;color:var(--primary)}
+.loading-sub{font-size:14px;color:var(--muted);max-width:280px}
+.process-results{background:var(--surface);border-radius:var(--radius);padding:20px;text-align:left;width:100%;max-width:320px}
+.pr-item{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:14px;border-bottom:1px solid #F0EBF8}
+.pr-item:last-child{border-bottom:none}
+
+/* ── CHART ── */
+.chart-wrap{position:relative;width:100%;max-height:280px;margin:0 auto}
+.chart-wrap canvas{width:100%!important}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;gap:12px;flex-wrap:wrap;padding:4px 0}
+.tl-dot{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}
+.tl-circle{width:12px;height:12px;border-radius:50%;border:2.5px solid var(--accent);transition:all .2s}
+.tl-circle.current{background:var(--primary);border-color:var(--primary)}
+.tl-circle.past{background:var(--light)}
+.tl-label{font-size:10px;color:var(--muted)}
+
+/* ── EMPTY STATE ── */
+.empty{text-align:center;padding:32px 20px;color:var(--muted)}
+.empty-icon{font-size:40px;margin-bottom:10px}
+.empty-title{font-size:15px;font-weight:600;color:var(--primary);margin-bottom:4px}
+.empty-sub{font-size:13px}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid #EDE8F5;margin:14px 0}
+
+/* ── SKIP LINK ── */
+.skip{text-align:center;font-size:13px;color:var(--muted);margin-top:10px;cursor:pointer;text-decoration:underline}
+
+/* ── COUNTDOWN ── */
+.countdown{font-size:34px;font-weight:800;color:var(--primary);line-height:1}
+.countdown-lbl{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* ── JOIN CODE ── */
+.code-display{font-size:24px;font-weight:800;letter-spacing:6px;color:var(--primary);text-align:center;padding:14px;background:var(--light);border-radius:var(--radius-sm);cursor:pointer;border:1.5px dashed var(--accent)}
+
+/* ── MODAL OVERLAY ── */
+#modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;display:none;align-items:flex-end;justify-content:center}
+#modal-overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:20px 20px 0 0;padding:24px 20px 32px;width:100%;max-width:430px;max-height:90vh;overflow-y:auto}
+.modal-handle{width:40px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 16px}
+.modal-title{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:16px}
+.modal-close{float:right;font-size:20px;cursor:pointer;color:var(--muted)}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:calc(var(--nav-h)+16px);left:50%;transform:translateX(-50%) translateY(20px);background:var(--primary);color:#fff;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;transition:all .3s;pointer-events:none;z-index:300;white-space:nowrap;max-width:90%}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast-landing{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--primary);color:#fff;padding:10px 20px;border-radius:20px;font-size:14px;opacity:0;transition:all .3s;pointer-events:none;z-index:300;white-space:nowrap;max-width:90%}
+#toast-landing.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── CONFETTI ── */
+@keyframes fall{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.cp{position:fixed;top:-10px;border-radius:3px;animation:fall linear forwards;pointer-events:none;z-index:400}
+
+/* ── TOPIC COUNT ── */
+#diag-prog-bar{height:4px;background:var(--light);border-radius:2px;margin:10px 0 14px;overflow:hidden}
+#diag-prog-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .4s}
+
+/* ── PROFIL STAT ── */
+.stat-grid{display:flex;justify-content:space-around;text-align:center;padding:8px 0}
+.stat-num{font-size:26px;font-weight:800;color:var(--primary)}
+.stat-lbl{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ── SORT TABS ── */
+.tab-row{display:flex;gap:0;background:var(--light);border-radius:10px;padding:3px;margin-bottom:14px}
+.tab{flex:1;padding:8px;text-align:center;font-size:13px;font-weight:600;color:var(--muted);border-radius:8px;cursor:pointer;transition:all .2s}
+.tab.active{background:var(--surface);color:var(--primary);box-shadow:var(--shadow-sm)}
+
+/* ── FILTER ROW ── */
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.filter-chip{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);transition:all .2s}
+.filter-chip.active{background:var(--light);border-color:var(--accent);color:var(--primary)}
+
+/* ── FORTSCHRITT THEMEN ── */
+.ft-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #F2EEF9}
+.ft-item:last-child{border-bottom:none}
+.ft-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.ft-name{font-size:13px;flex:1}
+.ft-badge-wrap{flex-shrink:0}
+
+/* ── NUDGE CARD ── */
+.nudge{background:linear-gradient(135deg,var(--light),#F0E8FF);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;gap:14px}
+.nudge-icon{font-size:28px;flex-shrink:0}
+.nudge-text .h3{font-size:14px}
+.nudge-text .muted{font-size:12px}
+
+/* ── PHASE PROGRESS BAR (onboarding) ── */
+.step-dots{display:flex;gap:6px;justify-content:center;padding:14px 0 0}
+.step-d{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s}
+.step-d.done{background:var(--accent)}
+.step-d.cur{background:var(--primary);width:20px;border-radius:4px}
+
+/* ── SCROLL FIX ── */
+.scrollable{overflow-y:auto;-webkit-overflow-scrolling:touch}
+</style>
+</head>
+<body>
+<div id="app">
+<div id="toast"></div>
+<div id="toast-landing"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: LANDING
+═══════════════════════════════════════════════════════ -->
+<div class="screen active" id="s-landing">
+  <div style="flex:1;overflow-y:auto">
+    <div class="hero">
+      <div class="hero-icon">🎓</div>
+      <div class="hero-title">Lerne smarter —<br>gemeinsam &amp; strukturiert.</div>
+      <div class="hero-sub">Mias Lernkreis begleitet dich durch die Prüfungsvorbereitung in 5 Phasen — persönlich, fair zu dir selbst, ohne Vergleiche.</div>
+
+      <!-- 5 Phases -->
+      <div class="phases-row">
+        <div class="phase-item">
+          <div class="phase-dot-line">
+            <div style="flex:1;height:2px"></div>
+            <div class="phase-circle">🔍</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-label">Diagnose</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-dot-line">
+            <div class="phase-line"></div>
+            <div class="phase-circle">🧩</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-label">Verant&shy;wortung</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-dot-line">
+            <div class="phase-line"></div>
+            <div class="phase-circle">📝</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-label">Lern&shy;vertrag</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-dot-line">
+            <div class="phase-line"></div>
+            <div class="phase-circle">❓</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-label">Lücken schließen</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-dot-line">
+            <div class="phase-line"></div>
+            <div class="phase-circle">✅</div>
+            <div style="flex:1;height:2px"></div>
+          </div>
+          <div class="phase-label">Prüfung</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 20px 32px">
+      <button class="btn btn-primary" onclick="navTo('s-auth')">Jetzt starten</button>
+      <button class="btn btn-ghost" style="margin-top:10px" onclick="showJoinModal()">Gruppe beitreten</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: AUTH
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-auth">
+  <div class="auth-body" style="padding-top:40px">
+    <div style="text-align:center;margin-bottom:28px">
+      <div style="font-size:36px;margin-bottom:8px">🎓</div>
+      <div class="h1" id="auth-title">Willkommen!</div>
+      <div class="muted" id="auth-sub" style="margin-top:4px">Erstelle dein Konto um zu starten.</div>
+    </div>
+    <div id="auth-name-group" class="fg">
+      <label>Dein Name</label>
+      <input class="fi" id="inp-name" placeholder="Mia" value="Mia" type="text">
+    </div>
+    <div class="fg">
+      <label>E-Mail</label>
+      <input class="fi" id="inp-email" placeholder="mia@beispiel.at" type="email" value="mia@beispiel.at">
+    </div>
+    <div class="fg">
+      <label>Passwort</label>
+      <input class="fi" id="inp-pw" placeholder="Mindestens 8 Zeichen" type="password" value="demo1234">
+    </div>
+    <button class="btn btn-primary" id="auth-btn" onclick="doAuth()">Konto erstellen &amp; starten</button>
+    <div class="auth-toggle" id="auth-toggle" onclick="toggleAuth()">Schon ein Konto? <span>Einloggen</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: ONBOARDING — MODE SELECTION
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-mode">
+  <div class="ob-header">
+    <div class="step-dots"><div class="step-d cur"></div><div class="step-d"></div><div class="step-d"></div></div>
+    <div style="margin-top:14px" class="ob-step">Schritt 1 von 3</div>
+    <div class="ob-title">Wie lernst du am liebsten?</div>
+    <div class="ob-sub">Du kannst jederzeit wechseln.</div>
+  </div>
+  <div class="ob-body">
+    <div class="mode-card" id="mc-solo" onclick="pickMode('solo')">
+      <div class="mode-icon">🧘</div>
+      <div>
+        <div class="mode-title">Ich lerne allein</div>
+        <div class="mode-sub">Strukturiere deine Vorbereitung für dich selbst — Diagnose, Fortschritt, anonyme Fragen.</div>
+      </div>
+    </div>
+    <div class="mode-card" id="mc-group" onclick="pickMode('group')">
+      <div class="mode-icon">👥</div>
+      <div>
+        <div class="mode-title">Ich lerne mit einer Gruppe</div>
+        <div class="mode-sub">Lerne gemeinsam, teile Verantwortung, schließe Lernverträge.</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="btn-mode-ok" style="opacity:.35;pointer-events:none" onclick="goGroupSetup()">Weiter →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: ONBOARDING — GROUP SETUP
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-groupsetup">
+  <div class="ob-header">
+    <div class="step-dots"><div class="step-d done"></div><div class="step-d cur"></div><div class="step-d"></div></div>
+    <div style="margin-top:14px" class="ob-step">Schritt 2 von 3 — Gruppe</div>
+    <div class="ob-title" id="gs-title">Gruppe einrichten</div>
+    <div class="ob-sub" id="gs-sub">Erstelle eine neue Gruppe oder tritt einer bestehenden bei.</div>
+  </div>
+  <div class="ob-body" id="gs-body">
+    <div class="mode-card" id="gc-create" onclick="pickGroupAction('create')">
+      <div class="mode-icon">✨</div>
+      <div>
+        <div class="mode-title">Neue Gruppe erstellen</div>
+        <div class="mode-sub">Du bekommst einen 6-stelligen Code den du mit deiner Gruppe teilen kannst.</div>
+      </div>
+    </div>
+    <div class="mode-card" id="gc-join" onclick="pickGroupAction('join')">
+      <div class="mode-icon">🔗</div>
+      <div>
+        <div class="mode-title">Bestehender Gruppe beitreten</div>
+        <div class="mode-sub">Du hast einen Gruppen-Code von jemandem bekommen.</div>
+      </div>
+    </div>
+    <div id="join-code-input" style="display:none;margin-bottom:12px">
+      <div class="fg">
+        <label>Gruppen-Code eingeben</label>
+        <input class="fi" id="inp-join-code" placeholder="z. B. AXT7K2" maxlength="6" style="text-transform:uppercase;letter-spacing:4px;font-size:18px;font-weight:700;text-align:center">
+      </div>
+    </div>
+    <button class="btn btn-primary" id="btn-gs-ok" style="opacity:.35;pointer-events:none" onclick="goCourseSetup()">Weiter →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: ONBOARDING — COURSE SETUP
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-course">
+  <div class="ob-header">
+    <div class="step-dots"><div class="step-d done"></div><div class="step-d done"></div><div class="step-d cur"></div></div>
+    <div style="margin-top:14px" class="ob-step">Schritt 3 von 3 — Kurs</div>
+    <div class="ob-title">Dein Kurs</div>
+    <div class="ob-sub">Mit diesen Infos bereiten wir alles für dich vor.</div>
+  </div>
+  <div class="ob-body">
+    <div class="fg"><label>Kursname *</label><input class="fi" id="inp-course" placeholder="z. B. Statistik I" value="Statistik I"></div>
+    <div class="fg"><label>Prüfungsdatum *</label><input class="fi" id="inp-date" type="date"></div>
+    <div class="fg"><label>Hochschule <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input class="fi" id="inp-uni" placeholder="z. B. Uni Wien" value="Universität Wien"></div>
+    <button class="btn btn-primary" onclick="goUpload()">Weiter zu Unterlagen →</button>
+    <div class="skip" onclick="goUpload()">Überspringen</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: ONBOARDING — UPLOAD
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-upload">
+  <div class="topbar"><div class="topbar-logo">Mias <em>Lernkreis</em></div><div class="topbar-sub">Unterlagen</div></div>
+  <div class="screen-body pb-nav scrollable">
+    <div class="h2" style="margin-bottom:6px">Unterlagen hochladen</div>
+    <div class="muted" style="margin-bottom:18px">Je mehr du hochlädst, desto besser können wir dir helfen.</div>
+
+    <div class="uz" id="uz-modul" onclick="toggleUpload('modul')">
+      <div class="uz-icon" id="uzi-modul">📋</div>
+      <div class="uz-title">Modulbeschreibung</div>
+      <div class="uz-sub">PDF hochladen oder Text direkt einfügen</div>
+    </div>
+    <div class="uz" id="uz-folien" onclick="toggleUpload('folien')">
+      <div class="uz-icon" id="uzi-folien">📑</div>
+      <div class="uz-title">Vorlesungsfolien / Skript</div>
+      <div class="uz-sub">PDF oder PPTX — max. 50 MB, mehrere Dateien erlaubt</div>
+    </div>
+    <div class="uz" id="uz-alt" onclick="toggleUpload('alt')">
+      <div class="uz-icon" id="uzi-alt">📝</div>
+      <div class="uz-title">Altklausuren</div>
+      <div class="uz-sub">PDF — max. 50 MB pro Datei, mehrere Dateien erlaubt</div>
+    </div>
+
+    <button class="btn btn-primary" style="margin-top:6px" onclick="startProcessing()">Unterlagen analysieren →</button>
+    <div class="skip" onclick="skipProcessing()">Jetzt überspringen</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: ONBOARDING — PROCESSING
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-processing">
+  <div class="loading-wrap">
+    <div class="spinner"></div>
+    <div class="loading-title" id="proc-msg">Wir lesen deine Unterlagen…</div>
+    <div class="loading-sub">Das dauert nur einen Moment.</div>
+    <div class="process-results" id="proc-results" style="display:none"></div>
+    <button class="btn btn-primary" id="proc-done-btn" style="display:none;max-width:280px" onclick="navToApp()">Zur App →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: HOME
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-home">
+  <div class="topbar">
+    <div class="topbar-logo">Mias <em>Lernkreis</em></div>
+    <div id="home-mode-badge"></div>
+  </div>
+  <div class="screen-body pb-nav scrollable">
+    <div class="greeting" id="home-greeting">Hallo, Mia! 👋</div>
+    <div class="greeting-sub" id="home-sub">Noch 14 Tage bis zur Prüfung.</div>
+
+    <!-- Exam + Progress Card -->
+    <div class="card">
+      <div class="card-title">Prüfung: <span id="home-course">Statistik I</span></div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:14px">
+        <div class="countdown" id="home-days">14</div>
+        <div class="countdown-lbl">Tage verbleibend</div>
+      </div>
+      <div class="pb-two">
+        <div>
+          <div class="pb-row"><span>Zeit</span><span id="time-pct">40%</span></div>
+          <div class="pb-track"><div class="pb-fill fill-g" id="time-bar" style="width:40%"></div></div>
+        </div>
+        <div>
+          <div class="pb-row"><span>Themen</span><span id="content-pct">3/8</span></div>
+          <div class="pb-track"><div class="pb-fill fill-p" id="content-bar" style="width:37%"></div></div>
+        </div>
+      </div>
+      <div class="signal signal-g" id="home-signal">🟢 Du bist im Zeitplan.</div>
+    </div>
+
+    <!-- Nudge: Diagnose empfohlen -->
+    <div class="nudge" id="home-nudge" style="display:none">
+      <div class="nudge-icon">🔔</div>
+      <div class="nudge-text">
+        <div class="h3">Zeit für eine neue Diagnose</div>
+        <div class="muted">Wie läuft's? Dein letzter Check ist ein paar Tage her.</div>
+        <button class="btn btn-ghost btn-sm" style="margin-top:8px;display:inline-block" onclick="navTo('s-diagnose')">Diagnose starten</button>
+      </div>
+    </div>
+
+    <!-- Mini Radar -->
+    <div class="card" onclick="navTo('s-fortschritt')" style="cursor:pointer">
+      <div class="card-title">Mein Wissensstand — zum Vergrößern tippen</div>
+      <div class="chart-wrap" style="max-height:220px"><canvas id="radar-mini"></canvas></div>
+    </div>
+
+    <!-- Contract preview (group mode) -->
+    <div id="home-contract" style="display:none"></div>
+
+    <!-- Group preview (group mode) -->
+    <div class="card" id="home-group" style="display:none">
+      <div class="card-title">Meine Gruppe</div>
+      <div id="home-group-body"></div>
+      <button class="btn btn-ghost" style="margin-top:8px" onclick="navTo('s-gruppe')">Zur Gruppenansicht →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: DIAGNOSE
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-diagnose">
+  <div class="topbar"><div class="topbar-logo">Selbstdiagnose</div><div class="topbar-sub" id="diag-counter">0 / 8</div></div>
+  <div class="screen-body pb-nav scrollable">
+    <!-- Cooldown notice -->
+    <div id="diag-cooldown" style="display:none" class="card" style="background:var(--yellow-bg);border-color:#F39C12">
+      <div style="font-size:15px;font-weight:600;color:var(--warning)">⏰ Du hast heute schon eine Diagnose gemacht.</div>
+      <div class="muted" style="margin-top:4px">Komm morgen wieder für einen neuen Check — so macht deine Einschätzung mehr Sinn.</div>
+    </div>
+
+    <p class="muted" style="margin-bottom:8px">Wie sicher fühlst du dich bei diesen Themen? Nur du siehst das.</p>
+    <div id="diag-prog-bar"><div id="diag-prog-fill" style="width:0%"></div></div>
+    <div id="topic-list"></div>
+
+    <button class="btn btn-ghost btn-sm btn-icon" style="margin-bottom:14px" onclick="addTopic()">+ Thema hinzufügen</button>
+    <button class="btn btn-primary" id="btn-save-diag" style="opacity:.35;pointer-events:none" onclick="saveDiagnosis()">Diagnose abschließen</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: FORTSCHRITT
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-fortschritt">
+  <div class="topbar"><div class="topbar-logo">Mein Fortschritt</div></div>
+  <div class="screen-body pb-nav scrollable">
+
+    <!-- Progress Cards side by side -->
+    <div class="pb-two" style="margin-bottom:14px">
+      <div class="card" style="padding:14px;margin-bottom:0">
+        <div class="card-title">Zeit</div>
+        <div style="font-size:24px;font-weight:800;color:var(--primary)" id="ft-time-pct">40%</div>
+        <div class="pb-track" style="margin-top:6px"><div class="pb-fill fill-y" id="ft-time-bar" style="width:40%"></div></div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px" id="ft-days-left">14 Tage noch</div>
+      </div>
+      <div class="card" style="padding:14px;margin-bottom:0">
+        <div class="card-title">Themen</div>
+        <div style="font-size:24px;font-weight:800;color:var(--primary)" id="ft-content-pct">3/8</div>
+        <div class="pb-track" style="margin-top:6px"><div class="pb-fill fill-p" id="ft-content-bar" style="width:37%"></div></div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px">sicher gelernt</div>
+      </div>
+    </div>
+
+    <div class="signal signal-g" id="ft-signal" style="margin-bottom:14px">🟢 Du bist im Zeitplan.</div>
+
+    <!-- Radar Chart -->
+    <div class="card">
+      <div class="card-title">Wissens-Radar</div>
+      <div class="chart-wrap"><canvas id="radar-main"></canvas></div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button class="btn btn-sm btn-accent" id="btn-r-cur" style="flex:1" onclick="switchRadar('current')">Aktuell</button>
+        <button class="btn btn-sm btn-ghost" id="btn-r-hist" style="flex:1" onclick="switchRadar('history')">Verlauf</button>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="card">
+      <div class="card-title">Diagnose-Verlauf</div>
+      <div class="timeline" id="ft-timeline"></div>
+      <div id="ft-delta" style="margin-top:10px;font-size:13px;color:var(--success);font-weight:600;display:none"></div>
+    </div>
+
+    <!-- Themen sorted by red first -->
+    <div class="card">
+      <div class="card-title">Alle Themen — priorisiert</div>
+      <div id="ft-topics"></div>
+    </div>
+
+    <button class="btn btn-accent" onclick="navTo('s-diagnose')">Neue Diagnose starten</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: GRUPPE
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-gruppe">
+  <div class="topbar"><div class="topbar-logo">Meine Gruppe</div><div class="topbar-sub" id="gruppe-code-top"></div></div>
+  <div class="screen-body pb-nav scrollable">
+
+    <!-- Solo upgrade prompt -->
+    <div id="solo-upgrade" style="display:none">
+      <div style="text-align:center;padding:32px 0 20px">
+        <div style="font-size:44px;margin-bottom:10px">👥</div>
+        <div class="h2" style="margin-bottom:8px">Zur Gruppe wechseln?</div>
+        <div class="muted">Du kannst jederzeit einer Gruppe beitreten oder eine neue starten.</div>
+      </div>
+      <button class="btn btn-primary" onclick="upgradeToGroup()">Gruppe erstellen</button>
+      <button class="btn btn-ghost" style="margin-top:10px" onclick="showJoinModal()">Gruppe beitreten</button>
+    </div>
+
+    <!-- Group content -->
+    <div id="gruppe-content">
+      <!-- Join code display -->
+      <div class="card">
+        <div class="card-title">Gruppen-Code — zum Teilen</div>
+        <div class="code-display" id="code-display" onclick="copyCode()">AXT7K2</div>
+        <div style="text-align:center;font-size:12px;color:var(--muted);margin-top:6px">Antippen zum Kopieren</div>
+      </div>
+
+      <!-- Progress -->
+      <div class="card">
+        <div class="card-title">Gruppen-Fortschritt</div>
+        <div class="pb-wrap">
+          <div class="pb-row"><span>Themen abgedeckt</span><span id="group-cov">3 von 8</span></div>
+          <div class="pb-track"><div class="pb-fill fill-p" id="group-cov-bar" style="width:37%"></div></div>
+        </div>
+      </div>
+
+      <!-- Puzzle -->
+      <div class="card-title" style="padding:0 0 8px">Expertinnen-Verteilung 🧩</div>
+      <div class="puzzle-grid" id="puzzle-grid"></div>
+
+      <!-- Contracts -->
+      <div class="card-title" style="padding:8px 0">Lernverträge 📝</div>
+      <div id="contracts-list"></div>
+      <button class="btn btn-ghost btn-sm btn-icon" style="margin-bottom:14px" onclick="openContractModal()">+ Neuen Lernvertrag anlegen</button>
+
+      <hr class="divider">
+      <!-- Members -->
+      <div class="card">
+        <div class="card-title">Mitglieder</div>
+        <div id="members-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: FRAGEN
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-fragen">
+  <div class="topbar"><div class="topbar-logo">Anonyme Fragen</div></div>
+  <div class="screen-body pb-nav scrollable">
+
+    <!-- Submit -->
+    <div class="card">
+      <div class="card-title">Frage stellen — anonym</div>
+      <div class="fg" style="margin-bottom:10px">
+        <textarea class="fi" id="new-q-text" rows="2" placeholder="Was ist noch unklar? Frag anonym."></textarea>
+      </div>
+      <div class="fg" style="margin-bottom:10px">
+        <select class="fi" id="new-q-topic"><option value="">Thema wählen (optional)…</option></select>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="submitQ()">Anonym einreichen</button>
+      <div style="font-size:11px;color:var(--muted);margin-top:7px">Deine Identität wird nicht gespeichert. Auch nicht die Session.</div>
+    </div>
+
+    <!-- Sort + Filter -->
+    <div class="tab-row" id="q-sort-tabs">
+      <div class="tab active" onclick="setQSort('votes')">Relevanteste</div>
+      <div class="tab" onclick="setQSort('new')">Neueste</div>
+    </div>
+    <div class="filter-row" id="q-filter-row"></div>
+
+    <!-- Questions -->
+    <div class="card" id="q-card">
+      <div id="q-list"></div>
+    </div>
+
+    <button class="btn btn-outline btn-icon" onclick="exportQ()">📄 Als PDF exportieren</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCREEN: PROFIL
+═══════════════════════════════════════════════════════ -->
+<div class="screen" id="s-profil">
+  <div class="topbar"><div class="topbar-logo">Mein Profil</div></div>
+  <div class="screen-body pb-nav scrollable">
+    <div class="card" style="text-align:center;padding:24px">
+      <div style="width:72px;height:72px;border-radius:50%;background:var(--light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin:0 auto 10px">
+        <span id="p-initial">M</span>
+      </div>
+      <div class="h2" id="p-name">Mia</div>
+      <div class="muted" id="p-course">Statistik I</div>
+      <div style="margin-top:8px" id="p-badge"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Statistik</div>
+      <div class="stat-grid">
+        <div><div class="stat-num" id="st-diag">2</div><div class="stat-lbl">Diagnosen</div></div>
+        <div><div class="stat-num" id="st-green">3</div><div class="stat-lbl">Themen sicher</div></div>
+        <div><div class="stat-num" id="st-q">4</div><div class="stat-lbl">Fragen gestellt</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Einstellungen</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #F2EEF9">
+        <span class="h3">Modus</span><span class="badge bg-purple" id="p-mode">Solo</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #F2EEF9">
+        <span class="h3">Diagnose-Intervall</span><span class="muted">Alle 3–5 Tage</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0">
+        <span class="h3">Erinnerungen</span><span style="color:var(--green);font-size:13px;font-weight:600">Aktiv</span>
+      </div>
+    </div>
+
+    <button class="btn btn-outline" onclick="resetApp()" style="margin-bottom:14px">Demo zurücksetzen</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     BOTTOM NAV
+═══════════════════════════════════════════════════════ -->
+<div id="bottom-nav">
+  <div class="ni active" id="ni-home" onclick="navTo('s-home')"><div class="icon">🏠</div><div class="lbl">Home</div></div>
+  <div class="ni" id="ni-diagnose" onclick="navTo('s-diagnose')"><div class="icon">🎯</div><div class="lbl">Diagnose</div></div>
+  <div class="ni" id="ni-gruppe" onclick="navTo('s-gruppe')"><div class="icon">👥</div><div class="lbl" id="ni-gruppe-lbl">Gruppe</div></div>
+  <div class="ni" id="ni-fragen" onclick="navTo('s-fragen')"><div class="icon">❓</div><div class="lbl">Fragen</div></div>
+  <div class="ni" id="ni-profil" onclick="navTo('s-profil')"><div class="icon">👤</div><div class="lbl">Profil</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MODAL: JOIN GROUP
+═══════════════════════════════════════════════════════ -->
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+</div><!-- #app -->
+
+<script>
+/* ══════════════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════════════ */
+const TOPICS_DEFAULT = [
+  {id:1,name:'Deskriptive Statistik',examFreq:4,aiSuggested:false},
+  {id:2,name:'Wahrscheinlichkeitsrechnung',examFreq:3,aiSuggested:true},
+  {id:3,name:'Normalverteilung',examFreq:4,aiSuggested:false},
+  {id:4,name:'Hypothesentests',examFreq:3,aiSuggested:true},
+  {id:5,name:'Regressionsanalyse',examFreq:2,aiSuggested:true},
+  {id:6,name:'Konfidenzintervalle',examFreq:3,aiSuggested:false},
+  {id:7,name:'Chi-Quadrat-Test',examFreq:2,aiSuggested:false},
+  {id:8,name:'ANOVA',examFreq:1,aiSuggested:true},
+];
+
+let S = {
+  name:'Mia', email:'mia@beispiel.at',
+  mode:'solo',
+  course:'Statistik I', examDate:null, uni:'Universität Wien',
+  groupCode:'AXT7K2', groupAction:null,
+  topics: JSON.parse(JSON.stringify(TOPICS_DEFAULT)),
+  ratings:{1:'green',2:'yellow',3:'green',4:'red',5:'red',6:'green',7:'red',8:'red'},
+  snapshots:[
+    {date:daysAgo(7), ratings:{1:'green',2:'red',3:'yellow',4:'red',5:'red',6:'yellow',7:'red',8:'red'}},
+    {date:daysAgo(3), ratings:{1:'green',2:'yellow',3:'green',4:'red',5:'red',6:'yellow',7:'red',8:'red'}},
+  ],
+  lastDiag: daysAgo(3),
+  uploaded:{modul:false,folien:false,alt:false},
+  questions:[
+    {id:1,text:'Wann muss ich den p-Wert genau mit dem Signifikanzniveau vergleichen?',topic:'Hypothesentests',votes:7,myVote:false,ts:Date.now()-3600000*6},
+    {id:2,text:'Was ist der Unterschied zwischen t-Test und Welch-Test?',topic:'Hypothesentests',votes:5,myVote:false,ts:Date.now()-3600000*12},
+    {id:3,text:'Wie unterscheidet sich einfache von multipler Regression?',topic:'Regressionsanalyse',votes:3,myVote:false,ts:Date.now()-86400000*2},
+    {id:4,text:'Muss ich den zentralen Grenzwertsatz auswendig kennen?',topic:'Normalverteilung',votes:2,myVote:false,ts:Date.now()-86400000*3},
+  ],
+  qSort:'votes', qFilter:'',
+  groupMembers:[
+    {name:'Lena',initial:'L',expert:'Hypothesentests',contractDone:true},
+    {name:'Tom', initial:'T',expert:'Regressionsanalyse',contractDone:false},
+    {name:'Sarah',initial:'S',expert:'Normalverteilung',contractDone:true},
+  ],
+  contracts:[
+    {id:1,member:'Lena',topic:'Hypothesentests',what:'Theorie + Übungsaufgaben erklären',format:'live',deadline:daysFromNow(2),status:'done'},
+    {id:2,member:'Tom', topic:'Regressionsanalyse',what:'Schriftliche Zusammenfassung',format:'summary',deadline:daysFromNow(5),status:'pending',aiSuggested:true},
+  ],
+  charts:{},
+  courseCreatedAt: new Date(Date.now()-10*86400000),
+  totalDays:21,
+};
+// Set exam date
+const ed=new Date(); ed.setDate(ed.getDate()+14); S.examDate=ed;
+S.contracts.push({id:3,member:S.name,topic:bestTopic(),what:'Live-Session für die Gruppe',format:'live',deadline:daysFromNow(4),status:'pending',aiSuggested:true});
+
+function daysAgo(n){const d=new Date();d.setDate(d.getDate()-n);return d.toLocaleDateString('de-AT')}
+function daysFromNow(n){const d=new Date();d.setDate(d.getDate()+n);return d.toLocaleDateString('de-AT')}
+function bestTopic(){let b=null,bs=-1;for(const t of TOPICS_DEFAULT){const sc=S.ratings[t.id]==='green'?2:S.ratings[t.id]==='yellow'?1:0;if(sc>bs){bs=sc;b=t.name;}}return b||'Deskriptive Statistik';}
+function getDays(){if(!S.examDate)return 14;return Math.max(0,Math.ceil((S.examDate-new Date())/86400000));}
+function getTimePct(){const total=S.totalDays,elapsed=total-getDays();return Math.min(100,Math.round(elapsed/total*100));}
+function getContentPct(){const g=Object.values(S.ratings).filter(r=>r==='green').length;return{g,total:S.topics.length,pct:Math.round(g/S.topics.length*100)};}
+function timeGreeting(){const h=new Date().getHours();return h<12?'Guten Morgen':h<18?'Guten Tag':'Guten Abend';}
+function getSignal(timePct,contentPct){
+  if(contentPct>=timePct)return{cls:'signal-g',txt:'🟢 Du bist im Zeitplan. Weiter so.'};
+  if(timePct-contentPct<25)return{cls:'signal-y',txt:'🟡 Du könntest etwas mehr Gas geben.'};
+  return{cls:'signal-r',txt:'🔴 Achtung — du hast noch viel vor dir.'};
+}
+
+/* ══════════════════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════════════════ */
+const APP_SCREENS=['s-home','s-diagnose','s-fortschritt','s-gruppe','s-fragen','s-profil'];
+const NAV_MAP={'s-home':'ni-home','s-diagnose':'ni-diagnose','s-fortschritt':'ni-home','s-gruppe':'ni-gruppe','s-fragen':'ni-fragen','s-profil':'ni-profil'};
+
+function navTo(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const isApp=APP_SCREENS.includes(id);
+  document.getElementById('bottom-nav').style.display=isApp?'flex':'none';
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
+  if(NAV_MAP[id])document.getElementById(NAV_MAP[id])?.classList.add('active');
+  window.scrollTo(0,0);
+  // Screen init
+  if(id==='s-home')renderHome();
+  if(id==='s-diagnose')renderDiagnose();
+  if(id==='s-fortschritt')renderFortschritt();
+  if(id==='s-gruppe')renderGruppe();
+  if(id==='s-fragen')renderFragen();
+  if(id==='s-profil')renderProfil();
+}
+
+/* ══════════════════════════════════════════════════════
+   AUTH FLOW
+══════════════════════════════════════════════════════ */
+let isLogin=false;
+function toggleAuth(){
+  isLogin=!isLogin;
+  document.getElementById('auth-title').textContent=isLogin?'Willkommen zurück!':'Willkommen!';
+  document.getElementById('auth-sub').textContent=isLogin?'Logge dich ein um weiterzumachen.':'Erstelle dein Konto um zu starten.';
+  document.getElementById('auth-btn').textContent=isLogin?'Einloggen':'Konto erstellen & starten';
+  document.getElementById('auth-name-group').style.display=isLogin?'none':'block';
+  document.getElementById('auth-toggle').innerHTML=isLogin?'Noch kein Konto? <span>Registrieren</span>':'Schon ein Konto? <span>Einloggen</span>';
+}
+function doAuth(){
+  const name=document.getElementById('inp-name').value.trim()||'Mia';
+  S.name=name;
+  navTo('s-mode');
+}
+
+/* ══════════════════════════════════════════════════════
+   ONBOARDING
+══════════════════════════════════════════════════════ */
+function pickMode(mode){
+  S.mode=mode;
+  document.getElementById('mc-solo').classList.toggle('sel',mode==='solo');
+  document.getElementById('mc-group').classList.toggle('sel',mode==='group');
+  const btn=document.getElementById('btn-mode-ok');
+  btn.style.opacity='1';btn.style.pointerEvents='auto';
+}
+function goGroupSetup(){
+  if(!S.mode)return;
+  if(S.mode==='solo'){goCourseSetup();return;}
+  navTo('s-groupsetup');
+}
+let groupAction=null;
+function pickGroupAction(a){
+  groupAction=a;
+  document.getElementById('gc-create').classList.toggle('sel',a==='create');
+  document.getElementById('gc-join').classList.toggle('sel',a==='join');
+  document.getElementById('join-code-input').style.display=a==='join'?'block':'none';
+  const btn=document.getElementById('btn-gs-ok');
+  btn.style.opacity='1';btn.style.pointerEvents='auto';
+}
+function goCourseSetup(){
+  const d=new Date();d.setDate(d.getDate()+21);
+  document.getElementById('inp-date').value=d.toISOString().split('T')[0];
+  navTo('s-course');
+}
+function goUpload(){
+  S.course=document.getElementById('inp-course').value.trim()||'Statistik I';
+  const dv=document.getElementById('inp-date').value;
+  if(dv)S.examDate=new Date(dv);
+  S.uni=document.getElementById('inp-uni').value.trim();
+  navTo('s-upload');
+}
+function toggleUpload(t){
+  S.uploaded[t]=!S.uploaded[t];
+  const iz={modul:'📋',folien:'📑',alt:'📝'};
+  const el=document.getElementById('uz-'+t);
+  const icon=document.getElementById('uzi-'+t);
+  el.classList.toggle('done',S.uploaded[t]);
+  icon.textContent=S.uploaded[t]?'✅':iz[t];
+}
+const PROC_MSGS=['Wir lesen deine Unterlagen…','Themen werden erkannt…','Prüfungsrelevanz wird analysiert…','Lernplan wird vorbereitet…'];
+function startProcessing(){
+  navTo('s-processing');
+  let i=0;
+  const iv=setInterval(()=>{i++;document.getElementById('proc-msg').textContent=PROC_MSGS[i%PROC_MSGS.length];},800);
+  setTimeout(()=>{
+    clearInterval(iv);
+    const any=S.uploaded.modul||S.uploaded.folien||S.uploaded.alt;
+    const parts=[];
+    if(S.uploaded.modul||!any)parts.push({icon:'✓',txt:'8 Themen aus Modulbeschreibung erkannt'});
+    if(S.uploaded.folien)parts.push({icon:'✓',txt:'Prüfungsrelevante Abschnitte identifiziert'});
+    if(S.uploaded.alt)parts.push({icon:'✓',txt:'3 Themen aus Altklausuren priorisiert'});
+    if(S.uploaded.folien||S.uploaded.modul)parts.push({icon:'✓',txt:'Lernvertrag-Vorschläge erstellt'});
+    document.getElementById('proc-msg').textContent='Fertig!';
+    const res=document.getElementById('proc-results');
+    res.innerHTML=parts.map(p=>`<div class="pr-item"><span style="color:var(--green);font-weight:700">${p.icon}</span>${p.txt}</div>`).join('');
+    res.style.display='block';
+    document.getElementById('proc-done-btn').style.display='block';
+  },3200);
+}
+function skipProcessing(){navToApp();}
+function navToApp(){
+  document.getElementById('ni-gruppe-lbl').textContent=S.mode==='group'?'Gruppe':'Gruppe';
+  navTo('s-home');
+}
+
+/* ══════════════════════════════════════════════════════
+   HOME
+══════════════════════════════════════════════════════ */
+function renderHome(){
+  const days=getDays();
+  const tp=getTimePct();
+  const {g,total,pct}=getContentPct();
+  // Greeting
+  document.getElementById('home-greeting').textContent=`${timeGreeting()}, ${S.name}! 👋`;
+  const subs=[`Noch ${days} Tage bis zur Prüfung.`,`${g} von ${total} Themen sicher — weiter so!`];
+  document.getElementById('home-sub').textContent=subs[Math.floor(Date.now()/1000)%2];
+  document.getElementById('home-course').textContent=S.course;
+  document.getElementById('home-days').textContent=days;
+  // Progress
+  document.getElementById('time-pct').textContent=tp+'%';
+  const tb=document.getElementById('time-bar');
+  tb.style.width=tp+'%';tb.className='pb-fill '+(tp<50?'fill-g':tp<75?'fill-y':'fill-r');
+  document.getElementById('content-pct').textContent=g+'/'+total;
+  document.getElementById('content-bar').style.width=pct+'%';
+  // Signal
+  const {cls,txt}=getSignal(tp,pct);
+  const sig=document.getElementById('home-signal');
+  sig.className='signal '+cls;sig.textContent=txt;
+  // Mode badge
+  document.getElementById('home-mode-badge').innerHTML=
+    `<span class="badge bg-purple">${S.mode==='group'?'👥 Gruppe':'🧘 Solo'}</span>`;
+  // Nudge
+  const nudge=document.getElementById('home-nudge');
+  const daysSinceLastDiag=S.lastDiag?Math.floor((Date.now()-new Date(S.lastDiag.split('.').reverse().join('-')).getTime())/86400000):99;
+  nudge.style.display=daysSinceLastDiag>=3?'flex':'none';
+  // Mini radar
+  destroyChart('radar-mini');
+  drawRadar('radar-mini',[S.ratings],false);
+  // Contract nudge
+  const hc=document.getElementById('home-contract');
+  if(S.mode==='group'){
+    const myContracts=S.contracts.filter(c=>c.member===S.name&&c.status!=='done');
+    hc.style.display=myContracts.length?'block':'none';
+    if(myContracts.length){
+      const c=myContracts[0];
+      hc.innerHTML=`<div class="card" style="border-left:4px solid var(--accent)">
+        <div class="card-title">Lernvertrag fällig</div>
+        <div class="h3">${c.topic}</div>
+        <div class="muted" style="margin-top:4px">Format: ${formatLabel(c.format)} · ${c.deadline}</div>
+        <button class="btn btn-ghost btn-sm" style="margin-top:10px;display:inline-block" onclick="navTo('s-gruppe')">Zum Vertrag →</button>
+      </div>`;
+    }
+  } else { hc.style.display='none'; }
+  // Group preview
+  const hg=document.getElementById('home-group');
+  if(S.mode==='group'){
+    hg.style.display='block';
+    document.getElementById('home-group-body').innerHTML=S.groupMembers.slice(0,3).map(m=>
+      `<div class="mc"><div class="av">${m.initial}</div>
+       <div class="mi"><div class="mi-name">${m.name}</div><div class="mi-role">${m.expert}</div></div>
+       <span class="badge ${m.contractDone?'bg-green':'bg-yellow'}">${m.contractDone?'✓':'Offen'}</span></div>`
+    ).join('');
+  } else { hg.style.display='none'; }
+}
+
+/* ══════════════════════════════════════════════════════
+   DIAGNOSE
+══════════════════════════════════════════════════════ */
+function renderDiagnose(){
+  const cd=document.getElementById('diag-cooldown');
+  const daysSince=S.lastDiag?Math.floor((Date.now()-new Date(S.lastDiag.split('.').reverse().join('-')).getTime())/86400000):99;
+  const onCooldown=daysSince<1;
+  cd.style.display=onCooldown?'block':'none';
+
+  const list=document.getElementById('topic-list');
+  list.innerHTML=S.topics.map(t=>{
+    const r=S.ratings[t.id]||null;
+    return `<div class="ti">
+      <div class="ti-left">
+        <div class="ti-name">${t.name}</div>
+        <div class="ti-badges">
+          ${t.examFreq>=3?'<span class="badge bg-exam">🔥 Häufig geprüft</span>':''}
+          ${t.aiSuggested?'<span class="badge bg-ki">✨ KI-Vorschlag</span>':''}
+        </div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button class="rb ${r==='green'?'rb-g':''}" onclick="rate(${t.id},'green')" title="Ich kenne das gut">✅</button>
+        <button class="rb ${r==='yellow'?'rb-y':''}" onclick="rate(${t.id},'yellow')" title="Bin unsicher">🟡</button>
+        <button class="rb ${r==='red'?'rb-r':''}" onclick="rate(${t.id},'red')" title="Muss ich noch lernen">🔴</button>
+      </div>
+    </div>`;
+  }).join('');
+  updateDiagProgress();
+}
+function rate(id,r){S.ratings[id]=r;renderDiagnose();}
+function updateDiagProgress(){
+  const done=Object.keys(S.ratings).filter(k=>S.topics.find(t=>t.id==k)).length;
+  const total=S.topics.length;
+  const pct=Math.round(done/total*100);
+  document.getElementById('diag-counter').textContent=`${done} / ${total}`;
+  document.getElementById('diag-prog-fill').style.width=pct+'%';
+  const btn=document.getElementById('btn-save-diag');
+  const ok=done>=total;
+  btn.style.opacity=ok?'1':'.35';
+  btn.style.pointerEvents=ok?'auto':'none';
+}
+function addTopic(){
+  const name=prompt('Themenname:');
+  if(!name)return;
+  const id=Date.now();
+  S.topics.push({id,name,examFreq:0,aiSuggested:false});
+  renderDiagnose();
+  toast('Thema hinzugefügt.');
+}
+function saveDiagnosis(){
+  const snap={date:new Date().toLocaleDateString('de-AT'),ratings:{...S.ratings}};
+  S.snapshots.push(snap);
+  S.lastDiag=snap.date;
+  // Check improvement
+  if(S.snapshots.length>=2){
+    const prev=S.snapshots[S.snapshots.length-2].ratings;
+    for(const t of S.topics){
+      if(prev[t.id]!=='green'&&S.ratings[t.id]==='green'){
+        toast(`🎉 Du hast dich bei "${t.name}" verbessert!`);
+        break;
+      }
+    }
+  }
+  // Expert recommendation
+  const best=S.topics.reduce((b,t)=>{
+    const sc=S.ratings[t.id]==='green'?2:S.ratings[t.id]==='yellow'?1:0;
+    const bs=S.ratings[b.id]==='green'?2:S.ratings[b.id]==='yellow'?1:0;
+    return sc>bs?t:b;
+  });
+  confetti();
+  toast(`✨ Super! Du kennst "${best.name}" am besten — werde Expertin dafür!`);
+  navTo('s-fortschritt');
+}
+
+/* ══════════════════════════════════════════════════════
+   FORTSCHRITT
+══════════════════════════════════════════════════════ */
+function renderFortschritt(){
+  const days=getDays();
+  const tp=getTimePct();
+  const {g,total,pct}=getContentPct();
+  document.getElementById('ft-time-pct').textContent=tp+'%';
+  document.getElementById('ft-time-bar').style.width=tp+'%';
+  document.getElementById('ft-days-left').textContent=`${days} Tage noch`;
+  document.getElementById('ft-content-pct').textContent=`${g}/${total}`;
+  document.getElementById('ft-content-bar').style.width=pct+'%';
+  const {cls,txt}=getSignal(tp,pct);
+  const s=document.getElementById('ft-signal');s.className='signal '+cls;s.textContent=txt;
+  // Radar
+  destroyChart('radar-main');
+  drawRadar('radar-main',[S.ratings],true);
+  // Timeline
+  const tl=document.getElementById('ft-timeline');
+  tl.innerHTML=S.snapshots.map((s,i)=>
+    `<div class="tl-dot" onclick="highlightSnap(${i})">
+      <div class="tl-circle ${i===S.snapshots.length-1?'current':'past'}"></div>
+      <div class="tl-label">${s.date}</div>
+    </div>`
+  ).join('');
+  // Delta
+  const delta=document.getElementById('ft-delta');
+  if(S.snapshots.length>=2){
+    const first=Object.values(S.snapshots[0].ratings).filter(r=>r==='green').length;
+    const last=Object.values(S.snapshots[S.snapshots.length-1].ratings).filter(r=>r==='green').length;
+    const diff=last-first;
+    delta.style.display=diff>0?'block':'none';
+    if(diff>0)delta.textContent=`🎉 Du hast ${diff} Thema(en) mehr sicher als zu Beginn!`;
+  } else {delta.style.display='none';}
+  // Topics sorted: red first
+  const sorted=[...S.topics].sort((a,b)=>{
+    const order={red:0,yellow:1,green:2};
+    return (order[S.ratings[a.id]]||0)-(order[S.ratings[b.id]]||0);
+  });
+  document.getElementById('ft-topics').innerHTML=sorted.map(t=>{
+    const r=S.ratings[t.id]||'red';
+    const dots={green:'#27AE60',yellow:'#F39C12',red:'#C0392B'};
+    const labs={green:'Gut',yellow:'Unsicher',red:'Lernen'};
+    return `<div class="ft-item">
+      <div class="ft-dot" style="background:${dots[r]}"></div>
+      <div class="ft-name">${t.name}</div>
+      <div class="ft-badge-wrap">
+        <span class="badge ${r==='green'?'bg-green':r==='yellow'?'bg-yellow':'bg-red'}">${labs[r]}</span>
+        ${t.examFreq>=3?'<span class="badge bg-exam" style="margin-left:4px">🔥</span>':''}
+      </div>
+    </div>`;
+  }).join('');
+}
+let radarMode='current';
+function switchRadar(mode){
+  radarMode=mode;
+  document.getElementById('btn-r-cur').className='btn btn-sm '+(mode==='current'?'btn-accent':'btn-ghost');
+  document.getElementById('btn-r-hist').className='btn btn-sm '+(mode==='history'?'btn-accent':'btn-ghost');
+  destroyChart('radar-main');
+  if(mode==='history'){drawRadar('radar-main',S.snapshots.map(s=>s.ratings),true,true);}
+  else{drawRadar('radar-main',[S.ratings],true);}
+}
+function highlightSnap(i){
+  destroyChart('radar-main');
+  drawRadar('radar-main',[S.snapshots[i].ratings],true);
+  toast(`Snapshot: ${S.snapshots[i].date}`);
+}
+
+/* ══════════════════════════════════════════════════════
+   GRUPPE
+══════════════════════════════════════════════════════ */
+function renderGruppe(){
+  const su=document.getElementById('solo-upgrade');
+  const gc=document.getElementById('gruppe-content');
+  if(S.mode!=='group'){su.style.display='block';gc.style.display='none';return;}
+  su.style.display='none';gc.style.display='block';
+  document.getElementById('gruppe-code-top').textContent='Code: '+S.groupCode;
+  document.getElementById('code-display').textContent=S.groupCode;
+  // Coverage
+  const covered=new Set([
+    ...Object.entries(S.ratings).filter(([,r])=>r==='green').map(([id])=>S.topics.find(t=>t.id==id)?.name),
+    ...S.groupMembers.map(m=>m.expert)
+  ]).size;
+  document.getElementById('group-cov').textContent=covered+' von '+S.topics.length;
+  document.getElementById('group-cov-bar').style.width=Math.round(covered/S.topics.length*100)+'%';
+  // Puzzle
+  const all=[
+    {name:S.name,initial:S.name[0],expert:bestTopic(),status:'mine'},
+    ...S.groupMembers.map(m=>({name:m.name,initial:m.initial,expert:m.expert,status:'assigned'})),
+    {name:'Unbesetzt',initial:'?',expert:'ANOVA',status:'unassigned'},
+  ];
+  document.getElementById('puzzle-grid').innerHTML=all.map(m=>
+    `<div class="piece ${m.status}">
+      <div class="piece-status">${m.status==='mine'?'⭐':m.status==='assigned'?'🧩':'⚠️'}</div>
+      <div class="piece-icon">${m.status==='unassigned'?'❓':'👤'}</div>
+      <div class="piece-name">${m.name}</div>
+      <div class="piece-topic">${m.expert}${m.status==='unassigned'?'<br><span style="font-size:10px;color:var(--yellow)">Kein Mitglied</span>':''}</div>
+    </div>`
+  ).join('');
+  // Contracts
+  const cl=document.getElementById('contracts-list');
+  if(!S.contracts.length){
+    cl.innerHTML=`<div class="empty"><div class="empty-icon">📝</div><div class="empty-title">Noch kein Lernvertrag</div><div class="empty-sub">Leg jetzt los.</div></div>`;
+  } else {
+    cl.innerHTML=S.contracts.map(c=>
+      `<div class="ct">
+        <div class="ct-topic">${c.topic} ${c.aiSuggested?'<span class="badge bg-ki">✨ KI-Vorschlag</span>':''}</div>
+        <div class="ct-meta">${c.member} · ${formatLabel(c.format)} · Bis ${c.deadline}</div>
+        <div class="ct-footer">
+          <span class="badge ${c.status==='done'?'bg-green':c.status==='in_progress'?'bg-yellow':'bg-red'}">${statusLabel(c.status)}</span>
+          ${c.status!=='done'&&c.member===S.name?`<button class="btn btn-ghost btn-sm" onclick="completeContract(${c.id})">Als erledigt ✓</button>`:''}
+        </div>
+      </div>`
+    ).join('');
+  }
+  // Members
+  const ml=document.getElementById('members-list');
+  ml.innerHTML=[{name:S.name,initial:S.name[0],role:'Ich · '+bestTopic()},...S.groupMembers.map(m=>({name:m.name,initial:m.initial,role:'Expertin: '+m.expert}))].map(m=>
+    `<div class="mc"><div class="av">${m.initial}</div>
+     <div class="mi"><div class="mi-name">${m.name}</div><div class="mi-role">${m.role}</div></div></div>`
+  ).join('');
+}
+function formatLabel(f){return f==='live'?'Live-Session':f==='summary'?'Zusammenfassung':'Video';}
+function statusLabel(s){return s==='done'?'✓ Abgeschlossen':s==='in_progress'?'⏳ In Arbeit':'🔴 Offen';}
+function completeContract(id){
+  const c=S.contracts.find(c=>c.id===id);
+  if(c){c.status='done';renderGruppe();}
+  confetti();
+  toast(`🎓 ${S.name} hat "${c?.topic}" erklärt!`);
+}
+function openContractModal(){
+  showModal(`
+    <div class="modal-title">Lernvertrag anlegen <span class="modal-close" onclick="closeModalDirect()">✕</span></div>
+    <div class="fg"><label>Thema *</label>
+      <select class="fi" id="mc-topic">${S.topics.map(t=>`<option>${t.name}</option>`).join('')}</select></div>
+    <div class="fg"><label>Was ich erkläre</label>
+      <textarea class="fi" id="mc-what" rows="2" placeholder="z. B. Theorie + Übungsaufgaben…"></textarea></div>
+    <div class="fg"><label>Format</label>
+      <select class="fi" id="mc-format">
+        <option value="live">Live Session</option>
+        <option value="summary">Schriftliche Zusammenfassung</option>
+        <option value="video">Video-Erklärung</option>
+      </select></div>
+    <div class="fg"><label>Deadline</label><input class="fi" id="mc-dl" type="date"></div>
+    <button class="btn btn-primary" onclick="saveContract()">Lernvertrag speichern</button>
+  `);
+  const d=new Date();d.setDate(d.getDate()+5);
+  setTimeout(()=>{document.getElementById('mc-dl').value=d.toISOString().split('T')[0];},50);
+}
+function saveContract(){
+  const topic=document.getElementById('mc-topic').value;
+  const what=document.getElementById('mc-what').value;
+  const format=document.getElementById('mc-format').value;
+  const dl=document.getElementById('mc-dl').value;
+  if(!topic){toast('Bitte ein Thema wählen.');return;}
+  S.contracts.push({id:Date.now(),member:S.name,topic,what,format,deadline:new Date(dl).toLocaleDateString('de-AT'),status:'pending',aiSuggested:false});
+  closeModalDirect();
+  renderGruppe();
+  toast('✅ Lernvertrag gespeichert.');
+}
+function upgradeToGroup(){S.mode='group';renderGruppe();toast('👥 Gruppe erstellt! Code: '+S.groupCode);}
+function copyCode(){
+  navigator.clipboard?.writeText(S.groupCode).catch(()=>{});
+  toast('Code kopiert: '+S.groupCode);
+}
+
+/* ══════════════════════════════════════════════════════
+   FRAGEN
+══════════════════════════════════════════════════════ */
+function renderFragen(){
+  const sel=document.getElementById('new-q-topic');
+  sel.innerHTML='<option value="">Thema wählen (optional)…</option>'+S.topics.map(t=>`<option>${t.name}</option>`).join('');
+  // Filter chips
+  const topics=[...new Set(S.questions.map(q=>q.topic))];
+  document.getElementById('q-filter-row').innerHTML=
+    ['<div class="filter-chip '+(S.qFilter===''?'active':'')+'" onclick="setQFilter(\'\')">Alle</div>',
+      ...topics.map(t=>`<div class="filter-chip ${S.qFilter===t?'active':''}" onclick="setQFilter('${t}')">${t}</div>`)
+    ].join('');
+  renderQList();
+}
+function renderQList(){
+  let qs=[...S.questions];
+  if(S.qFilter)qs=qs.filter(q=>q.topic===S.qFilter);
+  if(S.qSort==='votes')qs.sort((a,b)=>b.votes-a.votes);
+  else qs.sort((a,b)=>b.ts-a.ts);
+  const el=document.getElementById('q-list');
+  if(!qs.length){
+    el.innerHTML=`<div class="empty"><div class="empty-icon">💬</div><div class="empty-title">Noch keine Fragen</div><div class="empty-sub">Sei die Erste! Frag anonym.</div></div>`;
+    return;
+  }
+  el.innerHTML=qs.map(q=>
+    `<div class="qi">
+      <div>
+        <div class="qi-text">${q.text}</div>
+        <div class="qi-meta">
+          <span class="badge bg-purple" style="font-size:10px">${q.topic||'Allgemein'}</span>
+          <span>${q.votes} ${q.votes===1?'Stimme':'Stimmen'}</span>
+        </div>
+      </div>
+      <button class="upvote ${q.myVote?'voted':''}" onclick="vote(${q.id})">
+        <span>▲</span><span>${q.votes}</span>
+      </button>
+    </div>`
+  ).join('');
+}
+function setQSort(s){
+  S.qSort=s;
+  document.querySelectorAll('#q-sort-tabs .tab').forEach((t,i)=>t.classList.toggle('active',(s==='votes'&&i===0)||(s==='new'&&i===1)));
+  renderQList();
+}
+function setQFilter(f){
+  S.qFilter=f;
+  document.querySelectorAll('#q-filter-row .filter-chip').forEach(c=>c.classList.remove('active'));
+  event.target.classList.add('active');
+  renderQList();
+}
+function vote(id){
+  const q=S.questions.find(q=>q.id===id);
+  if(!q)return;
+  q.myVote=!q.myVote;q.votes+=q.myVote?1:-1;
+  renderQList();
+}
+function submitQ(){
+  const text=document.getElementById('new-q-text').value.trim();
+  const topic=document.getElementById('new-q-topic').value;
+  if(!text){toast('Bitte eine Frage eingeben.');return;}
+  S.questions.push({id:Date.now(),text,topic:topic||'Allgemein',votes:0,myVote:false,ts:Date.now()});
+  document.getElementById('new-q-text').value='';
+  renderQList();
+  toast('✅ Deine Frage wurde gestellt. Niemand weiß dass sie von dir kommt.');
+}
+function exportQ(){
+  toast('📄 PDF mit Top-Fragen würde hier exportiert (Demo).');
+}
+
+/* ══════════════════════════════════════════════════════
+   PROFIL
+══════════════════════════════════════════════════════ */
+function renderProfil(){
+  document.getElementById('p-initial').textContent=S.name[0].toUpperCase();
+  document.getElementById('p-name').textContent=S.name;
+  document.getElementById('p-course').textContent=S.course;
+  document.getElementById('p-badge').innerHTML=`<span class="badge bg-purple">${S.mode==='group'?'👥 Gruppe':'🧘 Solo'}</span>`;
+  document.getElementById('p-mode').textContent=S.mode==='group'?'👥 Gruppe':'🧘 Solo';
+  document.getElementById('st-diag').textContent=S.snapshots.length;
+  document.getElementById('st-green').textContent=Object.values(S.ratings).filter(r=>r==='green').length;
+  document.getElementById('st-q').textContent=S.questions.length;
+}
+
+/* ══════════════════════════════════════════════════════
+   RADAR CHART
+══════════════════════════════════════════════════════ */
+const CHART_COLORS=['#7B4FA6','#27AE60','#F39C12','#3498DB'];
+function destroyChart(id){if(S.charts[id]){S.charts[id].destroy();delete S.charts[id];}}
+function drawRadar(canvasId,ratingsArray,full,history){
+  const labels=S.topics.map(t=>t.name.length>14?t.name.substring(0,12)+'…':t.name);
+  const ds=ratingsArray.map((rat,i)=>{
+    const isLatest=i===ratingsArray.length-1;
+    const alpha=history&&!isLatest?.12:.22;
+    const bAlpha=history&&!isLatest?.25:1;
+    const col=CHART_COLORS[i%CHART_COLORS.length];
+    return{
+      data:S.topics.map(t=>rat[t.id]==='green'?3:rat[t.id]==='yellow'?2:rat[t.id]==='red'?1:0),
+      backgroundColor:hexA(col,alpha),borderColor:hexA(col,bAlpha),
+      borderWidth:isLatest?2.5:1.5,pointRadius:isLatest?4:0,
+      pointBackgroundColor:col,tension:.4
+    };
+  });
+  const ctx=document.getElementById(canvasId)?.getContext('2d');
+  if(!ctx)return;
+  S.charts[canvasId]=new Chart(ctx,{
+    type:'radar',data:{labels,datasets:ds},
+    options:{responsive:true,maintainAspectRatio:true,animation:{duration:400},
+      plugins:{legend:{display:false},tooltip:{callbacks:{
+        label:c=>{const v=c.raw;return v===3?'✅ Gut kennen':v===2?'🟡 Unsicher':v===1?'🔴 Noch lernen':'—'}
+      }}},
+      scales:{r:{min:0,max:3,ticks:{display:false,stepSize:1},grid:{color:'#EDE8F5'},
+        angleLines:{color:'#EDE8F5'},
+        pointLabels:{font:{size:full?10:8,weight:'600'},color:'#4A2C6E'}
+      }}
+    }
+  });
+}
+function hexA(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${b},${a})`;}
+
+/* ══════════════════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════════════════ */
+function showModal(html){
+  document.getElementById('modal-content').innerHTML=html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('modal-overlay').classList.remove('open');}
+function showJoinModal(){
+  showModal(`
+    <div class="modal-title">Gruppe beitreten <span class="modal-close" onclick="closeModalDirect()">✕</span></div>
+    <div class="fg"><label>Gruppen-Code</label>
+      <input class="fi" id="mi-code" placeholder="AXT7K2" maxlength="6" style="text-transform:uppercase;letter-spacing:4px;font-size:18px;font-weight:700;text-align:center"></div>
+    <button class="btn btn-primary" onclick="joinGroup()">Beitreten →</button>
+  `);
+}
+function joinGroup(){
+  const code=document.getElementById('mi-code').value.trim().toUpperCase();
+  if(code.length!==6){toast('Bitte einen 6-stelligen Code eingeben.');return;}
+  S.mode='group';S.groupCode=code;
+  closeModalDirect();
+  navTo('s-home');
+  toast('👥 Gruppe beigetreten!');
+}
+
+/* ══════════════════════════════════════════════════════
+   UTILS
+══════════════════════════════════════════════════════ */
+function toast(msg){
+  const id=APP_SCREENS.includes(document.querySelector('.screen.active')?.id)?'toast':'toast-landing';
+  const t=document.getElementById(id);
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),3200);
+}
+function confetti(){
+  const cols=['#4A2C6E','#7B4FA6','#27AE60','#F39C12','#E74C3C','#3498DB','#E91E63'];
+  for(let i=0;i<32;i++){
+    const el=document.createElement('div');
+    el.className='cp';
+    el.style.cssText=`left:${Math.random()*100}vw;width:${5+Math.random()*9}px;height:${5+Math.random()*9}px;background:${cols[Math.floor(Math.random()*cols.length)]};animation-duration:${1.4+Math.random()*1.6}s;animation-delay:${Math.random()*.4}s;`;
+    document.body.appendChild(el);
+    el.addEventListener('animationend',()=>el.remove());
+  }
+}
+function resetApp(){
+  Object.keys(S.charts).forEach(k=>{S.charts[k]?.destroy();});
+  S.charts={};
+  S.mode='solo';S.ratings={};S.snapshots=[];S.lastDiag=null;
+  S.uploaded={modul:false,folien:false,alt:false};
+  navTo('s-landing');
+  document.getElementById('bottom-nav').style.display='none';
+}
+
+/* ══════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════ */
+navTo('s-landing');
+</script>
+</body>
+</html>
