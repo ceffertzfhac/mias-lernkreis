@@ -26,7 +26,7 @@ function app() {
     // ── Setup ───────────────────────────────────────────────────────────────
     name: '',
     apiKey: '',
-    apiModel: 'gpt-4o',
+    apiModel: 'gpt-5.2',
     examDateInput: toDateInput(dateFromNow(45)),
     apiTest: { status: null, message: '' }, // null | loading | ok | error
 
@@ -58,7 +58,7 @@ function app() {
     init() {
       const cfg = store.get('api_config') ?? {}
       this.apiKey   = cfg.apiKey ?? ''
-      this.apiModel = cfg.model  ?? 'gpt-4o'
+      this.apiModel = cfg.model  ?? 'gpt-5.2'
       this.name     = store.get('name') ?? ''
       const raw = store.get('diagnosen') ?? []
       this.diagnosen = raw.filter(d => d.bewertungen?.[0]?.stufe !== undefined)
@@ -116,6 +116,11 @@ function app() {
     startSolo() {
       if (!this.name.trim()) return
       this._persist()
+      this.goTo('home')
+    },
+
+    saveSettings() {
+      store.set('api_config', { apiKey: this.apiKey, model: this.apiModel })
       this.goTo('home')
     },
 
