@@ -45,6 +45,7 @@ function app() {
 
     // ── Radar ────────────────────────────────────────────────────────────────
     showVerlauf: false,
+    radarPulse: false,
 
     // ── Übung ────────────────────────────────────────────────────────────────
     ue: {
@@ -95,6 +96,16 @@ function app() {
     // NAVIGATION
     // ════════════════════════════════════════════════════════════════════════
     goTo(screen) {
+      // Radar pulse: animate when returning home after a practice session
+      const wasUeben = ['ueben-aufgabe', 'ueben-ergebnis'].includes(this.screen)
+      if (screen === 'home' && wasUeben && this.session.aufgaben.length > 0) {
+        this.radarPulse = false
+        setTimeout(() => {
+          this.radarPulse = true
+          setTimeout(() => { this.radarPulse = false }, 1000)
+        }, 300)
+      }
+
       radar.destroyAll()
       if (screen === 'diagnose') this._resetAktDiagnose()
       this.screen = screen
@@ -418,6 +429,11 @@ function app() {
     },
 
     themenBereit() { return this.letzeDiagnose?.bewertungen.filter(b => b.stufe >= 4).length ?? 0 },
+
+    radarDatum() {
+      if (!this.letzeDiagnose) return ''
+      return new Date(this.letzeDiagnose.datum).toLocaleDateString('de-DE', { day: '2-digit', month: 'short' })
+    },
 
     schwächsteThemen() {
       if (!this.letzeDiagnose) return []

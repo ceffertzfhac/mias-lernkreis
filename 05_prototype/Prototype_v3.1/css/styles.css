@@ -37,6 +37,9 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Canvas elements never exceed their container */
+canvas { max-width: 100%; }
+
 body {
   background: var(--c-bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -291,6 +294,15 @@ body {
 .stat-chip--accent { background: var(--c-light);      color: var(--c-primary); }
 
 /* ═══════════════════════════════════════════════════════
+   Home Layout (mobile: stacked column)
+═══════════════════════════════════════════════════════ */
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════
    Focus Topic Chips
 ═══════════════════════════════════════════════════════ */
 .focus-chip {
@@ -303,67 +315,121 @@ body {
 }
 .focus-chip:active { transform: scale(0.95); opacity: 0.85; }
 
+/* ─── Prevent horizontal overflow globally ─────────── */
+html, body { overflow-x: hidden; }
+.app-shell  { overflow-x: hidden; }
+
+/* ─── Sidebar variable ──────────────────────────────── */
+:root { --nav-sidebar-w: 88px; }
+
+/* ═══════════════════════════════════════════════════════
+   Breakpoint 1 — Tablet / small laptop (≥ 768px)
+   Sidebar nav appears, content gets sidebar offset.
+   Layout stays single-column (not yet 2-col).
+═══════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
 
-  /* Sidebar nav */
+  /* Lift the mobile 440px cap */
+  .app-shell { max-width: none; }
+
+  /* ── Sidebar nav ── */
   .nav-bar {
     position: fixed;
     left: 0; top: 0; bottom: 0; right: auto;
-    width: 80px; height: 100vh;
+    width: var(--nav-sidebar-w); height: 100vh;
     border-top: none; border-right: 1px solid var(--c-light);
     flex-direction: column;
     transform: none;
-    max-width: 80px;
-    padding: 28px 0 20px;
+    max-width: var(--nav-sidebar-w);
+    padding: 32px 0 24px;
     justify-content: flex-start;
-    gap: 2px;
+    gap: 4px;
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     box-shadow: none;
-    border-right: 1px solid var(--c-light);
+    background: var(--c-surface);
   }
-  .nav-item {
-    padding: 12px 0;
-    font-size: 10px;
-    width: 100%;
-  }
+  .nav-item { padding: 12px 0; font-size: 10px; width: 100%; }
 
-  /* Content area: offset by sidebar width */
+  /* ── Content offset by sidebar ── */
   .has-nav {
-    padding-bottom: 24px;
-    padding-left: calc(80px + 32px);
-    padding-right: 32px;
-    max-width: 1120px;
+    padding-bottom: 32px;
+    padding-left: calc(var(--nav-sidebar-w) + 24px);
+    padding-right: 24px;
   }
 
-  /* Setup screen: centered, wider */
+  /* ── Setup ── */
   .setup-screen {
     max-width: 560px;
     margin-inline: auto;
     padding-top: 48px;
   }
 
-  /* Home: radar left, info right */
-  .home-grid {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .home-grid__radar { flex: 1 1 40%; }
-  .home-grid__info  { flex: 1 1 55%; }
-  .home-radar-canvas { max-height: 300px; }
+  /* ── Larger radar on tablet ── */
+  .radar-hero-canvas-wrap { height: 320px; }
+  #radarCanvas, #radarFortschritt { max-height: 480px; }
+}
 
-  /* Diagnose: 2-col topic grid */
+/* ═══════════════════════════════════════════════════════
+   Breakpoint 2 — Laptop / Desktop (≥ 1100px)
+   2-col layouts activate. More generous spacing.
+═══════════════════════════════════════════════════════ */
+@media (min-width: 1100px) {
+
+  .has-nav {
+    padding-left: calc(var(--nav-sidebar-w) + 40px);
+    padding-right: 40px;
+    padding-bottom: 40px;
+  }
+
+  /* ── Home: Radar left | Info right ── */
+  .home-layout {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 28px;
+  }
+  .home-col-radar {
+    flex: 1 1 55%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .home-col-radar > .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .home-col-radar .radar-hero-canvas-wrap {
+    flex: 1;
+    height: auto;
+    min-height: 360px;
+    max-height: calc(100vh - 180px);
+  }
+  .home-col-info {
+    flex: 1 1 40%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 2px;
+  }
+  .home-col-info .home-ctas { margin-top: auto; }
+
+  /* ── Diagnose: 2-col topic grid ── */
   .themen-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
 
-  /* Radar canvas: allow more height */
-  #radarCanvas, #radarFortschritt {
-    max-height: 480px;
-  }
+  /* ── Radar canvas ── */
+  #radarCanvas, #radarFortschritt { max-height: 520px; }
 
-  /* Radar hero larger on desktop */
-  .radar-hero-canvas-wrap { height: 340px; }
+  /* ── Fortschritt: 2-col ── */
+  .fortschritt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
 }

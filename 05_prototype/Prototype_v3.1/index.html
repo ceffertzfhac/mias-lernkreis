@@ -172,10 +172,10 @@
   <!-- ═══════════════════════════════════════════════════════════════════════
        SCREEN: HOME — Radar Dashboard
   ════════════════════════════════════════════════════════════════════════ -->
-  <div x-show="screen === 'home'" class="has-nav">
+  <div x-show="screen === 'home'" class="has-nav px-4 pt-5">
 
-    <!-- Compact top bar: name + countdown -->
-    <div class="px-4 pt-5 pb-1 flex items-center justify-between">
+    <!-- Top bar: always full-width -->
+    <div class="flex items-center justify-between pb-4">
       <div>
         <h1 class="text-lg font-bold text-primary" x-text="'Hallo, ' + name + ' 👋'"></h1>
         <p class="text-xs text-muted" x-text="kurs.name"></p>
@@ -186,78 +186,84 @@
       </div>
     </div>
 
-    <!-- ── RADAR HERO ── -->
-    <div class="px-4 mt-3">
-      <div
-        class="card"
-        :class="radarPulse ? 'radar-pulse' : ''"
-        @click="diagnosen.length > 0 && goTo('radar')"
-        :style="diagnosen.length > 0 ? 'cursor:pointer' : ''"
-        style="padding: 14px;"
-      >
-        <!-- Header row -->
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-sm font-semibold text-primary">Lernstand-Radar</span>
-          <span x-show="diagnosen.length > 0" class="text-xs text-muted" x-text="radarDatum()"></span>
-          <span x-show="diagnosen.length === 0" class="badge badge--warn">Diagnose ausstehend</span>
+    <!-- ── 2-col layout on desktop, stacked on mobile ── -->
+    <div class="home-layout">
+
+      <!-- Left / top: Radar Hero -->
+      <div class="home-col-radar">
+        <div
+          class="card"
+          :class="radarPulse ? 'radar-pulse' : ''"
+          @click="diagnosen.length > 0 && goTo('radar')"
+          :style="diagnosen.length > 0 ? 'cursor:pointer' : ''"
+          style="padding: 14px;"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-semibold text-primary">Lernstand-Radar</span>
+            <span x-show="diagnosen.length > 0" class="text-xs text-muted" x-text="radarDatum()"></span>
+            <span x-show="diagnosen.length === 0" class="badge badge--warn">Diagnose ausstehend</span>
+          </div>
+
+          <div x-show="diagnosen.length > 0" class="radar-hero-canvas-wrap">
+            <canvas id="radarHome"></canvas>
+          </div>
+
+          <div x-show="diagnosen.length === 0" class="radar-empty-state">
+            <div style="font-size:3rem; opacity:0.5;">🕸️</div>
+            <p class="text-sm font-semibold text-primary mt-2">Dein Radar wartet auf dich</p>
+            <p class="text-xs text-muted mt-1">Starte die Selbstdiagnose, um deinen Lernstand zu sehen</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right / bottom: Stat Chips + Focus + CTAs -->
+      <div class="home-col-info">
+
+        <!-- Stat Chips -->
+        <div x-show="letzeDiagnose" class="flex gap-2">
+          <div class="stat-chip stat-chip--good flex-1">
+            <span class="stat-chip__value" x-text="themenBereit()"></span>
+            <span class="stat-chip__label">Klausurbereit</span>
+          </div>
+          <div class="stat-chip stat-chip--warn flex-1">
+            <span class="stat-chip__value" x-text="kurs.themen.length - themenBereit()"></span>
+            <span class="stat-chip__label">Noch offen</span>
+          </div>
+          <div x-show="session.aufgaben.length > 0" class="stat-chip stat-chip--accent flex-1">
+            <span class="stat-chip__value" x-text="session.aufgaben.length"></span>
+            <span class="stat-chip__label">Heute geübt</span>
+          </div>
         </div>
 
-        <!-- Canvas -->
-        <div x-show="diagnosen.length > 0" class="radar-hero-canvas-wrap">
-          <canvas id="radarHome"></canvas>
+        <!-- Focus Topic Chips -->
+        <div x-show="schwächsteThemen().length > 0">
+          <p class="text-xs font-semibold text-muted mb-2" style="text-transform:uppercase; letter-spacing:0.05em;">Fokus jetzt</p>
+          <div class="flex flex-wrap gap-2">
+            <template x-for="t in schwächsteThemen()" :key="t.id">
+              <button
+                class="focus-chip"
+                :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
+                @click="ue.themaId = t.id; goTo('ueben-auswahl')"
+                type="button"
+                x-text="t.name"
+              ></button>
+            </template>
+          </div>
         </div>
 
-        <!-- Empty state -->
-        <div x-show="diagnosen.length === 0" class="radar-empty-state">
-          <div style="font-size:3rem; opacity:0.5;">🕸️</div>
-          <p class="text-sm font-semibold text-primary mt-2">Dein Radar wartet auf dich</p>
-          <p class="text-xs text-muted mt-1">Starte die Selbstdiagnose, um deinen Lernstand zu sehen</p>
+        <!-- CTAs -->
+        <div class="home-ctas space-y-2 pb-4">
+          <button class="btn btn--primary btn--block" @click="goTo('ueben-auswahl')" type="button">
+            Jetzt üben →
+          </button>
+          <button class="btn btn--outline btn--block" @click="goTo('diagnose')" type="button">
+            <span x-show="diagnosen.length === 0">Selbstdiagnose starten</span>
+            <span x-show="diagnosen.length > 0">Neue Diagnose</span>
+          </button>
         </div>
-      </div>
-    </div>
 
-    <!-- ── Stat Chips ── -->
-    <div x-show="letzeDiagnose" class="px-4 mt-3 flex gap-2">
-      <div class="stat-chip stat-chip--good flex-1">
-        <span class="stat-chip__value" x-text="themenBereit()"></span>
-        <span class="stat-chip__label">Klausurbereit</span>
-      </div>
-      <div class="stat-chip stat-chip--warn flex-1">
-        <span class="stat-chip__value" x-text="kurs.themen.length - themenBereit()"></span>
-        <span class="stat-chip__label">Noch offen</span>
-      </div>
-      <div x-show="session.aufgaben.length > 0" class="stat-chip stat-chip--accent flex-1">
-        <span class="stat-chip__value" x-text="session.aufgaben.length"></span>
-        <span class="stat-chip__label">Heute geübt</span>
-      </div>
-    </div>
-
-    <!-- ── Focus Topic Chips ── -->
-    <div x-show="schwächsteThemen().length > 0" class="px-4 mt-3">
-      <p class="text-xs font-semibold text-muted mb-2" style="text-transform:uppercase; letter-spacing:0.05em;">Fokus jetzt</p>
-      <div class="flex flex-wrap gap-2">
-        <template x-for="t in schwächsteThemen()" :key="t.id">
-          <button
-            class="focus-chip"
-            :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
-            @click="ue.themaId = t.id; goTo('ueben-auswahl')"
-            type="button"
-            x-text="t.name"
-          ></button>
-        </template>
-      </div>
-    </div>
-
-    <!-- ── CTAs ── -->
-    <div class="px-4 mt-4 space-y-2 pb-4">
-      <button class="btn btn--primary btn--block" @click="goTo('ueben-auswahl')" type="button">
-        Jetzt üben →
-      </button>
-      <button class="btn btn--outline btn--block" @click="goTo('diagnose')" type="button">
-        <span x-show="diagnosen.length === 0">Selbstdiagnose starten</span>
-        <span x-show="diagnosen.length > 0">Neue Diagnose</span>
-      </button>
-    </div>
+      </div><!-- /home-col-info -->
+    </div><!-- /home-layout -->
 
   </div>
 
@@ -831,66 +837,87 @@
       </div>
     </div>
 
-    <!-- Topic progress bars -->
-    <div class="card space-y-3">
-      <p class="text-sm font-semibold text-primary">Themen-Überblick</p>
-      <template x-for="t in themenMitStatus()" :key="t.id">
-        <div class="space-y-1">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold" x-text="t.name"></span>
-            <span
-              class="badge"
-              :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
-              x-text="t.stufe ? stufenCfg(t.stufe).label : '—'"
-            ></span>
-          </div>
-          <div class="progress-bar">
-            <div
-              class="progress-bar__fill"
-              :style="`width: ${(t.stufe ?? 0) * 20}%; background: ${stufenCfg(t.stufe).color};`"
-            ></div>
+    <!-- Desktop 2-col: left = topic bars + meta; right = radar + timeline -->
+    <div class="fortschritt-grid">
+
+      <!-- Left column -->
+      <div class="space-y-4">
+
+        <!-- Topic progress bars -->
+        <div class="card space-y-3">
+          <p class="text-sm font-semibold text-primary">Themen-Überblick</p>
+          <template x-for="t in themenMitStatus()" :key="t.id">
+            <div class="space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold" x-text="t.name"></span>
+                <span
+                  class="badge"
+                  :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
+                  x-text="t.stufe ? stufenCfg(t.stufe).label : '—'"
+                ></span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-bar__fill"
+                  :style="`width: ${(t.stufe ?? 0) * 20}%; background: ${stufenCfg(t.stufe).color};`"
+                ></div>
+              </div>
+            </div>
+          </template>
+          <div x-show="!letzeDiagnose" class="text-sm text-muted">
+            Noch keine Diagnose vorhanden.
           </div>
         </div>
-      </template>
-      <div x-show="!letzeDiagnose" class="text-sm text-muted">
-        Noch keine Diagnose vorhanden.
-      </div>
-    </div>
 
-    <!-- Radar for fortschritt -->
-    <div class="card" x-show="diagnosen.length > 0">
-      <p class="text-sm font-semibold text-primary mb-2">Radar-Verlauf</p>
-      <canvas id="radarFortschritt"></canvas>
-    </div>
-
-    <!-- Timeline -->
-    <div class="card space-y-3" x-show="diagnosen.length > 0">
-      <p class="text-sm font-semibold text-primary">Diagnose-Verlauf</p>
-      <template x-for="p in diagnosePunkte()" :key="p.idx">
-        <div class="flex items-center gap-3">
-          <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-               style="background: var(--c-primary);"
-               x-text="p.idx + 1">
-          </div>
-          <div class="flex-1">
-            <p class="text-xs font-semibold">Diagnose <span x-text="p.idx + 1"></span></p>
-            <p class="text-xs text-muted" x-text="p.datum"></p>
-          </div>
-          <div class="text-xs text-muted" x-show="p.idx === diagnosen.length - 1">
-            (aktuell)
-          </div>
+        <!-- Reset + Settings -->
+        <div class="card space-y-2">
+          <p class="text-sm font-semibold text-primary">Daten zurücksetzen</p>
+          <p class="text-xs text-muted">Löscht alle gespeicherten Diagnosen, Einstellungen und deinen Namen.</p>
+          <button class="btn btn--danger btn--sm" @click="resetAll()" type="button">
+            Alle Daten löschen
+          </button>
         </div>
-      </template>
-    </div>
 
-    <!-- Reset -->
-    <div class="card space-y-2 mb-4">
-      <p class="text-sm font-semibold text-primary">Daten zurücksetzen</p>
-      <p class="text-xs text-muted">Löscht alle gespeicherten Diagnosen, Einstellungen und deinen Namen.</p>
-      <button class="btn btn--danger btn--sm" @click="resetAll()" type="button">
-        Alle Daten löschen
-      </button>
-    </div>
+        <div class="mb-4">
+          <button class="btn btn--outline btn--block" @click="goTo('einstellungen')" type="button">
+            ⚙️ KI-Verbindung & Kursinhalt
+          </button>
+        </div>
+
+      </div><!-- /left col -->
+
+      <!-- Right column -->
+      <div class="space-y-4">
+
+        <!-- Radar Verlauf -->
+        <div class="card" x-show="diagnosen.length > 0">
+          <p class="text-sm font-semibold text-primary mb-2">Radar-Verlauf</p>
+          <canvas id="radarFortschritt"></canvas>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card space-y-3" x-show="diagnosen.length > 0">
+          <p class="text-sm font-semibold text-primary">Diagnose-Verlauf</p>
+          <template x-for="p in diagnosePunkte()" :key="p.idx">
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                   style="background: var(--c-primary);"
+                   x-text="p.idx + 1">
+              </div>
+              <div class="flex-1">
+                <p class="text-xs font-semibold">Diagnose <span x-text="p.idx + 1"></span></p>
+                <p class="text-xs text-muted" x-text="p.datum"></p>
+              </div>
+              <div class="text-xs text-muted" x-show="p.idx === diagnosen.length - 1">
+                (aktuell)
+              </div>
+            </div>
+          </template>
+        </div>
+
+      </div><!-- /right col -->
+
+    </div><!-- /fortschritt-grid -->
   </div>
 
 
@@ -900,7 +927,8 @@
   <div x-show="screen === 'einstellungen'" class="has-nav px-4 space-y-4">
 
     <div class="screen-header">
-      <h1 class="screen-title">Einstellungen</h1>
+      <button class="back-btn" @click="goTo('fortschritt')" type="button">←</button>
+      <h2 class="text-base font-bold text-primary">KI & Kursinhalt</h2>
     </div>
 
     <!-- API-Konfiguration -->
