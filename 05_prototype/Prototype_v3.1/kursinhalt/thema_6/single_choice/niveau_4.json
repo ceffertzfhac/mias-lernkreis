@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_6_4_1",
+    "frage": "Ein Federpendel schwingt. Im Gleichgewichtspunkt ist ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Ekin=0, Epot=max"
+      },
+      {
+        "key": "B",
+        "text": "Ekin=max, Epot=0"
+      },
+      {
+        "key": "C",
+        "text": "Ekin=Epot"
+      },
+      {
+        "key": "D",
+        "text": "Beide null"
+      },
+      {
+        "key": "E",
+        "text": "Beide maximal"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Im Gleichgewicht: x=0 → Epot=0; v=v_max → Ekin=E_ges. A beschreibt den Umkehrpunkt."
+  },
+  {
+    "id": "sc_6_4_2",
+    "frage": "Periodendauer Fadenpendel auf Mond (g=1,62 m/s²) für l=1 m im Vergleich zur Erde:",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "gleich"
+      },
+      {
+        "key": "B",
+        "text": "6× kürzer"
+      },
+      {
+        "key": "C",
+        "text": "√6≈2,46× länger"
+      },
+      {
+        "key": "D",
+        "text": "6× länger"
+      },
+      {
+        "key": "E",
+        "text": "√6× kürzer"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: T=2π√(l/g)∝1/√g. g_Erde/g_Mond≈6 → T_Mond=√6·T_Erde≈2,45·T_Erde."
+  }
+]

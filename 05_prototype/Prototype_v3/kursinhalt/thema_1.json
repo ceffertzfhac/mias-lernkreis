@@ -1,0 +1,575 @@
+{
+  "thema_id": 1,
+  "thema_name": "Kinematik",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_1_1_1",
+            "aufgabe": "Ein Auto fährt mit konstanter Geschwindigkeit v = 72 km/h. Welche Strecke legt es in t = 15 s zurück?",
+            "musterloesung": "Umrechnung: v = 72 km/h = 20 m/s. Bei konstanter Geschwindigkeit gilt s = v · t = 20 m/s · 15 s = 300 m.",
+            "tipps": [
+              "Überlege, welche Formel für gleichförmige Bewegung gilt.",
+              "Achte auf die Einheiten: Geschwindigkeit muss in m/s umgerechnet werden (÷ 3,6).",
+              "s = v · t; erst Einheit umrechnen, dann einsetzen: s = 20 m/s · 15 s = 300 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_1_2",
+            "aufgabe": "Ein Stein fällt aus der Ruhe senkrecht nach unten (Luftreibung vernachlässigt). Nach welcher Zeit erreicht er den Boden, wenn er aus einer Höhe von h = 20 m fällt? (g = 9,81 m/s²)",
+            "musterloesung": "Freier Fall aus der Ruhe: h = ½ · g · t². Auflösen nach t: t = √(2h/g) = √(2 · 20 m / 9,81 m/s²) = √(4,077 s²) ≈ 2,02 s.",
+            "tipps": [
+              "Dies ist ein freier Fall aus der Ruhe — welche Bewegungsgleichung gilt?",
+              "Die Fallhöhe h = ½ · g · t² nach t auflösen ergibt t = √(2h/g).",
+              "t = √(2 · 20 / 9,81) ≈ √4,077 ≈ 2,02 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_1_3",
+            "aufgabe": "Ein Fahrzeug beschleunigt gleichmäßig aus dem Stand auf v = 100 km/h in t = 10 s. Wie groß ist die Beschleunigung a?",
+            "musterloesung": "v = 100 km/h = 27,78 m/s. Gleichmäßige Beschleunigung aus v₀ = 0: a = Δv / t = 27,78 m/s / 10 s ≈ 2,78 m/s².",
+            "tipps": [
+              "Bei gleichmäßiger Beschleunigung aus dem Stand gilt a = v/t.",
+              "Zuerst Einheit umrechnen: 100 km/h ÷ 3,6 = 27,78 m/s.",
+              "a = 27,78 m/s / 10 s ≈ 2,78 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_1_4",
+            "aufgabe": "Ein Ball wird horizontal mit v₀ = 5 m/s von einer Tischkante in h = 0,8 m Höhe abgeworfen. Wie weit vom Tisch entfernt trifft er auf dem Boden auf?",
+            "musterloesung": "Fallzeit: t = √(2h/g) = √(2 · 0,8/9,81) ≈ 0,404 s. Horizontale Wurfweite: x = v₀ · t = 5 m/s · 0,404 s ≈ 2,02 m.",
+            "tipps": [
+              "Trenne horizontale (gleichförmig) und vertikale (freier Fall) Bewegung.",
+              "Zuerst Fallzeit aus h = ½gt² berechnen, dann x = v₀ · t.",
+              "t ≈ 0,404 s → x = 5 · 0,404 ≈ 2,02 m."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_1_2_1",
+            "aufgabe": "Ein Ball wird unter einem Winkel α = 35° mit v₀ = 20 m/s abgeworfen. Berechne die maximale Flughöhe und die Wurfweite. (Luftreibung vernachlässigt, Abwurfhöhe = Bodenhöhe = 0)",
+            "musterloesung": "v₀x = v₀·cos35° = 16,38 m/s, v₀y = v₀·sin35° = 11,47 m/s. Maximale Höhe: h_max = v₀y²/(2g) = 11,47²/19,62 ≈ 6,71 m. Gesamtflugzeit: t_ges = 2·v₀y/g = 2·11,47/9,81 ≈ 2,34 s. Wurfweite: R = v₀x · t_ges = 16,38 · 2,34 ≈ 38,3 m.",
+            "tipps": [
+              "Zerlege v₀ in horizontale und vertikale Komponenten mit sin und cos.",
+              "Maximale Höhe: h = v₀y²/(2g); Flugzeit: t_ges = 2·v₀y/g; Weite: R = v₀x · t_ges.",
+              "v₀y = 20·sin35° ≈ 11,47 m/s → h_max ≈ 6,71 m; t_ges ≈ 2,34 s → R ≈ 38,3 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_2_2",
+            "aufgabe": "Ein Auto fährt mit v₀ = 15 m/s und bremst gleichmäßig mit a = -3 m/s² ab. Nach welcher Strecke kommt es zum Stehen?",
+            "musterloesung": "v² = v₀² + 2·a·s → bei v = 0: s = -v₀²/(2a) = -(15)²/(2·(-3)) = 225/6 = 37,5 m.",
+            "tipps": [
+              "Nutze die Bewegungsgleichung v² = v₀² + 2·a·s und setze v = 0 (Stillstand).",
+              "Umgestellt: s = v₀²/(2|a|) — darauf achten, dass a negativ (Bremsen) ist.",
+              "s = 15²/(2·3) = 225/6 = 37,5 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_2_3",
+            "aufgabe": "Ein Körper bewegt sich mit der Bewegungsgleichung s(t) = 2t³ - 3t² + t (in m, t in s). Bestimme Geschwindigkeit und Beschleunigung zum Zeitpunkt t = 2 s.",
+            "musterloesung": "v(t) = ds/dt = 6t² - 6t + 1. Bei t = 2 s: v = 6·4 - 6·2 + 1 = 24 - 12 + 1 = 13 m/s. a(t) = dv/dt = 12t - 6. Bei t = 2 s: a = 12·2 - 6 = 18 m/s².",
+            "tipps": [
+              "Geschwindigkeit = 1. Ableitung, Beschleunigung = 2. Ableitung von s(t).",
+              "v(t) = 6t² - 6t + 1; a(t) = 12t - 6.",
+              "Einsetzen t = 2: v = 13 m/s, a = 18 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_2_4",
+            "aufgabe": "Zwei Züge fahren aufeinander zu. Zug A fährt mit 30 m/s, Zug B mit 20 m/s. Anfangsabstand = 1000 m. Nach welcher Zeit treffen sie aufeinander?",
+            "musterloesung": "Relativgeschwindigkeit: v_rel = 30 + 20 = 50 m/s. Zeit bis zum Treffen: t = s/v_rel = 1000 m / 50 m/s = 20 s.",
+            "tipps": [
+              "Da beide aufeinanderzu fahren, addieren sich die Geschwindigkeiten zur Relativgeschwindigkeit.",
+              "v_rel = v_A + v_B = 50 m/s; t = Abstand / v_rel.",
+              "t = 1000 / 50 = 20 s."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_1_3_1",
+            "aufgabe": "Ein Skifahrer der Masse 75 kg fährt einen Hang (Neigung 30°) hinunter. Ab dem Beobachtungspunkt gilt: x(t) = 1,2 m/s² · t² + 9,8 m/s · t. Welche Geschwindigkeit hat er nach 5 s? Wie weit ist er dann gefahren?",
+            "musterloesung": "v(t) = dx/dt = 2·1,2·t + 9,8 = 2,4t + 9,8. Bei t = 5 s: v = 2,4·5 + 9,8 = 21,8 m/s. Weg: x(5) = 1,2·25 + 9,8·5 = 30 + 49 = 79 m.",
+            "tipps": [
+              "Geschwindigkeit = Ableitung der Ortsgleichung v(t) = dx/dt.",
+              "v(t) = 2·1,2·t + 9,8 = 2,4t + 9,8; x(t) direkt einsetzen.",
+              "v(5) = 2,4·5 + 9,8 = 21,8 m/s; x(5) = 1,2·25 + 9,8·5 = 79 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_3_2",
+            "aufgabe": "Eine Silvesterrakete wird senkrecht nach oben geschossen und mit a = 4 m/s² beschleunigt, bis der Treibsatz erlischt. Dann steigt sie noch auf insgesamt h = 144 m. Wie lange brennt der Treibsatz?",
+            "musterloesung": "Phase 1: a₁ = 4 - g = 4 - 9,81 = -5,81 m/s²... Korrektur: a₁ = +4 m/s² (Schub minus Schwerkraft wird als Gesamtbeschleunigung angegeben). Phase 1: v₁ = 4·t₁, h₁ = 2·t₁². Phase 2: a₂ = -g, startet mit v₁, erreicht v=0 bei h₂ = v₁²/(2g). h₁ + h₂ = 144 m. 2t₁² + (4t₁)²/(2·9,81) = 144 → 2t₁² + 0,815t₁² = 144 → 2,815t₁² = 144 → t₁² = 51,16 → t₁ ≈ 7,15 s.",
+            "tipps": [
+              "Teile die Bewegung in Phase 1 (Antrieb) und Phase 2 (Freier Aufstieg) auf.",
+              "Am Ende von Phase 1 gilt: v₁ = a₁·t₁ und h₁ = ½·a₁·t₁². In Phase 2 steigt die Rakete noch h₂ = v₁²/(2g) weiter.",
+              "h₁ + h₂ = 144: ½·4·t₁² + (4t₁)²/(2·9,81) = 144 → 2,815·t₁² = 144 → t₁ ≈ 7,15 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_3_3",
+            "aufgabe": "Zwei Personen werfen Bälle mit |v₀| = 25 m/s schräg nach oben und erreichen die gleiche Wurfweite. Person 1 wirft unter 35°. Unter welchem Winkel wirft Person 2? Um wie viel länger ist der Ball von Person 2 in der Luft?",
+            "musterloesung": "Wurfweite: R = v₀²·sin(2α)/g. Gleiche Weite bei gleichem |sin(2α)|, d.h. 2α₂ = 180° - 2·35° = 110° → α₂ = 55°. Flugzeit 1: t₁ = 2·v₀·sin35°/g = 2·25·0,574/9,81 ≈ 2,93 s. Flugzeit 2: t₂ = 2·25·sin55°/9,81 = 2·25·0,819/9,81 ≈ 4,18 s. Δt = 4,18 - 2,93 ≈ 1,25 s.",
+            "tipps": [
+              "Gleiche Wurfweite: R = v₀²sin(2α)/g ist symmetrisch um 45°, also ist α₂ = 90° - α₁.",
+              "α₂ = 90° - 35° = 55°. Flugzeit ti = 2·v₀·sin(αi)/g jeweils berechnen.",
+              "t₁ ≈ 2,93 s; t₂ ≈ 4,18 s → Δt ≈ 1,25 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_3_4",
+            "aufgabe": "Ein Fahrer fährt mit 50 km/h auf eine rote Ampel zu (Abstand = 36 m). Nach 1,0 s Reaktionszeit beschleunigt er statt zu bremsen. Die Kreuzung ist 10 m breit, das Auto 4 m lang. Die Gelbphase dauert 3,0 s. Wie schnell ist er direkt nach der Kreuzung, wenn er genau in dem Moment aufhört zu beschleunigen, als das Heck die Kreuzung verlässt?",
+            "musterloesung": "v₀ = 50 km/h ≈ 13,89 m/s. Reaktionsweg: s_R = 13,89·1,0 = 13,89 m. Restabstand bis Kreuzungsbeginn: 36 - 13,89 = 22,11 m. Zu überwindende Strecke bis Heck aus Kreuzung: 22,11 + 10 + 4 = 36,11 m. Beschleunigungszeit: t_B = 3,0 - 1,0 = 2,0 s. Beschleunigung: s = v₀·t + ½a·t² → 36,11 = 13,89·2 + ½·a·4 → 36,11 - 27,78 = 2a → a = 4,17 m/s². Endgeschwindigkeit: v = v₀ + a·t = 13,89 + 4,17·2 = 22,2 m/s = 79,9 km/h. Überschreitung ≈ 30 km/h.",
+            "tipps": [
+              "Teile die Bewegung auf: Reaktionsphase (konstant) + Beschleunigungsphase.",
+              "Berechne die Gesamtstrecke, die im Beschleunigungsabschnitt zurückgelegt wird, dann a aus s = v₀t + ½at².",
+              "a ≈ 4,17 m/s² → v_end = 13,89 + 4,17·2 ≈ 22,2 m/s ≈ 80 km/h → Überschreitung ≈ 30 km/h."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_1_4_1",
+            "aufgabe": "Ein Körper hat die Beschleunigungsfunktion a(t) = 6t - 2 m/s². Zum Zeitpunkt t = 0 gilt v₀ = 3 m/s und s₀ = 0. Bestimme v(t) und s(t) sowie die Geschwindigkeit und Position bei t = 4 s.",
+            "musterloesung": "v(t) = ∫a dt + C = 3t² - 2t + C. Mit v(0) = 3: C = 3, also v(t) = 3t² - 2t + 3. s(t) = ∫v dt = t³ - t² + 3t + C₂. Mit s(0) = 0: C₂ = 0. Bei t = 4: v = 3·16 - 2·4 + 3 = 48 - 8 + 3 = 43 m/s. s = 64 - 16 + 12 = 60 m.",
+            "tipps": [
+              "v(t) durch Integration von a(t) bestimmen; Integrationskonstante aus v(0) ermitteln.",
+              "s(t) durch nochmalige Integration von v(t); Integrationskonstante aus s(0) = 0.",
+              "v(t) = 3t²−2t+3; s(t) = t³−t²+3t → v(4) = 43 m/s, s(4) = 60 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_4_2",
+            "aufgabe": "Ein Ball wird von einem Turm der Höhe H = 30 m mit v₀ = 15 m/s unter α = 40° schräg aufwärts geworfen. Wie lange ist er in der Luft und wie weit vom Turmfuß entfernt landet er? (Abwurfpunkt = Turmspitze, y = 0 am Boden)",
+            "musterloesung": "v₀y = 15·sin40° = 9,64 m/s, v₀x = 15·cos40° = 11,49 m/s. y(t) = H + v₀y·t - ½g·t² = 30 + 9,64t - 4,905t². Beim Aufprall y = 0: 4,905t² - 9,64t - 30 = 0. t = [9,64 ± √(92,93 + 588,6)] / 9,81 = [9,64 ± √681,5] / 9,81 = [9,64 ± 26,11] / 9,81. Positives Ergebnis: t = 35,75 / 9,81 ≈ 3,64 s. Wurfweite: x = v₀x · t = 11,49 · 3,64 ≈ 41,8 m.",
+            "tipps": [
+              "y(t) = H + v₀y·t − ½g·t², bei y = 0 entsteht eine quadratische Gleichung in t.",
+              "Löse 4,905t² − 9,64t − 30 = 0 mit der pq-Formel; nur positive Lösung ist physikalisch.",
+              "t ≈ 3,64 s → x = v₀x · t ≈ 11,49 · 3,64 ≈ 41,8 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_4_3",
+            "aufgabe": "Ein Körper dreht sich auf einer Kreisbahn mit Radius r = 0,5 m. Seine Winkelgeschwindigkeit nimmt gleichmäßig von ω₀ = 2 rad/s auf ω = 10 rad/s in t = 4 s zu. Bestimme Winkelbeschleunigung α, zurückgelegten Bogenwinkel φ und Bahngeschwindigkeit bei t = 4 s.",
+            "musterloesung": "α = (ω - ω₀)/t = (10 - 2)/4 = 2 rad/s². φ = ω₀·t + ½·α·t² = 2·4 + ½·2·16 = 8 + 16 = 24 rad. Bahngeschwindigkeit: v = ω·r = 10·0,5 = 5 m/s.",
+            "tipps": [
+              "Analogie zur Translation: α = Δω/t; φ = ω₀t + ½αt²; v = ω·r.",
+              "α = (10−2)/4 = 2 rad/s²; φ = 24 rad.",
+              "v = ω_end · r = 10 · 0,5 = 5 m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_1_4_4",
+            "aufgabe": "Der Ortsvektor eines Teilchens lautet s(t) = (vR·t·cos(ωt), vR·t·sin(ωt), −vz·t) mit vR = 2 m/s, ω = π/2 rad/s, vz = 1 m/s. Bestimme den Geschwindigkeitsvektor v(t) und dessen Betrag bei t = 1 s.",
+            "musterloesung": "v(t) = ds/dt. vx = vR·cos(ωt) − vR·ω·t·sin(ωt). vy = vR·sin(ωt) + vR·ω·t·cos(ωt). vz_komp = −vz. Bei t = 1 s, ω = π/2: cos(π/2) = 0, sin(π/2) = 1. vx = 2·0 − 2·(π/2)·1·1 = −π ≈ −3,14 m/s. vy = 2·1 + 2·(π/2)·1·0 = 2 m/s. vz = −1 m/s. |v| = √(π² + 4 + 1) = √(9,87 + 5) = √14,87 ≈ 3,86 m/s.",
+            "tipps": [
+              "Komponentenweise ableiten; Produktregel beachten: d/dt[t·cos(ωt)] = cos(ωt) − ωt·sin(ωt).",
+              "Bei t = 1 s: cos(π/2) = 0, sin(π/2) = 1 einsetzen.",
+              "vx ≈ −3,14 m/s, vy = 2 m/s, vz = −1 m/s → |v| ≈ 3,86 m/s."
+            ]
+          }
+        ]
+      },
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_1_1_1",
+            "aufgabe": "Skizziere für eine gleichmäßig beschleunigte Bewegung (Startzustand: v₀ = 5 m/s, a = 2 m/s²) die Diagramme a(t), v(t) und s(t) für t = 0 bis t = 4 s. Beschrifte Achsen mit korrekten Einheiten.",
+            "musterloesung": "a(t): Horizontale Gerade bei a = 2 m/s². v(t): Gerade mit Steigung 2 m/s², Startwert 5 m/s → bei t = 4 s: v = 13 m/s. s(t): Parabel mit s = 5t + t², bei t = 4: s = 36 m. Alle Achsen: x-Achse in Sekunden [s], y-Achsen in [m/s²], [m/s], [m].",
+            "tipps": [
+              "Konstante Beschleunigung → a(t) ist eine waagerechte Linie.",
+              "v(t) = v₀ + a·t ist eine Gerade; s(t) = v₀·t + ½a·t² ist eine Parabel.",
+              "Werte berechnen: v(4) = 13 m/s, s(4) = 36 m; alle drei Graphen mit Achsenbeschriftung und Einheiten."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_1_2",
+            "aufgabe": "Skizziere die Bahnkurve y(x) eines schrägen Wurfs (α = 45°, v₀ = 10 m/s, Abwurf- und Landehöhe gleich). Trage Abwurfort, höchsten Punkt und Landepunkt ein. Beschrifte die relevanten Größen.",
+            "musterloesung": "Parabelförmige Bahnkurve. Wurfweite: R = v₀²·sin(2·45°)/g = 100/9,81 ≈ 10,2 m. Maximale Höhe: h = (v₀·sin45°)²/(2g) = 50/9,81 ≈ 5,1 m. Abwurfort bei (0,0), höchster Punkt bei (R/2, h_max), Landepunkt bei (R, 0). Parabel symmetrisch um x = R/2.",
+            "tipps": [
+              "Der Weg des Balls ist eine Parabel; skizziere Anfang, Hochpunkt und Ende.",
+              "Bei 45° liegt der Hochpunkt genau in der Mitte der Wurfweite.",
+              "R ≈ 10,2 m; h_max ≈ 5,1 m; symmetrische Parabel einzeichnen."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_1_3",
+            "aufgabe": "Skizziere ein v(t)-Diagramm für folgende Bewegung: 0–5 s gleichförmig mit v = 10 m/s; 5–8 s gleichmäßige Bremsung bis zum Stillstand; 8–12 s Ruhe. Bestimme aus dem Diagramm die zurückgelegte Gesamtstrecke.",
+            "musterloesung": "Phase 1 (0–5 s): waagerechte Linie bei v = 10 m/s. Phase 2 (5–8 s): fallende Gerade von 10 m/s auf 0. Phase 3 (8–12 s): Linie bei v = 0. Fläche unter dem Graphen = Strecke: s₁ = 10·5 = 50 m; s₂ = ½·10·3 = 15 m; Gesamt = 65 m.",
+            "tipps": [
+              "Jede Phase als eigenen Graphenabschnitt zeichnen: konstant, fallend, null.",
+              "Strecke = Fläche unter dem v(t)-Diagramm.",
+              "s_gesamt = 50 m + 15 m = 65 m."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_1_4",
+            "aufgabe": "Ein Stein fällt senkrecht. Skizziere qualitativ die Graphen s(t), v(t) und a(t) für den freien Fall. Erkläre, welchen Zusammenhang die drei Graphen mathematisch haben.",
+            "musterloesung": "a(t): Horizontale Linie bei a = −g = −9,81 m/s² (konstant). v(t): Gerade mit negativer Steigung, startet bei v = 0. s(t): nach unten öffnende Parabel. Mathematischer Zusammenhang: v(t) = ∫a dt; s(t) = ∫v dt, also ist v die Stammfunktion von a und s die Stammfunktion von v.",
+            "tipps": [
+              "Beim freien Fall ist a konstant (Schwerkraft), v nimmt linear zu, s quadratisch.",
+              "s, v, a sind durch Integration/Ableitung verknüpft: v = ds/dt, a = dv/dt.",
+              "a(t) = const; v(t) = lineare Gerade; s(t) = Parabel — alle mit Achsenbeschriftung."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_1_2_1",
+            "aufgabe": "Ein Körper bewegt sich mit s(t) = 3t³ − 12t² + 9t. Skizziere qualitativ s(t), v(t) und a(t) für t = 0 bis 3 s. Bestimme die Zeitpunkte der Nullstellen von v(t) und markiere sie im Diagramm.",
+            "musterloesung": "v(t) = 9t² − 24t + 9 = 0 → t = (24 ± √(576 − 324))/18 = (24 ± √252)/18. t₁ ≈ 0,44 s; t₂ ≈ 2,22 s. Bei diesen Zeiten hat s(t) lokale Extrema. a(t) = 18t − 24 = 0 bei t = 4/3 ≈ 1,33 s (Wendepunkt von s). Graphen mit Nullstellen und Extrema beschriften.",
+            "tipps": [
+              "v = ds/dt ableiten, Nullstellen von v(t) sind Umkehrpunkte der Bewegung.",
+              "Nullstellen: v = 9t²−24t+9 = 0 → pq-Formel oder abc-Formel anwenden.",
+              "t₁ ≈ 0,44 s und t₂ ≈ 2,22 s sind die Umkehrpunkte; a = 0 bei t ≈ 1,33 s."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_2_2",
+            "aufgabe": "Skizziere für einen schrägen Wurf (α = 30°) die Komponenten vx(t) und vy(t) in einem gemeinsamen Diagramm. Markiere: den Zeitpunkt des höchsten Punkts, den Abwurf und die Landung.",
+            "musterloesung": "vx(t): konstante Horizontallinie (keine Beschleunigung horizontal). vy(t): fallende Gerade von v₀·sin30° > 0 bis vy = -(v₀·sin30°) bei Landung. Nullstelle von vy markiert höchsten Punkt. Bei Landung: |vy| = v₀·sin30° (symmetrischer Wurf). Beide Graphen mit Vorzeichen-Konvention und Einheiten beschriften.",
+            "tipps": [
+              "vx ist konstant (keine Luftreibung), vy nimmt wegen Schwerkraft linear ab.",
+              "Beim höchsten Punkt gilt vy = 0 — im Diagramm als Nullstelle markieren.",
+              "Symmetrisch: Flugzeit bis Hochpunkt = Flugzeit vom Hochpunkt bis Landung."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_2_3",
+            "aufgabe": "Skizziere die Kreisbahn eines Körpers auf einer horizontalen Kreisbahn. Zeichne an zwei verschiedenen Positionen jeweils: Geschwindigkeitsvektor, Zentripetalbeschleunigung, Radius. Erkläre, welche Kraft die Kreisbewegung verursacht.",
+            "musterloesung": "Kreisbahn skizzieren. An zwei Punkten (z.B. oben und rechts): Geschwindigkeit tangential zur Bahn, Zentripetalbeschleunigung zeigt zum Mittelpunkt, Radius vom Mittelpunkt zum Körper. Die für die Kreisbewegung nötige Zentripetalkraft zeigt stets zum Kreismittelpunkt: Fz = m·v²/r = m·ω²·r.",
+            "tipps": [
+              "Geschwindigkeit immer tangential (senkrecht zum Radius); Zentripetalbeschleunigung zeigt stets zum Kreismittelpunkt.",
+              "Fz = m·v²/r ist die notwendige Kraft (z.B. Fadenspannung, Normalkraft, Gravitation).",
+              "An beiden Punkten alle drei Vektoren einzeichnen und beschriften."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_2_4",
+            "aufgabe": "Skizziere den Weg eines Balls, der von einem fahrenden Zug (v_Zug = 20 m/s) senkrecht nach oben geworfen wird (v_Wurf = 5 m/s), aus Sicht a) des Zuges und b) eines Beobachters am Bahnsteig.",
+            "musterloesung": "a) Im Zugssystem (mitbewegendes Bezugssystem): Ball steigt gerade nach oben und fällt gerade zurück — einfache vertikale Linie. b) Vom Bahnsteig: Ball hat horizontale Komponente des Zuges (20 m/s) plus vertikale Komponente (5 m/s) — Parabelkurve. Beide Skizzen nebeneinander mit Erläuterung.",
+            "tipps": [
+              "Im Zugssystem bewegt sich der Ball nur vertikal (relativ zur Zugbewegung ist v_x = 0).",
+              "Im Bahnhofssystem hat der Ball v_x = 20 m/s (Zuggeschwindigkeit) + v_y = 5 m/s → Parabel.",
+              "Überlagerungsprinzip: Bahnkurve = Summe beider Bewegungskomponenten."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_1_3_1",
+            "aufgabe": "Skizziere physikalisch aussagekräftig den Versuchsaufbau 'Schräger Wurf' mit v₀ = 20 m/s, α = 35°. Trage ein: Koordinatensystem, Anfangsgeschwindigkeitsvektor mit Komponenten, Wurfparabel, höchsten Punkt, Wurfweite. Alle gegebenen und gesuchten Größen müssen erkennbar sein.",
+            "musterloesung": "Koordinatensystem: x horizontal rechts, y vertikal nach oben, Ursprung am Abwurfpunkt. Eingezeichnet: v₀-Vektor unter 35°, v₀x = v₀·cos35° waagerecht, v₀y = v₀·sin35° senkrecht. Parabel mit Hochpunkt bei x = R/2, y = h_max. Wurfweite R auf x-Achse markiert. Numerische Werte: v₀x ≈ 16,4 m/s, v₀y ≈ 11,5 m/s.",
+            "tipps": [
+              "Klausurschema: Skizze mit allen gegebenen und gesuchten Größen, Koordinatensystem mit Ursprung und Achsenrichtung.",
+              "v₀ in Komponenten zerlegen: v₀x = v₀·cos α, v₀y = v₀·sin α, beide einzeichnen.",
+              "Parabel symmetrisch um den Hochpunkt; Wurfweite und Flughöhe beschriften."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_3_2",
+            "aufgabe": "Skizziere den Weg eines Körpers, der vom Rand einer senkrechten Klippe (H = 50 m) horizontal mit v₀ = 12 m/s geworfen wird. Zeichne drei Momentaufnahmen (t = 0, t = 1 s, t = 2 s) mit Geschwindigkeitsvektoren ein. Gib die numerischen Werte der Vektoren an.",
+            "musterloesung": "t = 0: Position (0, 50 m), v = (12, 0) m/s. t = 1: Position (12, 45,1 m) [y = 50 - ½·9,81·1], v = (12, -9,81) m/s. t = 2: Position (24, 30,4 m) [y = 50 - 19,62], v = (12, -19,62) m/s. Vektoren zeigen zunehmend stärker nach unten. Klippe und Boden eingezeichnet.",
+            "tipps": [
+              "Horizontale Komponente bleibt konstant (12 m/s); vertikale Komponente wächst: vy = −g·t.",
+              "Positionen: x = 12·t; y = 50 − ½·9,81·t² einsetzen.",
+              "Skizze mit drei deutlich erkennbaren Momentaufnahmen und zugehörigen Vektoren."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_3_3",
+            "aufgabe": "Zeichne ein aussagekräftiges s(t)-Diagramm für eine Rakete, die folgende Bewegungsphasen durchläuft: Phase 1 (0 bis t₁): gleichmäßige Beschleunigung mit a₁; Phase 2 (t₁ bis t₂): gleichmäßige Verzögerung (nur Schwerkraft, a₂ = −g); Phase 3 (t₂ bis t₃): freier Fall vom höchsten Punkt zurück. Beschrifte Phasengrenzen und markiere höchsten Punkt.",
+            "musterloesung": "Phase 1: Parabel mit zunehmender Steigung (s = ½a₁t²). Phase 2: Parabel mit abnehmender Steigung bis Steigung = 0 am höchsten Punkt. Phase 3: Parabel fällt ab (Steigung nimmt betragsmäßig zu). Höchster Punkt ist Maximum der Kurve. t₁, t₂, t₃ auf Zeitachse markiert. Steigung am Übergang von Phase 1 zu 2 ist stetig (keine Unstetigkeit).",
+            "tipps": [
+              "In jeder Phase ist die Krümmung eine Parabel (konstante Beschleunigung); Steigungen müssen an den Übergängen übereinstimmen.",
+              "Beim höchsten Punkt ist ds/dt = v = 0, d.h. die Kurve hat dort ein Maximum.",
+              "Alle Phasengrenzen t₁, t₂, t₃ und den höchsten Punkt klar beschriften."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_3_4",
+            "aufgabe": "Skizziere die Projektion der Schraubenbewegung s(t) = (vR·t·cos(ωt), vR·t·sin(ωt), −vz·t) auf a) die xy-Ebene und b) die xz-Ebene. Erkläre, welche Art von Bewegung in jeder Projektion zu sehen ist.",
+            "musterloesung": "a) xy-Ebene: Spirale (Radius wächst mit t, da vR·t zunimmt — Archimedische Spirale). b) xz-Ebene: x = vR·t·cos(ωt), z = −vz·t — eine gedämpfte Schwingung auf einer nach rechts fallenden Kurve (cosinus-artige Schwingung mit wachsender Amplitude in x). In 3D: kombiniert Translation (z-Achse) mit aufweitender Spirale (xy-Ebene).",
+            "tipps": [
+              "Für die xy-Projektion nur x(t) und y(t) betrachten: beide wachsen mit t — Spirale.",
+              "Für xz-Projektion: x = vR·t·cos(ωt) (oszilliert mit wachsender Amplitude), z = −vz·t.",
+              "3D-Gesamtbild: beschreibe die Kombination aus Spirale und Translation."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_1_4_1",
+            "aufgabe": "Ein Teilchen bewegt sich auf einer Kreisbahn mit zunehmendem Radius (Spirale). Skizziere für drei Zeitpunkte: Geschwindigkeitsvektor (aufgeteilt in Tangential- und Radialkomponente), Zentripetalbeschleunigung und Tangentialbeschleunigung. Erkläre, warum trotz Beschleunigung die Bewegung als 'ungleichförmig' gilt.",
+            "musterloesung": "Spirale zeichnen. An drei Punkten: Tangentialbeschleunigung zeigt in Bewegungsrichtung (ändert |v|), Zentripetalbeschleunigung zeigt zum Momentankrümmungsmittelpunkt (ändert Richtung). Bei wachsendem Radius ist auch der Radialvektor nicht konstant. Die Bewegung ist ungleichförmig, weil der Betrag der Geschwindigkeit sich ändert (Tangentialbeschleunigung ≠ 0).",
+            "tipps": [
+              "Tangentialbeschleunigung (entlang Bahn) ändert Geschwindigkeitsbetrag; Zentripetalbeschleunigung (zum Zentrum) ändert Richtung.",
+              "Auf einer Spirale gibt es beide Komponenten — einzeichnen und benennen.",
+              "Ungleichförmig = |v| ändert sich → Tangentialbeschleunigung ≠ 0."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_4_2",
+            "aufgabe": "Konstruiere graphisch die Summe zweier Bewegungen: v₁ = (3, 0) m/s (Person geht vorwärts) und v₂ = (0, 4) m/s (Querwind). Zeichne den resultierenden Geschwindigkeitsvektor, bestimme Betrag und Richtungswinkel.",
+            "musterloesung": "Parallelogramm-/Dreieck-Konstruktion: v₁ horizontal (3 m/s nach rechts), v₂ senkrecht (4 m/s nach oben). Resultierende v_res = √(3² + 4²) = 5 m/s. Winkel: tan(θ) = v₂/v₁ = 4/3 → θ = 53,1° zur Horizontalen. Vektoren maßstäblich einzeichnen mit Beschriftung.",
+            "tipps": [
+              "Graphische Vektoraddition: Vektoren aneinanderhängen (Dreiecksmethode) oder Parallelogramm aufspannen.",
+              "|v_res| = √(v₁² + v₂²) = √(9+16) = 5 m/s.",
+              "Winkel: arctan(4/3) = 53,1° — im Diagramm eingezeichnet und beschriftet."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_4_3",
+            "aufgabe": "Zwei Objekte bewegen sich aufeinander zu: Objekt A mit vA = 30 m/s (von links) und Objekt B mit vB = 20 m/s (von rechts). Skizziere das x(t)-Diagramm für beide Objekte und bestimme graphisch den Treffpunkt (Anfangsabstand 1000 m).",
+            "musterloesung": "Koordinatensystem: x-Achse von 0 bis 1000 m, t-Achse. xA(t) = 30t (Gerade mit Steigung 30). xB(t) = 1000 - 20t (fallende Gerade mit Steigung -20). Schnittpunkt: 30t = 1000 - 20t → 50t = 1000 → t = 20 s, x = 600 m. Im Diagramm markieren.",
+            "tipps": [
+              "Jedes Objekt als Gerade x(t) = x₀ + v·t im x-t-Diagramm einzeichnen.",
+              "Schnittpunkt der Geraden = Treffpunkt: 30t = 1000 − 20t lösen.",
+              "t = 20 s; x = 600 m — im Diagramm mit Kreuz markiert."
+            ]
+          },
+          {
+            "id": "do_skizzieren_1_4_4",
+            "aufgabe": "Skizziere für eine Kreisbewegung mit konstanter Winkelgeschwindigkeit (r = 2 m, ω = 3 rad/s) den Verlauf von: vT(t) (Tangentialgeschwindigkeit), aZ(t) (Zentripetalbeschleunigung) und φ(t) (Winkel). Berechne und markiere die Werte.",
+            "musterloesung": "vT = ω·r = 3·2 = 6 m/s — konstant → waagerechte Linie. aZ = ω²·r = 9·2 = 18 m/s² — konstant → waagerechte Linie. φ(t) = ω·t — Gerade durch Ursprung mit Steigung 3 rad/s. Alle drei Graphen mit korrekten Werten und Einheiten beschriften.",
+            "tipps": [
+              "Bei konstanter ω: vT = ω·r = const; aZ = ω²·r = const; φ = ω·t linear.",
+              "vT = 6 m/s; aZ = 18 m/s²; beide als Horizontallinien; φ als Gerade.",
+              "Achsen mit Einheiten beschriften: [m/s], [m/s²], [rad]."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_1_1_1",
+            "frage": "Ein Körper bewegt sich gleichförmig mit v = 10 m/s. Was gilt für seine Beschleunigung?",
+            "optionen": [
+              {"key": "A", "text": "a = 10 m/s²"},
+              {"key": "B", "text": "a = 0 m/s²"},
+              {"key": "C", "text": "a = −10 m/s²"},
+              {"key": "D", "text": "a = g = 9,81 m/s²"},
+              {"key": "E", "text": "a ändert sich kontinuierlich"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Gleichförmige Bewegung bedeutet konstante Geschwindigkeit, also keine Änderung → a = 0. A ist falsch: a = v gilt nicht — das sind verschiedene physikalische Größen. C ist falsch: negative Beschleunigung würde die Bewegung verlangsamen. D ist falsch: g tritt nur beim freien Fall auf. E ist falsch: bei gleichförmiger Bewegung ist a konstant null."
+          },
+          {
+            "id": "sc_1_1_2",
+            "frage": "Was beschreibt die Steigung einer v(t)-Kurve?",
+            "optionen": [
+              {"key": "A", "text": "Die zurückgelegte Strecke"},
+              {"key": "B", "text": "Die momentane Position"},
+              {"key": "C", "text": "Die momentane Beschleunigung"},
+              {"key": "D", "text": "Die Durchschnittsgeschwindigkeit"},
+              {"key": "E", "text": "Die kinetische Energie"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: a = dv/dt, also ist die Steigung des v(t)-Graphen die Beschleunigung. A ist falsch: die Strecke entspricht der Fläche unter v(t), nicht der Steigung. B ist falsch: die Position ergibt sich aus s(t). D ist falsch: die Durchschnittsgeschwindigkeit ist Δs/Δt. E ist falsch: kinetische Energie ist ½mv²."
+          },
+          {
+            "id": "sc_1_1_3",
+            "frage": "Ein Ball wird senkrecht nach oben geworfen. Welche Aussage gilt an seinem höchsten Punkt?",
+            "optionen": [
+              {"key": "A", "text": "Geschwindigkeit und Beschleunigung sind beide null."},
+              {"key": "B", "text": "Geschwindigkeit ist null, Beschleunigung ist g nach unten."},
+              {"key": "C", "text": "Geschwindigkeit ist null, Beschleunigung ist null."},
+              {"key": "D", "text": "Geschwindigkeit ist maximal, Beschleunigung ist null."},
+              {"key": "E", "text": "Geschwindigkeit ist g, Beschleunigung ist null."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Am höchsten Punkt ist v = 0 (Umkehrpunkt), aber g wirkt weiterhin nach unten. A ist falsch: die Schwerkraft ist am höchsten Punkt nicht null. C ist falsch: g = 9,81 m/s² wirkt stets. D ist falsch: die Geschwindigkeit ist gerade null. E ist falsch: am höchsten Punkt ist v = 0, nicht v = g."
+          },
+          {
+            "id": "sc_1_1_4",
+            "frage": "Welche Komponente der Geschwindigkeit ändert sich beim schrägen Wurf (Luftreibung vernachlässigt)?",
+            "optionen": [
+              {"key": "A", "text": "Nur die horizontale Komponente vx"},
+              {"key": "B", "text": "Nur die vertikale Komponente vy"},
+              {"key": "C", "text": "Beide Komponenten ändern sich gleich schnell"},
+              {"key": "D", "text": "Beide Komponenten bleiben konstant"},
+              {"key": "E", "text": "Keine Komponente ändert sich"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: In x-Richtung gibt es keine Kraft (Luftreibung vernachlässigt) → vx = const. In y-Richtung wirkt die Schwerkraft → vy ändert sich. A ist falsch: vx bleibt konstant. C ist falsch: nur vy ändert sich. D ist falsch: vy ändert sich. E ist falsch: vy ändert sich durch g."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_1_2_1",
+            "frage": "Welche Aussage zum schrägen Wurf STIMMT immer? Werfen zwei Personen mit unterschiedlicher Anfangsgeschwindigkeit nach schräg oben...",
+            "optionen": [
+              {"key": "A", "text": "...so erreichen beide Kugeln gleichzeitig den höchsten Punkt."},
+              {"key": "B", "text": "...so erreichen beide Kugeln gleichzeitig den Erdboden."},
+              {"key": "C", "text": "...so gibt es immer einen Punkt während des Fluges, an dem beide Kugeln die selbe Geschwindigkeit haben."},
+              {"key": "D", "text": "...so ist die Beschleunigung der beiden Kugeln kurz nach dem Verlassen der Hand der Person gleich groß."},
+              {"key": "E", "text": "...so brauchen die Kugeln für die Strecke zum höchsten Punkt mindestens so lange wie für die Strecke vom höchsten Punkt zum Erdboden."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Beide Kugeln erfahren nach dem Abwurf ausschließlich g = 9,81 m/s² nach unten — unabhängig von v₀. A ist falsch: die Flugzeit hängt von v₀y ab und ist daher verschieden. B ist falsch: Flugzeiten und Auftreffpunkte unterscheiden sich bei verschiedenen v₀. C ist falsch: bei verschiedenen v₀ und möglicherweise verschiedenen Winkeln müssen sich die Geschwindigkeiten nicht schneiden. E ist falsch: bei symmetrischem Wurf gilt genau Gleichheit, nicht 'mindestens so lange'."
+          },
+          {
+            "id": "sc_1_2_2",
+            "frage": "Ein Körper bewegt sich mit x(t) = 2t² − 4t + 1 [m]. Zu welchem Zeitpunkt hat er seine kleinste Geschwindigkeit?",
+            "optionen": [
+              {"key": "A", "text": "t = 0 s"},
+              {"key": "B", "text": "t = 1 s"},
+              {"key": "C", "text": "t = 2 s"},
+              {"key": "D", "text": "t = 4 s"},
+              {"key": "E", "text": "Die Geschwindigkeit ist immer konstant."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: v(t) = dx/dt = 4t − 4. Die Geschwindigkeit wird null (Minimum des Betrags) bei 4t − 4 = 0 → t = 1 s. A ist falsch: v(0) = −4 m/s ≠ 0. C ist falsch: v(2) = 4 m/s. D ist falsch: v(4) = 12 m/s. E ist falsch: v(t) = 4t − 4 ist zeitabhängig."
+          },
+          {
+            "id": "sc_1_2_3",
+            "frage": "Ein Körper bewegt sich mit der Beschleunigung a(t) = 3t [m/s²] und hat bei t = 0 die Geschwindigkeit v₀ = 2 m/s. Welche Geschwindigkeit hat er bei t = 2 s?",
+            "optionen": [
+              {"key": "A", "text": "v = 6 m/s"},
+              {"key": "B", "text": "v = 8 m/s"},
+              {"key": "C", "text": "v = 12 m/s"},
+              {"key": "D", "text": "v = 14 m/s"},
+              {"key": "E", "text": "v = 4 m/s"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: v(t) = ∫a dt + v₀ = ½·3t² + 2 = 1,5t² + 2. Bei t = 2: v = 1,5·4 + 2 = 6 + 2 = 8 m/s. A ist falsch: 6 m/s würde v₀ ignorieren. C ist falsch: 12 ergibt sich bei falscher Integration. D ist falsch: 14 ist ebenfalls falsch. E ist falsch: 4 ergibt sich nicht."
+          },
+          {
+            "id": "sc_1_2_4",
+            "frage": "Die Bewegung eines Körpers wird beschrieben durch s(t) = (vR·t·cos(ωt), vR·t·sin(ωt), −vz·t). Welche Aussage stimmt?",
+            "optionen": [
+              {"key": "A", "text": "Der Körper erfährt eine tangentiale, eine radiale und eine vertikale Beschleunigung."},
+              {"key": "B", "text": "Der Körper erfährt eine tangentiale, eine vertikale aber keine radiale Beschleunigung."},
+              {"key": "C", "text": "Der Körper erfährt eine tangentiale, aber keine radiale und keine vertikale Beschleunigung."},
+              {"key": "D", "text": "Der Körper erfährt keine tangentiale, keine radiale aber eine vertikale Beschleunigung."},
+              {"key": "E", "text": "Alle oben stehenden Aussagen sind falsch."}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: Die Spiralbewegung in der xy-Ebene (wachsender Radius) erzeugt sowohl eine radiale Komponente (Richtungsänderung der Kreisbewegung) als auch eine tangentiale (Änderung des Geschwindigkeitsbetrags durch wachsenden Radius). Die konstante z-Komponente (−vz·t) erzeugt keine vertikale Beschleunigung. Genauer: die dritte Komponente ist linear, also keine vertikale Beschleunigung; radiale und tangentiale entstehen durch die Spirale. B–D sind falsch wegen falscher Kombination."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_1_3_1",
+            "frage": "Ein Körper wird unter einem Winkel α zur Horizontalen mit v₀ geworfen. Die x-Achse liegt parallel zum Erdboden. Welche Aussage ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "x(y) ist eine Exponentialfunktion."},
+              {"key": "B", "text": "x(t) ist eine Parabel."},
+              {"key": "C", "text": "vx(t) ist eine Gerade mit Steigung ungleich 0."},
+              {"key": "D", "text": "y(t) ist eine Parabel."},
+              {"key": "E", "text": "vy(t) ist eine Gerade mit Steigung gleich 0."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: y(t) = v₀·sin(α)·t − ½g·t² ist eine nach unten geöffnete Parabel. A ist falsch: y als Funktion von x ist eine Parabel, aber keine Exponentialfunktion. B ist falsch: x(t) = v₀·cos(α)·t ist eine lineare Funktion (Gerade). C ist falsch: vx(t) = v₀·cos(α) = const, also Steigung = 0. E ist falsch: vy(t) = v₀·sin(α) − g·t hat die Steigung −g ≠ 0."
+          },
+          {
+            "id": "sc_1_3_2",
+            "frage": "Ein Körper bewegt sich entlang einer Geraden mit konstanter Beschleunigung a. Der Betrag der Geschwindigkeit nimmt mit der Zeit ab. Welche Gleichung beschreibt v(t) korrekt, wenn v₀ die Anfangsgeschwindigkeit ist?",
+            "optionen": [
+              {"key": "A", "text": "v = v₀ − |a|t"},
+              {"key": "B", "text": "v = v₀ + ½at²"},
+              {"key": "C", "text": "v = v₀t + |a|t"},
+              {"key": "D", "text": "v = −at − |v₀|"},
+              {"key": "E", "text": "v = v₀ + at²"}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: Wenn der Betrag der Geschwindigkeit abnimmt und a konstant (entgegen der Bewegung) wirkt, dann v(t) = v₀ − |a|·t. B ist falsch: ½at² ist die Streckenformel, nicht die Geschwindigkeit. C ist falsch: v₀t + |a|t hätte die falsche Dimension (v₀ in m/s, aber v₀·t wäre m). D ist falsch: falsches Vorzeichen und falscher Ansatz. E ist falsch: v = v₀ + at² ist dimensionsmäßig falsch."
+          },
+          {
+            "id": "sc_1_3_3",
+            "frage": "Welche Aussage zur Wurfbewegung (Luftreibung vernachlässigt) ist FALSCH?",
+            "optionen": [
+              {"key": "A", "text": "Die horizontale Beschleunigung ist null."},
+              {"key": "B", "text": "Die vertikale Beschleunigung beträgt stets g = 9,81 m/s² nach unten."},
+              {"key": "C", "text": "Die Bahnkurve y(x) ist eine Parabel."},
+              {"key": "D", "text": "Die Wurfweite ist maximal bei α = 45°."},
+              {"key": "E", "text": "Ein steilerer Abwurfwinkel führt stets zu einer größeren Wurfweite."}
+            ],
+            "korrekt": "E",
+            "erklaerung": "E ist falsch und damit die korrekte Antwort: Wurfweite R = v₀²·sin(2α)/g ist maximal bei 45°; für α > 45° nimmt die Wurfweite wieder ab. A ist korrekt (ax = 0). B ist korrekt (ay = −g). C ist korrekt (Parabelform). D ist korrekt (Maximum bei 45°)."
+          },
+          {
+            "id": "sc_1_3_4",
+            "frage": "Welche Aussage zur Relativgeschwindigkeit ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Relativgeschwindigkeit zweier Körper ist immer die Summe ihrer Geschwindigkeiten."},
+              {"key": "B", "text": "Zwei gleich schnelle Körper in dieselbe Richtung haben Relativgeschwindigkeit null."},
+              {"key": "C", "text": "Die Relativgeschwindigkeit zweier entgegengesetzt fahrender Körper ist ihre Differenz."},
+              {"key": "D", "text": "Die Relativgeschwindigkeit hängt nicht vom Bezugssystem ab."},
+              {"key": "E", "text": "Relativgeschwindigkeit ist nur definiert, wenn die Körper sich berühren."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Wenn beide Körper dieselbe Geschwindigkeit und Richtung haben, ist ihre Relativgeschwindigkeit v_rel = v_A − v_B = 0. A ist falsch: Addition gilt nur, wenn sie sich entgegenbewegen; sonst Subtraktion. C ist falsch: bei entgegengesetzten Richtungen ist v_rel = v_A + v_B (Betrag). D ist falsch: Relativgeschwindigkeit hängt vom Bezugssystem ab. E ist falsch: Relativgeschwindigkeit ist unabhängig vom Abstand definierbar."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_1_4_1",
+            "frage": "Eine Spiralbewegung wird beschrieben durch r(t) = vR·t. Welche der folgenden Aussagen über die Bahngeschwindigkeit ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Bahngeschwindigkeit ist konstant."},
+              {"key": "B", "text": "Die Bahngeschwindigkeit nimmt linear mit der Zeit zu."},
+              {"key": "C", "text": "Die Bahngeschwindigkeit hat tangentiale und radiale Komponenten, deren Gesamtbetrag mit der Zeit zunimmt."},
+              {"key": "D", "text": "Die Bahngeschwindigkeit ist immer senkrecht zur Radialbeschleunigung."},
+              {"key": "E", "text": "Die Tangentialbeschleunigung ist null, da sich nur der Radius ändert."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Bei einer Archimedischen Spirale (r = vR·t) hat der Geschwindigkeitsvektor eine radiale Komponente (ṙ = vR) und eine tangentiale (r·ω = vR·t·ω), deren Betrag mit t zunimmt. A ist falsch: der Betrag nimmt zu. B ist falsch: er nimmt nicht linear zu (es gibt √(vR² + (vR·t·ω)²)). D ist falsch: der Geschwindigkeitsvektor steht nicht immer senkrecht auf der Zentripetalbeschleunigung (da Radialkomponente vorhanden). E ist falsch: es gibt Tangentialbeschleunigung."
+          },
+          {
+            "id": "sc_1_4_2",
+            "frage": "Ein Körper bewegt sich mit x(t) = A·cos(ωt). Welche Aussage über seine Beschleunigung a(t) ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "a(t) = −A·ω²·cos(ωt)"},
+              {"key": "B", "text": "a(t) = A·ω·sin(ωt)"},
+              {"key": "C", "text": "a(t) = A·ω²·cos(ωt)"},
+              {"key": "D", "text": "a(t) = −A·cos(ωt)"},
+              {"key": "E", "text": "a(t) = A·ω·cos(ωt)"}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: v(t) = dx/dt = −A·ω·sin(ωt); a(t) = dv/dt = −A·ω²·cos(ωt). B ist falsch: das ist v(t) mit falschem Vorzeichen. C ist falsch: vorzeichen fehlt. D ist falsch: ω²-Faktor fehlt. E ist falsch: das ist die Geschwindigkeit mit cos statt sin."
+          },
+          {
+            "id": "sc_1_4_3",
+            "frage": "Ein Ball wird von einer 80 m hohen Klippe horizontal abgeworfen und landet nach t = 4 s am Boden. Welche Aussage ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Abwurfgeschwindigkeit ist 20 m/s."},
+              {"key": "B", "text": "Die Fallhöhe von 80 m ergibt genau t = 4 s Fallzeit."},
+              {"key": "C", "text": "Die Horizontalgeschwindigkeit nimmt während des Flugs zu."},
+              {"key": "D", "text": "Die Aufprallgeschwindigkeit beträgt 4·g ≈ 39,2 m/s (vertikal)."},
+              {"key": "E", "text": "Der Ball trifft senkrecht auf den Boden auf."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: h = ½g·t² → t = √(2h/g) = √(160/9,81) ≈ 4,04 s ≈ 4 s. A ist falsch: ohne Horizontalabstand kann die Abwurfgeschwindigkeit nicht bestimmt werden. C ist falsch: vx bleibt bei Luftreibungsfreiheit konstant. D ist falsch: vy = g·t = 9,81·4 ≈ 39,2 m/s ist richtig, aber die Gesamtgeschwindigkeit ist größer. E ist falsch: der Ball hat auch eine Horizontalkomponente beim Aufprall."
+          },
+          {
+            "id": "sc_1_4_4",
+            "frage": "Welche der folgenden Bewegungsgleichungen beschreibt eine gleichförmige Kreisbewegung korrekt?",
+            "optionen": [
+              {"key": "A", "text": "r(t) = (r·cos(ωt), r·sin(ωt)) mit ω = const und r = const"},
+              {"key": "B", "text": "r(t) = (r·t·cos(ωt), r·t·sin(ωt))"},
+              {"key": "C", "text": "r(t) = (r·cos(ω·t²), r·sin(ω·t²))"},
+              {"key": "D", "text": "r(t) = (r·cosh(ωt), r·sinh(ωt))"},
+              {"key": "E", "text": "r(t) = (r·cos(ωt), r·cos(ωt))"}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: r(t) = (r·cos(ωt), r·sin(ωt)) beschreibt einen Kreis mit konstantem Radius r und konstanter Winkelgeschwindigkeit ω — das ist die Definition der gleichförmigen Kreisbewegung. B ist falsch: r(t) wächst mit t — das ist eine Spirale. C ist falsch: ω·t² würde eine ungleichförmige Kreisbewegung (zunehmende ω) beschreiben. D ist falsch: cosh und sinh beschreiben Hyperbeln, keine Kreise. E ist falsch: beide Komponenten wären gleich — keine Kreisbahn."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Definiere den Begriff 'Geschwindigkeit' in einem Satz und nenne ihre SI-Einheit."],
+      "2": ["Erkläre den Unterschied zwischen Durchschnittsgeschwindigkeit und Momentangeschwindigkeit. Welche Formel gilt für die Momentangeschwindigkeit?"],
+      "3": ["Beschreibe den Zusammenhang zwischen Ort s(t), Geschwindigkeit v(t) und Beschleunigung a(t) mathematisch. Was bedeutet dieser Zusammenhang physikalisch?"],
+      "4": ["Ein Körper wird unter α = 30° mit v₀ = 15 m/s geworfen. Berechne die Wurfweite R und die maximale Flughöhe h_max. Gib den vollständigen Lösungsweg (Schema: gegeben, gesucht, Skizze, Ansatz, Formel, Ergebnis) an."],
+      "5": ["In welchen realen Situationen versagt das Modell des schrägen Wurfs (Parabolwurf) und warum? Nenne zwei konkrete Beispiele, bei denen eine genauere Beschreibung nötig wäre."]
+    }
+  }
+}

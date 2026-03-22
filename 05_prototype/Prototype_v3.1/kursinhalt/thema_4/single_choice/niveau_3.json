@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_4_3_1",
+    "frage": "Maximaler Energieübertrag im elastischen Stoß (ruhendes Ziel) bei ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "m₁ >> m₂"
+      },
+      {
+        "key": "B",
+        "text": "m₁ << m₂"
+      },
+      {
+        "key": "C",
+        "text": "m₁ = m₂"
+      },
+      {
+        "key": "D",
+        "text": "m₁ = 2m₂"
+      },
+      {
+        "key": "E",
+        "text": "Unabhängig vom Massenverhältnis"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: ΔE/E₀=4m₁m₂/(m₁+m₂)² — Maximum bei m₁=m₂ (=100%). A/B → nahe 0%."
+  },
+  {
+    "id": "sc_4_3_2",
+    "frage": "Zwei identische Billardkugeln kollidieren elastisch frontal (A→, B←, gleiche Geschwindigkeit). Danach ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Beide stehen still"
+      },
+      {
+        "key": "B",
+        "text": "Beide tauschen Richtung (A←, B→)"
+      },
+      {
+        "key": "C",
+        "text": "Beide bewegen sich gleich weiter"
+      },
+      {
+        "key": "D",
+        "text": "A steht still, B verdoppelt Geschwindigkeit"
+      },
+      {
+        "key": "E",
+        "text": "B steht still, A verdoppelt"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Gleiche Massen elastisch → Geschwindigkeitstausch. Beide kehren mit gleicher Geschwindigkeit um. A verletzt Impulserhaltung (p≠0 vorher)."
+  }
+]

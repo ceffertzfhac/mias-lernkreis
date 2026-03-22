@@ -1,0 +1,400 @@
+{
+  "thema_id": 4,
+  "thema_name": "Rotationsbewegung & Drehmoment",
+  "teil": 2,
+  "teil_beschreibung": "Drehimpulserhaltung, Rollbewegung, Scheinkräfte, Skizzieraufgaben",
+  "aufgaben": {
+    "doing": {
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_4_1_1",
+            "aufgabe": "Skizziere einen Vollzylinder, der ohne Schlupf eine schiefe Ebene hinunterrollt. Zeichne ein: Gewichtskraft, Normalkraft, Reibungskraft, Rollrichtung, Drehrichtung. Erkläre, warum die Reibung hier 'Rollreibung' ist.",
+            "musterloesung": "Schiefe Ebene mit Winkel α. Zylinder darauf. Eingezeichnet: F_G = mg senkrecht nach unten; N senkrecht aus Ebene heraus; F_R an Kontaktpunkt, Rampe hinauf (ermöglicht Rollen); Bewegungspfeil des Schwerpunkts den Hang hinunter; Rotationspfeil im Uhrzeigersinn. Rollreibung: Die statische Reibung am Kontaktpunkt erzeugt das Drehmoment, das die Rotation antreibt — ohne Reibung würde der Zylinder gleiten.",
+            "tipps": [
+              "Reibungskraft zeigt bergauf (Kontaktpunkt), Schwerpunkt bewegt sich bergab.",
+              "Die Reibungskraft ist statisch (kein Schlupf) und verrichtet keine Arbeit.",
+              "Rollbedingung: v_SP = ω·R."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_1_2",
+            "aufgabe": "Skizziere das Fahrradfelgen-Experiment: Aluminiumscheibe + Felge, Faden mit Masse. Zeichne: Versuchsaufbau, Drehachse, Drehmoment, beschleunigte und abgebremste Phase.",
+            "musterloesung": "Fahrradfelge senkrecht aufgehängt (Achse horizontal). Aluminiumscheibe konzentrisch montiert. Faden um Scheibe gewickelt, Masse m hängt daran. Beschleunigte Phase: Faden noch aufgewickelt, Masse fällt → M = mgr antreibt Felge. Abgebremste Phase: Faden abgefallen, nur Reibdrehmoment verlangsamt die Felge. Zwei Phasen im ω(t)-Diagramm einzeichnen.",
+            "tipps": [
+              "Beschleunigte Phase: Drehmoment durch Masse (M = mgr) und Reibung (gegenwirkend).",
+              "Abgebremste Phase: nur noch Reibdrehmoment → gleichmäßige Verzögerung.",
+              "ω(t)-Diagramm: erst zunehmende Gerade, dann abnehmende Gerade."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_1_3",
+            "aufgabe": "Skizziere einen Körper auf einer Kreisbahn. Zeichne an 4 verschiedenen Positionen (12, 3, 6, 9 Uhr): Geschwindigkeitsvektor und Zentripetalkraft. Was passiert, wenn die Zentripetalkraft plötzlich wegfällt?",
+            "musterloesung": "Vier Positionen auf Kreis. Geschwindigkeit immer tangential (12 Uhr: nach rechts; 3 Uhr: nach unten; 6 Uhr: nach links; 9 Uhr: nach oben). Zentripetalkraft immer zum Mittelpunkt zeigend. Wenn Zentripetalkraft wegfällt: Körper fliegt tangential geradlinig weiter (Newton 1 — Trägheitsprinzip).",
+            "tipps": [
+              "Geschwindigkeit: tangential zur Bahn (Tangente am Kreis).",
+              "Zentripetalkraft: immer radial nach innen (zum Mittelpunkt).",
+              "Ohne Zentripetalkraft: geradlinige Weiterbewegung in tangentialer Richtung."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_1_4",
+            "aufgabe": "Skizziere Wippe (Hebelgesetz): Zwei Personen sitzen auf einer Wippe. Zeichne ein: Drehmomente, Auflagepunkt, Bedingung für Gleichgewicht. Berechne den Abstand, damit eine Person (m₁ = 60 kg) eine andere (m₂ = 80 kg) ausbalanciert, wenn m₁ bei l₁ = 2 m sitzt.",
+            "musterloesung": "Wippe als Balken auf Drehpunkt. Links: m₁ mit Gewichtskraft und Hebelarm l₁. Rechts: m₂ mit Gewichtskraft und Hebelarm l₂. Gleichgewicht: M₁ = M₂ → m₁·g·l₁ = m₂·g·l₂ → l₂ = m₁·l₁/m₂ = 60·2/80 = 1,5 m.",
+            "tipps": [
+              "Drehmoment: M = F·l (Kraft × Hebelarm).",
+              "Gleichgewicht: Summe aller Drehmomente = 0.",
+              "l₂ = m₁·l₁/m₂ = 60·2/80 = 1,5 m."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_4_2_1",
+            "aufgabe": "Skizziere nach Klausurschema den Atwood-Aufbau auf schiefer Ebene (α = 30°). Block m₁ auf Ebene, verbunden über Umlenkrolle (Vollzylinder) mit hängender Masse m₂. Zeichne alle Kräfte, Seilspannungen und das Koordinatensystem.",
+            "musterloesung": "Schiefe Ebene mit 30°. Block m₁ auf Ebene: Gewicht m₁g (nach unten), Normalkraft N (senkrecht aus Ebene), Seilspannung T₁ (Hang hinauf). Umlenkrolle an Kante: T₁ und T₂ (T₁ ≠ T₂ wegen J der Rolle). Hängende Masse m₂: m₂g nach unten, T₂ nach oben. Koordinatensystem: x₁ parallel zur Ebene, x₂ senkrecht nach unten für m₂.",
+            "tipps": [
+              "Klausurschema: gegeben aufschreiben, dann vollständige Skizze mit ALLEN Kräften.",
+              "Seilspannungen T₁ ≠ T₂ bei massiver Rolle.",
+              "Koordinatensystem so wählen, dass Bewegungsrichtungen positiv sind."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_2_2",
+            "aufgabe": "Skizziere das Kugelrennen: Vollkugel vs. Hohlkugel auf schiefer Ebene. Zeichne ω(t)-, v(t)- und s(t)-Verläufe für beide. Erkläre anhand der Energieaufteilung, warum die Vollkugel schneller ist.",
+            "musterloesung": "s(t) und v(t): Vollkugel (höhere Beschleunigung) liegt bei allen Zeitpunkten vor Hohlkugel. Beide parabolisch. ω(t): Vollkugel auch hier höher (v = ωR). Erklärung: Gleiche potentielle Energie wird aufgeteilt in E_trans + E_rot. Vollkugel: E_rot/E_ges = cM/(1+cM) = 0,4/1,4 ≈ 29%; Hohlkugel: 0,667/1,667 ≈ 40%. Mehr Energie in Translation → schneller.",
+            "tipps": [
+              "Energieaufteilung: E_rot/E_ges = J/(mR²) / (1 + J/(mR²)).",
+              "Vollkugel hat kleineren cM → weniger Energie in Rotation → mehr in Translation.",
+              "Graphen: Vollkugel liegt stets über Hohlkugel."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_2_3",
+            "aufgabe": "Skizziere die Leiterschleife im Magnetfeld (Drehmoment auf Leiterschleife): Quadratische Schleife, Strom I, homogenes Magnetfeld B parallel zum Erdboden. Zeige die Kräfte auf die Leiter und das resultierende Drehmoment.",
+            "musterloesung": "Quadrat mit Strom I (Richtung eingezeichnet). Magnetfeld B horizontal. Kräfte auf stromführende Leiter: F = I·L×B auf jeden Abschnitt. Parallele Leiter: F₁ und F₂ in entgegengesetzter Richtung (je nach Stromrichtung). Resultierende: Kräftepaar → Drehmoment M = I·A·B·sinθ. θ = Winkel zwischen Flächennormale und B. Gleichgewichtslage: M = 0 wenn Ebene ⊥ B.",
+            "tipps": [
+              "Lorentzkraft auf Leiterstück: F = I·l×B.",
+              "Kräftepaar auf gegenüberliegende Leiter erzeugt Drehmoment.",
+              "M = I·A·B·sinθ; bei θ = 0 (Fläche ∥ B) ist M maximal."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_2_4",
+            "aufgabe": "Skizziere den Drehimpulsvektor L eines rotierenden Kreisels (Kippelkreisel/Gyroscop) und erkläre qualitativ, warum er nicht umfällt, sondern präzessiert.",
+            "musterloesung": "Kreisel auf Spitze, L zeigt entlang der Drehachse nach oben. Schwerkraft erzeugt Drehmoment M = r × F_G (senkrecht zu L). dL/dt = M → L-Vektor dreht sich senkrecht zu M → Präzession. L beschreibt einen Kegel. Ohne Rotation: Kreisel fällt um. Mit Rotation: L 'weicht aus' → Präzession statt Umfallen.",
+            "tipps": [
+              "dL/dt = M: Das Drehmoment der Schwerkraft ändert L senkrecht — nicht den Betrag, sondern die Richtung.",
+              "Präzession: L dreht sich im Kreis (nicht umfallen).",
+              "Skizze: Kegel, den L beschreibt, mit M-Vektor einzeichnen."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_4_3_1",
+            "aufgabe": "Erstelle eine physikalisch vollständige Skizze für das Pendel-Stoß-Problem (Klausur 1, Aufgabe 4): Zwei Kugeln an Fäden, Auslenkung 20°, Stoß, Kugel 1 bleibt stehen, Kugel 2 schwingt aus. Markiere alle relevanten Größen.",
+            "musterloesung": "Deckenmontage. Zwei Fäden mit l = 2 m. Kugeln berühren sich in Ruhelage bei h = 0,5 m über Boden. Auslenkung 20° eingezeichnet. Stoßmoment: v₁_vorher und v₂_vorher (entgegengesetzt) eingezeichnet. Nach Stoß: v₁ = 0, v₂ hat Wert. Maximale Höhe h_max des Schwerpunkts von m₂. Koordinatensystem mit Null in Gleichgewichtslage. Alle Massen, Längen, Winkel beschriftet.",
+            "tipps": [
+              "Klausurschema: vollständige Beschriftung aller Größen aus der Aufgabe.",
+              "Wichtig: Gleichgewichtslage als Referenzpunkt für Höhe definieren.",
+              "Stoßzeitpunkt markieren; Pfeile für Vor- und Nachstoß-Geschwindigkeiten."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_3_2",
+            "aufgabe": "Skizziere ω(t) für die Fahrradfelge: Beschleunigte Phase (0 bis t₁), abgebremste Phase (t₁ bis t₂). Bestimme graphisch die Winkelbeschleunigungen in beiden Phasen aus dem Diagramm.",
+            "musterloesung": "ω(t): Gerade von 0 ansteigend bis ω_max bei t₁ (Steigung = α₁ = positiv). Dann fallende Gerade bis ω = 0 bei t₂ (Steigung = α₂ = negativ, kleiner Betrag da nur Reibung). Graphische Auswertung: α₁ = Δω₁/Δt₁; α₂ = Δω₂/Δt₂. Da α₁ > |α₂|: Beschleunigung schneller als Abbremsung. Achsen beschriften: ω in rad/s, t in s. Phasengrenze t₁ markiert.",
+            "tipps": [
+              "Beschleunigte Phase: steilere Gerade (M_Masse + Reibung); abgebremst: flachere Gerade (nur Reibung).",
+              "Steigung = Winkelbeschleunigung α = Δω/Δt.",
+              "Phasengrenze t₁ (Abfallen des Fadens) klar markieren."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_3_3",
+            "aufgabe": "Skizziere für das Rennen zweier Körper die schiefe Ebene hinunter: Vollzylinder vs. Hohlzylinder (gleiche Masse, gleicher Radius). Zeichne den s(t)-Verlauf beider. Zeige anhand einer Energiebilanz-Skizze, warum einer schneller ist.",
+            "musterloesung": "s(t): Zwei Parabeln, Vollzylinder liegt stets vor Hohlzylinder. Energiebilanz-Skizze: Balkendiagramm oder Kreisdiagramm — bei gleicher potentieller Energie (= mgh): Vollzylinder splittet ~33% Rotation / 67% Translation; Hohlzylinder ~50%/50%. Größerer Translation-Anteil → höhere v. Höheres v → kommt zuerst an.",
+            "tipps": [
+              "Energieaufteilung: E_rot = ½Jω² = ½(cM·mR²)(v/R)² = ½cMmv².",
+              "E_trans + E_rot = mgh → v = √(2gh/(1+cM)).",
+              "Vollzylinder (cM = 0,5) vs. Hohlzylinder (cM = 1): 2gh/1,5 > 2gh/2."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_3_4",
+            "aufgabe": "Skizziere die Kippbedingung für einen quaderförmigen Block: Unter welchem Winkel α kippt er um? Zeichne den Schwerpunkt, die Kippkante, die Schwerkraft und das Drehmoment. Leite die Kippbedingung graphisch ab.",
+            "musterloesung": "Block mit Breite b und Höhe h auf Fläche. Kippkante ist die vordere untere Kante. Schwerpunkt bei (b/2, h/2). Wenn geneigt: Schwerkraft (senkrecht nach unten) erzeugt Drehmoment um Kippkante. Kippt wenn Lot durch SP über Kippkante fällt: tan(α_kipp) = b/h. Für b < h (schmaler Block): α_kipp < 45° — kippt leichter.",
+            "tipps": [
+              "Kippbedingung: Block kippt, wenn Schwerpunktslot die Standfläche verlässt.",
+              "Kritischer Winkel: tan(α) = b/h.",
+              "Breiterer Block (b/h groß) ist stabiler."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_4_4_1",
+            "aufgabe": "Erstelle eine vollständige Lösung (Klausurschema) für das Kugelrennen: Zwei Kugeln (Vollkugel J = 2/5 mR², Hohlkugel J = 2/3 mR²), m = 250 g, R = 95 mm, Rampe l = 75 cm, α = 17,5°. Gegeben, Gesucht, Skizze, Ansatz, Lösung.",
+            "musterloesung": "Gegeben: m = 250 g = 0,25 kg, R = 95 mm = 0,095 m, l = 0,75 m, α = 17,5°. Gesucht: Δv = v_Vollkugel − v_Hohlkugel, welche kommt zuerst. Skizze: Rampe mit α, beide Kugeln, Rollrichtung, Kräfte. Ansatz: Energieerhaltung mit Rollbedingung. h = l·sinα = 0,226 m. v² = 2gh/(1+cM). v_V = √(2·9,81·0,226/1,4) ≈ 1,779 m/s. v_H = √(2·9,81·0,226/1,667) ≈ 1,631 m/s. Δv ≈ 0,148 m/s. Vollkugel kommt zuerst an.",
+            "tipps": [
+              "Vollständiges Lösungsschema: Gegeben/Gesucht → Skizze → Ansatz → Formelumstellung → numerisches Ergebnis.",
+              "v² = 2gh/(1+J/(mR²)); cM_Vollkugel = 2/5, cM_Hohlkugel = 2/3.",
+              "Δv = 0,148 m/s — Vollkugel schneller; klar benennen."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_4_2",
+            "aufgabe": "Skizziere für ein System aus Schwungrad (Vollzylinder) und Motor das Energie-Zeit-Diagramm: Beschleunigungsphase (Motor läuft), Konstantphase, Abbremsphase (Motor aus, Reibung). Beschrifte E_rot, Verlustleistung, gespeicherte Energie.",
+            "musterloesung": "E_rot(t): Parabolisch zunehmend während Beschleunigung, konstant in Konstantphase, exponentiell/parabolisch abnehmend bei Reibung. Verlustleistung P_R = M_R·ω (bei konstanter Reibung nimmt P_R proportional zu ω ab). Gespeicherte Energie = E_rot bei t_end des Motorbetriebs = ½Jω²_max.",
+            "tipps": [
+              "E_rot = ½Jω²; bei konstantem α wächst ω linear → E_rot parabolisch.",
+              "Verlustleistung durch Reibung: P = M_Reib · ω.",
+              "Alle Phasen und Übergangspunkte beschriften."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_4_3",
+            "aufgabe": "Skizziere die Kraftkomponenten auf einen Körper in einem rotierenden Bezugssystem (z.B. Karussell): Zentrifugalkraft, Corioliskraft, reale Zentripetalkraft. Erkläre, welche davon 'echt' sind und welche Scheinkräfte.",
+            "musterloesung": "Person auf Karussell. Im rotierenden System: Zentrifugalkraft (vom Zentrum weg, Scheinkraft), Corioliskraft (senkrecht zur Bewegung im rotierenden System, Scheinkraft), Zentripetalkraft (wird durch reale Kraft wie Fadenspannung bereitgestellt, echt). Im Inertialsystem: nur reale Zentripetalkraft. Scheinkräfte erklären das subjektive Gefühl des 'nach außen gedrückt Werdens'.",
+            "tipps": [
+              "Inertialsystem: nur Zentripetalkraft (echt).",
+              "Rotierendes System: Zentrifugal- und Corioliskraft als Scheinkräfte hinzufügen.",
+              "Scheinkräfte entstehen durch die Transformation ins rotierende Bezugssystem."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_4_4",
+            "aufgabe": "Skizziere die vollständige experimentelle Methode zur graphischen Bestimmung der Winkelbeschleunigung der Fahrradfelge: Messtabelle φ vs. t², Linearisierung, Diagramm, Steigung = α/2.",
+            "musterloesung": "Messwerttabelle: φ₁...φ₈ und t₁²...t₈². φ(t²) aufgetragen: Gerade durch Ursprung. Steigung k = Δφ/Δ(t²). Winkelbeschleunigung: α = 2k (da φ = ½αt²). Ausreißer markieren. Regressionsgerade einzeichnen. Wert ablesen und α berechnen. Beispiel: φ = ½αt² → t² = 2φ/α → Diagramm t² vs. φ ist Gerade mit Steigung 2/α.",
+            "tipps": [
+              "Linearisierung: φ = ½αt² → t² als Funktion von φ aufzutragen ergibt Gerade mit Steigung 2/α.",
+              "Alternativ: φ vs. t² → Gerade durch Ursprung, Steigung = α/2.",
+              "Messwerte als Punkte mit Kreuzen, Ausgleichsgerade einzeichnen, Steigung ablesen."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_4b_1_1",
+            "frage": "Was ist Rollbewegung ohne Schlupf?",
+            "optionen": [
+              {"key": "A", "text": "Bewegung, bei der der Körper nur rollt ohne sich zu drehen"},
+              {"key": "B", "text": "Bewegung, bei der der Berührungspunkt momentan ruht und v_SP = ω·R gilt"},
+              {"key": "C", "text": "Bewegung, bei der Reibung null ist"},
+              {"key": "D", "text": "Bewegung, bei der keine Normalkraft wirkt"},
+              {"key": "E", "text": "Bewegung mit konstanter Winkelgeschwindigkeit"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Rollbedingung = kein Schlupf am Kontaktpunkt → momentane Geschwindigkeit = 0 am Kontaktpunkt, und v_SP = ω·R. A ist falsch: Rollen erfordert immer gleichzeitige Drehung. C ist falsch: Reibung ist notwendig für Rollbewegung. D ist falsch: Normalkraft ist nicht beteiligt. E ist falsch: gleichförmiges Rollen, aber nicht definiert."
+          },
+          {
+            "id": "sc_4b_1_2",
+            "frage": "Welche Einheit hat das Drehmoment M?",
+            "optionen": [
+              {"key": "A", "text": "N"},
+              {"key": "B", "text": "kg·m²/s"},
+              {"key": "C", "text": "N·m"},
+              {"key": "D", "text": "kg·m²/s²"},
+              {"key": "E", "text": "rad/s²"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: M = F·r → [N]·[m] = N·m (auch gleich Joule, aber im Kontext von Drehmoment schreibt man N·m). A ist falsch: N ist Kraft. B ist falsch: kg·m²/s ist der Drehimpuls. D ist falsch: kg·m²/s² = J = Energie. E ist falsch: rad/s² ist Winkelbeschleunigung."
+          },
+          {
+            "id": "sc_4b_1_3",
+            "frage": "Was passiert mit einem Körper auf einer Kreisbahn, wenn die Zentripetalkraft plötzlich null wird?",
+            "optionen": [
+              {"key": "A", "text": "Er bewegt sich weiter auf der Kreisbahn."},
+              {"key": "B", "text": "Er fliegt radial nach außen."},
+              {"key": "C", "text": "Er bewegt sich geradlinig tangential weiter (Newton 1)."},
+              {"key": "D", "text": "Er fällt sofort nach unten."},
+              {"key": "E", "text": "Er stoppt sofort."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Ohne Zentripetalkraft keine Richtungsänderung mehr → geradlinige Bewegung tangential zur letzten Kreisposition (Trägheitsprinzip). B ist falsch: radial nach außen wäre die Richtung der Zentrifugalkraft, aber die tatsächliche Bewegung ist tangential. A ist falsch: Kreisbahn erfordert Zentripetalkraft. D ist falsch: wenn keine Schwerkraft, dann geradeaus. E ist falsch: Impuls bleibt erhalten."
+          },
+          {
+            "id": "sc_4b_1_4",
+            "frage": "Was ist der Hebelarm eines Drehmoments?",
+            "optionen": [
+              {"key": "A", "text": "Die Gesamtlänge des Hebels"},
+              {"key": "B", "text": "Der senkrechte Abstand zwischen Drehachse und Wirkungslinie der Kraft"},
+              {"key": "C", "text": "Der Abstand vom Schwerpunkt zur Kraft"},
+              {"key": "D", "text": "Die Länge des Kraftvektors"},
+              {"key": "E", "text": "Der Winkel zwischen Kraft und Drehachse"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Hebelarm = senkrechter Abstand von Drehachse zur Wirkungslinie der Kraft. M = F·d (d = Hebelarm). A ist falsch: Gesamtlänge ist nicht immer der Hebelarm. C ist falsch: Abstand vom SP ist nur relevant für Schwerpunktsberechnungen. D ist falsch: Kraftbetrag, nicht Hebelarm. E ist falsch: der Winkel geht über Kreuzprodukt ein: M = F·r·sinθ."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_4b_2_1",
+            "frage": "Welche Aussage zum Massenträgheitsmoment J ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "J hängt nur von der Masse ab."},
+              {"key": "B", "text": "J hängt von der Massenverteilung relativ zur Drehachse ab."},
+              {"key": "C", "text": "J ist für alle Körper gleich, wenn Masse und Radius gleich sind."},
+              {"key": "D", "text": "J hat die Einheit kg·m/s."},
+              {"key": "E", "text": "J ändert sich nicht, wenn die Drehachse verlagert wird."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: J = Σm_i·r_i² hängt davon ab, wie die Masse relativ zur Drehachse verteilt ist. A ist falsch: auch die Massenverteilung (r_i) bestimmt J. C ist falsch: Vollzylinder und Hohlzylinder mit gleichem m und R haben verschiedene J. D ist falsch: [J] = kg·m² (nicht kg·m/s). E ist falsch: Satz von Steiner zeigt, dass J von der Achswahl abhängt."
+          },
+          {
+            "id": "sc_4b_2_2",
+            "frage": "Welcher Körper hat das größte Massenträgheitsmoment bei gleicher Masse m und gleichem Außenradius R (um Symmetrieachse)?",
+            "optionen": [
+              {"key": "A", "text": "Vollzylinder (J = ½mR²)"},
+              {"key": "B", "text": "Vollkugel (J = 2/5 mR²)"},
+              {"key": "C", "text": "Hohlzylinder (J = mR²)"},
+              {"key": "D", "text": "Hohlkugel dünnwandig (J = 2/3 mR²)"},
+              {"key": "E", "text": "Alle gleich, da m und R gleich sind."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Hohlzylinder J = mR² ist am größten, weil die gesamte Masse am Rand liegt (maximaler Abstand zur Achse). A: J = 0,5mR². B: J = 0,4mR². D: J ≈ 0,667mR². E ist falsch: Massenverteilung bestimmt J, nicht nur m und R."
+          },
+          {
+            "id": "sc_4b_2_3",
+            "frage": "Welche Aussage zur Drehimpulserhaltung bei der Leiterschleife im Magnetfeld ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Das Magnetfeld erzeugt kein Drehmoment auf die Schleife."},
+              {"key": "B", "text": "Das Magnetische Drehmoment M = I·A·B·sinθ hängt vom Winkel ab."},
+              {"key": "C", "text": "Das Magnetische Drehmoment ist unabhängig vom Strom I."},
+              {"key": "D", "text": "Die Schleife dreht sich immer im Uhrzeigersinn."},
+              {"key": "E", "text": "Das Drehmoment ist maximal, wenn B senkrecht zur Schleifenebene steht."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: M = I·A·B·sinθ, wobei θ der Winkel zwischen Flächennormale und B ist. A ist falsch: M ≠ 0 im Allgemeinen. C ist falsch: M ∝ I. D ist falsch: Drehrichtung hängt von Stromrichtung und B-Richtung ab. E ist falsch: wenn B ⊥ Schleife (B parallel zu Normalen) ist sinθ = 0 → M = 0."
+          },
+          {
+            "id": "sc_4b_2_4",
+            "frage": "Ein Körper dreht sich gleichförmig auf einer Kreisbahn. Welche Größe ändert sich dabei NICHT?",
+            "optionen": [
+              {"key": "A", "text": "Der Geschwindigkeitsvektor v"},
+              {"key": "B", "text": "Die Richtung der Beschleunigung"},
+              {"key": "C", "text": "Der Betrag der Geschwindigkeit |v|"},
+              {"key": "D", "text": "Die Richtung des Geschwindigkeitsvektors"},
+              {"key": "E", "text": "Der Ort des Körpers"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Bei gleichförmiger Kreisbewegung (ω = const) bleibt |v| = ω·r konstant. A ist falsch: v als Vektor ändert seine Richtung. B ist falsch: die Beschleunigung zeigt immer zum Mittelpunkt — ihre Richtung ändert sich kontinuierlich. D ist falsch: v-Richtung ändert sich tangential. E ist falsch: der Ort ändert sich auf der Kreisbahn."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_4b_3_1",
+            "frage": "Ein Körper wird auf einer schiefen Ebene von Stöpsel gehalten, die sich dann lösen. Welche Kräfte bestimmen, ob er rollt oder gleitet?",
+            "optionen": [
+              {"key": "A", "text": "Nur Schwerkraft"},
+              {"key": "B", "text": "Schwerkraft und Normalkraft"},
+              {"key": "C", "text": "Schwerkraft, Normalkraft und die Verhältnis J/mR² (Trägheitsmoment)"},
+              {"key": "D", "text": "Nur Reibungskraft"},
+              {"key": "E", "text": "Schwerkraft und Reibungskoeffizient, aber nicht J"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Ob Rollen oder Gleiten stattfindet, hängt davon ab, ob die benötigte Reibungskraft für Rollbewegung die verfügbare Haftreibung (µ_H·N) übersteigt. Die benötigte Reibungskraft hängt von J/(mR²) ab. A, B, D sind unvollständig. E ist falsch: J beeinflusst die Reibungsanforderung."
+          },
+          {
+            "id": "sc_4b_3_2",
+            "frage": "Was ist Winkelbeschleunigung α?",
+            "optionen": [
+              {"key": "A", "text": "α = ω/t"},
+              {"key": "B", "text": "α = dω/dt"},
+              {"key": "C", "text": "α = v/r"},
+              {"key": "D", "text": "α = M·J"},
+              {"key": "E", "text": "α = 2π/T"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: α = dω/dt ist die momentane Änderungsrate der Winkelgeschwindigkeit. A ist falsch: α = ω/t gilt nur für gleichmäßige Beschleunigung aus der Ruhe. C ist falsch: v/r = ω (Winkelgeschwindigkeit, nicht Beschleunigung). D ist falsch: M/J = α (nicht M·J). E ist falsch: 2π/T = ω (Winkelgeschwindigkeit)."
+          },
+          {
+            "id": "sc_4b_3_3",
+            "frage": "Welche Aussage zu Scheinkräften ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Scheinkräfte existieren in Inertialsystemen."},
+              {"key": "B", "text": "Scheinkräfte haben keine Reaktionskraft (3. Newton)."},
+              {"key": "C", "text": "Zentrifugalkraft und Corioliskraft sind reale Kräfte in rotierenden Systemen."},
+              {"key": "D", "text": "Scheinkräfte können vernachlässigt werden."},
+              {"key": "E", "text": "Im Inertialsystem treten weder Zentrifugal- noch Corioliskraft auf."}
+            ],
+            "korrekt": "E",
+            "erklaerung": "E ist korrekt: Im Inertialsystem gibt es keine Scheinkräfte — nur reale Kräfte. A ist falsch: Scheinkräfte treten nur in nicht-inertialen (beschleunigten) Systemen auf. B ist korrekt (Scheinkräfte haben keine Reaktionskraft), aber weniger präzise als E. C ist falsch: sie sind Scheinkräfte, keine echten. D ist falsch: in rotierenden Systemen können sie bedeutsam sein."
+          },
+          {
+            "id": "sc_4b_3_4",
+            "frage": "Ein Vollzylinder hat Masse m, Radius R. Er rollt mit v_SP. Wie groß ist seine Gesamtenergie?",
+            "optionen": [
+              {"key": "A", "text": "E = ½mv²"},
+              {"key": "B", "text": "E = mv²"},
+              {"key": "C", "text": "E = ¾mv²"},
+              {"key": "D", "text": "E = ⅔mv²"},
+              {"key": "E", "text": "E = ½mv² + ½mω²R²"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: E = ½mv² + ½Jω² = ½mv² + ½·(½mR²)·(v/R)² = ½mv² + ¼mv² = ¾mv². A ist falsch: nur Translation. B ist falsch: zu groß. D ist falsch: 2/3 wäre für Vollkugel. E ist korrekt aber nur wenn man beachtet dass ½mv² + ½mω²R² = ½mv² + ½mv² = mv² (falsch wenn v = ωR)."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_4b_4_1",
+            "frage": "Wie ändert sich die Periodendauer T einer Kreisbewegung, wenn man den Radius verdoppelt, die Winkelgeschwindigkeit aber konstant hält?",
+            "optionen": [
+              {"key": "A", "text": "T verdoppelt sich."},
+              {"key": "B", "text": "T halbiert sich."},
+              {"key": "C", "text": "T bleibt gleich."},
+              {"key": "D", "text": "T vervierfacht sich."},
+              {"key": "E", "text": "T ist unabhängig von r."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: T = 2π/ω. Die Periodendauer hängt nur von ω ab, nicht von r. Bei konstantem ω bleibt T = const. A, B, D, E sind alle falsch. Die Bahngeschwindigkeit v = ω·r verdoppelt sich zwar, aber T = 2πr/v = 2πr/(ωr) = 2π/ω bleibt konstant."
+          },
+          {
+            "id": "sc_4b_4_2",
+            "frage": "Was ist die Dimension des Massenträgheitsmomentes J?",
+            "optionen": [
+              {"key": "A", "text": "[J] = kg"},
+              {"key": "B", "text": "[J] = kg·m"},
+              {"key": "C", "text": "[J] = kg·m²"},
+              {"key": "D", "text": "[J] = kg·m/s"},
+              {"key": "E", "text": "[J] = N·m"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: J = Σm_i·r_i² → [kg]·[m²] = kg·m². A ist falsch: kg ist Masse. B ist falsch: kg·m hat keine physikalische Standard-Bedeutung hier. D ist falsch: kg·m/s ist Impuls. E ist falsch: N·m = J = Joule = Energie."
+          },
+          {
+            "id": "sc_4b_4_3",
+            "frage": "Welche Aussage zur Rollbewegung eines Vollzylinders (keine Reibung) auf einer schiefen Ebene ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Der Zylinder rollt wie normal."},
+              {"key": "B", "text": "Der Zylinder gleitet ohne zu rollen."},
+              {"key": "C", "text": "Der Zylinder bleibt stehen."},
+              {"key": "D", "text": "Der Zylinder springt von der Ebene."},
+              {"key": "E", "text": "Die Rollbewegung ist unabhängig von Reibung."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Reibung ist notwendig, um das Drehmoment zu erzeugen, das die Rotation antreibt. Ohne Reibung: kein Drehmoment → Rotation wird nicht angetrieben → Zylinder gleitet ohne zu rollen. A ist falsch: ohne Reibung kein Rollen. C ist falsch: Schwerkraft treibt die Translation an. D ist falsch: keine Sprungkräfte. E ist falsch: Reibung ist essenziell."
+          },
+          {
+            "id": "sc_4b_4_4",
+            "frage": "Welche Aussage zum Atwood-System auf schiefer Ebene ist korrekt (Umlenkrolle hat Masse)?",
+            "optionen": [
+              {"key": "A", "text": "Die Seilspannung ist auf beiden Seiten der Rolle gleich."},
+              {"key": "B", "text": "Die Seilspannung ist auf beiden Seiten verschieden, weil die Rolle beschleunigt wird."},
+              {"key": "C", "text": "Die Masse der Rolle hat keinen Einfluss auf die Beschleunigung."},
+              {"key": "D", "text": "Das System beschleunigt immer in Richtung der hängenden Masse."},
+              {"key": "E", "text": "Wenn α = 30° und beide Massen gleich sind, ist die Beschleunigung null."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: T₂−T₁ = J·α/R² — die Differenz der Seilspannungen erzeugt das Drehmoment zur Beschleunigung der Rolle. A ist falsch: nur bei masseloser Rolle. C ist falsch: die Rollenmasse erhöht die effektive Trägheit. D ist falsch: Richtung hängt von m₁g·sinα vs m₂g ab. E ist korrekt: m₁ = m₂, α = 30° → m₂g − m₁g·sin30° = mg(1−0,5) = 0,5mg ≠ 0 → beschleunigt zur hängenden Masse."
+          }
+        ]
+      }
+    }
+  }
+}

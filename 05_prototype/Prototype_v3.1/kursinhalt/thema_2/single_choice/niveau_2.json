@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_2_2_1",
+    "frage": "Ein Block liegt auf einer schiefen Ebene. Mit zunehmendem Neigungswinkel α ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "... nehmen Hangabtrieb und Reibungskraft beide zu."
+      },
+      {
+        "key": "B",
+        "text": "... nimmt der Hangabtrieb zu, die Reibungskraft nimmt ab."
+      },
+      {
+        "key": "C",
+        "text": "... bleiben beide konstant."
+      },
+      {
+        "key": "D",
+        "text": "... nehmen beide ab."
+      },
+      {
+        "key": "E",
+        "text": "... nimmt der Hangabtrieb ab."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Fh=mgsin(α) steigt; FN=mgcos(α) fällt; FR=μFN fällt. Deshalb rutsch bei ausreichend steilem Winkel."
+  },
+  {
+    "id": "sc_2_2_2",
+    "frage": "Impulserhaltung gilt ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "... immer, auch mit externen Kräften."
+      },
+      {
+        "key": "B",
+        "text": "... nur bei elastischen Stößen."
+      },
+      {
+        "key": "C",
+        "text": "... wenn keine externen Kräfte auf das System wirken."
+      },
+      {
+        "key": "D",
+        "text": "... nur bei gleichen Massen."
+      },
+      {
+        "key": "E",
+        "text": "... wenn alle Kräfte konservativ sind."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: ΣF_ext=0 → p=const. A falsch. B falsch (auch inelastisch). D falsch. E beschreibt Energieerhaltung."
+  },
+  {
+    "id": "sc_2_2_3",
+    "frage": "Das 3. Newtonsche Gesetz (actio = reactio): Kraft und Gegenkraft ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "... wirken auf den gleichen Körper."
+      },
+      {
+        "key": "B",
+        "text": "... heben sich gegenseitig auf."
+      },
+      {
+        "key": "C",
+        "text": "... wirken auf verschiedene Körper, sind gleich groß und entgegengerichtet."
+      },
+      {
+        "key": "D",
+        "text": "... sind nur bei Kontaktkräften gültig."
+      },
+      {
+        "key": "E",
+        "text": "... bewirken immer Gleichgewicht."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Actio/reactio greifen an VERSCHIEDENEN Körpern an → kein Gleichgewicht eines Körpers. A häufiger Irrtum. B/E falsch wegen verschiedener Angriffspunkte. D falsch (gilt auch für Gravitation)."
+  },
+  {
+    "id": "sc_2_2_4",
+    "frage": "Ein Aufzug beschleunigt aufwärts. Die Waage zeigt ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "... weniger als im Stillstand."
+      },
+      {
+        "key": "B",
+        "text": "... gleich viel wie im Stillstand."
+      },
+      {
+        "key": "C",
+        "text": "... mehr als im Stillstand."
+      },
+      {
+        "key": "D",
+        "text": "... null."
+      },
+      {
+        "key": "E",
+        "text": "... hängt von der Fahrtgeschwindigkeit ab."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Aufwärtsbeschleunigung → FN=m(g+a) > mg. A: Abwärtsbeschleunigung oder Aufwärtsverzögerung. B: Gleichförmig. D: freier Fall. E falsch (hängt von a, nicht v ab)."
+  }
+]

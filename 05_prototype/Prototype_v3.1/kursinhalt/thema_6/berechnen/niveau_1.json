@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_6_1_1",
+    "aufgabe": "Ein Federpendel besteht aus einer Feder mit der Federkonstante k = 200 N/m und einer Masse m = 2,0 kg. Berechnen Sie die Kreisfrequenz ω und die Schwingungsdauer T.",
+    "musterloesung": "ω = √(k/m) = √(200/2,0) = √100 = 10 rad/s. T = 2π/ω = 2π/10 ≈ 0,628 s.",
+    "tipps": [
+      "Welche Formel beschreibt die Kreisfrequenz eines Federpendels?",
+      "ω = √(k/m). Periode: T = 2π/ω.",
+      "ω = 10 rad/s → T = 2π/10 ≈ 0,628 s."
+    ]
+  },
+  {
+    "id": "do_b_6_1_2",
+    "aufgabe": "Ein Fadenpendel der Länge l = 0,50 m schwingt bei kleinen Auslenkungen. Berechnen Sie die Schwingungsdauer T. (g = 9,81 m/s²)",
+    "musterloesung": "T = 2π·√(l/g) = 2π·√(0,50/9,81) = 2π·0,2257 ≈ 1,42 s.",
+    "tipps": [
+      "Welche Formel beschreibt die Schwingungsdauer eines Fadenpendels bei kleinen Auslenkungen?",
+      "T = 2π·√(l/g).",
+      "T = 2π·√(0,50/9,81) ≈ 1,42 s."
+    ]
+  }
+]

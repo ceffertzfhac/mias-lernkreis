@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_7_4_1",
+    "aufgabe": "Eine geladene Hantel besteht aus zwei Kugeln: Kugel A (Masse m_A = 0,40 μg, Ladung q_A = −100 nC) und Kugel B (Masse m_B = 0,30 μg, Ladung q_B = +100 nC), verbunden durch einen masselosen Stab der Länge l = 200 mm. Die Hantel ist in der Mitte drehbar gelagert und befindet sich in einem elektrischen Feld E, das mit der Hantelachse einen Winkel von 60° einschließt. Berechnen Sie das elektrische Drehmoment M_E sowie das Gravitationsdrehmoment M_G und bestimmen Sie, ob das System im Gleichgewicht sein kann.",
+    "musterloesung": "Dipolmoment: p = q·l = 100·10⁻⁹·0,2 = 20·10⁻⁹ C·m. Elektrisches Drehmoment (auf den Dipol): M_E = p·E·sin(60°). Gravitationsdrehmoment: Der Schwerpunkt liegt nicht in der Mitte, da m_A ≠ m_B. Abstand SP von Mitte: d = (m_B−m_A)·l/(2·(m_A+m_B)) = (0,30−0,40)·0,2/(2·0,70)·10⁻⁶ g — Vorzeichen beachten. M_G = (m_A−m_B)·g·l/2 = 0,10·10⁻⁹·9,81·0,1 = 9,81·10⁻¹¹ N·m. Gleichgewicht erfordert M_E = M_G.",
+    "tipps": [
+      "Berechne das elektrische Dipolmoment p = q·l. Das Drehmoment auf den Dipol ist M = p·E·sin(θ). Das Gravitationsdrehmoment folgt aus der Massenasymmetrie.",
+      "Schwerpunktversatz von der Mitte: d_SP = (m_B−m_A)/(m_A+m_B)·(l/2). M_G = (m_A+m_B)·g·d_SP.",
+      "Das System ist im Gleichgewicht, wenn M_E = M_G gilt — was E festlegt."
+    ]
+  },
+  {
+    "id": "do_b_7_4_2",
+    "aufgabe": "Eine Ladung q bewegt sich parallel zu einem stromdurchflossenen Leiter. Im Ausgangsfall beträgt der Abstand r₀ und die Geschwindigkeit v₀. Berechnen Sie, um welchen Faktor sich die Lorentzkraft F ändert, wenn (a) der Abstand verdoppelt und (b) zusätzlich auch die Geschwindigkeit verdoppelt wird. (c) Was ergibt sich, wenn beide Änderungen gleichzeitig eintreten?",
+    "musterloesung": "Magnetfeld eines langen Leiters: B = μ₀·I/(2π·r). Lorentzkraft: F = q·v·B = q·v·μ₀I/(2π·r). (a) r → 2r: F → F/2 (halbiert). (b) v → 2v, r = 2r: F → q·2v·μ₀I/(2π·2r) = F·(2v/2r)/(v/r) = F·1 → gleich wie ursprünglich. (c) Beide gleichzeitig: Faktor 2v/(2r) = v/r → F bleibt gleich wie im Original.",
+    "tipps": [
+      "Schreibe F als Funktion von v und r und analysiere, wie sich F verändert, wenn v und r skaliert werden.",
+      "F ∝ v/r. Bei Verdopplung von r: F → F/2. Bei Verdopplung von v und r: F ∝ (2v)/(2r) = v/r → unverändert.",
+      "(a) F_neu = F/2. (b) und (c): F_neu = F·(2·2)/(2·2)... Verdopplung beider: F·(2/2)=F → keine Änderung."
+    ]
+  }
+]

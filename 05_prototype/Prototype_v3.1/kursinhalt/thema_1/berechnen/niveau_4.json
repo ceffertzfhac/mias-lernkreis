@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_1_4_1",
+    "aufgabe": "Ein Projektil soll eine horizontale Zieldistanz von R = 150 m treffen (Abschuss- und Auftreffpunkt auf gleicher Höhe). Die Abschussgeschwindigkeit beträgt v₀ = 45 m/s. (a) Bestimmen Sie alle möglichen Abwurfwinkel α. (b) Berechnen Sie für den optimalen Winkel (maximale Wurfweite) die maximale Flughöhe h_max. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: R = 150 m, v₀ = 45 m/s, g = 9,81 m/s². (a) R = v₀²·sin(2α)/g → sin(2α) = R·g/v₀² = 150·9,81/2025 = 0,727. 2α = 46,6° → α₁ = 23,3°. Zweite Lösung: 2α = 133,4° → α₂ = 66,7°. (b) Optimaler Winkel für max. Wurfweite: α = 45°. h_max = v₀²·sin²(45°)/(2g) = 2025·0,5/19,62 ≈ 51,6 m.",
+    "tipps": [
+      "Stelle die Formel für die Wurfweite R auf und löse nach sin(2α) auf. Beachte: sin(2α) = sin(180° − 2α) liefert zwei Winkel.",
+      "R = v₀²·sin(2α)/g → sin(2α) = R·g/v₀². Maximale Wurfweite bei α = 45°. h_max = v₀²·sin²(α)/(2g).",
+      "sin(2α) = 0,727 → α₁ = 23,3°, α₂ = 66,7°. Bei α = 45°: h_max ≈ 51,6 m."
+    ]
+  },
+  {
+    "id": "do_b_1_4_2",
+    "aufgabe": "Ein Körper bewegt sich gemäß x(t) = v₀·t + ½·a·t² mit v₀ = 12 m/s und a = −3,0 m/s². (a) Wann kommt der Körper momentan zur Ruhe? (b) Wann kehrt er zu seiner Ausgangsposition zurück? (c) Welche Gesamtstrecke legt er bis zur Rückkehr zurück?",
+    "musterloesung": "(a) v(t) = v₀ + a·t = 0 → t₁ = 12/3,0 = 4,0 s. (b) x(t) = 0 → t·(12 − 1,5t) = 0 → t = 0 (Start) oder t₂ = 8,0 s. (c) x(4,0) = 12·4 − 1,5·16 = 48 − 24 = 24 m (Umkehrpunkt). Rückweg ebenfalls 24 m. Gesamtstrecke: 48 m.",
+    "tipps": [
+      "Für (a): Setze v(t) = 0. Für (b): Setze x(t) = 0 und löse die quadratische Gleichung. Für (c): Beachte, dass Hin- und Rückweg addiert werden — nicht die Verschiebung.",
+      "v(t) = 12 − 3t = 0 → t₁ = 4 s. x(t) = 12t − 1,5t² = 0 → t₂ = 8 s. Maximale Auslenkung bei t₁ berechnen.",
+      "x(4) = 24 m. Der Körper legt also 24 m hin und 24 m zurück — Gesamtstrecke 48 m."
+    ]
+  },
+  {
+    "id": "do_b_1_4_3",
+    "aufgabe": "Ball A wird mit v₀ = 20 m/s unter dem Winkel α = 60° schräg nach oben geworfen. Genau t = 1,0 s später wird vom selben Punkt aus Ball B mit v₀ = 30 m/s unter dem Winkel β = 45° geworfen. Haben beide Bälle zu irgendeinem Zeitpunkt dieselbe Höhe? Falls ja: zu welchem Zeitpunkt (nach Abwurf von A) und welche Höhe ist das? (g = 9,81 m/s²)",
+    "musterloesung": "Höhe A: y_A(t) = 20·sin(60°)·t − ½·9,81·t² = 17,32t − 4,905t². Höhe B: y_B(t) = 30·sin(45°)·(t−1) − 4,905·(t−1)² = 21,21(t−1) − 4,905(t−1)². Gleichsetzen: 17,32t − 4,905t² = 21,21t − 21,21 − 4,905t² + 9,81t − 4,905. Vereinfachen: 17,32t = 21,21t − 26,115 + 9,81t → 17,32t = 31,02t − 26,115 → 13,7t = 26,115 → t ≈ 1,91 s. Höhe: y_A(1,91) ≈ 17,32·1,91 − 4,905·3,648 ≈ 33,1 − 17,9 ≈ 15,2 m.",
+    "tipps": [
+      "Stelle für beide Bälle die Höhe y als Funktion der Zeit seit Abwurf von A auf. Beachte den Zeitversatz von 1 s bei Ball B.",
+      "y_A(t) = v₀sin(60°)·t − ½g·t², y_B(t) = v₀sin(45°)·(t−1) − ½g·(t−1)². Setze y_A = y_B und löse nach t auf.",
+      "Die t²-Terme heben sich heraus. Es bleibt eine lineare Gleichung: t ≈ 1,91 s, Höhe ≈ 15,2 m."
+    ]
+  },
+  {
+    "id": "do_b_1_4_4",
+    "aufgabe": "Die Trajektorie eines Körpers ist durch den Ortsvektor s(t) = (v_R·t·cos(ωt), v_R·t·sin(ωt), −v_z·t) beschrieben, mit v_R = 1,0 m/s, ω = 2,0 rad/s und v_z = 0,50 m/s. (a) Berechnen Sie den Betrag der Geschwindigkeit zum Zeitpunkt t = 1,0 s. (b) Welche Beschleunigungskomponenten treten auf?",
+    "musterloesung": "v(t) = ds/dt. x-Komp.: vx = v_R(cos(ωt) − ωt·sin(ωt)). y-Komp.: vy = v_R(sin(ωt) + ωt·cos(ωt)). z-Komp.: vz = −v_z. Bei t = 1 s, ωt = 2 rad: vx = 1·(cos2 − 2sin2) = −0,416 − 1,819 = −2,235 m/s. vy = 1·(sin2 + 2cos2) = 0,909 − 0,832 = 0,077 m/s. vz = −0,5 m/s. |v| = √(2,235² + 0,077² + 0,25) ≈ √5,25 ≈ 2,29 m/s. Beschleunigung durch Produktregel ermitteln — enthält Zentripetal- und Coriolisanteile.",
+    "tipps": [
+      "Leite jeden Ortsvektor-Anteil nach der Zeit ab. Produktregel anwenden (t · trigon. Funktion). Dann Betrag berechnen.",
+      "dx/dt = v_R·(cos(ωt) − ωt·sin(ωt)). Analog für y. z: konstante Geschwindigkeit. |v| = √(vx²+vy²+vz²).",
+      "Bei t = 1 s, ωt = 2 rad: vx ≈ −2,24, vy ≈ 0,08, vz = −0,5. |v| ≈ 2,29 m/s."
+    ]
+  }
+]

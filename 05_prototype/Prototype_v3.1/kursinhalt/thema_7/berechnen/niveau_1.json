@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_7_1_1",
+    "aufgabe": "An einem Widerstand R = 120 Ω liegt eine Spannung U = 12 V an. Berechnen Sie die fließende Stromstärke I.",
+    "musterloesung": "Gegeben: R = 120 Ω, U = 12 V. Gesucht: I. Ansatz: U = R·I → I = U/R = 12/120 = 0,10 A = 100 mA.",
+    "tipps": [
+      "Welches Grundgesetz der Elektrizitätslehre verknüpft Spannung, Widerstand und Stromstärke?",
+      "Ohmsches Gesetz: U = R·I → I = U/R.",
+      "I = 12/120 = 0,10 A."
+    ]
+  },
+  {
+    "id": "do_b_7_1_2",
+    "aufgabe": "Zwei Widerstände R₁ = 30 Ω und R₂ = 60 Ω sind parallel geschaltet. Berechnen Sie den Gesamtwiderstand R_ges.",
+    "musterloesung": "1/R_ges = 1/R₁ + 1/R₂ = 1/30 + 1/60 = 2/60 + 1/60 = 3/60 = 1/20. R_ges = 20 Ω.",
+    "tipps": [
+      "Wie lautet die Formel für den Gesamtwiderstand bei Parallelschaltung?",
+      "1/R_ges = 1/R₁ + 1/R₂.",
+      "1/R_ges = 1/30 + 1/60 = 3/60 → R_ges = 20 Ω."
+    ]
+  }
+]

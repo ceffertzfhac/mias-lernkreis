@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_3_2_1",
+    "frage": "Ein Block (m, v₀) trifft eine Feder (k). Maximale Stauchung xmax:",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "xmax=mv₀²/k"
+      },
+      {
+        "key": "B",
+        "text": "xmax=v₀√(m/k)"
+      },
+      {
+        "key": "C",
+        "text": "xmax=mv₀/k"
+      },
+      {
+        "key": "D",
+        "text": "xmax unabhängig von v₀"
+      },
+      {
+        "key": "E",
+        "text": "xmax=mv₀²/(2k)"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: ½mv₀²=½kxmax² → xmax=v₀√(m/k). A hat falsches Quadrat. D falsch. E falsch."
+  },
+  {
+    "id": "sc_3_2_2",
+    "frage": "Eine Kraft F=20 N wirkt unter θ=60° zur Bewegungsrichtung über s=10 m. Arbeit?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "200 J"
+      },
+      {
+        "key": "B",
+        "text": "173 J"
+      },
+      {
+        "key": "C",
+        "text": "100 J"
+      },
+      {
+        "key": "D",
+        "text": "0 J"
+      },
+      {
+        "key": "E",
+        "text": "141 J"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: W=F·s·cos60°=20·10·0,5=100 J. A ohne Winkel. B: cos30°. D: cos90°."
+  }
+]

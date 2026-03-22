@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_2_1_1",
+    "frage": "Was besagt das 2. Newtonsche Gesetz?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Actio = Reactio"
+      },
+      {
+        "key": "B",
+        "text": "Jeder Körper bleibt in Ruhe oder gleichförmiger Bewegung, wenn keine Kraft wirkt."
+      },
+      {
+        "key": "C",
+        "text": "F = m·a"
+      },
+      {
+        "key": "D",
+        "text": "Energie ist erhalten."
+      },
+      {
+        "key": "E",
+        "text": "Der Impuls ist erhalten."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: 2. Newton: F=ma. A: 3. Newton. B: 1. Newton (Trägheit). D: Energieerhaltung. E: Impulserhaltung."
+  },
+  {
+    "id": "sc_2_1_2",
+    "frage": "Welche Kräfte wirken auf einen ruhenden Block auf horizontaler Fläche?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Nur Gewichtskraft"
+      },
+      {
+        "key": "B",
+        "text": "Gewichtskraft und Normalkraft (gleich groß, entgegengesetzt)"
+      },
+      {
+        "key": "C",
+        "text": "Gewichtskraft und Reibungskraft"
+      },
+      {
+        "key": "D",
+        "text": "Nur Normalkraft"
+      },
+      {
+        "key": "E",
+        "text": "Drei Kräfte: Gewicht, Normal, Reibung"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: FG nach unten, FN nach oben, beide gleich groß → a=0. C falsch (keine Reibung ohne Horizontalkraft). A/D vergessen je eine Kraft."
+  },
+  {
+    "id": "sc_2_1_3",
+    "frage": "Die Einheit des Impulses ist:",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "N"
+      },
+      {
+        "key": "B",
+        "text": "J"
+      },
+      {
+        "key": "C",
+        "text": "kg·m/s"
+      },
+      {
+        "key": "D",
+        "text": "W"
+      },
+      {
+        "key": "E",
+        "text": "m/s²"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: p=mv → kg·m/s = N·s. A = Kraft. B = Energie. D = Leistung. E = Beschleunigung."
+  },
+  {
+    "id": "sc_2_1_4",
+    "frage": "Was ist der Kraftstoß?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "F·s (Arbeit)"
+      },
+      {
+        "key": "B",
+        "text": "F·Δt = Δp (Impulsänderung)"
+      },
+      {
+        "key": "C",
+        "text": "m·a (Kraft)"
+      },
+      {
+        "key": "D",
+        "text": "½mv² (kinetische Energie)"
+      },
+      {
+        "key": "E",
+        "text": "m·g (Gewichtskraft)"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Kraftstoß = F·Δt = Δp. A = Arbeit (nicht Kraftstoß). C = Kraft (aus F=ma). D = Ekin. E = Gewichtskraft."
+  }
+]

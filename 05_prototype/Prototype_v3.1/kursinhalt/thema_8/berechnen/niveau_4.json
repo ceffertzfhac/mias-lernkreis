@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_8_4_1",
+    "aufgabe": "Im Praktikum wurden 10 gleichartige Messungen einer Länge durchgeführt: 5,12 — 5,08 — 5,15 — 5,09 — 5,11 — 5,13 — 5,10 — 5,14 — 5,08 — 5,10 cm. Berechnen Sie (a) den Mittelwert x̄, (b) die Standardabweichung s, (c) die Standardabweichung des Mittelwerts s_x̄ sowie (d) das Endergebnis mit korrekter Angabe der Messunsicherheit.",
+    "musterloesung": "(a) x̄ = 5,110 cm. (b) s ≈ 0,0245 cm. (c) s_x̄ ≈ 0,008 cm. (d) Ergebnis: x = (5,11 ± 0,01) cm (auf sinnvolle Stellen gerundet).",
+    "tipps": [
+      "Berechne den Mittelwert, dann die Einzelabweichungen (xᵢ − x̄), quadriere sie, summiere und teile durch (n−1) für die Varianz.",
+      "s = √(Σ(xᵢ−x̄)²/(n−1)). Standardabweichung des Mittelwerts: s_x̄ = s/√n. Die Messunsicherheit wird auf eine signifikante Stelle gerundet.",
+      "x̄ = 5,110 cm, s ≈ 0,025 cm, s_x̄ ≈ 0,008 cm. Ergebnis: (5,11 ± 0,01) cm."
+    ]
+  },
+  {
+    "id": "do_b_8_4_2",
+    "aufgabe": "Eine physikalische Größe y hängt von x gemäß y = a·xⁿ ab. Im doppeltlogarithmischen Diagramm (log y über log x) wurden zwei Punkte abgelesen: Punkt 1: (log x₁ = 0,5, log y₁ = 1,2) und Punkt 2: (log x₂ = 1,5, log y₂ = 3,2). Berechnen Sie den Exponenten n sowie den Vorfaktor a.",
+    "musterloesung": "log(y) = n·log(x) + log(a). Steigung: n = (log y₂ − log y₁)/(log x₂ − log x₁) = (3,2−1,2)/(1,5−0,5) = 2,0/1,0 = 2. log(a) = log y₁ − n·log x₁ = 1,2 − 2·0,5 = 0,2 → a = 10^0,2 ≈ 1,585. Überprüfung: y = 1,585·x².",
+    "tipps": [
+      "Im doppeltlogarithmischen Diagramm wird y = a·xⁿ zu einer Geraden: log y = n·log x + log a. Der Exponent n ist die Steigung.",
+      "Steigung: n = Δ(log y)/Δ(log x). Achsenabschnitt: log a = log y − n·log x (für einen bekannten Punkt).",
+      "n = (3,2−1,2)/(1,5−0,5) = 2. log a = 0,2 → a ≈ 1,585."
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_g_1_3_1",
+    "aufgabe": "Freier Fall: Ein Sensor misst h(t): (0,5 s; 1,2 m), (1,0 s; 4,9 m), (1,5 s; 11,0 m), (2,0 s; 19,6 m). Linearisiere und bestimme g grafisch.",
+    "musterloesung": "h = ½gt² → h/t² = ½g = const ≈ 4,9 m/s². Probe: 1,2/0,25=4,8; 4,9/1,0=4,9; 11/2,25=4,89; 19,6/4=4,9. Mittel ≈ 4,90. g = 2·4,90 = 9,80 m/s².",
+    "tipps": [
+      "Linearisierung von h = ½gt²: Plotte h gegen t² → Gerade mit Steigung ½g.",
+      "h/t²-Werte berechnen, auf Konstanz prüfen.",
+      "Steigung = ½g ≈ 4,90 m/s² → g ≈ 9,80 m/s²."
+    ]
+  },
+  {
+    "id": "do_g_1_3_2",
+    "aufgabe": "Ein Körper hat das x-t-Diagramm: x(t) = 5 + 3t − 0,5t². (a) Skizziere den Graphen für 0–6 s. (b) Markiere Umkehrpunkt und Nulldurchgang. (c) Lies die Momentangeschwindigkeit bei t = 1 s grafisch als Tangente ab.",
+    "musterloesung": "v(t) = 3 − t = 0 → t_Umkehr = 3 s, x_max = 5+9−4,5 = 9,5 m. x = 0: 0,5t²−3t−5 = 0 → t = (3+√(9+10))/1 ≈ (3+4,36) ≈ 7,36 s (außerhalb). Bei t=1: v(1) = 2 m/s (Tangente). Skizze zeigt Parabel, Maximum bei (3; 9,5).",
+    "tipps": [
+      "v = x'(t) = 3−t. Umkehrpunkt: v = 0. Tangente im Punkt = Momentangeschwindigkeit.",
+      "x_max bei t=3 s. Tangente bei t=1 s hat Steigung v(1)=2 m/s.",
+      "Umkehrpunkt (3 s; 9,5 m); v(1 s) = 2 m/s."
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_4_1_1",
+    "aufgabe": "Zwei Körper der Masse m₁ = 3,0 kg und m₂ = 3,0 kg stoßen vollkommen unelastisch zusammen. Körper 1 bewegt sich vor dem Stoß mit v₁ = 6,0 m/s, Körper 2 ist in Ruhe. Berechnen Sie (a) die gemeinsame Geschwindigkeit v' nach dem Stoß und (b) den kinetischen Energieverlust ΔE_kin.",
+    "musterloesung": "(a) Impulserhaltung: m₁·v₁ = (m₁+m₂)·v' → v' = m₁·v₁/(m₁+m₂) = 3·6/(6) = 3,0 m/s. (b) E_kin,vor = ½·3·36 = 54 J. E_kin,nach = ½·6·9 = 27 J. ΔE_kin = 54 − 27 = 27 J.",
+    "tipps": [
+      "Beim vollkommen unelastischen Stoß bleibt der Gesamtimpuls erhalten. Wie lautet die Impulserhaltungsgleichung?",
+      "Impulserhaltung: m₁·v₁ = (m₁+m₂)·v'. Energieverlust: ΔE = E_kin,vor − E_kin,nach.",
+      "v' = 3,0 m/s. E_vor = 54 J, E_nach = 27 J → ΔE = 27 J."
+    ]
+  },
+  {
+    "id": "do_b_4_1_2",
+    "aufgabe": "Zwei gleichschwere Kugeln der Masse m stoßen elastisch zusammen. Kugel 1 bewegt sich vor dem Stoß mit der Geschwindigkeit v₀, Kugel 2 ist in Ruhe. Berechnen Sie die Geschwindigkeiten v₁' und v₂' beider Kugeln nach dem Stoß.",
+    "musterloesung": "Beim elastischen Stoß gleicher Massen tauschen die Kugeln ihre Geschwindigkeiten. Aus Impuls- und Energieerhaltung: v₁' = 0, v₂' = v₀. Kugel 1 kommt zur Ruhe, Kugel 2 bewegt sich mit v₀ weiter.",
+    "tipps": [
+      "Stelle beide Erhaltungsgleichungen auf: Impulserhaltung und Energieerhaltung. Bei gleichen Massen vereinfacht sich das System erheblich.",
+      "m·v₀ = m·v₁' + m·v₂' und ½mv₀² = ½mv₁'² + ½mv₂'². Dividiere die Energiegleichung durch ½m.",
+      "Lösung: v₁' = 0, v₂' = v₀. Ein bekanntes Ergebnis: gleiche Massen tauschen beim elastischen Stoß ihre Geschwindigkeiten."
+    ]
+  }
+]

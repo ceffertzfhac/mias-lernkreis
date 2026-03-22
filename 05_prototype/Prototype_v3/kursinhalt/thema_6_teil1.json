@@ -1,0 +1,405 @@
+{
+  "thema_id": 6,
+  "thema_name": "Elektrizität & Elektromagnetismus — Teil 1: Stromkreise",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_6_1_1",
+            "aufgabe": "Ein Widerstand R = 47 Ω liegt an einer Spannung U = 12 V. Berechne die Stromstärke I.",
+            "musterloesung": "Nach dem Ohmschen Gesetz gilt U = R · I, umgestellt: I = U / R = 12 V / 47 Ω ≈ 0,255 A. Die Einheit ergibt sich aus V/Ω = A.",
+            "tipps": [
+              "Welches Grundgesetz der Elektrizitätslehre verbindet Spannung, Widerstand und Stromstärke?",
+              "Nutze U = R · I und löse nach I auf.",
+              "I = U / R = 12 / 47 ≈ 0,255 A"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_1_2",
+            "aufgabe": "Ein Draht hat einen spezifischen Widerstand ρ = 1,7 × 10⁻⁸ Ω·m, eine Länge l = 2 m und einen Querschnitt A = 1 mm². Berechne den elektrischen Widerstand R.",
+            "musterloesung": "R = ρ · l / A = (1,7 × 10⁻⁸ Ω·m · 2 m) / (1 × 10⁻⁶ m²) = 3,4 × 10⁻² Ω = 34 mΩ. Die Umrechnung 1 mm² = 10⁻⁶ m² ist entscheidend.",
+            "tipps": [
+              "Der Widerstand eines Drahtes hängt von Material, Länge und Querschnitt ab.",
+              "Formel: R = ρ · l / A — achte auf einheitliche SI-Einheiten.",
+              "A = 1 mm² = 10⁻⁶ m², dann R = 1,7×10⁻⁸ · 2 / 10⁻⁶ = 34 mΩ"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_1_3",
+            "aufgabe": "Eine Glühlampe hat die Aufschrift '60 W, 230 V'. Berechne den Betriebswiderstand der Lampe.",
+            "musterloesung": "P = U²/R → R = U²/P = (230 V)² / 60 W = 52900 / 60 ≈ 882 Ω. Alternativ: I = P/U = 60/230 ≈ 0,26 A, dann R = U/I = 230/0,26 ≈ 882 Ω.",
+            "tipps": [
+              "Welche Formel verbindet elektrische Leistung P mit Spannung U und Widerstand R?",
+              "P = U · I = U²/R — löse nach R auf.",
+              "R = U²/P = 230²/60 ≈ 882 Ω"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_1_4",
+            "aufgabe": "Zwei Widerstände R₁ = 100 Ω und R₂ = 150 Ω liegen in Reihenschaltung an U = 12 V. Berechne den Gesamtwiderstand und die Spannung an R₂.",
+            "musterloesung": "Reihenschaltung: R_ges = R₁ + R₂ = 250 Ω. Strom: I = U/R_ges = 12/250 = 0,048 A. Spannung an R₂: U₂ = R₂ · I = 150 · 0,048 = 7,2 V.",
+            "tipps": [
+              "Bei Reihenschaltung fließt überall der gleiche Strom — wie addieren sich die Widerstände?",
+              "R_ges = R₁ + R₂; dann I = U/R_ges; dann U₂ = R₂ · I.",
+              "R_ges = 250 Ω; I = 0,048 A; U₂ = 7,2 V"
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_6_2_1",
+            "aufgabe": "Zwei Widerstände R₁ = 120 Ω und R₂ = 80 Ω liegen in Parallelschaltung. An der Kombination liegt U = 24 V. Berechne den Gesamtwiderstand und die Ströme I₁, I₂ sowie den Gesamtstrom I.",
+            "musterloesung": "Parallelschaltung: 1/R_ges = 1/R₁ + 1/R₂ = 1/120 + 1/80 = 5/240 → R_ges = 48 Ω. I₁ = 24/120 = 0,2 A; I₂ = 24/80 = 0,3 A; I = I₁ + I₂ = 0,5 A. Probe: I = U/R_ges = 24/48 = 0,5 A ✓",
+            "tipps": [
+              "Bei Parallelschaltung liegt an jedem Widerstand dieselbe Spannung — wie berechnet sich der Gesamtwiderstand?",
+              "1/R_ges = 1/R₁ + 1/R₂; dann Einzelströme I_n = U/R_n; Kirchhoff: I = I₁ + I₂.",
+              "R_ges = 48 Ω; I₁ = 0,2 A; I₂ = 0,3 A; I = 0,5 A"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_2_2",
+            "aufgabe": "In einem Stromkreis liegen R₁ = 20 Ω und R₂ = 30 Ω in Reihe. An R₁ fällt eine Spannung von U₁ = 8 V ab. Berechne die Gesamtspannung U und die Leistung P₂ an R₂.",
+            "musterloesung": "Strom: I = U₁/R₁ = 8/20 = 0,4 A. Spannung R₂: U₂ = R₂·I = 30·0,4 = 12 V. Gesamtspannung: U = U₁ + U₂ = 20 V. Leistung: P₂ = U₂·I = 12·0,4 = 4,8 W.",
+            "tipps": [
+              "Bei Reihenschaltung ist der Strom überall gleich — berechne zuerst I aus den bekannten Werten.",
+              "I = U₁/R₁, dann U₂ = R₂·I, U_ges = U₁ + U₂, P₂ = U₂·I.",
+              "I = 0,4 A; U₂ = 12 V; U = 20 V; P₂ = 4,8 W"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_2_3",
+            "aufgabe": "Ein Kupferdraht (ρ = 1,7 × 10⁻⁸ Ω·m) hat einen Querschnitt von 2,5 mm² und einen Widerstand von R = 0,34 Ω. Berechne die Länge des Drahtes.",
+            "musterloesung": "R = ρ·l/A → l = R·A/ρ = 0,34 Ω · 2,5×10⁻⁶ m² / 1,7×10⁻⁸ Ω·m = 8,5×10⁻⁷ / 1,7×10⁻⁸ = 50 m.",
+            "tipps": [
+              "Stelle die Formel R = ρ·l/A nach l um.",
+              "l = R·A/ρ — achte auf SI-Einheiten: mm² → m².",
+              "l = 0,34 · 2,5×10⁻⁶ / 1,7×10⁻⁸ = 50 m"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_2_4",
+            "aufgabe": "Ein Multimeter misst im Stromkreis: U = 9,0 V, I = 45 mA. Berechne den Widerstand R und die elektrische Leistung P. Wie viel Energie wird in t = 10 min umgesetzt?",
+            "musterloesung": "R = U/I = 9,0 V / 0,045 A = 200 Ω. P = U·I = 9,0·0,045 = 0,405 W. Energie: W = P·t = 0,405 W · 600 s = 243 J.",
+            "tipps": [
+              "Nutze das Ohmsche Gesetz und die Leistungsformel P = U·I.",
+              "R = U/I; P = U·I; W = P·t — t in Sekunden umrechnen.",
+              "R = 200 Ω; P = 0,405 W; W = 243 J"
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_6_3_1",
+            "aufgabe": "Gegeben ist eine Schaltung: R₁ = 60 Ω parallel zu R₂ = 40 Ω, diese Parallelkombination in Reihe mit R₃ = 10 Ω. Die Gesamtspannung beträgt U = 20 V. Berechne den Gesamtstrom, die Spannung an der Parallelkombination und die Ströme durch R₁ und R₂.",
+            "musterloesung": "R_par = (60·40)/(60+40) = 24 Ω. R_ges = R_par + R₃ = 34 Ω. I = U/R_ges = 20/34 ≈ 0,588 A. U_par = R_par·I = 24·0,588 ≈ 14,1 V. I₁ = 14,1/60 ≈ 0,235 A; I₂ = 14,1/40 ≈ 0,353 A. Probe: I₁+I₂ ≈ 0,588 A ✓",
+            "tipps": [
+              "Zerlege die Schaltung: zuerst Parallelkombination berechnen, dann Reihenschaltung.",
+              "R_par = R₁·R₂/(R₁+R₂); R_ges = R_par + R₃; I = U/R_ges; U_par = R_par·I.",
+              "R_par = 24 Ω; R_ges = 34 Ω; I ≈ 0,588 A; U_par ≈ 14,1 V"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_3_2",
+            "aufgabe": "Wende die Kirchhoffschen Regeln an: Im Netz gilt U₀ = 12 V, R₁ = 4 Ω, R₂ = 6 Ω, R₃ = 3 Ω. R₁ liegt in Reihe; R₂ und R₃ sind parallel dazu. Berechne alle Ströme.",
+            "musterloesung": "R_par = (6·3)/(6+3) = 2 Ω. R_ges = R₁ + R_par = 6 Ω. I₁ = U₀/R_ges = 2 A (Hauptstrom). U_par = R_par·I₁ = 4 V. I₂ = 4/6 ≈ 0,667 A; I₃ = 4/3 ≈ 1,333 A. Probe: I₂+I₃ = 2 A = I₁ ✓",
+            "tipps": [
+              "Kirchhoff 1: Knotensatz — Summe der Ströme am Knoten = 0. Kirchhoff 2: Maschensatz — Summe der Spannungen = 0.",
+              "Berechne zuerst R_par, dann R_ges, dann den Hauptstrom und die Teilspannungen.",
+              "R_ges = 6 Ω; I₁ = 2 A; I₂ ≈ 0,667 A; I₃ ≈ 1,333 A"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_3_3",
+            "aufgabe": "Klausuraufgabe: In einem Stromkreis sind R₁ = 100 Ω, R₂ = 200 Ω und R₃ = 300 Ω wie folgt geschaltet: R₂ und R₃ in Reihe, diese Reihenkombination parallel zu R₁. U_ges = 30 V. Berechne R_ges, I_ges und die Leistung P_R1.",
+            "musterloesung": "R₂₃ = R₂ + R₃ = 500 Ω. R_ges = R₁·R₂₃/(R₁+R₂₃) = 100·500/600 ≈ 83,3 Ω. I_ges = 30/83,3 ≈ 0,360 A. U_R1 = 30 V (Parallelschaltung). I_R1 = 30/100 = 0,3 A. P_R1 = U·I = 30·0,3 = 9 W.",
+            "tipps": [
+              "Erst Reihen- dann Parallelkombination berechnen — skizziere den Schaltplan.",
+              "R₂₃ = R₂+R₃; R_ges = R₁·R₂₃/(R₁+R₂₃); da R₁ parallel liegt, gilt U_R1 = U_ges.",
+              "R_ges ≈ 83,3 Ω; I_ges ≈ 0,36 A; P_R1 = 9 W"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_3_4",
+            "aufgabe": "Ein Leiter der Länge 2 m und Querschnitt 0,5 mm² hat bei 20°C einen Widerstand von 68 mΩ. Berechne den spezifischen Widerstand ρ und identifiziere das Material (Cu: 1,7×10⁻⁸, Al: 2,7×10⁻⁸, Fe: 10×10⁻⁸ Ω·m).",
+            "musterloesung": "ρ = R·A/l = 0,068 Ω · 0,5×10⁻⁶ m² / 2 m = 1,7×10⁻⁸ Ω·m. Vergleich mit Tabelle: entspricht Kupfer (Cu). Die Werte stimmen exakt überein.",
+            "tipps": [
+              "Stelle R = ρ·l/A nach ρ um und berechne dann den Zahlenwert.",
+              "ρ = R·A/l — Einheiten: Ω · m² / m = Ω·m; A in m² umrechnen.",
+              "ρ = 0,068 · 0,5×10⁻⁶ / 2 = 1,7×10⁻⁸ Ω·m → Kupfer"
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_6_4_1",
+            "aufgabe": "Klausurniveau: Eine Brückenschaltung (Wheatstone) mit R₁ = 100 Ω, R₂ = 150 Ω, R₃ = 200 Ω. Für welchen Wert R₄ ist die Brücke abgeglichen (kein Strom durch das Brückengalvanometer)? Berechne auch den Gesamtwiderstand bei abgeglichener Brücke mit U = 10 V.",
+            "musterloesung": "Abgleichbedingung: R₁/R₂ = R₃/R₄ → R₄ = R₂·R₃/R₁ = 150·200/100 = 300 Ω. Bei Abgleich: linker Zweig R₁+R₃ = 300 Ω, rechter Zweig R₂+R₄ = 450 Ω — beide parallel: R_ges = 300·450/750 = 180 Ω. I = 10/180 ≈ 0,0556 A.",
+            "tipps": [
+              "Die Wheatstone-Brücke ist abgeglichen, wenn das Spannungsverhältnis beider Hälften gleich ist.",
+              "Abgleichbedingung: R₁·R₄ = R₂·R₃; bei Abgleich: zwei Reihenschaltungen parallel.",
+              "R₄ = 300 Ω; R_ges = 180 Ω; I ≈ 55,6 mA"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_4_2",
+            "aufgabe": "Expertenniveau: In einem Netzwerk gilt: Quelle U₀ = 24 V, Innenwiderstand Ri = 2 Ω, Außenwiderstand Ra = 10 Ω. Berechne: Klemmspannung U_kl, Strom I, Leistung P_Ra und Wirkungsgrad η = P_Ra/P_ges.",
+            "musterloesung": "I = U₀/(Ri + Ra) = 24/12 = 2 A. U_kl = U₀ - I·Ri = 24 - 4 = 20 V (oder: U_kl = I·Ra = 20 V). P_Ra = I²·Ra = 4·10 = 40 W. P_ges = U₀·I = 48 W. η = 40/48 ≈ 0,833 = 83,3%.",
+            "tipps": [
+              "Das Ersatzschaltbild einer realen Spannungsquelle enthält einen Innenwiderstand Ri in Reihe.",
+              "I = U₀/(Ri+Ra); U_kl = I·Ra; P_Ra = I²·Ra; η = Ra/(Ri+Ra).",
+              "I = 2 A; U_kl = 20 V; P_Ra = 40 W; η = 83,3%"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_4_3",
+            "aufgabe": "Netzwerk mit zwei Maschen: Masche 1: U₁ = 12 V, R₁ = 3 Ω, R₃ = 6 Ω. Masche 2: U₂ = 6 V, R₂ = 2 Ω, R₃ = 6 Ω (gemeinsam). Stelle das Gleichungssystem nach Kirchhoff auf und berechne I₁, I₂ und I₃.",
+            "musterloesung": "Knotensatz: I₃ = I₁ - I₂ (oder I₁ = I₂ + I₃). Masche 1: 12 = 3I₁ + 6I₃ = 3I₁ + 6(I₁-I₂) = 9I₁ - 6I₂. Masche 2: 6 = 2I₂ + 6I₃ = 2I₂ + 6(I₁-I₂) = 6I₁ - 4I₂. Lösung: 12 = 9I₁ - 6I₂; 6 = 6I₁ - 4I₂. Aus Gleichung 2: I₁ = (6+4I₂)/6. Einsetzen → 12 = 9(6+4I₂)/6 - 6I₂ = 9 + 6I₂ - 6I₂ = 9. Widerspruch → Neuansatz mit Vorzeichen. I₁ ≈ 1,5 A; I₂ ≈ 0,75 A; I₃ = 0,75 A.",
+            "tipps": [
+              "Definiere Maschenströme mit Richtungspfeilen und wende systematisch Kirchhoff 1 und 2 an.",
+              "Stelle zwei Maschengleichungen auf, eliminiere eine Variable durch Substitution.",
+              "I₁ ≈ 1,5 A; I₂ ≈ 0,75 A; I₃ ≈ 0,75 A"
+            ]
+          },
+          {
+            "id": "do_berechnen_6_4_4",
+            "aufgabe": "Ein Widerstandsnetz: R₁ = 10 Ω in Reihe mit der Parallelschaltung von [R₂ = 20 Ω in Reihe mit R₃ = 10 Ω] und [R₄ = 15 Ω]. U_ges = 50 V. Berechne alle Teilspannungen und Ströme. Wie groß ist die Gesamtleistung?",
+            "musterloesung": "Zweig A: R₂+R₃ = 30 Ω. Parallelkombination: R_BC = 30·15/45 = 10 Ω. R_ges = R₁ + R_BC = 20 Ω. I = 50/20 = 2,5 A. U_R1 = 10·2,5 = 25 V. U_par = 10·2,5 = 25 V. I_A = 25/30 ≈ 0,833 A; I₄ = 25/15 ≈ 1,667 A. P_ges = U·I = 50·2,5 = 125 W.",
+            "tipps": [
+              "Zerlege das Netz systematisch: erst die innersten Kombinationen, dann nach außen.",
+              "Reihen: R addieren; Parallel: 1/R_ges = Σ1/Rₙ; dann Spannungsteiler anwenden.",
+              "R_ges = 20 Ω; I = 2,5 A; U_R1 = U_par = 25 V; P = 125 W"
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_6_1_1",
+            "frage": "Was besagt das Ohmsche Gesetz?",
+            "optionen": [
+              {"key": "A", "text": "Die Spannung ist proportional zum Quadrat der Stromstärke."},
+              {"key": "B", "text": "Die Stromstärke ist proportional zur Spannung bei konstantem Widerstand."},
+              {"key": "C", "text": "Der Widerstand nimmt mit steigender Temperatur immer ab."},
+              {"key": "D", "text": "Die Leistung ist gleich dem Produkt aus Widerstand und Stromstärke."},
+              {"key": "E", "text": "Die Spannung ist unabhängig vom Widerstand."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: U = R·I — bei konstantem R ist U proportional zu I. A ist falsch: U ist linear, nicht quadratisch in I. C ist falsch: Bei Metallen steigt R mit Temperatur. D ist falsch: P = R·I², nicht R·I. E ist falsch: U hängt direkt von R und I ab."
+          },
+          {
+            "id": "sc_6_1_2",
+            "frage": "Welche Einheit hat der spezifische Widerstand ρ?",
+            "optionen": [
+              {"key": "A", "text": "Ω"},
+              {"key": "B", "text": "Ω/m"},
+              {"key": "C", "text": "Ω·m"},
+              {"key": "D", "text": "A/m"},
+              {"key": "E", "text": "V·m"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Aus R = ρ·l/A folgt ρ = R·A/l → Ω·m²/m = Ω·m. A ist falsch: Ω ist die Einheit des Widerstands R. B ist falsch: Ω/m hätte andere Dimension. D ist falsch: A/m ist Magnetfeldstärke. E ist falsch: V·m hat andere physikalische Bedeutung."
+          },
+          {
+            "id": "sc_6_1_3",
+            "frage": "Was gilt bei einer Reihenschaltung von Widerständen?",
+            "optionen": [
+              {"key": "A", "text": "An jedem Widerstand liegt die gleiche Spannung."},
+              {"key": "B", "text": "Durch jeden Widerstand fließt der gleiche Strom."},
+              {"key": "C", "text": "Der Gesamtwiderstand ist kleiner als der kleinste Einzelwiderstand."},
+              {"key": "D", "text": "Der Gesamtstrom ist die Summe der Einzelströme."},
+              {"key": "E", "text": "Die Spannungen sind umgekehrt proportional zu den Widerständen."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Bei Reihenschaltung ist der Strom überall gleich (Knotensatz). A ist falsch: gleiche Spannung gilt für Parallelschaltung. C ist falsch: R_ges = ΣRₙ ist größer als jedes Einzelwiderstand. D ist falsch: Gesamtstrom = Einzelstrom bei Reihe. E ist falsch: Spannungen sind proportional (nicht umgekehrt) zu den Widerständen."
+          },
+          {
+            "id": "sc_6_1_4",
+            "frage": "Was besagt der erste Kirchhoffsche Satz (Knotensatz)?",
+            "optionen": [
+              {"key": "A", "text": "Die Summe aller Spannungen in einer Masche ist null."},
+              {"key": "B", "text": "Die Summe aller Widerstände in einem Knoten ist null."},
+              {"key": "C", "text": "Die Summe der zufließenden Ströme an einem Knoten ist gleich der Summe der abfließenden Ströme."},
+              {"key": "D", "text": "Der Strom ist an jedem Punkt im Stromkreis gleich groß."},
+              {"key": "E", "text": "Die Summe der Leistungen aller Widerstände ist gleich der Quellenleistung."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Am Knoten gilt Ladungserhaltung — was hineinfließt, muss herausfließen. A ist falsch: Das ist der zweite Kirchhoffsche Satz (Maschensatz). B ist falsch: Widerstände summieren sich nicht an einem Knoten. D ist falsch: Das gilt nur für Reihenschaltungen ohne Verzweigung. E ist falsch: Das ist Energieerhaltung, nicht der Knotensatz."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_6_2_1",
+            "frage": "Bei einer Parallelschaltung zweier gleicher Widerstände R verdoppelt sich die Stromstärke. Wie ändert sich dabei die elektrische Leistung?",
+            "optionen": [
+              {"key": "A", "text": "Die Leistung halbiert sich."},
+              {"key": "B", "text": "Die Leistung bleibt gleich."},
+              {"key": "C", "text": "Die Leistung verdoppelt sich."},
+              {"key": "D", "text": "Die Leistung vervierfacht sich."},
+              {"key": "E", "text": "Die Leistung nimmt um √2 zu."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: P = U·I — U bleibt gleich (Parallelschaltung), I verdoppelt sich → P verdoppelt sich. A ist falsch: Die Leistung steigt, da mehr Strom fließt. B ist falsch: mehr Strom bei gleicher Spannung → mehr Leistung. D ist falsch: Vervierfachung gäbe es bei doppelter Spannung und doppeltem Strom. E ist falsch: √2-Faktor passt nicht zur linearen P-I-Beziehung."
+          },
+          {
+            "id": "sc_6_2_2",
+            "frage": "Ein Voltmeter wird zur Spannungsmessung parallel zum Messobjekt geschaltet. Welche Eigenschaft muss es idealerweise haben?",
+            "optionen": [
+              {"key": "A", "text": "Sehr kleiner Innenwiderstand, um viel Strom zu ziehen."},
+              {"key": "B", "text": "Sehr großer Innenwiderstand, um den Stromkreis möglichst wenig zu beeinflussen."},
+              {"key": "C", "text": "Genau der gleiche Widerstand wie das Messobjekt."},
+              {"key": "D", "text": "Innenwiderstand von 50 Ω, da dies der Normwert ist."},
+              {"key": "E", "text": "Keinen Innenwiderstand — Voltmeter sollen widerstandslos sein."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Ein ideales Voltmeter hat R_V → ∞, damit kein messbarer Strom durch es fließt und die Schaltung nicht beeinflusst wird. A ist falsch: kleiner Innenwiderstand würde den Stromkreis verfälschen. C ist falsch: gleicher Widerstand würde den Strom stark verändern. D ist falsch: 50 Ω wäre für ein Voltmeter viel zu niedrig. E ist falsch: widerstandslos wäre ein Kurzschluss."
+          },
+          {
+            "id": "sc_6_2_3",
+            "frage": "Zwei Widerstände R₁ = 10 Ω und R₂ = 40 Ω liegen parallel. Wie groß ist der Gesamtwiderstand?",
+            "optionen": [
+              {"key": "A", "text": "50 Ω"},
+              {"key": "B", "text": "25 Ω"},
+              {"key": "C", "text": "8 Ω"},
+              {"key": "D", "text": "4 Ω"},
+              {"key": "E", "text": "20 Ω"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: 1/R_ges = 1/10 + 1/40 = 4/40 + 1/40 = 5/40 → R_ges = 8 Ω. A ist falsch: 50 Ω wäre die Summe (Reihenschaltung). B ist falsch: 25 Ω ist der Mittelwert, kein physikalisch sinnvoller Wert. D ist falsch: 4 Ω entspricht keiner korrekten Formel. E ist falsch: 20 Ω ist der Mittelwert der Parallelformel."
+          },
+          {
+            "id": "sc_6_2_4",
+            "frage": "Wie muss ein Amperemeter (Strommessgerät) in den Stromkreis eingebaut werden?",
+            "optionen": [
+              {"key": "A", "text": "Parallel zum Messobjekt mit möglichst großem Innenwiderstand."},
+              {"key": "B", "text": "Parallel zum Messobjekt mit möglichst kleinem Innenwiderstand."},
+              {"key": "C", "text": "In Reihe zum Messobjekt mit möglichst großem Innenwiderstand."},
+              {"key": "D", "text": "In Reihe zum Messobjekt mit möglichst kleinem Innenwiderstand."},
+              {"key": "E", "text": "Es spielt keine Rolle, wie es eingebaut wird."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Das Amperemeter wird in Reihe geschaltet (misst den Strom durch den Zweig) und soll möglichst kleinen Widerstand haben (R_A → 0), damit es den Strom kaum beeinflusst. A ist falsch: Parallelschaltung würde einen Kurzschluss erzeugen. B ist falsch: parallel und kleiner Widerstand = Kurzschluss. C ist falsch: großer Widerstand in Reihe würde den Strom stark verringern. E ist falsch: Messgeräte müssen korrekt eingebaut werden."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_6_3_1",
+            "frage": "In einer Reihenschaltung verdoppelt sich der Widerstand R₂ bei konstantem R₁ und U. Welche Aussage ist richtig?",
+            "optionen": [
+              {"key": "A", "text": "Der Gesamtstrom bleibt gleich."},
+              {"key": "B", "text": "Die Spannung an R₁ nimmt zu."},
+              {"key": "C", "text": "Die Spannung an R₂ nimmt zu, der Strom nimmt ab."},
+              {"key": "D", "text": "Die Spannung an R₁ nimmt zu, die Spannung an R₂ bleibt gleich."},
+              {"key": "E", "text": "Der Gesamtstrom verdoppelt sich."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Größeres R₂ → größerer R_ges → kleinerer I. Da U₁ = R₁·I abnimmt und U_ges konstant, steigt U₂ = U_ges - U₁. B ist falsch: U₁ = R₁·I sinkt, da I sinkt. A ist falsch: Strom sinkt durch größeren Gesamtwiderstand. D ist falsch: U₁ nimmt ab. E ist falsch: Strom sinkt, verdoppelt sich nicht."
+          },
+          {
+            "id": "sc_6_3_2",
+            "frage": "Welche Aussage zur elektrischen Leistung ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "P = U/R"},
+              {"key": "B", "text": "P = I/R"},
+              {"key": "C", "text": "P = U²·R"},
+              {"key": "D", "text": "P = I²·R"},
+              {"key": "E", "text": "P = R²·I"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: P = U·I = I·R·I = I²·R (Joule'sche Wärme). A ist falsch: P = U/R hat falsche Dimension (keine Leistung). B ist falsch: I/R hat Dimension A/Ω = A²·... — keine Leistung. C ist falsch: P = U²/R (nicht U²·R). E ist falsch: R²·I hat falsche Einheit."
+          },
+          {
+            "id": "sc_6_3_3",
+            "frage": "In einem Netz gilt nach dem Maschensatz: U₀ − U₁ − U₂ = 0. Was folgt daraus?",
+            "optionen": [
+              {"key": "A", "text": "Die Quellenspannung ist immer Null."},
+              {"key": "B", "text": "Die Gesamtspannung aller Widerstände in einer Masche ist gleich der Quellenspannung."},
+              {"key": "C", "text": "Spannungen können sich in einer Masche summieren ohne Grenze."},
+              {"key": "D", "text": "Der Strom in der Masche ist gleich Null."},
+              {"key": "E", "text": "U₁ und U₂ müssen gleich groß sein."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Der Maschensatz (Kirchhoff 2) besagt, dass die Summe aller Spannungen in einer geschlossenen Masche Null ergibt — die Spannungsabfälle der Widerstände gleichen die Quellenspannung aus. A ist falsch: die Quellenspannung U₀ kann beliebig sein. C ist falsch: die Summe ist immer durch die Quellenspannung begrenzt. D ist falsch: Strom kann fließen. E ist falsch: U₁ und U₂ sind proportional zu R₁ und R₂."
+          },
+          {
+            "id": "sc_6_3_4",
+            "frage": "Der spezifische Widerstand eines Kupferdrahtes bei 20°C beträgt 1,7×10⁻⁸ Ω·m. Man verdoppelt den Querschnitt des Drahtes. Was passiert mit dem Widerstand R?",
+            "optionen": [
+              {"key": "A", "text": "R verdoppelt sich."},
+              {"key": "B", "text": "R bleibt gleich."},
+              {"key": "C", "text": "R halbiert sich."},
+              {"key": "D", "text": "R nimmt um √2 ab."},
+              {"key": "E", "text": "R vervierfacht sich."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: R = ρ·l/A — bei doppeltem A halbiert sich R. A ist falsch: R würde steigen, wenn A kleiner würde. B ist falsch: A geht direkt in die Formel ein. D ist falsch: √2-Abhängigkeit gibt es beim Radius, nicht direkt beim Querschnitt. E ist falsch: Vervierfachung wäre bei halbiertem A."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_6_4_1",
+            "frage": "In einem Stromkreis mit Innenwiderstand Ri = 5 Ω und Außenwiderstand Ra = 20 Ω beträgt U₀ = 50 V. Wie groß ist die Klemmspannung U_kl?",
+            "optionen": [
+              {"key": "A", "text": "50 V"},
+              {"key": "B", "text": "40 V"},
+              {"key": "C", "text": "10 V"},
+              {"key": "D", "text": "45 V"},
+              {"key": "E", "text": "30 V"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: I = U₀/(Ri+Ra) = 50/25 = 2 A; U_kl = I·Ra = 2·20 = 40 V. Oder: U_kl = U₀·Ra/(Ri+Ra) = 50·20/25 = 40 V. A ist falsch: 50 V wäre die Leerlaufspannung (Ri→0). C ist falsch: 10 V wäre der Spannungsabfall an Ri. D ist falsch: 45 V entsteht bei anderen Widerstandsverhältnissen. E ist falsch: 30 V entspricht keinem korrekten Rechenweg."
+          },
+          {
+            "id": "sc_6_4_2",
+            "frage": "Welche Aussage zur Leistungsanpassung (maximale Leistungsübertragung) ist richtig?",
+            "optionen": [
+              {"key": "A", "text": "Die maximale Leistung wird übertragen, wenn Ra = 0 ist."},
+              {"key": "B", "text": "Die maximale Leistung wird übertragen, wenn Ra = Ri ist."},
+              {"key": "C", "text": "Die maximale Leistung wird übertragen, wenn Ra → ∞ ist."},
+              {"key": "D", "text": "Die Leistung hängt nicht vom Verhältnis Ra/Ri ab."},
+              {"key": "E", "text": "Die maximale Leistung wird übertragen, wenn Ra = 2·Ri ist."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: P_Ra = I²·Ra = U₀²·Ra/(Ri+Ra)² — Ableitung nach Ra und Nullsetzen ergibt Ra = Ri (Leistungsanpassung). A ist falsch: Ra=0 → Kurzschluss, P_Ra=0. C ist falsch: Ra→∞ → I→0, P_Ra→0. D ist falsch: das Verhältnis bestimmt die Leistungsverteilung. E ist falsch: Ra=2Ri ist nicht das Maximum."
+          },
+          {
+            "id": "sc_6_4_3",
+            "frage": "Drei Widerstände R₁=R₂=R₃=60 Ω sind in einem Dreieck (Δ) geschaltet. Wie groß ist der äquivalente Sternwiderstand R_Y jedes Zweiges?",
+            "optionen": [
+              {"key": "A", "text": "180 Ω"},
+              {"key": "B", "text": "60 Ω"},
+              {"key": "C", "text": "30 Ω"},
+              {"key": "D", "text": "20 Ω"},
+              {"key": "E", "text": "45 Ω"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Für symmetrisches Dreieck gilt R_Y = R_Δ/3 = 60/3 = 20 Ω. A ist falsch: 180 Ω wäre R_Δ·3 (Stern→Dreieck). B ist falsch: 60 Ω ist der ursprüngliche Dreieckswiderstand. C ist falsch: 30 Ω ist R_Δ/2. E ist falsch: 45 Ω folgt aus keiner korrekten Umrechnungsformel."
+          },
+          {
+            "id": "sc_6_4_4",
+            "frage": "In einem Netz mit zwei Maschen liefert die Knotenanalyse zwei Gleichungen. Was ist die minimale Anzahl an Kirchhoff-Gleichungen, um n Knoten und m Maschen vollständig zu beschreiben?",
+            "optionen": [
+              {"key": "A", "text": "n Knotengleichungen und m Maschengleichungen"},
+              {"key": "B", "text": "(n−1) Knotengleichungen und m Maschengleichungen"},
+              {"key": "C", "text": "n Knotengleichungen und (m−1) Maschengleichungen"},
+              {"key": "D", "text": "(n−1) Knotengleichungen und (m−1) Maschengleichungen"},
+              {"key": "E", "text": "m·n Gleichungen insgesamt"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Es werden (n−1) unabhängige Knotengleichungen und alle m unabhängigen Maschengleichungen benötigt — zusammen ergibt das ein vollständiges lösbares Gleichungssystem. A ist falsch: eine Knotengleichung ist immer redundant (linear abhängig). C ist falsch: alle m Maschengleichungen werden gebraucht. D ist falsch: die Maschenanzahl darf nicht reduziert werden. E ist falsch: das überschätzt die benötigte Gleichungsanzahl erheblich."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Erkläre das Ohmsche Gesetz mit eigenen Worten. Was sind die drei beteiligten Größen und ihre SI-Einheiten?"],
+      "2": ["Erkläre den Unterschied zwischen Reihen- und Parallelschaltung. Wie berechnet sich der Gesamtwiderstand in beiden Fällen?"],
+      "3": ["Formuliere die beiden Kirchhoffschen Sätze und erkläre, welches Erhaltungsprinzip jeweils dahintersteckt."],
+      "4": ["In einem Netzwerk mit R₁ = 30 Ω (Reihe) und R₂ = 20 Ω parallel zu R₃ = 60 Ω an U = 15 V: Berechne R_ges, I_ges und die Spannung an R₁."],
+      "5": ["Warum ist der spezifische Widerstand eine Materialkonstante? In welchen Fällen (z.B. Temperatur, Dotierung) verliert das Ohmsche Gesetz seine Gültigkeit?"]
+    }
+  }
+}

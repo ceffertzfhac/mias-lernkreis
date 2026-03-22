@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mias Lernkreis — Solo v2</title>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#4A2C6E', accent: '#7B4FA6' } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+  <style>
+    [x-cloak] { display: none !important; }
+    body { background: #F6F4FA; font-family: system-ui, sans-serif; color: #1C1828; }
+    .card { background: #fff; border-radius: 12px; padding: 16px; }
+    .badge { border-radius: 999px; padding: 2px 10px; font-size: 11px; font-weight: 600; display: inline-block; }
+    .btn-primary { background: #4A2C6E; color: #fff; border-radius: 12px; padding: 13px 20px; font-weight: 600; width: 100%; display: block; text-align: center; cursor: pointer; border: none; font-size: 15px; }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-outline { background: #EDE6F5; color: #4A2C6E; border-radius: 12px; padding: 11px 20px; font-weight: 600; cursor: pointer; border: none; }
+    .btn-ghost { background: transparent; color: #7B4FA6; border: 2px dashed #7B4FA6; border-radius: 12px; padding: 10px 16px; font-weight: 600; width: 100%; cursor: pointer; font-size: 13px; }
+    .btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+    .nav-bar { background: #fff; border-top: 1px solid #EDE6F5; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 440px; display: flex; z-index: 50; }
+    .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 8px 0 10px; font-size: 11px; color: #7A6E8A; cursor: pointer; background: none; border: none; }
+    .nav-item.active { color: #4A2C6E; font-weight: 700; }
+    .star-btn { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 8px 4px 6px; border-radius: 10px; cursor: pointer; border: 2px solid transparent; transition: all 0.12s; background: #F6F4FA; gap: 2px; }
+    .star-btn .stars { font-size: 11px; letter-spacing: 0px; }
+    .star-btn .lbl { font-size: 9px; font-weight: 700; color: #7A6E8A; text-align: center; line-height: 1.1; }
+    .star-btn.s1.sel { background: #FEE2E2; border-color: #8B1A1A; }
+    .star-btn.s1.sel .lbl { color: #8B1A1A; }
+    .star-btn.s2.sel { background: #FEF3C7; border-color: #7A4A00; }
+    .star-btn.s2.sel .lbl { color: #7A4A00; }
+    .star-btn.s3.sel { background: #FEF9C3; border-color: #A16207; }
+    .star-btn.s3.sel .lbl { color: #A16207; }
+    .star-btn.s4.sel { background: #D1FAE5; border-color: #1A5C3A; }
+    .star-btn.s4.sel .lbl { color: #1A5C3A; }
+    .star-btn.s5.sel { background: #EDE6F5; border-color: #4A2C6E; }
+    .star-btn.s5.sel .lbl { color: #4A2C6E; }
+    .verif-box { background: #EDE6F5; border-radius: 10px; padding: 12px; margin-top: 10px; border-left: 3px solid #7B4FA6; }
+    input[type=date], input[type=text], input[type=password], select, textarea { font-family: system-ui, sans-serif; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #7B4FA6 !important; box-shadow: 0 0 0 2px rgba(123,79,166,0.15); }
+    .tipp-box { background: #EDE6F5; border-radius: 10px; padding: 12px; margin-top: 8px; }
+    .api-ok  { background: #D1FAE5; color: #1A5C3A; border-radius: 10px; padding: 8px 12px; font-size: 13px; }
+    .api-err { background: #FEE2E2; color: #8B1A1A; border-radius: 10px; padding: 8px 12px; font-size: 13px; }
+    .api-loading { background: #EDE6F5; color: #4A2C6E; border-radius: 10px; padding: 8px 12px; font-size: 13px; }
+  </style>
+</head>
+<body x-data="app()" x-cloak>
+<div class="max-w-[440px] mx-auto min-h-screen">
+
+  <!-- ═══ SETUP ═══ -->
+  <div x-show="screen === 'setup'" class="p-5 flex flex-col min-h-screen">
+    <div class="flex-1 flex flex-col justify-center">
+      <div class="text-center mb-7">
+        <div class="text-5xl mb-2">📚</div>
+        <h1 class="text-2xl font-bold text-[#4A2C6E]">Mias Lernkreis</h1>
+        <p class="text-sm text-[#7A6E8A] mt-1">Dein persönlicher Lernbegleiter</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Name -->
+        <div>
+          <label class="text-sm font-semibold text-[#4A2C6E] block mb-1">Dein Name</label>
+          <input x-model="name" type="text" placeholder="z. B. Mia"
+            class="w-full border border-[#EDE6F5] rounded-xl p-3 bg-white text-sm">
+        </div>
+
+        <!-- Prüfungsdatum -->
+        <div>
+          <label class="text-sm font-semibold text-[#4A2C6E] block mb-1">Prüfungsdatum</label>
+          <input x-model="examDateInput" type="date" :min="todayStr()"
+            class="w-full border border-[#EDE6F5] rounded-xl p-3 bg-white text-sm">
+          <p class="text-xs text-[#7A6E8A] mt-1">
+            <span x-text="examTageText()"></span>
+          </p>
+        </div>
+
+        <!-- Demo-Kurs -->
+        <div class="card" style="background:#EDE6F5;">
+          <p class="text-xs font-semibold text-[#4A2C6E] mb-1">Demo-Kurs (vorbelegt)</p>
+          <p class="font-semibold text-sm">Physik — FH Aachen</p>
+          <p class="text-xs text-[#7A6E8A]">7 Themen · Achsen des Spinnendiagramms kursbasiert</p>
+        </div>
+
+        <!-- API -->
+        <div class="card">
+          <p class="text-sm font-semibold text-[#4A2C6E] mb-1">🤖 KI Connect NRW <span class="font-normal text-[#7A6E8A]">(optional)</span></p>
+          <p class="text-xs text-[#7A6E8A] mb-3">Ohne API-Key laufen alle Funktionen mit Demo-Antworten.</p>
+          <input x-model="apiKey" type="password" placeholder="Bearer Token"
+            class="w-full border border-[#EDE6F5] rounded-xl p-3 bg-[#F6F4FA] mb-2 text-sm">
+          <input x-model="apiModel" type="text" placeholder="Modell (z. B. gpt-4o)"
+            class="w-full border border-[#EDE6F5] rounded-xl p-3 bg-[#F6F4FA] mb-2 text-sm">
+          <!-- Test-Button -->
+          <button @click="testeVerbindung()" :disabled="!apiKey || apiTestStatus==='loading'" class="btn-outline w-full text-sm py-2 rounded-xl">
+            <span x-show="apiTestStatus !== 'loading'">🔌 Verbindung testen</span>
+            <span x-show="apiTestStatus === 'loading'">⏳ Teste…</span>
+          </button>
+          <div x-show="apiTestStatus === 'success'" class="api-ok mt-2">✅ <span x-text="apiTestMessage"></span></div>
+          <div x-show="apiTestStatus === 'error'"   class="api-err mt-2">❌ <span x-text="apiTestMessage"></span></div>
+        </div>
+
+        <button @click="startSolo()" :disabled="!name.trim()" class="btn-primary">
+          Solo starten →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ APP ═══ -->
+  <div x-show="screen !== 'setup'" class="pb-20">
+
+    <!-- ── HOME ── -->
+    <div x-show="screen === 'home'" class="p-4 space-y-4">
+      <div class="pt-4 pb-1">
+        <p class="text-[#7A6E8A] text-sm">Guten Tag,</p>
+        <h2 class="text-2xl font-bold text-[#4A2C6E]" x-text="name + ' 👋'"></h2>
+      </div>
+
+      <!-- Countdown + Mini-Radar -->
+      <div class="card">
+        <div class="flex items-center justify-between mb-3">
+          <div>
+            <p class="text-3xl font-bold text-[#4A2C6E]" x-text="verbleibeneTage"></p>
+            <p class="text-xs text-[#7A6E8A]">Tage bis zur Prüfung</p>
+          </div>
+          <div class="text-right">
+            <p class="text-sm font-semibold"
+              :style="`color:${themenBereit()===7?'#1A5C3A':themenBereit()>=4?'#7A4A00':'#8B1A1A'}`"
+              x-text="themenBereit() + '/7 klausurbereit'"></p>
+            <p class="text-xs text-[#7A6E8A]">Stufe 4 oder 5</p>
+          </div>
+        </div>
+        <!-- Zeit-Balken -->
+        <div class="mb-3">
+          <div class="bg-[#EDE6F5] rounded-full h-1.5">
+            <div class="h-1.5 rounded-full transition-all"
+              :style="`width:${zeitProzent}%;background:${verbleibeneTage>30?'#1A5C3A':verbleibeneTage>14?'#7A4A00':'#8B1A1A'}`"></div>
+          </div>
+          <p class="text-xs text-[#7A6E8A] mt-1" x-text="zeitProzent + '% der Vorbereitungszeit verstrichen'"></p>
+        </div>
+        <!-- Mini-Radar -->
+        <template x-if="letzeDiagnose">
+          <div>
+            <p class="text-xs font-semibold text-[#4A2C6E] mb-2">Lernstand — Spinnendiagramm</p>
+            <canvas id="radarHome" height="200"></canvas>
+          </div>
+        </template>
+        <template x-if="!letzeDiagnose">
+          <div class="text-center py-4">
+            <p class="text-sm text-[#7A6E8A]">⚪ Noch keine Diagnose — starte jetzt!</p>
+          </div>
+        </template>
+      </div>
+
+      <!-- Status -->
+      <template x-if="letzeDiagnose">
+        <div class="card">
+          <p class="text-xs text-[#7A6E8A] mb-2">Letzte Diagnose: <span x-text="formatDatum(letzeDiagnose.datum)"></span></p>
+          <div class="flex flex-wrap gap-1 mb-2">
+            <template x-for="b in letzeDiagnose.bewertungen" :key="b.id">
+              <span class="badge text-xs"
+                :style="`background:${stufenCfg(b.stufe).bg};color:${stufenCfg(b.stufe).color}`"
+                x-text="starStr(b.stufe) + ' ' + themaCurz(b.id)"></span>
+            </template>
+          </div>
+          <p class="text-sm text-[#7A6E8A]" x-show="schwächsteThemen().length > 0">
+            Fokus heute:
+            <span class="font-semibold text-[#8B1A1A]"
+              x-text="schwächsteThemen().slice(0,2).map(t => t.name.split('—')[0].trim()).join(', ')"></span>
+          </p>
+        </div>
+      </template>
+
+      <!-- CTAs -->
+      <div class="flex gap-3">
+        <button @click="goTo('diagnose')" class="btn-primary flex-1 py-3">🎯 Diagnose</button>
+        <button @click="goTo('ueben-auswahl')" class="btn-outline flex-1 py-3 rounded-xl">💡 Üben</button>
+      </div>
+    </div>
+
+    <!-- ── DIAGNOSE ── -->
+    <div x-show="screen === 'diagnose'" class="p-4">
+      <div class="flex items-center gap-3 pt-4 pb-3">
+        <button @click="goTo('home')" class="text-[#7A6E8A] text-xl">←</button>
+        <div>
+          <h2 class="text-xl font-bold text-[#4A2C6E]">Selbstdiagnose</h2>
+          <p class="text-xs text-[#7A6E8A]">
+            <span x-text="bewerteteThemen + '/7 bewertet'"></span>
+            · Stufe 4 = Klausurniveau
+          </p>
+        </div>
+      </div>
+
+      <!-- Stufenlegende -->
+      <div class="card mb-3" style="background:#EDE6F5;">
+        <div class="flex justify-between text-xs">
+          <template x-for="s in [1,2,3,4,5]" :key="s">
+            <div class="flex flex-col items-center gap-0.5">
+              <span x-text="starStr(s)" style="font-size:10px;"></span>
+              <span x-text="stufenCfg(s).label" class="font-semibold" :style="`color:${stufenCfg(s).color};font-size:8px;`"></span>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <template x-for="t in themen" :key="t.id">
+          <div class="card">
+            <!-- Topic header -->
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <p class="font-semibold text-sm" x-text="t.name"></p>
+                <span x-show="t.haeufig" class="badge mt-0.5" style="background:#FEF3C7;color:#7A4A00;">🔥 Häufig geprüft</span>
+              </div>
+              <!-- Current rating badge -->
+              <span x-show="aktBew(t.id)"
+                class="badge ml-2 flex-shrink-0"
+                :style="`background:${stufenCfg(aktBew(t.id)).bg};color:${stufenCfg(aktBew(t.id)).color}`"
+                x-text="starStr(aktBew(t.id))"></span>
+            </div>
+
+            <!-- 5-Stern Buttons -->
+            <div class="flex gap-1">
+              <template x-for="s in [1,2,3,4,5]" :key="s">
+                <button
+                  class="star-btn"
+                  :class="`s${s}` + (aktBew(t.id) === s ? ' sel' : '')"
+                  @click="setBewertung(t.id, s)">
+                  <span class="stars" x-text="starStr(s)"></span>
+                  <span class="lbl" x-text="stufenCfg(s).label"></span>
+                </button>
+              </template>
+            </div>
+
+            <!-- Inline Verifikation -->
+            <div x-show="verifikation.themaId === t.id && verifikation.aktiv" class="verif-box">
+              <p class="text-xs font-bold text-[#4A2C6E] mb-1">
+                🔎 Kurze Überprüfung — <span x-text="stufenCfg(verifikation.stufe).label"></span>
+              </p>
+              <p x-show="verifikation.loading" class="text-sm text-[#7A6E8A]">⏳ Frage wird geladen…</p>
+              <p x-show="!verifikation.loading" class="text-sm leading-snug mb-2" x-text="verifikation.frage"></p>
+              <div class="flex gap-2" x-show="!verifikation.loading">
+                <button @click="bestaetigeRating()"
+                  class="flex-1 py-2 rounded-xl text-sm font-semibold bg-[#D1FAE5] text-[#1A5C3A]">
+                  ✓ Passt
+                </button>
+                <button @click="reduziereRating()"
+                  class="flex-1 py-2 rounded-xl text-sm font-semibold bg-[#FEE2E2] text-[#8B1A1A]">
+                  ↓ Zu hoch
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="mt-4">
+        <button @click="abschliessen()" :disabled="!diagnoseKomplett || verifikation.aktiv" class="btn-primary">
+          <span x-show="!verifikation.aktiv">Diagnose abschließen →</span>
+          <span x-show="verifikation.aktiv">⚠️ Bitte Verifikation abschließen</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── RADAR ── -->
+    <div x-show="screen === 'radar'" class="p-4">
+      <div class="flex items-center gap-3 pt-4 pb-3">
+        <button @click="goTo('home')" class="text-[#7A6E8A] text-xl">←</button>
+        <h2 class="text-xl font-bold text-[#4A2C6E]">Lernstand-Analyse</h2>
+      </div>
+
+      <div class="card mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-sm font-semibold text-[#4A2C6E]">Spinnendiagramm</p>
+          <span class="text-xs text-[#7A6E8A]">- - - Klausurniveau (4)</span>
+        </div>
+        <canvas id="radarCanvas"></canvas>
+        <div class="flex justify-center mt-3" x-show="diagnosen.length > 1">
+          <button @click="toggleVerlauf()"
+            class="text-sm font-semibold px-4 py-2 rounded-xl transition-all"
+            :class="showVerlauf ? 'bg-[#4A2C6E] text-white' : 'bg-[#EDE6F5] text-[#4A2C6E]'">
+            📈 Verlauf (<span x-text="diagnosen.length"></span> Diagnosen)
+          </button>
+        </div>
+      </div>
+
+      <!-- Verbesserungen -->
+      <template x-if="verbesserungen().length > 0">
+        <div class="card mb-4" style="background:#D1FAE5;">
+          <p class="text-sm font-bold text-[#1A5C3A] mb-1">🎉 Verbesserungen seit letzter Diagnose</p>
+          <template x-for="t in verbesserungen()" :key="t.id">
+            <p class="text-sm text-[#1A5C3A]">↑ <span x-text="t.name"></span></p>
+          </template>
+        </div>
+      </template>
+
+      <!-- Nächste Schritte -->
+      <template x-if="schwächsteThemen().length > 0">
+        <div class="card mb-4">
+          <p class="text-sm font-semibold text-[#4A2C6E] mb-2">📌 Fokus heute</p>
+          <template x-for="t in schwächsteThemen()" :key="t.id">
+            <div class="flex items-center justify-between mb-1">
+              <div class="flex items-center gap-2">
+                <span x-text="starStr(t.stufe)" style="font-size:11px;"></span>
+                <span class="text-sm" x-text="t.name"></span>
+              </div>
+              <button @click="ue.themaId = t.id; goTo('ueben-auswahl')"
+                class="text-xs font-semibold text-[#7B4FA6] py-1 px-2 bg-[#EDE6F5] rounded-lg">
+                Üben →
+              </button>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <button @click="goTo('ueben-auswahl')" class="btn-primary">💡 Jetzt üben →</button>
+    </div>
+
+    <!-- ── ÜBEN AUSWAHL ── -->
+    <div x-show="screen === 'ueben-auswahl'" class="p-4">
+      <div class="flex items-center gap-3 pt-4 pb-3">
+        <button @click="goTo('home')" class="text-[#7A6E8A] text-xl">←</button>
+        <h2 class="text-xl font-bold text-[#4A2C6E]">Was möchtest du üben?</h2>
+      </div>
+      <div class="space-y-4">
+        <div class="card">
+          <p class="text-sm font-semibold text-[#4A2C6E] mb-2">Thema</p>
+          <select x-model="ue.themaId"
+            class="w-full border border-[#EDE6F5] rounded-xl p-3 bg-[#F6F4FA] text-sm">
+            <template x-for="t in themenMitStatus()" :key="t.id">
+              <option :value="t.id" x-text="starStr(t.stufe) + ' ' + t.name"></option>
+            </template>
+          </select>
+        </div>
+        <div class="card">
+          <p class="text-sm font-semibold text-[#4A2C6E] mb-2">Aufgabentyp</p>
+          <div class="grid grid-cols-2 gap-2">
+            <button @click="ue.typ = 'erklären'"
+              class="py-3 rounded-xl text-sm font-semibold transition-all"
+              :class="ue.typ === 'erklären' ? 'bg-[#4A2C6E] text-white' : 'bg-[#EDE6F5] text-[#4A2C6E]'">
+              📝 Erklären
+            </button>
+            <button @click="ue.typ = 'fehler'"
+              class="py-3 rounded-xl text-sm font-semibold transition-all"
+              :class="ue.typ === 'fehler' ? 'bg-[#4A2C6E] text-white' : 'bg-[#EDE6F5] text-[#4A2C6E]'">
+              🔍 Fehler finden
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <p class="text-sm font-semibold text-[#4A2C6E] mb-2">Schwierigkeit</p>
+          <div class="flex gap-2">
+            <template x-for="lvl in [1,2,3]" :key="lvl">
+              <button @click="ue.schwierigkeit = lvl"
+                class="flex-1 py-3 rounded-xl text-sm font-semibold transition-all"
+                :class="ue.schwierigkeit === lvl ? 'bg-[#4A2C6E] text-white' : 'bg-[#EDE6F5] text-[#4A2C6E]'"
+                x-text="'●'.repeat(lvl) + '○'.repeat(3-lvl)">
+              </button>
+            </template>
+          </div>
+        </div>
+        <div x-show="session.aufgaben.length > 0" class="card" style="background:#EDE6F5;">
+          <p class="text-sm text-[#4A2C6E]">
+            Session: <span class="font-bold" x-text="session.aufgaben.length"></span> Aufgaben
+            (<span x-text="session.aufgaben.filter(a => a.korrekt).length"></span> korrekt)
+          </p>
+        </div>
+        <button @click="aufgabeGenerieren()" :disabled="ue.loading" class="btn-primary">
+          <span x-show="!ue.loading">Aufgabe generieren →</span>
+          <span x-show="ue.loading">⏳ Wird generiert…</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── ÜBEN AUFGABE ── -->
+    <div x-show="screen === 'ueben-aufgabe'" class="p-4">
+      <div class="flex items-center gap-3 pt-4 pb-3">
+        <button @click="goTo('ueben-auswahl')" class="text-[#7A6E8A] text-xl">←</button>
+        <div>
+          <h2 class="text-xl font-bold text-[#4A2C6E]"
+            x-text="ue.typ === 'erklären' ? '📝 Erklären' : '🔍 Fehler finden'"></h2>
+          <p class="text-xs text-[#7A6E8A]">
+            <span x-text="'●'.repeat(ue.schwierigkeit) + '○'.repeat(3-ue.schwierigkeit)"></span>
+            · <span x-text="themenName(ue.themaId)"></span>
+          </p>
+        </div>
+      </div>
+      <div class="card mb-4" style="background:#EDE6F5;border-left:3px solid #4A2C6E;">
+        <p class="text-sm leading-relaxed" x-text="ue.aufgabe"></p>
+      </div>
+      <div class="card mb-4">
+        <label class="text-sm font-semibold text-[#4A2C6E] block mb-2">Deine Antwort</label>
+        <textarea x-model="ue.antwort" rows="5" placeholder="Schreibe deine Antwort hier…"
+          class="w-full border border-[#EDE6F5] rounded-xl p-3 bg-[#F6F4FA] text-sm resize-none"></textarea>
+      </div>
+      <div class="card mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-sm font-semibold text-[#4A2C6E]">💡 Tipp-System</p>
+          <span class="text-xs text-[#7A6E8A]"
+            x-text="ue.genutzeTipps > 0 ? ue.genutzeTipps + ' genutzt (−' + (ue.genutzeTipps*20) + '%)' : 'noch keine Tipps'"></span>
+        </div>
+        <template x-for="(tipp, i) in ue.tippTexte" :key="i">
+          <div class="tipp-box">
+            <p class="text-xs font-bold text-[#4A2C6E] mb-1">Tipp <span x-text="i+1"></span></p>
+            <p class="text-sm" x-text="tipp"></p>
+          </div>
+        </template>
+        <button @click="tippAnfordern()" x-show="ue.genutzeTipps < 3" :disabled="ue.loading" class="btn-ghost mt-2"
+          x-text="ue.loading ? '⏳ Wird geladen…' : '💡 Tipp ' + (ue.genutzeTipps+1) + ' anfordern (−20%)'">
+        </button>
+        <p x-show="ue.genutzeTipps >= 3" class="text-xs text-center text-[#7A6E8A] mt-2">Alle Tipps genutzt.</p>
+      </div>
+      <button @click="antwortEinreichen()" :disabled="!ue.antwort.trim() || ue.loading" class="btn-primary">
+        <span x-show="!ue.loading">Antwort einreichen →</span>
+        <span x-show="ue.loading">⏳ Wird bewertet…</span>
+      </button>
+    </div>
+
+    <!-- ── ÜBEN ERGEBNIS ── -->
+    <div x-show="screen === 'ueben-ergebnis'" class="p-4">
+      <div class="pt-4 pb-3">
+        <h2 class="text-xl font-bold text-[#4A2C6E]">Feedback</h2>
+      </div>
+      <div class="card mb-4"
+        :style="`border-left:4px solid ${ue.genutzeTipps===0?'#1A5C3A':ue.genutzeTipps===1?'#A16207':'#8B1A1A'}`">
+        <p class="text-sm leading-relaxed" x-text="ue.ergebnis"></p>
+      </div>
+      <div class="card mb-4" style="background:#EDE6F5;">
+        <div class="flex justify-between text-sm mb-1">
+          <span class="text-[#7A6E8A]">Tipps genutzt</span>
+          <span class="font-semibold" x-text="ue.genutzeTipps + ' / 3'"></span>
+        </div>
+        <div class="flex justify-between text-sm mb-1">
+          <span class="text-[#7A6E8A]">Kompetenz-Score</span>
+          <span class="font-semibold"
+            :class="(100-ue.genutzeTipps*20)>=80?'text-[#1A5C3A]':'text-[#A16207]'"
+            x-text="(100 - ue.genutzeTipps*20) + '%'"></span>
+        </div>
+        <div class="flex justify-between text-sm">
+          <span class="text-[#7A6E8A]">Nächste Schwierigkeit</span>
+          <span class="font-semibold"
+            x-text="'●'.repeat(ue.schwierigkeit) + '○'.repeat(3-ue.schwierigkeit)"></span>
+        </div>
+      </div>
+      <div class="card mb-4 text-center" x-show="session.aufgaben.length > 0">
+        <p class="text-[#7A6E8A] text-xs mb-1">Session-Fortschritt</p>
+        <p class="text-2xl font-bold text-[#4A2C6E]">
+          <span x-text="session.aufgaben.filter(a=>a.korrekt).length"></span>/<span x-text="session.aufgaben.length"></span>
+        </p>
+        <div class="bg-[#EDE6F5] rounded-full h-2 mt-2">
+          <div class="h-2 rounded-full bg-[#4A2C6E] transition-all"
+            :style="`width:${(session.aufgaben.length % 5) / 5 * 100}%`"></div>
+        </div>
+        <p class="text-xs text-[#7A6E8A] mt-1"
+          x-text="(5 - session.aufgaben.length % 5) + ' Aufgaben bis Session-Abschluss'"></p>
+      </div>
+      <template x-if="sessionSummaryNötig()">
+        <div class="card mb-4 text-center" style="background:#D1FAE5;">
+          <p class="font-bold text-[#1A5C3A] text-lg">🎉 5 Aufgaben geschafft!</p>
+          <p class="text-sm text-[#1A5C3A] mt-1">
+            <span x-text="session.aufgaben.slice(-5).filter(a=>a.korrekt).length"></span>/5 korrekt.
+            Neue Diagnose empfohlen!
+          </p>
+        </div>
+      </template>
+      <div class="flex gap-3">
+        <button @click="naechsteAufgabe()" class="btn-primary flex-1 py-3">Nächste Aufgabe →</button>
+        <button @click="goTo('home')" class="btn-outline py-3 px-4 rounded-xl">🏠</button>
+      </div>
+    </div>
+
+    <!-- ── FORTSCHRITT ── -->
+    <div x-show="screen === 'fortschritt'" class="p-4">
+      <div class="pt-4 pb-3">
+        <h2 class="text-xl font-bold text-[#4A2C6E]">Fortschritt</h2>
+        <p class="text-sm text-[#7A6E8A]">Physik — FH Aachen</p>
+      </div>
+
+      <!-- Prüfungsdatum bearbeiten -->
+      <div class="card mb-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-[#4A2C6E]">Prüfungsdatum</p>
+            <p class="text-xs text-[#7A6E8A]" x-text="examDisplayDate() + ' · ' + verbleibeneTage + ' Tage'"></p>
+          </div>
+          <button @click="editExamDate = !editExamDate" class="text-xs text-[#7B4FA6] font-semibold py-1 px-2 bg-[#EDE6F5] rounded-lg">
+            ✏️ Ändern
+          </button>
+        </div>
+        <div x-show="editExamDate" class="mt-3">
+          <input x-model="examDateInput" type="date" :min="todayStr()"
+            @change="updateExamDate()"
+            class="w-full border border-[#EDE6F5] rounded-xl p-2 bg-[#F6F4FA] text-sm">
+        </div>
+      </div>
+
+      <!-- Progress Bars -->
+      <div class="card mb-4 space-y-3">
+        <div>
+          <div class="flex justify-between text-xs text-[#7A6E8A] mb-1">
+            <span>Zeit bis Prüfung</span>
+            <span x-text="verbleibeneTage + ' Tage'"></span>
+          </div>
+          <div class="bg-[#EDE6F5] rounded-full h-2">
+            <div class="h-2 rounded-full transition-all"
+              :style="`width:${zeitProzent}%;background:${verbleibeneTage>30?'#1A5C3A':verbleibeneTage>14?'#7A4A00':'#8B1A1A'}`"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs text-[#7A6E8A] mb-1">
+            <span>Klausurbereit (Stufe 4+)</span>
+            <span x-text="themenBereit() + '/7'"></span>
+          </div>
+          <div class="bg-[#EDE6F5] rounded-full h-2">
+            <div class="h-2 rounded-full bg-[#1A5C3A] transition-all"
+              :style="`width:${themenBereit()/7*100}%`"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Themen sortiert -->
+      <div class="card mb-4">
+        <p class="text-sm font-semibold text-[#4A2C6E] mb-3">Themen-Übersicht</p>
+        <div class="space-y-2">
+          <template x-for="t in themenMitStatus()" :key="t.id">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 flex-1 min-w-0">
+                <span x-text="starStr(t.stufe)" style="font-size:11px;flex-shrink:0;"></span>
+                <span class="text-sm truncate" x-text="t.name"></span>
+                <span x-show="t.haeufig" class="badge flex-shrink-0" style="background:#FEF3C7;color:#7A4A00;font-size:9px;">🔥</span>
+              </div>
+              <button @click="ue.themaId = t.id; goTo('ueben-auswahl')"
+                class="text-xs font-semibold text-[#7B4FA6] py-1 px-2 bg-[#EDE6F5] rounded-lg ml-2 flex-shrink-0">
+                Üben →
+              </button>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Radar Verlauf -->
+      <div class="card mb-4" x-show="letzeDiagnose">
+        <p class="text-sm font-semibold text-[#4A2C6E] mb-2">Spinnendiagramm Verlauf</p>
+        <canvas id="radarFortschritt"></canvas>
+        <p class="text-xs text-center text-[#7A6E8A] mt-2">- - - Klausurniveau (Stufe 4)</p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="card mb-4" x-show="diagnosen.length > 0">
+        <p class="text-sm font-semibold text-[#4A2C6E] mb-3">Diagnose-Verlauf</p>
+        <div class="flex items-end gap-3 overflow-x-auto pb-1">
+          <template x-for="(d, i) in diagnosePunkte()" :key="i">
+            <button @click="goTo('radar')" class="flex flex-col items-center min-w-[44px]">
+              <div class="w-3 h-3 rounded-full mb-1"
+                :class="i === diagnosen.length - 1 ? 'bg-[#4A2C6E]' : 'bg-[#EDE6F5]'"
+                :style="i === diagnosen.length - 1 ? '' : 'border:1.5px solid #4A2C6E'"></div>
+              <span class="text-xs text-[#7A6E8A]" x-text="d.datum"></span>
+            </button>
+          </template>
+        </div>
+      </div>
+
+      <!-- Reset -->
+      <div class="card" style="border:1px solid #FEE2E2;">
+        <p class="text-sm text-[#7A6E8A] mb-2">Alle lokalen Daten löschen</p>
+        <button @click="resetConfirm()" class="text-sm font-semibold text-[#8B1A1A] py-2 px-4 rounded-xl" style="background:#FEE2E2;">
+          🗑️ Zurücksetzen
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ BOTTOM NAV ═══ -->
+    <nav class="nav-bar">
+      <button class="nav-item" :class="screen==='home'?'active':''" @click="goTo('home')">
+        <span class="text-xl">🏠</span><span>Home</span>
+      </button>
+      <button class="nav-item"
+        :class="screen==='diagnose'||screen==='radar'?'active':''"
+        @click="goTo('diagnose')">
+        <span class="text-xl">🎯</span><span>Diagnose</span>
+      </button>
+      <button class="nav-item"
+        :class="screen==='ueben-auswahl'||screen==='ueben-aufgabe'||screen==='ueben-ergebnis'?'active':''"
+        @click="goTo('ueben-auswahl')">
+        <span class="text-xl">💡</span><span>Üben</span>
+      </button>
+      <button class="nav-item" :class="screen==='fortschritt'?'active':''" @click="goTo('fortschritt')">
+        <span class="text-xl">📈</span><span>Fortschritt</span>
+      </button>
+    </nav>
+
+  </div><!-- /app -->
+</div><!-- /container -->
+
+<script>
+// ═══════════════════════════════════════
+// STUFENSYSTEM — 5-stufig, Stufe 4 = Klausurniveau
+// ═══════════════════════════════════════
+const STUFEN = [
+  null,
+  { label: 'Lernbedarf',    color: '#8B1A1A', bg: '#FEE2E2' },  // 1 ★☆☆☆☆
+  { label: 'Grundlagen',    color: '#7A4A00', bg: '#FEF3C7' },  // 2 ★★☆☆☆
+  { label: 'Verstanden',    color: '#A16207', bg: '#FEF9C3' },  // 3 ★★★☆☆
+  { label: 'Klausurniveau', color: '#1A5C3A', bg: '#D1FAE5' },  // 4 ★★★★☆  ← Ziel
+  { label: 'Exzellent',     color: '#4A2C6E', bg: '#EDE6F5' },  // 5 ★★★★★
+]
+
+// ═══════════════════════════════════════
+// KI PROMPTS
+// ═══════════════════════════════════════
+const PROMPTS = {
+  aufgabe: (thema, typ, schwierigkeit) =>
+    `Du bist Lernassistent für Physik (FH Aachen). Generiere eine ${typ}-Aufgabe für "${thema}". Schwierigkeitsgrad ${schwierigkeit} von 3. Nur die Aufgabenstellung, kein Präambel.`,
+  tipp: (aufgabe, nr) =>
+    `Aufgabe: "${aufgabe}" Gib Tipp ${nr} von 3. Tipp 1=abstrakte Denkrichtung, 2=konkreter Hinweis, 3=fast vollständig. Max 2 Sätze, kein Präambel.`,
+  bewertung: (aufgabe, antwort, thema) =>
+    `Thema: "${thema}" — Physik FH Aachen. Aufgabe: "${aufgabe}" Antwort: "${antwort}" Kurzes Feedback (max 3 Sätze): was gut war, was fehlt. Direkt beginnen, kein Präambel.`,
+  verifizierung: (thema, stufe) => {
+    const level = ['', 'einfache', 'grundlegende', 'mittlere', 'anspruchsvolle klausurtypische', 'vertiefte'][stufe]
+    return `Du bist Physik-Lernassistent (FH Aachen). Stelle genau EINE ${level} Verständnisfrage zu "${thema}". Nur die Frage, max 2 Sätze, kein Präambel.`
+  },
+}
+
+// ═══════════════════════════════════════
+// MOCK RESPONSES
+// ═══════════════════════════════════════
+const MOCK = {
+  erklären: [
+    'Erkläre in eigenen Worten den Unterschied zwischen dem Impulserhaltungssatz und dem Energieerhaltungssatz. Nenne für jeden ein physikalisches Beispiel.',
+    'Was versteht man unter dem Trägheitsmoment? Erkläre, wovon es abhängt und wie es Rotationsbewegungen beeinflusst.',
+    'Beschreibe das Superpositionsprinzip bei Wellen. Erkläre den Unterschied zwischen konstruktiver und destruktiver Interferenz.',
+    'Was ist der Unterschied zwischen Wechselstrom und Gleichstrom? Erkläre, warum Wechselstrom für die Fernübertragung bevorzugt wird.',
+  ],
+  fehler: [
+    'Finde den Fehler: "Beim elastischen Stoß bleibt der Impuls erhalten, aber die kinetische Energie wird größer."',
+    'Finde den Fehler: "Das Trägheitsmoment hängt ausschließlich von der Gesamtmasse ab, nicht von der Massenverteilung."',
+    'Finde den Fehler: "Eine Sinuswelle mit doppelter Frequenz hat doppelte Wellenlänge, da v = f·λ konstant ist."',
+  ],
+  tipps: [
+    ['Überlege, was bei einem abgeschlossenen System jeweils erhalten bleibt.',
+     'Impulserhaltung gilt ohne äußere Kraft. Energieerhaltung gilt nur ohne Wärmeverlust.',
+     'Impuls p=mv ist stets erhalten. Kinetische Energie E=½mv² nur beim elastischen Stoß.'],
+    ['Denke an die fundamentale Definition und welche Größen beteiligt sind.',
+     'Betrachte die Formel — was ändert sich, wenn man den Abstand zur Achse ändert?',
+     'J = Σ(mi·ri²) — die Massenverteilung relativ zur Drehachse ist entscheidend.'],
+  ],
+  bewertung: [
+    'Sehr gut! Du hast den Kern korrekt benannt. Noch besser wäre ein konkretes Zahlenbeispiel.',
+    'Guter Ansatz! Der Kerngedanke stimmt. Ein Beispiel aus der Mechanik würde die Erklärung abrunden.',
+    'Solide Erklärung! Die Verbindung zwischen Formel und Anwendung könnte noch klarer werden.',
+  ],
+  verif: {
+    1: ['Nenne den zentralen Begriff dieses Themengebiets und erkläre ihn in einem Satz.',
+        'Was ist die wichtigste physikalische Größe in diesem Bereich?'],
+    2: ['Erkläre das Kernprinzip dieses Themas in einem einfachen Satz.',
+        'Welche Formel ist in diesem Bereich am wichtigsten und was bedeuten die Variablen?'],
+    3: ['Wie würdest du dieses Thema einem Kommilitonen ohne Fachbegriffe erklären?',
+        'Nenne ein Alltagsbeispiel, das dieses physikalische Prinzip illustriert.'],
+    4: ['Erkläre, wie sich das System verhält, wenn eine Schlüsselgröße verdoppelt wird.',
+        'Formuliere eine klausurtypische Aufgabe zu diesem Thema und skizziere den Lösungsweg.'],
+    5: ['Erkläre, wie dieses Konzept mit einem anderen Bereich der Physik zusammenhängt.',
+        'Wo liegen die Grenzen dieses Modells, und welche Annahmen treffen in der Realität nicht zu?'],
+  },
+}
+let mockIdx = { aufgabe: 0, tipp: 0, bewertung: 0, verif: {} }
+
+function getMock(type, extra) {
+  if (type === 'aufgabe') return MOCK[extra === 'fehler' ? 'fehler' : 'erklären'][mockIdx.aufgabe++ % MOCK.erklären.length]
+  if (type === 'tipp')  { const s = MOCK.tipps[mockIdx.tipp++ % MOCK.tipps.length]; return s[Math.min((extra||1)-1, 2)] }
+  if (type === 'bewertung') return MOCK.bewertung[mockIdx.bewertung++ % MOCK.bewertung.length]
+  if (type === 'verif') {
+    const arr = MOCK.verif[Math.min(extra, 5)] || MOCK.verif[3]
+    mockIdx.verif[extra] = ((mockIdx.verif[extra]||0) + 1) % arr.length
+    return arr[mockIdx.verif[extra]]
+  }
+  return 'Mock-Antwort nicht verfügbar.'
+}
+
+async function callAI(systemPrompt, messages, apiKey, model) {
+  // Determine mock type from prompt
+  function fallback() {
+    if (systemPrompt.includes('Generiere eine'))  return getMock('aufgabe', systemPrompt.includes('fehler') ? 'fehler' : 'erklären')
+    if (systemPrompt.includes('Gib Tipp'))         return getMock('tipp', parseInt(systemPrompt.match(/Tipp (\d)/)?.[1]??'1'))
+    if (systemPrompt.includes('Feedback'))         return getMock('bewertung')
+    if (systemPrompt.includes('Verständnisfrage')) {
+      const m = systemPrompt.match(/(\d+) von 5/)
+      return getMock('verif', parseInt(m?.[1]??'2'))
+    }
+    return 'Keine Antwort verfügbar.'
+  }
+  if (!apiKey) return fallback()
+  try {
+    const res = await fetch('https://chat.kiconnect.nrw/api/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: model || 'gpt-4o',
+        messages: [{ role: 'system', content: systemPrompt }, ...messages],
+        max_tokens: 800, temperature: 0.7,
+      }),
+    })
+    const data = await res.json()
+    return data.choices[0].message.content
+  } catch { return fallback() }
+}
+
+// Helper: render radar to any canvas ID
+function renderRadar(canvasId, themen, diagnosen, showAll, destroyRef) {
+  const canvas = document.getElementById(canvasId)
+  if (!canvas) return null
+  if (destroyRef) { destroyRef.destroy(); destroyRef = null }
+
+  const labels = themen.map(t => {
+    const p = t.name.split(' — '); return p.length > 1 ? p[1] : p[0]
+  })
+  const val = s => s ?? 0
+  const datasets = []
+
+  if (showAll && diagnosen.length > 1) {
+    const toShow = diagnosen.slice(-5)
+    toShow.forEach((d, i) => {
+      const p = (i + 1) / toShow.length, isLast = i === toShow.length - 1
+      datasets.push({
+        label: new Date(d.datum).toLocaleDateString('de-DE', {day:'2-digit',month:'2-digit'}),
+        data: themen.map(t => val(d.bewertungen.find(b => b.id === t.id)?.stufe)),
+        backgroundColor: `rgba(74,44,110,${0.04 + 0.18*p})`,
+        borderColor: isLast ? '#4A2C6E' : `rgba(74,44,110,${0.2 + 0.55*p})`,
+        borderWidth: isLast ? 2 : 1,
+        pointBackgroundColor: isLast ? '#4A2C6E' : `rgba(74,44,110,${0.35+0.45*p})`,
+        pointRadius: isLast ? 3 : 1.5,
+      })
+    })
+  } else {
+    const d = diagnosen.at(-1)
+    if (!d) return null
+    datasets.push({
+      label: 'Lernstand',
+      data: themen.map(t => val(d.bewertungen.find(b => b.id === t.id)?.stufe)),
+      backgroundColor: 'rgba(74,44,110,0.18)',
+      borderColor: '#4A2C6E',
+      borderWidth: 2,
+      pointBackgroundColor: '#4A2C6E',
+      pointRadius: 3,
+    })
+  }
+
+  // Klausurniveau reference line
+  datasets.push({
+    label: 'Klausurniveau',
+    data: new Array(themen.length).fill(4),
+    backgroundColor: 'transparent',
+    borderColor: 'rgba(26,92,58,0.5)',
+    borderWidth: 1.5,
+    borderDash: [5, 4],
+    pointRadius: 0,
+  })
+
+  return new Chart(canvas, {
+    type: 'radar',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      scales: {
+        r: {
+          min: 0, max: 5,
+          ticks: { stepSize: 1, display: false },
+          grid: { color: 'rgba(74,44,110,0.1)' },
+          angleLines: { color: 'rgba(74,44,110,0.1)' },
+          pointLabels: { font: { size: 10, family: 'system-ui' }, color: '#1C1828' },
+        },
+      },
+      plugins: {
+        legend: {
+          display: showAll && diagnosen.length > 1,
+          labels: { font: { size: 10 }, boxWidth: 12 },
+        },
+      },
+    },
+  })
+}
+
+// ═══════════════════════════════════════
+// ALPINE APP
+// ═══════════════════════════════════════
+function app() {
+  return {
+    screen: 'setup',
+    name: '',
+    apiKey: '',
+    apiModel: 'gpt-4o',
+    apiTestStatus: null,   // null | 'loading' | 'success' | 'error'
+    apiTestMessage: '',
+    examDateInput: '',
+    editExamDate: false,
+
+    // Kurs — Achsen des Spinnendiagramms = themen
+    themen: [
+      { id: 1, name: 'Mechanik — Kinematik',                 haeufig: false },
+      { id: 2, name: 'Mechanik — Dynamik',                   haeufig: false },
+      { id: 3, name: 'Mechanik — Energie & Erhaltungssätze', haeufig: true  },
+      { id: 4, name: 'Rotationsmechanik',                    haeufig: false },
+      { id: 5, name: 'Schwingungen & Wellen',                haeufig: false },
+      { id: 6, name: 'Elektrodynamik I',                     haeufig: true  },
+      { id: 7, name: 'Elektrodynamik II',                    haeufig: false },
+    ],
+
+    diagnosen: [],
+    aktBewertungen: [],     // [{id, stufe: 1-5 | null}]
+    verifikation: { aktiv: false, themaId: null, stufe: null, frage: '', loading: false },
+    showVerlauf: false,
+
+    // Chart instances
+    radarMainInst:  null,
+    radarHomeInst:  null,
+    radarFortInst:  null,
+
+    ue: {
+      themaId: 1, typ: 'erklären', schwierigkeit: 1,
+      aufgabe: '', antwort: '', tippTexte: [], genutzeTipps: 0,
+      ergebnis: null, loading: false,
+    },
+    session: { aufgaben: [] },
+
+    // ── Init ──
+    init() {
+      const cfg = JSON.parse(localStorage.getItem('mlk_api_config') ?? '{}')
+      this.apiKey   = cfg.apiKey  ?? ''
+      this.apiModel = cfg.model   ?? 'gpt-4o'
+      this.name     = localStorage.getItem('mlk_name') ?? ''
+      this.diagnosen = JSON.parse(localStorage.getItem('mlk_diagnosen') ?? '[]')
+      // Migrate old format (status strings → stufe numbers)
+      this.diagnosen = this.diagnosen.filter(d => d.bewertungen?.[0]?.stufe !== undefined)
+
+      const stored = localStorage.getItem('mlk_exam_date') ?? this.defaultExamDate()
+      if (!localStorage.getItem('mlk_exam_date')) localStorage.setItem('mlk_exam_date', stored)
+      this.examDateInput = stored.split('T')[0]
+
+      this.resetAktDiagnose()
+      if (this.name) {
+        this.screen = 'home'
+        this.$nextTick(() => this.initHomeRadar())
+      }
+    },
+
+    defaultExamDate() {
+      const d = new Date(); d.setDate(d.getDate() + 45); return d.toISOString()
+    },
+
+    // ── Computed ──
+    get verbleibeneTage() {
+      const exam = new Date(this.examDateInput)
+      return Math.max(0, Math.ceil((exam - new Date()) / 86400000))
+    },
+    get zeitProzent() {
+      return Math.min(100, Math.round((1 - this.verbleibeneTage / 90) * 100))
+    },
+    get letzeDiagnose() { return this.diagnosen.at(-1) ?? null },
+    get diagnoseKomplett() { return this.aktBewertungen.every(b => b.stufe !== null) },
+    get bewerteteThemen() { return this.aktBewertungen.filter(b => b.stufe !== null).length },
+
+    // ── Helpers ──
+    stufenCfg(s) { return STUFEN[s] ?? { label: '—', color: '#7A6E8A', bg: '#F3F4F6' } },
+    starStr(s) { if (!s) return '☆☆☆☆☆'; return '★'.repeat(s) + '☆'.repeat(5 - s) },
+    formatDatum(iso) { return new Date(iso).toLocaleDateString('de-DE', { day:'2-digit', month:'2-digit', year:'2-digit' }) },
+    todayStr() { return new Date().toISOString().split('T')[0] },
+    examDisplayDate() { return new Date(this.examDateInput).toLocaleDateString('de-DE', { day:'2-digit', month:'long', year:'numeric' }) },
+    examTageText() {
+      const d = this.verbleibeneTage
+      return d > 0 ? `Noch ${d} Tage bis zur Prüfung` : 'Prüfungstag!'
+    },
+    themaCurz(id) {
+      const t = this.themen.find(t => t.id === id)
+      return t ? t.name.split('—').pop().trim().split(' ').pop() : ''
+    },
+    themenName(id) { return this.themen.find(t => t.id == id)?.name ?? '' },
+    aktBew(id) { return this.aktBewertungen.find(b => b.id === id)?.stufe ?? null },
+    themenBereit() { return this.letzeDiagnose?.bewertungen.filter(b => b.stufe >= 4).length ?? 0 },
+    schwächsteThemen() {
+      if (!this.letzeDiagnose) return []
+      return this.themen
+        .map(t => ({ ...t, stufe: this.letzeDiagnose.bewertungen.find(b => b.id === t.id)?.stufe ?? null }))
+        .filter(t => (t.stufe ?? 0) <= 3)
+        .sort((a, b) => (a.stufe ?? 0) - (b.stufe ?? 0))
+        .slice(0, 3)
+    },
+    verbesserungen() {
+      if (this.diagnosen.length < 2) return []
+      const prev = this.diagnosen.at(-2), curr = this.diagnosen.at(-1)
+      return this.themen.filter(t => {
+        const ps = prev.bewertungen.find(b => b.id === t.id)?.stufe ?? 0
+        const cs = curr.bewertungen.find(b => b.id === t.id)?.stufe ?? 0
+        return cs > ps
+      })
+    },
+    themenMitStatus() {
+      return this.themen.map(t => ({
+        ...t, stufe: this.letzeDiagnose?.bewertungen.find(b => b.id === t.id)?.stufe ?? null
+      })).sort((a, b) => (a.stufe ?? 0) - (b.stufe ?? 0))
+    },
+    diagnosePunkte() {
+      return this.diagnosen.map((d, i) => ({ datum: this.formatDatum(d.datum), idx: i }))
+    },
+
+    // ── API-Test ──
+    async testeVerbindung() {
+      if (!this.apiKey) return
+      this.apiTestStatus = 'loading'
+      try {
+        const res = await fetch('https://chat.kiconnect.nrw/api/v1/chat/completions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.apiKey}` },
+          body: JSON.stringify({
+            model: this.apiModel || 'gpt-4o',
+            messages: [{ role: 'user', content: 'Antworte nur mit: Verbindung erfolgreich.' }],
+            max_tokens: 20,
+          }),
+        })
+        const data = await res.json()
+        if (data.choices?.[0]?.message?.content) {
+          this.apiTestStatus = 'success'
+          this.apiTestMessage = `Verbindung aktiv · Modell: ${this.apiModel}`
+        } else {
+          this.apiTestStatus = 'error'
+          this.apiTestMessage = data.error?.message ?? 'Unbekannter Fehler'
+        }
+      } catch (e) {
+        this.apiTestStatus = 'error'
+        this.apiTestMessage = 'Netzwerkfehler: ' + e.message
+      }
+    },
+
+    // ── Setup ──
+    startSolo() {
+      if (!this.name.trim()) return
+      localStorage.setItem('mlk_name', this.name)
+      localStorage.setItem('mlk_api_config', JSON.stringify({ apiKey: this.apiKey, model: this.apiModel }))
+      localStorage.setItem('mlk_exam_date', new Date(this.examDateInput).toISOString())
+      this.screen = 'home'
+      this.$nextTick(() => this.initHomeRadar())
+    },
+
+    updateExamDate() {
+      localStorage.setItem('mlk_exam_date', new Date(this.examDateInput).toISOString())
+      this.editExamDate = false
+    },
+
+    // ── Navigation ──
+    goTo(s) {
+      if (s === 'diagnose') this.resetAktDiagnose()
+      this.screen = s
+      if (s === 'radar') this.$nextTick(() => this.initMainRadar())
+      if (s === 'home') this.$nextTick(() => this.initHomeRadar())
+      if (s === 'fortschritt') this.$nextTick(() => this.initFortschrittRadar())
+    },
+
+    // ── Radar inits ──
+    initMainRadar() {
+      if (this.radarMainInst) { this.radarMainInst.destroy(); this.radarMainInst = null }
+      if (!this.letzeDiagnose) return
+      this.radarMainInst = renderRadar('radarCanvas', this.themen, this.diagnosen, this.showVerlauf, null)
+    },
+    initHomeRadar() {
+      if (this.radarHomeInst) { this.radarHomeInst.destroy(); this.radarHomeInst = null }
+      if (!this.letzeDiagnose) return
+      this.radarHomeInst = renderRadar('radarHome', this.themen, this.diagnosen, false, null)
+    },
+    initFortschrittRadar() {
+      if (this.radarFortInst) { this.radarFortInst.destroy(); this.radarFortInst = null }
+      if (!this.letzeDiagnose) return
+      this.radarFortInst = renderRadar('radarFortschritt', this.themen, this.diagnosen, this.diagnosen.length > 1, null)
+    },
+    toggleVerlauf() {
+      this.showVerlauf = !this.showVerlauf
+      this.$nextTick(() => this.initMainRadar())
+    },
+
+    // ── Diagnose ──
+    resetAktDiagnose() {
+      this.aktBewertungen = this.themen.map(t => ({ id: t.id, stufe: null }))
+      this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', loading: false }
+    },
+    async setBewertung(id, stufe) {
+      const b = this.aktBewertungen.find(b => b.id === id)
+      if (!b) return
+      // Close any open verification
+      if (this.verifikation.themaId === id) this.verifikation.aktiv = false
+      // Toggle off if same
+      if (b.stufe === stufe) { b.stufe = null; return }
+      b.stufe = stufe
+      if (stufe >= 2) await this.starteVerifikation(id, stufe)
+    },
+    async starteVerifikation(id, stufe) {
+      this.verifikation = { aktiv: true, themaId: id, stufe, frage: '', loading: true }
+      const thema = this.themen.find(t => t.id === id)
+      this.verifikation.frage = await callAI(
+        PROMPTS.verifizierung(thema.name, stufe),
+        [{ role: 'user', content: 'Frage generieren.' }],
+        this.apiKey, this.apiModel
+      )
+      this.verifikation.loading = false
+    },
+    bestaetigeRating() { this.verifikation.aktiv = false },
+    reduziereRating() {
+      const b = this.aktBewertungen.find(b => b.id === this.verifikation.themaId)
+      if (b && b.stufe > 1) b.stufe--
+      this.verifikation.aktiv = false
+    },
+    abschliessen() {
+      if (!this.diagnoseKomplett || this.verifikation.aktiv) return
+      const snap = { datum: new Date().toISOString(), bewertungen: this.aktBewertungen.map(b => ({ ...b })) }
+      this.diagnosen.push(snap)
+      if (this.diagnosen.length > 5) this.diagnosen.shift()
+      localStorage.setItem('mlk_diagnosen', JSON.stringify(this.diagnosen))
+      this.goTo('radar')
+    },
+
+    // ── Übung ──
+    async aufgabeGenerieren() {
+      Object.assign(this.ue, { aufgabe:'', antwort:'', tippTexte:[], genutzeTipps:0, ergebnis:null, loading:true })
+      const thema = this.themen.find(t => t.id == this.ue.themaId)
+      this.ue.aufgabe = await callAI(
+        PROMPTS.aufgabe(thema.name, this.ue.typ, this.ue.schwierigkeit),
+        [{ role:'user', content:'Aufgabe generieren.' }], this.apiKey, this.apiModel
+      )
+      this.ue.loading = false
+      this.screen = 'ueben-aufgabe'
+    },
+    async tippAnfordern() {
+      if (this.ue.genutzeTipps >= 3 || this.ue.loading) return
+      this.ue.loading = true
+      const nr = this.ue.genutzeTipps + 1
+      this.ue.tippTexte.push(await callAI(
+        PROMPTS.tipp(this.ue.aufgabe, nr),
+        [{ role:'user', content:'Tipp' }], this.apiKey, this.apiModel
+      ))
+      this.ue.genutzeTipps++
+      this.ue.loading = false
+    },
+    async antwortEinreichen() {
+      if (!this.ue.antwort.trim() || this.ue.loading) return
+      this.ue.loading = true
+      const thema = this.themen.find(t => t.id == this.ue.themaId)
+      this.ue.ergebnis = await callAI(
+        PROMPTS.bewertung(this.ue.aufgabe, this.ue.antwort, thema.name),
+        [{ role:'user', content:'Bewerten' }], this.apiKey, this.apiModel
+      )
+      this.ue.loading = false
+      const lower = this.ue.ergebnis.toLowerCase()
+      const korrekt = !lower.includes('fehlt') && !lower.includes('falsch') && !lower.includes('nicht korrekt') && !lower.includes('unvollständig')
+      if (korrekt && this.ue.genutzeTipps === 0)       this.ue.schwierigkeit = Math.min(3, this.ue.schwierigkeit + 1)
+      else if (!korrekt || this.ue.genutzeTipps >= 2)  this.ue.schwierigkeit = Math.max(1, this.ue.schwierigkeit - 1)
+      this.session.aufgaben.push({ korrekt, tipps: this.ue.genutzeTipps })
+      this.screen = 'ueben-ergebnis'
+    },
+    naechsteAufgabe() {
+      Object.assign(this.ue, { aufgabe:'', antwort:'', tippTexte:[], genutzeTipps:0, ergebnis:null })
+      this.screen = 'ueben-auswahl'
+    },
+    sessionSummaryNötig() {
+      return this.session.aufgaben.length > 0 && this.session.aufgaben.length % 5 === 0
+    },
+
+    // ── Reset ──
+    resetConfirm() {
+      if (confirm('Alle Lernkreis-Daten löschen? Nicht rückgängig machbar.')) {
+        Object.keys(localStorage).filter(k => k.startsWith('mlk_')).forEach(k => localStorage.removeItem(k))
+        location.reload()
+      }
+    },
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_6_2_1",
+    "aufgabe": "Ein Federpendel (Federkonstante k = 400 N/m, Masse m = 0,50 kg) schwingt mit der Amplitude A = 8,0 cm. Berechnen Sie (a) die maximale Geschwindigkeit v_max und (b) die Gesamtenergie E_ges des Pendels.",
+    "musterloesung": "ω = √(k/m) = √(400/0,5) = √800 = 28,28 rad/s. (a) v_max = A·ω = 0,08·28,28 = 2,26 m/s. (b) E_ges = ½·k·A² = ½·400·0,0064 = 1,28 J.",
+    "tipps": [
+      "Die maximale Geschwindigkeit tritt im Gleichgewichtspunkt auf. Wie hängt sie mit Amplitude und Kreisfrequenz zusammen?",
+      "v_max = A·ω mit ω = √(k/m). Gesamtenergie: E = ½·k·A².",
+      "ω = 28,28 rad/s → v_max = 2,26 m/s. E_ges = 1,28 J."
+    ]
+  },
+  {
+    "id": "do_b_6_2_2",
+    "aufgabe": "Ein physikalisches Pendel (Lineal) hat die Länge l = 32 cm und die Breite b = 37 mm. Es ist an einem Loch aufgehängt, das sich 1,9 cm vom Rand befindet (Drehpunkt). Berechnen Sie die Schwingungsdauer T. (g = 9,81 m/s²; Trägheitsmoment eines Rechteckstabes um den Schwerpunkt: J_S = m(l²+b²)/12)",
+    "musterloesung": "Abstand Drehpunkt–Schwerpunkt: d = l/2 − 0,019 = 0,16 − 0,019 = 0,141 m. J_S = m·(0,32²+0,037²)/12 = m·(0,1024+0,00137)/12 = m·0,008648 kg·m²/kg. Steiner: J = J_S + m·d² = m·(0,008648+0,01988) = m·0,02853 m². T = 2π·√(J/(m·g·d)) = 2π·√(0,02853/(9,81·0,141)) = 2π·√(0,02062) ≈ 2π·0,1436 ≈ 0,902 s.",
+    "tipps": [
+      "Berechne zunächst den Schwerpunktsabstand vom Drehpunkt und das Flächenträgheitsmoment um den Schwerpunkt. Dann wende den Steinerschen Anteil an.",
+      "J_Drehpunkt = J_S + m·d². Schwingungsdauer: T = 2π·√(J/(m·g·d)).",
+      "d = 0,141 m, J = m·0,02853 m² → T ≈ 0,902 s."
+    ]
+  }
+]

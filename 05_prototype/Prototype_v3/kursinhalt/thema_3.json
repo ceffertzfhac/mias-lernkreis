@@ -1,0 +1,575 @@
+{
+  "thema_id": 3,
+  "thema_name": "Arbeit, Energie & Energieerhaltung",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_3_1_1",
+            "aufgabe": "Eine Kraft F = 50 N wirkt horizontal auf einen Körper, der 8 m weit bewegt wird. Wie viel Arbeit wird verrichtet?",
+            "musterloesung": "W = F · s = 50 N · 8 m = 400 J.",
+            "tipps": [
+              "Arbeit = Kraft × Weg (wenn Kraft in Wegrichtung).",
+              "W = F · s.",
+              "W = 50 · 8 = 400 J."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_1_2",
+            "aufgabe": "Ein Körper (m = 10 kg) liegt auf dem Boden. Wie viel potentielle Energie (Lageenergie) hat er, wenn er auf h = 5 m angehoben wird?",
+            "musterloesung": "Epot = m · g · h = 10 · 9,81 · 5 = 490,5 J.",
+            "tipps": [
+              "Potentielle Energie: Epot = m·g·h.",
+              "g = 9,81 m/s².",
+              "Epot = 10 · 9,81 · 5 = 490,5 J."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_1_3",
+            "aufgabe": "Wie groß ist die kinetische Energie eines Autos (m = 1200 kg) bei v = 100 km/h?",
+            "musterloesung": "v = 100 km/h = 27,78 m/s. Ekin = ½·m·v² = ½·1200·(27,78)² = 600·771,7 ≈ 463 000 J = 463 kJ.",
+            "tipps": [
+              "Kinetische Energie: Ekin = ½·m·v².",
+              "Einheit umrechnen: 100 km/h = 100/3,6 ≈ 27,78 m/s.",
+              "Ekin = ½·1200·27,78² ≈ 463 kJ."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_1_4",
+            "aufgabe": "Ein Motor liefert eine Leistung von P = 2 kW über t = 30 s. Wie viel Arbeit wird verrichtet?",
+            "musterloesung": "W = P · t = 2000 W · 30 s = 60 000 J = 60 kJ.",
+            "tipps": [
+              "Leistung = Arbeit / Zeit → Arbeit = Leistung × Zeit.",
+              "W = P · t.",
+              "W = 2000 · 30 = 60 000 J."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_3_2_1",
+            "aufgabe": "Eine Kraft F = 60 N wirkt unter einem Winkel θ = 30° zur Horizontalen auf einen Körper, der 10 m horizontal bewegt wird. Berechne die geleistete Arbeit.",
+            "musterloesung": "W = F · s · cos(θ) = 60 · 10 · cos(30°) = 600 · 0,866 ≈ 520 J.",
+            "tipps": [
+              "Wenn Kraft und Weg nicht parallel: W = F·s·cosθ.",
+              "Nur die Komponente in Wegrichtung leistet Arbeit.",
+              "W = 60 · 10 · cos30° = 600 · 0,866 ≈ 520 J."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_2_2",
+            "aufgabe": "Ein Körper (m = 2 kg) gleitet eine reibungsfreie schiefe Ebene (α = 25°, Länge l = 3 m) hinunter. Welche Geschwindigkeit hat er am Ende? (Startet aus der Ruhe)",
+            "musterloesung": "Höhendifferenz: h = l·sin25° = 3·0,423 = 1,268 m. Energieerhaltung: m·g·h = ½m·v² → v = √(2gh) = √(2·9,81·1,268) = √24,88 ≈ 4,99 m/s.",
+            "tipps": [
+              "Höhendifferenz bei geneigter Ebene: h = l·sinα.",
+              "Energieerhaltung: Epot = Ekin → m·g·h = ½m·v².",
+              "v = √(2gh) = √(2·9,81·1,268) ≈ 4,99 m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_2_3",
+            "aufgabe": "Ein Auto (m = 1500 kg) fährt mit v = 30 m/s und bremst bis zum Stillstand. Die Bremskraft beträgt F = 9000 N. Welche Strecke legt es beim Bremsen zurück?",
+            "musterloesung": "Energieerhaltung: Ekin = Reibungsarbeit → ½m·v² = F·s → s = mv²/(2F) = 1500·900/(2·9000) = 1 350 000/18 000 = 75 m.",
+            "tipps": [
+              "Kinetische Energie wird durch Bremsarbeit abgebaut: ½mv² = F·s.",
+              "Auflösen nach s: s = mv²/(2F).",
+              "s = 1500·900/18000 = 75 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_2_4",
+            "aufgabe": "Welche Leistung muss ein Aufzugsmotor entwickeln, um eine Last von m = 500 kg mit v = 1,5 m/s gleichmäßig nach oben zu bewegen?",
+            "musterloesung": "Kraft gegen Schwerkraft: F = m·g = 500·9,81 = 4905 N. Leistung: P = F·v = 4905·1,5 = 7357,5 W ≈ 7,36 kW.",
+            "tipps": [
+              "Gleichmäßige Aufwärtsbewegung: Kraft = Gewichtskraft F = mg.",
+              "Leistung: P = F·v.",
+              "P = 500·9,81·1,5 ≈ 7357 W ≈ 7,36 kW."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_3_3_1",
+            "aufgabe": "Ein Skifahrer (m = 75 kg) fährt von einem Punkt (v₀ = 9,8 m/s) einen Hang (30°) hinunter. Die Reibungskraft ist konstant. Nach 120 m kommt er zum Stehen. Welche Reibungsarbeit wurde verrichtet und wie groß ist die Reibungskraft?",
+            "musterloesung": "Höhendifferenz: h = 120·sin30° = 60 m. Energiebilanz: Ekin_0 + Epot = W_Reib → ½mv₀² + mgh = W_Reib. W_Reib = ½·75·9,8² + 75·9,81·60 = 3601,5 + 44145 = 47 746,5 J. Reibungskraft: F_R = W_Reib/s = 47746,5/120 ≈ 397,9 N.",
+            "tipps": [
+              "Energiebilanz: Ekin_start + Epot_start = Reibungsarbeit (Endenergie = 0).",
+              "W_Reib = ½mv₀² + mgh; Reibungskraft F_R = W_Reib / s.",
+              "h = 120·sin30° = 60 m → W_Reib ≈ 47 747 J → F_R ≈ 398 N."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_3_2",
+            "aufgabe": "Eine Loopingbahn (kreisförmige Schleife, Radius R = 5 m): Aus welcher Mindesthöhe h muss ein Wagen (reibungsfrei) starten, damit er am höchsten Punkt des Loops (h = 2R) nicht von der Schiene fällt?",
+            "musterloesung": "Am obersten Punkt: Zentripetalkraft ≥ Gewichtskraft (Minimalbedingung: N = 0). m·v²_top/R = m·g → v²_top = g·R. Energieerhaltung (vom Start bis Schleifenoberkante, 2R): m·g·h = m·g·2R + ½m·v²_top. g·h = g·2R + ½g·R = 2,5g·R → h = 2,5·R = 2,5·5 = 12,5 m.",
+            "tipps": [
+              "Am obersten Punkt: Zentripetalkraft = Schwerkraft (Minimum) → v²_top = g·R.",
+              "Energieerhaltung von h nach 2R: mgh = mg·2R + ½m·v²_top.",
+              "h = 2R + R/2 = 5R/2 = 2,5·5 = 12,5 m."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_3_3",
+            "aufgabe": "Ein Körper (m = 0,2 kg) wird mit einer Feder (k = 800 N/m, Stauchung x = 0,15 m) horizontal abgeschossen. Welche Geschwindigkeit hat er, wenn er die Feder verlässt? (reibungsfrei)",
+            "musterloesung": "Federenergie wird vollständig in kinetische Energie umgewandelt: ½k·x² = ½m·v². v = x·√(k/m) = 0,15·√(800/0,2) = 0,15·√4000 = 0,15·63,25 ≈ 9,49 m/s.",
+            "tipps": [
+              "Energieerhaltung: ½kx² = ½mv² → v = x·√(k/m).",
+              "√(k/m) = √(800/0,2) = √4000 ≈ 63,25 s⁻¹.",
+              "v = 0,15·63,25 ≈ 9,49 m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_3_4",
+            "aufgabe": "Ein Körper gleitet eine schiefe Ebene (α = 30°, l = 5 m, µ_G = 0,1) hinunter. Berechne mit Energiemethoden seine Endgeschwindigkeit am Fuß der Ebene (Start aus der Ruhe).",
+            "musterloesung": "h = l·sin30° = 2,5 m. Normalkraft: N = m·g·cos30° = 0,866mg. Reibungsarbeit: W_R = µ_G·N·l = 0,1·0,866·m·g·5 = 0,433mg. Energiebilanz: mgh − W_R = ½mv². v² = 2g(h − µ_G·cos30°·l) = 2·9,81·(2,5 − 0,433) = 2·9,81·2,067 ≈ 40,55. v ≈ 6,37 m/s.",
+            "tipps": [
+              "Energiebilanz: Epot − Reibungsarbeit = Ekin.",
+              "W_R = µ_G·m·g·cosα·l.",
+              "v² = 2g·l·(sinα − µ_G·cosα) = 2·9,81·5·(0,5 − 0,1·0,866) ≈ 40,55 → v ≈ 6,37 m/s."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_3_4_1",
+            "aufgabe": "Ein Proton (m = 1,67×10⁻²⁷ kg, q = 1,6×10⁻¹⁹ C) wird durch eine Spannung U = 10⁴ V beschleunigt. Berechne seine kinetische Energie und Endgeschwindigkeit.",
+            "musterloesung": "Elektrische Arbeit = kinetische Energie: W = q·U = 1,6×10⁻¹⁹·10⁴ = 1,6×10⁻¹⁵ J. ½m·v² = W → v = √(2W/m) = √(2·1,6×10⁻¹⁵ / 1,67×10⁻²⁷) = √(1,916×10¹²) ≈ 1,38×10⁶ m/s.",
+            "tipps": [
+              "Elektrische Energie = q·U = kinetische Energie des Protons.",
+              "v = √(2qU/m).",
+              "v = √(2·1,6×10⁻¹⁹·10⁴ / 1,67×10⁻²⁷) ≈ 1,38×10⁶ m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_4_2",
+            "aufgabe": "Ein Schwungrad (Vollzylinder, m = 50 kg, R = 0,3 m) dreht sich mit n = 3000 U/min. Wie viel Rotationsenergie ist gespeichert?",
+            "musterloesung": "J = ½mR² = ½·50·0,09 = 2,25 kg·m². ω = 2πn/60 = 2π·3000/60 = 314,16 rad/s. E_rot = ½J·ω² = ½·2,25·314,16² = 1,125·98 677 ≈ 111 011 J ≈ 111 kJ.",
+            "tipps": [
+              "Massenträgheitsmoment Vollzylinder: J = ½mR².",
+              "Winkelgeschwindigkeit: ω = 2πn/60.",
+              "Rotationsenergie: E_rot = ½Jω²."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_4_3",
+            "aufgabe": "Ein Körper rollt eine schiefe Ebene (h = 2 m) hinunter — einmal als Vollzylinder (J = ½mR²), einmal als Hohlzylinder (J = mR²). Berechne die Endgeschwindigkeit am Fuß für beide Fälle. (Rollbewegung ohne Schlupf)",
+            "musterloesung": "Energieerhaltung: mgh = ½mv² + ½Jω². Mit v = ωR: mgh = ½mv² + ½(cM·mR²)·(v/R)² = ½mv²(1+cM). v² = 2gh/(1+cM). Vollzylinder cM = ½: v² = 2·9,81·2/(1,5) = 26,16 → v = 5,11 m/s. Hohlzylinder cM = 1: v² = 2·9,81·2/2 = 19,62 → v = 4,43 m/s.",
+            "tipps": [
+              "Rollbewegung: Energieerhaltung mit kinetischer + Rotationsenergie: mgh = ½mv²(1+J/mR²).",
+              "Vollzylinder J = ½mR² → cM = 0,5; Hohlzylinder J = mR² → cM = 1.",
+              "v_Vollzylinder ≈ 5,11 m/s; v_Hohlzylinder ≈ 4,43 m/s — Vollzylinder schneller."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_4_4",
+            "aufgabe": "Ein Fadenpendel (l = 2 m) wird um α = 45° ausgelenkt und losgelassen. Berechne: a) Geschwindigkeit in der Gleichgewichtslage, b) Höhe, bei der die Geschwindigkeit v = 2 m/s beträgt. (Energieerhaltung)",
+            "musterloesung": "a) h₀ = l·(1−cos45°) = 2·(1−0,707) = 0,585 m. v_max = √(2gh₀) = √(2·9,81·0,585) = √11,48 ≈ 3,39 m/s. b) Energieerhaltung: mgh₀ = mgh + ½mv² → h = h₀ − v²/(2g) = 0,585 − 4/(19,62) = 0,585 − 0,204 = 0,381 m über Gleichgewichtslage. Entspricht Winkel: cosα' = 1 − h/l = 1 − 0,381/2 = 0,810 → α' ≈ 35,9°.",
+            "tipps": [
+              "h = l·(1−cosα) für die Höhendifferenz beim Fadenpendel.",
+              "a) v_max = √(2gh₀) bei α₀ = 45°.",
+              "b) h = h₀ − v²/(2g) und dann α aus cosα = 1 − h/l."
+            ]
+          }
+        ]
+      },
+      "herleiten": {
+        "1": [
+          {
+            "id": "do_herleiten_3_1_1",
+            "aufgabe": "Leite aus F = m·a und den Grundgleichungen der Kinematik die Formel für die kinetische Energie her: Ekin = ½mv².",
+            "musterloesung": "Arbeit: W = F·s. Mit F = m·a und v² = v₀² + 2as → a·s = (v²−v₀²)/2. Also: W = m·a·s = m·(v²−v₀²)/2. Wenn der Körper aus der Ruhe beschleunigt (v₀ = 0): W = ½m·v². Diese geleistete Arbeit steckt als kinetische Energie im Körper: Ekin = ½mv².",
+            "tipps": [
+              "Starte mit W = F·s und ersetze F = m·a.",
+              "Nutze die Kinematik: v² = v₀² + 2as → as = (v²−v₀²)/2.",
+              "W = m·(v²−v₀²)/2 → für v₀ = 0: Ekin = ½mv²."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_1_2",
+            "aufgabe": "Zeige, dass die Arbeit, die die Schwerkraft beim Absenken eines Körpers um h verrichtet, gleich m·g·h ist.",
+            "musterloesung": "Schwerkraft: F = m·g (nach unten). Weg: s = h (vertikal nach unten, Kraft und Weg parallel). Arbeit: W = F·s = m·g·h. Die Schwerkraft ist eine konservative Kraft — die Arbeit hängt nur von der Höhendifferenz, nicht vom Weg ab.",
+            "tipps": [
+              "Arbeit = Kraft × Weg in Kraftrichtung.",
+              "Schwerkraft wirkt senkrecht nach unten; Weg = h nach unten → W = mgh.",
+              "Erwähne: Schwerkraft ist konservativ (wegunabhängig)."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_1_3",
+            "aufgabe": "Leite die Formel für die Federenergie Efeder = ½kx² her, indem du die Kraft-Weg-Arbeit berechnet.",
+            "musterloesung": "Federkraft: F(x) = k·x (Hooke'sches Gesetz). Arbeit beim Dehnen von 0 bis x: W = ∫₀ˣ F dx' = ∫₀ˣ k·x' dx' = k·[x'²/2]₀ˣ = ½k·x². Diese Arbeit ist als potentielle Federenergie gespeichert: Efeder = ½kx².",
+            "tipps": [
+              "Federkraft ist nicht konstant → Arbeit als Integral berechnen.",
+              "W = ∫₀ˣ k·x' dx' = ½kx².",
+              "Die gespeicherte Energie im Integral entspricht der Fläche unter F(x) = kx."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_1_4",
+            "aufgabe": "Erkläre, warum die Reibungskraft eine nicht-konservative Kraft ist. Leite her, warum bei Reibung mechanische Energie nicht erhalten bleibt.",
+            "musterloesung": "Eine Kraft ist konservativ, wenn die geleistete Arbeit wegunabhängig ist. Reibungsarbeit: W_R = F_R·s = µ·N·s — sie hängt von der zurückgelegten Strecke s ab. Hin- und Rückweg: W_hin = µ·N·s, W_rück = µ·N·s → Gesamtarbeit = 2µNs ≠ 0. Eine konservative Kraft hätte Gesamtarbeit = 0 auf geschlossenem Weg. Daher ist Reibung nicht-konservativ und wandelt mechanische Energie in Wärme um.",
+            "tipps": [
+              "Konservative Kraft: Arbeit auf geschlossenem Weg = 0.",
+              "Reibungsarbeit ist immer positiv (Energie wird abgegeben) → immer Verlust.",
+              "Auf geschlossenem Weg: W_ges = 2µNs ≠ 0 → nicht-konservativ."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_herleiten_3_2_1",
+            "aufgabe": "Leite den Energieerhaltungssatz für mechanische Energie (Ekin + Epot = const) aus dem Arbeit-Energie-Theorem her, wenn nur konservative Kräfte wirken.",
+            "musterloesung": "Arbeit-Energie-Theorem: W_ges = ΔEkin. Wenn alle Kräfte konservativ: W_ges = −ΔEpot (Arbeit der konservativen Kraft = negative Änderung der potentiellen Energie). Also: −ΔEpot = ΔEkin → ΔEkin + ΔEpot = 0 → Ekin + Epot = const.",
+            "tipps": [
+              "Arbeit-Energie-Theorem: W = ΔEkin.",
+              "Konservative Kraft: W_kons = −ΔEpot.",
+              "Einsetzen: ΔEkin = −ΔEpot → Ekin + Epot = const."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_2_2",
+            "aufgabe": "Leite her, welche Mindestgeschwindigkeit ein Körper am Boden einer Loopingbahn benötigt, damit er am höchsten Punkt (Radius R) gerade noch auf der Schiene bleibt.",
+            "musterloesung": "Am obersten Punkt (Höhe 2R): Minimum wenn Normalkraft N = 0: m·v_top²/R = m·g → v_top² = g·R. Energieerhaltung vom Boden (v_0) bis oben (2R, v_top): ½mv_0² = ½mv_top² + mg·2R. v_0² = v_top² + 4gR = gR + 4gR = 5gR. v_0_min = √(5gR).",
+            "tipps": [
+              "Minimalbedingung am Scheitel: Normalkraft = 0 → v_top² = gR.",
+              "Energieerhaltung von unten (Höhe 0) nach oben (Höhe 2R): ½mv₀² = ½mv_top² + mg·2R.",
+              "v₀_min = √(5gR)."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_2_3",
+            "aufgabe": "Ein Körper der Masse m fällt aus Höhe h₀ auf eine Feder (k). Leite die maximale Federstauchung x_max her.",
+            "musterloesung": "Energieerhaltung: potentielle Energie beim Fall + potentielle Energie durch Federstauchung = Federenergie. m·g·(h₀ + x_max) = ½k·x_max². (Der Körper fällt um h₀ + x_max, wenn Federstauchung x_max ist.) ½k·x² − m·g·x − m·g·h₀ = 0. x_max = [mg + √((mg)² + 2k·mg·h₀)] / k.",
+            "tipps": [
+              "Gesamthöhe des Falls: h₀ + x_max (Feder staucht sich noch um x nach Kontakt).",
+              "Energieerhaltung: mg·(h₀+x) = ½kx².",
+              "Quadratische Gleichung: ½kx² − mgx − mgh₀ = 0 → x_max = [mg + √(m²g² + 2kmgh₀)] / k."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_2_4",
+            "aufgabe": "Leite die Formel für die Rollbewegung her: Welche Endgeschwindigkeit erreicht ein Vollzylinder (J = ½mR²) beim Rollen eine Höhe h hinunter?",
+            "musterloesung": "Rollbedingung: v = ω·R. Energieerhaltung: mgh = ½mv² + ½Jω² = ½mv² + ½·(½mR²)·(v/R)² = ½mv² + ¼mv² = ¾mv². v² = 4gh/3 → v = √(4gh/3) = (2/√3)·√(gh).",
+            "tipps": [
+              "Rollbedingung: v = ωR einsetzen.",
+              "Gesamtenergie = kinetische (Translation) + Rotationsenergie.",
+              "mgh = ¾mv² → v = √(4gh/3) ≈ 0,816·√(2gh)."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_herleiten_3_3_1",
+            "aufgabe": "Leite aus dem Energieerhaltungssatz die Formel für die Schwingungsdauer eines Fadenpendels her (kleine Winkel).",
+            "musterloesung": "Potential des Pendels: Epot = mgl(1−cosφ) ≈ ½mgl·φ² (für kleine φ). Ekin = ½mv² = ½m(lφ̇)² = ½ml²φ̇². Energieerhaltung: E = ½ml²φ̇² + ½mglφ² = const. Ableitung: ml²φ̈ + mglφ = 0 → φ̈ + (g/l)φ = 0. Das ist die DGL des harmonischen Oszillators mit ω² = g/l. Schwingungsdauer: T = 2π/ω = 2π√(l/g).",
+            "tipps": [
+              "Energie des Pendels aufschreiben und zeitlich ableiten.",
+              "Ergibt DGL: φ̈ + (g/l)φ = 0 → harmonische Schwingung.",
+              "T = 2π/ω = 2π√(l/g)."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_3_2",
+            "aufgabe": "Zeige durch Berechnung, dass beim elastischen Stoß zweier gleicher Massen die kinetische Energie erhalten bleibt, wenn die Geschwindigkeiten tauschen.",
+            "musterloesung": "Vorher: Ekin_v = ½m·v₁² + ½m·v₂². Nach dem Stoß (gleiche Massen): v₁' = v₂, v₂' = v₁. Nachher: Ekin_n = ½m·v₂² + ½m·v₁² = Ekin_v. ✓ Energieerhaltung ist erfüllt, da die Summe der Quadrate der Geschwindigkeiten unverändert bleibt.",
+            "tipps": [
+              "Einsetzen der Engeschwindigkeiten v₁' = v₂ und v₂' = v₁ in Ekin.",
+              "Ekin_vorher = ½m(v₁²+v₂²); Ekin_nachher = ½m(v₂²+v₁²) — identisch.",
+              "Energie ist erhalten. ✓"
+            ]
+          },
+          {
+            "id": "do_herleiten_3_3_3",
+            "aufgabe": "Leite aus P = F·v und dem 2. Newton'schen Gesetz her, wie die Beschleunigung eines Fahrzeugs bei konstanter Motorleistung P von der Geschwindigkeit v abhängt.",
+            "musterloesung": "P = F·v (bei konstanter Leistung P). Antriebskraft: F = P/v. 2. Newton: F_netto = F − F_W = m·a (F_W = Fahrwiderstand). Bei F_W = 0: m·a = P/v → a = P/(m·v). Die Beschleunigung ist umgekehrt proportional zur Geschwindigkeit — bei hoher Geschwindigkeit nimmt a ab.",
+            "tipps": [
+              "F = P/v aus P = F·v umstellen.",
+              "Newton: m·a = F = P/v → a = P/(mv).",
+              "Bei v → ∞ geht a → 0 — die Maximalgeschwindigkeit wird durch Fahrwiderstand begrenzt."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_3_4",
+            "aufgabe": "Zeige, dass die Gravitationskraft konservativ ist, indem du berechnest, dass die Arbeit auf einem geschlossenen Weg null beträgt.",
+            "musterloesung": "Geschlossener Weg: Körper bewegt sich von h₀ → h₀+h → h₀ (hoch dann zurück). Hinweg: W_hin = m·g·h (Schwerkraft leistet negative Arbeit beim Anheben, denn Kraft nach unten, Weg nach oben → W_hin = −mgh). Rückweg: W_rück = +mgh (Kraft nach unten, Weg nach unten → positiv). Gesamt: W_ges = −mgh + mgh = 0. → Schwerkraft ist konservativ.",
+            "tipps": [
+              "Arbeit der Schwerkraft: W = mg·(h_start − h_end) = −ΔEpot.",
+              "Auf geschlossenem Weg: h_start = h_end → W_ges = 0.",
+              "Konservative Kraft: wegunabhängig, geschlossener Weg ergibt W = 0."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_herleiten_3_4_1",
+            "aufgabe": "Leite den Satz von Steiner (Steinerscher Anteil) her und erkläre seine physikalische Bedeutung: J_A = J_SP + m·d².",
+            "musterloesung": "Trägheitsmoment bzgl. Achse A (paralleler Abstand d zum SP): J_A = Σm_i·r_A,i². Position r_A,i = r_SP,i + d (vektoriell). |r_A,i|² = |r_SP,i|² + 2r_SP,i·d + d². Summation: J_A = Σm_i·(r_SP,i² + 2r_SP,i·d + d²) = J_SP + 2d·(Σm_i·r_SP,i) + d²·Σm_i. Da d·(Σm_i·r_SP,i) = 0 (SP-Definition): J_A = J_SP + m·d². Physikalisch: Dreht man nicht um den Schwerpunkt, erhöht sich das Trägheitsmoment um m·d².",
+            "tipps": [
+              "Abstandsquadrat quadratisch entwickeln: |r_A|² = |r_SP + d|².",
+              "Der gemischte Term verschwindet, da der Schwerpunkt per Definition Σm_i·r_SP,i = 0 erfüllt.",
+              "J_A = J_SP + md²."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_4_2",
+            "aufgabe": "Zeige, dass beim Rollen ohne Schlupf die rollende Kugel (Vollkugel, J = 2/5 mr²) langsamer ist als eine reibungsfrei gleitende Masse von gleicher Höhe h.",
+            "musterloesung": "Gleiter: mgh = ½mv² → v_gleiter = √(2gh). Vollkugel: J = 2/5 mr². mgh = ½mv² + ½·(2/5 mr²)·(v/r)² = ½mv²·(1 + 2/5) = 7/10 mv². v_kugel² = 10gh/7 → v_kugel = √(10gh/7) = √(1,429gh). v_gleiter = √(2gh) = √(2gh). Verhältnis: v_kugel/v_gleiter = √(10/14) = √(5/7) ≈ 0,845 < 1. Also: Kugel ist langsamer.",
+            "tipps": [
+              "Gleiter: alle Energie in kinetische Energie.",
+              "Kugel: Energie aufgeteilt in Translation und Rotation → weniger Translation.",
+              "v_kugel = √(10gh/7) < v_gleiter = √(2gh) → Kugel ist langsamer."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_4_3",
+            "aufgabe": "Leite die allgemeine Formel für den Energieverlust beim vollkommen unelastischen zentralen Stoß her: ΔEkin = ½·(m₁m₂/(m₁+m₂))·(v₁−v₂)².",
+            "musterloesung": "v' = (m₁v₁+m₂v₂)/(m₁+m₂). Ekin_v = ½m₁v₁²+½m₂v₂². Ekin_n = ½(m₁+m₂)v'². ΔE = Ekin_v − Ekin_n. Nach algebraischer Umformung: ΔE = ½·(m₁m₂/(m₁+m₂))·(v₁−v₂)². Dies ist immer positiv, außer wenn v₁ = v₂ (kein Stoß).",
+            "tipps": [
+              "v' berechnen, dann Ekin_vorher − Ekin_nachher.",
+              "Algebraische Umformung führt auf die reduzierte Masse µ = m₁m₂/(m₁+m₂).",
+              "ΔE = ½µ·(v₁−v₂)² — immer ≥ 0."
+            ]
+          },
+          {
+            "id": "do_herleiten_3_4_4",
+            "aufgabe": "Leite den Zusammenhang zwischen Arbeit und Leistung her und zeige, dass P = F·v gilt für einen Körper, der mit konstanter Kraft F und Geschwindigkeit v bewegt wird.",
+            "musterloesung": "Leistung: P = dW/dt. Arbeit bei konstanter Kraft: dW = F·ds. Also: P = dW/dt = F·ds/dt = F·v. Alternativ: W = F·s → P = W/t = F·s/t = F·v (bei konstanter Geschwindigkeit). Einheit: P = [N·m/s] = [J/s] = [W].",
+            "tipps": [
+              "Leistung = dW/dt = F·ds/dt = F·v.",
+              "Einheit: [N]·[m/s] = [W].",
+              "Gilt nur wenn F in Richtung v wirkt; sonst P = F·v·cosθ."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_3_1_1",
+            "frage": "Was ist die Einheit der Arbeit?",
+            "optionen": [
+              {"key": "A", "text": "Watt (W)"},
+              {"key": "B", "text": "Newton (N)"},
+              {"key": "C", "text": "Joule (J)"},
+              {"key": "D", "text": "Pascal (Pa)"},
+              {"key": "E", "text": "kg·m/s"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Arbeit W = F·s → [N·m] = [J] (Joule). A ist falsch: Watt ist die Einheit der Leistung (J/s). B ist falsch: Newton ist die Kraft-Einheit. D ist falsch: Pascal ist Druck (N/m²). E ist falsch: kg·m/s ist die Einheit des Impulses."
+          },
+          {
+            "id": "sc_3_1_2",
+            "frage": "Wann ist die von einer Kraft geleistete Arbeit null?",
+            "optionen": [
+              {"key": "A", "text": "Wenn die Kraft sehr groß ist."},
+              {"key": "B", "text": "Wenn die Kraft senkrecht zur Bewegungsrichtung steht."},
+              {"key": "C", "text": "Wenn der Körper sehr schwer ist."},
+              {"key": "D", "text": "Wenn die Kraft kleiner als das Gewicht ist."},
+              {"key": "E", "text": "Wenn der Körper sich sehr langsam bewegt."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: W = F·s·cosθ = 0 wenn θ = 90° (Kraft ⊥ Weg). Beispiel: Normalkraft bei horizontaler Bewegung. A ist falsch: große Kraft, aber senkrecht, bedeutet W = 0. C ist falsch: Masse ist irrelevant für das W = 0 Kriterium. D ist falsch: kein Zusammenhang mit Gewicht und Arbeit direkt. E ist falsch: langsame Bewegung bedeutet geringe Leistung, aber nicht W = 0."
+          },
+          {
+            "id": "sc_3_1_3",
+            "frage": "Was versteht man unter dem Energieerhaltungssatz der Mechanik?",
+            "optionen": [
+              {"key": "A", "text": "Die Gesamtenergie des Universums bleibt konstant."},
+              {"key": "B", "text": "Kinetische Energie kann nie verloren gehen."},
+              {"key": "C", "text": "Bei ausschließlich konservativen Kräften bleibt Ekin + Epot konstant."},
+              {"key": "D", "text": "Potentielle Energie ist immer gleich kinetischer Energie."},
+              {"key": "E", "text": "Arbeit kann nicht in andere Energieformen umgewandelt werden."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Mechanischer Energieerhaltungssatz gilt, wenn nur konservative Kräfte wirken. A ist falsch: das ist der allgemeine Energieerhaltungssatz (1. Hauptsatz der TD). B ist falsch: kinetische Energie kann in Wärme (Reibung) umgewandelt werden. D ist falsch: Ekin + Epot = const, aber nicht Ekin = Epot. E ist falsch: Arbeit kann in andere Formen umgewandelt werden."
+          },
+          {
+            "id": "sc_3_1_4",
+            "frage": "Eine Feder wird um x = 0,1 m gestaucht (k = 200 N/m). Wie groß ist die gespeicherte Federenergie?",
+            "optionen": [
+              {"key": "A", "text": "1 J"},
+              {"key": "B", "text": "2 J"},
+              {"key": "C", "text": "10 J"},
+              {"key": "D", "text": "20 J"},
+              {"key": "E", "text": "0,1 J"}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: E = ½kx² = ½·200·0,01 = 1 J. B ist falsch: 2 wäre ½·200·0,02 = 2 J → x ≈ 0,141. C ist falsch: das wäre ½·200·0,1 = 10, ohne das ½ Faktor. D ist falsch: wäre k·x² ohne ½. E ist falsch: 0,1 J wäre bei x = 0,032 m."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_3_2_1",
+            "frage": "Ein Block (m = 0,5 kg) trifft auf eine Feder (k). Er wird vollständig abgebremst. Welche Aussage ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die maximale Stauchung hängt nicht von v₀ ab."},
+              {"key": "B", "text": "Der Impuls ist bei maximaler Stauchung null."},
+              {"key": "C", "text": "Kinetische Energie bleibt erhalten."},
+              {"key": "D", "text": "Die Arbeit an der Feder ist kleiner als die kinetische Energie."},
+              {"key": "E", "text": "Die Feder wird immer auf x = mv²/k gestaucht."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Bei maximaler Stauchung ist v = 0 → p = mv = 0. A ist falsch: x_max = v₀√(m/k) hängt von v₀ ab. C ist falsch: Ekin → Efeder. D ist falsch: reibungsfrei ist die gesamte Ekin in Efeder umgewandelt (gleich). E ist falsch: die korrekte Formel ist x²_max = mv²₀/k."
+          },
+          {
+            "id": "sc_3_2_2",
+            "frage": "Welche Aussage zum Federpendel (ungedämpft) ist FALSCH?",
+            "optionen": [
+              {"key": "A", "text": "Die maximale kinetische Energie hängt von der Amplitude A ab."},
+              {"key": "B", "text": "Die maximale potentielle Energie beträgt ½kA² und entspricht der maximalen Ekin."},
+              {"key": "C", "text": "Im Gleichgewichtspunkt ist die kinetische Energie minimal."},
+              {"key": "D", "text": "Die momentane potentielle Energie ist proportional zu x(t)²."},
+              {"key": "E", "text": "Es ist ein abgeschlossenes System mit nur konservativen Kräften."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist falsch (korrekte Antwort): Im Gleichgewichtspunkt (x = 0) ist die Auslenkung null, also Epot = 0 und die kinetische Energie ist MAXIMAL, nicht minimal. A ist korrekt: Ekin_max = ½kA². B ist korrekt. D ist korrekt: Epot = ½kx². E ist korrekt."
+          },
+          {
+            "id": "sc_3_2_3",
+            "frage": "Ein Körper (m = 2 kg) fällt aus H = 10 m auf eine Feder (k = 1000 N/m). Welche Aussage zur maximalen Federstauchung ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "x_max = √(2mgh/k)"},
+              {"key": "B", "text": "x_max ist von der Masse unabhängig."},
+              {"key": "C", "text": "x_max = mg/k"},
+              {"key": "D", "text": "x_max wird durch mg·(H+x_max) = ½kx_max² berechnet."},
+              {"key": "E", "text": "x_max = H"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Der Körper fällt insgesamt (H + x_max), die gesamte potentielle Energie wird in Federenergie umgewandelt. A ist falsch: diese Formel gilt nur wenn x_max << H. B ist falsch: x_max hängt von m ab. C ist falsch: das ist die statische Gleichgewichtsstauchung. E ist falsch: x_max ≠ H."
+          },
+          {
+            "id": "sc_3_2_4",
+            "frage": "Ein Vollzylinder und ein Hohlzylinder gleicher Masse und gleichen Radius rollen ohne Schlupf eine Rampe hinunter. Wer kommt schneller unten an?",
+            "optionen": [
+              {"key": "A", "text": "Beide gleichzeitig."},
+              {"key": "B", "text": "Der Hohlzylinder, weil er mehr Energie speichert."},
+              {"key": "C", "text": "Der Vollzylinder, weil er weniger Rotationsenergie benötigt."},
+              {"key": "D", "text": "Der Hohlzylinder, weil seine Masse weiter außen liegt."},
+              {"key": "E", "text": "Kommt auf die Rampenneigung an."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Vollzylinder (J = ½mR²) hat kleineres J als Hohlzylinder (J = mR²). Weniger Rotationsenergie → mehr kinetische Translationsenergie → höhere Geschwindigkeit. A ist falsch: verschiedene J. B und D sind falsch: größeres J bedeutet langsamer. E ist falsch: das Ergebnis ist unabhängig von der Neigung."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_3_3_1",
+            "frage": "Welche der folgenden Aussagen zur kinetischen Energie ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Ekin ist proportional zu v."},
+              {"key": "B", "text": "Ekin ist proportional zu v²."},
+              {"key": "C", "text": "Ekin ist proportional zu m²."},
+              {"key": "D", "text": "Ekin ist immer gleich der potentiellen Energie."},
+              {"key": "E", "text": "Ekin kann negativ sein."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Ekin = ½mv² — proportional zu v². A ist falsch: Ekin ~ v², nicht v. C ist falsch: Ekin ~ m (linear, nicht m²). D ist falsch: nur bei bestimmten Positionen gilt Ekin = Epot. E ist falsch: Ekin = ½mv² ≥ 0 immer."
+          },
+          {
+            "id": "sc_3_3_2",
+            "frage": "Welche der folgenden Kräfte ist NICHT konservativ?",
+            "optionen": [
+              {"key": "A", "text": "Schwerkraft (nahe Erdoberfläche)"},
+              {"key": "B", "text": "Federkraft (Hooke'sches Gesetz)"},
+              {"key": "C", "text": "Coulombkraft"},
+              {"key": "D", "text": "Reibungskraft"},
+              {"key": "E", "text": "Gravitationskraft nach Newton"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Reibungskraft ist nicht-konservativ — sie dissipiert Energie (Arbeit auf geschlossenem Weg ≠ 0). A, B, C, E sind alle konservative Kräfte (wegunabhängig, geschlossener Weg liefert W = 0)."
+          },
+          {
+            "id": "sc_3_3_3",
+            "frage": "Ein Körper bewegt sich von Punkt A nach Punkt B auf zwei verschiedenen Wegen (Weg 1 und Weg 2) in einem konservativen Kraftfeld. Welche Aussage ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Arbeit ist auf Weg 1 größer als auf Weg 2."},
+              {"key": "B", "text": "Die Arbeit ist auf beiden Wegen gleich."},
+              {"key": "C", "text": "Die Arbeit hängt von der Geschwindigkeit ab."},
+              {"key": "D", "text": "Die Arbeit ist auf dem kürzeren Weg kleiner."},
+              {"key": "E", "text": "Die Arbeit ist null, wenn der Körper wieder am Ausgangspunkt ist."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Definition einer konservativen Kraft — die Arbeit ist wegunabhängig, nur der Anfangs- und Endpunkt sind relevant. A ist falsch: Wegunabhängigkeit ist gerade das Merkmal. C ist falsch: Arbeit hängt nur von Start und Ziel ab. D ist falsch: kürzerer Weg ≠ weniger Arbeit bei konservativen Kräften. E ist korrekt für geschlossene Wege (A = B), aber das ist eine andere Aussage."
+          },
+          {
+            "id": "sc_3_3_4",
+            "frage": "Welche Leistung erbringt ein Motor, der einen 500 kg schweren Körper mit v = 2 m/s gleichförmig vertikal nach oben bewegt?",
+            "optionen": [
+              {"key": "A", "text": "P = 1 000 W"},
+              {"key": "B", "text": "P = 2 500 W"},
+              {"key": "C", "text": "P = 9 810 W"},
+              {"key": "D", "text": "P ≈ 9 810 W"},
+              {"key": "E", "text": "P = 500 W"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: P = F·v = m·g·v = 500·9,81·2 = 9810 W. A ist falsch: 1000 W fehlt g-Faktor. B ist falsch: 2500 = m·v·1 ohne g. D ist korrekt wenn P ≈ 9810 W (aber C und D haben denselben Wert, und C zeigt das exakt). E ist falsch: 500 W ist viel zu klein."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_3_4_1",
+            "frage": "Welche Aussage zur Rotationsenergie eines starren Körpers ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "E_rot = ½mv² (analog zur Translationsenergie)"},
+              {"key": "B", "text": "E_rot = ½Jω²"},
+              {"key": "C", "text": "E_rot = Jω"},
+              {"key": "D", "text": "E_rot = ½mω²"},
+              {"key": "E", "text": "E_rot = Jω²"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: E_rot = ½Jω² (Massenträgheitsmoment J statt Masse m, Winkelgeschwindigkeit ω statt v). A ist falsch: das ist die Translationsenergie. C ist falsch: Jω ist der Drehimpuls L, nicht die Energie. D ist falsch: mω² ergibt falsche Einheit. E ist falsch: fehlt der ½-Faktor."
+          },
+          {
+            "id": "sc_3_4_2",
+            "frage": "Welche Mindesthöhe h ist nötig, damit ein Körper auf einer Loopingbahn (Radius R) den obersten Punkt gerade noch passiert?",
+            "optionen": [
+              {"key": "A", "text": "h = R"},
+              {"key": "B", "text": "h = 2R"},
+              {"key": "C", "text": "h = 2,5R"},
+              {"key": "D", "text": "h = 4R"},
+              {"key": "E", "text": "h = 5R"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: h_min = 5R/2 = 2,5R (hergeleitet aus v_top² = gR und Energieerhaltung). A ist falsch: h = R reicht nicht. B ist falsch: h = 2R wäre nur die Höhe des Loopscheitels ohne v_top-Anforderung. D ist falsch: 4R ist zu viel. E ist falsch: 5R ist ebenfalls zu viel (h, nicht Startgeschwindigkeit)."
+          },
+          {
+            "id": "sc_3_4_3",
+            "frage": "Ein Körper (m = 1 kg) wird mit einer Feder (k = 500 N/m, x = 0,2 m) auf einer geneigten Ebene (α = 30°) nach oben geschossen. Wie weit bewegt er sich entlang der Ebene? (reibungsfrei)",
+            "optionen": [
+              {"key": "A", "text": "s = kx²/(2mg) = 1,02 m"},
+              {"key": "B", "text": "s = kx²/(mg·sinα) = 2,04 m"},
+              {"key": "C", "text": "s = kx²/(2mg·sinα) = 2,04 m"},
+              {"key": "D", "text": "s = kx²/(2mg·cosα) = 1,18 m"},
+              {"key": "E", "text": "s = x = 0,2 m"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Federenergie = potentielle Energie am höchsten Punkt: ½kx² = mgs·sinα → s = kx²/(2mg·sinα) = 500·0,04/(2·1·9,81·0,5) = 20/9,81 ≈ 2,04 m. A ist falsch: fehlt sinα. B ist falsch: fehlt den ½-Faktor bei der Federenergie. D ist falsch: cosα statt sinα. E ist falsch: die Strecke hängt von den physikalischen Größen ab."
+          },
+          {
+            "id": "sc_3_4_4",
+            "frage": "Welche Energieumwandlung findet beim freien Fall statt?",
+            "optionen": [
+              {"key": "A", "text": "Kinetische Energie → potentielle Energie"},
+              {"key": "B", "text": "Potentielle Energie → kinetische Energie"},
+              {"key": "C", "text": "Kinetische Energie → Wärme"},
+              {"key": "D", "text": "Potentielle Energie → Wärme"},
+              {"key": "E", "text": "Keine Energieumwandlung — Energie bleibt in derselben Form."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Beim freien Fall nimmt die Höhe ab (Epot nimmt ab) und die Geschwindigkeit zu (Ekin nimmt zu) — Epot → Ekin. A ist falsch: das wäre beim Hochwerfen. C und D sind falsch: beim reibungsfreien freien Fall keine Wärmeerzeugung. E ist falsch: Energieform ändert sich."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Definiere die physikalische Arbeit in einem Satz. Nenne Formel, Einheit und erkläre, wann die Arbeit null ist."],
+      "2": ["Erkläre den Unterschied zwischen konservativen und nicht-konservativen Kräften. Gib je ein Beispiel und erkläre, warum Reibung nicht-konservativ ist."],
+      "3": ["Beschreibe den Energieerhaltungssatz für mechanische Energie: Unter welchen Bedingungen gilt er? Was passiert bei Reibung?"],
+      "4": ["Ein Körper (m = 5 kg) gleitet eine reibungsfreie schiefe Ebene (α = 40°, Länge l = 4 m) hinunter. Berechne die Endgeschwindigkeit mit dem Energieerhaltungssatz (vollständiges Lösungsschema)."],
+      "5": ["Erkläre, warum beim Rollen ein Körper langsamer ist als ein Gleiter (gleiche Höhe, gleiche Masse). In welchem Grenzfall werden beide gleich schnell?"]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_5_3_1",
+    "frage": "Ohne Reibungskraft würde ein Zylinder auf schiefer Ebene ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "gleich schnell rollen wie mit Reibung."
+      },
+      {
+        "key": "B",
+        "text": "reibungsfrei gleiten, nicht rollen."
+      },
+      {
+        "key": "C",
+        "text": "langsamer rollen."
+      },
+      {
+        "key": "D",
+        "text": "schneller rollen."
+      },
+      {
+        "key": "E",
+        "text": "stehen bleiben."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Haftreibung erzeugt Drehmoment → Rollen. Ohne Reibung: gleiten (kein Drehen). Gleiten ist schneller als Rollen."
+  },
+  {
+    "id": "sc_5_3_2",
+    "frage": "Zentrifugalkraft ist ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "eine reale Kraft in jedem Bezugssystem."
+      },
+      {
+        "key": "B",
+        "text": "eine Scheinkraft in rotierenden Bezugssystemen."
+      },
+      {
+        "key": "C",
+        "text": "die Reaktionskraft zur Zentripetalkraft."
+      },
+      {
+        "key": "D",
+        "text": "immer nach innen gerichtet."
+      },
+      {
+        "key": "E",
+        "text": "eine Kontaktkraft."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Zentrifugalkraft ist Scheinkraft im rotierenden Bezugssystem. Im Inertialsystem gibt es nur Zentripetalkraft nach innen. A falsch. C falsch (actio/reactio greift an verschiedenen Körpern an)."
+  }
+]

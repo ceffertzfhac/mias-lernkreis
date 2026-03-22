@@ -1,0 +1,575 @@
+{
+  "thema_id": 6,
+  "thema_name": "Elektrizität & Elektromagnetismus — Teil 2: Felder & Kräfte",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_6t2_1_1",
+            "aufgabe": "Zwei Punktladungen Q₁ = +2 μC und Q₂ = −3 μC befinden sich im Abstand r = 0,1 m voneinander. Berechne die Coulombkraft F. (k = 9×10⁹ N·m²/C²)",
+            "musterloesung": "F = k · |Q₁ · Q₂| / r² = 9×10⁹ · |2×10⁻⁶ · (−3×10⁻⁶)| / (0,1)² = 9×10⁹ · 6×10⁻¹² / 0,01 = 5,4 N. Da die Ladungen unterschiedliche Vorzeichen haben, ist die Kraft anziehend.",
+            "tipps": [
+              "Welches Gesetz beschreibt die Kraft zwischen elektrischen Ladungen?",
+              "Coulombsches Gesetz: F = k·|Q₁·Q₂|/r²; Vorzeichen bestimmt Anziehung/Abstoßung.",
+              "F = 9×10⁹ · 6×10⁻¹² / 0,01 = 5,4 N (anziehend)"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_1_2",
+            "aufgabe": "Ein Elektron (q = −1,6×10⁻¹⁹ C, m = 9,1×10⁻³¹ kg) bewegt sich mit v = 3×10⁶ m/s senkrecht zu einem Magnetfeld B = 0,5 T. Berechne die Lorentzkraft F_L.",
+            "musterloesung": "F_L = |q| · v · B · sin(90°) = 1,6×10⁻¹⁹ · 3×10⁶ · 0,5 · 1 = 2,4×10⁻¹³ N. Da das Elektron negativ geladen ist, zeigt die Kraft entgegen der Richtung, die die Rechte-Hand-Regel für positive Ladungen ergäbe.",
+            "tipps": [
+              "Was ist die Lorentzkraft? Wann ist sie maximal?",
+              "F_L = q·v×B; für senkrechten Einfall: F_L = |q|·v·B.",
+              "F_L = 1,6×10⁻¹⁹ · 3×10⁶ · 0,5 = 2,4×10⁻¹³ N"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_1_3",
+            "aufgabe": "Ein Kondensator wird mit Q = 5 μC aufgeladen. Die Platten haben den Abstand d = 2 mm. Die Kapazität beträgt C = 10 nF. Berechne die Spannung U und die elektrische Feldstärke E zwischen den Platten.",
+            "musterloesung": "U = Q/C = 5×10⁻⁶ / 10×10⁻⁹ = 500 V. E = U/d = 500 / 0,002 = 250.000 V/m = 250 kV/m.",
+            "tipps": [
+              "Wie hängen Ladung, Kapazität und Spannung zusammen?",
+              "U = Q/C; E = U/d (homogenes Feld zwischen Kondensatorplatten).",
+              "U = 500 V; E = 500/0,002 = 250 kV/m"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_1_4",
+            "aufgabe": "Ein stromführender Leiter der Länge l = 0,3 m trägt den Strom I = 5 A und liegt senkrecht in einem Magnetfeld B = 0,8 T. Berechne die Kraft F auf den Leiter.",
+            "musterloesung": "F = I · l · B · sin(90°) = 5 · 0,3 · 0,8 · 1 = 1,2 N. Die Kraft steht senkrecht auf Leiter und Magnetfeld (Rechte-Hand-Regel).",
+            "tipps": [
+              "Welche Kraft wirkt auf einen stromdurchflossenen Leiter im Magnetfeld?",
+              "F = I·l·B·sin(α); bei senkrechter Lage α = 90°: F = I·l·B.",
+              "F = 5 · 0,3 · 0,8 = 1,2 N"
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_6t2_2_1",
+            "aufgabe": "Ein geladenes Teilchen (q = 2 μC, m = 4×10⁻⁶ kg) bewegt sich mit v₀ = 200 m/s horizontal in ein vertikales elektrisches Feld E = 5×10⁴ N/C. Berechne die elektrische Kraft F_E und die Beschleunigung a des Teilchens.",
+            "musterloesung": "F_E = q·E = 2×10⁻⁶ · 5×10⁴ = 0,1 N. a = F_E/m = 0,1 / 4×10⁻⁶ = 25.000 m/s². Das entspricht einer elektrisch bedingten Ablenkung ähnlich dem schrägen Wurf.",
+            "tipps": [
+              "Die elektrische Kraft auf eine Ladung im Feld lautet F = q·E.",
+              "F_E = q·E; a = F_E/m — analoges Vorgehen wie beim schrägen Wurf mit elektrischem Feld statt Schwerkraft.",
+              "F_E = 0,1 N; a = 25.000 m/s²"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_2_2",
+            "aufgabe": "Klausuraufgabe (ähnlich Aufg. 4 Klausur 1): Eine Leiterschleife (Länge a = 0,2 m, Breite b = 0,1 m) mit Strom I = 3 A liegt in einem Magnetfeld B = 0,5 T. Der Normalenvektor der Schleife schließt den Winkel α = 30° mit B ein. Berechne das Drehmoment M.",
+            "musterloesung": "M = I · A · B · sin(α), wobei A = a·b = 0,02 m² die Fläche der Schleife ist. M = 3 · 0,02 · 0,5 · sin(30°) = 3 · 0,02 · 0,5 · 0,5 = 0,015 N·m.",
+            "tipps": [
+              "Das Drehmoment auf eine Leiterschleife im Magnetfeld hängt von Fläche, Strom, Feld und Winkel ab.",
+              "M = I·A·B·sin(α); A = Länge × Breite der Schleife.",
+              "M = 3 · 0,02 · 0,5 · sin(30°) = 0,015 N·m"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_2_3",
+            "aufgabe": "Zwei parallele Drähte (Abstand d = 5 cm) tragen Ströme I₁ = 10 A und I₂ = 15 A in gleicher Richtung. Berechne die magnetische Kraft pro Meter zwischen den Drähten. (μ₀ = 4π×10⁻⁷ T·m/A)",
+            "musterloesung": "B₁ = μ₀·I₁/(2π·d) = 4π×10⁻⁷·10/(2π·0,05) = 4×10⁻⁵ T. Kraft pro Meter: F/l = I₂·B₁ = 15 · 4×10⁻⁵ = 6×10⁻⁴ N/m. Ströme in gleicher Richtung → Anziehung.",
+            "tipps": [
+              "Berechne erst das Magnetfeld B eines Drahtes, dann die Kraft auf den zweiten Draht.",
+              "B = μ₀·I/(2π·r); F/l = I₂·B — Einheit N/m.",
+              "B₁ = 4×10⁻⁵ T; F/l = 6×10⁻⁴ N/m (anziehend)"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_2_4",
+            "aufgabe": "Klausuraufgabe (ähnlich Klausur 1, Aufg. 1, SC): Ein Proton (q = 1,6×10⁻¹⁹ C, m = 1,67×10⁻²⁷ kg) bewegt sich mit v = 4×10⁶ m/s senkrecht in B = 0,3 T. Berechne den Kreisbahnradius r des Protons.",
+            "musterloesung": "Im Magnetfeld wirkt die Lorentzkraft als Zentripetalkraft: q·v·B = m·v²/r → r = m·v/(q·B) = 1,67×10⁻²⁷ · 4×10⁶ / (1,6×10⁻¹⁹ · 0,3) = 6,68×10⁻²¹ / 4,8×10⁻²⁰ ≈ 0,139 m ≈ 14 cm.",
+            "tipps": [
+              "Lorentzkraft = Zentripetalkraft: q·v·B = m·v²/r — löse nach r auf.",
+              "r = m·v/(q·B) — alle Größen in SI-Einheiten.",
+              "r = 1,67×10⁻²⁷ · 4×10⁶ / (1,6×10⁻¹⁹ · 0,3) ≈ 0,139 m"
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_6t2_3_1",
+            "aufgabe": "Klausuraufgabe: Eine geladene Hantel (Klausur 2, Aufgabe 4): Zwei Massen m₁ = m₂ = 0,1 kg an einem Stab der Länge 2l = 0,4 m. Ladungen q₁ = +10 μC, q₂ = −10 μC. Im homogenen E-Feld E = 10⁵ N/C (senkrecht zum Stab). Berechne das elektrische Drehmoment.",
+            "musterloesung": "Jede Ladung erfährt F = q·E = 10⁻⁵ · 10⁵ = 1 N in entgegengesetzten Richtungen (da Vorzeichen verschieden). Der Hebelarm beträgt l = 0,2 m. Drehmoment: M = 2 · F · l = 2 · 1 · 0,2 = 0,4 N·m (Faktor 2, da beide Kräfte gleich drehen). Alternativ: M = p·E mit Dipolmoment p = q·2l = 10⁻⁵·0,4 = 4×10⁻⁶ C·m; M = p·E = 4×10⁻⁶·10⁵ = 0,4 N·m.",
+            "tipps": [
+              "Beide Ladungen erfahren elektrische Kräfte in entgegengesetzten Richtungen — sie erzeugen ein Drehmoment.",
+              "M = F·d_perp; oder M = p·E mit dem elektrischen Dipolmoment p = q·d.",
+              "M = q·E·2l = 10⁻⁵ · 10⁵ · 0,4 = 0,4 N·m"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_3_2",
+            "aufgabe": "Klausuraufgabe: Eine Leiterschleife (a = 0,1 m, b = 0,05 m, N = 200 Windungen, I = 2 A) liegt in B = 0,8 T. Die Schleife steht senkrecht zum Feld (α = 90°). Berechne das maximale Drehmoment.",
+            "musterloesung": "M_max = N · I · A · B = 200 · 2 · (0,1 · 0,05) · 0,8 = 200 · 2 · 0,005 · 0,8 = 1,6 N·m. Das Maximum tritt bei α = 90° auf (Schleifenebene parallel zum Feld).",
+            "tipps": [
+              "Bei N Windungen multipliziert sich das Drehmoment entsprechend: M = N·I·A·B·sin(α).",
+              "A = a·b; sin(90°) = 1 für maximales Drehmoment.",
+              "M = 200·2·0,005·0,8 = 1,6 N·m"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_3_3",
+            "aufgabe": "Klausur ähnlich: Ein Elektron wird durch eine Spannung U_B = 5000 V beschleunigt und tritt dann in ein Magnetfeld B = 0,02 T senkrecht ein. Berechne die Geschwindigkeit v nach Beschleunigung und den Kreisbahnradius r.",
+            "musterloesung": "Energieerhaltung: e·U_B = ½·m·v² → v = √(2·e·U_B/m) = √(2·1,6×10⁻¹⁹·5000/9,1×10⁻³¹) = √(1,758×10¹⁵) ≈ 4,19×10⁷ m/s. Kreisradius: r = m·v/(e·B) = 9,1×10⁻³¹·4,19×10⁷/(1,6×10⁻¹⁹·0,02) ≈ 0,119 m ≈ 11,9 cm.",
+            "tipps": [
+              "Schritt 1: Energie durch elektrisches Feld → Geschwindigkeit. Schritt 2: Lorentzkraft = Zentripetalkraft → Radius.",
+              "v = √(2·e·U/m); r = m·v/(e·B).",
+              "v ≈ 4,19×10⁷ m/s; r ≈ 11,9 cm"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_3_4",
+            "aufgabe": "Klausuraufgabe: Zwei Ladungen Q₁ = 4 μC und Q₂ = −1 μC liegen auf der x-Achse bei x₁ = 0 und x₂ = 0,3 m. An welchem Punkt auf der x-Achse außerhalb des Bereichs zwischen den Ladungen ist das elektrische Feld null?",
+            "musterloesung": "Das Feld ist null, wo die Felder beider Ladungen gleich groß und entgegengesetzt sind. Da Q₁ > |Q₂|, liegt der Punkt auf der Seite von Q₂ (bei x > 0,3 m). k·Q₁/(x)² = k·|Q₂|/(x−0,3)² → 4/(x²) = 1/(x−0,3)² → 2/x = 1/(x−0,3) → 2(x−0,3) = x → x = 0,6 m.",
+            "tipps": [
+              "Das E-Feld ist null, wenn sich die Beiträge beider Ladungen aufheben — welche Richtungen haben sie an verschiedenen Punkten?",
+              "Setze k·Q₁/r₁² = k·|Q₂|/r₂² an; für außerhalb: r₁ = x, r₂ = x−0,3 (bei x > 0,3 m).",
+              "x = 0,6 m"
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_6t2_4_1",
+            "aufgabe": "Expertenniveau: Ein α-Teilchen (q = 2e, m = 6,64×10⁻²⁷ kg) wird aus der Ruhe durch U = 100 kV beschleunigt und tritt dann in ein homogenes Magnetfeld B = 1,5 T senkrecht ein. Berechne: a) Endgeschwindigkeit v, b) Kreisbahnradius r, c) Umlaufzeit T.",
+            "musterloesung": "a) 2e·U = ½·m·v² → v = √(4e·U/m) = √(4·1,6×10⁻¹⁹·10⁵/6,64×10⁻²⁷) = √(9,64×10¹²) ≈ 3,1×10⁶ m/s. b) r = m·v/(q·B) = 6,64×10⁻²⁷·3,1×10⁶/(3,2×10⁻¹⁹·1,5) = 2,06×10⁻²⁰/4,8×10⁻¹⁹ ≈ 0,043 m. c) T = 2πr/v = 2π·0,043/3,1×10⁶ ≈ 8,7×10⁻⁸ s.",
+            "tipps": [
+              "Energiebilanz für q=2e, dann Lorentzkraft = Zentripetalkraft, dann Umfang/Geschwindigkeit.",
+              "v = √(2·q·U/m); r = m·v/(q·B); T = 2πm/(q·B) (Zyklotronfrequenz).",
+              "v ≈ 3,1×10⁶ m/s; r ≈ 4,3 cm; T ≈ 8,7×10⁻⁸ s"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_4_2",
+            "aufgabe": "Expertenniveau: Klausuraufgabe ähnlich Aufgabe 4 Klausur 1 (Leiterschleife im B-Feld): Eine rechteckige Leiterschleife (0,3 m × 0,2 m, N = 50 Windungen, I = 4 A) rotiert mit ω = 100 rad/s in B = 0,6 T. Berechne die induzierte EMF als Funktion der Zeit und ihren Maximalwert.",
+            "musterloesung": "Der Fluss: Φ(t) = N·B·A·cos(ωt). Induzierte EMF: ε(t) = −dΦ/dt = N·B·A·ω·sin(ωt). Maximalwert: ε_max = N·B·A·ω = 50·0,6·(0,3·0,2)·100 = 50·0,6·0,06·100 = 180 V.",
+            "tipps": [
+              "Faraday'sches Induktionsgesetz: ε = −dΦ/dt; Φ(t) = N·B·A·cos(ωt).",
+              "Ableiten ergibt Sinus-Funktion; Amplitude = N·B·A·ω.",
+              "ε_max = 50·0,6·0,06·100 = 180 V"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_4_3",
+            "aufgabe": "Ein Plattenkondensator (Fläche A = 0,01 m², Abstand d = 1 mm, ε₀ = 8,85×10⁻¹² F/m) wird auf U = 500 V aufgeladen. Berechne: a) Kapazität C, b) gespeicherte Ladung Q, c) elektrische Feldstärke E, d) gespeicherte Energie W.",
+            "musterloesung": "a) C = ε₀·A/d = 8,85×10⁻¹²·0,01/10⁻³ = 8,85×10⁻¹¹ F = 88,5 pF. b) Q = C·U = 8,85×10⁻¹¹·500 = 4,43×10⁻⁸ C = 44,3 nC. c) E = U/d = 500/10⁻³ = 5×10⁵ V/m. d) W = ½·C·U² = ½·8,85×10⁻¹¹·250000 = 1,11×10⁻⁵ J = 11,1 μJ.",
+            "tipps": [
+              "Plattenkondensator: C = ε₀·A/d; dann Q=C·U, E=U/d, W=½·C·U².",
+              "Alle Formeln sind verkettete Anwendungen der Grundformeln.",
+              "C = 88,5 pF; Q = 44,3 nC; E = 500 kV/m; W = 11,1 μJ"
+            ]
+          },
+          {
+            "id": "do_berechnen_6t2_4_4",
+            "aufgabe": "Expertenniveau: Halleffekt — Ein Kupferdraht (Breite b = 2 mm, Höhe h = 1 mm) trägt Strom I = 10 A in einem Magnetfeld B = 2 T (senkrecht zur Drahtebene). Ladungsträgerdichte n = 8,5×10²⁸ m⁻³. Berechne die Hall-Spannung U_H.",
+            "musterloesung": "Driftgeschwindigkeit: v_D = I/(n·e·A) = 10/(8,5×10²⁸·1,6×10⁻¹⁹·2×10⁻⁶) = 10/2,72×10⁴ ≈ 3,67×10⁻⁴ m/s. Lorentzkraft: F = e·v_D·B = 1,6×10⁻¹⁹·3,67×10⁻⁴·2 ≈ 1,17×10⁻²² N. Gleichgewicht mit Hall-Feld: E_H = F/e = v_D·B. U_H = E_H·b = v_D·B·b = 3,67×10⁻⁴·2·0,002 = 1,47×10⁻⁶ V = 1,47 μV. Direkte Formel: U_H = I·B/(n·e·h).",
+            "tipps": [
+              "Der Halleffekt entsteht durch die Lorentzkraft auf Ladungsträger — diese werden abgelenkt, bis ein elektrisches Gleichgewichtsfeld aufgebaut ist.",
+              "U_H = I·B/(n·e·h) — Hallspannungsformel direkt anwendbar.",
+              "U_H = 10·2/(8,5×10²⁸·1,6×10⁻¹⁹·10⁻³) ≈ 1,47 μV"
+            ]
+          }
+        ]
+      },
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_6t2_1_1",
+            "aufgabe": "Skizziere die elektrischen Feldlinien zwischen zwei gleichen Punktladungen (+Q und +Q) und zwischen einer positiven und einer negativen Punktladung (+Q und −Q). Beschrifte die Richtung der Feldlinien.",
+            "musterloesung": "Bei +Q/+Q: Feldlinien verlaufen von beiden Ladungen nach außen, stoßen sich ab — keine Feldlinie endet auf der anderen Ladung, in der Mitte entsteht ein neutraler Punkt. Bei +Q/−Q: Feldlinien verlaufen von +Q zu −Q, bilden geschlossene Bögen — Elektrisches Dipol-Feld.",
+            "tipps": [
+              "Feldlinien beginnen bei positiven Ladungen und enden bei negativen.",
+              "Bei Abstoßung (+/+): Feldlinien verlaufen auseinander; bei Anziehung (+/−): verbinden die Ladungen.",
+              "Skizziere für +/+ neutralen Punkt in der Mitte; für +/− Dipolfeldform"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_1_2",
+            "aufgabe": "Skizziere einen einfachen Stromkreis mit einer Batterie, einem Schalter und zwei Widerständen in Reihe. Zeichne ein, wo das Voltmeter und wo das Amperemeter zur Messung von Spannung und Strom am zweiten Widerstand eingebaut werden.",
+            "musterloesung": "Stromkreis: Batterie → Schalter → R₁ → R₂ → zurück zur Batterie (Reihe). Amperemeter: in Reihe im Hauptzweig (z.B. zwischen R₁ und R₂ oder vor/nach R₂). Voltmeter: parallel zu R₂ (zwischen den Anschlüssen von R₂).",
+            "tipps": [
+              "Amperemeter misst den Strom — es muss in Reihe sein. Voltmeter misst die Spannung — es muss parallel sein.",
+              "Zeichne die Messpfade klar als separate Zweige.",
+              "Amperemeter: in Reihe; Voltmeter: parallel zu R₂"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_1_3",
+            "aufgabe": "Skizziere das Magnetfeld eines geraden, stromführenden Leiters. Kennzeichne die Richtung des Stroms und die Richtung der Feldlinien.",
+            "musterloesung": "Der Leiter steht senkrecht im Zentrum. Magnetische Feldlinien sind konzentrische Kreise um den Leiter. Die Richtung folgt der Rechten-Hand-Regel: Daumen zeigt in Stromrichtung, die gekrümmten Finger zeigen die Feldlinienrichtung.",
+            "tipps": [
+              "Das Magnetfeld eines geraden Leiters hat kreisförmige Feldlinien.",
+              "Rechte-Hand-Regel: Daumen = Strom, Finger = B-Feld.",
+              "Konzentrische Kreise um den Leiter, Richtung per Rechter-Hand-Regel"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_1_4",
+            "aufgabe": "Skizziere die Kraft auf ein positiv geladenes Teilchen, das sich in x-Richtung bewegt und ein Magnetfeld in z-Richtung vorliegt. Nutze die Drei-Finger-Regel (Rechte-Hand-Regel).",
+            "musterloesung": "Koordinatensystem: x-Achse nach rechts, y-Achse nach oben, z-Achse aus der Seite. Teilchen bewegt sich in +x-Richtung (v), B zeigt in +z-Richtung. Lorentzkraft F = q·v×B: x×z = −y → F zeigt in −y-Richtung (nach unten). Skizze zeigt die drei Vektoren im 3D-Koordinatensystem.",
+            "tipps": [
+              "Nutze die Rechte-Hand-Regel: Zeigefinger = v, Mittelfinger = B, Daumen = F (bei positiver Ladung).",
+              "Kreuzprodukt: v×B = (v_x, 0, 0)×(0, 0, B_z) = (0·B_z−0·0, 0·0−v_x·B_z, 0) = (0, −v_x·B_z, 0).",
+              "F zeigt in −y-Richtung (nach unten bei Strom nach rechts und B nach vorne)"
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_6t2_2_1",
+            "aufgabe": "Skizziere eine Leiterschleife in einem homogenen Magnetfeld. Zeige, wie das Drehmoment von der Ausrichtung der Schleife abhängt (Winkel α = 0°, 45°, 90°). Beschrifte das magnetische Moment m = I·A.",
+            "musterloesung": "Drei Positionen: α=0° (Schleifenebene senkrecht zu B): M=0, Gleichgewichtslage. α=45°: M = I·A·B·sin(45°) = mittleres Drehmoment. α=90° (Schleifenebene parallel zu B): M_max = I·A·B. Skizze zeigt die Schleife in drei Winkelstellungen mit Drehmomentvektoren.",
+            "tipps": [
+              "Das Drehmoment ist proportional zu sin(α) — bei welchem Winkel ist es maximal?",
+              "Zeige die Schleife in drei verschiedenen Stellungen, beschrifte M = I·A·B·sin(α).",
+              "Maximales Drehmoment bei α=90° (Schleifenebene parallel zu B)"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_2_2",
+            "aufgabe": "Skizziere das elektrische Feld zwischen den Platten eines Plattenkondensators. Zeichne eine positive Ladung zwischen den Platten und die Kraft auf sie ein. Beschrifte E, F und die Plattenspannung U.",
+            "musterloesung": "Parallele Platten (+ oben, − unten). Feldlinien: gerade, gleichmäßig von + zu −, also nach unten. Positive Testladung zwischen den Platten: Kraft F = q·E in Richtung des E-Feldes (nach unten, zur −Platte). Randbereiche: etwas nach außen gebogen. Beschriftung: E = U/d.",
+            "tipps": [
+              "Das homogene Feld zwischen Kondensatorplatten hat parallele, gleichmäßige Feldlinien.",
+              "Feldlinien von + zu −; Kraft auf positive Ladung in Feldrichtung.",
+              "Homogenes Feld: parallele Linien; Kraft F = qE in Richtung des E-Felds"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_2_3",
+            "aufgabe": "Skizziere die Kreisbahn eines positiv geladenen Teilchens im homogenen Magnetfeld (B senkrecht in die Seite). Das Teilchen tritt von links mit Geschwindigkeit v ein. Zeichne Geschwindigkeit, Magnetfeld und Lorentzkraft bei verschiedenen Positionen auf der Kreisbahn.",
+            "musterloesung": "Teilchen bewegt sich auf Kreisbahn im Gegenuhrzeigersinn (für positive Ladung in B in die Seite). An jedem Punkt: v tangential zur Bahn, F_L zentripetal (zur Mitte), senkrecht zu v. B-Pfeile (×) gleichmäßig verteilt. Skizze zeigt mindestens 4 Positionen mit v- und F-Vektoren.",
+            "tipps": [
+              "Die Lorentzkraft ist immer senkrecht zur Geschwindigkeit — sie verrichtet keine Arbeit, ändert aber die Richtung.",
+              "Zeichne v tangential und F_L immer zum Kreismittelpunkt zeigend.",
+              "Kreisbahn im Uhrzeigersinn oder Gegenuhrzeigersinn je nach Vorzeichen von q und Richtung von B"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_2_4",
+            "aufgabe": "Skizziere den Aufbau des Millikan-Versuchs (geladenes Tröpfchen im elektrischen Feld, Schweregleichgewicht). Zeichne alle Kräfte ein und erläutere, wie die Ladung des Tröpfchens bestimmt wird.",
+            "musterloesung": "Aufbau: zwei horizontale Kondensatorplatten, Tröpfchen zwischen den Platten. Kräfte: Schwerkraft F_g = mg nach unten, elektrische Kraft F_E = q·E nach oben (bei richtiger Feldrichtung). Gleichgewicht: q·E = mg → q = mg/E = mg·d/U. Skizze zeigt Platten mit Spannungsquelle, Tröpfchen mit beiden Kraftpfeilen.",
+            "tipps": [
+              "Im Gleichgewicht halten sich Schwerkraft und elektrische Kraft die Waage.",
+              "F_g = m·g (unten), F_E = q·E (oben bei passender Feldrichtung), Gleichgewicht: F_g = F_E.",
+              "q·E = m·g → q = m·g/E = m·g·d/U"
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_6t2_3_1",
+            "aufgabe": "Klausuraufgabe: Skizziere eine geladene Hantel (zwei gleiche Massen mit Ladungen +q und −q am Stab der Länge 2l) in einem homogenen elektrischen Feld E (senkrecht zum Stab). Zeichne alle Kräfte ein und erkläre, warum ein Nettodrehmoment, aber keine Nettokraft entsteht.",
+            "musterloesung": "Die Kräfte F₊ = +q·E und F₋ = −q·E auf die Ladungen sind betragsmäßig gleich, aber entgegengesetzt gerichtet → Nettokraft = 0. Da die Angriffspunkte aber verschieden sind (Abstand 2l), entsteht ein Kräftepaar → Drehmoment M = F·2l = q·E·2l ≠ 0. Skizze zeigt Hantel mit +q und −q, Kraftpfeile nach oben und unten, Drehmomenteintrag.",
+            "tipps": [
+              "Zwei gleiche, entgegengesetzte Kräfte an verschiedenen Punkten = Kräftepaar → nur Drehmoment, keine Translation.",
+              "Nettokraft = F₊ + F₋ = q·E − q·E = 0; Drehmoment = Kraft × Hebelarm.",
+              "M = q·E·2l ≠ 0; F_netto = 0"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_3_2",
+            "aufgabe": "Skizziere die Ablenkung eines Elektronenstrahls in einem Plattenkondensator (analog Oszilloskop). Das Elektron tritt horizontal zwischen die Platten ein. Zeichne die parabolische Bahn und erläutere die Analogie zum schiefen Wurf.",
+            "musterloesung": "Horizontal: gleichförmige Bewegung mit v₀. Vertikal: gleichmäßig beschleunigte Bewegung durch F_E = e·E (zur positiven Platte). Bahn: Parabel y = ½·a·(x/v₀)² — analog zum schiefen Wurf mit elektrischer statt Gravitations-Beschleunigung. Skizze: Kondensator mit geradem Eintrittspfad und parabolischer Ablenkung.",
+            "tipps": [
+              "Die Analogie zum schiefen Wurf: horizontale Gleichförmigkeit + vertikale Beschleunigung.",
+              "a = F_E/m = e·E/m; x = v₀·t; y = ½·a·t² → Parabel.",
+              "Parabelbahn von links nach rechts, nach oben (zur + Platte) oder unten (zur − Platte) abgelenkt"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_3_3",
+            "aufgabe": "Skizziere einen einfachen Elektromotor (Leiterschleife im B-Feld). Erkläre anhand der Lorentzkraft, warum sich die Schleife dreht, und wo der Kommutator (Stromwender) notwendig ist.",
+            "musterloesung": "Leiterschleife zwischen zwei Magneten. Auf jede Seite der Schleife wirkt eine Kraft nach oben oder unten (Lorentzkraft auf stromdurchflossenen Leiter im B-Feld). Das erzeugt ein Drehmoment. Nach 180° würde die Kraft in entgegengesetzte Richtung drehen — der Kommutator ändert die Stromrichtung, damit die Drehrichtung gleich bleibt.",
+            "tipps": [
+              "F = I·l·B auf horizontale Leiter; die Richtung bestimmt die Drehrichtung.",
+              "Kommutator: Umpolung des Stroms bei jedem halben Umlauf, damit die Drehrichtung konstant bleibt.",
+              "Skizze: Schleife zwischen Magneten, Kommutatorringe und Bürsten, Kraftpfeile an den Leiterstücken"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_3_4",
+            "aufgabe": "Klausuraufgabe: Skizziere den experimentellen Aufbau zur Bestimmung des Verhältnisses e/m (Elektron-Massenspektrometer). Erkläre, welche Messgrößen du benötigst und wie du e/m berechnesd.",
+            "musterloesung": "Aufbau: Elektronenkanone (Beschleunigungsspannung U_B), Magnetfeldspulen (Helmholtz-Spulen, B homogen). Elektron wird auf Kreisbahn abgelenkt, Radius r wird gemessen. Aus e·U_B = ½·m·v² und r = m·v/(e·B) folgt: e/m = 2·U_B/(B²·r²). Messgrößen: U_B, B, r.",
+            "tipps": [
+              "Zwei Gleichungen (Energie + Lorentzkraft=Zentripetalkraft) liefern zwei Unbekannte v und e/m.",
+              "Eliminiere v: e/m = 2·U_B/(r²·B²).",
+              "e/m = 2·U_B/(B²·r²) ≈ 1,76×10¹¹ C/kg"
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_6t2_4_1",
+            "aufgabe": "Expertenniveau: Skizziere das Prinzip des Massenspektrometers. Ein Ion (Ladung q, Masse m) wird durch U_B beschleunigt und tritt in ein Magnetfeld B ein. Leite grafisch und rechnerisch her, wie die Masse m aus dem Ablenkradius r bestimmt wird.",
+            "musterloesung": "Beschleunigung: q·U_B = ½·m·v². Kreisbahn: r = m·v/(q·B) → v = q·B·r/m. Einsetzen: q·U_B = ½·m·(q·B·r/m)² = q²·B²·r²/(2m) → m = q·B²·r²/(2·U_B). Skizze zeigt Beschleunigungsstrecke, Spaltblende, halbkreisförmige Bahn im B-Feld, Detektor.",
+            "tipps": [
+              "Kombiniere Energiegleichung und Kreisbahn-Gleichung, eliminiere v.",
+              "m = q·B²·r²/(2·U_B) — je größer r, desto schwerer das Ion.",
+              "Detektor misst r → bestimmt m; verschiedene Isotope haben verschiedene r"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_4_2",
+            "aufgabe": "Expertenniveau: Skizziere das Feldlinienbild eines magnetischen Dipols (Stabmagnet) und eines elektrischen Dipols. Erkläre den fundamentalen Unterschied: magnetische Feldlinien sind immer geschlossen, elektrische nicht.",
+            "musterloesung": "Magnetischer Dipol: Feldlinien verlaufen außen von N nach S, innen von S nach N (immer geschlossene Kurven, da keine magnetischen Monopole existieren). Elektrischer Dipol: Feldlinien verlaufen von + nach −, beginnen und enden an Ladungen. Beide Bilder sehen ähnlich aus, aber die Feldlinien haben fundamental verschiedenen Charakter.",
+            "tipps": [
+              "div(B) = 0 besagt: Es gibt keine magnetischen Monopole — alle B-Feldlinien sind geschlossen.",
+              "E-Feldlinien beginnen bei + und enden bei −; B-Feldlinien sind immer Schleifen.",
+              "Vergleich der Feldbilder: ähnliche Form, aber unterschiedliche Topologie"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_4_3",
+            "aufgabe": "Expertenniveau: Skizziere das Prinzip der elektromagnetischen Induktion (Faraday). Zeige, wie das Ändern des magnetischen Flusses durch eine Leiterschleife eine EMF induziert. Beschrifte Φ, ε, und erkläre die Lenz'sche Regel.",
+            "musterloesung": "Leiterschleife im variablen B-Feld (z.B. Magnet wird in die Schleife geschoben). Zunehmender Fluss → induzierter Strom erzeugt B-Feld, das der Änderung entgegenwirkt (Lenz). ε = −dΦ/dt. Wenn Magnet sich nähert: B durch Schleife nimmt zu → induzierter Strom erzeugt abstoßendes Feld. Skizze zeigt Magnet, Spule, Galvanometer, Feldpfeile.",
+            "tipps": [
+              "Lenz'sche Regel: Der induzierte Strom wirkt seiner Ursache entgegen (Energieerhaltung).",
+              "ε = −dΦ/dt; Φ = B·A·cos(α); Vorzeichen bestimmt Richtung des induzierten Stroms.",
+              "Bei zunehmendem Fluss: induzierter Strom hemmt Zunahme; bei abnehmendem: fördert Erhalt"
+            ]
+          },
+          {
+            "id": "do_skizzieren_6t2_4_4",
+            "aufgabe": "Expertenniveau: Skizziere das vollständige Aufbauschema des Praktikumsversuchs zur Bestimmung des Erdmagnetfelds mit einer Leiterschleife (oder: zur Messung der Magnetfeldkonstante μ₀ mit zwei parallelen Drähten). Erkläre, welche Messgrößen du notierst und wie du das Ergebnis berechnest.",
+            "musterloesung": "Zwei parallele Drähte, Abstand d messbar. Strom I₁ in Draht 1 gemessen mit Amperemeter. Kraft pro Länge F/l gemessen mit Kraftmessgerät. Berechnung: F/l = μ₀·I₁·I₂/(2π·d) → μ₀ = F/l · 2π·d / (I₁·I₂). Skizze: Aufhängung des zweiten Drahtes an Federwaage, Maßband für d, Amperemeter in Reihe.",
+            "tipps": [
+              "Messgrößen: F, l, I₁, I₂, d → alle direkt messbar mit Standardinstrumenten.",
+              "μ₀ = F·2πd/(l·I₁·I₂) — Umstellung der Kraftformel.",
+              "Wichtig: Ströme in gleicher Richtung → Anziehung; entgegen → Abstoßung"
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_6t2_1_1",
+            "frage": "Was besagt das Coulombsche Gesetz?",
+            "optionen": [
+              {"key": "A", "text": "Die Kraft zwischen Ladungen ist proportional zum Abstand."},
+              {"key": "B", "text": "Die Kraft zwischen Ladungen ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands."},
+              {"key": "C", "text": "Gleiche Ladungen ziehen sich an."},
+              {"key": "D", "text": "Die Kraft zwischen Ladungen nimmt linear mit dem Abstand ab."},
+              {"key": "E", "text": "Elektrische Kraft und magnetische Kraft sind gleich groß."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: F = k·|Q₁·Q₂|/r² — quadratischer Abstandsabfall, proportional zum Produkt der Ladungen. A ist falsch: Kraft nimmt mit Abstand ab, nicht zu. C ist falsch: gleiche Vorzeichen stoßen ab. D ist falsch: quadratischer, nicht linearer Abfall. E ist falsch: Coulombkraft und Lorentzkraft sind verschiedene Kräfte mit unterschiedlichen Formeln."
+          },
+          {
+            "id": "sc_6t2_1_2",
+            "frage": "Die Lorentzkraft auf eine positive Ladung q, die sich mit Geschwindigkeit v im Magnetfeld B bewegt, ist:",
+            "optionen": [
+              {"key": "A", "text": "F = q·v + B"},
+              {"key": "B", "text": "F = q·v·B·cos(α)"},
+              {"key": "C", "text": "F = q·v×B (Kreuzprodukt)"},
+              {"key": "D", "text": "F = q·B/v"},
+              {"key": "E", "text": "F = q·v·B² "}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F = q·v×B (Vektorprodukt), Betrag: F = q·v·B·sin(α). A ist falsch: Vektoraddition ist bedeutungslos hier. B ist falsch: Cosinus-Faktor gilt für andere Produkte, hier gilt sin(α). D ist falsch: Einheiten passen nicht. E ist falsch: B² ist dimensionsinkonsistent."
+          },
+          {
+            "id": "sc_6t2_1_3",
+            "frage": "Welche Richtung haben elektrische Feldlinien?",
+            "optionen": [
+              {"key": "A", "text": "Von negativen zu positiven Ladungen."},
+              {"key": "B", "text": "Immer in Richtung der Bewegung der Elektronen."},
+              {"key": "C", "text": "Von positiven zu negativen Ladungen (oder von + ins Unendliche / vom Unendlichen zu −)."},
+              {"key": "D", "text": "Immer kreisförmig um Ladungen herum."},
+              {"key": "E", "text": "Senkrecht zur Kraft auf eine positive Testladung."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Feldlinien zeigen die Kraft auf eine positive Testladung — von + nach −. A ist falsch: umgekehrt — von + nach −, nicht von − nach +. B ist falsch: Elektronen bewegen sich entgegen der Feldrichtung. D ist falsch: kreisförmige Feldlinien gibt es beim Magnetfeld gerader Leiter. E ist falsch: Feldlinien zeigen die Richtung der Kraft, nicht senkrecht dazu."
+          },
+          {
+            "id": "sc_6t2_1_4",
+            "frage": "Ein positiv geladenes Teilchen bewegt sich parallel zum Magnetfeld. Welche Lorentzkraft wirkt auf es?",
+            "optionen": [
+              {"key": "A", "text": "F_L = q·v·B (maximale Kraft)"},
+              {"key": "B", "text": "F_L = q·v·B/2"},
+              {"key": "C", "text": "F_L = 0"},
+              {"key": "D", "text": "Die Kraft hängt von der Masse des Teilchens ab."},
+              {"key": "E", "text": "F_L = q·B (ohne v)"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F_L = q·v·B·sin(α); bei α = 0° (parallel) gilt sin(0°) = 0 → F_L = 0. A ist falsch: maximale Kraft gilt bei α = 90° (senkrecht). B ist falsch: F/2 entspricht keinem physikalisch sinnvollen Winkel. D ist falsch: Lorentzkraft hängt nicht von der Masse ab. E ist falsch: ohne v-Term hat die Formel falsche Dimension."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_6t2_2_1",
+            "frage": "Was passiert mit der Lorentzkraft, wenn die Geschwindigkeit des Teilchens verdoppelt wird (B und q konstant)?",
+            "optionen": [
+              {"key": "A", "text": "Die Kraft halbiert sich."},
+              {"key": "B", "text": "Die Kraft bleibt gleich."},
+              {"key": "C", "text": "Die Kraft verdoppelt sich."},
+              {"key": "D", "text": "Die Kraft vervierfacht sich."},
+              {"key": "E", "text": "Die Kraft nimmt um √2 zu."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F_L = q·v·B — linear von v abhängig. Bei doppeltem v verdoppelt sich F_L. A ist falsch: halbiert sich bei halbem v. B ist falsch: F hängt von v ab. D ist falsch: Vervierfachung wäre bei quadratischer Abhängigkeit. E ist falsch: √2-Faktor kommt aus einer quadratischen Abhängigkeit."
+          },
+          {
+            "id": "sc_6t2_2_2",
+            "frage": "Ein Elektron bewegt sich auf einer Kreisbahn im Magnetfeld. Was gilt für die Lorentzkraft?",
+            "optionen": [
+              {"key": "A", "text": "Sie verrichtet positive Arbeit am Elektron."},
+              {"key": "B", "text": "Sie ist immer tangential zur Bahn."},
+              {"key": "C", "text": "Sie ist immer senkrecht zur Geschwindigkeit und verrichtet keine Arbeit."},
+              {"key": "D", "text": "Sie bremst das Elektron ab."},
+              {"key": "E", "text": "Sie beschleunigt das Elektron in Bewegungsrichtung."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F_L ⊥ v immer, daher W = F·v·cos(90°) = 0 — keine Arbeit. A ist falsch: keine Arbeit (W=0). B ist falsch: sie ist senkrecht, also radial (zentripetal), nicht tangential. D ist falsch: keine Arbeit bedeutet keine Geschwindigkeitsänderung. E ist falsch: Beschleunigung in Bewegungsrichtung würde Arbeit erfordern."
+          },
+          {
+            "id": "sc_6t2_2_3",
+            "frage": "Wie verdoppelt sich die Kraft auf einen Leiter im Magnetfeld, wenn man die Länge des Leiters verdoppelt?",
+            "optionen": [
+              {"key": "A", "text": "Die Kraft halbiert sich."},
+              {"key": "B", "text": "Die Kraft bleibt gleich."},
+              {"key": "C", "text": "Die Kraft verdoppelt sich."},
+              {"key": "D", "text": "Die Kraft vervierfacht sich."},
+              {"key": "E", "text": "Die Kraft nimmt mit l² zu."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F = I·l·B — linear von l abhängig. Doppelte Länge → doppelte Kraft. A ist falsch: halbieren würde eine inverse Beziehung bedeuten. B ist falsch: l geht direkt ein. D ist falsch: Vervierfachung wäre für l²-Abhängigkeit. E ist falsch: Abhängigkeit ist linear, nicht quadratisch."
+          },
+          {
+            "id": "sc_6t2_2_4",
+            "frage": "Ein Ion wird durch Spannung U beschleunigt und tritt dann in ein Magnetfeld B ein. Wie hängt der Kreisbahnradius r von der Masse m ab?",
+            "optionen": [
+              {"key": "A", "text": "r ist unabhängig von m."},
+              {"key": "B", "text": "r ∝ m (proportional zu m)."},
+              {"key": "C", "text": "r ∝ √m (proportional zur Wurzel von m)."},
+              {"key": "D", "text": "r ∝ m² (proportional zu m²)."},
+              {"key": "E", "text": "r ∝ 1/m (umgekehrt proportional zu m)."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: r = m·v/(q·B) und v = √(2·q·U/m) → r = √(2·m·U/q)/B ∝ √m. A ist falsch: r hängt von m ab (Massenspektrometrie nutzt genau das). B ist falsch: lineare Abhängigkeit nur wenn v konstant wäre. D ist falsch: r ∝ m² gibt es nicht in diesem Zusammenhang. E ist falsch: schwerere Ionen haben größere Radien, nicht kleinere."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_6t2_3_1",
+            "frage": "Was ist das elektrische Feld E zwischen zwei Punktladungen Q und −Q im Abstand r? (Mitte zwischen den Ladungen, Beitrag beider Ladungen)",
+            "optionen": [
+              {"key": "A", "text": "E = 0 (die Felder heben sich auf)"},
+              {"key": "B", "text": "E = k·Q/r² (nur eine Ladung trägt bei)"},
+              {"key": "C", "text": "E = 2·k·Q/(r/2)² in Richtung von + nach − (beide Felder addieren sich)"},
+              {"key": "D", "text": "E = k·Q/r in der Mitte"},
+              {"key": "E", "text": "E ist nur bei einer Ladung definiert, nicht zwischen zwei Ladungen"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: In der Mitte zwischen +Q und −Q zeigen beide E-Felder in die gleiche Richtung (von + nach −), daher addieren sie sich: E_ges = 2·k·Q/(r/2)². A ist falsch: Aufhebung gibt es bei zwei gleichen Ladungen (in der Mitte). B ist falsch: beide Ladungen tragen bei. D ist falsch: Einheit wäre V/m, nicht V, und Formel ohne r² ist falsch. E ist falsch: E ist überall im Raum definiert."
+          },
+          {
+            "id": "sc_6t2_3_2",
+            "frage": "Welche der folgenden Aussagen über magnetische Feldlinien ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Magnetische Feldlinien beginnen bei magnetischen Nordpolen und enden nirgends."},
+              {"key": "B", "text": "Magnetische Feldlinien sind immer geschlossene Kurven."},
+              {"key": "C", "text": "Magnetische Feldlinien können sich schneiden."},
+              {"key": "D", "text": "Magnetische Feldlinien verlaufen immer geradlinig."},
+              {"key": "E", "text": "Magnetische Feldlinien beginnen bei positiven Ladungen."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: div(B) = 0 → keine Quellen oder Senken → B-Feldlinien sind immer geschlossen. A ist falsch: Feldlinien verlaufen außerhalb von N nach S und schließen sich innen. C ist falsch: Feldlinien schneiden sich nie (eindeutige Feldrichtung). D ist falsch: B-Feldlinien sind gekrümmt. E ist falsch: elektrische Feldlinien beginnen bei positiven Ladungen, nicht magnetische."
+          },
+          {
+            "id": "sc_6t2_3_3",
+            "frage": "Was versteht man unter dem magnetischen Moment m einer Leiterschleife?",
+            "optionen": [
+              {"key": "A", "text": "m = I + A"},
+              {"key": "B", "text": "m = I · A (Produkt aus Strom und Fläche), mit Richtung senkrecht zur Schleifenebene"},
+              {"key": "C", "text": "m = B · A"},
+              {"key": "D", "text": "m = I / A"},
+              {"key": "E", "text": "m entspricht dem Drehmoment der Schleife"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Das magnetische Moment m = I·A (Strom × Fläche), Richtung senkrecht zur Schleifenebene per Rechter-Hand-Regel. A ist falsch: Addition von Strom und Fläche ist physikalisch sinnlos. C ist falsch: B·A ist der magnetische Fluss Φ. D ist falsch: I/A hätte falsche Einheit. E ist falsch: m ist nicht das Drehmoment, aber M = m × B."
+          },
+          {
+            "id": "sc_6t2_3_4",
+            "frage": "Ein Teilchen mit Ladung q und Masse m wird durch Spannung U_B beschleunigt und trifft dann auf ein Magnetfeld B. Der Kreisbahnradius r wird gemessen. Welche Größe lässt sich damit bestimmen?",
+            "optionen": [
+              {"key": "A", "text": "Nur die Geschwindigkeit v des Teilchens"},
+              {"key": "B", "text": "Nur die Ladung q des Teilchens"},
+              {"key": "C", "text": "Das Verhältnis q/m (spezifische Ladung)"},
+              {"key": "D", "text": "Nur die Masse m des Teilchens"},
+              {"key": "E", "text": "Gar nichts, da zu viele Unbekannte vorliegen"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Aus den Gleichungen erhält man q/m = 2·U_B/(B²·r²) — das Verhältnis ist bestimmbar. A ist falsch: v allein lässt sich zwar berechnen, ist aber nicht die einzige bestimmbare Größe. B ist falsch: q allein ist nicht bestimmbar ohne Kenntnis von m. D ist falsch: m allein ist ohne Kenntnis von q nicht bestimmbar. E ist falsch: q/m ist eindeutig bestimmbar."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_6t2_4_1",
+            "frage": "Welches Prinzip beschreibt das Faraday'sche Induktionsgesetz?",
+            "optionen": [
+              {"key": "A", "text": "Eine bewegte Ladung erzeugt ein elektrisches Feld."},
+              {"key": "B", "text": "Ein zeitlich veränderlicher magnetischer Fluss induziert eine elektromotorische Kraft (EMF)."},
+              {"key": "C", "text": "Gleichförmig bewegte Magnete erzeugen keine EMF."},
+              {"key": "D", "text": "EMF = B · I · l"},
+              {"key": "E", "text": "Die induzierte Spannung ist proportional zur Feldstärke B, nicht zur Flussänderung."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: ε = −dΦ/dt — zeitliche Änderung des magnetischen Flusses Φ = B·A·cos(α) induziert eine EMF. A ist falsch: Das beschreibt das Magnetfeld eines bewegten Ladungsträgers, nicht Induktion. C ist falsch: jede Änderung von Φ (durch Bewegung) induziert eine EMF. D ist falsch: das wäre die Kraft auf einen Leiter, nicht die induzierte Spannung. E ist falsch: es ist die Flussänderung dΦ/dt, nicht B allein."
+          },
+          {
+            "id": "sc_6t2_4_2",
+            "frage": "Was beschreibt die Lenz'sche Regel?",
+            "optionen": [
+              {"key": "A", "text": "Die induzierte EMF ist proportional zur Fläche der Spule."},
+              {"key": "B", "text": "Der induzierte Strom fließt immer in Richtung des äußeren Magnetfelds."},
+              {"key": "C", "text": "Der induzierte Strom erzeugt ein Magnetfeld, das der Ursache der Induktion entgegenwirkt."},
+              {"key": "D", "text": "Lenz besagt, dass Induktion nur bei Wechselstrom auftritt."},
+              {"key": "E", "text": "Die Lenz'sche Regel beschreibt den Kondensatorentladevorgang."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Die Lenz'sche Regel (Vorzeichen in ε = −dΦ/dt) besagt, dass der induzierte Strom der Ursache entgegenwirkt — Konsequenz der Energieerhaltung. A ist falsch: Proportionalität zur Fläche ist im Faraday'schen Gesetz enthalten, aber nicht das, was Lenz beschreibt. B ist falsch: der induzierte Strom wirkt der Änderung entgegen. D ist falsch: Induktion tritt auch bei Gleichstromänderungen auf. E ist falsch: Kondensatorentladung ist ein anderes Phänomen."
+          },
+          {
+            "id": "sc_6t2_4_3",
+            "frage": "Welche SI-Einheit hat die magnetische Flussdichte B?",
+            "optionen": [
+              {"key": "A", "text": "A/m"},
+              {"key": "B", "text": "V·s/m² = T (Tesla)"},
+              {"key": "C", "text": "N/A"},
+              {"key": "D", "text": "Wb/m = V·s/m"},
+              {"key": "E", "text": "C/(kg·s)"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: 1 T = 1 V·s/m² = 1 Wb/m² = 1 kg/(A·s²). A ist falsch: A/m ist die Einheit der magnetischen Feldstärke H. C ist falsch: N/A ist nicht die Standarddarstellung (N/A = T·m wäre für Fluss). D ist falsch: V·s/m = Wb/m ist nicht die Einheit für B (das wäre Wb/m² = T). E ist falsch: C/(kg·s) hat falsche Dimension."
+          },
+          {
+            "id": "sc_6t2_4_4",
+            "frage": "Eine Leiterschleife rotiert mit Winkelgeschwindigkeit ω in einem homogenen Magnetfeld B. Was beschreibt die induzierte EMF ε(t) korrekt?",
+            "optionen": [
+              {"key": "A", "text": "ε(t) = N·B·A·cos(ωt) — Cosinus-Form"},
+              {"key": "B", "text": "ε(t) = N·B·A·ω·sin(ωt) — Sinus-Form (Ableitung des Flusses)"},
+              {"key": "C", "text": "ε(t) = N·B·A·ω² (konstant)"},
+              {"key": "D", "text": "ε(t) = B·ω·sin(ωt) — ohne A und N"},
+              {"key": "E", "text": "ε(t) = N·B/(A·ω)·cos(ωt)"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Φ(t) = N·B·A·cos(ωt) → ε = −dΦ/dt = N·B·A·ω·sin(ωt). A ist falsch: Das ist der Fluss Φ(t), nicht die EMF. C ist falsch: Die EMF ist zeitlich sinusförmig, nicht konstant. D ist falsch: Fläche A und Windungszahl N fehlen. E ist falsch: Einheiten und Form stimmen nicht."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Erkläre das Coulombsche Gesetz in eigenen Worten. Welche Größen gehen ein und wie hängt die Kraft vom Abstand ab?"],
+      "2": ["Was ist die Lorentzkraft? Unter welchen Bedingungen ist sie maximal, wann ist sie null? Nenne die Formel."],
+      "3": ["Erkläre, warum ein geladenes Teilchen im homogenen Magnetfeld eine Kreisbahn beschreibt. Leite die Formel für den Kreisbahnradius r her."],
+      "4": ["Eine Leiterschleife (N=100, A=0,01 m², I=2 A) liegt in B=0,5 T. Berechne das maximale Drehmoment und erkläre, bei welchem Winkel es auftritt."],
+      "5": ["Warum verrichtet die Lorentzkraft keine Arbeit? In welchen realen Situationen spielt der Hall-Effekt eine Rolle?"]
+    }
+  }
+}

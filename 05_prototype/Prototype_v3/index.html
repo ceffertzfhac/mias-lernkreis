@@ -48,7 +48,7 @@
   <!-- ═══════════════════════════════════════════════════════════════════════
        SCREEN: SETUP
   ════════════════════════════════════════════════════════════════════════ -->
-  <div x-show="screen === 'setup'" class="px-4 py-8 space-y-6">
+  <div x-show="screen === 'setup'" class="setup-screen px-4 py-8 space-y-6">
 
     <!-- Header -->
     <div class="text-center space-y-1 pt-4">
@@ -126,7 +126,7 @@
             id="apiModelInput"
             type="text"
             class="field field--tinted"
-            placeholder="gpt-4o"
+            placeholder="gpt-5.2"
             x-model="apiModel"
           />
         </div>
@@ -200,59 +200,68 @@
       </div>
     </div>
 
-    <!-- Mini radar -->
-    <div class="card" x-show="diagnosen.length > 0">
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-sm font-semibold text-primary">Lernstand-Radar</span>
-        <button class="btn btn--sm btn--outline" @click="goTo('radar')" type="button">Details</button>
-      </div>
-      <div style="max-height: 220px;">
-        <canvas id="radarHome"></canvas>
-      </div>
-    </div>
+    <!-- Home grid: radar left, info right on desktop -->
+    <div class="home-grid">
 
-    <!-- Status summary -->
-    <div class="card space-y-2" x-show="letzeDiagnose">
-      <p class="text-sm font-semibold text-primary mb-1">Lernstand auf einen Blick</p>
-      <div class="flex gap-3">
-        <div class="flex-1 card--tinted rounded-xl p-3 text-center">
-          <div class="text-2xl font-bold text-primary" x-text="themenBereit()"></div>
-          <div class="text-xs text-muted">Themen klausurbereit</div>
+      <!-- Left: Mini radar -->
+      <div class="card home-grid__radar" x-show="diagnosen.length > 0">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-sm font-semibold text-primary">Lernstand-Radar</span>
+          <button class="btn btn--sm btn--outline" @click="goTo('radar')" type="button">Details</button>
         </div>
-        <div class="flex-1 card--tinted rounded-xl p-3 text-center">
-          <div class="text-2xl font-bold" style="color: var(--c-warn)" x-text="kurs.themen.length - themenBereit()"></div>
-          <div class="text-xs text-muted">Themen noch offen</div>
+        <div class="home-radar-canvas">
+          <canvas id="radarHome"></canvas>
         </div>
       </div>
-    </div>
 
-    <!-- Schwächste Themen -->
-    <div class="card space-y-2" x-show="schwächsteThemen().length > 0">
-      <p class="text-sm font-semibold text-primary mb-1">Fokus jetzt</p>
-      <template x-for="t in schwächsteThemen()" :key="t.id">
-        <div class="flex items-center gap-3 py-1">
-          <span
-            class="badge"
-            :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
-            x-text="starStr(t.stufe)"
-          ></span>
-          <span class="text-sm" x-text="t.name"></span>
+      <!-- Right: Status + Focus + CTAs -->
+      <div class="home-grid__info space-y-3">
+
+        <!-- Status summary -->
+        <div class="card space-y-2" x-show="letzeDiagnose">
+          <p class="text-sm font-semibold text-primary mb-1">Lernstand auf einen Blick</p>
+          <div class="flex gap-3">
+            <div class="flex-1 card--tinted rounded-xl p-3 text-center">
+              <div class="text-2xl font-bold text-primary" x-text="themenBereit()"></div>
+              <div class="text-xs text-muted">Themen klausurbereit</div>
+            </div>
+            <div class="flex-1 card--tinted rounded-xl p-3 text-center">
+              <div class="text-2xl font-bold" style="color: var(--c-warn)" x-text="kurs.themen.length - themenBereit()"></div>
+              <div class="text-xs text-muted">Themen noch offen</div>
+            </div>
+          </div>
         </div>
-      </template>
-    </div>
 
-    <!-- CTA buttons -->
-    <div class="space-y-2 pb-2">
-      <button class="btn btn--primary btn--block" @click="goTo('diagnose')" type="button">
-        Selbstdiagnose starten
-      </button>
-      <button class="btn btn--outline btn--block" @click="goTo('ueben-auswahl')" type="button">
-        Übungsaufgabe lösen
-      </button>
-      <div x-show="diagnosen.length === 0" class="card--warn rounded-xl p-3 text-sm" style="color: var(--c-warn);">
-        Starte mit der Selbstdiagnose, um deinen Lernradar zu aktivieren.
-      </div>
-    </div>
+        <!-- Schwächste Themen -->
+        <div class="card space-y-2" x-show="schwächsteThemen().length > 0">
+          <p class="text-sm font-semibold text-primary mb-1">Fokus jetzt</p>
+          <template x-for="t in schwächsteThemen()" :key="t.id">
+            <div class="flex items-center gap-3 py-1">
+              <span
+                class="badge"
+                :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
+                x-text="starStr(t.stufe)"
+              ></span>
+              <span class="text-sm" x-text="t.name"></span>
+            </div>
+          </template>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="space-y-2 pb-2">
+          <button class="btn btn--primary btn--block" @click="goTo('diagnose')" type="button">
+            Selbstdiagnose starten
+          </button>
+          <button class="btn btn--outline btn--block" @click="goTo('ueben-auswahl')" type="button">
+            Übungsaufgabe lösen
+          </button>
+          <div x-show="diagnosen.length === 0" class="card--warn rounded-xl p-3 text-sm" style="color: var(--c-warn);">
+            Starte mit der Selbstdiagnose, um deinen Lernradar zu aktivieren.
+          </div>
+        </div>
+
+      </div><!-- /home-grid__info -->
+    </div><!-- /home-grid -->
   </div>
 
 
@@ -291,7 +300,7 @@
     </div>
 
     <!-- Topic list -->
-    <div class="space-y-3">
+    <div class="themen-grid">
       <template x-for="t in kurs.themen" :key="t.id">
         <div class="card space-y-2">
           <div class="flex items-start justify-between gap-2">
@@ -465,14 +474,14 @@
       <!-- Typ -->
       <div>
         <label class="field-label">Aufgabentyp</label>
-        <div class="flex gap-2">
-          <template x-for="typ in ['erklären', 'fehler']" :key="typ">
+        <div class="flex gap-2 flex-wrap">
+          <template x-for="typ in verfügbareTypen()" :key="typ">
             <button
-              class="flex-1 btn btn--sm"
+              class="btn btn--sm"
               :class="ue.typ === typ ? 'btn--primary' : 'btn--outline'"
               @click="ue.typ = typ"
               type="button"
-              x-text="typ === 'erklären' ? 'Erklären' : 'Fehler finden'"
+              x-text="typLabel(typ)"
             ></button>
           </template>
         </div>
@@ -481,17 +490,17 @@
       <!-- Schwierigkeit -->
       <div>
         <label class="field-label">
-          Schwierigkeit
+          Niveau
           <span class="text-muted font-normal ml-1" x-text="diffStr(ue.schwierigkeit)"></span>
         </label>
         <div class="flex gap-2">
-          <template x-for="lvl in [1,2,3]" :key="lvl">
+          <template x-for="lvl in [1,2,3,4]" :key="lvl">
             <button
               class="flex-1 btn btn--sm"
               :class="ue.schwierigkeit === lvl ? 'btn--primary' : 'btn--outline'"
               @click="ue.schwierigkeit = lvl"
               type="button"
-              x-text="['Leicht', 'Mittel', 'Schwer'][lvl - 1]"
+              x-text="niveauLabel(lvl)"
             ></button>
           </template>
         </div>
@@ -540,61 +549,92 @@
       <div class="flex items-center gap-2 mb-1">
         <span
           class="badge"
-          :class="ue.typ === 'fehler' ? 'badge--warn' : ''"
-          :style="ue.typ === 'erklären' ? 'background: var(--c-light); color: var(--c-primary);' : ''"
-          x-text="ue.typ === 'erklären' ? 'Erklären' : 'Fehler finden'"
+          :style="isSingleChoice ? 'background: var(--c-amber-bg, #FEF9C3); color: var(--c-amber, #A16207);' : 'background: var(--c-light); color: var(--c-primary);'"
+          x-text="typLabel(ue.typ)"
         ></span>
-        <span class="text-xs text-muted" x-text="diffStr(ue.schwierigkeit)"></span>
+        <span class="text-xs text-muted" x-text="niveauLabel(ue.schwierigkeit) + ' · ' + diffStr(ue.schwierigkeit)"></span>
       </div>
       <p class="text-sm leading-relaxed" x-text="ue.aufgabe"></p>
     </div>
 
-    <!-- Hints -->
-    <div class="space-y-2" x-show="ue.tippTexte.length > 0">
-      <template x-for="(tipp, i) in ue.tippTexte" :key="i">
-        <div class="tipp-box">
-          <p class="text-xs font-semibold text-primary mb-1">Tipp <span x-text="i + 1"></span></p>
-          <p class="text-sm leading-snug" x-text="tipp"></p>
+    <!-- SINGLE CHOICE: Radio options -->
+    <template x-if="isSingleChoice && ue.aufgabeObj?.optionen">
+      <div class="card space-y-2">
+        <template x-for="opt in ue.aufgabeObj.optionen" :key="opt.key">
+          <label
+            class="flex items-start gap-3 p-3 rounded-xl cursor-pointer transition-colors"
+            :class="ue.scWahl === opt.key ? 'card--accent-left' : 'hover:bg-gray-50'"
+            :style="ue.scWahl === opt.key ? 'background: var(--c-light);' : ''"
+          >
+            <input
+              type="radio"
+              :name="'sc_' + ue.aufgabeObj.id"
+              :value="opt.key"
+              x-model="ue.scWahl"
+              class="mt-0.5 shrink-0 accent-primary"
+            />
+            <span class="text-sm leading-snug">
+              <span class="font-semibold" x-text="opt.key + ')'"></span>
+              <span x-text="' ' + opt.text"></span>
+            </span>
+          </label>
+        </template>
+      </div>
+    </template>
+
+    <!-- DOING: Hints + Textarea -->
+    <template x-if="!isSingleChoice">
+      <div class="space-y-4">
+
+        <!-- Hints -->
+        <div class="space-y-2" x-show="ue.tippTexte.length > 0">
+          <template x-for="(tipp, i) in ue.tippTexte" :key="i">
+            <div class="tipp-box">
+              <p class="text-xs font-semibold text-primary mb-1">Tipp <span x-text="i + 1"></span></p>
+              <p class="text-sm leading-snug" x-text="tipp"></p>
+            </div>
+          </template>
         </div>
-      </template>
-    </div>
 
-    <!-- Request hint button -->
-    <button
-      class="btn btn--ghost"
-      @click="requestHint()"
-      :disabled="ue.genutzeTipps >= 3 || ue.loading"
-      x-show="ue.genutzeTipps < 3"
-      type="button"
-    >
-      <span x-show="ue.loading && ue.genutzeTipps < 3" class="animate-pulse">Tipp wird geladen…</span>
-      <span x-show="!ue.loading || ue.genutzeTipps >= 3">
-        Tipp <span x-text="ue.genutzeTipps + 1"></span> von 3 anzeigen
-        <span class="text-xs text-muted ml-1">(−20 Punkte)</span>
-      </span>
-    </button>
+        <!-- Request hint button -->
+        <button
+          class="btn btn--ghost"
+          @click="requestHint()"
+          :disabled="ue.genutzeTipps >= 3 || ue.loading"
+          x-show="ue.genutzeTipps < 3"
+          type="button"
+        >
+          <span x-show="ue.loading && ue.genutzeTipps < 3" class="animate-pulse">Tipp wird geladen…</span>
+          <span x-show="!ue.loading || ue.genutzeTipps >= 3">
+            Tipp <span x-text="ue.genutzeTipps + 1"></span> von 3 anzeigen
+            <span class="text-xs text-muted ml-1">(−20 Punkte)</span>
+          </span>
+        </button>
 
-    <!-- Answer textarea -->
-    <div>
-      <label class="field-label" for="answerArea">Deine Antwort</label>
-      <textarea
-        id="answerArea"
-        class="field"
-        rows="5"
-        placeholder="Schreib deine Antwort hier…"
-        x-model="ue.antwort"
-        style="resize: vertical;"
-      ></textarea>
-    </div>
+        <!-- Answer textarea -->
+        <div>
+          <label class="field-label" for="answerArea">Deine Antwort</label>
+          <textarea
+            id="answerArea"
+            class="field"
+            rows="5"
+            placeholder="Schreib deine Antwort hier…"
+            x-model="ue.antwort"
+            style="resize: vertical;"
+          ></textarea>
+        </div>
+
+      </div>
+    </template>
 
     <button
       class="btn btn--primary btn--block"
       @click="submitAnswer()"
-      :disabled="!ue.antwort.trim() || ue.loading"
+      :disabled="isSingleChoice ? !ue.scWahl : (!ue.antwort.trim() || ue.loading)"
       type="button"
     >
       <span x-show="ue.loading" class="animate-pulse">Wird bewertet…</span>
-      <span x-show="!ue.loading">Antwort einreichen →</span>
+      <span x-show="!ue.loading" x-text="isSingleChoice ? 'Antwort bestätigen →' : 'Antwort einreichen →'"></span>
     </button>
   </div>
 
@@ -606,39 +646,129 @@
 
     <div class="screen-header">
       <button class="back-btn" @click="nextTask()" type="button">←</button>
-      <h2 class="text-base font-bold text-primary">Feedback</h2>
+      <h2 class="text-base font-bold text-primary" x-text="isMusterloesung ? 'Musterlösung' : 'Feedback'"></h2>
     </div>
 
-    <!-- Score card -->
+    <!-- Score card (shown in both modes) -->
     <div
-      class="card text-center py-5"
+      class="card text-center py-4"
       :class="kompScore() >= 80 ? 'card--success' : kompScore() >= 60 ? 'card--warn' : 'card--error'"
     >
-      <div
-        class="text-4xl font-bold"
-        :style="`color: ${kompScore() >= 80 ? 'var(--c-success)' : kompScore() >= 60 ? 'var(--c-warn)' : 'var(--c-error)'}`"
-        x-text="kompScore() + ' Pkt.'"
-      ></div>
-      <div class="text-sm font-semibold mt-1">
-        <span x-show="ue.genutzeTipps === 0">Ohne Tipps gelöst!</span>
+      <div class="text-sm font-semibold">
+        <span x-show="ue.genutzeTipps === 0">Ohne Tipps bearbeitet</span>
         <span x-show="ue.genutzeTipps === 1">1 Tipp genutzt</span>
         <span x-show="ue.genutzeTipps >= 2" x-text="ue.genutzeTipps + ' Tipps genutzt'"></span>
       </div>
     </div>
 
-    <!-- Feedback -->
-    <div class="card card--accent-left space-y-2">
-      <p class="text-xs font-semibold text-primary">KI-Feedback</p>
-      <p class="text-sm leading-relaxed" x-text="ue.ergebnis"></p>
-    </div>
+    <!-- MODE A: Musterlösung / SC-Auflösung (deterministic) -->
+    <template x-if="isMusterloesung">
+      <div class="space-y-4">
 
-    <!-- Original task reminder -->
-    <div class="card space-y-1">
-      <p class="text-xs font-semibold text-muted">Aufgabe</p>
-      <p class="text-sm leading-snug" x-text="ue.aufgabe"></p>
-    </div>
+        <!-- SINGLE CHOICE RESULT -->
+        <template x-if="isSingleChoice">
+          <div class="space-y-3">
 
-    <!-- Session counter -->
+            <!-- Ergebnis-Banner -->
+            <div
+              class="card text-center py-4"
+              :class="ue.scKorrekt ? 'card--success' : 'card--error'"
+            >
+              <div class="text-2xl font-bold mb-1" x-text="ue.scKorrekt ? '✓ Richtig!' : '✗ Leider falsch'"></div>
+              <div class="text-sm">
+                Deine Wahl: <strong x-text="ue.scWahl"></strong>
+                · Korrekt: <strong x-text="ue.aufgabeObj?.korrekt"></strong>
+              </div>
+            </div>
+
+            <!-- Erklärung -->
+            <div class="card card--accent-left space-y-2">
+              <p class="text-xs font-semibold text-primary">Auflösung</p>
+              <p class="text-sm leading-relaxed" x-text="ue.musterloesung"></p>
+            </div>
+
+            <div class="space-y-2 pb-2">
+              <button class="btn btn--primary btn--block" @click="nextTask()" type="button">
+                Nächste Aufgabe →
+              </button>
+              <button class="btn btn--outline btn--block" @click="goTo('home')" type="button">
+                Zur Startseite
+              </button>
+            </div>
+          </div>
+        </template>
+
+        <!-- DOING RESULT: Musterlösung + Selbstbewertung -->
+        <template x-if="!isSingleChoice">
+          <div class="space-y-4">
+
+            <!-- Deine Antwort -->
+            <div class="card space-y-1">
+              <p class="text-xs font-semibold text-muted">Deine Antwort</p>
+              <p class="text-sm leading-relaxed" x-text="ue.antwort"></p>
+            </div>
+
+            <!-- Musterlösung -->
+            <div class="card card--accent-left space-y-2">
+              <p class="text-xs font-semibold text-primary">Musterlösung</p>
+              <p class="text-sm leading-relaxed" x-text="ue.musterloesung"></p>
+            </div>
+
+            <!-- Selbstbewertung -->
+            <div class="card space-y-3">
+              <p class="text-sm font-semibold text-primary">Wie nah warst du?</p>
+              <div class="flex gap-2">
+                <button
+                  class="btn btn--success flex-1"
+                  @click="selfAssess(true); nextTask()"
+                  type="button"
+                >
+                  ✓ Richtig lag
+                </button>
+                <button
+                  class="btn btn--danger flex-1"
+                  @click="selfAssess(false); nextTask()"
+                  type="button"
+                >
+                  ✗ Noch nicht sicher
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </template>
+
+      </div>
+    </template>
+
+    <!-- MODE B: KI-Feedback -->
+    <template x-if="!isMusterloesung">
+      <div class="space-y-4">
+
+        <div class="card card--accent-left space-y-2">
+          <p class="text-xs font-semibold text-primary">KI-Feedback</p>
+          <p class="text-sm leading-relaxed" x-text="ue.ergebnis"></p>
+        </div>
+
+        <!-- Original task reminder -->
+        <div class="card space-y-1">
+          <p class="text-xs font-semibold text-muted">Aufgabe</p>
+          <p class="text-sm leading-snug" x-text="ue.aufgabe"></p>
+        </div>
+
+        <div class="space-y-2 pb-2">
+          <button class="btn btn--primary btn--block" @click="nextTask()" type="button">
+            Nächste Aufgabe →
+          </button>
+          <button class="btn btn--outline btn--block" @click="goTo('home')" type="button">
+            Zur Startseite
+          </button>
+        </div>
+
+      </div>
+    </template>
+
+    <!-- Session counter (both modes) -->
     <div class="card py-3 text-center" x-show="session.aufgaben.length > 0">
       <span class="text-xs text-muted">
         Session: <span class="font-bold text-primary" x-text="session.aufgaben.length"></span> Aufgaben ·
@@ -646,14 +776,6 @@
       </span>
     </div>
 
-    <div class="space-y-2 pb-2">
-      <button class="btn btn--primary btn--block" @click="nextTask()" type="button">
-        Nächste Aufgabe →
-      </button>
-      <button class="btn btn--outline btn--block" @click="goTo('home')" type="button">
-        Zur Startseite
-      </button>
-    </div>
   </div>
 
 
@@ -776,6 +898,109 @@
 
 
   <!-- ═══════════════════════════════════════════════════════════════════════
+       SCREEN: EINSTELLUNGEN
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div x-show="screen === 'einstellungen'" class="has-nav px-4 space-y-4">
+
+    <div class="screen-header">
+      <h1 class="screen-title">Einstellungen</h1>
+    </div>
+
+    <!-- API-Konfiguration -->
+    <div class="card space-y-3">
+      <p class="text-sm font-semibold text-primary">KI-Verbindung</p>
+
+      <div>
+        <label class="label" for="settingsApiKey">API Key</label>
+        <input
+          id="settingsApiKey"
+          type="password"
+          class="field"
+          placeholder="Bearer Token (KI Connect NRW)"
+          x-model="apiKey"
+        />
+      </div>
+
+      <div>
+        <label class="label" for="settingsApiModel">Modell</label>
+        <input
+          id="settingsApiModel"
+          type="text"
+          class="field"
+          placeholder="gpt-5.2"
+          x-model="apiModel"
+        />
+      </div>
+
+      <button
+        class="btn btn--outline btn--sm"
+        @click="testApiConnection()"
+        :disabled="!apiKey || apiTest.status === 'loading'"
+        type="button"
+      >
+        <span x-show="apiTest.status !== 'loading'">Verbindung testen</span>
+        <span x-show="apiTest.status === 'loading'">Teste…</span>
+      </button>
+
+      <div
+        x-show="apiTest.message"
+        class="text-xs px-3 py-2 rounded-lg"
+        :class="apiTest.status === 'ok' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'"
+        x-text="apiTest.message"
+      ></div>
+    </div>
+
+    <button class="btn btn--primary w-full" @click="saveSettings()" type="button">
+      Speichern
+    </button>
+
+    <!-- Kursinhalt -->
+    <div class="card space-y-3">
+      <p class="text-sm font-semibold text-primary">Kursinhalt laden</p>
+      <p class="text-xs text-muted">
+        Vom Dozenten generierte JSON-Dateien machen die App vollständig offline-fähig.
+        <strong>Automatisch:</strong> Dateien in den Unterordner <code>kursinhalt/</code> legen und via Live Server öffnen.
+        <strong>Manuell:</strong> Alle JSON-Dateien gleichzeitig auswählen (Manifest + Themen-Dateien).
+      </p>
+
+      <!-- Aktiv geladener Kurs -->
+      <div
+        x-show="hasDeterministicContent"
+        class="flex items-center justify-between px-3 py-2 rounded-lg"
+        style="background: var(--c-success-bg); color: var(--c-success);"
+      >
+        <span class="text-sm font-semibold" x-text="kursinhaltStatus.msg"></span>
+        <button
+          class="btn btn--sm btn--danger"
+          @click="removeKursinhalt()"
+          type="button"
+        >Entfernen</button>
+      </div>
+
+      <!-- Upload (multi-file: manifest + thema files) -->
+      <div x-show="!hasDeterministicContent">
+        <label class="field-label">JSON-Dateien auswählen (alle gleichzeitig)</label>
+        <input
+          type="file"
+          accept=".json,application/json"
+          multiple
+          class="field text-sm"
+          @change="loadKursinhaltFile($event)"
+        />
+      </div>
+
+      <div
+        x-show="kursinhaltStatus.msg && !hasDeterministicContent"
+        class="text-xs px-3 py-2 rounded-lg"
+        :class="kursinhaltStatus.ok === false ? 'bg-red-50 text-red-800' : 'bg-blue-50 text-blue-800'"
+        x-text="kursinhaltStatus.msg"
+      ></div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
        BOTTOM NAVIGATION
        Only shown on screens that are NOT setup
   ════════════════════════════════════════════════════════════════════════ -->
@@ -819,6 +1044,16 @@
     >
       <span class="text-lg mb-0.5">📊</span>
       <span>Fortschritt</span>
+    </button>
+
+    <button
+      class="nav-item"
+      :class="{ 'is-active': screen === 'einstellungen' }"
+      @click="goTo('einstellungen')"
+      type="button"
+    >
+      <span class="text-lg mb-0.5">⚙️</span>
+      <span>API</span>
     </button>
 
   </nav>

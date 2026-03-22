@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_3_1_1",
+    "frage": "Welche Einheit hat Arbeit?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "N"
+      },
+      {
+        "key": "B",
+        "text": "W"
+      },
+      {
+        "key": "C",
+        "text": "J"
+      },
+      {
+        "key": "D",
+        "text": "kg·m/s"
+      },
+      {
+        "key": "E",
+        "text": "Pa"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Arbeit W=F·s → N·m = Joule (J). A=Kraft. B=Leistung. D=Impuls. E=Druck."
+  },
+  {
+    "id": "sc_3_1_2",
+    "frage": "Mechanische Energieerhaltung (Ekin+Epot=const) gilt wenn …",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "das System abgeschlossen ist."
+      },
+      {
+        "key": "B",
+        "text": "keine Kräfte wirken."
+      },
+      {
+        "key": "C",
+        "text": "alle wirkenden Kräfte konservativ sind."
+      },
+      {
+        "key": "D",
+        "text": "keine äußeren Drehmomente wirken."
+      },
+      {
+        "key": "E",
+        "text": "nie."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Konservative Kräfte (Gravitation, Feder) erhalten mech. Energie. Reibung = nicht konservativ → kein Erhaltungssatz."
+  }
+]

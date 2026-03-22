@@ -1,0 +1,575 @@
+{
+  "thema_id": 4,
+  "thema_name": "Schwingungen & Wellen",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_4_1_1",
+            "aufgabe": "Ein Federpendel (m = 0,5 kg, k = 50 N/m) schwingt reibungsfrei. Berechnen Sie Kreisfrequenz ω, Frequenz f und Periodendauer T.",
+            "musterloesung": "ω = √(k/m) = √(50/0,5) = √100 = 10 rad/s. f = ω/(2π) = 10/(2π) ≈ 1,592 Hz. T = 1/f = 1/1,592 ≈ 0,628 s (oder T = 2π/ω ≈ 0,628 s).",
+            "tipps": [
+              "Federpendel: ω = √(k/m). Frequenz: f = ω/(2π). Periode: T = 1/f = 2π/ω.",
+              "Einsetzen: ω = √(50/0,5) = √100 = 10 rad/s.",
+              "ω = 10 rad/s; f ≈ 1,59 Hz; T ≈ 0,628 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_1_2",
+            "aufgabe": "Ein Fadenpendel (L = 0,5 m) schwingt mit kleiner Amplitude. Berechnen Sie ω und T.",
+            "musterloesung": "ω = √(g/L) = √(9,81/0,5) = √19,62 ≈ 4,429 rad/s. T = 2π/ω = 2π/4,429 ≈ 1,419 s.",
+            "tipps": [
+              "Fadenpendel: ω = √(g/L). Gilt nur für kleine Auslenkungen (sin φ ≈ φ).",
+              "ω = √(9,81/0,5). T = 2π/ω.",
+              "ω ≈ 4,43 rad/s; T ≈ 1,42 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_1_3",
+            "aufgabe": "Ein harmonischer Oszillator hat ω = 5 rad/s und Amplitude A = 0,1 m. Schreiben Sie die Gleichungen für x(t), v(t) und a(t) (Anfangsbedingung: x(0) = A, v(0) = 0).",
+            "musterloesung": "x(t) = A·cos(ωt) = 0,1·cos(5t) m. v(t) = dx/dt = −A·ω·sin(ωt) = −0,5·sin(5t) m/s. a(t) = dv/dt = −A·ω²·cos(ωt) = −2,5·cos(5t) m/s². Maximum: v_max = A·ω = 0,5 m/s; a_max = A·ω² = 2,5 m/s².",
+            "tipps": [
+              "x(0) = A, v(0) = 0 → Cosinus-Ansatz: x(t) = A·cos(ωt).",
+              "v = dx/dt = −Aω·sin(ωt). a = dv/dt = −Aω²·cos(ωt).",
+              "x(t) = 0,1·cos(5t); v(t) = −0,5·sin(5t); a(t) = −2,5·cos(5t)."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_1_4",
+            "aufgabe": "Berechnen Sie die maximale potentielle und kinetische Energie eines Federpendels (m = 200 g, k = 80 N/m, A = 5 cm).",
+            "musterloesung": "E_pot,max = ½·k·A² = ½·80·0,05² = ½·80·0,0025 = 0,1 J. E_kin,max = ½·m·v_max² = ½·m·(Aω)² = ½·m·A²·k/m = ½·k·A² = 0,1 J. (Beide gleich, da Energieerhaltung.)",
+            "tipps": [
+              "E_pot,max = ½·k·A² (bei maximaler Auslenkung, v=0). E_kin,max = ½·m·v_max² = ½·k·A² (Energieerhaltung).",
+              "A = 5 cm = 0,05 m. E_pot = ½·80·0,0025.",
+              "E_pot,max = E_kin,max = 0,1 J."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_4_2_1",
+            "aufgabe": "Schwingendes Lineal (Klausur 2, Aufgabe 2): Lineal (l = 32 cm, b = 37 mm, m). Drehachse 1,9 cm vom oberen Rand (Abstand d = 1,9 cm bis Mittelpunkt Loch). J_SP = m/12·(l² + b²). Berechnen Sie die Periodendauer.",
+            "musterloesung": "l = 0,32 m; b = 0,037 m; d = 0,019 m (Abstand Rand bis Loch-Mitte → Abstand zum SP: Der SP liegt bei l/2 = 0,16 m vom oberen Rand. Abstand Loch–SP: r = l/2 − d = 0,16 − 0,019 = 0,141 m). J_SP = m/12·(l²+b²) = m/12·(0,1024+0,001369) = m/12·0,10377 = 0,008647·m. J_Achse = J_SP + m·r² = 0,008647m + m·0,141² = (0,008647 + 0,019881)·m = 0,028528·m. Pendel: ω² = m·g·r/J_Achse = g·r/0,028528 = 9,81·0,141/0,028528 = 1,38321/0,028528 = 48,49 rad²/s². ω = 6,964 rad/s. T = 2π/ω = 2π/6,964 ≈ 0,902 s.",
+            "tipps": [
+              "Physikalisches Pendel: T = 2π·√(J_Achse/(m·g·r)). Steinerscher Anteil: J_Achse = J_SP + m·r². r = Abstand Drehachse–Schwerpunkt.",
+              "SP liegt bei l/2 vom Rand. Abstand Achse–SP: r = l/2 − d_Loch.",
+              "J_Achse = m·(l²+b²)/12 + m·r². T = 2π·√(J/(m·g·r)) ≈ 0,90 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_2_2",
+            "aufgabe": "Ein Federpendel (k = 200 N/m) und ein Fadenpendel (L = 0,2 m) schwingen. Welches System hat die höhere Frequenz, wenn die angehängte Masse m = 0,5 kg beträgt?",
+            "musterloesung": "Federpendel: ω_F = √(k/m) = √(200/0,5) = √400 = 20 rad/s. f_F = 20/(2π) ≈ 3,18 Hz. Fadenpendel: ω_Faden = √(g/L) = √(9,81/0,2) = √49,05 ≈ 7,0 rad/s. f_Faden ≈ 1,11 Hz. Das Federpendel hat die höhere Frequenz.",
+            "tipps": [
+              "Federpendel: ω = √(k/m). Fadenpendel: ω = √(g/L). Beide berechnen und vergleichen.",
+              "ω_Feder = √(200/0,5) = 20 rad/s. ω_Faden = √(9,81/0,2) ≈ 7,0 rad/s.",
+              "f_Feder ≈ 3,18 Hz > f_Faden ≈ 1,11 Hz. Federpendel schwingt schneller."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_2_3",
+            "aufgabe": "Ein Federpendel schwingt mit A = 8 cm und ω = 4 rad/s. Berechnen Sie die Momentangeschwindigkeit und -beschleunigung zum Zeitpunkt x = 4 cm (Ansatz: x(t) = A·cos(ωt)).",
+            "musterloesung": "x = A·cos(ωt) = 0,04 m → cos(ωt) = 0,04/0,08 = 0,5 → ωt = π/3 → sin(ωt) = √3/2 ≈ 0,866. v = −Aω·sin(ωt) = −0,08·4·0,866 = −0,277 m/s. a = −Aω²·cos(ωt) = −0,08·16·0,5 = −0,64 m/s².",
+            "tipps": [
+              "Aus x = A·cos(ωt) den Zeitpunkt bestimmen → sin(ωt) berechnen → v und a einsetzen.",
+              "cos(ωt) = x/A = 0,5 → sin(ωt) = √(1−0,25) = √0,75 ≈ 0,866.",
+              "v = −Aω·sin(ωt) ≈ −0,277 m/s; a = −ω²·x = −16·0,04 = −0,64 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_2_4",
+            "aufgabe": "Ein Fadenpendel (L = 0,4 m) soll in genau T = 1,5 s schwingen. Mit welcher Fadenlänge L' erreicht man das?",
+            "musterloesung": "T = 2π·√(L/g) → T² = 4π²·L/g → L = g·T²/(4π²) = 9,81·2,25/(4·9,870) = 22,0725/39,478 ≈ 0,559 m. Für T = 1,5 s braucht man L' ≈ 0,559 m statt 0,4 m.",
+            "tipps": [
+              "Aus T = 2π·√(L/g) umformen: L = g·T²/(4π²).",
+              "Einsetzen: T = 1,5 s, g = 9,81 m/s².",
+              "L' = 9,81·1,5²/(4π²) = 9,81·2,25/39,48 ≈ 0,559 m."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_4_3_1",
+            "aufgabe": "Schwingendes Lineal vollständig: Lineal (l = 32 cm, b = 37 mm, Dicke D = 600 µm). Drehachse durch Loch (1,9 cm vom oberen Rand, Mittelpunkt). Berechnen Sie T für kleine Auslenkungen. Warum ist die Dicke irrelevant?",
+            "musterloesung": "J_SP = m/12·(l² + b²) = m/12·(0,1024 + 0,001369) = m·0,008647. Abstand SP–Achse: r = 0,16 − 0,019 = 0,141 m. J_Achse = m·0,008647 + m·0,141² = m·(0,008647 + 0,019881) = m·0,028528 kg·m²/kg. T = 2π·√(J_Achse/(m·g·r)) = 2π·√(0,028528/(9,81·0,141)) = 2π·√(0,028528/1,38321) = 2π·√0,02063 = 2π·0,1436 = 0,902 s. Die Dicke D ist irrelevant, weil sie (600 µm = 0,6 mm) quadratisch in l² und b² eingeht: D² << l², b². Sie ist in l (Länge) und b (Breite) des 'dünnen' Lineals vernachlässigbar.",
+            "tipps": [
+              "J_SP = m/12·(l²+b²) (dünnes, rechteckiges Lineal). Steiner: J_Achse = J_SP + m·r². T = 2π·√(J/(mgr)).",
+              "r = l/2 − d_Loch = 0,16 − 0,019 = 0,141 m. Dicke D in den Formeln nicht berücksichtigen (<<l,b).",
+              "T = 2π·√(0,028528/(9,81·0,141)) ≈ 0,90 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_3_2",
+            "aufgabe": "Ein Federpendel (m = 0,3 kg, k = 120 N/m, A = 0,06 m) schwingt. Berechnen Sie: a) die Energie am Gleichgewichtspunkt, b) die potentielle Energie bei x = 3 cm, c) die Geschwindigkeit bei x = 3 cm.",
+            "musterloesung": "a) E_ges = ½·k·A² = ½·120·0,0036 = 0,216 J. Am Gleichgewichtspunkt: E_kin = E_ges = 0,216 J; E_pot = 0. b) E_pot(3cm) = ½·k·x² = ½·120·0,0009 = 0,054 J. c) E_kin(3cm) = E_ges − E_pot = 0,216 − 0,054 = 0,162 J. v = √(2·E_kin/m) = √(2·0,162/0,3) = √1,08 ≈ 1,039 m/s.",
+            "tipps": [
+              "E_ges = ½kA² (konstant). E_pot(x) = ½kx². E_kin = E_ges − E_pot. v = √(2·E_kin/m).",
+              "a) E_ges = ½·120·0,06² = 0,216 J. b) E_pot = ½·120·0,03² = 0,054 J. c) v = √(2·0,162/0,3).",
+              "v ≈ 1,04 m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_3_3",
+            "aufgabe": "g-Bestimmung (Klausur 2, Aufgabe 5): Sechs Fadenpendel: P1(100g, 200mm, T₁=8,96s für 10 Perioden), P6(180g, 800mm, T₆=17,94s). Berechnen Sie g aus diesen zwei Datenpunkten und die relative Abweichung vom Literaturwert 9,81 m/s².",
+            "musterloesung": "T = T_10/10. T₁ = 0,896 s, L₁ = 0,200 m → g₁ = 4π²·L₁/T₁² = 39,478·0,2/0,8028 = 7,896/0,8028 = 9,836 m/s². T₆ = 1,794 s, L₆ = 0,800 m → g₆ = 4π²·0,8/1,794² = 31,582/3,2184 = 9,814 m/s². Mittelwert g ≈ (9,836+9,814)/2 ≈ 9,825 m/s². Relative Abweichung: |9,825−9,81|/9,81·100% ≈ 0,15%.",
+            "tipps": [
+              "T = 2π·√(L/g) → g = 4π²·L/T². Aus jedem Pendel g berechnen, Mittelwert bilden.",
+              "T₁ = T_10/10 = 0,896 s. g = 4π²·L/T².",
+              "g₁ ≈ 9,836 m/s²; g₆ ≈ 9,814 m/s²; Mittel ≈ 9,825 m/s². Abweichung ≈ 0,15%."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_3_4",
+            "aufgabe": "Welches System kann (bei kleinen Auslenkungen) NICHT durch ÿ + ω²·y = 0 beschrieben werden: a) horizontales Federpendel, b) Fadenpendel, c) Lineal um Achse ≠ SP, d) Flummy aus Höhe h fallend?",
+            "musterloesung": "a) Federpendel: mẍ = −kx → ẍ + (k/m)x = 0. Ja, passt. b) Fadenpendel: mL·φ̈ = −mg·sin(φ) ≈ −mg·φ → φ̈ + (g/L)φ = 0. Ja, passt. c) Lineal: J·φ̈ = −mg·r·sin(φ) ≈ −mg·r·φ → φ̈ + (mgr/J)·φ = 0. Ja, passt. d) Flummy fällt: ÿ = −g (konstante Kraft, keine rücktreibende Kraft proportional zur Auslenkung). Kein Gleichgewichtspunkt → keine Schwingung. Antwort: d) Flummy.",
+            "tipps": [
+              "Schwingungsgleichung erfordert rücktreibende Kraft proportional zur Auslenkung: F = −D·y. Bei freiem Fall gibt es keine solche Kraft.",
+              "a, b, c: alle haben F ∝ −y (für kleine Auslenkungen). d) Flummy: nur freier Fall, kein Gleichgewicht.",
+              "d) ist die Ausnahme: Flummy erfährt keine rücktreibende Kraft beim Fallen."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_4_4_1",
+            "aufgabe": "g-Bestimmung grafisch: Alle 6 Pendel: P1(0,200m, T=0,896s), P2(0,300m, T=1,096s), P3(0,400m, T=1,272s), P4(0,500m, T=1,410s), P5(0,600m, T=1,550s), P6(0,800m, T=1,794s). Linearisieren Sie T² = 4π²/g · L und bestimmen Sie g grafisch aus der Steigung. Berechnen Sie absolute und relative Abweichung von g_lit = 9,81 m/s².",
+            "musterloesung": "T²-Werte: T₁²=0,803; T₂²=1,201; T₃²=1,618; T₄²=1,988; T₅²=2,403; T₆²=3,218 s². L-Werte: 0,2; 0,3; 0,4; 0,5; 0,6; 0,8 m. Linearisierung: T² = m·L mit m = 4π²/g. Steigung grafisch: m = ΔT²/ΔL. Aus Extrempunkten: m ≈ (3,218−0,803)/(0,8−0,2) = 2,415/0,6 ≈ 4,025 s²/m. g = 4π²/m = 39,478/4,025 ≈ 9,807 m/s². Absolute Abweichung: |9,807−9,81| = 0,003 m/s². Relative Abweichung: 0,003/9,81·100% ≈ 0,03%.",
+            "tipps": [
+              "Linearisierung: T² = (4π²/g)·L. Diagramm T² vs. L → Gerade durch Ursprung. Steigung m = 4π²/g → g = 4π²/m.",
+              "T²-Werte berechnen, Tabelle aufstellen, Diagramm zeichnen, Steigungsdreieck.",
+              "g = 4π²/(ΔT²/ΔL) ≈ 9,81 m/s²; Δg_abs = |g_gem − g_lit|; Δg_rel = Δg_abs/g_lit·100%."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_4_2",
+            "aufgabe": "Ein Federpendel (m = 0,2 kg, A = 10 cm) hat die Schwingungsgleichung ÿ + ω²·y = 0 mit ω = 6 rad/s. Berechnen Sie: a) k, b) E_ges, c) y(t) und v(t) für y(0)=0, v(0)=v_max, d) den Zeitpunkt, zu dem E_kin = E_pot.",
+            "musterloesung": "a) k = m·ω² = 0,2·36 = 7,2 N/m. b) E_ges = ½·k·A² = ½·7,2·0,01 = 0,036 J. c) y(0)=0, v(0)=v_max → Sinus-Ansatz: y(t) = A·sin(ωt) = 0,1·sin(6t) m. v(t) = 0,1·6·cos(6t) = 0,6·cos(6t) m/s. v_max = Aω = 0,6 m/s ✓. d) E_kin = E_pot → ½mv² = ½ky² → m·A²ω²·cos²(ωt) = k·A²·sin²(ωt) → tan²(ωt) = m·ω²/k = 1 → ωt = π/4 → t = π/(4·6) = π/24 ≈ 0,131 s.",
+            "tipps": [
+              "k = mω². E_ges = ½kA². y(0)=0, v(0)=v_max → Sinus-Ansatz. E_kin = E_pot → ½mv² = ½ky² → Zeitpunkt bestimmen.",
+              "v_max = A·ω. E_kin = E_pot wenn tan(ωt) = 1 → ωt = π/4.",
+              "t = π/(4ω) = π/24 ≈ 0,131 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_4_3",
+            "aufgabe": "Lineal-Pendel (Klausur 2, vollständig): Lineal (l=32cm, b=37mm, Masse m). Berechnen Sie T für drei verschiedene Aufhängehöhen (Abstand vom oberen Rand): d = 1,9 cm, d = 8 cm, d = 16 cm (Schwerpunkt). Was passiert bei d = 16 cm?",
+            "musterloesung": "SP bei l/2 = 16 cm. J_SP = m/12·(0,32²+0,037²) = m·0,008647 m². Für d = 1,9 cm: r₁ = 0,141 m; J₁ = m·0,028528; T₁ = 2π·√(0,028528/(g·0,141)) = 2π·√(0,02063) ≈ 0,902 s. Für d = 8 cm: r₂ = 0,08 m; J₂ = m·(0,008647+0,0064) = m·0,015047; T₂ = 2π·√(0,015047/(9,81·0,08)) = 2π·√(0,01916) ≈ 0,871 s. Für d = 16 cm (SP): r₃ = 0; J₃ = J_SP; T₃ → ∞ (Division durch r=0, keine Schwingung: Achse geht durch SP → kein Drehmoment → kein rücktreibendes Moment).",
+            "tipps": [
+              "Bei Achse durch SP (r=0): T → ∞, da kein Drehmoment aufgebaut werden kann. Das Lineal schwingt nicht.",
+              "J_Achse = J_SP + m·r². T = 2π·√(J/(mgr)). Bei r→0: T→∞.",
+              "d=1,9cm: T≈0,90s; d=8cm: T≈0,87s; d=16cm: Keine Schwingung (T→∞)."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_4_4",
+            "aufgabe": "Ein gedämpftes Federpendel hat die Lösung x(t) = A₀·e^(−γt)·cos(ω't+φ) mit γ = 0,5 s⁻¹ und ω₀ = 5 rad/s. Berechnen Sie ω' = √(ω₀²−γ²) und die Zeit, nach der die Amplitude auf die Hälfte abgeklungen ist.",
+            "musterloesung": "ω' = √(ω₀²−γ²) = √(25−0,25) = √24,75 ≈ 4,975 rad/s. Amplitude: A(t) = A₀·e^(−γt). A = A₀/2 → e^(−γt) = ½ → −γt = ln(½) = −ln2 → t = ln2/γ = 0,693/0,5 = 1,386 s.",
+            "tipps": [
+              "Gedämpfte Schwingung: ω' = √(ω₀²−γ²). Amplitude klingt ab mit e^(−γt). Halbwertzeit: t₁/₂ = ln2/γ.",
+              "ω' = √(25−0,25) ≈ 4,975 rad/s. t₁/₂ = 0,693/0,5.",
+              "ω' ≈ 4,975 rad/s; t₁/₂ ≈ 1,39 s."
+            ]
+          }
+        ]
+      },
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_4_1_1",
+            "aufgabe": "Skizzieren Sie die Auslenkung x(t) = A·cos(ωt) einer harmonischen Schwingung. Markieren Sie: Amplitude A, Periode T, Nulldurchgänge, Maxima und Minima.",
+            "musterloesung": "Cosinuskurve von t=0 bis t=2T. Bei t=0: x=A (Maximum). Bei t=T/4: x=0 (Nulldurchgang, abfallend). Bei t=T/2: x=−A (Minimum). Bei t=3T/4: x=0 (Nulldurchgang, ansteigend). Bei t=T: x=A (Maximum). Amplitude A als vertikaler Abstand Nulllinie–Spitze. T als horizontaler Abstand zweier Maxima.",
+            "tipps": [
+              "Cosinus startet bei Maximum. Periode = Zeit für eine vollständige Schwingung.",
+              "A: Amplitude (halbe Schwingungsbreite). T: Periode. Vier Punkte pro Periode einzeichnen.",
+              "Beide Achsen beschriften: x in m, t in s."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_1_2",
+            "aufgabe": "Skizzieren Sie das Federpendel (horizontal, reibungsfrei) in drei Positionen: maximale rechte Auslenkung, Gleichgewicht, maximale linke Auslenkung. Zeichnen Sie in jeder Position die Kräfte und die Energieanteile.",
+            "musterloesung": "Drei Snapshots. Rechts (+A): Federkraft F = −kA nach links, v=0 (E_kin=0, E_pot=max). Mitte (0): F=0, v=v_max (E_kin=max, E_pot=0). Links (−A): F=kA nach rechts, v=0 (E_kin=0, E_pot=max). Energiebalken für alle drei Positionen zeigen.",
+            "tipps": [
+              "Rücktreibende Kraft immer zur Gleichgewichtslage hin. Maximale kinetische Energie im Gleichgewicht.",
+              "Drei Positionen: x=+A (E_pot max), x=0 (E_kin max), x=−A (E_pot max).",
+              "Energiebalken: E_pot und E_kin immer summen zu E_ges = const."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_1_3",
+            "aufgabe": "Skizzieren Sie ein Fadenpendel mit Fadenlänge L, Masse m, Auslenkungswinkel φ. Zeichnen Sie die rücktreibende Kraft und leiten Sie qualitativ ab, warum für kleine φ harmonische Schwingung vorliegt.",
+            "musterloesung": "Pendel: Drehpunkt oben, Faden der Länge L, Masse m unten. Auslenkung φ. Kräfte: m·g (senkrecht unten), Fadenspannung T (längs des Fadens nach oben). Rücktreibendes Drehmoment: M = −m·g·L·sin(φ). Für kleine φ: sin(φ) ≈ φ → M = −m·g·L·φ. Damit φ̈ + (g/L)·φ = 0 (harmonisch). Für große φ: sin(φ) < φ → nicht harmonisch, Periode amplitudenabhängig.",
+            "tipps": [
+              "Rücktreibende Kraft = m·g·sin(φ) tangential. Für kleine φ: sin(φ) ≈ φ → linear → harmonisch.",
+              "Hebelarm L, Kraft m·g·sin(φ) → Drehmoment = −mgL·sin(φ). Kleinwinkel-Näherung.",
+              "Gleichung φ̈ = −(g/L)·φ → harmonische Schwingung mit ω = √(g/L)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_1_4",
+            "aufgabe": "Skizzieren Sie x(t), v(t) und a(t) für einen harmonischen Oszillator mit x(0) = A, v(0) = 0 in einem gemeinsamen Diagramm. Zeigen Sie die Phasenverschiebungen.",
+            "musterloesung": "x(t) = A·cos(ωt): Cosinus, startet bei Maximum. v(t) = −Aω·sin(ωt): Sinus gespiegelt, startet bei 0, Amplitude Aω. a(t) = −Aω²·cos(ωt): Negierter Cosinus, Amplitude Aω². Phasenverschiebungen: v um π/2 hinter x. a um π hinter x (entgegengesetzt zu x). Alle drei Kurven in einem Diagramm, unterschiedliche Farben/Linienstile.",
+            "tipps": [
+              "x → v: 90° Phasenverschiebung (Ableitung: cos→−sin). v → a: weitere 90° (−sin→−cos). x und a: 180° Phasenverschoben.",
+              "Amplitudenverhältnisse: A : Aω : Aω². Einheiten beachten.",
+              "Drei Kurven: x (cos), v (−sin), a (−cos). Pfeile für Phasenverschiebung einzeichnen."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_4_2_1",
+            "aufgabe": "Skizzieren Sie das Energiediagramm einer harmonischen Schwingung (E_pot, E_kin, E_ges) als Funktion der Auslenkung x. Markieren Sie Gleichgewichtspunkt und Amplitude.",
+            "musterloesung": "x-Achse: von −A bis +A. E_pot = ½kx²: Parabel nach oben, Minimum bei x=0. E_kin = E_ges − E_pot = ½k(A²−x²): Parabel nach unten (umgekehrt), Maximum bei x=0. E_ges = ½kA²: waagerechte Linie. Schnittpunkte bei x = ±A/√2. Am Gleichgewicht (x=0): E_kin=max, E_pot=0. Bei Amplitude (x=±A): E_pot=max, E_kin=0.",
+            "tipps": [
+              "E_pot(x) = ½kx² ist eine Parabel. E_kin(x) = E_ges − E_pot ist umgekehrte Parabel. E_ges = const.",
+              "Schnittpunkte bei x = ±A/√2: E_pot = E_kin = E_ges/2.",
+              "Achsenbeschriftung: x in m, E in J."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_2_2",
+            "aufgabe": "Skizzieren Sie den Versuchsaufbau zur g-Bestimmung mit Fadenpendel (Klausur 2, Aufgabe 5). Legen Sie eine Messwerttabelle an und skizzieren Sie das Linearisierungsdiagramm T² vs. L.",
+            "musterloesung": "Versuchsaufbau: 6 Fadenpendel an Decke, verschiedene L und m. Stoppuhr misst Zeit für 10 Perioden. Tabelle: Spalten m(g), L(mm), T₁₀(s), T(s), T²(s²), L(m). 6 Zeilen. Linearisierung: T² = 4π²/g · L → Gerade durch Ursprung. Diagramm: y = T² (s²), x = L (m). Steigung m_grad = 4π²/g → g = 4π²/m_grad. Steigungsdreieck groß, Beschriftung mit Einheiten.",
+            "tipps": [
+              "T = T₁₀/10. T² berechnen. Diagramm: T² vs. L → Gerade. Steigung = 4π²/g.",
+              "Achsenbeschriftung: T² in s², L in m. Gerade durch Ursprung.",
+              "g = 4π²/(Steigung). Einheit Steigung: s²/m."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_2_3",
+            "aufgabe": "Skizzieren Sie das schwingende Lineal (Klausur 2, Aufgabe 2): Lineal vertikal, Drehachse durch Loch (1,9cm vom Rand), Gleichgewichtslage (hängend) und ausgelenkte Position. Zeichnen Sie das rücktreibende Drehmoment.",
+            "musterloesung": "Lineal (32cm lang) hängt senkrecht an Achse (1,9cm vom oberen Rand). Gleichgewicht: Schwerpunkt (16cm vom Rand) hängt direkt unter der Achse (r = 16−1,9 = 14,1cm darunter). Auslenkung um Winkel φ. Rücktreibendes Drehmoment: M = −m·g·r·sin(φ). Für kleines φ: M ≈ −m·g·r·φ. Pfeil für m·g·sin(φ) tangential einzeichnen.",
+            "tipps": [
+              "Physikalisches Pendel: SP nicht an der Achse. Hebelarm r = Abstand Achse–SP. M = −mgr·sin(φ).",
+              "Gleichgewicht: SP direkt unter Achse (r = 0,141m darunter). Auslenkung erzeugt Rückstellmoment.",
+              "Beschriften: Achse, SP, r, φ, m·g, T (Schwingungsdauer)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_2_4",
+            "aufgabe": "Skizzieren Sie Federpendel und Fadenpendel nebeneinander und vergleichen Sie: a) Wovon hängt T ab? b) Warum hängt T des Fadenpendels nicht von m ab, T des Federpendels schon?",
+            "musterloesung": "Federpendel: T_F = 2π·√(m/k). Hängt von m und k ab. Fadenpendel: T_Faden = 2π·√(L/g). Hängt nur von L und g ab, nicht von m. Begründung: Beim Fadenpendel kürzt sich m heraus (rücktreibende Kraft m·g·sin(φ) proportional zu m, aber J = m·L² auch proportional zu m → m kürzt sich). Beim Federpendel: Rücktreibende Kraft k·x unabhängig von m, aber Trägheit m → T ∝ √m.",
+            "tipps": [
+              "Fadenpendel: F_rück = m·g·sin(φ) ∝ m; Trägheit ∝ m → m kürzt sich. Federpendel: F_rück = k·x unabhängig von m; Trägheit ∝ m → T ∝ √m.",
+              "Kurze Herleitung T = 2π/ω für beide Systeme.",
+              "Tabellarischer Vergleich: Federpendel (hängt von m, k) vs. Fadenpendel (nur L, g)."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_4_3_1",
+            "aufgabe": "Zeichnen Sie das vollständige T²-L-Diagramm für die g-Bestimmung mit allen 6 Pendeln (P1–P6), Ausgleichsgerade, Steigungsdreieck und Beschriftung nach FB8-Konventionen.",
+            "musterloesung": "Tabelle zuerst: m, L(m), T₁₀(s), T(s), T²(s²). Werte: P1(0,2;0,896²=0,803), P2(0,3;1,201), P3(0,4;1,618), P4(0,5;1,988), P5(0,6;2,403), P6(0,8;3,218). Diagramm: y-Achse T² (s²), x-Achse L (m). Maßstab: Datenpunkte ≥50% der Achse. 6 Messpunkte als +. Gerade durch Ursprung. Großes Steigungsdreieck. Steigung: m = (3,218−0,803)/(0,8−0,2) ≈ 4,025 s²/m. g = 4π²/4,025 ≈ 9,807 m/s².",
+            "tipps": [
+              "Konventionen FB8: Achsenbeschriftung mit Einheiten, + für Punkte, Steigungsdreieck >50% der Geraden.",
+              "Steigung durch Extrempunkte: ΔT²/ΔL. g = 4π²/Steigung.",
+              "Gerade durch Ursprung: T² = 0 bei L = 0 erzwingen (physikalisch sinnvoll)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_3_2",
+            "aufgabe": "Skizzieren Sie die Phasenraumdarstellung (v vs. x) einer harmonischen Schwingung. Zeichnen Sie den Orbit für A = 5 cm und ω = 4 rad/s. Was passiert im gedämpften Fall?",
+            "musterloesung": "Ungedämpft: v = ±√(ω²·(A²−x²)). Ellipse im v-x-Raum. Halbachsen: x_max = A = 5 cm, v_max = ωA = 0,2 m/s. Geschlossene Ellipse (periodisch). Gedämpft: Spirale, die zur Ellipse hin schrumpft → Spirale zum Ursprung (x=0, v=0). Die Amplitude nimmt ab, der Orbit spiralisiert nach innen.",
+            "tipps": [
+              "Phasenraum: Ellipse für harmonische Schwingung. v²/(Aω)² + x²/A² = 1.",
+              "Halbachsen: v_max = Aω und x_max = A.",
+              "Gedämpft: Spirale zum Ursprung. Ungedämpft: geschlossene Ellipse."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_3_3",
+            "aufgabe": "Skizzieren Sie das Amplitudenspektrum (Resonanzkurve) eines Federpendels: Amplitude A(ω) vs. Anregungsfrequenz ω. Markieren Sie die Eigenfrequenz ω₀, das Resonanzmaximum und den Unterschied zwischen schwacher und starker Dämpfung.",
+            "musterloesung": "x-Achse: ω/ω₀ (normierte Frequenz). y-Achse: A/A₀ (normierte Amplitude). Schwache Dämpfung (γ klein): schmale, hohe Resonanzspitze bei ω ≈ ω₀. Starke Dämpfung (γ groß): breite, flache Spitze, Resonanzmaximum verschoben zu ω < ω₀. Bei ω → 0: A → statische Auslenkung (A₀ = F₀/k). Bei ω → ∞: A → 0.",
+            "tipps": [
+              "Resonanz bei ω ≈ ω₀ (genau: bei ω = √(ω₀²−2γ²) für gedämpftes System).",
+              "Schwache Dämpfung: hohe, schmale Spitze. Starke Dämpfung: breite, flache Spitze.",
+              "Grenzverhalten: ω=0 → A=A_stat; ω>>ω₀ → A→0."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_3_4",
+            "aufgabe": "Skizzieren Sie eine Welle: y(x,t) = A·sin(kx − ωt). Markieren Sie Wellenlänge λ, Amplitude A, Wellenzahl k, Ausbreitungsrichtung. Was unterscheidet eine Transversal- von einer Longitudinalwelle?",
+            "musterloesung": "Sinusförmige Welle. Amplitude A: vertikaler Ausschlag. Wellenlänge λ = 2π/k: horizontaler Abstand zweier Maxima. Ausbreitung in +x-Richtung (−ωt-Term). Phasengeschwindigkeit c = ω/k. Transversalwelle: Auslenkung senkrecht zur Ausbreitungsrichtung (Schaubild wie y(x)). Longitudinalwelle: Auslenkung parallel zur Ausbreitung (Druckwellen, Kompressionen und Verdünnungen).",
+            "tipps": [
+              "k = 2π/λ (Wellenzahl). ω = 2π/T = 2π·f (Kreisfrequenz). c = λ/T = λ·f = ω/k.",
+              "Transversal: Schwingung ⊥ Ausbreitung (Licht, Seilwellen). Longitudinal: Schwingung ∥ Ausbreitung (Schall).",
+              "Beide Typen skizzieren und beschriften."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_4_4_1",
+            "aufgabe": "Erstellen Sie die vollständige Messwerttabelle und das T²-L-Diagramm nach FB8-Standard für die g-Bestimmung (alle 6 Pendel). Extrapolieren Sie: Welche Fadenlänge benötige man für T = 2 s (Sekundenpendel)?",
+            "musterloesung": "Tabelle vollständig (Spalten: m, L, T₁₀, T, T²). Diagramm: T² vs. L, Ausgleichsgerade durch Ursprung, großes Steigungsdreieck. g ≈ 9,807 m/s². Extrapolation: T = 2 s → L = g·T²/(4π²) = 9,807·4/(4π²) = 9,807·4/39,478 = 0,9934 m ≈ 993 mm. Historisch: Das Sekundenpendel hat L ≈ 1 m (definiert den Meter!). Auf Diagramm: T² = 4 s² → L ≈ 0,993 m ablesen.",
+            "tipps": [
+              "Extrapolation auf y = T² = 4 s² → x = L ablesen oder über L = g·T²/(4π²) berechnen.",
+              "L(T=2s) = 9,81·4/(4π²) ≈ 0,993 m ≈ 99,3 cm.",
+              "Historische Verbindung: 1 m ≈ Sekundenpendellänge (historische Definition)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_4_2",
+            "aufgabe": "Skizzieren Sie das vollständige Federpendel-Experiment mit Energieerhaltung: x(t), v(t), E_pot(t), E_kin(t), E_ges(t) — alle als Funktion der Zeit in einem Diagramm.",
+            "musterloesung": "x(t) = A·cos(ωt): Cosinus. v(t) = −Aω·sin(ωt): Minus-Sinus (90° verschoben). E_pot(t) = ½k·A²·cos²(ωt): Cosinus² (Periode T/2). E_kin(t) = ½k·A²·sin²(ωt): Sinus² (Periode T/2). E_ges(t) = ½kA² = const: waagerechte Linie. Beide Energiefunktionen schwingen doppelt so schnell wie x(t). E_pot + E_kin = const zu jedem Zeitpunkt sichtbar.",
+            "tipps": [
+              "E_pot und E_kin haben Periode T/2 (quadratische Funktionen). E_ges = const.",
+              "5 Kurven in einem Diagramm: x, v, E_pot, E_kin, E_ges. Unterschiedliche Linienstile.",
+              "Energien: E_pot maximal wenn |x| = A; E_kin maximal wenn x = 0."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_4_3",
+            "aufgabe": "Skizzieren Sie das physikalische Pendel (schwingendes Lineal) mit allen relevanten Größen: SP-Position, Drehachse, Abstand r, J_SP und J_Achse (Steiner). Leiten Sie T qualitativ ab.",
+            "musterloesung": "Lineal (32cm) mit Drehachse (1,9cm vom oberen Rand). SP bei 16cm. Abstand r = 16−1,9 = 14,1 cm unter der Achse. J_SP = m/12·(l²+b²) = 0,008647·m. Steiner: J_Achse = J_SP + m·r² = m·(0,008647 + 0,019881) = 0,028528·m. Herleitung T: φ̈ = M/J = −mgr·sin(φ)/J ≈ −mgr·φ/J → ω² = mgr/J → T = 2π/ω = 2π·√(J/(mgr)).",
+            "tipps": [
+              "Drei Größen beschriften: r (Abstand Achse–SP), J_SP, J_Achse = J_SP + mr².",
+              "Steinersche Anteile klar zeigen. T-Formel aus φ̈ = −ω²φ.",
+              "Zahlenwerte für diesen konkreten Fall einsetzen und T ≈ 0,90 s berechnen."
+            ]
+          },
+          {
+            "id": "do_skizzieren_4_4_4",
+            "aufgabe": "Skizzieren Sie drei Szenarien für den Flummy (Klausur 2): a) Flummy fällt aus Höhe h — keine Schwingung. b) Flummy hängt an Feder — Schwingung. c) Flummy schlägt auf Boden — elastischer Stoß. Erkläre für jedes Szenario, ob harmonische Schwingungsgleichung gilt.",
+            "musterloesung": "a) Freier Fall: ÿ = −g = const. Keine rücktreibende Kraft ∝ y. KEINE harmonische Schwingungsgleichung. b) Feder (k): m·ÿ = −k·y + mg (vertikale Richtung). Gleichgewicht y₀: k·y₀ = mg. Substitution η = y−y₀: m·η̈ = −k·η → harmonisch! η̈ + ω²η = 0. c) Elastischer Stoß: Kurzzeitereignis, keine Schwingungsgleichung anwendbar (diskreter Vorgang).",
+            "tipps": [
+              "Harmonische Schwingung nur wenn: rücktreibende Kraft ∝ −y existiert. Fall: nur Konstante. Feder: rücktreibend. Stoß: diskretes Ereignis.",
+              "a) ÿ = −g (Konstante, keine Schwingung). b) η̈ = −ω²·η (harmonisch um Gleichgewicht).",
+              "In Klausur 2 wird d) Flummy als KEIN harmonisches System identifiziert."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_4_1_1",
+            "frage": "Welche Aussage zu harmonischen mechanischen Schwingungen ist WAHR?",
+            "optionen": [
+              {"key": "A", "text": "Bei einer harmonischen Schwingung bleibt die potentielle Energie erhalten."},
+              {"key": "B", "text": "Bei einer harmonischen Schwingung sind kinetische und potentielle Energie nie gleichzeitig maximal."},
+              {"key": "C", "text": "Es gibt pro Periode zwei Momente, in denen der Pendelkörper kräftefrei ist — dort ist E_pot maximal."},
+              {"key": "D", "text": "Bei einer harmonischen Schwingung bleibt die kinetische Energie erhalten."},
+              {"key": "E", "text": "Bei einer harmonischen Schwingung wird die Gesamtenergie zwei Mal pro Periode maximal und minimal."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Bei maximaler Auslenkung (x=±A): E_pot=max, E_kin=0. Im Gleichgewicht: E_kin=max, E_pot=0. Sie sind nie gleichzeitig maximal. A ist falsch: E_pot variiert zwischen 0 und E_ges. C ist falsch: Kräftefrei ist der Körper im Gleichgewichtspunkt (F=−kx=0 bei x=0), dort ist E_pot=0 (minimal), E_kin=max. D ist falsch: E_kin variiert. E ist falsch: E_ges = const (Energieerhaltung), keine Schwankungen."
+          },
+          {
+            "id": "sc_4_1_2",
+            "frage": "Welches System kann (bei kleinen Auslenkungen) NICHT durch ÿ + ω²y = 0 beschrieben werden?",
+            "optionen": [
+              {"key": "A", "text": "Ein horizontales Federpendel."},
+              {"key": "B", "text": "Ein Fadenpendel."},
+              {"key": "C", "text": "Ein Lineal, das um eine Achse nicht durch den SP schwingt."},
+              {"key": "D", "text": "Ein Flummy, der aus Höhe h fallen gelassen wird."},
+              {"key": "E", "text": "Alle oben stehenden Systeme können mit dieser Gleichung beschrieben werden."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Der Flummy im freien Fall erfährt ÿ = −g (konstante Kraft), keine rücktreibende Kraft proportional zur Auslenkung. Es gibt keinen Gleichgewichtspunkt → keine harmonische Schwingung. A ist falsch: Federpendel: mẍ = −kx → ẍ + (k/m)x = 0. B ist falsch: Fadenpendel: für kleine φ gilt φ̈ + (g/L)φ = 0. C ist falsch: Physikalisches Pendel: φ̈ + (mgr/J)φ = 0."
+          },
+          {
+            "id": "sc_4_1_3",
+            "frage": "Beim Federpendel (m, k) hängt die Schwingungsdauer T ab von:",
+            "optionen": [
+              {"key": "A", "text": "Nur von der Amplitude."},
+              {"key": "B", "text": "Nur von der Federkonstanten k."},
+              {"key": "C", "text": "Von m und k, aber nicht von der Amplitude."},
+              {"key": "D", "text": "Von m, k und der Amplitude A."},
+              {"key": "E", "text": "Nur von der Masse m."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: T = 2π·√(m/k) — hängt von m und k ab, aber nicht von der Amplitude (isochrones System). A ist falsch: Amplitude hat keinen Einfluss. B ist falsch: m fehlt. D ist falsch: Amplitude irrelevant für harmonische Schwingung. E ist falsch: k fehlt."
+          },
+          {
+            "id": "sc_4_1_4",
+            "frage": "Ein ungedämpftes Federpendel schwingt reibungsfrei. Welche Aussage ist FALSCH?",
+            "optionen": [
+              {"key": "A", "text": "Die maximale kinetische Energie hängt von der Amplitude A ab."},
+              {"key": "B", "text": "Die maximale potentielle Energie beträgt ½kA² und entspricht der maximalen kinetischen Energie."},
+              {"key": "C", "text": "Im Gleichgewichtspunkt ist die kinetische Energie minimal."},
+              {"key": "D", "text": "Die momentane potentielle Energie ist proportional zu x(t)²."},
+              {"key": "E", "text": "Nur konservative Kräfte wirken."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist FALSCH: Im Gleichgewichtspunkt (x=0) ist die kinetische Energie MAXIMAL (nicht minimal). Dort ist v = v_max = Aω. A ist korrekt: E_kin,max = ½·k·A². B ist korrekt: E_pot,max = E_kin,max = ½kA² (Energieerhaltung). D ist korrekt: E_pot = ½kx(t)² ∝ x². E ist korrekt: Federkraft ist konservativ, keine Reibung."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_4_2_1",
+            "frage": "Ein Federpendel und ein Fadenpendel schwingen mit kleiner Auslenkung. Welche Aussage ist KORREKT?",
+            "optionen": [
+              {"key": "A", "text": "T des Fadenpendels hängt im Gegensatz zum Federpendel von der Auslenkung ab."},
+              {"key": "B", "text": "T des Federpendels hängt von m ab, beim Fadenpendel nicht."},
+              {"key": "C", "text": "T des Federpendels hängt nur von k ab."},
+              {"key": "D", "text": "Beide führen harmonische Schwingungen aus, deren Frequenz nur von der Amplitude abhängt."},
+              {"key": "E", "text": "Für beide gilt: größere Masse → kürzere Schwingungsdauer."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: T_Feder = 2π·√(m/k) hängt von m ab; T_Faden = 2π·√(L/g) hängt NICHT von m ab (m kürzt sich). A ist falsch: Für kleine Auslenkungen gilt sin(φ)≈φ — beide sind isochronis (T unabhängig von Amplitude). C ist falsch: T_Feder hängt von m UND k ab. D ist falsch: Bei harmonischer Schwingung ist T unabhängig von der Amplitude. E ist falsch: Für Federpendel gilt T ∝ √m (größere m → längere T), für Fadenpendel kein Einfluss."
+          },
+          {
+            "id": "sc_4_2_2",
+            "frage": "Welche Gleichung beschreibt die Periodendauer des Fadenpendels korrekt?",
+            "optionen": [
+              {"key": "A", "text": "T = 2π·√(m/k)"},
+              {"key": "B", "text": "T = 2π·√(L/g)"},
+              {"key": "C", "text": "T = 2π·√(g/L)"},
+              {"key": "D", "text": "T = 2π·√(m·L/g)"},
+              {"key": "E", "text": "T = 2π·√(k/m)"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: T = 2π·√(L/g) für kleines Fadenpendel. A ist falsch: das ist T des Federpendels. C ist falsch: √(g/L) wäre ω, nicht T. D ist falsch: m erscheint nicht in der Formel. E ist falsch: das wäre ω = 2π/T des Federpendels."
+          },
+          {
+            "id": "sc_4_2_3",
+            "frage": "Ein Körper schwingt harmonisch mit x(t) = 0,05·cos(10t) m. Was sind Amplitude, Kreisfrequenz und Periode?",
+            "optionen": [
+              {"key": "A", "text": "A = 0,05 m, ω = 10 rad/s, T = π/5 s"},
+              {"key": "B", "text": "A = 0,1 m, ω = 10 rad/s, T = 0,628 s"},
+              {"key": "C", "text": "A = 0,05 m, ω = 5 rad/s, T = 1,26 s"},
+              {"key": "D", "text": "A = 0,05 m, ω = 10 rad/s, T = 10 s"},
+              {"key": "E", "text": "A = 1 m, ω = 10 rad/s, T = π/5 s"}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: x(t) = A·cos(ωt). A = 0,05 m (Koeffizient vor cos). ω = 10 rad/s (Koeffizient in cos). T = 2π/ω = 2π/10 = π/5 ≈ 0,628 s. B ist falsch: A = 0,1 m wäre doppelt so groß. C ist falsch: ω = 5 rad/s wäre halb so groß. D ist falsch: T = 10 s würde ω = 2π/10 = 0,628 rad/s erfordern. E ist falsch: A = 1 m nicht erkennbar aus der Gleichung."
+          },
+          {
+            "id": "sc_4_2_4",
+            "frage": "Bei der Bestimmung von g durch Fadenpendel trägt man T² gegen L auf. Welchen Wert hat die Steigung der Geraden?",
+            "optionen": [
+              {"key": "A", "text": "Steigung = g/(4π²)"},
+              {"key": "B", "text": "Steigung = 4π²/g"},
+              {"key": "C", "text": "Steigung = 2π/g"},
+              {"key": "D", "text": "Steigung = g²/(4π)"},
+              {"key": "E", "text": "Steigung = √g"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: T = 2π·√(L/g) → T² = 4π²·L/g = (4π²/g)·L. Das ist die Form y = m·x mit Steigung m = 4π²/g. Aus der Steigung: g = 4π²/m. A ist falsch: Kehrwert. C ist falsch: falsche Formel. D, E: dimensionell falsch."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_4_3_1",
+            "frage": "Welche Aussage zur Kreisfrequenz des Fadenpendels ω = √(g/L) ist KORREKT?",
+            "optionen": [
+              {"key": "A", "text": "Doppelte Fadenlänge → doppelte Kreisfrequenz."},
+              {"key": "B", "text": "Doppelte Fadenlänge → halbe Kreisfrequenz."},
+              {"key": "C", "text": "Doppelte Fadenlänge → Kreisfrequenz um Faktor √2 kleiner."},
+              {"key": "D", "text": "Doppelte Masse → doppelte Kreisfrequenz."},
+              {"key": "E", "text": "Doppelte Fadenlänge → viermal so große Kreisfrequenz."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: ω = √(g/L). Wenn L → 2L: ω → √(g/(2L)) = ω/√2. Also kleiner um Faktor √2 ≈ 1,414. A ist falsch: ω ∝ 1/√L, nicht 1/L. B ist falsch: Halbierung würde bei 4L eintreten. D ist falsch: Masse hat keinen Einfluss. E ist falsch: Vervierfachung wäre bei Quadratwurzel von 1/16."
+          },
+          {
+            "id": "sc_4_3_2",
+            "frage": "Beim Versuch g-Bestimmung mit 6 Fadenpendeln: P4 hat L = 500 mm und T₁₀ = 14,10 s. Welchen Wert liefert dieser Datenpunkt für g?",
+            "optionen": [
+              {"key": "A", "text": "g ≈ 9,5 m/s²"},
+              {"key": "B", "text": "g ≈ 9,8 m/s²"},
+              {"key": "C", "text": "g ≈ 10,0 m/s²"},
+              {"key": "D", "text": "g ≈ 9,1 m/s²"},
+              {"key": "E", "text": "g ≈ 10,5 m/s²"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: T = T₁₀/10 = 1,410 s. g = 4π²·L/T² = 4·9,870·0,5/1,410² = 39,478·0,5/1,988 = 19,739/1,988 ≈ 9,929 m/s² ≈ 9,8 m/s². A ist falsch: zu klein. C ist falsch: g = 10,0 würde T ≈ 1,404 s erfordern. D, E sind falsch."
+          },
+          {
+            "id": "sc_4_3_3",
+            "frage": "Das schwingende Lineal (physikalisches Pendel) hat J_SP = m/12·(l²+b²). Um welche Achse dreht es sich und warum wird der Steinersche Anteil benötigt?",
+            "optionen": [
+              {"key": "A", "text": "Es dreht sich um den SP — Steiner nicht benötigt."},
+              {"key": "B", "text": "Es dreht sich um das Loch (nicht SP) — Steiner nötig, da Achse ≠ SP."},
+              {"key": "C", "text": "Steiner gilt nur für Vollzylinder, nicht für Lineale."},
+              {"key": "D", "text": "Das Lineal dreht sich um den Schwerpunkt — Steiner addiert negativen Term."},
+              {"key": "E", "text": "Der Steinersche Anteil ist bei kleinen Auslenkungen vernachlässigbar."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Die Drehachse geht durch das Loch (1,9 cm vom Rand), der SP liegt bei 16 cm. Da Loch ≠ SP, gilt J_Achse = J_SP + m·r² (Steiner). A ist falsch: Drehachse ≠ SP. C ist falsch: Steinerscher Anteil gilt für ALLE starren Körper. D ist falsch: Steiner addiert stets positiven Term m·r² > 0. E ist falsch: Der Steinersche Anteil ist oft dominant, nicht vernachlässigbar."
+          },
+          {
+            "id": "sc_4_3_4",
+            "frage": "Ein Federpendel schwingt mit x(t) = 0,08·cos(4t) m. Zum Zeitpunkt x = 4 cm ist die Beschleunigung:",
+            "optionen": [
+              {"key": "A", "text": "a = +0,64 m/s²"},
+              {"key": "B", "text": "a = −0,64 m/s²"},
+              {"key": "C", "text": "a = 0 m/s²"},
+              {"key": "D", "text": "a = −1,28 m/s²"},
+              {"key": "E", "text": "a = +1,28 m/s²"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: a(t) = −ω²·x(t) = −16·0,04 = −0,64 m/s². Die Beschleunigung ist der Auslenkung entgegengesetzt (rücktreibend). A ist falsch: falsches Vorzeichen. C ist falsch: nur bei x=0. D ist falsch: Faktor 2 zu groß. E ist falsch: Betrag und Vorzeichen falsch."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_4_4_1",
+            "frage": "In der g-Bestimmung aus dem Fadenpendel gilt: Welche Darstellung liefert eine Gerade durch den Ursprung?",
+            "optionen": [
+              {"key": "A", "text": "T vs. L"},
+              {"key": "B", "text": "T vs. √L"},
+              {"key": "C", "text": "T² vs. L"},
+              {"key": "D", "text": "T vs. L²"},
+              {"key": "E", "text": "T² vs. L²"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: T = 2π·√(L/g) → T² = 4π²/g · L. Das ist T² = m·L (Gerade durch Ursprung). A ist falsch: T vs. L ergibt eine Wurzelfunktion. B ist falsch: T = (2π/√g)·√L → T vs. √L wäre auch linear, aber T² vs. L ist einfacher zu handhaben. D ist falsch: T vs. L² wäre eine Kurve. E ist falsch: T² vs. L² ergibt eine quadratische Funktion."
+          },
+          {
+            "id": "sc_4_4_2",
+            "frage": "Beim Lineal-Experiment: Der Abstand SP–Achse beträgt r = 14,1 cm. Wie ändert sich T, wenn r verdoppelt wird (gleiche Drehachse, l verdoppelt)?",
+            "optionen": [
+              {"key": "A", "text": "T bleibt gleich."},
+              {"key": "B", "text": "T verdoppelt sich."},
+              {"key": "C", "text": "T halbiert sich."},
+              {"key": "D", "text": "T nimmt um √2 zu."},
+              {"key": "E", "text": "T nimmt um √2 ab."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt (approximativ): T = 2π·√(J/(mgr)). Wenn l → 2l: J_SP ∝ l² → 4J_SP; r → 2r; m gleich. J_Achse ≈ J_SP + mr² → 4J_SP + 4mr². T → 2π·√(4J/(mg·2r)) = 2π·√(2J/(mgr)) = √2·T. Also T vergrößert sich um Faktor √2. A, B, C, E sind falsch: keine dieser Beziehungen stimmt exakt mit der T-Formel überein."
+          },
+          {
+            "id": "sc_4_4_3",
+            "frage": "Welche der folgenden Systeme beschreibt KEINE harmonische Schwingung?",
+            "optionen": [
+              {"key": "A", "text": "Masse auf horizontaler Feder"},
+              {"key": "B", "text": "Fadenpendel mit kleiner Auslenkung"},
+              {"key": "C", "text": "Feder an Decke mit hängender Masse, vertikal"},
+              {"key": "D", "text": "Flummy aus Höhe h fallend (kein Aufprall)"},
+              {"key": "E", "text": "Lineal um Achse außerhalb des Schwerpunkts"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Flummy im freien Fall hat ÿ = −g = const. Keine rücktreibende Kraft ∝ y. Keine harmonische Schwingung. A ist korrekt (harmonisch): mẍ = −kx. B ist korrekt: φ̈ = −(g/L)φ. C ist korrekt: Vertikales Federpendel um Gleichgewichtslage ist harmonisch. E ist korrekt: Physikalisches Pendel für kleine Winkel."
+          },
+          {
+            "id": "sc_4_4_4",
+            "frage": "Ein Flummy (Gummiball) wird aus Höhe h fallen gelassen und prallt elastisch vom Boden ab. Kann die gesamte Bewegung (Fall + Rückstoß) durch ÿ + ω²y = 0 beschrieben werden?",
+            "optionen": [
+              {"key": "A", "text": "Ja, da es sich periodisch wiederholt."},
+              {"key": "B", "text": "Ja, da Energie erhalten ist."},
+              {"key": "C", "text": "Nein, da es keine rücktreibende Kraft proportional zur Auslenkung gibt."},
+              {"key": "D", "text": "Nein, da Luftreibung wirkt."},
+              {"key": "E", "text": "Ja, wenn man g als ω² interpretiert."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Während des freien Falls wirkt nur Schwerkraft (ÿ = −g = const), keine Kraft proportional zu y. Die Bewegungsgleichung ÿ + ω²y = 0 erfordert eine rücktreibende Kraft F = −D·y ∝ −y. Beim Flummy gibt es dies nicht — die Bewegung ist periodisch, aber nicht harmonisch. A ist falsch: Periodizität allein reicht nicht. B ist falsch: Energieerhaltung ist kein hinreichendes Kriterium. D ist falsch: Luftreibung ist ein Nebeneffekt. E ist falsch: g ist keine Rückstellkraft proportional zu y."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Erkläre in einem Satz, was eine harmonische Schwingung auszeichnet (Stichwort: rücktreibende Kraft)."],
+      "2": ["Gib die Formeln für T bei Federpendel und Fadenpendel an. Erkläre, warum T des Fadenpendels nicht von m abhängt."],
+      "3": ["Wie hängen E_pot, E_kin und E_ges beim Federpendel zusammen? Wo sind sie jeweils maximal?"],
+      "4": ["Im Versuch 'g-Bestimmung': Sechs Pendel liefern T-L-Paare. Erkläre die Linearisierung T² = 4π²/g · L und wie man g grafisch bestimmt."],
+      "5": ["Nenne zwei Situationen, in denen die Kleinwinkel-Näherung (sin φ ≈ φ) nicht mehr gilt. Was sind die Konsequenzen für die Schwingung?"]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_7_2_1",
+    "aufgabe": "In einer Schaltung aus zwei Widerständen (Reihen- und Parallelanteil) liegt die Gesamtspannung U = 10 V an. Bei geöffnetem Schalter fließt ein Strom I₁ = 100 mA, bei geschlossenem Schalter I₂ = 200 mA. Bestimmen Sie den Widerstand R₁, der beim Schließen des Schalters überbrückt wird.",
+    "musterloesung": "Offen: R_ges,offen = U/I₁ = 10/0,1 = 100 Ω. Geschlossen: R_ges,geschl. = U/I₂ = 10/0,2 = 50 Ω. Der Unterschied ergibt sich durch Parallelschalten von R₁ mit einem Teilwiderstand. Wenn R₁ kurzgeschlossen wird: ΔR = 100 − 50 = 50 Ω → R₁ = 50 Ω.",
+    "tipps": [
+      "Berechne die Gesamtwiderstände aus U und I für beide Schalterstellungen. Die Differenz gibt Aufschluss über den überbrückten Widerstand.",
+      "R_offen = U/I₁, R_geschl. = U/I₂. Der überbrückte Widerstand entspricht der Differenz.",
+      "R_offen = 100 Ω, R_geschl. = 50 Ω → R₁ = 50 Ω."
+    ]
+  },
+  {
+    "id": "do_b_7_2_2",
+    "aufgabe": "Zwei gleich große Punktladungen q₁ = q₂ = 2,0 μC befinden sich im Abstand r = 0,10 m voneinander in Luft. Berechnen Sie die Coulomb-Kraft F zwischen ihnen. (ε₀ = 8,854·10⁻¹² C²/(N·m²))",
+    "musterloesung": "Gegeben: q₁ = q₂ = 2,0·10⁻⁶ C, r = 0,10 m. Gesucht: F. Ansatz: F = q₁·q₂/(4πε₀·r²) = (2·10⁻⁶)²/(4π·8,854·10⁻¹²·0,01) = 4·10⁻¹²/(1,113·10⁻¹²) ≈ 3,59 N.",
+    "tipps": [
+      "Welches Gesetz beschreibt die Kraft zwischen zwei Punktladungen?",
+      "Coulombs Gesetz: F = q₁·q₂/(4πε₀·r²). Achte auf die Einheiten.",
+      "F = 4·10⁻¹²/(4π·8,854·10⁻¹²·0,01) ≈ 3,59 N."
+    ]
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "version": "2.0",
+  "kurs": {
+    "id": "physik_fh_aachen_ws2526",
+    "name": "Physik — FH Aachen, FB 8",
+    "semester": "WS 2025/26",
+    "dozent": "Prof. Dr. Christian Effertz",
+    "modul": "8110218",
+    "defaultPruefungstage": 45
+  },
+  "aufgabentypen": {
+    "doing": ["berechnen", "herleiten", "skizzieren"],
+    "wissen": ["single_choice"]
+  },
+  "niveaustufen": {
+    "1": "Grundlagen",
+    "2": "Anwendung",
+    "3": "Klausur",
+    "4": "Experte"
+  },
+  "klausurprofil": {
+    "struktur": "5 Aufgaben, 150 Punkte",
+    "aufgabe1": "8x Single Choice Verständnisfragen (40 Punkte)",
+    "aufgaben2bis4": "Rechenaufgaben mit Skizzenpflicht (je 26 Punkte)",
+    "aufgabe5": "Praktikumsaufgabe mit Diagrammauswertung (32 Punkte)",
+    "bestehensgrenze": 60,
+    "punkteverteilung": {
+      "single_choice_prozent": 27,
+      "berechnen_prozent": 52,
+      "diagramm_prozent": 21
+    }
+  },
+  "themen": [
+    {
+      "id": 1,
+      "name": "Kinematik",
+      "datei": "thema_1.json",
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Ort, Geschwindigkeit, Beschleunigung, Würfe, Relativbewegung"
+    },
+    {
+      "id": 2,
+      "name": "Dynamik — Kräfte, Impuls & Erhaltungssätze",
+      "datei": "thema_2.json",
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Newtonsche Gesetze, Reibung, Impulserhaltung, elastische und inelastische Stöße"
+    },
+    {
+      "id": 3,
+      "name": "Arbeit, Energie & Energieerhaltung",
+      "datei": "thema_3.json",
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Arbeit, Leistung, kinetische und potentielle Energie, Energieerhaltungssatz"
+    },
+    {
+      "id": 4,
+      "name": "Rotationsbewegung & Drehmoment",
+      "dateien": ["thema_4_teil1.json", "thema_4_teil2.json"],
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Kreiskinematik, Massenträgheitsmoment, Drehmoment, Drehimpulserhaltung, Rollbewegung"
+    },
+    {
+      "id": 5,
+      "name": "Schwingungen",
+      "datei": "thema_5.json",
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Harmonische Schwingung, Feder- und Fadenpendel, Differentialgleichung, Energie"
+    },
+    {
+      "id": 6,
+      "name": "Elektrizität & Elektromagnetismus",
+      "dateien": ["thema_6_teil1.json", "thema_6_teil2.json"],
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Ohmsches Gesetz, Kirchhoffsche Regeln, Coulombkraft, Lorentzkraft, Widerstandsschaltungen"
+    },
+    {
+      "id": 7,
+      "name": "Praktikum & Messtechnik",
+      "datei": "thema_7.json",
+      "haeufig": true,
+      "nur_skript": false,
+      "beschreibung": "Fahrradfelge, Multimeter, spezifischer Widerstand, Linearisierung, Diagrammauswertung, signifikante Stellen"
+    }
+  ]
+}

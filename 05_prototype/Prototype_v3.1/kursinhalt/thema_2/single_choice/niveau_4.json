@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_2_4_1",
+    "frage": "Ein Feuerwehrschlauch (ṁ=5 kg/s, v_Wasser=30 m/s) wird festgehalten. Welche Rückstoßkraft muss die Feuerwehrperson aufwenden?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "150 N"
+      },
+      {
+        "key": "B",
+        "text": "300 N"
+      },
+      {
+        "key": "C",
+        "text": "6 N"
+      },
+      {
+        "key": "D",
+        "text": "600 N"
+      },
+      {
+        "key": "E",
+        "text": "1500 N"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: F=ṁ·v=5·30=150 N (Rückstoß = Impulsstrom des Wassers). B/D/E falsche Rechnung. C falsch."
+  },
+  {
+    "id": "sc_2_4_2",
+    "frage": "Ein Körper bewegt sich gleichförmig auf einer Kreisbahn. Welche Kräfte wirken?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Keine Kraft (gleichförmig)"
+      },
+      {
+        "key": "B",
+        "text": "Eine Kraft nach außen (Zentrifugalkraft)"
+      },
+      {
+        "key": "C",
+        "text": "Eine Kraft zum Mittelpunkt (Zentripetalkraft)"
+      },
+      {
+        "key": "D",
+        "text": "Eine Kraft tangential zur Bahn"
+      },
+      {
+        "key": "E",
+        "text": "Zwei Kräfte: Zentripetal und tangential"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Kreisbahn erfordert Zentripetalkraft Fc=mv²/r nach innen. A falsch (Geschwindigkeit ändert Richtung → Beschleunigung → Kraft). B: Zentrifugalkraft ist Scheinkraft (rotierendes Bezugssystem). D: tangential nur bei Geschwindigkeitsänderung. E falsch (gleichförmig)."
+  },
+  {
+    "id": "sc_2_4_3",
+    "frage": "Eine Hängebrücke hat einen kleinen Durchhang. Was folgt für die Seilkräfte?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Sie sind kleiner als bei großem Durchhang."
+      },
+      {
+        "key": "B",
+        "text": "Sie sind gleich wie bei großem Durchhang."
+      },
+      {
+        "key": "C",
+        "text": "Sie sind viel größer als bei großem Durchhang."
+      },
+      {
+        "key": "D",
+        "text": "Sie hängen nicht vom Durchhang ab."
+      },
+      {
+        "key": "E",
+        "text": "Sie können beliebig klein gemacht werden."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: T=F/(2sin(α)). Kleiner Durchhang → kleiner Winkel α → sin(α) klein → T sehr groß. A falsch (umgekehrt). B falsch. D falsch. E falsch (physikalisch unmöglich)."
+  },
+  {
+    "id": "sc_2_4_4",
+    "frage": "Massenverhältnis m₁/m₂=3 auf Atwood-Maschine. Welche Beschleunigung (in Vielfachen von g) ergibt sich?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "a = g/2"
+      },
+      {
+        "key": "B",
+        "text": "a = g/4"
+      },
+      {
+        "key": "C",
+        "text": "a = g"
+      },
+      {
+        "key": "D",
+        "text": "a = 3g"
+      },
+      {
+        "key": "E",
+        "text": "a = g/2 · (m₁−m₂)/(m₁+m₂) — kommt auf absolute Massen an"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: a=(m₁−m₂)g/(m₁+m₂)=(3m−m)g/(4m)=2g/4=g/2. B wäre m₁/m₂=4. C wäre freier Fall (keine m₂). D unmöglich. E: a ist massenunabhängig (kürzt sich)."
+  }
+]

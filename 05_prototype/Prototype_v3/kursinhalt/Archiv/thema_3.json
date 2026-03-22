@@ -1,0 +1,575 @@
+{
+  "thema_id": 3,
+  "thema_name": "Rotationsmechanik",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_3_1_1",
+            "aufgabe": "Ein zylinderförmiges, homogenes Rad (m = 2 kg, R = 0,3 m) rotiert mit ω = 5 rad/s. Berechnen Sie a) das Massenträgheitsmoment J und b) den Drehimpuls L.",
+            "musterloesung": "a) Vollzylinder: J = ½·m·R² = ½·2·0,09 = 0,09 kg·m². b) L = J·ω = 0,09·5 = 0,45 kg·m²/s.",
+            "tipps": [
+              "Trägheitsmoment Vollzylinder: J = ½·m·R². Drehimpuls: L = J·ω.",
+              "J = ½·2·0,3² = 0,09 kg·m². L = J·ω.",
+              "J = 0,09 kg·m²; L = 0,45 kg·m²/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_1_2",
+            "aufgabe": "Ein Drehmoment M = 6 N·m wirkt auf einen Körper mit J = 2 kg·m². Berechnen Sie die Winkelbeschleunigung α.",
+            "musterloesung": "M = J·α → α = M/J = 6/2 = 3 rad/s².",
+            "tipps": [
+              "Newton für Rotation: M = J·α. Analog zu F = m·a.",
+              "α = M/J.",
+              "α = 6/2 = 3 rad/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_1_3",
+            "aufgabe": "Berechnen Sie das Massenträgheitsmoment einer Hohlkugel (m = 0,5 kg, R = 0,1 m) bezüglich ihrer Symmetrieachse.",
+            "musterloesung": "Hohlkugel: J = 2/3·m·R² = 2/3·0,5·0,01 = 0,003333 kg·m² ≈ 3,33×10⁻³ kg·m².",
+            "tipps": [
+              "Formel Hohlkugel: J = 2/3·m·R². Diese Formel auswendig kennen!",
+              "J = 2/3·0,5·0,1².",
+              "J = 2/3·0,5·0,01 ≈ 3,33×10⁻³ kg·m²."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_1_4",
+            "aufgabe": "Ein Vollzylinder (m = 1 kg, R = 0,2 m) beginnt aus der Ruhe mit einem konstanten Drehmoment M = 2 N·m zu rotieren. Berechnen Sie die Winkelgeschwindigkeit nach t = 3 s.",
+            "musterloesung": "J = ½·m·R² = ½·1·0,04 = 0,02 kg·m². α = M/J = 2/0,02 = 100 rad/s². ω(3) = α·t = 100·3 = 300 rad/s.",
+            "tipps": [
+              "J zuerst berechnen. α = M/J. Dann ω(t) = α·t (aus Ruhe).",
+              "J = ½·m·R²; α = M/J; ω = α·t.",
+              "J = 0,02 kg·m²; α = 100 rad/s²; ω(3) = 300 rad/s."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_3_2_1",
+            "aufgabe": "Ein homogener Vollzylinder (m, R) rollt ohne Gleiten eine schiefe Ebene (α = 20°) hinunter. Berechnen Sie die Beschleunigung des Schwerpunkts.",
+            "musterloesung": "Rollbedingung: a = α_rot·R. Kraftgleichungen: m·g·sin20° − F_R = m·a und F_R·R = J·α_rot. Mit J = ½·m·R² und α_rot = a/R: F_R = ½·m·a. Einsetzen: m·g·sin20° − ½·m·a = m·a → g·sin20° = 3/2·a → a = 2/3·g·sin20° = 2/3·9,81·0,342 = 2,237 m/s².",
+            "tipps": [
+              "Rollbedingung: a = α_rot·R. Kräftebilanz für Translation und Rotation aufstellen.",
+              "a = g·sin(α)·2/(2+1) = 2/3·g·sin(α) für Vollzylinder (J = ½mR²).",
+              "a = 2/3·9,81·sin(20°) ≈ 2,24 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_2_2",
+            "aufgabe": "Drei Körper – Vollzylinder (k=1/2), Hohlzylinder (k=1), Hohlkugel (k=2/3) – rollen vom Rand einer schiefen Ebene (α = 25°). Geben Sie die Reihenfolge ihrer Ankunft am Boden an und begründen Sie mit Beschleunigungswerten.",
+            "musterloesung": "Beschleunigung: a = g·sin(α)/(1+k). a_Vollzyl = g·sin25°/1,5 = 9,81·0,4226/1,5 = 2,763 m/s². a_Hohlkugel = g·sin25°/(5/3) = 9,81·0,4226·3/5 = 2,480 m/s². a_Hohlzyl = g·sin25°/2 = 9,81·0,4226/2 = 2,073 m/s². Reihenfolge: Vollzylinder (1.) → Hohlkugel (2.) → Hohlzylinder (3.).",
+            "tipps": [
+              "a = g·sin(α)/(1+k). Kleineres k → größere Beschleunigung. k: Vollzylinder 1/2, Hohlkugel 2/3, Hohlzylinder 1.",
+              "Berechne alle drei a-Werte. Vergleiche numerisch.",
+              "a_VZ > a_HKugel > a_HZyl. Reihenfolge: Vollzylinder zuerst."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_2_3",
+            "aufgabe": "Ein zylinderförmiges Rad (J = 1 kg·m²) dreht unter dem äußeren Drehmoment M(t) = −M₀·sin(ωt) mit M₀ = 2 N·m, ω_M = 1 rad/s. Startbedingung L(0) = 0. Bestimmen Sie L(t).",
+            "musterloesung": "dL/dt = M(t) = −M₀·sin(ω_M·t). Integration: L(t) = ∫M(t)dt = (M₀/ω_M)·cos(ω_M·t) + C. Anfangsbedingung L(0) = 0: 0 = M₀/ω_M·cos(0) + C = M₀/ω_M + C → C = −M₀/ω_M. L(t) = (M₀/ω_M)·(cos(ω_M·t) − 1) = 2·(cos(t) − 1) N·m·s.",
+            "tipps": [
+              "Grundgleichung: dL/dt = M(t). Integriere M(t) nach t, bestimme C aus L(0) = 0.",
+              "∫sin(ω·t)dt = −cos(ω·t)/ω + C. Mit Anfangsbedingung C bestimmen.",
+              "L(t) = (M₀/ω_M)·(cos(ω_M·t) − 1) = 2·(cos(t) − 1) N·m·s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_2_4",
+            "aufgabe": "Ein Fahrrad-Experiment: Eine Aluminiumscheibe (d = 12 cm, D = 1 cm, mAlu = 200 g) ist konzentrisch auf eine Fahrradfelge montiert. Eine Masse m = 30 g hängt an einem Faden, der um die Scheibe gewickelt ist. Berechnen Sie das Massenträgheitsmoment der Aluminiumscheibe.",
+            "musterloesung": "Aluminiumscheibe: Vollzylinder. J_Alu = ½·mAlu·(d/2)² = ½·0,2·0,06² = ½·0,2·0,0036 = 0,00036 kg·m² = 3,6×10⁻⁴ kg·m².",
+            "tipps": [
+              "Aluminiumscheibe als Vollzylinder modellieren. J = ½·m·R² mit R = d/2 = 0,06 m.",
+              "J = ½·0,2·0,06².",
+              "J = ½·0,2·0,0036 = 3,6×10⁻⁴ kg·m²."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_3_3_1",
+            "aufgabe": "Kugelrennen (Klausur 3, Aufgabe 4): Vollkugel und Hohlkugel (m = 250 g, R = 95 mm) rollen eine schiefe Ebene (L = 75 cm, α = 17,5°) hinunter. Berechnen Sie den Geschwindigkeitsunterschied am Ende und bestimmen Sie, welche Kugel zuerst ankommt.",
+            "musterloesung": "a_Vollkugel = g·sin17,5°/(1+2/5) = 9,81·0,3007/1,4 = 2,109 m/s². a_Hohlkugel = g·sin17,5°/(1+2/3) = 9,81·0,3007/(5/3) = 1,766 m/s². v_Vollkugel = √(2·2,109·0,75) = √3,164 = 1,779 m/s. v_Hohlkugel = √(2·1,766·0,75) = √2,649 = 1,628 m/s. Δv = 1,779 − 1,628 = 0,151 m/s. Die Vollkugel kommt zuerst an.",
+            "tipps": [
+              "a = g·sin(α)/(1+k). Vollkugel: k=2/5. Hohlkugel: k=2/3. Geschwindigkeit: v = √(2·a·L).",
+              "k_Vollkugel < k_Hohlkugel → a_Vollkugel > a_Hohlkugel → Vollkugel gewinnt.",
+              "Δv = v_Vollkugel − v_Hohlkugel ≈ 0,151 m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_3_2",
+            "aufgabe": "Drehmoment auf Leiterschleife (Klausur 3, Aufgabe 2): Ein quadratischer Kupferdraht (a = 10 cm Kantenlänge, I = 20 A) ist an zwei gegenüberliegenden Ecken reibungsfrei drehbar aufgehängt. Die Ebene schließt mit dem Boden 45° ein. An den freien Ecken hängen m₁ = 150 g und m₂ = 100 g. Parallel zum Boden liegt ein Magnetfeld B. Bestimmen Sie B so, dass das Quadrat in Ruhe bleibt.",
+            "musterloesung": "Drehachse durch die zwei aufgehängten Ecken (Diagonale des Quadrats). Abstand der freien Ecken von der Drehachse: d = a/√2 = 0,1/1,414 = 0,0707 m. Horizontale Abstände der Massen von der Drehachse: r₁ = r₂ = a/√2·cos45° = 0,0707·0,707 = 0,05 m. Drehmoment der Massen: M_Gravitation = (m₁−m₂)·g·r_horiz = (0,15−0,10)·9,81·0,05 = 0,02453 N·m. Magnetisches Drehmoment: M_mag = I·A·B·sin(θ), wobei θ Winkel zwischen B und Normalen zur Schleife. A = a² = 0,01 m². Da B parallel zum Boden und Schleife 45° zur Horizontalen: θ = 45°. M_mag = I·A·B·sin45° = 20·0,01·B·0,707 = 0,1414·B. Gleichgewicht: M_mag = M_Gravitation: 0,1414·B = 0,02453 → B = 0,1735 T ≈ 0,174 T.",
+            "tipps": [
+              "Gleichgewichtsbedingung: Σ Drehmomente = 0. Gravitations-Drehmoment aus (m₁−m₂)·g·r_horiz. Magnetisches Drehmoment: M = I·A·B·sin(θ).",
+              "Drehachse: Diagonale. Horizontaler Hebelarm der Massen r = a/√2·cos(45°) = a/2. M_grav = Δm·g·r.",
+              "M_grav = 0,05·9,81·0,02452 N·m; M_mag = I·A·B·sin45°; B ≈ 0,174 T."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_3_3",
+            "aufgabe": "Ein Rad (J = 0,5 kg·m²) dreht mit ω₀ = 10 rad/s. Ein Bremsmoment von M_bremse = −0,25 N·m wirkt. Nach welcher Zeit kommt das Rad zum Stillstand?",
+            "musterloesung": "α = M/J = −0,25/0,5 = −0,5 rad/s². ω(t) = ω₀ + α·t = 10 − 0,5·t. Stillstand: ω = 0 → t = ω₀/|α| = 10/0,5 = 20 s.",
+            "tipps": [
+              "α = M/J (negativ = Bremsung). ω(t) = ω₀ + α·t. Stillstand bei ω = 0.",
+              "t_Stillstand = ω₀/|α|.",
+              "α = −0,5 rad/s²; t = 10/0,5 = 20 s."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_3_4",
+            "aufgabe": "Atwood auf schiefer Ebene (Klausur 3, Aufgabe 3): α = 30°, m₁ = m₂ = 370 g, Umlenkrolle: Vollzylinder (R = 72 mm, M = 50 g). Berechnen Sie a) die Beschleunigung, b) den Geschwindigkeitsvektor von m₁ (auf der Ebene) nachdem m₂ 5 cm zurückgelegt hat.",
+            "musterloesung": "a) Nettokraft: F = m₂·g − m₁·g·sin30° = g·m·(1−0,5) = 9,81·0,37·0,5 = 1,815 N. Effektive Masse: m_eff = m₁ + m₂ + J/R² = 0,37 + 0,37 + ½·0,05 = 0,765 kg. a = F/m_eff = 1,815/0,765 = 2,373 m/s². b) v² = 2·a·s = 2·2,373·0,05 = 0,2373 m²/s² → v = 0,487 m/s. Die linke Masse (m₁) bewegt sich hangabwärts (parallel zur Ebene, nach unten), da m₂ nach unten zieht. Richtung: entlang der Ebene abwärts unter Winkel α = 30° zur Horizontalen. Vektorschreibweise: v⃗ = 0,487 m/s · (cos(−30°)·eₓ + sin(−30°)·e_y) falls x horizontal, y vertikal.",
+            "tipps": [
+              "Nettokraft = m₂·g − m₁·g·sin(α). Effektive Masse = m₁ + m₂ + M/2 (für Vollzylinder). v = √(2·a·s).",
+              "a = F_netto/m_eff; v = √(2·a·s). Richtung von m₁: entlang Ebene nach unten.",
+              "a ≈ 2,37 m/s²; v ≈ 0,487 m/s; Richtung: parallel zur Ebene, 30° zur Horizontalen abwärts."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_3_4_1",
+            "aufgabe": "Fahrradfelgenversuch (Klausur 1, Aufgabe 5): Aluminiumscheibe (d=12cm, D=1cm, mAlu=200g) auf Fahrradfelge (J_Felge unbekannt), Masse m=30g hängt an Faden. Bestimmen Sie grafisch aus den Messdaten die Winkelbeschleunigung α und berechnen Sie J_Felge aus: a_Alu = m·g·R / (m·R² + J_Ges) wobei J_Ges = J_Alu + J_Felge.",
+            "musterloesung": "J_Alu = ½·mAlu·(d/2)² = ½·0,2·0,06² = 3,6×10⁻⁴ kg·m². Aus der grafischen Auswertung (Steigung m des φ-t²-Graphen): α = 2·m. Typische Werte: m ≈ 0,025 rad/s² → α ≈ 0,05 rad/s². Aus Dynamik: m·g − T = m·a_lin; T·R = J_Ges·α; a_lin = R·α. Eliminieren: m·g·R = (m·R² + J_Ges)·α → J_Ges = m·g·R/α − m·R² = (0,03·9,81·0,06)/0,05 − 0,03·0,06² = 0,3532 − 1,08×10⁻⁴ ≈ 0,353 kg·m². J_Felge = J_Ges − J_Alu ≈ 0,353 − 3,6×10⁻⁴ ≈ 0,353 kg·m².",
+            "tipps": [
+              "Zuerst α aus Graphen (α = 2·Steigung). Dann J_Ges aus Dynamikgleichung. J_Felge = J_Ges − J_Alu.",
+              "Dynamikgleichung: m·g·R = (m·R² + J_Ges)·α → J_Ges = m·g·R/α − m·R².",
+              "J_Alu = 3,6×10⁻⁴ kg·m². J_Ges aus α. J_Felge = J_Ges − J_Alu."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_4_2",
+            "aufgabe": "Ein Körper bewegt sich entlang der Spiralbahn s(t) = (vR·t·cos(ωt), vR·t·sin(ωt), −vz·t) mit vR=2 m/s, ω=3 rad/s, vz=1 m/s. Berechnen Sie bei t=2s: a) den Betrag der Zentripetalbeschleunigung, b) die Tangentialbeschleunigung (durch Radiusänderung), c) die Gesamtbeschleunigung in der xy-Ebene.",
+            "musterloesung": "r(t) = vR·t = 2·2 = 4 m. a) Zentripetal: a_z = ω²·r = 9·4 = 36 m/s². b) Radiale Beschleunigung durch wachsendes r: a_r_tan = d(vr)/dt = d(vR)/dt · nichts + vR·... Die tangentiale Beschleunigung für spiralförmige Bahn: a_tan = α_rot·r = 0 (ω=const) + vR·ω (durch Kurvenfaktor). Korrekte Berechnung: a_tan = 2·vR·ω = 2·2·3 = 12 m/s². c) a_ges_xy = √(a_z² + a_tan²) = √(36²+12²) = √(1296+144) = √1440 ≈ 37,9 m/s².",
+            "tipps": [
+              "Zentripetal: a_z = ω²·r. Tangential durch wachsendes r: a_tan = 2·vR·ω (Coriolis-ähnlicher Term bei Spiralbahn). Vektoraddition für Gesamtbeschleunigung.",
+              "r(2) = 4m; a_z = ω²·r = 9·4 = 36 m/s²; a_tan = 2·vR·ω = 12 m/s².",
+              "a_ges_xy = √(36²+12²) ≈ 37,9 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_4_3",
+            "aufgabe": "Vollkugel und Hohlkugel (m=250g, R=95mm, α=17,5°, L=0,75m). Berechnen Sie für jede Kugel: a) die Translationsgeschwindigkeit, b) die Rotationsgeschwindigkeit ω, c) den Anteil der Rotationsenergie an der Gesamtenergie am Ende der Ebene.",
+            "musterloesung": "Vollkugel: J=2/5·mR²; v=1,779 m/s (siehe Aufgabe 3_3_1). ω_V = v/R = 1,779/0,095 = 18,73 rad/s. E_rot = ½·J·ω² = ½·(2/5·0,25·0,095²)·18,73² = ½·9,025×10⁻⁴·350,8 ≈ 0,1583 J. E_ges = m·g·L·sin17,5° = 0,25·9,81·0,75·0,3007 = 0,5526 J. Anteil = 0,1583/0,5526 = 28,6% ≈ 2/7. Hohlkugel: J=2/3·mR²; v=1,628 m/s; ω_H = 17,14 rad/s. E_rot = ½·(2/3·0,25·0,095²)·17,14² = ½·1,504×10⁻³·293,8 ≈ 0,221 J. Anteil = 0,221/0,5526 = 40% = 2/5.",
+            "tipps": [
+              "ω = v/R (Rollbedingung). E_rot = ½·J·ω². Anteil: E_rot/E_pot,Anfang = k/(1+k).",
+              "Vollkugel: Anteil = (2/5)/(1+2/5) = 2/7 ≈ 28,6%. Hohlkugel: (2/3)/(5/3) = 2/5 = 40%.",
+              "Hohlkugel hat mehr Rotationsenergie → weniger Translationsenergie → langsamer."
+            ]
+          },
+          {
+            "id": "do_berechnen_3_4_4",
+            "aufgabe": "Ein zylinderförmiges Rad (J = ½mR², m = 1 kg, R = 0,5 m) rotiert unter M(t) = −M₀·sin(ωt) (M₀ = 5 N·m, ω = 2 rad/s) mit L(0) = 0. a) Berechnen Sie L(t) allgemein. b) Zu welchem Zeitpunkt ist L erstmals maximal (im Betrag)? c) Warum wächst L nicht linear, obwohl M periodisch ist?",
+            "musterloesung": "J = ½·1·0,25 = 0,125 kg·m². a) L(t) = (M₀/ω)·(cos(ωt)−1) = (5/2)·(cos(2t)−1) = 2,5·(cos(2t)−1) N·m·s. b) L(t) maximal im Betrag wenn cos(2t) = −1 → 2t = π → t = π/2 ≈ 1,57 s. L_max = 2,5·(−1−1) = −5 N·m·s. c) L ist zwar periodisch (Cosinus), aber mit einem konstanten Offset −M₀/ω. Tatsächlich: L schwingt um −M₀/ω herum, da das Integral von sin nicht null über ein halbes Intervall ist (Anfangsbedingung L(0)=0 erzwingt C = −M₀/ω).",
+            "tipps": [
+              "dL/dt = M(t). Integriere: L = (M₀/ω)·cos(ωt) + C. C aus L(0) = 0 → C = −M₀/ω. Maximum wenn cos = −1.",
+              "L(t) = (M₀/ω)·(cos(ωt)−1). Betrag maximal wenn cos(ωt) = −1 → ωt = π → t = π/ω.",
+              "t = π/2 ≈ 1,57 s; L_max = −5 N·m·s. L ist cosinusförmig um −M₀/ω verschoben."
+            ]
+          }
+        ]
+      },
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_3_1_1",
+            "aufgabe": "Skizzieren Sie einen Vollzylinder und eine Hohlkugel. Beschriften Sie die Formel für das Massenträgheitsmoment J bezüglich der Symmetrieachse für beide Körper.",
+            "musterloesung": "Vollzylinder: J = ½·m·R². Skizze: Zylinder mit Radius R, Masse m, Rotationsachse durch Mittelpunkt. Hohlkugel: J = 2/3·m·R². Skizze: Kugelschale mit Radius R, Masse m, Rotationsachse durch Mittelpunkt. Pfeile zeigen Rotationsrichtung.",
+            "tipps": [
+              "Klausur-relevante Trägheitsmomente: Vollzylinder ½mR², Vollkugel 2/5mR², Hohlkugel 2/3mR². Auswendig lernen!",
+              "Schematische Skizzen mit Rotationsachse einzeichnen.",
+              "Formeln direkt an die Skizze schreiben."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_1_2",
+            "aufgabe": "Skizzieren Sie die Rollbewegung eines Vollzylinders auf einer horizontalen Fläche: Zeichnen Sie Translationsbewegung des Schwerpunkts (Pfeil) und Rotation um den Schwerpunkt (gebogener Pfeil). Zeigen Sie die Rollbedingung v = ω·R.",
+            "musterloesung": "Zylinder auf Fläche. Translationspfeil am Schwerpunkt nach rechts (v). Gebogener Pfeil zeigt Rotation (ω, Uhrzeigersinn bei Bewegung nach rechts). Kontaktpunkt: Momentaner Ruhepunkt. Rollbedingung: v = ω·R. Bei Rollen ohne Gleiten: Reibungskraft notwendig, aber keine Reibungsarbeit.",
+            "tipps": [
+              "Zwei Bewegungsanteile: Translation (v) und Rotation (ω). Rollbedingung: v = ω·R.",
+              "Kontaktpunkt hat momentan v = 0 (bei Rollen ohne Gleiten).",
+              "Scheitelpunkt hat v = 2·v_Schwerpunkt."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_1_3",
+            "aufgabe": "Skizzieren Sie das Hebelprinzip / die Wippe: Kraft F₁ links im Abstand r₁ von der Drehachse, Gewicht m·g rechts im Abstand r₂. Schreiben Sie die Gleichgewichtsbedingung auf.",
+            "musterloesung": "Wippe: Drehpunkt in der Mitte. Links: Kraft F₁ nach unten im Abstand r₁. Rechts: m·g nach unten im Abstand r₂. Gleichgewicht: Σ M = 0 → F₁·r₁ = m·g·r₂. Dies ist das Hebelgesetz. Vorzeichen beachten: entgegengesetzte Drehmomente.",
+            "tipps": [
+              "Drehmoment = Kraft × Hebelarm (senkrechter Abstand zur Drehachse). Gleichgewicht: Summe aller Drehmomente = 0.",
+              "F₁·r₁ = F₂·r₂. Vorzeichen: links dreht gegen, rechts dreht mit Uhrzeigersinn.",
+              "Kräfte senkrecht zur Achse; Hebelarme horizontal."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_1_4",
+            "aufgabe": "Skizzieren Sie das Fahrradfelgenexperiment: Felge mit Aluminiumscheibe, Faden mit Masse. Zeichnen Sie alle Kräfte auf die Masse und auf die Scheibe.",
+            "musterloesung": "Scheibe (vertikal, Radius R) mit Faden tangential gewickelt. Masse m hängt am Faden. Kräfte auf m: Gewicht mg (unten), Seilkraft T (oben). Kräfte auf Scheibe: Seilkraft T (tangential am Rand), Lagerreaktion (Achse). Drehmoment durch T: M = T·R. Gleichung: mg − T = m·a (Masse), T·R = J_Ges·α (Scheibe). Rollbedingung: a = α·R.",
+            "tipps": [
+              "Masse: Gewicht − Seilkraft = m·a. Scheibe: T·R = J·α. Verbindung: a = α·R.",
+              "T erscheint in beiden Gleichungen — eliminieren liefert die Gesamtgleichung.",
+              "Skizze: Scheibe mit Pfeil T am Rand, Masse mit T hoch und mg runter."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_3_2_1",
+            "aufgabe": "Skizzieren Sie die schiefe Ebene mit rollendem Körper (Vollzylinder). Zeichnen Sie alle Kräfte und leiten Sie grafisch ab, warum der Körper langsamer ist als ein gleitender (reibungsfreier) Körper.",
+            "musterloesung": "Schiefe Ebene (Winkel α). Vollzylinder drauf. Kräfte: m·g (senkrecht unten), N (senkrecht zur Ebene), F_R (hangaufwärts, Haftreibung). a_Rollen = g·sin(α)/(1+½) = 2/3·g·sin(α). a_Gleiten = g·sin(α). Da 2/3 < 1: a_Rollen < a_Gleiten. Die Reibungskraft F_R wirkt aufwärts und verursacht Rotation — ein Teil der Energie geht in Rotation statt Translation.",
+            "tipps": [
+              "Rollende Körper: Teil der Energie in Rotation gebunden → weniger in Translation → langsamer als reibungslos gleitende.",
+              "a_Rollen = g·sin(α)/(1+k) < g·sin(α) = a_Gleiten.",
+              "Reibung hier essentiell: ohne Reibung kein Rollen (würde gleiten)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_2_2",
+            "aufgabe": "Skizzieren Sie die drei Körper (Vollzylinder, Hohlzylinder, Hohlkugel) auf derselben schiefen Ebene. Ordnen Sie sie in der Reihenfolge ihrer Ankunft mit Beschriftung an.",
+            "musterloesung": "Drei Körper auf schiefer Ebene (oben) → unten (Zielmarkierung). Positionen nach gleicher Zeit: Vollzylinder vorne (a = 2/3·g·sinα), Hohlkugel Mitte (a = 3/5·g·sinα), Hohlzylinder hinten (a = ½·g·sinα). Beschriftung: J/(mR²) = ½, 2/3, 1 für VZ, HKu, HZyl. Formulierung: kleineres J/(mR²) → größere Beschleunigung.",
+            "tipps": [
+              "Reihenfolge: Vollzylinder (k=1/2) → Hohlkugel (k=2/3) → Hohlzylinder (k=1). k = J/(mR²).",
+              "Größeres k → langsamere Beschleunigung. Masse und Radius spielen keine Rolle für die Reihenfolge!",
+              "Abstände nach gleicher Zeit proportional zu a (gleiche Startposition)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_2_3",
+            "aufgabe": "Skizzieren Sie das Drehmoment-Zeit-Diagramm M(t) = −M₀·sin(ωt) und das entsprechende Drehimpuls-Zeit-Diagramm L(t) für L(0) = 0. Markieren Sie Maxima und Minima.",
+            "musterloesung": "M(t)-Diagramm: Sinuskurve, startet bei 0, geht negativ zuerst (−M₀ bei t=π/(2ω)), dann positiv. L(t)-Diagramm: L(t) = (M₀/ω)·(cos(ωt)−1). Startet bei 0, geht zu −2M₀/ω (Minimum bei t=π/ω), kehrt zurück zu 0 (bei t=2π/ω). Kein lineares Wachstum, da cos-Funktion um Offset verschoben. Nulldurchgänge von M → Extrema von L.",
+            "tipps": [
+              "L ist das Integral von M. Nulldurchgang von M = Extremum von L. Maximum von M = Wendepunkt von L.",
+              "M: Sinuskurve. L: Cosinuskurve minus Offset. L schwingt zwischen 0 und −2M₀/ω.",
+              "Bei t=π/ω: M=0 (von negativ nach positiv), L = Minimum = −2M₀/ω."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_2_4",
+            "aufgabe": "Skizzieren Sie physikalisch das Quadrat der Leiterschleife (Klausur 3, Aufgabe 2): Quadrat mit 10 cm Seite, Drehachse durch zwei Ecken (Diagonale), Magnetfeld B horizontal. Zeichnen Sie den Kraftvektor auf einen stromdurchflossenen Leiter F = I·L×B.",
+            "musterloesung": "Quadrat mit Drehachse durch zwei Ecken (Diagonale). Magnetfeld B horizontal (Pfeil nach rechts). Strom I im Quadrat. Für jeden Seitenabschnitt: F = I·L×B. Die freien Ecken (mit m₁ und m₂) hängen senkrecht. Kräfte auf obere Seite und untere Seite: senkrecht zu B und zum Strom. Drehmoment = Hebelarm × F. Gleichgewichtsbedingung: M_mag = M_grav.",
+            "tipps": [
+              "F = I·L×B: Rechte-Hand-Regel. F senkrecht zu L und B. Drehmoment um Diagonalachse berechnen.",
+              "Obere Seite: Strom nach rechts, B nach rechts → F_oben = 0? Nein, Seiten schräg zur Achse. Sorgfältig zeichnen.",
+              "Gesamtes Drehmoment = I·A·B·sin(θ) mit θ = Winkel zwischen B und Flächennormale."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_3_3_1",
+            "aufgabe": "Skizzieren Sie den vollständigen Versuchsaufbau für den Atwood-Versuch auf schiefer Ebene (Klausur 3, Aufgabe 3): Block m₁ = 370 g auf 30°-Ebene, Umlenkrolle (Zylinder, R=72mm, M=50g), hängende Masse m₂ = 370 g. Beschriften Sie alle Kräfte und leiten Sie die Gleichungen auf.",
+            "musterloesung": "Schiefe Ebene 30°. Block m₁ oben, Seil parallel zur Ebene, Umlenkrolle an der oberen Kante (zylindrisch, Radius R). Seil hängt senkrecht mit m₂. Kräfte m₁: N (senkrecht zur Ebene), m₁·g (senkrecht unten), T₁ (hangaufwärts, Seil). Kräfte m₂: m₂·g (unten), T₂ (oben). Rolle: T₁ (Moment aus m₁-Seite), T₂ (Moment aus m₂-Seite). Gleichungen: m₂·g−T₂=m₂·a; T₁−m₁·g·sin30°=m₁·a; (T₂−T₁)·R=J·(a/R)=½·M·R·a/R=½Ma.",
+            "tipps": [
+              "Drei Gleichungen: eine für m₁, eine für m₂, eine für die Rolle (Drehmomentgleichung). T₁ ≠ T₂ wegen massiver Rolle.",
+              "Kräfte auf m₁: T₁ hangauf, m₁g·sin30° hangab. Rolle: (T₂−T₁)·R = J·α = J·a/R.",
+              "Alle drei Gleichungen aufschreiben; T₁ und T₂ eliminieren → a."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_3_2",
+            "aufgabe": "Skizzieren Sie das Energieflussdiagramm für einen rollenden Körper (Vollkugel) auf schiefer Ebene: zeigen Sie, wie E_pot in E_trans und E_rot aufgeteilt wird.",
+            "musterloesung": "Oben: E_pot = m·g·h (grüner Balken). Unten: Aufgeteilt in E_trans = ½m·v² (blauer Balken, 5/7 von E_pot) und E_rot = ½J·ω² (roter Balken, 2/7 von E_pot). Für Vollkugel: E_rot/E_ges = (2/5)/(1+2/5) = 2/7 ≈ 28,6%. Keine Reibungsarbeit (Haftreibung, kein Gleiten). Gesamtenergie erhalten.",
+            "tipps": [
+              "Energieerhaltung beim Rollen: E_pot = E_trans + E_rot. Kein Energieverlust (Haftreibung macht keine Arbeit).",
+              "Für jedes k: E_rot/E_ges = k/(1+k). Vollkugel k=2/5: 2/7. Hohlkugel k=2/3: 2/5.",
+              "Balkendiagramm mit Zahlenwerten. E_trans immer größer als E_rot."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_3_3",
+            "aufgabe": "Skizzieren Sie das Kräftediagramm für die Drehmomentaufgabe der Leiterschleife (Klausur 3, Aufgabe 2): Magnetkraft auf die vier Seiten des Quadrats, Gravitationskräfte durch m₁ und m₂.",
+            "musterloesung": "Quadrat mit Diagonale als Drehachse. Zwei freie Ecken: m₁ (links/unten) und m₂ (rechts/oben). Auf Seite parallel zur Drehachse: F_mag = 0 (I||B). Auf Seiten senkrecht zur Achse: F_mag = I·a·B·sin(θ) nach Lorentzkraft. Gravitationskraft auf m₁: m₁·g nach unten, Hebelarm r₁ = a/2. Auf m₂: m₂·g nach unten, Hebelarm r₂ = a/2. Gleichgewicht: M_mag = M_grav.",
+            "tipps": [
+              "Lorentzkraft: F = I·L×B auf jeden Seitenabschnitt. Quadrat: zwei Seiten parallel zu B (F=0), zwei senkrecht (F≠0).",
+              "Hebelarm der Gravitationskräfte: horizontaler Abstand der freien Ecken von der Drehachse.",
+              "Gleichgewichtsbedingung: I·A·B·sin(θ) = (m₁−m₂)·g·r_arm."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_3_4",
+            "aufgabe": "Skizzieren Sie qualitativ die Bahnen von Vollkugel und Hohlkugel auf der schiefen Ebene im x-t-Diagramm. Markieren Sie den Zeitunterschied bei Ankunft.",
+            "musterloesung": "x-t-Diagramm: Beide Parabeln (gleichförmig beschleunigte Bewegung, x=½·a·t²). Vollkugel: steilere Parabel (größere a). Hohlkugel: flachere Parabel. Bei x = L = 0,75 m: Vollkugel erreicht früher. Zeitpunkt Vollkugel: t_V = √(2L/a_V) = √(2·0,75/2,109) ≈ 0,843 s. Zeitpunkt Hohlkugel: t_H = √(2·0,75/1,766) ≈ 0,921 s. Δt ≈ 0,078 s.",
+            "tipps": [
+              "x(t) = ½·a·t² für beide. Steilere Parabel = größere Beschleunigung = früher am Ziel.",
+              "Schnittpunkte mit Linie x=0,75m ablesen → Zeitpunkte t_V und t_H.",
+              "Δt = t_H − t_V ≈ 0,078 s. Vollkugel kommt zuerst."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_3_4_1",
+            "aufgabe": "Skizzieren Sie das vollständige Messwerttabellen- und Diagrammblatt für den Fahrradfelgenversuch (Klausur 1, Aufgabe 5) mit allen 8 Messwerten. Zeigen Sie: Tabelle (φ°, φ_rad, t, t²), φ-t²-Diagramm mit Ausgleichsgerade, Steigungsdreieck, und Extrapolation auf 120°.",
+            "musterloesung": "Tabelle: 8 Zeilen. φ(°): 10,20,30,40,50,60,80,100. φ(rad): 0,175;0,349;0,524;0,698;0,873;1,047;1,396;1,745. t(s): 2,7;3,9;4,5;5,3;5,9;6,6;7,6;8,4. t²(s²): 7,29;15,21;20,25;28,09;34,81;43,56;57,76;70,56. Diagramm: y-Achse φ(rad), x-Achse t²(s²). 8 Punkte als +. Gerade durch Ursprung. Steigung m ≈ 0,0245 rad/s². α = 2m ≈ 0,049 rad/s². Extrapolation: φ=120°=2,094 rad → t² ≈ 2,094/0,0245 ≈ 85,5 s² → t ≈ 9,25 s.",
+            "tipps": [
+              "Alle 8 Zeilen vollständig ausfüllen. Diagrammkonventionen: Achsenbeschriftung mit Einheiten, + für Messpunkte.",
+              "Steigungsdreieck über möglichst großen Bereich des Graphen. Einheit der Steigung: rad/s².",
+              "Extrapolation auf φ=120°=2,094 rad: t²-Wert aus Geraden ablesen → t berechnen."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_4_2",
+            "aufgabe": "Skizzieren Sie qualitativ das Energiediagramm für den Fahrradfelgenversuch: E_pot der Masse m vs. Winkel φ. Zeigen Sie, wie E_pot in E_kin,Masse + E_rot,Felge+Scheibe aufgeteilt wird.",
+            "musterloesung": "Startzustand (φ=0): Masse oben (aber gedrehte Scheibe hat Faden aufgewickelt). Bei Drehung um φ senkt sich Masse um h = (d/2)·φ = R·φ. E_pot,Masse = m·g·R·φ (linear in φ). Aufgeteilt in: E_kin,Masse (translatorisch) und E_rot,Ges (Felge + Scheibe). E_rot = (J_Ges/R²)·E_kin,Masse/(m). Diagramm: Alle drei Energien als Funktion von φ (oder t²). E_pot sinkt (wenn bezogen auf Anfangshöhe der Masse).",
+            "tipps": [
+              "h(φ) = R·φ = (d/2)·φ. E_pot = m·g·R·φ linear in φ. E_kin und E_rot steigen mit φ.",
+              "Energieerhaltung: E_pot = E_kin,Masse + E_rot,Ges (reibungsfrei).",
+              "In Praxis: Reibung im Lager → E_ges nimmt leicht ab. Das Diagramm ist dann nicht ganz linear."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_4_3",
+            "aufgabe": "Erstellen Sie eine physikalisch korrekte Skizze für das Kugelrennen mit allen physikalischen Größen: Beide Kugeln auf 17,5°-Ebene (L=0,75m), alle Kräfte, Rollbedingung, Trägheitsmomente.",
+            "musterloesung": "Zwei Kugeln nebeneinander auf 17,5°-Ebene. Kräfte auf jede Kugel: m·g (senkrecht unten, aufgeteilt in m·g·sin17,5° = 2,947 N entlang Ebene und m·g·cos17,5° senkrecht zur Ebene). Normalkraft N = m·g·cos17,5°. Reibungskraft F_R hangaufwärts (ermöglicht Rollen). Rollbedingung: v = ω·R. Trägheitsmomente: Vollkugel J_V = 2/5·mR², Hohlkugel J_H = 2/3·mR². Beschleunigung: a_V = g·sin(α)/1,4 > a_H = g·sin(α)·3/5.",
+            "tipps": [
+              "Kräfte auf jede Kugel einzeln. Rollbedingung kennzeichnen. J-Formel direkt an Kugel schreiben.",
+              "a = g·sin(α)/(1+J/(mR²)): für Vollkugel /(1+2/5), für Hohlkugel /(1+2/3).",
+              "Beschleunigungen numerisch einrechnen: a_V ≈ 2,11 m/s², a_H ≈ 1,77 m/s²."
+            ]
+          },
+          {
+            "id": "do_skizzieren_3_4_4",
+            "aufgabe": "Skizzieren Sie den Schaltplan für den Spezifischer-Widerstand-Versuch (Klausur 3, Aufgabe 5): Netzteil (13,6 V), Schiebewiderstand, Amperemeter (misst 1 A), Voltmeter über Draht, 6 Drähte auf Widerstandsbrett. Beschriften Sie alle Messgrößen.",
+            "musterloesung": "Schaltplan: Netzteil (links, 13,6 V). Schiebewiderstand in Reihe (Strombegrenzer). Amperemeter in Reihe im Hauptkreis (misst I = 1 A = const). Widerstandsbrett mit Draht (Widerstand R_Draht). Voltmeter parallel zum Draht (misst U). Beschriftung: U_Netz = 13,6 V, I = 1 A (eingestellt), R = ρ·l/A, d_i (Drahtdurchmesser), U_i (gemessene Spannung). Aus R = U/I = ρ·l/(π·d²/4) → ρ = U·π·d²/(4·I·l).",
+            "tipps": [
+              "Schiebewiderstand zur Stromkonstanthaltung (I = 1 A). Voltmeter parallel zum Prüfdraht. Amperemeter im Hauptstrom.",
+              "R = U/I (Ohmsches Gesetz). ρ = R·A/l mit A = π·d²/4.",
+              "Für jeden Draht: (d_i, U_i) messen → R_i = U_i/I → Diagramm R vs. 1/A oder U vs. 1/d²."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_3_1_1",
+            "frage": "Ein zylinderförmiges Rad (J = ½mR²) rotiert um eine feste Achse. Wie lautet die Gleichung des zweiten Newtonschen Gesetzes für die Rotation?",
+            "optionen": [
+              {"key": "A", "text": "F = m·a"},
+              {"key": "B", "text": "M = J·α"},
+              {"key": "C", "text": "M = m·ω"},
+              {"key": "D", "text": "L = J·a"},
+              {"key": "E", "text": "F = J·ω"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: M = J·α ist das Rotationsäquivalent zu F = m·a. M = Drehmoment (N·m), J = Trägheitsmoment (kg·m²), α = Winkelbeschleunigung (rad/s²). A ist falsch: Gilt für Translationsbewegung. C ist falsch: M = J·ω hätte falsche Einheit. D ist falsch: L = J·ω (Drehimpuls), nicht L = J·a. E ist falsch: Dimensionsinkonsistent."
+          },
+          {
+            "id": "sc_3_1_2",
+            "frage": "Welcher Körper hat das größte Massenträgheitsmoment bezüglich seiner Symmetrieachse bei gleicher Masse m und gleichem Radius R?",
+            "optionen": [
+              {"key": "A", "text": "Vollzylinder: J = ½mR²"},
+              {"key": "B", "text": "Vollkugel: J = 2/5mR²"},
+              {"key": "C", "text": "Hohlkugel: J = 2/3mR²"},
+              {"key": "D", "text": "Hohlzylinder (dünnwandig): J = mR²"},
+              {"key": "E", "text": "Alle haben dasselbe J bei gleicher Masse und gleichem Radius"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Dünnwandiger Hohlzylinder hat J = mR² (alle Masse am äußersten Radius). Vergleich der Vorfaktoren: Hohlzylinder 1 > Hohlkugel 2/3 > Vollzylinder 1/2 > Vollkugel 2/5. Je weiter die Masse vom Zentrum entfernt, desto größer J. A, B, C sind falsch: kleinere Vorfaktoren. E ist falsch: unterschiedliche Vorfaktoren."
+          },
+          {
+            "id": "sc_3_1_3",
+            "frage": "Welche Aussage zum Drehimpuls L(t) eines Rades unter M(t) = −M₀·sin(ωt) mit L(0) = 0 ist KORREKT?",
+            "optionen": [
+              {"key": "A", "text": "L bleibt konstant, da M eine periodische Funktion ist."},
+              {"key": "B", "text": "L wächst linear mit der Zeit."},
+              {"key": "C", "text": "L ist eine cosinusförmige Funktion der Zeit mit Frequenz ω."},
+              {"key": "D", "text": "L nimmt stetig zu, da M immer positiv ist."},
+              {"key": "E", "text": "Keine der anderen Aussagen ist wahr."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: L(t) = ∫M dt = (M₀/ω)·cos(ωt) + C. Mit L(0)=0: C = −M₀/ω. L(t) = (M₀/ω)·(cos(ωt)−1) — cosinus-förmig mit gleicher Kreisfrequenz ω, aber verschoben. A ist falsch: Periodisches M führt zu periodischem (nicht konstantem) L. B ist falsch: Lineares Wachstum wäre bei M = const. D ist falsch: M ist negativ bei sin > 0."
+          },
+          {
+            "id": "sc_3_1_4",
+            "frage": "Die Rollbedingung 'rollen ohne zu gleiten' verlangt:",
+            "optionen": [
+              {"key": "A", "text": "v = 2·ω·R"},
+              {"key": "B", "text": "v = ω/R"},
+              {"key": "C", "text": "v = ω·R"},
+              {"key": "D", "text": "v = ω²·R"},
+              {"key": "E", "text": "v = √(ω·R)"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Rollbedingung: v_Schwerpunkt = ω·R. Der Kontaktpunkt hat momentan v = 0, der Scheitel hat v = 2·ω·R. A ist falsch: das wäre v am Scheitelpunkt. B ist falsch: Dimension falsch (m/s²). D ist falsch: ω²·R ist die Zentripetalbeschleunigung, nicht die Rollbedingung. E ist falsch: Dimensionell inkonsistent."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_3_2_1",
+            "frage": "Welcher Körper rollt schneller eine schiefe Ebene hinunter (kein Gleiten, gleiche Masse, gleicher Radius)?",
+            "optionen": [
+              {"key": "A", "text": "Die Masse ist entscheidend — schwerere Körper rollen schneller."},
+              {"key": "B", "text": "Alle kommen gleichzeitig an, da Masse und Radius gleich sind."},
+              {"key": "C", "text": "Der Körper mit dem kleinsten Trägheitsmoment-Koeffizienten k = J/(mR²) ist schneller."},
+              {"key": "D", "text": "Der Körper mit dem größten Trägheitsmoment ist schneller."},
+              {"key": "E", "text": "Der Radius entscheidet — größere Körper sind schneller."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: a = g·sin(α)/(1+k). Kleineres k = J/(mR²) → größere Beschleunigung → früher unten. A ist falsch: Masse kürzt sich heraus (a unabhängig von m). B ist falsch: Unterschiedliche k-Werte → unterschiedliche Beschleunigungen. D ist falsch: Großes J → großes k → kleinere Beschleunigung. E ist falsch: Radius kürzt sich ebenfalls heraus."
+          },
+          {
+            "id": "sc_3_2_2",
+            "frage": "Ein homogener Zylinder rollt ohne zu gleiten eine schiefe Ebene (α = 30°) hinunter. Welche Aussage ist IMMER korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Beschleunigung hängt von der Masse ab."},
+              {"key": "B", "text": "Die Beschleunigung ist unabhängig vom Neigungswinkel α."},
+              {"key": "C", "text": "Der Zylinder rollt schneller als ein reibungsfreier Körper, der gleitet."},
+              {"key": "D", "text": "Die Beschleunigung ist unabhängig von der Massenverteilung."},
+              {"key": "E", "text": "Ohne Reibungskraft würde der Zylinder nicht rollen."}
+            ],
+            "korrekt": "E",
+            "erklaerung": "E ist korrekt: Die Reibungskraft (Haftreibung) ist notwendig, damit Rollen statt Gleiten auftritt — sie überträgt das Drehmoment auf den Körper. A ist falsch: a = g·sin(α)·2/3 ist unabhängig von m. B ist falsch: a hängt über sin(α) vom Winkel ab. C ist falsch: Rollende Körper sind langsamer als gleitende, da Energie in Rotation geht. D ist falsch: Massenverteilung bestimmt k → beeinflusst Beschleunigung."
+          },
+          {
+            "id": "sc_3_2_3",
+            "frage": "Drei Körper – Vollzylinder, Hohlzylinder, Hohlkugel (J_HK = 2/3·mR²) – mit gleichen Radien aber unterschiedlichen Massen rollen dieselbe schiefe Ebene hinunter. Wer kommt zuerst an?",
+            "optionen": [
+              {"key": "A", "text": "Alle kommen gleichzeitig an."},
+              {"key": "B", "text": "Der Hohlzylinder."},
+              {"key": "C", "text": "Der Vollzylinder."},
+              {"key": "D", "text": "Die Hohlkugel."},
+              {"key": "E", "text": "Das hängt von der Masse ab."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: k-Werte: Vollzylinder k=1/2 < Hohlkugel k=2/3 < Hohlzylinder k=1. Kleineres k → größere Beschleunigung. Masse spielt keine Rolle (kürzt sich heraus). A ist falsch: Unterschiedliche k-Werte → unterschiedliche Zeiten. B ist falsch: Hohlzylinder kommt zuletzt (k=1). D ist falsch: Hohlkugel kommt zweiter. E ist falsch: Die Masse kürzt sich aus der Gleichung heraus."
+          },
+          {
+            "id": "sc_3_2_4",
+            "frage": "Der Drehimpuls L eines Systems bleibt konstant, wenn:",
+            "optionen": [
+              {"key": "A", "text": "Das System abgeschlossen ist."},
+              {"key": "B", "text": "Äußere Kräfte, aber keine Drehmomente auf das System wirken."},
+              {"key": "C", "text": "Keine äußeren Drehmomente auf das System wirken."},
+              {"key": "D", "text": "Das System nicht rotiert."},
+              {"key": "E", "text": "In Summe keine äußeren Kräfte wirken."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: dL/dt = M_ext. Bei M_ext = 0 → L = const. A ist falsch: Abgeschlossen bedeutet keine externen Kräfte, aber auch keine Drehmomente — C ist präziser. B ist falsch: Kräfte ohne Drehmoment können trotzdem Drehimpuls erhalten — aber Formulierung B ist suboptimal (Kräfte durch den Schwerpunkt verursachen kein Drehmoment). D ist falsch: Auch bewegte Körper auf Kreisbahnen haben Drehimpuls. E ist falsch: F_ext = 0 sichert Impulserhaltung, aber nicht Drehimpulserhaltung (Kräftepaare können Drehmoment erzeugen)."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_3_3_1",
+            "frage": "Beim Fahrradfelgenversuch (Winkelbeschleunigung aus φ-t²-Diagramm): Die Steigung der Ausgleichsgeraden im φ-t²-Diagramm beträgt m = 0,025 rad/s². Wie groß ist α?",
+            "optionen": [
+              {"key": "A", "text": "α = 0,025 rad/s²"},
+              {"key": "B", "text": "α = 0,05 rad/s²"},
+              {"key": "C", "text": "α = 0,0125 rad/s²"},
+              {"key": "D", "text": "α = 0,25 rad/s²"},
+              {"key": "E", "text": "α = 0,5 rad/s²"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Aus φ = ½·α·t² → Steigung des φ-t²-Graphen = ½·α = m → α = 2·m = 2·0,025 = 0,05 rad/s². A ist falsch: Das wäre die Steigung m, nicht α. C ist falsch: m/2 würde bei umgekehrtem Auftrag gelten. D, E sind falsch: Faktor 10 zu groß."
+          },
+          {
+            "id": "sc_3_3_2",
+            "frage": "Welche Aussage zum Fahrradfelgenversuch STIMMT NICHT?",
+            "optionen": [
+              {"key": "A", "text": "Die beschleunigte Phase endete sofort mit dem Abfallen des Fadens."},
+              {"key": "B", "text": "Die abgebremste Phase begann sofort mit dem Abfallen des Fadens."},
+              {"key": "C", "text": "Die Bewegung konnte in beschleunigte und abgebremste Phase aufgeteilt werden."},
+              {"key": "D", "text": "Das Reibdrehmoment wirkte nur in der abgebremsten Phase."},
+              {"key": "E", "text": "Das Drehmoment durch die Masse wirkte nur in der beschleunigten Phase."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D STIMMT NICHT (ist also die falsche Aussage): Das Reibdrehmoment wirkte tatsächlich in BEIDEN Phasen — sowohl während der Beschleunigung (aber das Antriebsdrehmoment überwog) als auch nach dem Abfallen des Fadens (dann nur noch Reibung). A ist korrekt: Phase 1 endet mit Fadenabfall. B ist korrekt: Phase 2 beginnt mit Fadenabfall. C ist korrekt: Zwei Phasen sind klar trennbar. E ist korrekt: Das Drehmoment der Masse (über den Faden) wirkte nur in Phase 1."
+          },
+          {
+            "id": "sc_3_3_3",
+            "frage": "Vollkugel und Hohlkugel (gleiche m und R) rollen von oben einer schiefen Ebene. Bei gleicher Anfangshöhe: Welche hat am Ende die höhere Translationsgeschwindigkeit?",
+            "optionen": [
+              {"key": "A", "text": "Beide haben die gleiche Translationsgeschwindigkeit."},
+              {"key": "B", "text": "Die Hohlkugel, da sie mehr Energie speichert."},
+              {"key": "C", "text": "Die Vollkugel, da k_Vollkugel < k_Hohlkugel."},
+              {"key": "D", "text": "Hängt von der Länge der Ebene ab."},
+              {"key": "E", "text": "Hängt vom Neigungswinkel ab."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: E_pot = E_trans + E_rot. E_trans = E_pot/(1+k). Kleineres k → größeres E_trans → größere v. Vollkugel: k=2/5 < 2/3 (Hohlkugel). D, E sind falsch: k ist eine intrinsische Eigenschaft; Länge und Winkel kürzen sich heraus (v = √(2·g·h·1/(1+k)) nur von h abhängig)."
+          },
+          {
+            "id": "sc_3_3_4",
+            "frage": "Das magnetische Drehmoment auf eine ebene Leiterschleife (Fläche A, Strom I) in einem Magnetfeld B (homogen) beträgt:",
+            "optionen": [
+              {"key": "A", "text": "M = I·A·B"},
+              {"key": "B", "text": "M = I·A·B·cos(θ)"},
+              {"key": "C", "text": "M = I·A·B·sin(θ)"},
+              {"key": "D", "text": "M = I·B/A"},
+              {"key": "E", "text": "M = I²·A·B"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: M = μ×B = I·A·B·sin(θ), wobei θ der Winkel zwischen dem magnetischen Moment μ = I·A·n̂ und dem Feld B ist. Maximal bei θ=90° (B parallel zur Schleifenebene). A ist falsch: fehlt sin(θ). B ist falsch: cos(θ) würde Energie, nicht Drehmoment beschreiben. D ist falsch: Division durch A macht keinen physikalischen Sinn. E ist falsch: I² hat keine physikalische Grundlage."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_3_4_1",
+            "frage": "Beim Atwood-Versuch auf schiefer Ebene (m₁=m₂=m, α=30°, masselose Rolle): Welche Beschleunigung ergibt sich?",
+            "optionen": [
+              {"key": "A", "text": "a = g"},
+              {"key": "B", "text": "a = g·sin30° = g/2"},
+              {"key": "C", "text": "a = g·(1−sin30°)/2 = g/4"},
+              {"key": "D", "text": "a = g·cos30°"},
+              {"key": "E", "text": "a = g/3"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F_netto = m·g − m·g·sin30° = m·g·(1−½) = mg/2. Gesamtmasse = 2m. a = mg/2/(2m) = g/4 ≈ 2,45 m/s². A ist falsch: g wäre ohne Ebene und Massenverteilung. B ist falsch: sin30° wäre Beschleunigung auf Ebene allein. D ist falsch: cos30° ist irrelevant für die Längskomponente. E ist falsch: g/3 hat keine direkte Herleitung."
+          },
+          {
+            "id": "sc_3_4_2",
+            "frage": "Beim Kugelrennen (Vollkugel vs. Hohlkugel, α=17,5°, L=75cm): Wie groß ist die Differenz der Endgeschwindigkeiten ungefähr?",
+            "optionen": [
+              {"key": "A", "text": "Δv ≈ 0,05 m/s"},
+              {"key": "B", "text": "Δv ≈ 0,15 m/s"},
+              {"key": "C", "text": "Δv ≈ 0,30 m/s"},
+              {"key": "D", "text": "Δv ≈ 0,50 m/s"},
+              {"key": "E", "text": "Δv = 0 (beide gleich)"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: v_Vollkugel = √(2·2,109·0,75) ≈ 1,779 m/s. v_Hohlkugel = √(2·1,766·0,75) ≈ 1,628 m/s. Δv ≈ 0,151 m/s ≈ 0,15 m/s. A ist falsch: zu klein. C ist falsch: doppelt so groß. D ist falsch: dreifach zu groß. E ist falsch: die Geschwindigkeiten unterscheiden sich deutlich."
+          },
+          {
+            "id": "sc_3_4_3",
+            "frage": "Beim Fahrradfelgenversuch überstreicht die Felge φ₁ = 10° in t₁ = 2,7 s und φ₅ = 50° in t₅ = 5,9 s. Welche Winkelbeschleunigung ergibt sich aus dem Messpunkt (φ₅, t₅)?",
+            "optionen": [
+              {"key": "A", "text": "α ≈ 0,025 rad/s²"},
+              {"key": "B", "text": "α ≈ 0,050 rad/s²"},
+              {"key": "C", "text": "α ≈ 0,075 rad/s²"},
+              {"key": "D", "text": "α ≈ 0,100 rad/s²"},
+              {"key": "E", "text": "α ≈ 0,150 rad/s²"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: φ₅ = 50° = 0,873 rad. t₅ = 5,9 s → t₅² = 34,81 s². α = 2·φ/t² = 2·0,873/34,81 = 1,746/34,81 ≈ 0,0501 rad/s² ≈ 0,05 rad/s². A ist falsch: zu klein um Faktor 2. C, D, E sind falsch: zu groß."
+          },
+          {
+            "id": "sc_3_4_4",
+            "frage": "Eine Aluminiumscheibe (d=12cm, D=1cm, mAlu=200g) als Vollzylinder modelliert: Wie groß ist J_Alu?",
+            "optionen": [
+              {"key": "A", "text": "J_Alu = 3,6×10⁻⁴ kg·m²"},
+              {"key": "B", "text": "J_Alu = 7,2×10⁻⁴ kg·m²"},
+              {"key": "C", "text": "J_Alu = 1,8×10⁻⁴ kg·m²"},
+              {"key": "D", "text": "J_Alu = 1,44×10⁻³ kg·m²"},
+              {"key": "E", "text": "J_Alu = 3,6×10⁻³ kg·m²"}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: J = ½·m·R² = ½·0,2·(0,06)² = ½·0,2·0,0036 = 3,6×10⁻⁴ kg·m². R = d/2 = 0,06 m. B ist falsch: Faktor 2 zu groß (vergisst ½). C ist falsch: Faktor 2 zu klein. D, E sind falsch: Faktor 4 bzw. 10 zu groß."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Erkläre in einem Satz den Unterschied zwischen Massenträgheitsmoment J und Drehimpuls L."],
+      "2": ["Nenne die Formeln für J des Vollzylinders, der Vollkugel und der Hohlkugel. Welcher Körper rollt am schnellsten und warum?"],
+      "3": ["Erkläre die Rollbedingung v = ω·R und begründe, warum rollende Körper langsamer als gleitende (reibungsfreie) Körper auf schiefer Ebene sind."],
+      "4": ["Beim Fahrradfelgenversuch hat die Ausgleichsgerade im φ-t²-Diagramm die Steigung m = 0,025 rad/s². Berechne α. Erkläre, welche physikalischen Größen man aus α und J_Alu bestimmen kann."],
+      "5": ["Nenne zwei reale Situationen, in denen die Annahme 'rollen ohne zu gleiten' nicht mehr gilt. Welche physikalische Konsequenz hat das?"]
+    }
+  }
+}

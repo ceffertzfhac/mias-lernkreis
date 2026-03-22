@@ -1,0 +1,575 @@
+{
+  "thema_id": 2,
+  "thema_name": "Dynamik — Kräfte, Impuls & Erhaltungssätze",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_2_1_1",
+            "aufgabe": "Ein Block der Masse m = 5 kg liegt auf einer horizontalen, reibungsfreien Fläche. Eine Kraft F = 20 N wirkt horizontal. Welche Beschleunigung erfährt der Block?",
+            "musterloesung": "2. Newton'sches Gesetz: F = m·a → a = F/m = 20 N / 5 kg = 4 m/s².",
+            "tipps": [
+              "Nutze Newtons 2. Gesetz: F = m·a.",
+              "Auflösen nach a: a = F/m.",
+              "a = 20/5 = 4 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_1_2",
+            "aufgabe": "Welche Kraft muss auf einen Körper der Masse 8 kg wirken, um ihn in 3 s von 0 auf 12 m/s zu beschleunigen?",
+            "musterloesung": "Beschleunigung: a = Δv/t = 12/3 = 4 m/s². Kraft: F = m·a = 8·4 = 32 N.",
+            "tipps": [
+              "Erst Beschleunigung berechnen: a = Δv/Δt.",
+              "Dann Kraft: F = m·a.",
+              "a = 4 m/s² → F = 8·4 = 32 N."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_1_3",
+            "aufgabe": "Ein Körper der Masse 3 kg ruht auf einer geneigten Fläche (α = 30°, reibungsfrei). Welche Kraft ist nötig, um ihn auf der Rampe im Gleichgewicht zu halten?",
+            "musterloesung": "Hangabtriebskraft: F_H = m·g·sin(30°) = 3·9,81·0,5 = 14,7 N. Um Gleichgewicht zu halten: F = 14,7 N entlang der Rampe nach oben.",
+            "tipps": [
+              "Zerlege die Schwerkraft in Hangabtriebskraft (parallel) und Normalkraft (senkrecht zur Rampe).",
+              "F_H = m·g·sin(α) ist die Kraft entlang der Schiefen Ebene.",
+              "F = 3·9,81·sin(30°) = 14,7 N."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_1_4",
+            "aufgabe": "Zwei Körper stoßen vollkommen unelastisch zusammen: m₁ = 2 kg mit v₁ = 6 m/s und m₂ = 4 kg in Ruhe. Welche gemeinsame Geschwindigkeit haben sie nach dem Stoß?",
+            "musterloesung": "Impulserhaltung: m₁·v₁ + m₂·0 = (m₁+m₂)·v'. v' = m₁·v₁/(m₁+m₂) = 2·6/(2+4) = 12/6 = 2 m/s.",
+            "tipps": [
+              "Beim vollkommen unelastischen Stoß bleiben die Körper zusammen — Impulserhaltung anwenden.",
+              "p_vorher = m₁·v₁; p_nachher = (m₁+m₂)·v'.",
+              "v' = m₁·v₁/(m₁+m₂) = 2 m/s."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_2_2_1",
+            "aufgabe": "Ein Skifahrer (m = 75 kg) fährt einen Hang (α = 30°) hinunter mit der Bewegungsgleichung x(t) = 1,2 m/s²·t² + 9,8 m/s·t. Bestimme die Reibungskraft, die auf den Skifahrer wirkt.",
+            "musterloesung": "Beschleunigung: a = 2·1,2 = 2,4 m/s². Hangabtriebskraft: F_H = m·g·sin30° = 75·9,81·0,5 = 367,9 N. Nettokraft: F_netto = m·a = 75·2,4 = 180 N. Reibungskraft: F_R = F_H − F_netto = 367,9 − 180 = 187,9 N.",
+            "tipps": [
+              "Nettokraft aus Newton: F_netto = m·a; a aus der Bewegungsgleichung (2. Ableitung oder Koeffizient von t²).",
+              "Kräftebilanz am Hang: F_H − F_R = F_netto → F_R = F_H − F_netto.",
+              "F_H = 75·9,81·sin30° ≈ 367,9 N; F_R ≈ 367,9 − 180 = 187,9 N."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_2_2",
+            "aufgabe": "Zwei Kugeln stoßen elastisch zusammen: m₁ = 3 kg mit v₁ = 8 m/s und m₂ = 1 kg in Ruhe. Berechne die Geschwindigkeiten nach dem Stoß.",
+            "musterloesung": "Elastischer Stoß: v₁' = (m₁−m₂)/(m₁+m₂)·v₁ = (3−1)/(3+1)·8 = 2/4·8 = 4 m/s. v₂' = 2m₁/(m₁+m₂)·v₁ = 6/4·8 = 12 m/s.",
+            "tipps": [
+              "Beim elastischen Stoß gelten Impuls- und Energieerhaltung. Die Formeln sind: v₁' = (m₁−m₂)/(m₁+m₂)·v₁ und v₂' = 2m₁/(m₁+m₂)·v₁.",
+              "Einsetzen: v₁' = (2/4)·8 = 4 m/s; v₂' = (6/4)·8 = 12 m/s.",
+              "Probe: p_vorher = 3·8 = 24 kg·m/s; p_nachher = 3·4 + 1·12 = 24 kg·m/s. ✓"
+            ]
+          },
+          {
+            "id": "do_berechnen_2_2_3",
+            "aufgabe": "Ein Körper (m = 10 kg) liegt auf einer Fläche mit Haftreibungskoeffizient µ_H = 0,4 und Gleitreibungskoeffizient µ_G = 0,3. Welche Kraft ist nötig, um ihn in Bewegung zu setzen? Welche Kraft hält ihn mit konstanter Geschwindigkeit?",
+            "musterloesung": "Normalkraft: N = m·g = 10·9,81 = 98,1 N. Haftreibungskraft (Loslöskraft): F_H = µ_H·N = 0,4·98,1 = 39,2 N. Gleitreibungskraft (konstante Bewegung): F_G = µ_G·N = 0,3·98,1 = 29,4 N.",
+            "tipps": [
+              "Reibungskraft = µ · Normalkraft; bei horizontaler Fläche N = m·g.",
+              "Zum Losbewegen muss Haftreibung überwunden werden: F > µ_H·m·g.",
+              "F_Haften = 39,2 N; F_Gleiten = 29,4 N."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_2_4",
+            "aufgabe": "Ein Pendel (m = 500 g, Fadenlänge l = 2 m) wird um 20° ausgelenkt und losgelassen. Welche Geschwindigkeit hat die Masse beim Durchgang durch die Gleichgewichtslage? (Energieerhaltung, Näherung sin20° ≈ 0,342)",
+            "musterloesung": "Höhendifferenz: h = l·(1−cos20°) = 2·(1−0,940) = 2·0,060 = 0,120 m. Energieerhaltung: m·g·h = ½m·v² → v = √(2gh) = √(2·9,81·0,12) = √2,354 ≈ 1,53 m/s.",
+            "tipps": [
+              "Höhe berechnen: h = l·(1−cosα) — dies ist der Höhenunterschied zwischen Auslenkung und Gleichgewicht.",
+              "Energieerhaltung: potentielle Energie am höchsten Punkt = kinetische Energie am tiefsten Punkt.",
+              "v = √(2gh) = √(2·9,81·0,12) ≈ 1,53 m/s."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_2_3_1",
+            "aufgabe": "Zwei Stahlkugeln hängen an Fäden (beide l = 2,0 m, Raumhöhe 2,50 m, Aufhängung an Decke, Aufhängepunkt bis Schwerpunkt 0,50 m über Boden). Beide werden um 20° ausgelenkt (entgegengesetzt) und gleichzeitig losgelassen. Direkt nach dem vollkommen elastischen Stoß bleibt m₁ stehen. Auf welche maximale Höhe (vom Boden) schwingt m₂?",
+            "musterloesung": "Pendellänge: l = 2,5 − 0,5 = 2,0 m. Geschwindigkeit vor Stoß: v = √(2g·l·(1−cos20°)) = √(2·9,81·2·(1−0,940)) = √(2·9,81·2·0,060) = √2,354 ≈ 1,535 m/s (jede Kugel). Beim vollkommen elastischen Stoß mit m₁ = m₂: m₁ stoppt, m₂ erhält v₁_vorher. Relative Geschwindigkeit von m₂ nach Stoß: v₂' = v₁ + v₂ = 1,535 + 1,535 = 3,07 m/s (da beide aufeinander zubewegen). Maximale Höhe: h = v₂'²/(2g) = 9,42/19,62 ≈ 0,480 m. Abstand vom Boden: 0,50 + 0,480 = 0,98 m.",
+            "tipps": [
+              "Geschwindigkeit jeder Kugel beim Aufprall mit Energieerhaltung bestimmen: v = √(2g·l·(1−cosα)).",
+              "Bei gleichem elastischem Stoß m₁ = m₂: die Geschwindigkeiten tauschen. Da beide entgegenkommen, ist v₂' = v₁ + v₂.",
+              "Maximale Höhe nach Stoß: h = v₂'²/(2g); Bodenhöhe = Gleichgewichtslage + h_max."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_3_2",
+            "aufgabe": "Ein Körper (m = 2 kg) liegt auf einer schiefen Ebene (α = 25°, µ_G = 0,2). Ist die Bewegung bergauf oder bergab? Berechne die Beschleunigung.",
+            "musterloesung": "Hangabtriebskraft: F_H = m·g·sin25° = 2·9,81·0,423 = 8,29 N. Normalkraft: N = m·g·cos25° = 2·9,81·0,906 = 17,78 N. Gleitreibung: F_R = µ_G·N = 0,2·17,78 = 3,56 N. Da F_H > F_R, bewegt sich der Körper bergab. a = (F_H − F_R)/m = (8,29 − 3,56)/2 = 4,73/2 = 2,37 m/s².",
+            "tipps": [
+              "Prüfe ob F_H > F_R: dann bewegt sich der Körper bergab, die Reibungskraft wirkt bergauf.",
+              "Kräftebilanz: F_netto = F_H − F_R = m·a.",
+              "a = (m·g·sinα − µ_G·m·g·cosα)/m = g·(sinα − µ_G·cosα) = 9,81·(0,423 − 0,181) ≈ 2,37 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_3_3",
+            "aufgabe": "Ein Block (m₁ = 2 kg) liegt auf einem Tisch und ist über ein masseloses Seil und eine reibungsfreie Umlenkrolle mit einer hängenden Masse (m₂ = 0,5 kg) verbunden. Wie groß ist die Beschleunigung des Systems und die Seilspannung? (Tisch reibungsfrei)",
+            "musterloesung": "Nettokraft: F_netto = m₂·g = 0,5·9,81 = 4,91 N. Gesamtmasse: m_ges = m₁ + m₂ = 2,5 kg. a = F_netto/m_ges = 4,91/2,5 = 1,96 m/s². Seilspannung: T = m₁·a = 2·1,96 = 3,92 N. Probe mit m₂: m₂·g − T = m₂·a → T = m₂·(g−a) = 0,5·(9,81−1,96) = 0,5·7,85 = 3,92 N. ✓",
+            "tipps": [
+              "Das System aus beiden Massen gemeinsam betrachten: einzige treibende Kraft ist m₂·g.",
+              "a = m₂·g/(m₁+m₂); Seilspannung dann separat aus Gleichgewicht von m₁ oder m₂.",
+              "a = 1,96 m/s²; T = m₁·a = 3,92 N."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_3_4",
+            "aufgabe": "Ein Körper (m = 0,5 kg) bewegt sich mit v₀ = 10 m/s auf eine Feder (k = 200 N/m) zu, die an einer Wand befestigt ist. Auf welche maximale Stauchung wird die Feder gedrückt? Was passiert mit dem Impuls des Körpers im Moment maximaler Stauchung?",
+            "musterloesung": "Energieerhaltung: ½m·v₀² = ½k·x²_max → x_max = v₀·√(m/k) = 10·√(0,5/200) = 10·√0,0025 = 10·0,05 = 0,5 m. Im Moment maximaler Stauchung ist v = 0, also ist der Impuls p = m·v = 0. Die gesamte kinetische Energie wurde in Federenergie umgewandelt.",
+            "tipps": [
+              "Energieerhaltung: kinetische Energie vor Stoß = Federenergie bei max. Stauchung.",
+              "½m·v₀² = ½k·x² → x_max = v₀·√(m/k).",
+              "x_max = 10·√(0,5/200) = 0,5 m; bei max. Stauchung ist v = 0, also p = 0."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_2_4_1",
+            "aufgabe": "Ein Körper (m₁ = 3 kg) bewegt sich mit v₁ = 5 m/s. Ein zweiter Körper (m₂ = 2 kg) bewegt sich mit v₂ = −3 m/s (entgegengesetzt). Sie stoßen vollkommen unelastisch zusammen. a) Berechne die Geschwindigkeit nach dem Stoß. b) Wie viel kinetische Energie geht verloren?",
+            "musterloesung": "a) Impulserhaltung: v' = (m₁v₁ + m₂v₂)/(m₁+m₂) = (3·5 + 2·(−3))/5 = (15−6)/5 = 1,8 m/s. b) Ekin_vorher = ½·3·25 + ½·2·9 = 37,5 + 9 = 46,5 J. Ekin_nachher = ½·5·1,8² = ½·5·3,24 = 8,1 J. Verlust = 46,5 − 8,1 = 38,4 J.",
+            "tipps": [
+              "Impulserhaltung für v': Vorzeichen der Geschwindigkeiten beachten (entgegensetzt = negativ).",
+              "Energieverlust = Ekin_vorher − Ekin_nachher.",
+              "v' = (15−6)/5 = 1,8 m/s; ΔEkin = 38,4 J (umgewandelt in Wärme, Verformung)."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_4_2",
+            "aufgabe": "Zeige mittels der Impulserhaltung, dass beim elastischen Stoß zweier gleicher Massen (m₁ = m₂ = m) mit v₁ und m₂ in Ruhe gilt: v₁' = 0 und v₂' = v₁.",
+            "musterloesung": "Impulserhaltung: m·v₁ = m·v₁' + m·v₂' → v₁ = v₁' + v₂'. Energieerhaltung: ½m·v₁² = ½m·v₁'² + ½m·v₂'² → v₁² = v₁'² + v₂'². Aus (1): v₂' = v₁ − v₁'. Einsetzen in (2): v₁² = v₁'² + (v₁−v₁')² = v₁'² + v₁² − 2v₁v₁' + v₁'² → 0 = 2v₁'² − 2v₁v₁' = 2v₁'(v₁'−v₁). Lösungen: v₁' = 0 (physikalisch relevant) oder v₁' = v₁ (trivial, kein Stoß). Damit v₂' = v₁.",
+            "tipps": [
+              "Zwei Gleichungen aufstellen: Impulserhaltung und Energieerhaltung.",
+              "Aus Impulserhaltung v₂' = v₁−v₁' einsetzen in Energiegleichung.",
+              "Quadratische Gleichung in v₁' liefert v₁' = 0 → v₂' = v₁."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_4_3",
+            "aufgabe": "Ein Raumschiff (Gesamtmasse m₀ = 1000 kg) stößt Treibstoff (Δm = 50 kg) mit v_aus = 500 m/s (relativ zum Schiff) aus. Berechne die Geschwindigkeitsänderung des Raumschiffs.",
+            "musterloesung": "Impulserhaltung: Gesamtimpuls vorher = 0 (beide in Ruhe). Nach dem Ausstoß: 0 = (m₀−Δm)·v_schiff − Δm·v_aus. v_schiff = Δm·v_aus/(m₀−Δm) = 50·500/950 ≈ 26,3 m/s.",
+            "tipps": [
+              "Impulserhaltung: Gesamtimpuls vorher = 0 (System in Ruhe). Nach Ausstoß gilt 0 = m_Schiff·v_Schiff + m_Treibstoff·(−v_aus).",
+              "v_Schiff = Δm·v_aus / (m₀−Δm).",
+              "v_Schiff = 50·500/950 ≈ 26,3 m/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_2_4_4",
+            "aufgabe": "Ein Block (m₁ = 5 kg) gleitet auf einer reibungsfreien Fläche mit v₁ = 4 m/s auf einen ruhenden Block (m₂ = 3 kg) zu, der auf einem Tisch steht. Beide sind durch eine Feder (k = 500 N/m) verbunden. Berechne die maximale Federstauchung und die Geschwindigkeiten wenn die Feder wieder entspannt ist.",
+            "musterloesung": "Schwerpunktsgeschwindigkeit: v_SP = m₁·v₁/(m₁+m₂) = 5·4/8 = 2,5 m/s. Im SP-System: v₁' = v₁−v_SP = 1,5 m/s; v₂' = −v_SP = −2,5 m/s. Energie im SP-System: E' = ½·μ·(v₁−v₂)² mit μ = m₁m₂/(m₁+m₂) = 15/8 = 1,875 kg. E' = ½·1,875·16 = 15 J. Maximale Federstauchung: E' = ½k·x² → x = √(2E'/k) = √(30/500) = √0,06 ≈ 0,245 m. Nach vollständiger Entspannung (elastischer Stoß): v₁_end = 2·v_SP − v₁ = 5−4 = 1 m/s; v₂_end = 2·v_SP − 0 = 5 m/s.",
+            "tipps": [
+              "Schwerpunktssystem nutzen: v_SP = (m₁v₁+m₂v₂)/(m₁+m₂); im SP-System gilt Energieerhaltung.",
+              "Maximale Stauchung wenn relative Geschwindigkeit = 0: E_kin_relativ = ½k·x².",
+              "Nach Entspannung = elastischer Stoß: v₁_end = (m₁−m₂)/(m₁+m₂)·v₁ = 1 m/s; v₂_end = 2m₁/(m₁+m₂)·v₁ = 5 m/s."
+            ]
+          }
+        ]
+      },
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_2_1_1",
+            "aufgabe": "Skizziere das Freikörperbild (FKB) eines Blocks auf einer geneigten Ebene (α = 30°, mit Reibung). Zeichne alle wirkenden Kräfte ein und benenne sie.",
+            "musterloesung": "Block als Punkt oder Rechteck. Eingezeichnet: Schwerkraft F_G = m·g senkrecht nach unten; Normalkraft N senkrecht zur Rampe nach oben; Reibungskraft F_R entlang der Rampe (bei Bewegung: entgegen Bewegungsrichtung); Hangabtriebskraft F_H parallel zur Rampe nach unten (als Komponente von F_G). Koordinatensystem entlang und senkrecht zur Rampe.",
+            "tipps": [
+              "Freikörperbild: Körper isoliert zeichnen und alle Kräfte als Pfeile einzeichnen.",
+              "Kräfte auf geneigter Ebene: Schwerkraft zerlegen in F_H (parallel) und F_N-Anteil (senkrecht).",
+              "Reibungskraft wirkt entgegen der Bewegungsrichtung."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_1_2",
+            "aufgabe": "Zeichne das Freikörperbild für einen Körper, der an einem Seil hängt und sich gleichmäßig nach oben bewegt. Welche Kräfte wirken? Wie groß muss die Seilspannung sein?",
+            "musterloesung": "Zwei Kräfte: Schwerkraft F_G = m·g nach unten; Seilspannung T nach oben. Gleichmäßige Bewegung: a = 0 → T = F_G = m·g. Kräftegleichgewicht im FKB sichtbar (Pfeile gleich lang, entgegengesetzt).",
+            "tipps": [
+              "Gleichmäßige Bewegung = a = 0 → Newton 1: Summe aller Kräfte = 0.",
+              "T − m·g = 0 → T = m·g.",
+              "FKB: zwei gleich lange, entgegengerichtete Pfeile."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_1_3",
+            "aufgabe": "Skizziere die Impulserhaltung beim vollkommen unelastischen Stoß grafisch als Vektordiagramm (Impulsvektor vorher und nachher). Beschrifte alle Größen.",
+            "musterloesung": "Vorher: p₁ = m₁·v₁ nach rechts, p₂ = 0 (ruhend). Nachher: p' = (m₁+m₂)·v' nach rechts. p₁ = p' → Pfeillängen zeigen Impulserhaltung. Beschriftung: p₁, p₂, p'_gesamt. Beachte: Betrag p' < p₁ + p₂ ist falsch — p' = p₁ (da p₂ = 0).",
+            "tipps": [
+              "Impuls = Masse × Geschwindigkeit; als Vektor darstellen.",
+              "Impulserhaltung: p_vorher = p_nachher — Pfeillängen entsprechend.",
+              "Beim unelastischen Stoß: p' = p₁ + p₂ (vektoriell), kinetische Energie nicht erhalten."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_1_4",
+            "aufgabe": "Skizziere die Kräfte auf ein Auto, das auf einer horizontalen Straße gleichmäßig beschleunigt. Benenne alle Kräfte und erkläre, welche Kraft die Beschleunigung verursacht.",
+            "musterloesung": "Kräfte: Schwerkraft F_G nach unten; Normalkraft N nach oben (gleich groß → kein Abheben); Antriebskraft F_A nach vorne (durch Reibung Reifen-Straße); Luftwiderstand F_W nach hinten (bei Beschleunigung kleiner als F_A). Resultierende = F_A − F_W = m·a in Fahrtrichtung. Die Reibungskraft zwischen Reifen und Straße ermöglicht die Beschleunigung.",
+            "tipps": [
+              "Horizontal: Antriebskraft (vorwärts) und Luftwiderstand (rückwärts).",
+              "Vertikal: Schwerkraft und Normalkraft gleich groß.",
+              "Beschleunigung durch die Resultierende der horizontalen Kräfte."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_2_2_1",
+            "aufgabe": "Skizziere das Freikörperbild und die Kräftebilanz für zwei Klötzchen (m₁ oben, m₂ unten) die aufeinanderliegen und gemeinsam mit Kraft F beschleunigt werden. Welche Kräfte wirken auf m₁, welche auf m₂?",
+            "musterloesung": "Auf m₁: Schwerkraft m₁g nach unten; Normalkraft N₁ von m₂ nach oben; keine Horizontalkraft direkt auf m₁ außer Reibung von m₂ (falls m₁ beschleunigt werden muss). Auf m₂: Schwerkraft m₂g; Normalkraft N_Boden nach oben; Kraft F nach vorne; Reaktionskraft von m₁ nach unten; Reibungskraft vom Boden nach hinten. Gesamtbeschleunigung: a = F/(m₁+m₂) (wenn miteinander).",
+            "tipps": [
+              "Jedes Objekt separat im FKB betrachten; Aktions-Reaktions-Paare beachten (3. Newtonsches Gesetz).",
+              "m₁ wird nur durch Reibung mit m₂ beschleunigt; m₂ durch F und Reibungen.",
+              "Beschleunigung gleich für beide: a = F/(m₁+m₂)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_2_2",
+            "aufgabe": "Zeichne qualitativ den Verlauf von kinetischer Energie und potentieller Energie beim Pendelschlag (von max. Auslenkung bis Gleichgewicht und wieder zurück). Beschrifte kritische Punkte.",
+            "musterloesung": "E_kin: Null bei maximaler Auslenkung, Maximum beim Durchgang durch Gleichgewicht, wieder Null bei maximaler Auslenkung auf der anderen Seite — Parabel-artige Schwingung. E_pot: Maximum bei max. Auslenkung, Null in Gleichgewichtslage — spiegelbildlich zu E_kin. E_gesamt = E_kin + E_pot = const. Beschriftung: Umkehrpunkte, Gleichgewichtslage.",
+            "tipps": [
+              "Energieerhaltung: E_kin + E_pot = const; wenn E_pot max → E_kin = 0 und umgekehrt.",
+              "E_pot = m·g·h = m·g·l·(1−cosφ); sinusförmiger Verlauf.",
+              "Kritische Punkte beschriften: max. Auslenkung (E_pot = max), Gleichgewicht (E_kin = max)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_2_3",
+            "aufgabe": "Skizziere den vollkommen elastischen und den vollkommen unelastischen zentralen Stoß zweier gleich schwerer Körper in einem v-t-Diagramm. Erkläre die Unterschiede.",
+            "musterloesung": "Elastischer Stoß (m₁=m₂): vor Stoß v₁ = v₀, v₂ = 0. Nach Stoß: v₁ = 0, v₂ = v₀. Kurven tauschen — m₁ stoppt abrupt, m₂ startet. Unelastischer Stoß: beide nehmen gemeinsame Geschwindigkeit v' = v₀/2 an. Im v-t-Diagramm: beim elastischen Stoß Kreuzung der Kurven, beim unelastischen Zusammenlaufen zu einem Wert.",
+            "tipps": [
+              "Elastisch bei gleichen Massen: vollständiger Geschwindigkeitstausch.",
+              "Unelastisch: gemeinsame Endgeschwindigkeit = v₀/2.",
+              "Im Diagramm: abrupte Änderungen am Stoßzeitpunkt markieren."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_2_4",
+            "aufgabe": "Skizziere die Kräfte auf einen Körper, der mit konstanter Geschwindigkeit eine schiefe Ebene (α) hinuntergleitet (Reibung vorhanden). Stelle das Kräftegleichgewicht durch Vektoren dar.",
+            "musterloesung": "Kräfte: Schwerkraft F_G = m·g senkrecht nach unten. Komponenten: F_H = m·g·sinα parallel zum Hang nach unten; F_N_anteil = m·g·cosα senkrecht in die Fläche. Normalkraft N = m·g·cosα nach oben aus Fläche. Reibungskraft F_R = µ·N = µ·m·g·cosα den Hang hinauf. Gleichgewicht: F_H = F_R → tanα = µ → µ = tanα.",
+            "tipps": [
+              "Konstante Geschwindigkeit = kein Nettokraft → F_H = F_R.",
+              "F_H = m·g·sinα; F_R = µ·m·g·cosα → Gleichsetzen: µ = tanα.",
+              "Vektoren maßstäblich und beschriftet einzeichnen."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_2_3_1",
+            "aufgabe": "Zeichne nach Klausurschema die vollständige Lösung für folgende Aufgabe: Ein Block (m = 370 g) liegt über eine Umlenkrolle (Vollzylinder, Masse 50 g, Radius 72 mm) mit einer zweiten Masse (m₂ = 370 g) verbunden auf einer schiefen Ebene (α = 30°). Skizziere den Versuchsaufbau mit allen Größen.",
+            "musterloesung": "Skizze: schiefe Ebene mit Winkel α = 30°. Block m₁ auf der Schiefen, verbunden über masseloses Seil und Umlenkrolle am Knick der Ebene mit hängender Masse m₂. Eingezeichnet: Gewichtskräfte m₁g und m₂g, Seilspannungen T₁ und T₂, Normalkraft N, Koordinatensystem (x parallel zu Ebene, y senkrecht). Alle Massen und Winkel beschriftet.",
+            "tipps": [
+              "Klausurschema: Gegeben und Gesucht aufschreiben, dann ausführliche Skizze mit allen Größen.",
+              "Seil hat zwei unterschiedliche Spannungen (Umlenkrolle mit Massenträgheitsmoment).",
+              "Koordinatensystem entlang der schiefen Ebene wählen."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_3_2",
+            "aufgabe": "Skizziere für den Raketenantrieb die Impulserhaltung: Zustand vorher (Rakete + Treibstoff in Ruhe) und nachher (Rakete mit v_R, Treibstoff mit −v_aus). Erkläre das Rückstoßprinzip anhand der Skizze.",
+            "musterloesung": "Vorher: Gesamtsystem in Ruhe, p_gesamt = 0. Nachher: Treibstoff-Impuls nach hinten (Δm · v_aus), Raketen-Impuls nach vorne (m_R · v_R). Vektoriell: p_Rakete + p_Treibstoff = 0 → p_Rakete = −p_Treibstoff. Rückstoßprinzip: Durch Ausstoß des Treibstoffs nach hinten erhält die Rakete Impuls nach vorne (3. Newton: Actio = Reactio im Impulsbild).",
+            "tipps": [
+              "Impulserhaltung: Gesamtimpuls = 0 (System war in Ruhe).",
+              "Pfeile für Rakete (vorwärts) und Treibstoff (rückwärts) gleich lang (da p_gesamt = 0).",
+              "Rückstoß = 3. Newton'sches Gesetz in Impulsform."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_3_3",
+            "aufgabe": "Zeichne das vollständige Freikörperbild für eine Geladene Hantel: Zwei Kugeln A und B an einem Stab, die um einen Lagerpunkt in der Mitte drehen können. Einwirkung: elektrisches Feld E und Schwerkraft. Benenne alle Kräfte und Drehmomente.",
+            "musterloesung": "Stab horizontal (oder unter Winkel φ). An den Enden: Kugel A (q_A, m_A) und Kugel B (q_B, m_B). Kräfte auf A: F_E,A = q_A·E (Richtung je nach Ladungsvorzeichen); F_G,A = m_A·g nach unten. Kräfte auf B analog. Drehmoment um Lagerpunkt: M_E = (q_A·E − q_B·E)·(L/2)·sinφ wenn Feld ⊥ Stab; M_G = (m_A·g − m_B·g)·(L/2)·cosφ. Im Gleichgewicht: M_E + M_G = 0.",
+            "tipps": [
+              "Alle Kräfte an beiden Kugeln einzeichnen: elektrische Kraft und Schwerkraft.",
+              "Drehmoment = Kraft × Hebelarm; Hebelarm ist der senkrechte Abstand zur Drehachse.",
+              "Gleichgewichtsbedingung: Summe aller Drehmomente = 0."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_3_4",
+            "aufgabe": "Skizziere die drei Newton'schen Gesetze anhand konkreter Beispiele: 1. Gesetz (Trägheit), 2. Gesetz (F = ma), 3. Gesetz (Actio = Reactio). Je ein klares Beispiel mit Freikörperbild.",
+            "musterloesung": "1. Trägheit: Ball rollt ohne äußere Kraft auf glatten Fläche mit konstanter Geschwindigkeit (Kräftebilanz = 0). 2. F = ma: Auto beschleunigt, Antriebskraft ≠ Widerstandskraft → Nettokraft = m·a. 3. Actio = Reactio: Fuß stößt auf Boden (F_Fuß→Boden); Boden stößt auf Fuß zurück (F_Boden→Fuß), gleich groß, entgegengesetzt. Je ein FKB mit beschrifteten Kräften.",
+            "tipps": [
+              "Für jedes Gesetz ein klar beschriftetes Beispiel mit Freikörperbild.",
+              "3. Gesetz: immer Kraft-Gegenkraft-Paar — wirken auf VERSCHIEDENE Körper.",
+              "Achte auf Konsistenz der Richtungen und Vorzeichen in jedem FKB."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_2_4_1",
+            "aufgabe": "Zeichne das Diagramm 'Impuls vs. Zeit' für einen Ball, der auf den Boden fällt und elastisch zurückspringt. Markiere den Stoßzeitpunkt und erkläre den Zusammenhang zwischen Impulsdifferenz und Kraft.",
+            "musterloesung": "Vor dem Aufprall: p = −m·v (nach unten, negativ). Beim Aufprall: abrupter Wechsel (Stoßimpuls). Nach dem Aufprall: p = +m·v (nach oben, positiv). Impulsdifferenz: Δp = 2mv. Kraft während Stoß: F = Δp/Δt (je kürzer Stoßzeit, desto größer Kraft). Diagramm: p(t) mit Sprung bei t_Stoß.",
+            "tipps": [
+              "Impuls ist Vektor: Vorzeichenwechsel beim elastischen Aufprall.",
+              "Impulssatz: F·Δt = Δp — Fläche unter F(t) = Impulsänderung.",
+              "Im p(t)-Diagramm: Sprung von −mv auf +mv am Stoßzeitpunkt."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_4_2",
+            "aufgabe": "Skizziere die Kraftkurve F(x) einer Feder über die Stauchung x (Hooke'sches Gesetz). Markiere die gespeicherte Federenergie als Fläche unter der Kurve. Wie ändert sich die Darstellung bei doppelter Federkonstante?",
+            "musterloesung": "F(x) = k·x: lineare Gerade durch Ursprung mit Steigung k. Fläche unter Kurve bis x = x_max: E = ½k·x_max² (Dreieck). Bei doppelter Federkonstante 2k: steilere Gerade, bei gleicher Stauchung doppelte Kraft, doppelte gespeicherte Energie. Diagramm: zwei Geraden überlagert, Dreiecke beschriften.",
+            "tipps": [
+              "Hooke: F = k·x ist eine Gerade; Federenergie = Dreiecksfläche = ½k·x².",
+              "Bei k → 2k: Steigung verdoppelt, Energiefläche ebenfalls verdoppelt.",
+              "Beschriftung: Achsen (x in m, F in N), k-Wert als Steigung, E als Fläche."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_4_3",
+            "aufgabe": "Für ein Atwood-System auf einer schiefen Ebene: Skizziere alle Kräfte auf beide Massen und auf die Umlenkrolle. Stelle die Bewegungsgleichungen grafisch dar.",
+            "musterloesung": "Schiefe Ebene mit Winkel α. Block m₁ auf Ebene: Schwerkraft m₁g, Normalkraft N₁, Seilspannung T₁. Hängende Masse m₂: Schwerkraft m₂g nach unten, Seilspannung T₂ nach oben. Umlenkrolle: T₁ und T₂ an Seil (T₁ ≠ T₂ wegen Massenträgheitsmoment der Rolle). Bewegungsgleichungen: m₁a = T₁ − m₁g·sinα; m₂a = m₂g − T₂; J·α_rot = (T₂−T₁)·R.",
+            "tipps": [
+              "Jede Masse separat im FKB; Umlenkrolle hat eigenes Trägheitsmoment J.",
+              "T₁ ≠ T₂ wenn Rolle Masse hat — beide Seilspannungen als verschiedene Größen behandeln.",
+              "Drei Gleichungen (m₁, m₂, Rolle) für drei Unbekannte (a, T₁, T₂)."
+            ]
+          },
+          {
+            "id": "do_skizzieren_2_4_4",
+            "aufgabe": "Skizziere den Schwerpunktsatz: Zwei Körper bewegen sich und stoßen zusammen. Zeige, dass sich der Schwerpunkt ohne äußere Kraft gleichförmig bewegt. Konstruiere den Schwerpunkt vor und nach dem Stoß grafisch.",
+            "musterloesung": "Vor Stoß: m₁ bei x₁(t₁), m₂ bei x₂(t₁). Schwerpunkt: x_S = (m₁x₁ + m₂x₂)/(m₁+m₂). Nach Stoß (beliebiger Art): x_S bleibt auf derselben Geraden x_S(t). Schwerpunkt als gestrichelte Linie einzeichnen — bewegt sich geradlinig mit v_S = (m₁v₁+m₂v₂)/(m₁+m₂) = const. Begründung: keine äußere Kraft → F_ext = 0 → d(p_ges)/dt = 0 → v_S = const.",
+            "tipps": [
+              "Schwerpunkt = gewichteter Mittelwert der Positionen.",
+              "Ohne äußere Kraft bewegt sich der Schwerpunkt mit konstanter Geschwindigkeit (Impulserhaltung).",
+              "Graphisch: x_S(t) ist immer eine Gerade, unabhängig vom Stoßverlauf."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_2_1_1",
+            "frage": "Was besagt das 2. Newton'sche Gesetz?",
+            "optionen": [
+              {"key": "A", "text": "Jede Wirkung hat eine gleich große Gegenwirkung."},
+              {"key": "B", "text": "Ein Körper bleibt in Ruhe, wenn keine Kraft auf ihn wirkt."},
+              {"key": "C", "text": "Die Nettokraft auf einen Körper ist gleich dem Produkt aus Masse und Beschleunigung."},
+              {"key": "D", "text": "Impuls bleibt in einem geschlossenen System erhalten."},
+              {"key": "E", "text": "Die Arbeit einer Kraft ist gleich Kraft mal Weg."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F = m·a ist das 2. Newton'sche Gesetz. A ist falsch: das ist das 3. Gesetz (Actio = Reactio). B ist falsch: das ist das 1. Gesetz (Trägheitsprinzip). D ist falsch: Impulserhaltung folgt aus dem 2. und 3. Gesetz, ist aber nicht das Gesetz selbst. E ist falsch: das ist die Definition von Arbeit."
+          },
+          {
+            "id": "sc_2_1_2",
+            "frage": "Welche Einheit hat der Impuls?",
+            "optionen": [
+              {"key": "A", "text": "N"},
+              {"key": "B", "text": "J"},
+              {"key": "C", "text": "kg·m/s²"},
+              {"key": "D", "text": "kg·m/s"},
+              {"key": "E", "text": "N·m"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: p = m·v → [kg]·[m/s] = kg·m/s. A ist falsch: N ist die Einheit der Kraft. B ist falsch: J (Joule) ist die Einheit der Energie. C ist falsch: kg·m/s² = N (Kraft). E ist falsch: N·m = J (Energie/Arbeit)."
+          },
+          {
+            "id": "sc_2_1_3",
+            "frage": "Ein Körper ruht auf einer horizontalen Fläche. Welche Aussage über die Normalkraft ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Normalkraft ist größer als die Schwerkraft."},
+              {"key": "B", "text": "Die Normalkraft ist gleich groß wie die Schwerkraft und wirkt nach oben."},
+              {"key": "C", "text": "Die Normalkraft ist die Reaktionskraft der Schwerkraft (3. Newton)."},
+              {"key": "D", "text": "Die Normalkraft ist null, da der Körper in Ruhe ist."},
+              {"key": "E", "text": "Die Normalkraft wirkt in Richtung der Schwerkraft."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Gleichgewicht → N = m·g, beide gleich groß, N nach oben. A ist falsch: beide sind gleich (Gleichgewicht). C ist falsch: die Reaktionskraft der Schwerkraft (Erde zieht Körper) ist die Kraft, mit der der Körper die Erde anzieht — nicht die Normalkraft. D ist falsch: N ≠ 0. E ist falsch: N wirkt senkrecht zur Fläche, also nach oben."
+          },
+          {
+            "id": "sc_2_1_4",
+            "frage": "Was gilt beim vollkommen unelastischen Stoß?",
+            "optionen": [
+              {"key": "A", "text": "Kinetische Energie bleibt erhalten, Impuls nicht."},
+              {"key": "B", "text": "Impuls bleibt erhalten, kinetische Energie nicht."},
+              {"key": "C", "text": "Weder Impuls noch kinetische Energie bleiben erhalten."},
+              {"key": "D", "text": "Beide bleiben erhalten."},
+              {"key": "E", "text": "Nur die potentielle Energie bleibt erhalten."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Impulserhaltung gilt immer (keine äußeren Kräfte), kinetische Energie wird beim unelastischen Stoß in Wärme, Verformung etc. umgewandelt. A ist falsch: der Impuls bleibt erhalten. C ist falsch: Impuls ist erhalten. D ist falsch: kinetische Energie nimmt ab. E ist falsch: potentielle Energie ist hier nicht relevant."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_2_2_1",
+            "frage": "Welche der folgenden Aussagen zur Impulserhaltung ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Der Impuls eines Systems bleibt immer konstant, auch wenn externe Kräfte eingreifen."},
+              {"key": "B", "text": "Der Impuls eines Systems bleibt immer konstant, auch wenn äußere Kräfte wirken."},
+              {"key": "C", "text": "Der Impuls eines Systems bleibt nur dann konstant, wenn keine äußeren Kräfte wirken."},
+              {"key": "D", "text": "Der Impuls eines Systems bleibt konstant, genau dann wenn das System abgeschlossen ist."},
+              {"key": "E", "text": "Der Impuls eines Systems bleibt immer konstant, wenn es konstant beschleunigt wird."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Ein abgeschlossenes System hat keine äußeren Kräfte → dp_ges/dt = 0. A ist falsch: äußere Kräfte ändern den Impuls. B ist falsch: auch hier. C ist zwar inhaltlich korrekt formuliert, aber 'abgeschlossenes System' ist die präzisere physikalische Formulierung im Vergleich zu 'keine äußeren Kräfte'. D ist die exaktere Antwort da 'abgeschlossen' alle Bedingungen einschließt. E ist falsch: konstante Beschleunigung bedeutet konstante äußere Kraft → Impuls ändert sich."
+          },
+          {
+            "id": "sc_2_2_2",
+            "frage": "Zwei Körper gleicher Masse stoßen elastisch zusammen. Körper 1 bewegt sich mit v, Körper 2 ist in Ruhe. Was gilt nach dem Stoß?",
+            "optionen": [
+              {"key": "A", "text": "Beide bewegen sich mit v/2."},
+              {"key": "B", "text": "Körper 1 bewegt sich mit v, Körper 2 bleibt in Ruhe."},
+              {"key": "C", "text": "Körper 1 bleibt stehen, Körper 2 bewegt sich mit v."},
+              {"key": "D", "text": "Beide bleiben stehen."},
+              {"key": "E", "text": "Körper 1 bewegt sich mit 2v, Körper 2 bleibt in Ruhe."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Beim elastischen Stoß gleicher Massen tauschen die Körper ihre Geschwindigkeiten. A ist falsch: das wäre ein vollkommen unelastischer Stoß (v' = v/2). B ist falsch: Körper 1 muss seinen Impuls abgeben. D ist falsch: Impulserhaltung wäre verletzt. E ist falsch: 2v würde Energie nicht erhalten."
+          },
+          {
+            "id": "sc_2_2_3",
+            "frage": "Eine Lokomotive (M = 10⁵ kg) bewegt sich mit 2 m/s und stößt vollkommen unelastisch mit einem stehenden Waggon (m = 10⁴ kg) zusammen. Welche Geschwindigkeit hat der verbundene Zug danach?",
+            "optionen": [
+              {"key": "A", "text": "v' = 2 m/s"},
+              {"key": "B", "text": "v' = 1 m/s"},
+              {"key": "C", "text": "v' ≈ 1,82 m/s"},
+              {"key": "D", "text": "v' = 0,2 m/s"},
+              {"key": "E", "text": "v' = 20 m/s"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: v' = M·v/(M+m) = 10⁵·2/(1,1·10⁵) = 2/1,1 ≈ 1,818 ≈ 1,82 m/s. A ist falsch: 2 m/s wäre nur wenn m << M, hier m = 10% von M. B ist falsch: 1 m/s wäre bei gleichen Massen. D ist falsch: 0,2 m/s ist viel zu klein. E ist falsch: Impuls muss erhalten bleiben, 20 m/s würde Energie nicht erhalten."
+          },
+          {
+            "id": "sc_2_2_4",
+            "frage": "Welche Aussage zur Reibungskraft auf einer geneigten Ebene ist FALSCH?",
+            "optionen": [
+              {"key": "A", "text": "Die Haftreibungskraft kann jeden Wert zwischen 0 und µ_H·N annehmen."},
+              {"key": "B", "text": "Die Gleitreibungskraft ist immer µ_G·N."},
+              {"key": "C", "text": "Haftreibungskoeffizient ist immer größer als Gleitreibungskoeffizient."},
+              {"key": "D", "text": "Die Normalkraft auf einer geneigten Ebene ist N = m·g·sinα."},
+              {"key": "E", "text": "Reibungskraft und Normalkraft stehen senkrecht aufeinander."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist falsch und daher die korrekte Antwort: Die Normalkraft auf einer geneigten Ebene ist N = m·g·cosα (nicht sinα). A ist korrekt: Haftreibung ist eine Reaktionskraft (0 bis µ_H·N). B ist korrekt: Gleitreibung ist F_R = µ_G·N. C ist im Allgemeinen korrekt: µ_H > µ_G (sonst wäre Anlaufen schwerer als Bewegen). E ist korrekt: Reibungskraft wirkt parallel zur Fläche, Normalkraft senkrecht dazu."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_2_3_1",
+            "frage": "Welche der folgenden Aussagen zur Erhaltung der Summe aus potentieller und kinetischer Energie ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Sie gilt genau dann, wenn es sich um ein abgeschlossenes System handelt."},
+              {"key": "B", "text": "Sie gilt immer, auch wenn beliebige externe Kräfte wirken."},
+              {"key": "C", "text": "Sie gilt, wenn alle wirkenden Kräfte konservativ sind."},
+              {"key": "D", "text": "Sie gilt genau dann, wenn keine äußeren Drehmomente wirken."},
+              {"key": "E", "text": "Sie gilt nie, wenn das System beschleunigt wird."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Mechanische Energieerhaltung gilt wenn nur konservative Kräfte (Schwerkraft, Federkraft) wirken — keine Reibung, keine nicht-konservativen Kräfte. A ist falsch: abgeschlossenes System hat keine äußeren Kräfte, aber Reibung wäre trotzdem möglich. B ist falsch: nicht-konservative Kräfte (Reibung) dissipieren Energie. D ist falsch: Drehmomente sind für Rotationsenergie relevant, nicht für die allgemeine Energieerhaltung. E ist falsch: Energieerhaltung gilt auch bei beschleunigten Systemen, wenn Kräfte konservativ sind."
+          },
+          {
+            "id": "sc_2_3_2",
+            "frage": "Ein Block (m = 0,5 kg) gleitet reibungsfrei mit v₀ auf eine Feder (k = 100 N/m) zu. Die Feder wird maximal um x = 0,2 m gestaucht. Welche Aussage ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die maximale Stauchung x ist unabhängig von v₀."},
+              {"key": "B", "text": "Der Impuls des Blocks ist im Moment der maximalen Stauchung null."},
+              {"key": "C", "text": "Die kinetische Energie des Blocks ist während der gesamten Stauchung konstant."},
+              {"key": "D", "text": "Die Arbeit an der Feder ist kleiner als die kinetische Energie des Blocks."},
+              {"key": "E", "text": "Die maximale Stauchung ist x_max = mv₀²/k."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Bei maximaler Stauchung ist die gesamte kinetische Energie in Federenergie umgewandelt — der Block hat v = 0, also p = m·v = 0. A ist falsch: x_max = v₀·√(m/k) hängt von v₀ ab. C ist falsch: kinetische Energie nimmt während Stauchung ab. D ist falsch: bei reibungsfreier Bewegung ist die gesamte kinetische Energie an Feder abgegeben (gleich). E ist falsch: korrekt wäre x_max = v₀·√(m/k) → x² = mv₀²/k."
+          },
+          {
+            "id": "sc_2_3_3",
+            "frage": "Welche Aussage zur Drehimpulserhaltung ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Der Drehimpuls bleibt genau dann konstant, wenn das System abgeschlossen ist."},
+              {"key": "B", "text": "Der Drehimpuls bleibt immer konstant, auch wenn äußere Drehmomente wirken."},
+              {"key": "C", "text": "Der Drehimpuls bleibt nur dann konstant, wenn keine äußeren Drehmomente wirken."},
+              {"key": "D", "text": "Der Drehimpuls bleibt nur konstant, wenn der Körper nicht rotiert."},
+              {"key": "E", "text": "Der Drehimpuls bleibt konstant, wenn keine äußeren Kräfte wirken."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: dL/dt = M_ext; wenn M_ext = 0, dann L = const. A ist formal ähnlich richtig (abgeschlossenes System = keine äußeren Drehmomente), aber C ist die präzisere Aussage für diesen Kontext. B ist falsch: Drehmomente ändern den Drehimpuls. D ist falsch: auch ein rotierender Körper kann konstanten Drehimpuls haben. E ist falsch: auch wenn keine Kräfte wirken, könnten Drehmomente vorliegen (z.B. Kräftepaar)."
+          },
+          {
+            "id": "sc_2_3_4",
+            "frage": "Welche Kombination aus Kräften erzeugt eine Kreisbewegung?",
+            "optionen": [
+              {"key": "A", "text": "Eine Kraft in Bewegungsrichtung (tangential)"},
+              {"key": "B", "text": "Eine Kraft entgegen der Bewegungsrichtung"},
+              {"key": "C", "text": "Eine Kraft senkrecht zur Bewegungsrichtung, konstant zum Zentrum zeigend"},
+              {"key": "D", "text": "Keine Kraft — gleichförmige Kreisbewegung braucht keine Kraft"},
+              {"key": "E", "text": "Eine Kraft senkrecht zur Bewegungsrichtung, aber vom Zentrum weg zeigend"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Die Zentripetalkraft zeigt stets zum Kreismittelpunkt (senkrecht zur Bewegungsrichtung) und erzwingt die Kreisbahn. A ist falsch: tangentiale Kraft ändert Geschwindigkeitsbetrag, nicht Richtung. B ist falsch: entgegen Bewegung bremst ab. D ist falsch: ohne Zentripetalkraft würde der Körper geradlinig weiterbewegen (Newton 1). E ist falsch: Zentrifugalkraft zeigt vom Zentrum weg und ist eine Scheinkraft im rotierenden System."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_2_4_1",
+            "frage": "Ein Eisläufer dreht sich mit ausgestreckten Armen (Trägheitsmoment J₁) und zieht dann die Arme an (J₂ < J₁). Was passiert mit seiner Winkelgeschwindigkeit?",
+            "optionen": [
+              {"key": "A", "text": "Sie bleibt konstant (Drehimpulserhaltung)."},
+              {"key": "B", "text": "Sie nimmt ab, weil J kleiner wird."},
+              {"key": "C", "text": "Sie nimmt zu, weil J kleiner wird und L = J·ω = const."},
+              {"key": "D", "text": "Sie wird null, wenn die Arme vollständig angelegt sind."},
+              {"key": "E", "text": "Sie ändert sich, weil die Energie zunimmt."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: L = J·ω = const (kein äußeres Drehmoment). J₂ < J₁ → ω₂ = J₁·ω₁/J₂ > ω₁. A ist falsch: ω ändert sich, L bleibt konstant. B ist falsch: ω nimmt zu (nicht ab). D ist falsch: ω wird größer, nicht null. E ist falsch: die Rotationsenergie nimmt tatsächlich zu (Muskelarbeit), aber ω-Berechnung folgt aus L = const."
+          },
+          {
+            "id": "sc_2_4_2",
+            "frage": "Welcher physikalische Begriff beschreibt die Trägheit eines Körpers gegenüber Rotationsbeschleunigung?",
+            "optionen": [
+              {"key": "A", "text": "Masse"},
+              {"key": "B", "text": "Drehmoment"},
+              {"key": "C", "text": "Massenträgheitsmoment"},
+              {"key": "D", "text": "Drehimpuls"},
+              {"key": "E", "text": "Winkelbeschleunigung"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Das Massenträgheitsmoment J = Σm_i·r_i² beschreibt den Widerstand eines Körpers gegen Rotationsbeschleunigung (analog zur Masse bei Translation). A ist falsch: Masse ist Trägheit bei Translation. B ist falsch: Drehmoment ist die rotierende Kraft. D ist falsch: Drehimpuls ist L = J·ω, der Bewegungszustand. E ist falsch: Winkelbeschleunigung ist die Änderung von ω."
+          },
+          {
+            "id": "sc_2_4_3",
+            "frage": "Welche Aussage zum elastischen Stoß ist FALSCH?",
+            "optionen": [
+              {"key": "A", "text": "Impuls ist erhalten."},
+              {"key": "B", "text": "Kinetische Energie ist erhalten."},
+              {"key": "C", "text": "Die Relativgeschwindigkeit der Körper kehrt beim elastischen Stoß ihr Vorzeichen um."},
+              {"key": "D", "text": "Die Körper verformen sich plastisch beim elastischen Stoß."},
+              {"key": "E", "text": "Beim elastischen Stoß zweier gleich schwerer Körper tauschen diese ihre Geschwindigkeiten."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist falsch (und damit die korrekte Antwort): plastische Verformung findet beim unelastischen Stoß statt. A ist korrekt. B ist korrekt. C ist korrekt: v₁−v₂ kehrt um (Koeffizient der Restitution = 1). E ist korrekt für m₁ = m₂."
+          },
+          {
+            "id": "sc_2_4_4",
+            "frage": "Ein Körper mit Masse m bewegt sich in einem Gravitationsfeld. Welche Aussage zu den Kräften ist korrekt, wenn der Körper im Orbit (Kreisbahn) um die Erde ist?",
+            "optionen": [
+              {"key": "A", "text": "Die Schwerkraft ist null im Orbit (Schwerelosigkeit)."},
+              {"key": "B", "text": "Die Schwerkraft liefert die Zentripetalkraft für die Kreisbahn."},
+              {"key": "C", "text": "Die Schwerkraft und die Zentrifugalkraft heben sich auf."},
+              {"key": "D", "text": "Im Orbit wirkt keine Beschleunigung auf den Körper."},
+              {"key": "E", "text": "Die Bahngeschwindigkeit ist unabhängig von der Orbitalhöhe."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Die Gravitationskraft F_G = GMm/r² liefert genau die Zentripetalkraft F_Z = mv²/r, die für die Kreisbahn benötigt wird. A ist falsch: Schwerkraft ≠ 0 im Orbit; Schwerelosigkeit bedeutet freier Fall. C ist falsch: Zentrifugalkraft ist eine Scheinkraft im rotierenden System — im Inertialsystem gibt es nur Schwerkraft. D ist falsch: Zentripetalbeschleunigung a = v²/r wirkt ständig. E ist falsch: v = √(GM/r) hängt von der Orbitalhöhe r ab."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Was besagt das 2. Newton'sche Gesetz? Nenne Formel, Einheiten und Bedeutung der Größen."],
+      "2": ["Erkläre den Unterschied zwischen Impuls und Kraft. Welcher Zusammenhang besteht zwischen ihnen über die Zeit?"],
+      "3": ["Beschreibe, unter welchen Bedingungen der Impuls eines Systems erhalten bleibt. Nenne den physikalischen Grund und gib ein Beispiel."],
+      "4": ["Zwei Kugeln (m₁ = 3 kg, v₁ = 4 m/s; m₂ = 1 kg, in Ruhe) stoßen elastisch zusammen. Berechne die Geschwindigkeiten nach dem Stoß nach dem Klausurschema (gegeben, gesucht, Skizze, Ansatz, Lösung)."],
+      "5": ["In welchen realen Situationen ist die Impulserhaltung nicht anwendbar? Erkläre anhand zweier Beispiele, welche äußeren Kräfte stören und wie man damit umgeht."]
+    }
+  }
+}

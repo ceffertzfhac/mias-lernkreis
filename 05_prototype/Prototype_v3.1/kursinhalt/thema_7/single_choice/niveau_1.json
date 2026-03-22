@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_7_1_1",
+    "frage": "Ohmsches Gesetz: Bei konstanter Spannung und doppeltem Widerstand wird I ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "doppelt so groß"
+      },
+      {
+        "key": "B",
+        "text": "halb so groß"
+      },
+      {
+        "key": "C",
+        "text": "gleich"
+      },
+      {
+        "key": "D",
+        "text": "viermal so groß"
+      },
+      {
+        "key": "E",
+        "text": "null"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: I=U/R. R→2R → I→I/2."
+  },
+  {
+    "id": "sc_7_1_2",
+    "frage": "Zur Spannungsmessung wird das Multimeter ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "in Reihe geschaltet."
+      },
+      {
+        "key": "B",
+        "text": "parallel geschaltet."
+      },
+      {
+        "key": "C",
+        "text": "nicht benötigt."
+      },
+      {
+        "key": "D",
+        "text": "in Serie mit dem Amperemeter."
+      },
+      {
+        "key": "E",
+        "text": "zwischen Masse und Erde."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Voltmeter parallel (hoher Innenwiderstand). A: Amperemeter in Reihe (niedriger Innenwiderstand)."
+  }
+]

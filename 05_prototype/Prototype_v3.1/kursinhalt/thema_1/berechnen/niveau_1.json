@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_1_1_1",
+    "aufgabe": "Ein Körper startet aus der Ruhe und wird gleichmäßig mit der Beschleunigung a = 3,0 m/s² beschleunigt. Welche Geschwindigkeit v hat er nach t = 5,0 s?",
+    "musterloesung": "Gegeben: v₀ = 0, a = 3,0 m/s², t = 5,0 s. Gesucht: v. Ansatz: v = v₀ + a·t = 0 + 3,0·5,0 = 15 m/s.",
+    "tipps": [
+      "Welche Formel verknüpft Beschleunigung, Zeit und Geschwindigkeit?",
+      "Nutze v = v₀ + a·t mit v₀ = 0.",
+      "v = 0 + 3,0 · 5,0 = 15 m/s."
+    ]
+  },
+  {
+    "id": "do_b_1_1_2",
+    "aufgabe": "Ein Auto fährt mit konstanter Geschwindigkeit v = 54 km/h. Welche Strecke s legt es in t = 20 s zurück?",
+    "musterloesung": "Gegeben: v = 54 km/h = 15 m/s, t = 20 s. Gesucht: s. Ansatz: s = v·t = 15·20 = 300 m.",
+    "tipps": [
+      "Gleichförmige Bewegung: Welche Größen sind verknüpft? Vergiss die Einheitenumrechnung nicht.",
+      "Rechne v in m/s um: v = 54/3,6 = 15 m/s. Ansatz: s = v·t.",
+      "s = 15 m/s · 20 s = 300 m."
+    ]
+  },
+  {
+    "id": "do_b_1_1_3",
+    "aufgabe": "Ein Stein wird aus der Ruhe fallen gelassen. Welche Strecke s legt er im freien Fall in t = 3,0 s zurück? (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: v₀ = 0, g = 9,81 m/s², t = 3,0 s. Gesucht: s. Ansatz: s = ½·g·t² = 0,5·9,81·9,0 = 44,1 m.",
+    "tipps": [
+      "Welche Formel beschreibt den freien Fall aus der Ruhe?",
+      "Nutze s = ½·g·t². Berechne zunächst t².",
+      "s = 0,5 · 9,81 · 9,0 = 44,1 m."
+    ]
+  },
+  {
+    "id": "do_b_1_1_4",
+    "aufgabe": "Ein Körper bewegt sich mit der konstanten Geschwindigkeit v₀ = 8,0 m/s. Nach welcher Zeit t hat er eine Strecke von s = 120 m zurückgelegt?",
+    "musterloesung": "Gegeben: v₀ = 8,0 m/s, s = 120 m. Gesucht: t. Ansatz: s = v₀·t → t = s/v₀ = 120/8,0 = 15 s.",
+    "tipps": [
+      "Gleichförmige Bewegung: Wie hängen Strecke, Geschwindigkeit und Zeit zusammen?",
+      "Forme s = v·t nach t um.",
+      "t = 120/8,0 = 15 s."
+    ]
+  }
+]

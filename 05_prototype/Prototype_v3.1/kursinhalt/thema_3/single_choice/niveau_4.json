@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_3_4_1",
+    "frage": "Ein Körper rollt eine schiefe Ebene hinunter. Im Vergleich zum Gleiten (ohne Rotation) …",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "kommt er schneller unten an."
+      },
+      {
+        "key": "B",
+        "text": "kommt er langsamer unten an."
+      },
+      {
+        "key": "C",
+        "text": "kommt er gleichzeitig an."
+      },
+      {
+        "key": "D",
+        "text": "hängt von der Masse ab."
+      },
+      {
+        "key": "E",
+        "text": "hängt von der Reibung ab."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Beim Rollen wird Energie in Rotation investiert → weniger Translationsenergie → langsamere v. A falsch. C falsch."
+  },
+  {
+    "id": "sc_3_4_2",
+    "frage": "Fluchtgeschwindigkeit von einem Planeten (M, R): v_F=√(2GM/R). Wenn der Radius halbiert wird (gleiche Masse) …",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "... verdoppelt sich v_F."
+      },
+      {
+        "key": "B",
+        "text": "... vervierfacht sich v_F."
+      },
+      {
+        "key": "C",
+        "text": "... erhöht sich v_F um √2."
+      },
+      {
+        "key": "D",
+        "text": "... halbiert sich v_F."
+      },
+      {
+        "key": "E",
+        "text": "... ändert sich v_F nicht."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: v_F∝1/√R. R→R/2 → v_F→v_F·√2. A falsch. B falsch. D falsch. E falsch."
+  }
+]

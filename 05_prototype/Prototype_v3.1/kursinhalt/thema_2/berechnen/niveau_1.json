@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_2_1_1",
+    "aufgabe": "Ein Block der Masse m = 6,0 kg liegt auf einer reibungsfreien horizontalen Fläche. Eine horizontale Kraft F = 18 N wirkt auf ihn ein. Berechnen Sie die Beschleunigung a des Blocks.",
+    "musterloesung": "Gegeben: m = 6,0 kg, F = 18 N, reibungsfrei. Gesucht: a. Ansatz: F = m·a → a = F/m = 18/6,0 = 3,0 m/s².",
+    "tipps": [
+      "Welches Grundgesetz verknüpft Kraft, Masse und Beschleunigung?",
+      "Nutze Newtons zweites Gesetz: F = m·a → a = F/m.",
+      "a = 18/6,0 = 3,0 m/s²."
+    ]
+  },
+  {
+    "id": "do_b_2_1_2",
+    "aufgabe": "Ein PKW der Masse m = 1400 kg soll auf einer reibungsfreien Fahrbahn mit der Beschleunigung a = 2,5 m/s² beschleunigt werden. Welche Antriebskraft F ist dafür erforderlich?",
+    "musterloesung": "Gegeben: m = 1400 kg, a = 2,5 m/s². Gesucht: F. Ansatz: F = m·a = 1400·2,5 = 3500 N.",
+    "tipps": [
+      "Welche Kraft erzeugt bei gegebener Masse eine bestimmte Beschleunigung?",
+      "Newton 2: F = m·a.",
+      "F = 1400·2,5 = 3500 N."
+    ]
+  },
+  {
+    "id": "do_b_2_1_3",
+    "aufgabe": "Ein Körper der Masse m = 5,0 kg liegt auf einer horizontalen Fläche mit dem Gleitreibungskoeffizienten μ = 0,30. Eine horizontale Kraft F = 25 N wirkt auf ihn ein. Berechnen Sie die Beschleunigung a des Körpers. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m = 5,0 kg, μ = 0,30, F = 25 N, g = 9,81 m/s². Gesucht: a. Normalkraft: N = m·g = 49,05 N. Reibungskraft: F_R = μ·N = 0,30·49,05 = 14,7 N. Nettokraft: F_net = 25 − 14,7 = 10,3 N. Beschleunigung: a = F_net/m = 10,3/5,0 = 2,06 m/s².",
+    "tipps": [
+      "Berechne zuerst die Reibungskraft. Die Nettokraft ist die Differenz aus Antriebskraft und Reibungskraft.",
+      "F_R = μ·m·g. Nettokraft: F_net = F − F_R. Dann a = F_net/m.",
+      "F_R = 14,7 N → F_net = 10,3 N → a = 2,06 m/s²."
+    ]
+  },
+  {
+    "id": "do_b_2_1_4",
+    "aufgabe": "Ein LKW der Masse m₁ = 8000 kg fährt mit v₁ = 90 km/h. Ein Motorradfahrer mit Gesamtmasse m₂ = 200 kg fährt mit v₂ = 180 km/h. Berechnen Sie den Impuls p beider Fahrzeuge. Wer hat den größeren Impuls?",
+    "musterloesung": "Gegeben: m₁ = 8000 kg, v₁ = 25 m/s; m₂ = 200 kg, v₂ = 50 m/s. Gesucht: p₁, p₂. p₁ = m₁·v₁ = 8000·25 = 200 000 kg·m/s. p₂ = m₂·v₂ = 200·50 = 10 000 kg·m/s. Der LKW hat den deutlich größeren Impuls.",
+    "tipps": [
+      "Welche Größen bestimmen den Impuls eines Körpers? Vergiss die Einheitenumrechnung nicht.",
+      "p = m·v. Rechne v in m/s um: 90 km/h = 25 m/s, 180 km/h = 50 m/s.",
+      "p₁ = 200 000 kg·m/s, p₂ = 10 000 kg·m/s → LKW hat 20-fachen Impuls."
+    ]
+  }
+]

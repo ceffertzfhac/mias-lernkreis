@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_6_2_1",
+    "frage": "Federpendel: k↑ (steifere Feder), gleiche Masse. T ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "wird länger"
+      },
+      {
+        "key": "B",
+        "text": "wird kürzer"
+      },
+      {
+        "key": "C",
+        "text": "bleibt gleich"
+      },
+      {
+        "key": "D",
+        "text": "wird null"
+      },
+      {
+        "key": "E",
+        "text": "hängt von Amplitude ab"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: T=2π√(m/k). k↑ → T↓. Steifere Feder → schnellere Schwingung."
+  },
+  {
+    "id": "sc_6_2_2",
+    "frage": "Welches System kann NICHT durch ÿ+ω²y=0 beschrieben werden?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Horizontales Federpendel"
+      },
+      {
+        "key": "B",
+        "text": "Fadenpendel (kleine Auslenkung)"
+      },
+      {
+        "key": "C",
+        "text": "Ball, der auf hartem Boden aufprallt"
+      },
+      {
+        "key": "D",
+        "text": "Lineal um exzentrische Achse"
+      },
+      {
+        "key": "E",
+        "text": "Alle können so beschrieben werden"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Harter Aufprall ist diskontinuierlich (Stoß) — keine harmonische DGL. A,B,D: harmonisch für kleine Auslenkungen."
+  }
+]

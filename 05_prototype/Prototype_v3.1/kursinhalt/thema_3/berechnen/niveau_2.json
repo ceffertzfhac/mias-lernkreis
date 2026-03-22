@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_3_2_1",
+    "aufgabe": "Ein Skifahrer der Masse m = 80 kg fährt eine reibungsfreie schiefe Ebene mit dem Neigungswinkel α = 20° und der Länge l = 60 m hinunter. Er startet aus der Ruhe. Berechnen Sie mithilfe der Energieerhaltung die Geschwindigkeit v am Ende der Piste. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m = 80 kg, α = 20°, l = 60 m, v₀ = 0, reibungsfrei, g = 9,81 m/s². Gesucht: v. Höhe: h = l·sin(20°) = 60·0,342 = 20,52 m. Energieerhaltung: m·g·h = ½·m·v² → v = √(2·g·h) = √(2·9,81·20,52) = √402,6 ≈ 20,1 m/s.",
+    "tipps": [
+      "Nutze die Energieerhaltung: Die potenzielle Energie oben wird vollständig in kinetische Energie unten umgewandelt.",
+      "Berechne zunächst die Höhe h = l·sin(α). Dann: m·g·h = ½·m·v² → v = √(2·g·h).",
+      "h = 20,52 m → v = √(2·9,81·20,52) ≈ 20,1 m/s."
+    ]
+  },
+  {
+    "id": "do_b_3_2_2",
+    "aufgabe": "Eine Maschine hebt eine Last der Masse m = 200 kg mit konstanter Geschwindigkeit senkrecht nach oben. Ihre Leistung beträgt P = 8,0 kW. Berechnen Sie die Hubgeschwindigkeit v. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m = 200 kg, P = 8000 W, konstante Geschwindigkeit (a = 0). Gesucht: v. Hubkraft = Gewicht: F = m·g = 1962 N. Leistung: P = F·v → v = P/F = 8000/1962 = 4,08 m/s.",
+    "tipps": [
+      "Bei konstanter Geschwindigkeit ist die Hubkraft gleich der Gewichtskraft. Welche Formel verknüpft Leistung, Kraft und Geschwindigkeit?",
+      "F = m·g (da a = 0). P = F·v → v = P/F.",
+      "F = 1962 N → v = 8000/1962 ≈ 4,08 m/s."
+    ]
+  }
+]

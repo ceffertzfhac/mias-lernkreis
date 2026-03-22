@@ -1,2 +1,25 @@
+# macOS
 .DS_Store
 *.DS_Store
+__MACOSX/
+
+# Claude Code (lokale Konfiguration, keine Projektdaten)
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+/tmp/rewrite_*.py
+
+# Node / npm (falls künftig genutzt)
+node_modules/
+npm-debug.log*
+
+# Secrets — niemals einchecken
+.env
+*.pem
+*.key
+
+# Betriebssystem
+Thumbs.db
+desktop.ini

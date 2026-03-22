@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_3_1_1",
+    "aufgabe": "Eine konstante Kraft F = 50 N verschiebt einen Block um die Strecke s = 4,0 m in Kraftrichtung auf einer horizontalen Fläche. Berechnen Sie die dabei verrichtete Arbeit W.",
+    "musterloesung": "Gegeben: F = 50 N, s = 4,0 m. Gesucht: W. Ansatz: W = F·s = 50·4,0 = 200 J.",
+    "tipps": [
+      "Welche Formel verknüpft Kraft, Weg und mechanische Arbeit bei paralleler Kraftwirkung?",
+      "W = F·s (Kraft und Weg parallel).",
+      "W = 50·4,0 = 200 J."
+    ]
+  },
+  {
+    "id": "do_b_3_1_2",
+    "aufgabe": "Ein Körper der Masse m = 3,0 kg bewegt sich mit der Geschwindigkeit v = 10 m/s. Berechnen Sie seine kinetische Energie E_kin.",
+    "musterloesung": "Gegeben: m = 3,0 kg, v = 10 m/s. Gesucht: E_kin. Ansatz: E_kin = ½·m·v² = ½·3,0·100 = 150 J.",
+    "tipps": [
+      "Welche Formel beschreibt die kinetische Energie eines Körpers?",
+      "E_kin = ½·m·v².",
+      "E_kin = 0,5·3,0·100 = 150 J."
+    ]
+  }
+]

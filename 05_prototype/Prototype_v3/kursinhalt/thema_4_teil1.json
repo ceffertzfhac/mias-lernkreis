@@ -1,0 +1,407 @@
+{
+  "thema_id": 4,
+  "thema_name": "Rotationsbewegung & Drehmoment",
+  "teil": 1,
+  "teil_beschreibung": "Kreiskinematik, Massenträgheitsmoment, Drehmoment",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_4_1_1",
+            "aufgabe": "Ein Rad dreht sich mit n = 120 U/min. Berechne die Winkelgeschwindigkeit ω in rad/s.",
+            "musterloesung": "ω = 2π·n/60 = 2π·120/60 = 4π ≈ 12,57 rad/s.",
+            "tipps": [
+              "Umrechnung: ω = 2πn/60 (n in U/min).",
+              "ω = 2π·120/60 = 4π rad/s.",
+              "ω ≈ 12,57 rad/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_1_2",
+            "aufgabe": "Ein Punkt liegt auf einer Kreisbahn mit Radius r = 0,4 m. Die Kreisbahn hat ω = 5 rad/s. Berechne die Bahngeschwindigkeit und die Zentripetalbeschleunigung.",
+            "musterloesung": "Bahngeschwindigkeit: v = ω·r = 5·0,4 = 2 m/s. Zentripetalbeschleunigung: aZ = ω²·r = 25·0,4 = 10 m/s².",
+            "tipps": [
+              "v = ω·r; aZ = ω²·r = v²/r.",
+              "v = 5·0,4 = 2 m/s.",
+              "aZ = 25·0,4 = 10 m/s²."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_1_3",
+            "aufgabe": "Berechne das Massenträgheitsmoment eines Vollzylinders (m = 3 kg, R = 0,2 m) um seine Symmetrieachse.",
+            "musterloesung": "J = ½·m·R² = ½·3·0,04 = 0,06 kg·m².",
+            "tipps": [
+              "Vollzylinder um Symmetrieachse: J = ½mR².",
+              "J = ½·3·0,2² = ½·3·0,04 = 0,06 kg·m².",
+              "Einheit: kg·m²."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_1_4",
+            "aufgabe": "Ein Drehmoment M = 12 N·m wirkt auf einen Körper mit Trägheitsmoment J = 0,5 kg·m². Welche Winkelbeschleunigung α entsteht?",
+            "musterloesung": "Analogie zu F = ma: M = J·α → α = M/J = 12/0,5 = 24 rad/s².",
+            "tipps": [
+              "Rotatorisches Newton-Gesetz: M = J·α.",
+              "α = M/J.",
+              "α = 12/0,5 = 24 rad/s²."
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_4_2_1",
+            "aufgabe": "Ein Körper dreht sich gleichmäßig in einem Kreis mit Radius r = 1,5 m und v = 6 m/s. Berechne die Zentripetalkraft bei m = 2 kg und die nötige Fadenlänge, wenn es ein Fadenpendel wäre.",
+            "musterloesung": "Zentripetalkraft: FZ = m·v²/r = 2·36/1,5 = 48 N. Bei einem Fadenpendel liefert die Fadenspannung die Zentripetalkraft — Fadenlänge gleich Kreisradius: l = r = 1,5 m.",
+            "tipps": [
+              "Zentripetalkraft: FZ = m·v²/r = m·ω²·r.",
+              "FZ = 2·36/1,5 = 48 N.",
+              "Fadenpendel in horizontaler Kreisbahn: Fadenlänge = Radius."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_2_2",
+            "aufgabe": "Ein Rad (Vollzylinder, m = 5 kg, R = 0,3 m) wird durch eine Kraft F = 4 N am Rand angetrieben. Berechne Drehmoment, Winkelbeschleunigung und Winkelgeschwindigkeit nach t = 3 s (startet aus der Ruhe).",
+            "musterloesung": "Drehmoment: M = F·R = 4·0,3 = 1,2 N·m. J = ½mR² = ½·5·0,09 = 0,225 kg·m². Winkelbeschleunigung: α = M/J = 1,2/0,225 = 5,33 rad/s². Winkelgeschwindigkeit nach 3 s: ω = α·t = 5,33·3 = 16 rad/s.",
+            "tipps": [
+              "Drehmoment = Kraft × Hebelarm: M = F·R.",
+              "α = M/J; ω = α·t (Rotation aus Ruhe).",
+              "M = 1,2 Nm; α = 5,33 rad/s²; ω(3s) = 16 rad/s."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_2_3",
+            "aufgabe": "Berechne das Massenträgheitsmoment eines Lineals (m = 150 g, l = 32 cm, b = 3,7 cm) um eine Achse durch ein Loch (Abstand 1,9 cm vom oberen Rand).",
+            "musterloesung": "J_SP = (1/12)·m·(l²+b²) = (1/12)·0,15·(0,32²+0,037²) = (1/12)·0,15·(0,1024+0,00137) = (1/12)·0,15·0,1038 ≈ 0,001297 kg·m². Abstand SP zu Achse: Linealslänge 32 cm, SP bei 16 cm vom Ende, Loch bei 1,9 cm vom oberen Rand → d = 16 − 1,9 = 14,1 cm = 0,141 m. Steiner: J_A = J_SP + m·d² = 0,001297 + 0,15·0,0199 = 0,001297 + 0,002985 ≈ 0,004282 kg·m².",
+            "tipps": [
+              "Trägheitsmoment Lineal um SP: J_SP = m(l²+b²)/12.",
+              "Abstand SP-Loch berechnen: d = l/2 − d_Loch_von_oben.",
+              "Steinerscher Anteil: J_A = J_SP + md²."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_2_4",
+            "aufgabe": "Drei Körper rollen die schiefe Ebene hinunter (gleicher Radius, gleiche Masse). Ordne nach Ankunftszeit: Vollzylinder (J = ½mR²), Hohlzylinder (J = mR²), Hohlkugel (J = 2/3 mR²).",
+            "musterloesung": "v² = 2gh/(1+J/mR²). Vollzylinder: v² = 2gh/(1+0,5) = 4gh/3. Hohlkugel: v² = 2gh/(1+2/3) = 2gh·3/5 = 6gh/5. Hohlzylinder: v² = 2gh/(1+1) = gh. Ranking v (absteigend): Vollzylinder (4/3 ≈ 1,333) > Hohlkugel (6/5 = 1,2) > Hohlzylinder (1,0). Ankunftsreihenfolge: 1. Vollzylinder, 2. Hohlkugel, 3. Hohlzylinder.",
+            "tipps": [
+              "v² = 2gh/(1+cM) mit cM = J/(mR²).",
+              "Je kleiner J, desto mehr Energie in Translation → größere v.",
+              "Vollzylinder (cM=0,5) schnellste; Hohlzylinder (cM=1) langsamste."
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_4_3_1",
+            "aufgabe": "Die Fahrradfelge: Eine Aluminiumscheibe (d = 12 cm, D = 1 cm, mAlu = 200 g) ist konzentrisch auf eine Fahrradfelge montiert. Faden mit m = 30 g gewickelt. Bestimme die Winkelbeschleunigung des Systems.",
+            "musterloesung": "J_Scheibe = ½·mAlu·r² = ½·0,2·(0,06)² = ½·0,2·0,0036 = 0,00036 kg·m². Drehmoment durch hängende Masse: M = m·g·r = 0,03·9,81·0,06 = 0,01766 N·m. J_Gesamt = J_Scheibe + J_Felge (J_Felge aus Experiment zu bestimmen; für Grundrechnung nur Scheibe). α = M/J_Scheibe = 0,01766/0,00036 = 49,1 rad/s² (ohne Felge).",
+            "tipps": [
+              "Drehmoment der Masse: M = m·g·r (r = Radius der Scheibe).",
+              "Trägheitsmoment Vollzylinder (Scheibe): J = ½mR².",
+              "α = M/J (ohne Felge); in der echten Aufgabe wird J_Felge aus dem Diagramm ermittelt."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_3_2",
+            "aufgabe": "Ein Körper (m = 370 g) liegt über eine Umlenkrolle (Vollzylinder: Masse 50 g, Radius 72 mm) mit einer gleich schweren hängenden Masse (m₂ = 370 g) verbunden auf einer schiefen Ebene (α = 30°). Berechne Beschleunigung und Seilspannungen.",
+            "musterloesung": "J_Rolle = ½·M_R·R² = ½·0,05·(0,072)² = 0,000130 kg·m². Bewegungsgleichungen: m₂g − T₂ = m₂·a; T₁ − m₁g·sin30° = m₁·a; (T₂−T₁)·R = J·α = J·a/R → T₂−T₁ = J·a/R². a·(m₁+m₂+J/R²) = m₂g − m₁g·sin30°. Zähler: g·(0,37−0,37·0,5) = 9,81·0,185 = 1,815 N. J/R² = 0,000130/0,005184 = 0,0251 kg. Nenner: 0,37+0,37+0,025 = 0,765 kg. a = 1,815/0,765 ≈ 2,37 m/s².",
+            "tipps": [
+              "Drei Gleichungen: je eine für m₁, m₂ und die Rolle (M = J·α mit α = a/R).",
+              "T₂−T₁ = J·a/R²; Summengleichung aufstellen.",
+              "a ≈ 2,37 m/s²; dann Seilspannungen T₁, T₂ einsetzen."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_3_3",
+            "aufgabe": "Zwei Kugeln (Vollkugel und Hohlkugel, beide m = 250 g, R = 95 mm) rollen ohne Schlupf eine Rampe (l = 75 cm, α = 17,5°) hinunter. Berechne den Geschwindigkeitsunterschied am Ende.",
+            "musterloesung": "h = l·sinα = 0,75·sin17,5° = 0,75·0,301 = 0,226 m. v² = 2gh/(1+cM). Vollkugel J = 2/5 mR², cM = 2/5: v_V² = 2·9,81·0,226/(1+0,4) = 4,432/1,4 = 3,166 → v_V = 1,779 m/s. Hohlkugel J = 2/3 mR², cM = 2/3: v_H² = 2·9,81·0,226/(1+0,667) = 4,432/1,667 = 2,659 → v_H = 1,631 m/s. Δv = 1,779 − 1,631 = 0,148 m/s. Die Vollkugel kommt zuerst an.",
+            "tipps": [
+              "v² = 2gh/(1+cM) mit cM = J/(mR²). Vollkugel: cM = 2/5; Hohlkugel: cM = 2/3.",
+              "Beide Kugeln: h = l·sinα berechnen.",
+              "Δv = v_Vollkugel − v_Hohlkugel ≈ 0,148 m/s — Vollkugel schneller."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_3_4",
+            "aufgabe": "Ein Körper mit J = 1/2 mR² rotiert mit ω₀ = 20 rad/s. Ein Bremsmoment M_B = −2 N·m wirkt auf ihn (m = 4 kg, R = 0,3 m). Nach welcher Zeit kommt er zum Stillstand? Wie viele Umdrehungen macht er noch?",
+            "musterloesung": "J = ½·4·0,09 = 0,18 kg·m². Winkelbeschleunigung: α = M_B/J = −2/0,18 = −11,11 rad/s². Zeit bis Stillstand: ω₀ + α·t = 0 → t = −ω₀/α = 20/11,11 = 1,8 s. Zurückgelegter Winkel: φ = ω₀·t + ½α·t² = 20·1,8 + ½·(−11,11)·3,24 = 36 − 18 = 18 rad. Umdrehungen: N = 18/(2π) ≈ 2,86 Umdrehungen.",
+            "tipps": [
+              "α = M/J; dann kinematische Formeln analog zu Translation.",
+              "t = ω₀/|α|; φ = ω₀t + ½αt².",
+              "N = φ/(2π) ≈ 2,86 Umdrehungen."
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_4_4_1",
+            "aufgabe": "Berechne das Massenträgheitsmoment einer Hohlkugel (m = 2 kg, R_innen = 0,1 m, R_außen = 0,15 m) um die Symmetrieachse.",
+            "musterloesung": "Hohlkugel: J = 2/5·m·(R_außen⁵ − R_innen⁵)/(R_außen³ − R_innen³). Einfacher mit dünnwandiger Näherung: wenn Wandstärke gering, J ≈ 2/3·m·R². Exakt: J = 2m(R_außen⁵−R_innen⁵) / (5(R_außen³−R_innen³)). R_außen = 0,15, R_innen = 0,1. R⁵: 7,594×10⁻⁵ und 1×10⁻⁵. R³: 3,375×10⁻³ und 10⁻³. J = 2·2·(6,594×10⁻⁵)/(5·2,375×10⁻³) = 4·6,594×10⁻⁵/(1,1875×10⁻²) ≈ 2,638×10⁻⁴/1,1875×10⁻² ≈ 0,0222 kg·m².",
+            "tipps": [
+              "Hohlkugel exakt: J = 2m(R_a⁵−R_i⁵)/(5(R_a³−R_i³)).",
+              "Für dünne Schale (Wandstärke << R): J ≈ 2/3·m·R².",
+              "Berechne Zähler und Nenner getrennt mit den gegebenen Radien."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_4_2",
+            "aufgabe": "Eine Leiterschleife (10 cm × 10 cm, I = 20 A) ist in einem homogenen Magnetfeld B (parallel zum Erdboden). Die Schleife ist an zwei gegenüberliegenden Ecken drehbar aufgehängt, schließt mit dem Boden 45° ein. An zwei freien Ecken hängen m₁ = 150 g und m₂ = 100 g. Bestimme B für Gleichgewicht.",
+            "musterloesung": "Magnetisches Drehmoment: M_mag = I·A·B·sin(90°−45°) = I·a²·B·cos45° = 20·0,01·B·0,707 = 0,1414·B. Gravitatorisches Drehmoment um Diagonale: Die freien Ecken liegen bei Abstand d = a/√2 = 0,1/1,414 = 0,0707 m von der Drehachse (Diagonale). M_grav = (m₁−m₂)·g·d·cos(45°) = 0,05·9,81·0,0707·0,707 = 0,05·9,81·0,05 = 0,0245 N·m. Gleichgewicht: M_mag = M_grav → 0,1414·B = 0,0245 → B = 0,173 T.",
+            "tipps": [
+              "Magnetisches Drehmoment: M = I·A·B·sinθ; θ ist Winkel zwischen B und Flächennormale.",
+              "Gravitatorisches Drehmoment: Gewichtsdifferenz × Hebelarm.",
+              "Gleichgewicht: M_mag = M_grav → B berechnen."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_4_3",
+            "aufgabe": "Ein zylinderförmiges Rad (J = ½mR²) rotiert mit ω₀ = 30 rad/s. Ein Drehmoment M(t) = −M₀·sin(ωt) wirkt mit M₀ = 0,5 N·m, ω = 2 rad/s, J = 0,1 kg·m². Wie verhält sich der Drehimpuls L(t) bei L(0) = 0?",
+            "musterloesung": "Achtung: das System dreht anfangs mit ω₀ → L(0) = J·ω₀ = 3 kg·m²/s. DGL: J·dω/dt = M(t) = −M₀·sin(ωt). Integration: L(t) = L(0) + ∫₀ᵗ M dt' = J·ω₀ + M₀/ω·[cos(ωt)−1]. L(t) = 3 + (0,5/2)·(cos(2t)−1) = 3 + 0,25·(cos(2t)−1). L(t) ist eine um 3 kg·m²/s verschobene Cosinusfunktion.",
+            "tipps": [
+              "Impulsatz: dL/dt = M(t) → L(t) = ∫M dt + L(0).",
+              "Integral von sin: ∫sin(ωt)dt = −cos(ωt)/ω.",
+              "L(t) = L(0) + M₀/ω·[cos(ωt)−1] — cosinusförmig mit Mittelwert L(0)."
+            ]
+          },
+          {
+            "id": "do_berechnen_4_4_4",
+            "aufgabe": "Ein Eisläufer dreht sich mit ω₁ = 2 rad/s und J₁ = 4 kg·m². Er zieht die Arme an: J₂ = 1,5 kg·m². Berechne ω₂, die Änderung der Rotationsenergie und die Muskelarbeit.",
+            "musterloesung": "Drehimpulserhaltung: L = J₁ω₁ = J₂ω₂ → ω₂ = J₁ω₁/J₂ = 4·2/1,5 = 5,33 rad/s. E₁ = ½J₁ω₁² = ½·4·4 = 8 J. E₂ = ½J₂ω₂² = ½·1,5·28,44 = 21,33 J. ΔE = E₂−E₁ = 13,33 J. Diese Energie wird durch Muskelarbeit zugeführt.",
+            "tipps": [
+              "Drehimpulserhaltung: J₁ω₁ = J₂ω₂ → ω₂ = J₁ω₁/J₂.",
+              "Rotationsenergie vorher und nachher berechnen.",
+              "ΔE > 0: Muskelarbeit wird in Rotationsenergie umgewandelt."
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_4_1_1",
+            "frage": "Was ist das Massenträgheitsmoment?",
+            "optionen": [
+              {"key": "A", "text": "Die Masse eines rotierenden Körpers"},
+              {"key": "B", "text": "Das Produkt aus Kraft und Hebelarm"},
+              {"key": "C", "text": "Der Widerstand eines Körpers gegen Rotationsbeschleunigung, J = Σm_i·r_i²"},
+              {"key": "D", "text": "Die kinetische Energie der Rotation"},
+              {"key": "E", "text": "Die Winkelgeschwindigkeit des Körpers"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: J = Σm_i·r_i² beschreibt die Trägheit gegenüber Drehbeschleunigung — analog zur Masse bei Translation. A ist falsch: Masse ist Trägheit bei Translation. B ist falsch: das ist das Drehmoment. D ist falsch: E_rot = ½Jω². E ist falsch: ω ist die Winkelgeschwindigkeit."
+          },
+          {
+            "id": "sc_4_1_2",
+            "frage": "Welche Aussage zur Zentripetalbeschleunigung ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Sie zeigt tangential zur Kreisbahn."},
+              {"key": "B", "text": "Sie verändert den Betrag der Geschwindigkeit."},
+              {"key": "C", "text": "Sie zeigt zum Kreismittelpunkt und ändert nur die Richtung der Geschwindigkeit."},
+              {"key": "D", "text": "Sie ist null bei gleichförmiger Kreisbewegung."},
+              {"key": "E", "text": "Sie ist gleich der Erdbeschleunigung g."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: aZ = v²/r zeigt stets zum Kreismittelpunkt (Zentripetal = zum Mittelpunkt gerichtet) und ändert die Richtung, nicht den Betrag. A ist falsch: tangential wäre die Tangentialbeschleunigung. B ist falsch: Richtungsänderung, nicht Betragsänderung. D ist falsch: aZ = ω²r ≠ 0 bei Kreisbewegung. E ist falsch: nur wenn aZ = g (z.B. Orbit)."
+          },
+          {
+            "id": "sc_4_1_3",
+            "frage": "Ein Körper dreht sich gleichförmig (ω = const). Welche Beschleunigung wirkt?",
+            "optionen": [
+              {"key": "A", "text": "Keine Beschleunigung, da ω konstant ist."},
+              {"key": "B", "text": "Nur Tangentialbeschleunigung."},
+              {"key": "C", "text": "Nur Zentripetalbeschleunigung."},
+              {"key": "D", "text": "Sowohl Zentripetal- als auch Tangentialbeschleunigung."},
+              {"key": "E", "text": "Nur die Gravitationsbeschleunigung g."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Bei ω = const (gleichförmig) gibt es keine Tangentialbeschleunigung (keine Änderung des Betrags), aber die Zentripetalbeschleunigung aZ = ω²r wirkt ständig (Richtungsänderung). A ist falsch: die Richtung ändert sich → Beschleunigung vorhanden. B ist falsch: Tangentialbeschleunigung nur bei Änderung von ω. D ist falsch: bei gleichförmig nur Zentripetal. E ist falsch: g ist keine allgemeine Antwort."
+          },
+          {
+            "id": "sc_4_1_4",
+            "frage": "Was ist der Satz von Steiner?",
+            "optionen": [
+              {"key": "A", "text": "J_A = J_SP · m · d²"},
+              {"key": "B", "text": "J_A = J_SP + m · d²"},
+              {"key": "C", "text": "J_A = J_SP - m · d²"},
+              {"key": "D", "text": "J_A = J_SP / (m · d²)"},
+              {"key": "E", "text": "J_A = (J_SP + m) · d²"}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: J_A = J_SP + m·d² — das Trägheitsmoment um eine beliebige parallele Achse A ist gleich dem Trägheitsmoment um den Schwerpunkt plus m·d² (d = Abstand SP zu A). A ist falsch: Multiplikation statt Addition. C ist falsch: Subtraktion würde kleineres J ergeben (unphysikalisch). D und E sind falsch."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_4_2_1",
+            "frage": "Drei Körper rollen ohne Schlupf eine schiefe Ebene hinunter: homogener Vollzylinder, Hohlzylinder, Hohlkugel (geringer Wandstärke). Gleiche Radien, unterschiedliche Massen. Wer kommt zuerst an?",
+            "optionen": [
+              {"key": "A", "text": "Alle kommen gleichzeitig an."},
+              {"key": "B", "text": "Der Hohlzylinder."},
+              {"key": "C", "text": "Der Vollzylinder."},
+              {"key": "D", "text": "Die Hohlkugel."},
+              {"key": "E", "text": "Kommt auf die Masse an."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: v² = 2gh/(1+cM) mit cM = J/(mR²). Vollzylinder: cM = 0,5; Hohlkugel: cM ≈ 0,667; Hohlzylinder: cM = 1. Kleineres cM → größere v → schneller. A ist falsch: verschiedene cM. B ist falsch: Hohlzylinder ist langsam. D ist falsch: Hohlkugel liegt zwischen. E ist falsch: Masse kürzt heraus."
+          },
+          {
+            "id": "sc_4_2_2",
+            "frage": "Welche Aussage zur Rollbewegung ohne Schlupf ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Beschleunigung ist unabhängig vom Neigungswinkel."},
+              {"key": "B", "text": "Die Beschleunigung hängt von der Masse ab."},
+              {"key": "C", "text": "Ohne Reibung würde der Körper nicht rollen."},
+              {"key": "D", "text": "Die Beschleunigung ist unabhängig von der Massenverteilung."},
+              {"key": "E", "text": "Ein rollender Körper ist schneller als ein gleitender (reibungsfrei)."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Reibung ist notwendig, um die Rollbedingung zu erfüllen — ohne Reibung würde der Körper gleiten, nicht rollen. A ist falsch: a = g·sinα/(1+cM) hängt von α ab. B ist falsch: Masse kürzt heraus. D ist falsch: cM = J/(mR²) hängt von der Massenverteilung ab. E ist falsch: Roller ist langsamer (Energie in Rotation)."
+          },
+          {
+            "id": "sc_4_2_3",
+            "frage": "Was beschreibt das Drehmoment?",
+            "optionen": [
+              {"key": "A", "text": "Die Trägheit eines rotierenden Körpers"},
+              {"key": "B", "text": "Die Drehgeschwindigkeit eines Körpers"},
+              {"key": "C", "text": "Die rotierende Wirkung einer Kraft: M = r × F"},
+              {"key": "D", "text": "Die gespeicherte Rotationsenergie"},
+              {"key": "E", "text": "Den Drehimpuls pro Zeiteinheit"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: M = r × F (Kreuzprodukt von Hebelarm und Kraft) gibt die Drehtendenz an. A ist falsch: das ist das Massenträgheitsmoment. B ist falsch: Drehgeschwindigkeit ist ω. D ist falsch: E_rot = ½Jω². E ist falsch: dL/dt = M bedeutet, M ändert den Drehimpuls, ist aber nicht Drehimpuls pro Zeit."
+          },
+          {
+            "id": "sc_4_2_4",
+            "frage": "Welche Aussage zur Lorentzkraft auf ein geladenes Teilchen ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Lorentzkraft wirkt nur, wenn das Teilchen ruht."},
+              {"key": "B", "text": "Die Lorentzkraft ist immer parallel zur Geschwindigkeit."},
+              {"key": "C", "text": "Die Coulombkraft ist unabhängig von der Bewegung des Teilchens und wirkt entlang E."},
+              {"key": "D", "text": "Die Lorentzkraft wirkt unabhängig vom Magnetfeld."},
+              {"key": "E", "text": "Beide Kräfte können nur auf neutrale Teilchen wirken."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: F_C = q·E wirkt unabhängig vom Bewegungszustand des Teilchens; Richtung entlang E (für positive q). A ist falsch: Lorentzkraft F_L = q·v×B erfordert Bewegung. B ist falsch: Lorentzkraft steht senkrecht auf v. D ist falsch: Lorentzkraft = q·v×B hängt von B ab. E ist falsch: beide Kräfte wirken auf geladene Teilchen."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_4_3_1",
+            "frage": "Welche Aussage zum Drehimpuls L = J·ω ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Der Drehimpuls bleibt immer konstant."},
+              {"key": "B", "text": "Der Drehimpuls ist gleich dem Drehmoment."},
+              {"key": "C", "text": "Der Drehimpuls ändert sich, wenn ein äußeres Drehmoment wirkt: dL/dt = M."},
+              {"key": "D", "text": "Der Drehimpuls hat die Einheit J (Joule)."},
+              {"key": "E", "text": "Der Drehimpuls ist unabhängig von der Achse."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: dL/dt = M_ext — das ist das rotatorische Analogon zu Newton 2. A ist falsch: L ist nur konstant wenn M_ext = 0. B ist falsch: M = dL/dt (Drehmoment ist Änderungsrate des Drehimpulses). D ist falsch: [L] = kg·m²/s. E ist falsch: L hängt stark von der Wahl der Drehachse ab."
+          },
+          {
+            "id": "sc_4_3_2",
+            "frage": "Ein Rad (Vollzylinder) wird mit konstantem Drehmoment von ω₀ = 0 auf ω₁ beschleunigt. Was gilt für die Winkelbeschleunigung?",
+            "optionen": [
+              {"key": "A", "text": "α nimmt mit der Zeit zu."},
+              {"key": "B", "text": "α ist konstant."},
+              {"key": "C", "text": "α nimmt mit der Zeit ab."},
+              {"key": "D", "text": "α ist null, da das Drehmoment konstant ist."},
+              {"key": "E", "text": "α hängt von der Winkelgeschwindigkeit ab."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: M = J·α → bei konstantem M und konstantem J ist α = M/J = const. A ist falsch: α konstant, nicht zunehmend. C ist falsch: α bleibt konstant. D ist falsch: konstantes M ergibt konstantes α ≠ 0. E ist falsch: α hängt nicht von ω ab (bei konstantem M)."
+          },
+          {
+            "id": "sc_4_3_3",
+            "frage": "Welche Aussage zur Drehimpulserhaltung beim Eisläufer ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Wenn er die Arme anzieht, wird seine Winkelgeschwindigkeit kleiner."},
+              {"key": "B", "text": "Wenn er die Arme anzieht, bleibt seine Winkelgeschwindigkeit gleich."},
+              {"key": "C", "text": "Wenn er die Arme anzieht (J nimmt ab), wird ω größer."},
+              {"key": "D", "text": "Die Rotationsenergie bleibt konstant beim Armziehen."},
+              {"key": "E", "text": "Drehimpulserhaltung gilt nur, wenn kein äußeres Drehmoment wirkt — Armziehen ist ein inneres Drehmoment, daher gilt sie nicht."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: L = J·ω = const; J nimmt ab → ω muss zunehmen. A ist falsch: ω nimmt zu. B ist falsch: ω ändert sich. D ist falsch: E_rot = ½Jω² = L²/(2J) nimmt zu, wenn J abnimmt (Muskelarbeit). E ist falsch: innere Drehmomente ändern L nicht — Drehimpulserhaltung gilt weiterhin."
+          },
+          {
+            "id": "sc_4_3_4",
+            "frage": "Welche Aussage zur Rotationskinematik ist korrekt für einen Körper, der sich mit s(t) = vR·t·(cos(ωt), sin(ωt), 0) bewegt?",
+            "optionen": [
+              {"key": "A", "text": "Der Körper bewegt sich auf einer Kreisbahn mit konstantem Radius."},
+              {"key": "B", "text": "Der Radius der Bahn nimmt mit der Zeit ab."},
+              {"key": "C", "text": "Der Radius der Bahn wächst mit der Zeit: r(t) = vR·t."},
+              {"key": "D", "text": "Die Winkelgeschwindigkeit ist null."},
+              {"key": "E", "text": "Der Körper bewegt sich auf einer Geraden."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: |s(t)| = vR·t → der Radius wächst linear mit der Zeit (Spiralbahn = Archimedische Spirale). A ist falsch: konstanter Radius wäre r = const (nicht vR·t). B ist falsch: r nimmt zu, nicht ab. D ist falsch: ω ist die Kreisfrequenz der Drehung und ≠ 0. E ist falsch: die Bahn ist eine Spirale."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_4_4_1",
+            "frage": "Welche Massenträgheitsmomente sind korrekt für die Symmetrieachse?",
+            "optionen": [
+              {"key": "A", "text": "Vollzylinder: J = mR²; Hohlkugel: J = ½mR²"},
+              {"key": "B", "text": "Vollzylinder: J = ½mR²; Vollkugel: J = 2/5 mR²; Hohlkugel: J = 2/3 mR²"},
+              {"key": "C", "text": "Vollzylinder: J = 2/5 mR²; Vollkugel: J = ½mR²"},
+              {"key": "D", "text": "Hohlzylinder: J = ½mR²; Vollzylinder: J = mR²"},
+              {"key": "E", "text": "Alle Körper haben J = mR²."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Standard-Trägheitsmomente für Rotation um Symmetrieachse. A ist falsch: Vollzylinder J = ½mR², nicht mR². C ist falsch: Vollzylinder ½mR², Vollkugel 2/5mR². D ist falsch: Hohlzylinder J = mR², nicht ½mR². E ist falsch: hängt von der Massenverteilung ab."
+          },
+          {
+            "id": "sc_4_4_2",
+            "frage": "Ein Drehmoment M(t) = −M₀·sin(ωt) wirkt auf ein Rad mit L(t=0) = 0. Was gilt für L(t)?",
+            "optionen": [
+              {"key": "A", "text": "L(t) bleibt konstant, da das Drehmoment periodisch ist."},
+              {"key": "B", "text": "L(t) wächst linear mit der Zeit."},
+              {"key": "C", "text": "L(t) ist eine Cosinusfunktion der Zeit."},
+              {"key": "D", "text": "L(t) nimmt monoton zu."},
+              {"key": "E", "text": "L(t) = 0 für alle t."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: L(t) = ∫₀ᵗ M dt' = M₀/ω·[cos(ωt)−1]. Das ist eine cosinus-förmige Funktion der Zeit (mit ω = gleicher Kreisfrequenz wie Drehmoment), verschoben um −M₀/ω. A ist falsch: L ändert sich. B ist falsch: linear wäre bei M = const. D ist falsch: L oszilliert. E ist falsch: L ≠ 0 im Allgemeinen."
+          },
+          {
+            "id": "sc_4_4_3",
+            "frage": "Welche Aussage zum Fahrradfelgenversuch ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die beschleunigte Phase endete sofort mit dem Abfallen des Fadens."},
+              {"key": "B", "text": "Die abgebremste Phase begann sofort mit dem Abfallen des Fadens."},
+              {"key": "C", "text": "Das Reibdrehmoment wirkte nur in der abgebremsten Phase."},
+              {"key": "D", "text": "Das durch die Masse verursachte Drehmoment wirkte nur in der beschleunigten Phase."},
+              {"key": "E", "text": "A und D sind korrekt."}
+            ],
+            "korrekt": "E",
+            "erklaerung": "E ist korrekt: Sowohl A (beschleunigte Phase endet beim Abfallen des Fadens) als auch D (das Gewichtsdrehmoment wirkt nur solange der Faden aufgewickelt ist = beschleunigte Phase) sind korrekt. B ist falsch: das Reibdrehmoment wirkte in BEIDEN Phasen (ist aber nur in der abgebremsten Phase die einzige Kraft). C ist falsch: Reibdrehmoment wirkt immer — in der beschleunigten Phase zusammen mit M_Masse."
+          },
+          {
+            "id": "sc_4_4_4",
+            "frage": "Welche Aussage zur Zentrifugalkraft ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Zentrifugalkraft ist eine reale Kraft in jedem Bezugssystem."},
+              {"key": "B", "text": "Die Zentrifugalkraft zeigt immer zum Zentrum der Kreisbewegung."},
+              {"key": "C", "text": "Die Zentrifugalkraft entsteht als Reaktionskraft zur Zentripetalkraft."},
+              {"key": "D", "text": "Die Zentrifugalkraft tritt als Scheinkraft nur in rotierenden Bezugssystemen auf."},
+              {"key": "E", "text": "Die Zentrifugalkraft bewirkt immer eine Beschleunigung nach innen."}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Im Inertialsystem gibt es nur die Zentripetalkraft (nach innen). Im rotierenden Bezugssystem erscheint die Zentrifugalkraft als Scheinkraft (nach außen), um Newtons Gesetze formal anwenden zu können. A ist falsch: nur im rotierenden System. B ist falsch: Zentrifugalkraft zeigt vom Zentrum WEG (nach außen). C ist falsch: sie ist keine Reaktionskraft (wirkt auf denselben Körper). E ist falsch: sie zeigt nach außen."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Definiere das Massenträgheitsmoment J in einem Satz und nenne die Formel J = ½mR² für den Vollzylinder."],
+      "2": ["Erkläre die Analogie zwischen Translation und Rotation: Welche Größen entsprechen sich jeweils (Masse↔?, Kraft↔?, Impuls↔?)?"],
+      "3": ["Beschreibe den Satz von Steiner: Was ist er, wann wird er benötigt, und was ist die Formel?"],
+      "4": ["Ein Vollzylinder (m = 4 kg, R = 0,2 m) rollt eine schiefe Ebene (h = 1,5 m) hinunter. Berechne die Endgeschwindigkeit mit dem Energieerhaltungssatz (vollständiges Lösungsschema)."],
+      "5": ["Erkläre das Phänomen des Eisläufers, der sich schneller dreht, wenn er die Arme einzieht. Welches Erhaltungsgesetz liegt zugrunde, und warum nimmt die Rotationsenergie zu?"]
+    }
+  }
+}

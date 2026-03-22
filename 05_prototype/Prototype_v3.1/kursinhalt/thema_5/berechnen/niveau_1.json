@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_5_1_1",
+    "aufgabe": "Ein Vollzylinder der Masse m = 3,0 kg und des Radius R = 0,20 m rotiert um seine Längsachse. Berechnen Sie das Trägheitsmoment J sowie die Rotationsenergie E_rot bei einer Winkelgeschwindigkeit ω = 10 rad/s.",
+    "musterloesung": "J = ½·m·R² = ½·3,0·0,04 = 0,060 kg·m². E_rot = ½·J·ω² = ½·0,060·100 = 3,0 J.",
+    "tipps": [
+      "Welches Trägheitsmoment hat ein Vollzylinder, der um seine Symmetrieachse rotiert?",
+      "J_Vollzylinder = ½·m·R². E_rot = ½·J·ω².",
+      "J = 0,060 kg·m² → E_rot = 3,0 J."
+    ]
+  },
+  {
+    "id": "do_b_5_1_2",
+    "aufgabe": "Ein Drehmoment M = 8,0 N·m wirkt auf einen Körper mit dem Trägheitsmoment J = 4,0 kg·m². Berechnen Sie die Winkelbeschleunigung α.",
+    "musterloesung": "Gegeben: M = 8,0 N·m, J = 4,0 kg·m². Gesucht: α. Ansatz: M = J·α → α = M/J = 8,0/4,0 = 2,0 rad/s².",
+    "tipps": [
+      "Welches Gesetz ist das rotatorische Analogon zu F = m·a?",
+      "M = J·α → α = M/J.",
+      "α = 8,0/4,0 = 2,0 rad/s²."
+    ]
+  }
+]

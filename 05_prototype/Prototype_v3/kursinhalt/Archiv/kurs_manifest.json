@@ -1,0 +1,101 @@
+{
+  "version": "2.0",
+  "kurs": {
+    "id": "physik_fh_aachen_ws2526",
+    "name": "Physik — FH Aachen, FB 8",
+    "dozent": "Prof. Dr. Christian Effertz",
+    "semester": "WS 2025/26",
+    "modul": "8110218",
+    "defaultPruefungstage": 45,
+    "bestehensgrenze_punkte": 60,
+    "gesamtpunkte": 150,
+    "klausurstruktur": {
+      "aufgabe_1": "Single Choice Verständnisfragen (8×5P = 40P)",
+      "aufgaben_2_4": "Berechnen + Skizzieren nach Schema (je 26P = 78P)",
+      "aufgabe_5": "Graphische Auswertung / Praktikumsversuch (32P)"
+    }
+  },
+  "aufgabentypen": {
+    "doing": ["berechnen", "skizzieren"],
+    "wissen": ["single_choice"]
+  },
+  "niveaustufen": {
+    "1": "Grundlagen",
+    "2": "Anwendung",
+    "3": "Klausur",
+    "4": "Experte"
+  },
+  "klausurprofil": {
+    "aufgabenverteilung_prozent": {
+      "single_choice": 27,
+      "berechnen": 35,
+      "skizzieren_schemaaufgabe": 17,
+      "grafische_auswertung": 21
+    },
+    "schwierigkeitsverteilung_prozent": {
+      "grundlagen": 20,
+      "anwendung": 30,
+      "klausur": 35,
+      "experte": 15
+    },
+    "quellen": "3 Altklausuren WS 2025/26 (Nr. 1–3), Übungsblätter, Vorlesungsskript v0.13"
+  },
+  "themen": [
+    {
+      "id": 1,
+      "name": "Kinematik",
+      "beschreibung": "Geradlinige Bewegung, schräger Wurf, Kreisbahn, Bewegungsgleichungen",
+      "datei": "thema_1.json",
+      "haeufig": true,
+      "nur_skript": false
+    },
+    {
+      "id": 2,
+      "name": "Dynamik & Energieerhaltung",
+      "beschreibung": "Newtonsche Gesetze, Kräfte, Arbeit, Energie, Impuls, elastische und inelastische Stöße, Erhaltungssätze",
+      "datei": "thema_2.json",
+      "haeufig": true,
+      "nur_skript": false
+    },
+    {
+      "id": 3,
+      "name": "Rotationsmechanik",
+      "beschreibung": "Drehbewegung, Trägheitsmoment, Drehmoment, Drehimpuls, Rollbewegung auf schiefer Ebene",
+      "datei": "thema_3.json",
+      "haeufig": true,
+      "nur_skript": false
+    },
+    {
+      "id": 4,
+      "name": "Schwingungen & Wellen",
+      "beschreibung": "Harmonische Schwingungen, Federpendel, Fadenpendel, Schwingungsdauer, Energie der Schwingung, Wellen (Skript)",
+      "datei": "thema_4.json",
+      "haeufig": true,
+      "nur_skript": false
+    },
+    {
+      "id": 5,
+      "name": "Elektrizitätslehre & Schaltkreise",
+      "beschreibung": "Ohmsches Gesetz, Reihen- und Parallelschaltung, Kirchhoffsche Regeln, spezifischer Widerstand, Messtechnik",
+      "datei": "thema_5.json",
+      "haeufig": true,
+      "nur_skript": false
+    },
+    {
+      "id": 6,
+      "name": "Elektromagnetismus",
+      "beschreibung": "Coulombkraft, elektrisches Feld, Lorentzkraft, magnetisches Feld, Drehmoment auf Leiterschleife",
+      "datei": "thema_6.json",
+      "haeufig": true,
+      "nur_skript": false
+    },
+    {
+      "id": 7,
+      "name": "Graphische Auswertung & Praktikum",
+      "beschreibung": "Linearisierung von Messdaten, Diagramme, signifikante Stellen, Praktikumsversuche (Fahrradfelge, Fadenpendel, Multimeter)",
+      "datei": "thema_7.json",
+      "haeufig": true,
+      "nur_skript": false
+    }
+  ]
+}

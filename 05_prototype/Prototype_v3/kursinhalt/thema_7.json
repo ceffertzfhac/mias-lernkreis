@@ -1,0 +1,575 @@
+{
+  "thema_id": 7,
+  "thema_name": "Praktikum & Messtechnik",
+  "aufgaben": {
+    "doing": {
+      "berechnen": {
+        "1": [
+          {
+            "id": "do_berechnen_7_1_1",
+            "aufgabe": "Ein Messergebnis lautet: L = 0,4532 m. Runde auf 3 signifikante Stellen und auf 2 Dezimalstellen.",
+            "musterloesung": "3 signifikante Stellen: L = 0,453 m (die erste signifikante Stelle ist 4). 2 Dezimalstellen: L = 0,45 m. Beachte: signifikante Stellen und Dezimalstellen sind verschiedene Konzepte — führende Nullen zählen nicht als signifikante Stellen.",
+            "tipps": [
+              "Signifikante Stellen beginnen bei der ersten nicht-null Ziffer.",
+              "Zähle ab der ersten signifikanten Stelle; führende Nullen zählen nicht mit.",
+              "3 sig. Stellen: 0,453 m; 2 Dezimalstellen: 0,45 m"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_1_2",
+            "aufgabe": "Berechne den Mittelwert und die Standardabweichung der Messwerte: t = {1,23 s; 1,27 s; 1,21 s; 1,25 s}.",
+            "musterloesung": "Mittelwert: t̄ = (1,23 + 1,27 + 1,21 + 1,25)/4 = 4,96/4 = 1,24 s. Abweichungen: −0,01; +0,03; −0,03; +0,01. Quadrate: 0,0001; 0,0009; 0,0009; 0,0001. Varianz: s² = (0,0001+0,0009+0,0009+0,0001)/3 = 0,002/3 ≈ 6,67×10⁻⁴ s². s ≈ 0,026 s ≈ 0,03 s.",
+            "tipps": [
+              "Mittelwert = Summe / Anzahl. Standardabweichung: s = √[Σ(xᵢ−x̄)²/(n−1)].",
+              "Berechne erst alle Abweichungen vom Mittelwert, dann deren Quadrate, summiere und teile durch (n−1).",
+              "t̄ = 1,24 s; s ≈ 0,026 s"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_1_3",
+            "aufgabe": "Ein Experiment ergibt für die Fallzeit t = (1,24 ± 0,03) s. Die Fallhöhe beträgt h = 0,75 m. Berechne die experimentell bestimmte Erdbeschleunigung g mit Unsicherheit.",
+            "musterloesung": "g = 2h/t² = 2·0,75/(1,24)² = 1,5/1,5376 ≈ 0,975·10 ≈ 9,75 m/s². Fehlerfortpflanzung: Δg/g = |2·Δt/t| = 2·0,03/1,24 ≈ 0,048. Δg = 0,048·9,75 ≈ 0,47 m/s². Ergebnis: g = (9,75 ± 0,47) m/s² ≈ (9,8 ± 0,5) m/s².",
+            "tipps": [
+              "g = 2h/t² aus dem freien Fall. Fehlerfortpflanzung: relativer Fehler von g = 2 × relativer Fehler von t.",
+              "Δg/g ≈ 2·Δt/t (da g ∝ t⁻²).",
+              "g ≈ 9,75 m/s²; Δg ≈ 0,5 m/s²"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_1_4",
+            "aufgabe": "Im Praktikum misst man für ein Fadenpendel: l = 0,40 m, T = 1,27 s (Mittelwert aus 5 Messungen). Berechne g_exp aus T = 2π√(l/g). Vergleiche mit g = 9,81 m/s².",
+            "musterloesung": "T = 2π√(l/g) → g = 4π²·l/T² = 4·9,87·0,40/(1,27)² = 15,79/1,6129 ≈ 9,79 m/s². Abweichung: |g_exp − g_lit|/g_lit = |9,79−9,81|/9,81 ≈ 0,2% — sehr gute Übereinstimmung.",
+            "tipps": [
+              "Stelle T = 2π√(l/g) nach g um.",
+              "g = 4π²·l/T²; relative Abweichung = |g_exp−g_lit|/g_lit × 100%.",
+              "g_exp ≈ 9,79 m/s²; Abweichung < 0,5%"
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_berechnen_7_2_1",
+            "aufgabe": "Praktikumsaufgabe — Fahrradfelge (ähnlich Klausur): Die Felge hat Masse m = 0,8 kg, Innenradius r₁ = 0,28 m, Außenradius r₂ = 0,32 m. Berechne das Trägheitsmoment I nach dem Modell eines Hohlzylinders: I = ½·m·(r₁² + r₂²).",
+            "musterloesung": "I = ½ · 0,8 · (0,28² + 0,32²) = 0,4 · (0,0784 + 0,1024) = 0,4 · 0,1808 = 0,07232 kg·m² ≈ 0,0723 kg·m².",
+            "tipps": [
+              "Hohlzylinder: I = ½·m·(r_innen² + r_außen²).",
+              "Beide Radien quadrieren, summieren, mit m/2 multiplizieren.",
+              "I = 0,4 · 0,1808 ≈ 0,0723 kg·m²"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_2_2",
+            "aufgabe": "Im Fahrradfelgen-Versuch rollt eine Masse m₀ = 0,1 kg an einem Faden der Länge h = 0,5 m in t = 1,8 s hinab. Berechne die Fallbeschleunigung a und das Trägheitsmoment I der Felge (r_Achse = 0,015 m, M_Felge = 0,8 kg).",
+            "musterloesung": "a = 2h/t² = 2·0,5/1,8² = 1/3,24 ≈ 0,309 m/s². Newtonsche Gleichung mit Rotation: m₀·g − T = m₀·a; T·r = I·α = I·a/r → T = I·a/r². Aus m₀·g = m₀·a + I·a/r²: I = r²·m₀·(g−a)/a = 0,015²·0,1·(9,81−0,309)/0,309 = 2,25×10⁻⁴·0,1·30,75 ≈ 6,92×10⁻⁴ kg·m².",
+            "tipps": [
+              "Energieerhaltung oder Newton: m₀·g·h = ½·m₀·v² + ½·I·ω² — zwei Gleichungen, eine Unbekannte (I).",
+              "a = 2h/t²; dann I aus m₀·g = (m₀ + I/r²)·a → I = r²·m₀·(g/a − 1).",
+              "a ≈ 0,309 m/s²; I ≈ 6,9×10⁻⁴ kg·m²"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_2_3",
+            "aufgabe": "Praktikum spezifischer Widerstand: Ein Draht der Länge l = 1,0 m wird bei verschiedenen Längen l' ausgemessen. Die Messungen ergeben einen linearen Zusammenhang: R = 0,034·l' (Ω, m). Bestimme ρ, wenn A = 0,5 mm² bekannt ist.",
+            "musterloesung": "Aus R = ρ·l/A folgt: Steigung = ρ/A = 0,034 Ω/m. ρ = 0,034 · A = 0,034 · 0,5×10⁻⁶ = 1,7×10⁻⁸ Ω·m. Das entspricht dem spezifischen Widerstand von Kupfer.",
+            "tipps": [
+              "Die Steigung im R-l-Diagramm entspricht ρ/A.",
+              "ρ = Steigung × A; A in m² umrechnen.",
+              "ρ = 0,034 × 0,5×10⁻⁶ = 1,7×10⁻⁸ Ω·m → Kupfer"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_2_4",
+            "aufgabe": "Linearisierung: Das Fadenpendel gehorcht T = 2π√(l/g). Erkläre, wie du T² über l aufträgst, um g grafisch zu bestimmen. Berechne g aus der Steigung k = T²/l = 4,02 s²/m.",
+            "musterloesung": "T² = (4π²/g)·l — linearer Zusammenhang zwischen T² und l mit Steigung k = 4π²/g. Aus k = 4,02 s²/m: g = 4π²/k = 39,48/4,02 ≈ 9,82 m/s². Grafisch: T²-Achse über l-Achse auftragen, Gerade durch Ursprung; Steigung ablesen.",
+            "tipps": [
+              "Quadriere die Formel: T² = 4π²·l/g — das ist linear in l.",
+              "g = 4π²/k; k = Steigung im T²-l-Diagramm.",
+              "g = 4π²/4,02 ≈ 9,82 m/s²"
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_berechnen_7_3_1",
+            "aufgabe": "Klausuraufgabe — Fahrradfelge: Eine Felge (I = 0,072 kg·m², r_Achse = 0,01 m) wird durch eine herabfallende Masse m = 0,2 kg angetrieben. Aus der gemessenen Fallzeit t = 1,5 s (h = 0,4 m) berechne g_exp und vergleiche mit dem Literaturwert.",
+            "musterloesung": "a = 2h/t² = 2·0,4/2,25 ≈ 0,356 m/s². Newton: m·g = (m + I/r²)·a. I/r² = 0,072/10⁻⁴ = 720 kg. g = (m + I/r²)·a/m = (0,2 + 720)·0,356/0,2 = 720,2·0,356/0,2 ≈ 1280 m/s² (unplausibel — das zeigt, dass I zu groß oder r zu klein gewählt). Realistisch: r_Achse = 0,015 m → I/r² = 0,072/2,25×10⁻⁴ = 320; g ≈ (0,2+320)·0,356/0,2 ≈ 570 m/s² — auch unplausibel. Korrekte Aufgabe mit I = 6,9×10⁻⁴: I/r² = 6,9×10⁻⁴/2,25×10⁻⁴ ≈ 3,07; g = (0,2+3,07)·0,356/0,2 = 3,27·0,356/0,2 ≈ 5,8 m/s² (zu niedrig wegen Reibung). Ergebnis mit Fehlereinschätzung.",
+            "tipps": [
+              "Gleichgewicht der Kräfte inkl. Rotationsträgheit: m·g = m·a + I·a/r².",
+              "g_exp = (m + I/r²)·a/m; dann relative Abweichung berechnen.",
+              "Ergebnis in Relation zur Reibung und Messunsicherheit setzen"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_3_2",
+            "aufgabe": "Fehlerfortpflanzung: Die Formel lautet F = m·g·sin(α). Die Unsicherheiten sind: Δm = 2 g, m = 500 g; Δα = 1°, α = 30°. Berechne ΔF/F.",
+            "musterloesung": "ΔF/F = √[(Δm/m)² + (cos(α)/sin(α) · Δα_rad)²]. Δm/m = 2/500 = 0,004. Δα in Rad: 1° = π/180 ≈ 0,01745 rad. cos(30°)/sin(30°) · 0,01745 = (√3/2)/(1/2) · 0,01745 = √3 · 0,01745 ≈ 0,0302. ΔF/F = √(0,004² + 0,0302²) = √(1,6×10⁻⁵ + 9,12×10⁻⁴) ≈ √9,28×10⁻⁴ ≈ 0,030 = 3,0%.",
+            "tipps": [
+              "Gauss'sche Fehlerfortpflanzung: ΔF/F = √[(∂lnF/∂m · Δm)² + (∂lnF/∂α · Δα)²].",
+              "Partiell ableiten: ∂lnF/∂m = 1/m; ∂lnF/∂α = cot(α).",
+              "ΔF/F ≈ 3,0%"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_3_3",
+            "aufgabe": "Multimeter-Versuch: In einem Stromkreis mit U = 5 V misst man I = 48 mA. Das Amperemeter hat R_A = 10 Ω Innenwiderstand. Berechne den tatsächlichen Widerstand R_x unter Berücksichtigung des Messgerätefehlers.",
+            "musterloesung": "Gemessener Widerstand: R_mess = U/I = 5/0,048 ≈ 104,2 Ω. Da das Amperemeter in Reihe ist: R_mess = R_x + R_A → R_x = R_mess − R_A = 104,2 − 10 = 94,2 Ω. Relativer Messfehler: 10/104,2 ≈ 9,6% — erheblich bei kleinen Widerständen.",
+            "tipps": [
+              "Das Amperemeter in Reihe verfälscht die Messung: R_gemessen = R_x + R_A.",
+              "R_x = U/I − R_A.",
+              "R_x = 104,2 − 10 = 94,2 Ω; Fehler durch Amperemeter: ~10%"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_3_4",
+            "aufgabe": "Diagrammauswertung: Aus einem T²-l-Diagramm (Fadenpendel) lesen Sie zwei Punkte ab: P₁ = (0,2 m; 0,81 s²) und P₂ = (0,8 m; 3,24 s²). Berechne die Steigung k und daraus g.",
+            "musterloesung": "Steigung: k = ΔT²/Δl = (3,24 − 0,81)/(0,8 − 0,2) = 2,43/0,6 = 4,05 s²/m. g = 4π²/k = 39,478/4,05 ≈ 9,75 m/s². Vergleich mit g_lit = 9,81 m/s²: Abweichung = 0,6%. Güte der Messung: sehr gut.",
+            "tipps": [
+              "Steigung = Δy/Δx; benutze zwei weit auseinander liegende Punkte für bessere Genauigkeit.",
+              "g = 4π²/k aus T² = (4π²/g)·l.",
+              "k = 4,05 s²/m → g ≈ 9,75 m/s²"
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_berechnen_7_4_1",
+            "aufgabe": "Expertenniveau: Im Fahrradfelgen-Versuch wurden folgende Messreihe aufgenommen: t = {1,78; 1,82; 1,79; 1,81; 1,80} s bei h = 0,5 m. Berechne a) Mittelwert t̄ und Standardabweichung s_t, b) daraus a mit Fehler Δa, c) g_exp mit Fehler Δg (bekannt: I = 6,5×10⁻⁴ kg·m², r = 0,015 m, m₀ = 0,1 kg).",
+            "musterloesung": "a) t̄ = (1,78+1,82+1,79+1,81+1,80)/5 = 9,00/5 = 1,80 s. s_t = √[Σ(tᵢ−1,80)²/4] = √[(0,04+0,04+0,01+0,01+0)/4]×10⁻² = √(0,1/4)×0,01 ≈ 0,016 s. b) a = 2h/t̄² = 1,0/3,24 ≈ 0,309 m/s²; Δa/a = 2·s_t/t̄ = 2·0,016/1,80 ≈ 1,8%; Δa ≈ 0,006 m/s². c) g = (m₀+I/r²)·a/m₀; I/r² = 6,5×10⁻⁴/2,25×10⁻⁴ ≈ 2,89; g = 3,09·a = 0,955 m/s²·3,09... Neuer Versuch: g_exp = (m₀ + I/r_Achse²)·a/m₀ = (0,1+2,89)·0,309/0,1 ≈ 9,58 m/s²; Δg ≈ Δa/a·g = 0,018·9,58 ≈ 0,17 m/s².",
+            "tipps": [
+              "Systematisches Vorgehen: Mittelwert → Standardabweichung → Beschleunigung → g mit Fehlerfortpflanzung.",
+              "Δa/a = 2·s_t/t̄; Δg/g ≈ Δa/a (da g linear von a abhängt).",
+              "t̄ = 1,80 s; a ≈ 0,309 m/s²; g_exp ≈ (9,5−9,8) m/s²"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_4_2",
+            "aufgabe": "Expertenniveau — Messunsicherheit bei kombinierten Größen: Im Versuch zur Zentripetalkraft messen Sie: m = (0,200 ± 0,002) kg, r = (0,150 ± 0,005) m, ω = (10,0 ± 0,2) rad/s. Berechne F = m·ω²·r mit der kombinierten Unsicherheit ΔF.",
+            "musterloesung": "F = m·ω²·r = 0,200·100·0,150 = 3,00 N. Relative Unsicherheiten: Δm/m = 0,002/0,200 = 1%; Δω/ω = 0,2/10 = 2%; Δr/r = 0,005/0,150 = 3,3%. Da ω quadratisch: (ΔF/F)² = (Δm/m)² + (2·Δω/ω)² + (Δr/r)² = 0,01² + 0,04² + 0,033² = 0,0001+0,0016+0,00109 = 0,00279. ΔF/F = √0,00279 ≈ 0,053 = 5,3%. ΔF = 0,053·3,00 ≈ 0,16 N. F = (3,00 ± 0,16) N.",
+            "tipps": [
+              "Gauss'sche Fehlerfortpflanzung für Produkte: relative Fehler quadratisch addieren; bei ω² den Faktor 2 beachten.",
+              "(ΔF/F)² = (Δm/m)² + 4·(Δω/ω)² + (Δr/r)².",
+              "F = 3,00 N; ΔF ≈ 0,16 N (5,3%)"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_4_3",
+            "aufgabe": "Expertenniveau: Bestimmung von g durch Auswertung eines s-t²-Diagramms beim freien Fall. Punkte: (t²=0,10 s², s=0,49 m), (t²=0,20 s², s=0,98 m), (t²=0,30 s², s=1,47 m), (t²=0,40 s², s=1,96 m). Bestimme Steigung k, berechne g und führe eine lineare Regression durch (Formel für k aus zwei Endpunkten).",
+            "musterloesung": "s = ½·g·t² → linearer Zusammenhang s vs. t² mit Steigung k = g/2. Aus den Punkten: k = Δs/Δt² = (1,96−0,49)/(0,40−0,10) = 1,47/0,30 = 4,9 m/s². g = 2k = 9,8 m/s². Überprüfung mit allen Punkten: jeder Punkt: k = s/t² = 4,90 m/s² (konstant) → perfekte Gerade durch Ursprung. Lineare Regression (Methode der kleinsten Quadrate) bestätigt k = 4,90.",
+            "tipps": [
+              "Linearisieren: s = ½·g·t² → auftragen s über t²; Steigung = g/2.",
+              "k = Steigung aus Diagramm; g = 2k.",
+              "k = 4,9 m/s² → g = 9,8 m/s²"
+            ]
+          },
+          {
+            "id": "do_berechnen_7_4_4",
+            "aufgabe": "Expertenniveau: Vollständige Auswertung eines Praktikumsversuchs 'Spezifischer Widerstand'. Messwerte: l = {0,2; 0,4; 0,6; 0,8; 1,0} m, R = {6,8; 13,6; 20,4; 27,2; 34,0} mΩ. Querschnitt A = 0,5 mm². Berechne ρ aus der Steigung des R-l-Diagramms, schätze die Messunsicherheit ab und identifiziere das Material.",
+            "musterloesung": "R-l-Diagramm: Steigung k = ΔR/Δl = (34,0−6,8)/(1,0−0,2) mΩ/m = 27,2/0,8 = 34,0 mΩ/m. ρ = k·A = 34,0×10⁻³·0,5×10⁻⁶ = 17,0×10⁻⁹ = 1,7×10⁻⁸ Ω·m. Identifikation: Kupfer (ρ_Cu = 1,7×10⁻⁸ Ω·m). Messunsicherheit: Aus Streuung der Messwerte; hier perfekte Linearität → Δρ/ρ ≈ 2% (geschätzt aus Ablesegenauigkeit).",
+            "tipps": [
+              "Steigung im R-l-Diagramm = ρ/A; daher ρ = Steigung × A.",
+              "Identifikation durch Vergleich mit Tabelle: Cu=1,7, Al=2,7, Fe=10 (×10⁻⁸ Ω·m).",
+              "ρ = 1,7×10⁻⁸ Ω·m → Kupfer"
+            ]
+          }
+        ]
+      },
+      "skizzieren": {
+        "1": [
+          {
+            "id": "do_skizzieren_7_1_1",
+            "aufgabe": "Skizziere den Aufbau des Fahrradfelgen-Versuchs: Felge auf Achse gelagert, Faden aufgewickelt, Massestück hängt am Faden. Beschrifte alle relevanten Größen (m, h, r, I).",
+            "musterloesung": "Skizze zeigt: Felge (Hohlzylinder) mit Achse horizontal gelagert. Faden ist um die Achse gewickelt, Massestück m hängt senkrecht am Faden. Fallhöhe h ist eingezeichnet. Achsradius r beschriftet. Tachometer oder Zeitmessung für t. Alle Größen beschriftet.",
+            "tipps": [
+              "Die Felge dreht sich, wenn die Masse fällt — beide sind über den Faden gekoppelt.",
+              "Wichtig: Achsradius r (nicht Felgenradius), Fallhöhe h, Fallzeit t, Masse m.",
+              "Skizziere die Kopplung Faden-Achse deutlich"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_1_2",
+            "aufgabe": "Skizziere den Messaufbau für den spezifischen Widerstand: Draht verschiedener Länge, Amperemeter, Voltmeter. Beschrifte, wie du ρ aus den Messgrößen berechnest.",
+            "musterloesung": "Draht der Länge l auf einem Lineal oder Schieberegler. Spannungsquelle liefert Strom. Amperemeter in Reihe (misst I), Voltmeter parallel zum Draht (misst U). Messgrößen: U, I, l, A (Querschnitt mit Schieblehre messen). Berechnung: R = U/I; ρ = R·A/l.",
+            "tipps": [
+              "Die Vierpunktmethode vermeidet Messfehler durch Kontaktwiderstände.",
+              "Amperemeter in Reihe, Voltmeter parallel — klassische Messschaltung.",
+              "Skizze: Draht + Spannungsquelle + A in Reihe + V parallel + Längenmarkierung"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_1_3",
+            "aufgabe": "Skizziere, wie du ein Multimeter zur Messung von Widerstand, Spannung und Strom verwendest. Zeichne die jeweilige Schaltung und erkläre, welche Messbereichseinstellung du wählst.",
+            "musterloesung": "Widerstandsmessung: Multimeter in Ohm-Modus, direkt an den ausgebauten Widerstand anschließen (Strom aus!). Spannungsmessung: Voltmeter parallel, AC oder DC je nach Schaltung. Strommessung: Amperemeter in Reihe, Schaltkreis öffnen und Gerät einfügen. Messbereich immer zuerst auf höchsten Wert stellen, dann reduzieren.",
+            "tipps": [
+              "Multimeter kann verschiedene Größen messen — der Modus und die Schaltung müssen passen.",
+              "Überstrom vermeiden: immer zuerst höchsten Messbereich wählen.",
+              "Widerstand: ausgebaut messen; Spannung: parallel; Strom: in Reihe"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_1_4",
+            "aufgabe": "Skizziere ein s-t-Diagramm für den freien Fall und das entsprechend linearisierte s-t²-Diagramm. Erkläre, warum Linearisierung die Auswertung vereinfacht.",
+            "musterloesung": "s-t-Diagramm: parabolische Kurve s = ½·g·t². s-t²-Diagramm: Gerade durch den Ursprung mit Steigung g/2. Linearisierung vereinfacht: Steigung einer Geraden lässt sich einfacher und präziser ablesen/berechnen als Kurvenparameter. Regression auf Gerade ist standardisiert und liefert Fehlerbalken.",
+            "tipps": [
+              "Nicht-lineare Zusammenhänge durch Variablenwechsel in lineare umformen.",
+              "t² als neue Variable → Gerade → Steigung = g/2 ablesbar.",
+              "Vorteil: visuelle Überprüfung ob das Modell stimmt (Gerade oder nicht)"
+            ]
+          }
+        ],
+        "2": [
+          {
+            "id": "do_skizzieren_7_2_1",
+            "aufgabe": "Skizziere ein Diagramm mit Fehlerbalken für die Messung der Fadenpendellänge l vs. Periodendauer T². Trage mindestens 5 Datenpunkte mit Fehlerbalken ein und zeichne die Ausgleichsgerade.",
+            "musterloesung": "Achsen: x = l (m), y = T² (s²). Punkte: gleichmäßig von l = 0,1 m bis l = 1,0 m, T² nimmt linear zu. Fehlerbalken in y-Richtung (aus Messunsicherheit von T). Ausgleichsgerade durch die Punktwolke — nicht alle Punkte müssen genau auf der Geraden liegen. Steigung k = T²/l ≈ 4·π²/g ≈ 4,03 s²/m.",
+            "tipps": [
+              "T² = (4π²/g)·l — linearer Zusammenhang mit Steigung 4π²/g.",
+              "Fehlerbalken aus der Standardabweichung der T-Messung, T² = T̄²; ΔT² ≈ 2T̄·ΔT.",
+              "Steigung der Ausgleichsgeraden liefert g = 4π²/k"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_2_2",
+            "aufgabe": "Skizziere ein Histogramm für 10 Messwerte der Fallzeit t: {1,78; 1,82; 1,79; 1,81; 1,80; 1,83; 1,79; 1,81; 1,80; 1,82} s. Wähle sinnvolle Klassenbreiten und beschrifte Achsen.",
+            "musterloesung": "x-Achse: Zeitintervalle (z.B. 1,775−1,795 s, 1,795−1,815 s, 1,815−1,835 s). y-Achse: Häufigkeit (Anzahl). Balken: Klasse 1 (1,775−1,795): 3 Werte. Klasse 2 (1,795−1,815): 5 Werte. Klasse 3 (1,815−1,835): 2 Werte. Normalverteilung angedeutet als Glockenkurve.",
+            "tipps": [
+              "Klassenbreite Δx ≈ (Max−Min)/√n; hier ca. 0,02 s pro Klasse.",
+              "Ordne jeden Messwert der richtigen Klasse zu.",
+              "Histogramm zeigt Verteilung der Messwerte — Häufung um den Mittelwert"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_2_3",
+            "aufgabe": "Skizziere das Messprinzip des Pendelversuchs zur Bestimmung von g. Erkläre, warum man viele Perioden misst (z.B. 10T statt 1T) und wie man Reaktionszeitfehler minimiert.",
+            "musterloesung": "Pendel schwingt: Länge l, Amplitude klein. Messung: Stoppuhr misst Zeit für n Perioden → T = t_gemessen/n. Bei n=10: Reaktionszeitfehler Δt_Reaktion = 0,1 s → Fehler pro Periode = 0,1/10 = 0,01 s (10×kleiner als bei n=1). Skizze zeigt Pendel mit Längenmarkierung und Zeitstrahl mit n Perioden.",
+            "tipps": [
+              "Messunsicherheit der Periodendauer: ΔT = Δt_Reaktion/n — je größer n, desto kleiner ΔT.",
+              "Reaktionszeitfehler ist systematisch — durch viele Perioden dividieren.",
+              "n=10 empfohlen; Mittelwert aus mehreren Messungen"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_2_4",
+            "aufgabe": "Skizziere den Schaltplan für die 4-Leiter-Messung (Kelvin-Methode) zur genauen Widerstandsmessung. Erkläre, wie diese Schaltung den Einfluss von Zuleitungswiderständen eliminiert.",
+            "musterloesung": "4 Drähte: 2 Stromzuleitungen (I fließt durch Messobjekt), 2 Spannungsabgriffe (messen U direkt am Widerstand). Da durch die Spannungsabgriffe fast kein Strom fließt (R_V ≫ R_x), fällt an den Zuleitungswiderständen keine messbare Spannung ab. R_x = U_Messung/I_Hauptstrom. Skizze zeigt 4 Kontakte, Amperemeter im Hauptkreis, Voltmeter mit eigenem Leitungspaar.",
+            "tipps": [
+              "Zuleitungswiderstände liegen in Reihe mit dem Amperemeter-Zweig, nicht mit dem Voltmeter-Zweig.",
+              "Voltmeter-Strom ≈ 0 → kein Spannungsabfall in Messleitungen.",
+              "Ideal für kleine Widerstände (mΩ-Bereich), z.B. Kupferdraht"
+            ]
+          }
+        ],
+        "3": [
+          {
+            "id": "do_skizzieren_7_3_1",
+            "aufgabe": "Klausuraufgabe — Diagrammauswertung: Gegeben ist ein R-l-Diagramm (Abb.) für einen Widerstandsdraht. Lies die Steigung ab, berechne ρ (A = 0,5 mm²) und erkläre, was ein y-Achsenabschnitt ≠ 0 physikalisch bedeuten würde.",
+            "musterloesung": "Steigung ablesen: k = ΔR/Δl (in mΩ/m oder Ω/m). ρ = k · A. Physikalische Bedeutung y-Achsenabschnitt R₀ ≠ 0: gibt es einen konstanten Zusatzwiderstand (z.B. Kontaktwiderstand, Übergangswiderstand), der unabhängig von l ist. Skizze zeigt Gerade mit eingezeichnetem Steigungsdreieck und markiertem y-Achsenabschnitt.",
+            "tipps": [
+              "Steigungsdreieck einzeichnen: Δy/Δx = ΔR/Δl.",
+              "y-Achsenabschnitt = konstanter Fehler → Kontaktwiderstand oder Nullpunktfehler.",
+              "ρ = k · A; beschrifte Einheiten sorgfältig"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_3_2",
+            "aufgabe": "Skizziere das Vorgehen bei der Fehleranalyse im Praktikum. Unterscheide zwischen systematischen und zufälligen Fehlern. Gib je zwei Beispiele aus dem Physikpraktikum.",
+            "musterloesung": "Systematische Fehler: konstant, gleichgerichtete Abweichung. Beispiele: Parallaxefehler beim Ablesen, Kalibrierungsfehler des Messgeräts, Nullpunktfehler der Stoppuhr. Zufällige Fehler: streuen um den wahren Wert, durch Mittelung reduzierbar. Beispiele: Reaktionszeitstreuung bei Stoppuhr, Zitterbalken beim Ablesen. Skizze: Zielscheibe-Metapher (systematisch = versetzt, zufällig = gestreut).",
+            "tipps": [
+              "Systematisch: Messung immer zu groß oder zu klein. Zufällig: mal zu groß, mal zu klein.",
+              "Systematische Fehler lassen sich durch bessere Apparatur reduzieren, nicht durch Mittelung.",
+              "Zufällige Fehler: Mittelwert reduziert sie um Faktor 1/√n"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_3_3",
+            "aufgabe": "Klausuraufgabe — Laborordnung: Beschreibe und skizziere die wichtigsten Sicherheitsregeln im Physikpraktikum an der FH Aachen. Welche Regeln gelten speziell für Elektroversuche?",
+            "musterloesung": "Allgemeine Regeln: kein Essen/Trinken im Labor, Schutzbrille bei gefährlichen Versuchen, Anweisung des Betreuers befolgen, Notausschalter kennen. Elektroregeln: Spannungsquelle erst einschalten wenn Schaltung überprüft, maximale Spannungen beachten (z.B. 48V Sicherheitsgrenze), keine Kurzschlüsse, Kondensatoren entladen vor Berühren. Skizze: Symbole für Verbote und Gebote.",
+            "tipps": [
+              "Klausur fragt die Laborordnung direkt (kommt regelmäßig als SC-Frage).",
+              "Merke die häufigsten Sicherheitsregeln aus der Einführungsveranstaltung.",
+              "Elektrosicherheit: spannungsführende Teile nie unbeabsichtigt berühren"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_3_4",
+            "aufgabe": "Skizziere und erkläre das Vernier-Prinzip (Nonius) einer Schieblehre. Wie liest man 1/10-mm-Genauigkeit ab?",
+            "musterloesung": "Skizze: Hauptskala mit 1-mm-Teilung, Nonius mit 10 Teilen auf 9 mm. Hauptskala ablesen: ganzer mm-Wert vor dem Nonius-Nullstrich. Nonius ablesen: welcher Noniusstrich fluchtet am besten mit einem Hauptskalastrich? Diese Zahl × 0,1 mm addieren. Beispiel: Hauptskala zeigt 23 mm, Nonius-Strich 7 fluchtet → 23,7 mm. Messgenauigkeit: 0,1 mm = 100 μm.",
+            "tipps": [
+              "Der Nonius teilt 1 mm in 10 gleiche Teile durch Versatz.",
+              "Abzulesen: Hauptwert + Noniusstrich × 0,1 mm.",
+              "Übungstipp: Immer beide Ablesungen separat und dann addieren"
+            ]
+          }
+        ],
+        "4": [
+          {
+            "id": "do_skizzieren_7_4_1",
+            "aufgabe": "Expertenniveau: Skizziere und erläutere den vollständigen Messablauf im Praktikumsversuch 'Fahrradfelge'. Welche Messgrößen werden wie erfasst? Wie wird I aus der Dynamik bestimmt? Was sind die Fehlerquellen?",
+            "musterloesung": "Messgrößen: l (Achslänge), d (Achsdurchmesser → r_Achse), m (Masse des Massestücks mit Waage), h (Fallhöhe mit Lineal), t (Fallzeit mit Stoppuhr, 5 Messungen). Berechnung: a = 2h/t̄²; I = r²·m·(g−a)/a. Fehlerquellen: Reibung an der Achse (→ g_exp < g), Faden rutscht oder dehnt sich, Parallelführung des Fadens, Schwingungen der Aufhängung. Skizze zeigt alle Messgrößen mit Pfeilen.",
+            "tipps": [
+              "Systematische Aufzählung: welche Größe, welches Messinstrument, wie oft gemessen.",
+              "Hauptfehlerquelle: Reibung verfälscht I systematisch (I zu groß gemessen).",
+              "Vollständiges Protokoll: Theorie → Versuchsaufbau → Messung → Auswertung → Fehlerbetrachtung"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_4_2",
+            "aufgabe": "Expertenniveau: Erkläre das Prinzip der linearen Regression (Methode der kleinsten Quadrate). Skizziere, was 'minimale Fehlerquadrate' bedeutet, und erläutere, wie Steigung k und Achsenabschnitt b berechnet werden.",
+            "musterloesung": "Gegeben n Datenpunkte (xᵢ, yᵢ). Gesucht: Gerade y = k·x + b, die minimalen Abstand zu allen Punkten hat. Minimierung von Σ(yᵢ − k·xᵢ − b)². Formeln: k = [n·Σ(xᵢyᵢ) − Σxᵢ·Σyᵢ] / [n·Σxᵢ² − (Σxᵢ)²]; b = (Σyᵢ − k·Σxᵢ)/n. Skizze: Datenpunkte mit vertikalen Residualabständen zur Ausgleichsgeraden.",
+            "tipps": [
+              "Residuen = vertikale Abstände zwischen Messpunkten und Gerade; deren Quadratsumme wird minimiert.",
+              "Formeln aus Partialableitungen nach k und b = 0.",
+              "In Python/Excel verfügbar als LINEST oder numpy.polyfit"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_4_3",
+            "aufgabe": "Expertenniveau: Skizziere den Zusammenhang zwischen Messunsicherheit, Anzahl der Messungen und Konfidenzintervall. Erkläre, warum der Standardfehler des Mittelwerts s_x̄ = s/√n ist, und was ein 95%-Konfidenzintervall bedeutet.",
+            "musterloesung": "Standardabweichung s beschreibt Streuung der Einzelmessungen. Standardfehler des Mittelwerts: s_x̄ = s/√n — mit mehr Messungen wird der Mittelwert präziser. Begründung: Mittelwert von n unabhängigen Messungen hat kleinere Varianz Var(x̄) = Var(x)/n. Konfidenzintervall 95%: x̄ ± t₀,₉₅·s_x̄, wobei t₀,₉₅ ≈ 2 (t-Verteilung). Skizze: Normalverteilung mit markiertem 95%-Bereich.",
+            "tipps": [
+              "s beschreibt die Streuung einzelner Messungen, s_x̄ = s/√n die Präzision des Mittelwerts.",
+              "4-mal so viele Messungen → 2-mal kleinerer Standardfehler.",
+              "95%-Konfidenz: 95% aller so konstruierten Intervalle enthalten den wahren Wert"
+            ]
+          },
+          {
+            "id": "do_skizzieren_7_4_4",
+            "aufgabe": "Expertenniveau: Skizziere den Messaufbau eines Millikan-ähnlichen Experiments im Praktikum (Schwebemethode). Erkläre, welche Größen gemessen werden und wie die Elementarladung e bestimmt wird.",
+            "musterloesung": "Aufbau: Plattenkondensator, Öltröpfchen im Strahl beleuchtet (Laser oder Lampe), Mikroskop zur Beobachtung, Stoppuhr für Geschwindigkeitsmessungen. Schwebebedingung: q·E = m·g → q·U/d = m·g. Masse aus Fallgeschwindigkeit: m = 6π·η·r·v_fall (Stokes). Ladung: q = m·g·d/U. Messgrößen: U, d, v_Schweben oder v_Fallen. Elementarladung: e = kleinste gemeinsame Einheit der gemessenen Ladungen.",
+            "tipps": [
+              "Millikan: Ladung ist immer ein ganzzahliges Vielfaches von e.",
+              "Masse aus Fallgeschwindigkeit (Stokes); dann q aus Schwebebedingung.",
+              "Ergebnis: Histogramm der gemessenen q-Werte zeigt Häufung bei Vielfachen von e"
+            ]
+          }
+        ]
+      }
+    },
+    "wissen": {
+      "single_choice": {
+        "1": [
+          {
+            "id": "sc_7_1_1",
+            "frage": "Wie viele signifikante Stellen hat die Zahl 0,00420?",
+            "optionen": [
+              {"key": "A", "text": "2 signifikante Stellen"},
+              {"key": "B", "text": "3 signifikante Stellen"},
+              {"key": "C", "text": "5 signifikante Stellen"},
+              {"key": "D", "text": "6 signifikante Stellen"},
+              {"key": "E", "text": "Die Null hat keine signifikante Stelle."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: 0,00420 — die führenden Nullen (0,004) sind nicht signifikant. Die signifikanten Stellen beginnen bei 4: 4, 2, 0 → 3 signifikante Stellen (die abschließende Null zählt, da sie nach der letzten nicht-null Ziffer hinter dem Dezimalpunkt steht). A ist falsch: 2 würde die abschließende Null ignorieren. C ist falsch: 5 würde alle Ziffern zählen. D ist falsch: 6 enthält alle Ziffern einschl. führender Nullen. E ist falsch: Die abschließende Null ist signifikant."
+          },
+          {
+            "id": "sc_7_1_2",
+            "frage": "Was beschreibt die Standardabweichung s eines Messdatensatzes?",
+            "optionen": [
+              {"key": "A", "text": "Den maximalen Messfehler."},
+              {"key": "B", "text": "Die mittlere quadratische Abweichung der Messwerte vom Mittelwert."},
+              {"key": "C", "text": "Die Differenz zwischen größtem und kleinstem Messwert."},
+              {"key": "D", "text": "Den systematischen Fehler der Messung."},
+              {"key": "E", "text": "Die Genauigkeit des Messgeräts."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: s = √[Σ(xᵢ−x̄)²/(n−1)] — Quadratwurzel der mittleren quadratischen Abweichung. A ist falsch: s ist kein maximaler Fehler. C ist falsch: das ist die Spannweite (Range). D ist falsch: Standardabweichung beschreibt zufällige, nicht systematische Fehler. E ist falsch: Gerätegenauigkeit ist eine andere Spezifikation."
+          },
+          {
+            "id": "sc_7_1_3",
+            "frage": "Welche der Verhaltensweisen ist in der Laborordnung des FH-Physikpraktikums verboten?",
+            "optionen": [
+              {"key": "A", "text": "Messungen ohne Genehmigung wiederholen."},
+              {"key": "B", "text": "Notizen während des Versuchs anfertigen."},
+              {"key": "C", "text": "Essen und Trinken im Praktikumslabor."},
+              {"key": "D", "text": "Messgeräte ablesen und Werte aufschreiben."},
+              {"key": "E", "text": "Den Betreuer nach Hilfe fragen."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Essen und Trinken im Labor ist strikt verboten (Kontaminationsgefahr, chemische Gefahren). A ist falsch: Wiederholungsmessungen sind in der Regel erlaubt und erwünscht. B ist falsch: Notizen während des Versuchs sind Pflicht. D ist falsch: Messwerte aufschreiben ist die Hauptaufgabe. E ist falsch: Betreuer zu fragen ist ausdrücklich erwünscht."
+          },
+          {
+            "id": "sc_7_1_4",
+            "frage": "Was versteht man unter Linearisierung in der Messtechnik?",
+            "optionen": [
+              {"key": "A", "text": "Die Messwerte werden linear skaliert (Faktor 2 multipliziert)."},
+              {"key": "B", "text": "Ein nichtlinearer Zusammenhang wird durch Variablentransformation in einen linearen umgewandelt."},
+              {"key": "C", "text": "Man misst nur noch lineare Größen (Längen, nicht Winkel)."},
+              {"key": "D", "text": "Die Regressionsgerade wird durch den Nullpunkt gezwungen."},
+              {"key": "E", "text": "Alle Messwerte werden auf den Mittelwert normiert."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: z.B. T = 2π√(l/g) → T² = (4π²/g)·l — linearer Zusammenhang T² vs. l entsteht durch Quadrierung. A ist falsch: Skalierung ist keine Linearisierung. C ist falsch: Linearisierung betrifft mathematische Transformation, nicht Messgrößentypen. D ist falsch: Nullpunktdurchgang ist eine separate Eigenschaft. E ist falsch: Normierung und Linearisierung sind verschiedene Konzepte."
+          }
+        ],
+        "2": [
+          {
+            "id": "sc_7_2_1",
+            "frage": "Ein Messgerät zeigt systematisch 5% zu hohe Werte an. Wie kann dieser Fehler reduziert werden?",
+            "optionen": [
+              {"key": "A", "text": "Durch mehr Messungen (erhöhtes n)."},
+              {"key": "B", "text": "Durch Kalibrierung des Messgeräts mit einem bekannten Standard."},
+              {"key": "C", "text": "Durch Berechnen des Mittelwerts aus wenigen Messungen."},
+              {"key": "D", "text": "Durch Verwendung eines anderen Operators."},
+              {"key": "E", "text": "Systematische Fehler können grundsätzlich nicht reduziert werden."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Systematische Fehler werden durch Kalibrierung (Vergleich mit einem Referenzwert) erkannt und korrigiert. A ist falsch: Mittelung reduziert zufällige, nicht systematische Fehler. C ist falsch: wenige Mittelwerte helfen bei systematischen Fehlern nicht. D ist falsch: der Operator beeinflusst systematische Fehler nicht. E ist falsch: Kalibrierung kann systematische Fehler korrigieren."
+          },
+          {
+            "id": "sc_7_2_2",
+            "frage": "Im Fahrradfelgen-Versuch misst man die Fallzeit t und berechnet die Winkelbeschleunigung. Welche Fehlerquelle führt dazu, dass das experimentell bestimmte g kleiner als der Literaturwert ist?",
+            "optionen": [
+              {"key": "A", "text": "Das Trägheitsmoment der Felge ist zu klein angenommen."},
+              {"key": "B", "text": "Reibung an der Achse verlangsamt den Ablauf und täuscht größere Trägheit vor."},
+              {"key": "C", "text": "Der Achsradius r wird zu groß gemessen."},
+              {"key": "D", "text": "Die Masse des Fadenstücks wird nicht berücksichtigt."},
+              {"key": "E", "text": "Luftwiderstand der Masse ist zu groß."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Reibung verlangsamt die Bewegung (t wird größer als theoretisch) → a = 2h/t² wird kleiner → g_exp wird kleiner als g_lit. A ist falsch: kleines I würde g zu groß machen. C ist falsch: großes r in I/r² macht den effektiven Trägheitsterm kleiner, nicht größer. D ist falsch: Fadengewicht ist i.d.R. vernachlässigbar. E ist falsch: Luftwiderstand bei kleinen Geschwindigkeiten ist minimal."
+          },
+          {
+            "id": "sc_7_2_3",
+            "frage": "Man misst eine Größe 4-mal statt 1-mal. Wie ändert sich der Standardfehler des Mittelwerts?",
+            "optionen": [
+              {"key": "A", "text": "Er halbiert sich."},
+              {"key": "B", "text": "Er viertelt sich."},
+              {"key": "C", "text": "Er bleibt gleich."},
+              {"key": "D", "text": "Er verdoppelt sich."},
+              {"key": "E", "text": "Er nimmt um Faktor √2 ab."}
+            ],
+            "korrekt": "A",
+            "erklaerung": "A ist korrekt: s_x̄ = s/√n; bei 4-facher Messung statt 1-facher: s_x̄_neu = s/√4 = s/2 — halb so groß. B ist falsch: Vierteln erfordert 16-fache Messung. C ist falsch: mehr Messungen verbessern die Präzision. D ist falsch: Verdoppeln würde eine Verschlechterung bedeuten. E ist falsch: √2-Verbesserung gilt für 2-fache Messanzahl."
+          },
+          {
+            "id": "sc_7_2_4",
+            "frage": "Bei der Auswertung eines R-l-Diagramms (Draht-Experiment) zeigt die Gerade einen y-Achsenabschnitt von 5 mΩ. Was ist die wahrscheinlichste Ursache?",
+            "optionen": [
+              {"key": "A", "text": "Das Messmaterial ist kein Leiter."},
+              {"key": "B", "text": "Der Messdraht hat keinen Querschnitt."},
+              {"key": "C", "text": "Kontaktwiderstände an den Klemmen verursachen einen konstanten Offset."},
+              {"key": "D", "text": "Der spezifische Widerstand ρ ist temperaturabhängig."},
+              {"key": "E", "text": "Das Ohm'sche Gesetz gilt hier nicht."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Ein positiver y-Achsenabschnitt bei l=0 bedeutet R₀ ≠ 0 — dieser Offset kommt typischerweise von Übergangswiderständen an den Kontaktstellen (Klemmen, Stecker). A ist falsch: bei einem Nicht-Leiter wäre der Widerstand unendlich groß. B ist falsch: ohne Querschnitt gäbe es unendlichen Widerstand. D ist falsch: Temperaturabhängigkeit ändert die Steigung, nicht den Achsenabschnitt. E ist falsch: Ohmisches Verhalten zeigt sich durch die Linearität."
+          }
+        ],
+        "3": [
+          {
+            "id": "sc_7_3_1",
+            "frage": "Was ist der Unterschied zwischen Genauigkeit (accuracy) und Präzision (precision) einer Messung?",
+            "optionen": [
+              {"key": "A", "text": "Genauigkeit und Präzision bedeuten dasselbe."},
+              {"key": "B", "text": "Genauigkeit: Nähe zum wahren Wert. Präzision: Reproduzierbarkeit (geringe Streuung)."},
+              {"key": "C", "text": "Präzision: Nähe zum wahren Wert. Genauigkeit: geringe Streuung."},
+              {"key": "D", "text": "Genauigkeit bezieht sich nur auf das Messgerät, Präzision auf den Operator."},
+              {"key": "E", "text": "Präzision ist immer größer als Genauigkeit."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Genauigkeit (accuracy) = Übereinstimmung mit dem wahren Wert (kein systematischer Fehler). Präzision (precision) = Reproduzierbarkeit (geringe zufällige Fehler). A ist falsch: sind verschiedene Konzepte. C ist falsch: Begriffe vertauscht. D ist falsch: beide hängen von Gerät und Operator ab. E ist falsch: beide haben keine feste Größenordnung zueinander."
+          },
+          {
+            "id": "sc_7_3_2",
+            "frage": "In einem Klausurpraktikum wird folgende Aufgabe gestellt: 'Bestimmen Sie g aus der Fallzeit t.' Welche Messgröße hat den größten Einfluss auf den Fehler von g = 2h/t²?",
+            "optionen": [
+              {"key": "A", "text": "Die Fallhöhe h, da h im Zähler steht."},
+              {"key": "B", "text": "Die Fallzeit t, da sie im Nenner quadriert steht (Fehler ×2)."},
+              {"key": "C", "text": "Die Masse des fallenden Körpers (nicht in der Formel, aber experimentell relevant)."},
+              {"key": "D", "text": "Die Temperatur des Raumes."},
+              {"key": "E", "text": "Beide Größen haben den gleichen Einfluss."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Fehlerfortpflanzung: Δg/g = √[(Δh/h)² + (2Δt/t)²] — der Faktor 2 vor Δt/t macht die Fallzeit zum dominierenden Fehlerbeitrag. A ist falsch: h geht nur einfach ein. C ist falsch: Masse m kommt in g = 2h/t² nicht vor. D ist falsch: Temperatureinfluss ist bei kurzen Zeiten vernachlässigbar. E ist falsch: t hat doppeltes Gewicht durch Quadrat."
+          },
+          {
+            "id": "sc_7_3_3",
+            "frage": "Welche Aussage über die Ausgleichsgerade im Diagramm ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Die Ausgleichsgerade muss durch alle Messpunkte verlaufen."},
+              {"key": "B", "text": "Die Ausgleichsgerade minimiert die Summe der quadratischen Abstände (Methode der kleinsten Quadrate)."},
+              {"key": "C", "text": "Die Ausgleichsgerade wird durch die beiden extremen Messwerte bestimmt."},
+              {"key": "D", "text": "Eine Ausgleichsgerade ist nur bei mehr als 10 Messwerten sinnvoll."},
+              {"key": "E", "text": "Die Ausgleichsgerade muss immer durch den Ursprung verlaufen."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Die Methode der kleinsten Quadrate minimiert Σ(yᵢ − ŷᵢ)² — das ist die Standardmethode der linearen Regression. A ist falsch: Einzelne Punkte weichen ab (Messfehler). C ist falsch: Extremwerte allein sind nicht repräsentativ. D ist falsch: Regression ist auch bei wenigen Punkten sinnvoll. E ist falsch: Achsenabschnitt kann ≠ 0 sein (z.B. Offset-Fehler)."
+          },
+          {
+            "id": "sc_7_3_4",
+            "frage": "Wie viele Windungen sollte ein Pendel mindestens durchführen, damit Reaktionszeitfehler von Δt_R = 0,2 s zu einem Gesamtfehler von ΔT < 0,01 s pro Periode führen?",
+            "optionen": [
+              {"key": "A", "text": "5 Windungen"},
+              {"key": "B", "text": "10 Windungen"},
+              {"key": "C", "text": "20 Windungen"},
+              {"key": "D", "text": "2 Windungen"},
+              {"key": "E", "text": "50 Windungen"}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: ΔT = Δt_R/n < 0,01 s → n > Δt_R/0,01 = 0,2/0,01 = 20. B ist falsch: n=10 ergibt ΔT = 0,2/10 = 0,02 s > 0,01 s. A ist falsch: n=5 ergibt ΔT = 0,04 s. D ist falsch: n=2 ergibt ΔT = 0,1 s. E ist falsch: n=50 wäre mehr als nötig, aber korrekt — die Frage sucht das Minimum."
+          }
+        ],
+        "4": [
+          {
+            "id": "sc_7_4_1",
+            "frage": "Welche Formel beschreibt korrekt die Gauss'sche Fehlerfortpflanzung für z = x²·y?",
+            "optionen": [
+              {"key": "A", "text": "Δz/z = Δx/x + Δy/y"},
+              {"key": "B", "text": "Δz/z = 2·Δx/x + Δy/y"},
+              {"key": "C", "text": "Δz = 2x·Δx + Δy"},
+              {"key": "D", "text": "Δz/z = √[(2Δx/x)² + (Δy/y)²]"},
+              {"key": "E", "text": "Δz/z = (Δx/x)² + (Δy/y)²"}
+            ],
+            "korrekt": "D",
+            "erklaerung": "D ist korrekt: Gauss'sche Fehlerfortpflanzung für Produkte/Potenzen: (Δz/z)² = (n_x · Δx/x)² + (n_y · Δy/y)²; für z = x²·y gilt n_x=2, n_y=1 → Δz/z = √[(2Δx/x)² + (Δy/y)²]. A ist falsch: das ist der Maximalfehler ohne quadratische Addition. B ist falsch: das wäre Maximalfehler (lineare Addition). C ist falsch: falsche Dimensionen und kein Relativfehler. E ist falsch: Quadrate statt Wurzel aus Quadratsumme."
+          },
+          {
+            "id": "sc_7_4_2",
+            "frage": "Das Trägheitsmoment einer Fahrradfelge (Hohlzylinder) ist I = ½·m·(r₁² + r₂²). Welche Messgröße hat den größten Einfluss auf den Fehler von I?",
+            "optionen": [
+              {"key": "A", "text": "Die Masse m, da sie linear eingeht."},
+              {"key": "B", "text": "Der Innenradius r₁, da er kleiner ist."},
+              {"key": "C", "text": "Der Außenradius r₂, da r₂ > r₁ und er quadratisch eingeht."},
+              {"key": "D", "text": "Alle Größen haben den gleichen Einfluss."},
+              {"key": "E", "text": "Der Achsradius r₀, da er die Kopplung zur Masse bestimmt."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: Fehlerfortpflanzung: ΔI/I ≈ √[(Δm/m)² + (2r₂Δr₂/(r₁²+r₂²))²·...]; da r₂ > r₁ dominiert r₂² in der Summe r₁²+r₂², und r₂ geht quadratisch ein. A ist falsch: m geht nur linear ein, mit typisch kleinerem relativem Fehler. B ist falsch: r₁ < r₂ → r₁² < r₂² → geringerer Einfluss. D ist falsch: Einflüsse sind verschieden. E ist falsch: r₀ (Achsradius) ist nicht in der Felgen-Trägheitsmoment-Formel."
+          },
+          {
+            "id": "sc_7_4_3",
+            "frage": "Ein Experiment ergibt 8 Messwerte für g: {9,72; 9,84; 9,78; 9,90; 9,76; 9,82; 9,79; 9,85} m/s². Welche Aussage ist korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Das Experiment ist fehlerhaft, da die Werte streuen."},
+              {"key": "B", "text": "Der Mittelwert ist der beste Schätzer für g, und die Standardabweichung quantifiziert die Unsicherheit."},
+              {"key": "C", "text": "Da kein Wert exakt 9,81 m/s² ist, ist die Methode ungeeignet."},
+              {"key": "D", "text": "Man sollte den Maximalwert als g annehmen."},
+              {"key": "E", "text": "Die Messwerte sind zu sehr gestreut für eine sinnvolle Auswertung."}
+            ],
+            "korrekt": "B",
+            "erklaerung": "B ist korrekt: Streuende Messwerte sind normal — der Mittelwert x̄ ≈ 9,81 m/s² und s ≈ 0,06 m/s² → s_x̄ ≈ 0,02 m/s² geben eine gute Schätzung mit sinnvoller Unsicherheit. A ist falsch: Streuung ist inhärent in Messungen, kein Fehler. C ist falsch: keine Einzelmessung muss exakt den Literaturwert treffen. D ist falsch: Maximalwert ist kein geeigneter Schätzer. E ist falsch: die Streuung ~0,1% ist für ein einfaches Experiment sehr gut."
+          },
+          {
+            "id": "sc_7_4_4",
+            "frage": "Im Praktikum wird ein Wert g = (9,62 ± 0,15) m/s² gemessen. Der Literaturwert ist g_lit = 9,81 m/s². Welche Schlussfolgerung ist wissenschaftlich korrekt?",
+            "optionen": [
+              {"key": "A", "text": "Das Experiment ist fehlgeschlagen."},
+              {"key": "B", "text": "Der Unterschied ist akzeptabel, da g_lit außerhalb des 1σ-Intervalls, aber innerhalb des 2σ-Intervalls liegt."},
+              {"key": "C", "text": "Der Unterschied von 0,19 m/s² zeigt einen eindeutigen systematischen Fehler (Literaturwert liegt außerhalb 1σ)."},
+              {"key": "D", "text": "Das Ergebnis ist perfekt, da g ungefähr 9,8 m/s² ergibt."},
+              {"key": "E", "text": "Mit mehr Messungen würde der Mittelwert automatisch auf 9,81 konvergieren."}
+            ],
+            "korrekt": "C",
+            "erklaerung": "C ist korrekt: g_lit = 9,81 liegt bei g_exp + 0,19 = mehr als 1σ = 0,15 über dem Mittelwert → systematischer Fehler wahrscheinlich (z.B. Reibung). Das ist eine legitime wissenschaftliche Schlussfolgerung. A ist falsch: das Experiment liefert nützliche Daten, auch wenn der Literaturwert nicht im 1σ-Intervall liegt. B ist falsch: 9,81 liegt außerhalb des 1σ-Bands (9,62±0,15 = [9,47; 9,77]) — auch außerhalb 2σ = [9,32; 9,92]. D ist falsch: die Abweichung ist signifikant und sollte erklärt werden. E ist falsch: Mittelung reduziert zufällige Fehler, nicht systematische."
+          }
+        ]
+      }
+    },
+    "verifikation": {
+      "1": ["Erkläre den Unterschied zwischen signifikanten Stellen und Dezimalstellen. Wie viele signifikante Stellen hat 0,00304?"],
+      "2": ["Was ist der Unterschied zwischen systematischem und zufälligem Fehler? Wie wird jeder reduziert? Nenne ein Beispiel aus dem Physikpraktikum für jeden Typ."],
+      "3": ["Erkläre das Prinzip der Linearisierung anhand des Fadenpendels T = 2π√(l/g). Welche Variablen trägst du auf welche Achsen auf, und wie bestimmst du g aus der Steigung?"],
+      "4": ["Im Fahrradfelgen-Versuch erhälst du t̄ = 1,80 s (s_t = 0,02 s) bei h = 0,5 m. Berechne a mit Fehler, und erkläre, welche systematische Fehlerquelle g_exp kleiner als g_lit macht."],
+      "5": ["Diskutiere: Ein Student misst g = (9,40 ± 0,08) m/s². Der Literaturwert ist 9,81. Wie interpretierst du dieses Ergebnis? Was könnte die Ursache sein?"]
+    }
+  }
+}

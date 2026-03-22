@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_2_3_1",
+    "aufgabe": "Zwei Blöcke sind über ein masseloses Seil und eine reibungsfreie Umlenkrolle verbunden. Block 1 der Masse m₁ = 5,0 kg liegt auf einer schiefen Ebene mit Neigungswinkel α = 25° und Gleitreibungskoeffizient μ = 0,15. Block 2 der Masse m₂ = 3,0 kg hängt senkrecht. Berechnen Sie die Beschleunigung a des Systems und die Seilspannung T. (g = 9,81 m/s²)",
+    "musterloesung": "Hangabtrieb m₁: F₁ = m₁·g·sin25° = 20,73 N. Reibung m₁: F_R = μ·m₁·g·cos25° = 0,15·5·9,81·0,906 = 6,66 N. Gewicht m₂: F₂ = m₂·g = 29,43 N. Nettokraft: F_net = F₂ − F₁ − F_R = 29,43 − 20,73 − 6,66 = 2,04 N. a = F_net/(m₁+m₂) = 2,04/8 = 0,255 m/s². T = m₂·(g − a) = 3·(9,81 − 0,255) = 28,7 N.",
+    "tipps": [
+      "Wende Newtons zweites Gesetz auf jede Masse separat an und berücksichtige für m₁ sowohl Hangabtrieb als auch Reibung.",
+      "Nettokraft auf System: F₂ − m₁g·sin(α) − μ·m₁g·cos(α) = (m₁+m₂)·a. Dann T aus einer der Einzelgleichungen.",
+      "F_net = 2,04 N → a = 0,255 m/s². T = m₂(g−a) = 28,7 N."
+    ]
+  },
+  {
+    "id": "do_b_2_3_2",
+    "aufgabe": "Ein Aufzug der Masse m = 800 kg beschleunigt gleichmäßig aus der Ruhe auf die Geschwindigkeit v = 3,0 m/s innerhalb von t = 4,0 s nach oben. Berechnen Sie die Seilkraft F_S während der Beschleunigungsphase. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m = 800 kg, v = 3,0 m/s, t = 4,0 s, v₀ = 0. Gesucht: F_S. Beschleunigung: a = v/t = 0,75 m/s². Newton 2 (aufwärts positiv): F_S − m·g = m·a → F_S = m·(g+a) = 800·(9,81+0,75) = 800·10,56 = 8448 N ≈ 8,45 kN.",
+    "tipps": [
+      "Zeichne ein Kräftediagramm. Die Seilkraft wirkt aufwärts, die Gewichtskraft abwärts. Bei Aufwärtsbeschleunigung muss F_S > m·g sein.",
+      "Newton 2: F_S − m·g = m·a. Berechne zunächst a = v/t.",
+      "a = 0,75 m/s² → F_S = 800·(9,81 + 0,75) ≈ 8450 N."
+    ]
+  },
+  {
+    "id": "do_b_2_3_3",
+    "aufgabe": "Ein Block der Masse m = 4,0 kg liegt auf einer schiefen Ebene mit dem Haftreibungskoeffizienten μ_H = 0,45 und dem Gleitreibungskoeffizienten μ_G = 0,35. Der Neigungswinkel α ist variabel. (a) Bei welchem Neigungswinkel beginnt der Block zu gleiten? (b) Welche Beschleunigung a hat er dann? (g = 9,81 m/s²)",
+    "musterloesung": "(a) Gleitbeginn: tan(α) = μ_H → α = arctan(0,45) = 24,2°. (b) a = g·(sin(24,2°) − μ_G·cos(24,2°)) = 9,81·(0,410 − 0,35·0,912) = 9,81·(0,410 − 0,319) = 9,81·0,091 = 0,893 m/s².",
+    "tipps": [
+      "Der Block beginnt zu gleiten, wenn die Hangabtriebskraft die maximale Haftreibungskraft übersteigt. Stelle die Grenzbedingung auf.",
+      "Gleitgrenze: m·g·sin(α) = μ_H·m·g·cos(α) → tan(α) = μ_H. Dann Beschleunigung mit μ_G berechnen.",
+      "α = arctan(0,45) = 24,2°. a = g·(sin α − μ_G·cos α) ≈ 0,89 m/s²."
+    ]
+  },
+  {
+    "id": "do_b_2_3_4",
+    "aufgabe": "Drei Blöcke der Massen m₁ = 2,0 kg, m₂ = 3,0 kg und m₃ = 5,0 kg sind in einer Reihe durch masselose Seile verbunden und werden auf einer reibungsfreien Fläche durch eine Kraft F = 30 N an m₁ gezogen. Berechnen Sie die Beschleunigung a des Systems sowie die Seilspannungen T₁₂ (zwischen m₁ und m₂) und T₂₃ (zwischen m₂ und m₃).",
+    "musterloesung": "Gesamtmasse: m = 10 kg. a = F/m = 30/10 = 3,0 m/s². T₁₂ beschleunigt m₂ + m₃: T₁₂ = (m₂+m₃)·a = 8·3,0 = 24 N. T₂₃ beschleunigt nur m₃: T₂₃ = m₃·a = 5·3,0 = 15 N.",
+    "tipps": [
+      "Das gesamte System beschleunigt gemeinsam. Betrachte dann Teilsysteme, um die Seilkräfte zu bestimmen.",
+      "a = F/(m₁+m₂+m₃). T₁₂ muss m₂+m₃ beschleunigen: T₁₂ = (m₂+m₃)·a. T₂₃ muss nur m₃ beschleunigen.",
+      "a = 3,0 m/s². T₁₂ = 24 N, T₂₃ = 15 N."
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_4_4_1",
+    "aufgabe": "Ein Neutron der Masse m_n trifft in einem Kernreaktor elastisch auf einen ruhenden Urankern (m_U ≈ 235·m_n). Welcher Bruchteil der kinetischen Energie des Neutrons wird auf den Urankern übertragen? Für welche Moderatormasse m_M wäre der Energieübertrag maximal, und warum wird Wasser als Moderator verwendet?",
+    "musterloesung": "Energieübertrag: η = 4·m_n·m_U/(m_n+m_U)² = 4·235/(236)² ≈ 940/55696 ≈ 0,0169 = 1,69 %. Maximaler Übertrag bei m_M = m_n: η_max = 1 (100 %). Wasser enthält Wasserstoffkerne (Protonen) mit m_H ≈ m_n → fast vollständiger Energieübertrag pro Stoß → effektive Abbremsung der Neutronen.",
+    "tipps": [
+      "Der Energieübertrag beim elastischen Stoß hängt vom Massenverhältnis ab. Schreibe die allgemeine Formel für η auf.",
+      "η = ΔE_kin/E_kin,n = 4·m₁·m₂/(m₁+m₂)². Maximaler Übertrag wenn m₁ = m₂.",
+      "Für U: η ≈ 1,7 %. Für Wasserstoff (m_H ≈ m_n): η ≈ 100 % → deshalb Wasser als Moderator."
+    ]
+  },
+  {
+    "id": "do_b_4_4_2",
+    "aufgabe": "Eine Raumsonde der Masse m = 1000 kg fliegt mit der Geschwindigkeit v_S = 5,0 km/s auf den Jupiter zu, der sich seinerseits mit v_J = 13 km/s auf die Sonde zu bewegt. Bei einem Swing-by-Manöver (elastischer Stoß, Masse Jupiter >> Sonde) gewinnt die Sonde Geschwindigkeit. Berechnen Sie die Geschwindigkeit v_S' der Sonde nach dem Manöver. Erläutern Sie, woher die Energie stammt.",
+    "musterloesung": "Im Bezugssystem des Jupiters ist der Stoß elastisch, und da m_J >> m_S, kehrt die Sonde mit derselben Relativgeschwindigkeit zurück. Relativgeschwindigkeit der Sonde im Jupiterrahmen vor dem Stoß: v_rel = v_S + v_J = 5 + 13 = 18 km/s (auf Jupiter zu). Nach dem Stoß: v_rel' = 18 km/s (vom Jupiter weg). Im Laborrahmen: v_S' = v_J + v_rel' = 13 + 18 = 31 km/s. Die Energie stammt aus der kinetischen Energie des Jupiters (infinitesimale Abbremsung).",
+    "tipps": [
+      "Wechsle ins Bezugssystem des Jupiters. Dort ist der Stoß wie an einer unendlich schweren Wand — die Relativgeschwindigkeit kehrt sich um.",
+      "Im Jupiterrahmen: v_Sonde,rel = v_S + v_J (beide kommen aufeinander zu). Nach Reflexion: gleicher Betrag, entgegengesetzt. Rücktransformation in Laborsystem.",
+      "v_rel = 18 km/s → nach Reflexion +18 km/s im Jupiterrahmen → im Laborsystem: 13 + 18 = 31 km/s."
+    ]
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_1_3_1",
+    "frage": "Beim schrägen Wurf haben zwei Bälle (gleiche v₀, unterschiedliche Winkel) dieselbe Wurfweite. Welche Aussage stimmt IMMER?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Beide landen gleichzeitig."
+      },
+      {
+        "key": "B",
+        "text": "Beide erreichen gleichzeitig den höchsten Punkt."
+      },
+      {
+        "key": "C",
+        "text": "Die Beschleunigung beider ist direkt nach dem Abwurf gleich groß."
+      },
+      {
+        "key": "D",
+        "text": "Beide haben die gleiche Maximalhöhe."
+      },
+      {
+        "key": "E",
+        "text": "Beide haben die gleiche Flugzeit."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: g wirkt auf beide gleich (keine Luftreibung), unabhängig von Winkel/v₀. A falsch — unterschiedliche Winkel → verschiedene T. B falsch. D falsch (komplementäre Winkel haben verschiedene Höhen). E falsch."
+  },
+  {
+    "id": "sc_1_3_2",
+    "frage": "Ein Körper hat x(t) = v₀t + ½at². Die Geschwindigkeit nimmt dem Betrag nach ab. Welche Gleichung beschreibt v(t) korrekt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "v = v₀ − |a|·t"
+      },
+      {
+        "key": "B",
+        "text": "v = v₀ + ½at²"
+      },
+      {
+        "key": "C",
+        "text": "v = −at − v₀"
+      },
+      {
+        "key": "D",
+        "text": "v = v₀t + |a|t"
+      },
+      {
+        "key": "E",
+        "text": "v = v₀ + at²"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: v = v₀ − |a|t beschreibt gleichmäßige Verzögerung. B hat falsche Einheit. C falsch (nicht herleitbar). D hat falsche Einheit. E falsch (Strecke, nicht Geschwindigkeit)."
+  },
+  {
+    "id": "sc_1_3_3",
+    "frage": "Ortsvektor r(t) = (3t², 5t, −2t²). Welche Beschleunigungen hat der Körper?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "ax=6, ay=0, az=−4 (m/s²)"
+      },
+      {
+        "key": "B",
+        "text": "ax=3, ay=5, az=−2"
+      },
+      {
+        "key": "C",
+        "text": "ax=6t, ay=5, az=−4t"
+      },
+      {
+        "key": "D",
+        "text": "ax=0, ay=0, az=−4"
+      },
+      {
+        "key": "E",
+        "text": "ax=6, ay=5, az=−4"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: a = d²r/dt² komponentenweise: d²(3t²)/dt²=6; d²(5t)/dt²=0; d²(−2t²)/dt²=−4. B gibt Koeffizienten. C nach einmaligem Ableiten. D vergisst ax. E hat ay=5 falsch."
+  },
+  {
+    "id": "sc_1_3_4",
+    "frage": "Ball: Abwurf und Aufprall auf gleicher Höhe, keine Luftreibung. Wie ist |v_Aufprall| im Vergleich zu |v₀|?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Größer"
+      },
+      {
+        "key": "B",
+        "text": "Kleiner"
+      },
+      {
+        "key": "C",
+        "text": "Gleich"
+      },
+      {
+        "key": "D",
+        "text": "Hängt vom Winkel ab."
+      },
+      {
+        "key": "E",
+        "text": "Genau doppelt so groß."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Nur konservative Kräfte, Start = Ziel auf gleicher Höhe → Energieerhaltung → Ekin gleich → |v| gleich."
+  }
+]

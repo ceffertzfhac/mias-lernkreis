@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_g_1_2_1",
+    "aufgabe": "Messpunkte eines Bremsvorgangs: (0 s; 20 m/s), (2 s; 14 m/s), (4 s; 8 m/s), (6 s; 2 m/s). (a) Zeichne v-t-Diagramm, lege Ausgleichsgerade. (b) Lies Verzögerung ab. (c) Berechne Bremsweg aus der Graphik.",
+    "musterloesung": "(a)/(b) Steigung: Δv/Δt = (2−20)/(6−0) = −18/6 = −3,0 m/s². (c) Fläche = Trapez: s = ½·(20+2)·(18/3) = ½·22·6 = 66 m. Alternativ: Dreieck bis v=0 bei t=20/3≈6,67 s: s = ½·6,67·20 = 66,7 m.",
+    "tipps": [
+      "Ausgleichsgerade → Steigung = Verzögerung. Fläche unter der Gerade = Bremsweg.",
+      "a = Δv/Δt aus Graphik. s = Fläche des Dreiecks bis v=0.",
+      "a = −3,0 m/s²; s ≈ 66–67 m."
+    ]
+  },
+  {
+    "id": "do_g_1_2_2",
+    "aufgabe": "Daten aus dem schrägen Wurf: Du misst x- und y-Koordinaten eines Balles. Erkläre, wie du aus einem y-gegen-x-Diagramm bestimmen kannst, ob es sich um eine Parabel handelt, und wie du daraus g ableiten könntest.",
+    "musterloesung": "y(x) = x·tan(α) − g/(2v₀²cos²α)·x². Dies ist eine Parabel y = Ax + Bx². Der Koeffizient B = −g/(2v₀²cos²α) lässt sich aus der Krümmung ablesen. Linearisierung: y/x = A + Bx → Plot y/x gegen x gibt Gerade mit Steigung B.",
+    "tipps": [
+      "Die Wurfparabel y(x) ist quadratisch in x. Linearisierung: y/x gegen x plotten → Gerade.",
+      "Steigung des linearisierten Plots = B = −g/(2v₀²cos²α). Mit bekanntem v₀ und α → g.",
+      "Plot y/x vs. x, Steigung ablesen, g berechnen."
+    ]
+  }
+]
