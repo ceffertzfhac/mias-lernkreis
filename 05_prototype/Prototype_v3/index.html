@@ -48,7 +48,7 @@
   <!-- ═══════════════════════════════════════════════════════════════════════
        SCREEN: SETUP
   ════════════════════════════════════════════════════════════════════════ -->
-  <div x-show="screen === 'setup'" class="setup-screen px-4 py-8 space-y-6">
+  <div x-show="screen === 'setup'" class="px-4 py-8 space-y-6">
 
     <!-- Header -->
     <div class="text-center space-y-1 pt-4">
@@ -126,7 +126,7 @@
             id="apiModelInput"
             type="text"
             class="field field--tinted"
-            placeholder="gpt-5.2"
+            placeholder="gpt-4o"
             x-model="apiModel"
           />
         </div>
@@ -200,68 +200,59 @@
       </div>
     </div>
 
-    <!-- Home grid: radar left, info right on desktop -->
-    <div class="home-grid">
+    <!-- Mini radar -->
+    <div class="card" x-show="diagnosen.length > 0">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-sm font-semibold text-primary">Lernstand-Radar</span>
+        <button class="btn btn--sm btn--outline" @click="goTo('radar')" type="button">Details</button>
+      </div>
+      <div style="max-height: 220px;">
+        <canvas id="radarHome"></canvas>
+      </div>
+    </div>
 
-      <!-- Left: Mini radar -->
-      <div class="card home-grid__radar" x-show="diagnosen.length > 0">
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-sm font-semibold text-primary">Lernstand-Radar</span>
-          <button class="btn btn--sm btn--outline" @click="goTo('radar')" type="button">Details</button>
+    <!-- Status summary -->
+    <div class="card space-y-2" x-show="letzeDiagnose">
+      <p class="text-sm font-semibold text-primary mb-1">Lernstand auf einen Blick</p>
+      <div class="flex gap-3">
+        <div class="flex-1 card--tinted rounded-xl p-3 text-center">
+          <div class="text-2xl font-bold text-primary" x-text="themenBereit()"></div>
+          <div class="text-xs text-muted">Themen klausurbereit</div>
         </div>
-        <div class="home-radar-canvas">
-          <canvas id="radarHome"></canvas>
+        <div class="flex-1 card--tinted rounded-xl p-3 text-center">
+          <div class="text-2xl font-bold" style="color: var(--c-warn)" x-text="kurs.themen.length - themenBereit()"></div>
+          <div class="text-xs text-muted">Themen noch offen</div>
         </div>
       </div>
+    </div>
 
-      <!-- Right: Status + Focus + CTAs -->
-      <div class="home-grid__info space-y-3">
-
-        <!-- Status summary -->
-        <div class="card space-y-2" x-show="letzeDiagnose">
-          <p class="text-sm font-semibold text-primary mb-1">Lernstand auf einen Blick</p>
-          <div class="flex gap-3">
-            <div class="flex-1 card--tinted rounded-xl p-3 text-center">
-              <div class="text-2xl font-bold text-primary" x-text="themenBereit()"></div>
-              <div class="text-xs text-muted">Themen klausurbereit</div>
-            </div>
-            <div class="flex-1 card--tinted rounded-xl p-3 text-center">
-              <div class="text-2xl font-bold" style="color: var(--c-warn)" x-text="kurs.themen.length - themenBereit()"></div>
-              <div class="text-xs text-muted">Themen noch offen</div>
-            </div>
-          </div>
+    <!-- Schwächste Themen -->
+    <div class="card space-y-2" x-show="schwächsteThemen().length > 0">
+      <p class="text-sm font-semibold text-primary mb-1">Fokus jetzt</p>
+      <template x-for="t in schwächsteThemen()" :key="t.id">
+        <div class="flex items-center gap-3 py-1">
+          <span
+            class="badge"
+            :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
+            x-text="starStr(t.stufe)"
+          ></span>
+          <span class="text-sm" x-text="t.name"></span>
         </div>
+      </template>
+    </div>
 
-        <!-- Schwächste Themen -->
-        <div class="card space-y-2" x-show="schwächsteThemen().length > 0">
-          <p class="text-sm font-semibold text-primary mb-1">Fokus jetzt</p>
-          <template x-for="t in schwächsteThemen()" :key="t.id">
-            <div class="flex items-center gap-3 py-1">
-              <span
-                class="badge"
-                :style="`background: ${stufenCfg(t.stufe).bg}; color: ${stufenCfg(t.stufe).color};`"
-                x-text="starStr(t.stufe)"
-              ></span>
-              <span class="text-sm" x-text="t.name"></span>
-            </div>
-          </template>
-        </div>
-
-        <!-- CTA buttons -->
-        <div class="space-y-2 pb-2">
-          <button class="btn btn--primary btn--block" @click="goTo('diagnose')" type="button">
-            Selbstdiagnose starten
-          </button>
-          <button class="btn btn--outline btn--block" @click="goTo('ueben-auswahl')" type="button">
-            Übungsaufgabe lösen
-          </button>
-          <div x-show="diagnosen.length === 0" class="card--warn rounded-xl p-3 text-sm" style="color: var(--c-warn);">
-            Starte mit der Selbstdiagnose, um deinen Lernradar zu aktivieren.
-          </div>
-        </div>
-
-      </div><!-- /home-grid__info -->
-    </div><!-- /home-grid -->
+    <!-- CTA buttons -->
+    <div class="space-y-2 pb-2">
+      <button class="btn btn--primary btn--block" @click="goTo('diagnose')" type="button">
+        Selbstdiagnose starten
+      </button>
+      <button class="btn btn--outline btn--block" @click="goTo('ueben-auswahl')" type="button">
+        Übungsaufgabe lösen
+      </button>
+      <div x-show="diagnosen.length === 0" class="card--warn rounded-xl p-3 text-sm" style="color: var(--c-warn);">
+        Starte mit der Selbstdiagnose, um deinen Lernradar zu aktivieren.
+      </div>
+    </div>
   </div>
 
 
@@ -300,7 +291,7 @@
     </div>
 
     <!-- Topic list -->
-    <div class="themen-grid">
+    <div class="space-y-3">
       <template x-for="t in kurs.themen" :key="t.id">
         <div class="card space-y-2">
           <div class="flex items-start justify-between gap-2">
@@ -615,89 +606,39 @@
 
     <div class="screen-header">
       <button class="back-btn" @click="nextTask()" type="button">←</button>
-      <h2 class="text-base font-bold text-primary" x-text="isMusterloesung ? 'Musterlösung' : 'Feedback'"></h2>
+      <h2 class="text-base font-bold text-primary">Feedback</h2>
     </div>
 
-    <!-- Score card (shown in both modes) -->
+    <!-- Score card -->
     <div
-      class="card text-center py-4"
+      class="card text-center py-5"
       :class="kompScore() >= 80 ? 'card--success' : kompScore() >= 60 ? 'card--warn' : 'card--error'"
     >
-      <div class="text-sm font-semibold">
-        <span x-show="ue.genutzeTipps === 0">Ohne Tipps bearbeitet</span>
+      <div
+        class="text-4xl font-bold"
+        :style="`color: ${kompScore() >= 80 ? 'var(--c-success)' : kompScore() >= 60 ? 'var(--c-warn)' : 'var(--c-error)'}`"
+        x-text="kompScore() + ' Pkt.'"
+      ></div>
+      <div class="text-sm font-semibold mt-1">
+        <span x-show="ue.genutzeTipps === 0">Ohne Tipps gelöst!</span>
         <span x-show="ue.genutzeTipps === 1">1 Tipp genutzt</span>
         <span x-show="ue.genutzeTipps >= 2" x-text="ue.genutzeTipps + ' Tipps genutzt'"></span>
       </div>
     </div>
 
-    <!-- MODE A: Musterlösung (deterministic) -->
-    <template x-if="isMusterloesung">
-      <div class="space-y-4">
+    <!-- Feedback -->
+    <div class="card card--accent-left space-y-2">
+      <p class="text-xs font-semibold text-primary">KI-Feedback</p>
+      <p class="text-sm leading-relaxed" x-text="ue.ergebnis"></p>
+    </div>
 
-        <!-- Deine Antwort -->
-        <div class="card space-y-1">
-          <p class="text-xs font-semibold text-muted">Deine Antwort</p>
-          <p class="text-sm leading-relaxed" x-text="ue.antwort"></p>
-        </div>
+    <!-- Original task reminder -->
+    <div class="card space-y-1">
+      <p class="text-xs font-semibold text-muted">Aufgabe</p>
+      <p class="text-sm leading-snug" x-text="ue.aufgabe"></p>
+    </div>
 
-        <!-- Musterlösung -->
-        <div class="card card--accent-left space-y-2">
-          <p class="text-xs font-semibold text-primary">Musterlösung</p>
-          <p class="text-sm leading-relaxed" x-text="ue.musterloesung"></p>
-        </div>
-
-        <!-- Selbstbewertung -->
-        <div class="card space-y-3">
-          <p class="text-sm font-semibold text-primary">Wie nah warst du?</p>
-          <div class="flex gap-2">
-            <button
-              class="btn btn--success flex-1"
-              @click="selfAssess(true); nextTask()"
-              type="button"
-            >
-              ✓ Richtig lag
-            </button>
-            <button
-              class="btn btn--danger flex-1"
-              @click="selfAssess(false); nextTask()"
-              type="button"
-            >
-              ✗ Noch nicht sicher
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </template>
-
-    <!-- MODE B: KI-Feedback -->
-    <template x-if="!isMusterloesung">
-      <div class="space-y-4">
-
-        <div class="card card--accent-left space-y-2">
-          <p class="text-xs font-semibold text-primary">KI-Feedback</p>
-          <p class="text-sm leading-relaxed" x-text="ue.ergebnis"></p>
-        </div>
-
-        <!-- Original task reminder -->
-        <div class="card space-y-1">
-          <p class="text-xs font-semibold text-muted">Aufgabe</p>
-          <p class="text-sm leading-snug" x-text="ue.aufgabe"></p>
-        </div>
-
-        <div class="space-y-2 pb-2">
-          <button class="btn btn--primary btn--block" @click="nextTask()" type="button">
-            Nächste Aufgabe →
-          </button>
-          <button class="btn btn--outline btn--block" @click="goTo('home')" type="button">
-            Zur Startseite
-          </button>
-        </div>
-
-      </div>
-    </template>
-
-    <!-- Session counter (both modes) -->
+    <!-- Session counter -->
     <div class="card py-3 text-center" x-show="session.aufgaben.length > 0">
       <span class="text-xs text-muted">
         Session: <span class="font-bold text-primary" x-text="session.aufgaben.length"></span> Aufgaben ·
@@ -705,6 +646,14 @@
       </span>
     </div>
 
+    <div class="space-y-2 pb-2">
+      <button class="btn btn--primary btn--block" @click="nextTask()" type="button">
+        Nächste Aufgabe →
+      </button>
+      <button class="btn btn--outline btn--block" @click="goTo('home')" type="button">
+        Zur Startseite
+      </button>
+    </div>
   </div>
 
 
@@ -827,107 +776,6 @@
 
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SCREEN: EINSTELLUNGEN
-  ════════════════════════════════════════════════════════════════════════ -->
-  <div x-show="screen === 'einstellungen'" class="has-nav px-4 space-y-4">
-
-    <div class="screen-header">
-      <h1 class="screen-title">Einstellungen</h1>
-    </div>
-
-    <!-- API-Konfiguration -->
-    <div class="card space-y-3">
-      <p class="text-sm font-semibold text-primary">KI-Verbindung</p>
-
-      <div>
-        <label class="label" for="settingsApiKey">API Key</label>
-        <input
-          id="settingsApiKey"
-          type="password"
-          class="field"
-          placeholder="Bearer Token (KI Connect NRW)"
-          x-model="apiKey"
-        />
-      </div>
-
-      <div>
-        <label class="label" for="settingsApiModel">Modell</label>
-        <input
-          id="settingsApiModel"
-          type="text"
-          class="field"
-          placeholder="gpt-5.2"
-          x-model="apiModel"
-        />
-      </div>
-
-      <button
-        class="btn btn--outline btn--sm"
-        @click="testApiConnection()"
-        :disabled="!apiKey || apiTest.status === 'loading'"
-        type="button"
-      >
-        <span x-show="apiTest.status !== 'loading'">Verbindung testen</span>
-        <span x-show="apiTest.status === 'loading'">Teste…</span>
-      </button>
-
-      <div
-        x-show="apiTest.message"
-        class="text-xs px-3 py-2 rounded-lg"
-        :class="apiTest.status === 'ok' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'"
-        x-text="apiTest.message"
-      ></div>
-    </div>
-
-    <button class="btn btn--primary w-full" @click="saveSettings()" type="button">
-      Speichern
-    </button>
-
-    <!-- Kursinhalt -->
-    <div class="card space-y-3">
-      <p class="text-sm font-semibold text-primary">Kursinhalt laden</p>
-      <p class="text-xs text-muted">
-        Eine vom Dozenten generierte <code>kurs-inhalt.json</code> macht die App vollständig offline-fähig —
-        alle Aufgaben, Tipps und Musterlösungen sind dann direkt eingebettet, ohne KI-Verbindung.
-      </p>
-
-      <!-- Aktiv geladener Kurs -->
-      <div
-        x-show="hasDeterministicContent"
-        class="flex items-center justify-between px-3 py-2 rounded-lg"
-        style="background: var(--c-success-bg); color: var(--c-success);"
-      >
-        <span class="text-sm font-semibold" x-text="kursinhaltStatus.msg"></span>
-        <button
-          class="btn btn--sm btn--danger"
-          @click="removeKursinhalt()"
-          type="button"
-        >Entfernen</button>
-      </div>
-
-      <!-- Upload -->
-      <div x-show="!hasDeterministicContent">
-        <label class="label">JSON-Datei auswählen</label>
-        <input
-          type="file"
-          accept=".json,application/json"
-          class="field text-sm"
-          @change="loadKursinhaltFile($event)"
-        />
-      </div>
-
-      <div
-        x-show="kursinhaltStatus.msg && !hasDeterministicContent"
-        class="text-xs px-3 py-2 rounded-lg"
-        :class="kursinhaltStatus.ok === false ? 'bg-red-50 text-red-800' : 'bg-blue-50 text-blue-800'"
-        x-text="kursinhaltStatus.msg"
-      ></div>
-    </div>
-
-  </div>
-
-
-  <!-- ═══════════════════════════════════════════════════════════════════════
        BOTTOM NAVIGATION
        Only shown on screens that are NOT setup
   ════════════════════════════════════════════════════════════════════════ -->
@@ -971,16 +819,6 @@
     >
       <span class="text-lg mb-0.5">📊</span>
       <span>Fortschritt</span>
-    </button>
-
-    <button
-      class="nav-item"
-      :class="{ 'is-active': screen === 'einstellungen' }"
-      @click="goTo('einstellungen')"
-      type="button"
-    >
-      <span class="text-lg mb-0.5">⚙️</span>
-      <span>API</span>
     </button>
 
   </nav>
