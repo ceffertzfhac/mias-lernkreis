@@ -223,7 +223,11 @@ html, body {
   font-size: 13px;
   font-weight: 600;
   flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
+.countdown-chip:hover { filter: brightness(0.94); }
 
 .countdown-chip--ok     { background: var(--c-success-bg); color: var(--c-success); }
 .countdown-chip--warn   { background: var(--c-warn-bg);    color: var(--c-warn); }

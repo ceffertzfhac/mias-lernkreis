@@ -64,6 +64,7 @@ function app() {
 
     // ── Fortschritt ───────────────────────────────────────────────────────────
     editExamDate: false,
+    editCountdown: false,
 
     // ════════════════════════════════════════════════════════════════════════
     // LIFECYCLE
@@ -467,6 +468,11 @@ function app() {
     updateExamDate() {
       store.set('exam_date', new Date(this.examDateInput).toISOString())
       this.editExamDate = false
+    },
+
+    saveCountdownDate() {
+      store.set('exam_date', new Date(this.examDateInput).toISOString())
+      this.editCountdown = false
     },
 
     resetAll() {

@@ -179,8 +179,29 @@
         <div class="topbar__title" x-text="screenTitle"></div>
         <div class="topbar__sub" x-text="kurs.name"></div>
       </div>
-      <div class="countdown-chip" :class="countdownClass()">
+      <!-- Countdown: normal view -->
+      <button
+        x-show="!editCountdown"
+        class="countdown-chip"
+        :class="countdownClass()"
+        @click="editCountdown = true"
+        type="button"
+        title="Klausurdatum anpassen"
+      >
         ⏱ <span x-text="verbleibeneTage"></span> Tage bis Klausur
+      </button>
+
+      <!-- Countdown: edit mode -->
+      <div x-show="editCountdown" style="display: flex; align-items: center; gap: 8px;">
+        <input
+          type="date"
+          class="field field--tinted"
+          style="padding: 4px 10px; font-size: 13px; height: 34px;"
+          x-model="examDateInput"
+          :min="todayMin()"
+        />
+        <button class="btn btn--primary btn--sm" @click="saveCountdownDate()" type="button">OK</button>
+        <button class="btn btn--outline btn--sm" @click="editCountdown = false" type="button">✕</button>
       </div>
     </header>
 
@@ -800,6 +821,26 @@
          SCREEN: EINSTELLUNGEN
     ════════════════════════════════════════════════════════════════════ -->
     <div x-show="screen === 'einstellungen'" class="screen-content">
+
+      <!-- Klausurdatum -->
+      <div class="card" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Klausurdatum</p>
+            <p style="font-size: 13px; color: var(--c-muted); margin: 2px 0 0;" x-show="!editExamDate" x-text="examFmt()"></p>
+          </div>
+          <button
+            class="btn btn--sm btn--outline"
+            @click="editExamDate = !editExamDate"
+            type="button"
+            x-text="editExamDate ? 'Abbrechen' : 'Ändern'"
+          ></button>
+        </div>
+        <div x-show="editExamDate" style="display: flex; gap: 8px; align-items: center;">
+          <input type="date" class="field field--tinted" style="flex: 1;" x-model="examDateInput" :min="todayMin()" />
+          <button class="btn btn--primary btn--sm" @click="updateExamDate()" type="button">Speichern</button>
+        </div>
+      </div>
 
       <!-- Notice: KI not active -->
       <div class="card card--tinted" style="margin-bottom: 16px; padding: 12px 16px;">
