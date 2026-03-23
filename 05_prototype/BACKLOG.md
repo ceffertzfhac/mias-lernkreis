@@ -53,4 +53,4 @@ Letzte Aktualisierung: 2026-03-23
 | **E5** | Lernzeit-Progress Bar — von erstem Diagnose-Tag zur Klausur | `9c42f02` |
 | **E6** | Lernzeit-Progress Bar permanent im Topbar — Doppel-Bar Zeit + Lern | `1dacc5a` |
 | **F1** | Dozenten-Prompt v4 — kollaborativer Modus, Status-Analyse, {frage, musterloesung} | `0f2c759` |
-| **G1** | Lernfortschritt-Logik: GAP-Modell (0% = erste Diagnose, 100% = Klausurniveau) | `→ nächster commit` |
+| **G1** | Lernfortschritt-Logik: GAP-Modell (0% = erste Diagnose, 100% = Klausurniveau) | `1304b4f` |
