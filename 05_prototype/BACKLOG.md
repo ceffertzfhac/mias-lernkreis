@@ -9,7 +9,7 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 | ID | Feature | Status |
 |---|---|---|
 | **A2** | Radar-Screen mit Verlauf — showVerlauf-Modus, Legende, letzte 5 Diagnosen | offen |
-| **A5** | Empty States — Radar & Fortschritt ohne Diagnose: Onboarding-Hinweis statt leerem Chart | offen |
+| **A5** | Empty States — Radar & Fortschritt ohne Diagnose: Onboarding-Hinweis statt leerem Chart | ✅ erledigt |
 | **B4** | Lernstand exportieren — JSON-Download aus Einstellungen | offen |
 
 ---
@@ -19,6 +19,7 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 | ID | Feature | Status |
 |---|---|---|
 | **H1** | Tagesziele & Wochenziele — basierend auf verbleibender Zeit bis Klausur und aktuellem Lernfortschritt (GAP-Modell): wie viele Aufgaben pro Tag/Woche nötig, um 100% zu erreichen | offen |
+| **I1** | Diagnose-Führung — Fortschrittsanzeige welche Themen bereits bewertet wurden; beim ersten Mal geführter Workflow mit „Später weitermachen"-Button; Wiedereinstieg greift offenen Stand auf | offen |
 | **A3** | Fortschritt: Diagnose-Verlauf — Zeitachse der letzten Diagnosen | offen |
 | **E1** | Radar-Icon in Sidebar anpassen — aktuell Hexagon, nicht passend | offen |
 | **E2** | UI/UX Datum ändern verbessern — funktional, aber unpolished | offen |
@@ -50,7 +51,8 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 | **D2** | Musterlösung aktiv einblenden — erst nach Klick sichtbar | `a48a396` |
 | **E3** | Bug: „Invalid Date" in Einstellungen — examFmt Arrow-Function-Fix | `a48a396` |
 | **E4** | Namen anpassbar — Nutzername editierbar in Einstellungen, Enter + Speichern-Button | `ee159fd` |
-| **E7** | „Heute geübt" nutzerzentriert — persistent (localStorage), alle Aktivitäten (Üben + Verifikation), Tages-Reset | `pending` |
+| **E7** | „Heute geübt" nutzerzentriert — persistent (localStorage), alle Aktivitäten (Üben + Verifikation), Tages-Reset | `2e6c201` |
+| **A5** | Empty States — Onboarding-Karte Home (3 Schritte), CTA-Prio, Fortschritt-Empty mit Radar-Placeholder | `pending` |
 | **E5** | Lernzeit-Progress Bar — von erstem Diagnose-Tag zur Klausur | `9c42f02` |
 | **E6** | Lernzeit-Progress Bar permanent im Topbar — Doppel-Bar Zeit + Lern | `1dacc5a` |
 | **F1** | Dozenten-Prompt v4 — kollaborativer Modus, Status-Analyse, {frage, musterloesung} | `0f2c759` |
