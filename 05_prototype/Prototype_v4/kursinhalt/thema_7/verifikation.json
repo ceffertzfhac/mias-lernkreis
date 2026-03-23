@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre in einem Satz den Unterschied zwischen Spannung, Stromstärke und Widerstand."
+    {
+      "frage": "Erkläre in einem Satz den Unterschied zwischen Spannung, Stromstärke und Widerstand.",
+      "musterloesung": "Spannung U (Volt) ist das elektrische Potentialgefälle — sie treibt den Strom an. Stromstärke I (Ampere) ist der Ladungsfluss pro Zeit. Widerstand R (Ohm) hemmt den Stromfluss; es gilt R = U/I (Ohmsches Gesetz)."
+    }
   ],
   "2": [
-    "Nenne das Ohmsche Gesetz und erkläre, wie sich Widerstände bei Reihen- und Parallelschaltung verhalten."
+    {
+      "frage": "Nenne das Ohmsche Gesetz und erkläre, wie sich Widerstände bei Reihen- und Parallelschaltung verhalten.",
+      "musterloesung": "U = R·I. Reihenschaltung: R_ges = R₁ + R₂ + … (gleicher Strom durch alle, Spannungen addieren sich). Parallelschaltung: 1/R_ges = 1/R₁ + 1/R₂ + … (gleiche Spannung an allen, Ströme addieren sich) → R_ges ist kleiner als der kleinste Einzelwiderstand."
+    }
   ],
   "3": [
-    "Erkläre den Unterschied zwischen Coulombkraft und Lorentzkraft. Welche Größen bestimmen jeweils ihre Stärke?"
+    {
+      "frage": "Erkläre den Unterschied zwischen Coulombkraft und Lorentzkraft. Welche Größen bestimmen jeweils ihre Stärke?",
+      "musterloesung": "Coulombkraft F_C = k·q₁·q₂/r² wirkt zwischen ruhenden Ladungen entlang der Verbindungslinie — abhängig von Ladung und Abstand. Lorentzkraft F_L = q·v×B wirkt nur auf bewegte Ladungen im Magnetfeld, senkrecht zu v und B — abhängig von Ladung, Geschwindigkeit und Flussdichte."
+    }
   ],
   "4": [
-    "In einer Schaltung fließt bei geöffnetem Schalter I = 100 mA, bei geschlossenem I = 200 mA (U = 10 V). Wie groß ist der überbrückte Widerstand? Erkläre den Rechenweg."
+    {
+      "frage": "In einer Schaltung fließt bei geöffnetem Schalter I = 100 mA, bei geschlossenem I = 200 mA (U = 10 V). Wie groß ist der überbrückte Widerstand? Erkläre den Rechenweg.",
+      "musterloesung": "Offen: R_ges = U/I₁ = 10/0,1 = 100 Ω. Geschlossen (Schalter überbrückt R_x): R_ges' = U/I₂ = 10/0,2 = 50 Ω. Der verbleibende Widerstand und R_x sind in Reihe oder parallel — bei Parallelschaltung: 1/50 = 1/100 + 1/R_x → R_x = 100 Ω. Bei Reihenschaltung: 50 = 100 − R_x → R_x = 50 Ω (Kontext entscheidet)."
+    }
   ],
   "5": [
-    "Warum wird Wechselstrom für die Energieübertragung bevorzugt? Erkläre die physikalischen Gründe und nenne eine technische Grenze."
+    {
+      "frage": "Warum wird Wechselstrom für die Energieübertragung bevorzugt? Erkläre die physikalischen Gründe und nenne eine technische Grenze.",
+      "musterloesung": "Mit Transformatoren lässt sich Wechselspannung fast verlustfrei hochtransformieren (U·I ≈ const). Hochspannung (z.B. 380 kV) reduziert den Strom → Leitungsverluste P = I²·R sinken drastisch. Grenze: Bei sehr langen Strecken oder Seekabeln dominieren kapazitive Blindwiderstände → Hochspannungs-Gleichstrom-Übertragung (HGÜ) ist dann effizienter."
+    }
   ]
 }

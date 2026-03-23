@@ -42,7 +42,7 @@ function app() {
     // v4 format: [{ datum: ISO, scores: [{id, score: 0–100}] }]
     diagnosen: [],
     aktBewertungen: [],
-    verifikation: { aktiv: false, themaId: null, stufe: null, frage: '', loading: false },
+    verifikation: { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', loading: false },
 
     // ── Live Scores (updated by each task result, base = last diagnosis) ──────
     liveScores: {},  // { [themaId]: score | null }
@@ -277,7 +277,7 @@ function app() {
     // ════════════════════════════════════════════════════════════════════════
     _resetAktDiagnose() {
       this.aktBewertungen = this.kurs.themen.map(t => ({ id: t.id, stufe: null }))
-      this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', loading: false }
+      this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', loading: false }
     },
 
     aktBew(id) {
@@ -299,9 +299,16 @@ function app() {
 
       if (this.kursinhalt) {
         const pool = this.kursinhalt?.verifikation?.[id]?.[stufe] ?? []
-        this.verifikation.frage = pool.length
+        const raw = pool.length
           ? pool[Math.floor(Math.random() * pool.length)]
           : `Erkläre das Kernprinzip von „${thema.name}" in einem Satz.`
+        if (typeof raw === 'object') {
+          this.verifikation.frage         = raw.frage ?? ''
+          this.verifikation.musterloesung = raw.musterloesung ?? ''
+        } else {
+          this.verifikation.frage         = raw
+          this.verifikation.musterloesung = ''
+        }
         this.verifikation.loading = false
       } else {
         this.verifikation.frage = await callAI(

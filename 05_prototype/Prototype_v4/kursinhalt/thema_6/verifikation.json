@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre in einem Satz, was eine harmonische Schwingung auszeichnet (Stichwort: rücktreibende Kraft)."
+    {
+      "frage": "Erkläre in einem Satz, was eine harmonische Schwingung auszeichnet (Stichwort: rücktreibende Kraft).",
+      "musterloesung": "Eine harmonische Schwingung entsteht, wenn die rücktreibende Kraft proportional zur Auslenkung und entgegengesetzt gerichtet ist (F = −D·x). Dies erzeugt eine sinusförmige Bewegung x(t) = x̂·cos(ωt + φ₀)."
+    }
   ],
   "2": [
-    "Gib die Formeln für T bei Feder- und Fadenpendel an. Erkläre, warum T des Fadenpendels nicht von der Masse abhängt."
+    {
+      "frage": "Gib die Formeln für T bei Feder- und Fadenpendel an. Erkläre, warum T des Fadenpendels nicht von der Masse abhängt.",
+      "musterloesung": "Federpendel: T = 2π·√(m/D). Fadenpendel: T = 2π·√(L/g). Beim Fadenpendel kürzt sich die Masse heraus: Rücktreibkraft F = m·g·sinφ ≈ m·g·φ und Trägheit m·a sind beide proportional zu m → m fällt aus der Bewegungsgleichung heraus."
+    }
   ],
   "3": [
-    "Wie hängen E_pot, E_kin und E_ges beim Federpendel zusammen? Wo ist jeweils welche maximal?"
+    {
+      "frage": "Wie hängen E_pot, E_kin und E_ges beim Federpendel zusammen? Wo ist jeweils welche maximal?",
+      "musterloesung": "E_kin = ½·m·v² ist maximal in der Ruhelage (x = 0, v = v̂). E_pot = ½·D·x² ist maximal bei maximaler Auslenkung (x = x̂, v = 0). E_ges = ½·D·x̂² = const (ohne Dämpfung): die Energie pendelt zwischen beiden Formen, ohne verloren zu gehen."
+    }
   ],
   "4": [
-    "Beim g-Bestimmungsversuch liefern sechs Pendel T-L-Wertepaare. Erkläre die Linearisierung T² = (4π²/g)·L und wie man g grafisch bestimmt."
+    {
+      "frage": "Beim g-Bestimmungsversuch liefern sechs Pendel T-L-Wertepaare. Erkläre die Linearisierung T² = (4π²/g)·L und wie man g grafisch bestimmt.",
+      "musterloesung": "T = 2π·√(L/g) → T² = (4π²/g)·L. Im T²-über-L-Diagramm entsteht eine Gerade durch den Ursprung mit Steigung k = 4π²/g. Aus der gemessenen Steigung folgt g = 4π²/k. Mehrere Messpunkte und ein linearer Fit reduzieren den Einfluss von Einzelmessfehlern."
+    }
   ],
   "5": [
-    "Nenne zwei Situationen, in denen die Kleinwinkelnäherung (sin φ ≈ φ) nicht mehr gilt. Was sind die Konsequenzen für die Schwingungsdauer?"
+    {
+      "frage": "Nenne zwei Situationen, in denen die Kleinwinkelnäherung (sin φ ≈ φ) nicht mehr gilt. Was sind die Konsequenzen für die Schwingungsdauer?",
+      "musterloesung": "1. Große Auslenkungen (φ > 15°): sin φ < φ → die effektive Rücktreibkraft ist kleiner als berechnet → Schwingung wird anharmonisch, T steigt mit der Amplitude. 2. Überschlagspendel (φ → 180°): keine periodische Rückkehr, Näherung vollständig ungültig — das System verhält sich nicht mehr wie ein linearer Oszillator."
+    }
   ]
 }

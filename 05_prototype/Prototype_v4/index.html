@@ -367,18 +367,26 @@
                 Kurze Verständnisfrage (Stufe <span x-text="verifikation.stufe"></span>)
               </p>
               <div x-show="verifikation.loading" style="font-size: 12px; color: var(--c-muted);">Frage wird geladen…</div>
-              <p
-                x-show="!verifikation.loading"
-                style="font-size: 13px; line-height: 1.5; margin: 0 0 10px;"
-                x-text="verifikation.frage"
-              ></p>
-              <div x-show="!verifikation.loading" style="display: flex; gap: 8px;">
-                <button class="btn btn--success btn--sm" style="flex: 1;" @click="confirmVerifikation()" type="button">
-                  Ich kann das ✓
-                </button>
-                <button class="btn btn--danger btn--sm" style="flex: 1;" @click="lowerVerifikation()" type="button">
-                  Eine Stufe tiefer
-                </button>
+              <div x-show="!verifikation.loading">
+                <p style="font-size: 13px; line-height: 1.5; margin: 0 0 10px;" x-text="verifikation.frage"></p>
+
+                <!-- Musterlösung -->
+                <div
+                  x-show="verifikation.musterloesung"
+                  style="background: var(--c-bg); border-left: 3px solid var(--c-primary); border-radius: 0 8px 8px 0; padding: 8px 12px; margin-bottom: 10px;"
+                >
+                  <p style="font-size: 11px; font-weight: 700; color: var(--c-primary); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em;">Musterlösung</p>
+                  <p style="font-size: 12px; line-height: 1.55; color: var(--c-ink); margin: 0;" x-text="verifikation.musterloesung"></p>
+                </div>
+
+                <div style="display: flex; gap: 8px;">
+                  <button class="btn btn--success btn--sm" style="flex: 1;" @click="confirmVerifikation()" type="button">
+                    Das kann ich ✓
+                  </button>
+                  <button class="btn btn--danger btn--sm" style="flex: 1;" @click="lowerVerifikation()" type="button">
+                    Eine Stufe tiefer
+                  </button>
+                </div>
               </div>
             </div>
           </div>

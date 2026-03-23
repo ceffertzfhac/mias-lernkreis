@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre den Unterschied zwischen elastischem und vollkommen unelastischem Stoß."
+    {
+      "frage": "Erkläre den Unterschied zwischen elastischem und vollkommen unelastischem Stoß.",
+      "musterloesung": "Elastischer Stoß: Impuls und kinetische Energie bleiben erhalten — die Körper trennen sich wieder. Vollkommen unelastischer Stoß: Nur der Impuls bleibt erhalten; die Körper bleiben zusammen, und maximale kinetische Energie wird in innere Energie (Wärme, Verformung) umgewandelt."
+    }
   ],
   "2": [
-    "Welche Größen bleiben beim elastischen Stoß erhalten? Welche beim unelastischen? Begründe."
+    {
+      "frage": "Welche Größen bleiben beim elastischen Stoß erhalten? Welche beim unelastischen? Begründe.",
+      "musterloesung": "Elastisch: Impuls p_ges = const und kinetische Energie E_kin,ges = const (zwei Erhaltungsgleichungen → zwei Unbekannte lösbar). Unelastisch: nur p_ges = const; E_kin nimmt ab, da Energie in nicht-mechanische Formen übergeht. Der Impuls ist immer erhalten, weil innere Kräfte sich laut Newtons 3. Gesetz aufheben."
+    }
   ],
   "3": [
-    "Erkläre, warum beim vollkommen unelastischen Stoß immer kinetische Energie verloren geht, aber der Impuls erhalten bleibt."
+    {
+      "frage": "Erkläre, warum beim vollkommen unelastischen Stoß immer kinetische Energie verloren geht, aber der Impuls erhalten bleibt.",
+      "musterloesung": "Impuls: Die inneren Stoßkräfte sind gleich groß und entgegengesetzt (Newton 3) → Δp_gesamt = 0. Kinetische Energie: Durch plastische Verformung, Schall und Wärme wird mechanische Energie in nicht-rückgewinnbare Formen umgewandelt — E_kin ist keine Erhaltungsgröße bei nicht-konservativen Prozessen."
+    }
   ],
   "4": [
-    "Zwei gleich schwere Kugeln stoßen elastisch zusammen, eine ruht. Was passiert? Begründe mit den Erhaltungsgleichungen."
+    {
+      "frage": "Zwei gleich schwere Kugeln stoßen elastisch zusammen, eine ruht. Was passiert? Begründe mit den Erhaltungsgleichungen.",
+      "musterloesung": "Aus p: m·v₁ = m·v₁' + m·v₂' und E_kin: ½·m·v₁² = ½·m·v₁'² + ½·m·v₂' folgt für m₁ = m₂: v₁' = 0 und v₂' = v₁. Die bewegte Kugel stoppt vollständig, die ruhende übernimmt die gesamte Geschwindigkeit — klassischer „Newton's Cradle"-Effekt."
+    }
   ],
   "5": [
-    "Wo in der Technik werden Stöße bewusst unelastisch gestaltet? Nenne zwei Beispiele und erkläre den Vorteil."
+    {
+      "frage": "Wo in der Technik werden Stöße bewusst unelastisch gestaltet? Nenne zwei Beispiele und erkläre den Vorteil.",
+      "musterloesung": "1. Knautschzone im Auto: Kontrollierte Verformung streckt den Stoß zeitlich → Spitzenkraft auf Insassen sinkt (F = Δp/Δt, großes Δt = kleine F). 2. Airbag / Sandkissen: Gleiche Logik — Impulsübertrag über längere Zeit schützt den Körper vor gefährlichen Kraftspitzen."
+    }
   ]
 }

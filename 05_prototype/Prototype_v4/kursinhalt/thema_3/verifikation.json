@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre in einem Satz den Unterschied zwischen Arbeit und Energie."
+    {
+      "frage": "Erkläre in einem Satz den Unterschied zwischen Arbeit und Energie.",
+      "musterloesung": "Arbeit W = F·s·cosα ist ein Prozess — Energie, die über einen Weg übertragen wird. Energie E ist ein Zustand eines Körpers oder Systems (gespeicherte Fähigkeit, Arbeit zu verrichten)."
+    }
   ],
   "2": [
-    "Nenne die Formel für kinetische und potenzielle Energie. Wann ist mechanische Energieerhaltung anwendbar?"
+    {
+      "frage": "Nenne die Formel für kinetische und potenzielle Energie. Wann ist mechanische Energieerhaltung anwendbar?",
+      "musterloesung": "E_kin = ½·m·v², E_pot = m·g·h. Energieerhaltung gilt in abgeschlossenen Systemen ohne nicht-konservative Kräfte — d.h. keine Reibung, kein Luftwiderstand. Nur dann ist E_kin + E_pot = const."
+    }
   ],
   "3": [
-    "Erkläre den Energieerhaltungssatz für ein System mit Reibung. Was passiert mit der 'verlorenen' Energie?"
+    {
+      "frage": "Erkläre den Energieerhaltungssatz für ein System mit Reibung. Was passiert mit der 'verlorenen' Energie?",
+      "musterloesung": "Reibungskräfte sind nicht-konservativ: die Summe E_kin + E_pot nimmt ab. Die mechanische Energie wird in innere (thermische) Energie umgewandelt — sie ist nicht vernichtet, nur nicht mehr als mechanische Arbeit nutzbar. Der allgemeine Energieerhaltungssatz gilt stets."
+    }
   ],
   "4": [
-    "Ein Körper (m = 2 kg) fällt aus h = 5 m. Berechne die Geschwindigkeit am Boden — einmal mit Energieerhaltung, einmal kinematisch. Vergleiche die Wege."
+    {
+      "frage": "Ein Körper (m = 2 kg) fällt aus h = 5 m. Berechne die Geschwindigkeit am Boden — einmal mit Energieerhaltung, einmal kinematisch. Vergleiche die Wege.",
+      "musterloesung": "Energieerhaltung: m·g·h = ½·m·v² → v = √(2·g·h) = √(2·9,81·5) ≈ 9,9 m/s. Kinematisch: v² = 2·a·s = 2·9,81·5 → v ≈ 9,9 m/s. Beide Wege liefern dasselbe Ergebnis; Energieerhaltung kommt ohne Zeitinformation aus."
+    }
   ],
   "5": [
-    "Wann liefert Energieerhaltung kürzere Rechenwege als Newton? Nenne zwei Beispiele aus dem Kurs."
+    {
+      "frage": "Wann liefert Energieerhaltung kürzere Rechenwege als Newton? Nenne zwei Beispiele aus dem Kurs.",
+      "musterloesung": "1. Pendel / schiefe Ebene ohne Reibung: Nur Höhendifferenz zwischen Start und Ziel zählt — kein kompliziertes Aufstellen von Bewegungsgleichungen nötig. 2. Achterbahn / Katapult: Die Bahnform ist irrelevant; Newton würde eine Integration über die Trajektorie erfordern."
+    }
   ]
 }

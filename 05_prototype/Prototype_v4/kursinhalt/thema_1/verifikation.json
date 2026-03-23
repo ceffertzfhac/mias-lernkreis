@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre in einem Satz den Unterschied zwischen Geschwindigkeit und Beschleunigung."
+    {
+      "frage": "Erkläre in einem Satz den Unterschied zwischen Geschwindigkeit und Beschleunigung.",
+      "musterloesung": "Geschwindigkeit v = Δs/Δt beschreibt, wie schnell sich der Ort ändert. Beschleunigung a = Δv/Δt beschreibt, wie schnell sich die Geschwindigkeit ändert — sie kann vorhanden sein, auch wenn v konstant ist (z.B. Kreisbewegung)."
+    }
   ],
   "2": [
-    "Was ist der Unterschied zwischen gleichförmiger und gleichmäßig beschleunigter Bewegung? Nenne je eine Formel."
+    {
+      "frage": "Was ist der Unterschied zwischen gleichförmiger und gleichmäßig beschleunigter Bewegung? Nenne je eine Formel.",
+      "musterloesung": "Gleichförmig: a = 0, konstante Geschwindigkeit → s = v·t. Gleichmäßig beschleunigt: konstante Beschleunigung a ≠ 0 → v = v₀ + a·t und s = v₀·t + ½·a·t²."
+    }
   ],
   "3": [
-    "Erkläre, warum beim schrägen Wurf zwei komplementäre Winkel (z.B. 35° und 55°) die gleiche Wurfweite ergeben."
+    {
+      "frage": "Erkläre, warum beim schrägen Wurf zwei komplementäre Winkel (z.B. 35° und 55°) die gleiche Wurfweite ergeben.",
+      "musterloesung": "Die Wurfweite beträgt R = v₀²·sin(2α)/g. Da sin(2α) = sin(180° − 2α) = sin(2·(90°−α)), liefern α und (90°−α) denselben Wert von sin(2α) und damit dieselbe Weite. Das Maximum liegt bei 45°."
+    }
   ],
   "4": [
-    "Ein Skifahrer fährt mit x(t) = 1,2·t² + 9,8·t. Wie groß sind Anfangsgeschwindigkeit und Beschleunigung? Nach welcher Zeit hat er 120 m zurückgelegt?"
+    {
+      "frage": "Ein Skifahrer fährt mit x(t) = 1,2·t² + 9,8·t. Wie groß sind Anfangsgeschwindigkeit und Beschleunigung? Nach welcher Zeit hat er 120 m zurückgelegt?",
+      "musterloesung": "v(t) = x'(t) = 2,4t + 9,8. Anfangsgeschwindigkeit: v₀ = v(0) = 9,8 m/s. Beschleunigung: a = 2·1,2 = 2,4 m/s² (doppelter Koeffizient von t²). Für x = 120 m: 1,2t² + 9,8t − 120 = 0 → t ≈ 7,1 s (pq-Formel oder Taschenrechner)."
+    }
   ],
   "5": [
-    "In welchen realen Situationen versagen die Gleichungen der gleichförmig beschleunigten Bewegung? Nenne zwei konkrete Beispiele."
+    {
+      "frage": "In welchen realen Situationen versagen die Gleichungen der gleichförmig beschleunigten Bewegung? Nenne zwei konkrete Beispiele.",
+      "musterloesung": "1. Luftwiderstand: Die Bremskraft wächst mit v² → a wird geschwindigkeitsabhängig, nicht mehr konstant. 2. Kurvenfahrt: Richtungsänderung bei konstantem Betrag erzeugt Zentripetalbeschleunigung — die Gleichungen gelten nur für geradlinige Bewegungen."
+    }
   ]
 }

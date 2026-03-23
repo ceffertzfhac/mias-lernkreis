@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre in einem Satz den Unterschied zwischen Kraft, Impuls und Energie."
+    {
+      "frage": "Erkläre in einem Satz den Unterschied zwischen Kraft, Impuls und Energie.",
+      "musterloesung": "Kraft F = m·a ist die Ursache einer Beschleunigung (Vektor). Impuls p = m·v ist der Bewegungszustand (Vektor; Änderung = F·Δt). Energie E ist ein skalarer Zustand — Arbeit W = F·s überträgt sie."
+    }
   ],
   "2": [
-    "Formuliere das zweite Newtonsche Gesetz und erkläre, was 'Nettokraft' bedeutet."
+    {
+      "frage": "Formuliere das zweite Newtonsche Gesetz und erkläre, was 'Nettokraft' bedeutet.",
+      "musterloesung": "F_net = m·a. Die Nettokraft ist die vektorielle Summe aller angreifenden Kräfte. Nur sie erzeugt Beschleunigung — Einzelkräfte, die sich gegenseitig aufheben, bewirken keine Änderung des Bewegungszustands."
+    }
   ],
   "3": [
-    "Erkläre den Unterschied zwischen Haftreibung und Gleitreibung. Wann geht eine in die andere über?"
+    {
+      "frage": "Erkläre den Unterschied zwischen Haftreibung und Gleitreibung. Wann geht eine in die andere über?",
+      "musterloesung": "Haftreibung F_H ≤ μ_H·F_N hält ruhende Körper in Ruhe und passt sich der Antriebskraft an (bis zum Maximum). Gleitreibung F_G = μ_G·F_N ist konstant und wirkt entgegen der Bewegung. Der Übergang tritt ein, wenn die Antriebskraft F_H,max überschreitet. Da μ_G < μ_H, sinkt die Reibungskraft beim Einsetzen der Bewegung."
+    }
   ],
   "4": [
-    "Ein Block (m = 5 kg, μ = 0,30) wird mit F = 25 N horizontal beschleunigt. Wie groß ist die Beschleunigung? Erkläre jeden Rechenschritt."
+    {
+      "frage": "Ein Block (m = 5 kg, μ = 0,30) wird mit F = 25 N horizontal beschleunigt. Wie groß ist die Beschleunigung? Erkläre jeden Rechenschritt.",
+      "musterloesung": "Schritt 1: Reibungskraft F_R = μ·m·g = 0,30·5·9,81 ≈ 14,7 N. Schritt 2: Nettokraft F_net = F − F_R = 25 − 14,7 = 10,3 N. Schritt 3: a = F_net/m = 10,3/5 ≈ 2,1 m/s²."
+    }
   ],
   "5": [
-    "In welchen Situationen versagt das Konzept des vollkommen elastischen Stoßes in der Praxis? Nenne zwei reale Beispiele."
+    {
+      "frage": "In welchen Situationen versagt das Konzept des vollkommen elastischen Stoßes in der Praxis? Nenne zwei reale Beispiele.",
+      "musterloesung": "1. Makroskopische Körper (z.B. Billardkugeln): jeder Kontakt erzeugt Verformung und Wärme — typisch 1–5 % Energieverlust. 2. Molekulare Stöße mit inneren Freiheitsgraden: Rotations- und Schwingungsanregung nimmt Energie auf (inelastische Quantenstreuung)."
+    }
   ]
 }

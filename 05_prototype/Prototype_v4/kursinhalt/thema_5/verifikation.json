@@ -1,17 +1,32 @@
 {
   "1": [
-    "Erkläre in einem Satz den Unterschied zwischen Trägheitsmoment J und Drehimpuls L."
+    {
+      "frage": "Erkläre in einem Satz den Unterschied zwischen Trägheitsmoment J und Drehimpuls L.",
+      "musterloesung": "Das Trägheitsmoment J = Σmᵢ·rᵢ² ist eine geometrische Eigenschaft (Massenverteilung zur Drehachse) — das Rotationsäquivalent zur Masse. Der Drehimpuls L = J·ω ist der Bewegungszustand — er hängt zusätzlich von der Winkelgeschwindigkeit ab."
+    }
   ],
   "2": [
-    "Nenne die Formel für J des Vollzylinders und der Vollkugel. Welcher Körper rollt schneller die schiefe Ebene hinunter und warum?"
+    {
+      "frage": "Nenne die Formel für J des Vollzylinders und der Vollkugel. Welcher Körper rollt schneller die schiefe Ebene hinunter und warum?",
+      "musterloesung": "Vollzylinder: J = ½·m·R². Vollkugel: J = ²⁄₅·m·R². Aus Energieerhaltung: v = √(2gh/(1 + J/(mR²))). Da J/(mR²) für Kugel = 0,4 < Zylinder = 0,5, ist v_Kugel > v_Zylinder — die Kugel rollt schneller."
+    }
   ],
   "3": [
-    "Erkläre die Rollbedingung v = ω·R. Warum sind rollende Körper langsamer als reibungsfrei gleitende auf der schiefen Ebene?"
+    {
+      "frage": "Erkläre die Rollbedingung v = ω·R. Warum sind rollende Körper langsamer als reibungsfrei gleitende auf der schiefen Ebene?",
+      "musterloesung": "v = ω·R gilt für reines Rollen (Kontaktpunkt ruht momentan). Ein Teil der potentiellen Energie wird als Rotationsenergie ½·J·ω² gespeichert statt als Translationsenergie — daher ist v kleiner als beim reibungsfreien Gleiten, wo E_pot vollständig in E_kin,trans übergeht."
+    }
   ],
   "4": [
-    "Beim Fahrradfelgenversuch ergibt das φ-t²-Diagramm eine Gerade mit Steigung m = 0,524 rad/s². Berechne α und erkläre, was sich daraus noch bestimmen lässt."
+    {
+      "frage": "Beim Fahrradfelgenversuch ergibt das φ-t²-Diagramm eine Gerade mit Steigung m = 0,524 rad/s². Berechne α und erkläre, was sich daraus noch bestimmen lässt.",
+      "musterloesung": "Aus φ = ½·α·t² folgt α = 2·m = 2·0,524 ≈ 1,05 rad/s². Daraus lässt sich das Trägheitsmoment bestimmen, wenn das Drehmoment M bekannt ist: J = M/α. Alternativ kann aus mehreren Messreihen die Gültigkeit der Rollbedingung überprüft werden."
+    }
   ],
   "5": [
-    "Nenne zwei reale Situationen, in denen die Annahme 'Rollen ohne Gleiten' nicht gilt. Welche physikalische Konsequenz hat das?"
+    {
+      "frage": "Nenne zwei reale Situationen, in denen die Annahme 'Rollen ohne Gleiten' nicht gilt. Welche physikalische Konsequenz hat das?",
+      "musterloesung": "1. Fahrzeugbremsung bis zum Blockieren: Die Räder gleiten → kinetische Reibung statt Haftreibung, ABS verhindert dies durch kurzzeitiges Blockierenlassen. 2. Eis / Nässe: μ_H ≈ 0, die Rollbedingung ist nicht mehr haltbar → unkontrolliertes Gleiten mit stark reduzierter Bremswirkung."
+    }
   ]
 }
