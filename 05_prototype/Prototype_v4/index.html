@@ -742,7 +742,14 @@
               <!-- SC result -->
               <template x-if="isSingleChoice">
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                  <div class="card text-center" :class="ue.scKorrekt ? 'card--success' : 'card--error'" style="padding: 20px; text-align: center;">
+                  <div class="card text-center" :class="ue.scKorrekt ? 'card--success' : 'card--error'" style="padding: 20px; text-align: center; position: relative; overflow: visible;">
+                    <!-- Score delta animation -->
+                    <div
+                      x-show="scoreDeltaAnim.show"
+                      class="score-delta-anim"
+                      :class="scoreDeltaAnim.positive ? 'score-delta-anim--pos' : 'score-delta-anim--neg'"
+                      x-text="scoreDeltaAnim.value"
+                    ></div>
                     <div style="font-size: 24px; font-weight: 700; margin-bottom: 4px;" x-text="ue.scKorrekt ? '✓ Richtig!' : '✗ Leider falsch'"></div>
                     <div style="font-size: 13px;">
                       Deine Wahl: <strong x-text="ue.scWahl"></strong>
@@ -774,7 +781,14 @@
                     <p style="font-size: 12px; font-weight: 600; color: var(--c-primary); margin: 0;">Musterlösung</p>
                     <p style="font-size: 13px; line-height: 1.6; margin: 0;" x-text="ue.musterloesung"></p>
                   </div>
-                  <div class="card" style="display: flex; flex-direction: column; gap: 10px;">
+                  <div class="card" style="display: flex; flex-direction: column; gap: 10px; position: relative; overflow: visible;">
+                    <!-- Score delta animation -->
+                    <div
+                      x-show="scoreDeltaAnim.show"
+                      class="score-delta-anim"
+                      :class="scoreDeltaAnim.positive ? 'score-delta-anim--pos' : 'score-delta-anim--neg'"
+                      x-text="scoreDeltaAnim.value"
+                    ></div>
                     <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Wie nah warst du?</p>
                     <div style="display: flex; gap: 8px;">
                       <button class="btn btn--success" style="flex: 1;" @click="selfAssess(true)" type="button">✓ Lag ich richtig</button>

@@ -63,6 +63,7 @@ function app() {
     },
     session: { aufgaben: [] },
     heuteGeuebt: 0,   // persistent: alle Lernaktivitäten heute (Üben + Verifikation)
+    scoreDeltaAnim: { show: false, value: '', positive: true },
 
     // ── Fortschritt ───────────────────────────────────────────────────────────
     editName: false,
@@ -504,6 +505,16 @@ function app() {
       })
     },
 
+    _showScoreDelta(delta) {
+      this.scoreDeltaAnim.show = false
+      this.$nextTick(() => {
+        this.scoreDeltaAnim.value    = (delta > 0 ? '+' : '') + delta
+        this.scoreDeltaAnim.positive = delta > 0
+        this.scoreDeltaAnim.show     = true
+        setTimeout(() => { this.scoreDeltaAnim.show = false }, 1400)
+      })
+    },
+
     _countActivity() {
       this.heuteGeuebt++
       store.set('heute_log', { date: todayInput(), count: this.heuteGeuebt })
@@ -518,6 +529,7 @@ function app() {
         : SCORE_DELTA.wrong
 
       this.liveScores[themaId] = Math.max(0, Math.min(100, currentScore + delta))
+      this._showScoreDelta(delta)
 
       // Adaptive difficulty
       if (korrekt && genutzeTipps === 0)     this.ue.schwierigkeit = Math.min(4, this.ue.schwierigkeit + 1)

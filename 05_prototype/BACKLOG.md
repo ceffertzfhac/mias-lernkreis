@@ -11,7 +11,7 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 | **A2** | Radar-Screen mit Verlauf — showVerlauf-Modus, Legende, letzte 5 Diagnosen | offen |
 | **A5** | Empty States — Radar & Fortschritt ohne Diagnose: Onboarding-Hinweis statt leerem Chart | ✅ erledigt |
 | **B4** | Lernstand exportieren — JSON-Download aus Einstellungen | ✅ erledigt |
-| **L1** | Feedback-Animation nach jeder Aufgabe/Frage — Score-Delta als fliegende Zahl: grün „+8" bei richtig, rot „−10" bei falsch, grau „±0" bei neutral; Animation: aufsteigen + fade-out, sofort sichtbar nach Bewertung (Üben + Verifikation) | offen |
+| **L1** | Feedback-Animation nach jeder Aufgabe/Frage — Score-Delta als fliegende Zahl: grün „+8" bei richtig, rot „−10" bei falsch, grau „±0" bei neutral; Animation: aufsteigen + fade-out, sofort sichtbar nach Bewertung (Üben + Verifikation) | ✅ erledigt |
 | **K1** | Neuen Nutzer anlegen — mehrere Profile auf einem Gerät (z.B. Lerngruppe) | offen |
 | **K2** | Nutzer löschen — einzelnes Profil entfernen ohne alle Daten zu löschen | offen |
 
