@@ -22,7 +22,7 @@ Letzte Aktualisierung: 2026-03-23
 | **A3** | Fortschritt: Diagnose-Verlauf — Zeitachse der letzten Diagnosen | offen |
 | **E1** | Radar-Icon in Sidebar anpassen — aktuell Hexagon, nicht passend | offen |
 | **E2** | UI/UX Datum ändern verbessern — funktional, aber unpolished | offen |
-| **E4** | Namen anpassbar — Nutzername (Einstellungen) + Klausurname | offen |
+| **E4** | Namen anpassbar — Nutzername (Einstellungen) + Klausurname | ✅ erledigt |
 | **C1** | GitHub Pages auf v4 umstellen — `docs/` noch auf v3 | offen |
 | **C3** | Testing-Phase vorbereiten — `06_test/` mit Testprotokoll-Vorlage | offen |
 | **C4** | Testrunde mit Studierenden | offen |
@@ -54,3 +54,4 @@ Letzte Aktualisierung: 2026-03-23
 | **E6** | Lernzeit-Progress Bar permanent im Topbar — Doppel-Bar Zeit + Lern | `1dacc5a` |
 | **F1** | Dozenten-Prompt v4 — kollaborativer Modus, Status-Analyse, {frage, musterloesung} | `0f2c759` |
 | **G1** | Lernfortschritt-Logik: GAP-Modell (0% = erste Diagnose, 100% = Klausurniveau) | `1304b4f` |
+| **E4** | Namen anpassbar — Nutzername editierbar in Einstellungen, Enter + Speichern-Button | `pending` |

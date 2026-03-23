@@ -63,6 +63,7 @@ function app() {
     session: { aufgaben: [] },
 
     // ── Fortschritt ───────────────────────────────────────────────────────────
+    editName: false,
     editExamDate: false,
     editCountdown: false,
     zeitProzentAnimated: 0,
@@ -482,6 +483,14 @@ function app() {
       store.set('exam_date', new Date(this.examDateInput).toISOString())
       this.editExamDate = false
       this._animateProgress()
+    },
+
+    saveName() {
+      const trimmed = (this.name || '').trim()
+      if (!trimmed) return
+      this.name = trimmed
+      this._persist()
+      this.editName = false
     },
 
     saveCountdownDate() {

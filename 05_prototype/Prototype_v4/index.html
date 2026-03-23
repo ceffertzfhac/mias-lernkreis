@@ -879,6 +879,26 @@
     ════════════════════════════════════════════════════════════════════ -->
     <div x-show="screen === 'einstellungen'" class="screen-content">
 
+      <!-- Name -->
+      <div class="card" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Dein Name</p>
+            <p style="font-size: 13px; color: var(--c-muted); margin: 2px 0 0;" x-show="!editName" x-text="name"></p>
+          </div>
+          <button
+            class="btn btn--sm btn--outline"
+            @click="editName = !editName"
+            type="button"
+            x-text="editName ? 'Abbrechen' : 'Ändern'"
+          ></button>
+        </div>
+        <div x-show="editName" style="display: flex; gap: 8px; align-items: center;">
+          <input type="text" class="field field--tinted" style="flex: 1;" x-model="name" placeholder="Vorname" @keydown.enter="saveName()" maxlength="40" />
+          <button class="btn btn--primary btn--sm" @click="saveName()" type="button">Speichern</button>
+        </div>
+      </div>
+
       <!-- Klausurdatum -->
       <div class="card" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px;">
         <div style="display: flex; align-items: center; justify-content: space-between;">
