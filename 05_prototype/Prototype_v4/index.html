@@ -347,14 +347,29 @@
 
           <!-- CTAs (always at bottom) -->
           <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px;">
-            <!-- First visit: Diagnose is primary; after diagnosis: Üben is primary -->
-            <button class="btn btn--primary btn--block" @click="goTo('diagnose')" x-show="!hasDiagnose" type="button">
+
+            <!-- Case A: First visit, no draft -->
+            <button class="btn btn--primary btn--block" @click="goTo('diagnose')" x-show="!hasDiagnose && !hasDiagnoseDraft" type="button">
               Selbstdiagnose starten →
             </button>
+
+            <!-- Case B: Draft exists, not yet finished first diagnosis -->
+            <template x-if="!hasDiagnose && hasDiagnoseDraft">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div class="card" style="padding: 10px 14px; border-left: 3px solid var(--c-primary);">
+                  <p style="font-size: 12px; font-weight: 600; color: var(--c-primary); margin: 0 0 2px;">Diagnose pausiert</p>
+                  <p style="font-size: 12px; color: var(--c-muted); margin: 0;">Mach weiter wo du aufgehört hast.</p>
+                </div>
+                <button class="btn btn--primary btn--block" @click="goTo('diagnose')" type="button">Diagnose fortsetzen →</button>
+                <button class="btn btn--outline btn--block" @click="startFreshDiagnose()" type="button">Neu starten</button>
+              </div>
+            </template>
+
+            <!-- Case C: Has diagnosis -->
             <button class="btn btn--primary btn--block" @click="goTo('ueben')" x-show="hasDiagnose" type="button">
               Jetzt üben →
             </button>
-            <button class="btn btn--outline btn--block" @click="goTo('diagnose')" x-show="hasDiagnose" type="button">
+            <button class="btn btn--outline btn--block" @click="startFreshDiagnose()" x-show="hasDiagnose" type="button">
               Neue Diagnose
             </button>
           </div>
@@ -368,6 +383,21 @@
          SCREEN: DIAGNOSE
     ════════════════════════════════════════════════════════════════════ -->
     <div x-show="screen === 'diagnose'" class="screen-content">
+
+      <!-- First-time intro -->
+      <div x-show="!hasDiagnose && !hasDiagnoseDraft" class="card card--tinted" style="padding: 14px 16px; margin-bottom: 16px;">
+        <p style="font-size: 13px; font-weight: 700; color: var(--c-primary); margin: 0 0 4px;">Schätze deinen Lernstand ein</p>
+        <p style="font-size: 12px; color: var(--c-muted); margin: 0;">Bewerte dich für jedes Thema auf einer Skala von 1–5. Das dauert ca. 3–5 Minuten. Du kannst jederzeit pausieren und später weitermachen.</p>
+      </div>
+
+      <!-- Resume notice -->
+      <div x-show="hasDiagnoseDraft" class="card" style="padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-left: 3px solid var(--c-primary);">
+        <div>
+          <p style="font-size: 13px; font-weight: 600; color: var(--c-primary); margin: 0;">Diagnose fortsetzen</p>
+          <p style="font-size: 12px; color: var(--c-muted); margin: 2px 0 0;"><span x-text="bewerteteThemen"></span> von <span x-text="kurs.themen.length"></span> Themen bewertet</p>
+        </div>
+        <button class="btn btn--outline btn--sm" @click="startFreshDiagnose()" type="button" style="flex-shrink: 0;">Neu starten</button>
+      </div>
 
       <!-- Legend -->
       <div class="card" style="padding: 12px 16px; margin-bottom: 16px;">
@@ -387,10 +417,17 @@
       <!-- Topic grid -->
       <div class="themen-grid" style="margin-bottom: 16px;">
         <template x-for="t in kurs.themen" :key="t.id">
-          <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+          <div
+            class="card"
+            :style="aktBew(t.id) !== null ? 'border-left: 3px solid var(--c-success); padding-left: 13px;' : 'border-left: 3px solid transparent; padding-left: 13px;'"
+            style="display: flex; flex-direction: column; gap: 8px;"
+          >
             <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
               <p style="font-size: 13px; font-weight: 600; line-height: 1.35; margin: 0;" x-text="t.name"></p>
-              <span x-show="t.haeufig" class="badge badge--warn" style="flex-shrink: 0;">Prüfungsrelevant</span>
+              <div style="display: flex; gap: 4px; align-items: center; flex-shrink: 0;">
+                <span x-show="aktBew(t.id) !== null" style="font-size: 11px; color: var(--c-success); font-weight: 700;">✓</span>
+                <span x-show="t.haeufig" class="badge badge--warn">Prüfungsrelevant</span>
+              </div>
             </div>
 
             <!-- 5-star row -->
@@ -462,17 +499,27 @@
             :style="`width: ${Math.round(bewerteteThemen / kurs.themen.length * 100)}%; background: var(--c-primary);`"
           ></div>
         </div>
-        <button
-          class="btn btn--primary btn--block"
-          @click="completeDiagnose()"
-          :disabled="!diagnoseKomplett || verifikation.aktiv"
-          :aria-disabled="!diagnoseKomplett || verifikation.aktiv"
-          type="button"
-        >
-          <span x-show="!diagnoseKomplett">Alle Themen bewerten, um fortzufahren</span>
-          <span x-show="diagnoseKomplett && verifikation.aktiv">Verifikation abschliessen</span>
-          <span x-show="diagnoseKomplett && !verifikation.aktiv">Diagnose abschliessen →</span>
-        </button>
+        <div style="display: flex; gap: 8px;">
+          <button
+            class="btn btn--primary"
+            style="flex: 1;"
+            @click="completeDiagnose()"
+            :disabled="!diagnoseKomplett || verifikation.aktiv"
+            :aria-disabled="!diagnoseKomplett || verifikation.aktiv"
+            type="button"
+          >
+            <span x-show="!diagnoseKomplett">Alle Themen bewerten, um fortzufahren</span>
+            <span x-show="diagnoseKomplett && verifikation.aktiv">Verifikation abschliessen</span>
+            <span x-show="diagnoseKomplett && !verifikation.aktiv">Diagnose abschliessen →</span>
+          </button>
+          <button
+            x-show="bewerteteThemen > 0 && !diagnoseKomplett"
+            class="btn btn--outline"
+            style="flex-shrink: 0;"
+            @click="saveDraftAndGoHome()"
+            type="button"
+          >Später weitermachen</button>
+        </div>
       </div>
     </div><!-- /diagnose -->
 

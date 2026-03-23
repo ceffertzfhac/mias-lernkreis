@@ -42,6 +42,7 @@ function app() {
     // v4 format: [{ datum: ISO, scores: [{id, score: 0–100}] }]
     diagnosen: [],
     aktBewertungen: [],
+    hasDiagnoseDraft: false,  // true wenn unfertige Diagnose in localStorage
     verifikation: { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', showMusterloesung: false, loading: false },
 
     // ── Live Scores (updated by each task result, base = last diagnosis) ──────
@@ -96,6 +97,10 @@ function app() {
       this.examDateInput = storedExam
         ? toDateInput(new Date(storedExam))
         : toDateInput(dateFromNow(this.kurs.defaultPrüfungstage))
+
+      // Restore diagnose draft state
+      const draft = store.get('diagnose_draft')
+      this.hasDiagnoseDraft = !!(draft && draft.some(b => b.stufe !== null))
 
       // Restore today's activity counter (resets if it's a new day)
       const todayLog = store.get('heute_log')
@@ -157,7 +162,7 @@ function app() {
         }, 300)
       }
 
-      if (screen === 'diagnose') this._resetAktDiagnose()
+      if (screen === 'diagnose') this._restoreOrResetDiagnose()
       this.screen = screen
 
       this.$nextTick(() => {
@@ -292,6 +297,41 @@ function app() {
       this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', showMusterloesung: false, loading: false }
     },
 
+    _restoreOrResetDiagnose() {
+      const draft = store.get('diagnose_draft')
+      if (draft && draft.some(b => b.stufe !== null)) {
+        // Merge draft into full thema list (handles thema additions gracefully)
+        this.aktBewertungen = this.kurs.themen.map(t => {
+          const saved = draft.find(b => b.id === t.id)
+          return { id: t.id, stufe: saved?.stufe ?? null }
+        })
+        this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', showMusterloesung: false, loading: false }
+      } else {
+        this._resetAktDiagnose()
+      }
+    },
+
+    _persistDraft() {
+      store.set('diagnose_draft', this.aktBewertungen)
+      this.hasDiagnoseDraft = this.bewerteteThemen > 0
+    },
+
+    _clearDraft() {
+      store.set('diagnose_draft', null)
+      this.hasDiagnoseDraft = false
+    },
+
+    saveDraftAndGoHome() {
+      this._persistDraft()
+      this.goTo('home')
+    },
+
+    startFreshDiagnose() {
+      this._clearDraft()
+      this._resetAktDiagnose()
+      this.screen = 'diagnose'
+    },
+
     aktBew(id) {
       return this.aktBewertungen.find(b => b.id === id)?.stufe ?? null
     },
@@ -300,8 +340,9 @@ function app() {
       const entry = this.aktBewertungen.find(b => b.id === id)
       if (!entry) return
       this.verifikation.aktiv = false
-      if (entry.stufe === stufe) { entry.stufe = null; return }
+      if (entry.stufe === stufe) { entry.stufe = null; this._persistDraft(); return }
       entry.stufe = stufe
+      this._persistDraft()
       if (stufe >= 2) await this._startVerifikation(id, stufe)
     },
 
@@ -355,6 +396,7 @@ function app() {
       this.diagnosen.push(snap)
       if (this.diagnosen.length > 5) this.diagnosen.shift()
       store.set('diagnosen', this.diagnosen)
+      this._clearDraft()
 
       // New diagnosis sets the base for live scores
       this.kurs.themen.forEach(t => {

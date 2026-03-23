@@ -85,6 +85,17 @@ nicht absolut zum Score-Maximum.
 - Score unter Baseline: wird auf 0% geclampt (kein negativer Fortschritt)
 **Neue Computed:** `lernBasis` (Scores der ersten Diagnose), `lernProzent` (GAP-Formel).
 
+### E-014: Diagnose-Draft — persistenter Zwischenstand
+**Entscheidung:** Unfertige Diagnosen werden nach jeder Bewertung automatisch als Draft in localStorage gespeichert (`diagnose_draft`).
+**Problem:** `_resetAktDiagnose()` wurde bei jedem Wechsel zum Diagnose-Screen aufgerufen — jeder Navigationsweg zurück vernichtete den Fortschritt.
+**Lösung:** `_restoreOrResetDiagnose()` ersetzt den Reset: Draft vorhanden → wiederherstellen, sonst frischer Start.
+**Flüsse:**
+- Erster Besuch (kein Draft): Intro-Card + "Selbstdiagnose starten"
+- Draft vorhanden: "Diagnose pausiert"-Hinweis auf Home + "Weitermachen"-Banner im Diagnose-Screen + "Später weitermachen"-Button
+- "Neue Diagnose" (nach abgeschlossener Diagnose): `startFreshDiagnose()` löscht Draft explizit
+- Abschluss (`completeDiagnose()`): Draft wird automatisch gelöscht
+**Visuell:** Bewertete Themen-Cards erhalten grüne Linksbordüre + ✓-Badge.
+
 ### E-013: „Heute geübt" — persistenter Tages-Counter
 **Entscheidung:** `heuteGeuebt` zählt alle Lernaktivitäten des Tages und wird in localStorage persistiert (`heute_log: { date, count }`).
 **Problem:** Alter `session.aufgaben.length`-Counter zählte nur Üben-Aufgaben, nicht Selbstdiagnose-Verifikationen. Außerdem ging der Stand bei jedem Reload verloren — unbrauchbar aus Nutzersicht.
