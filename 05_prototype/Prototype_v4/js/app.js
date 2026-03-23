@@ -65,6 +65,7 @@ function app() {
     // ── Fortschritt ───────────────────────────────────────────────────────────
     editExamDate: false,
     editCountdown: false,
+    zeitProzentAnimated: 0,
 
     // ════════════════════════════════════════════════════════════════════════
     // LIFECYCLE
@@ -96,6 +97,7 @@ function app() {
       this._initLiveScores()
       this._tryAutoLoad()
       this._resetAktDiagnose()
+      this.$nextTick(() => setTimeout(() => { this.zeitProzentAnimated = this.zeitProzent }, 120))
 
       if (this.name) {
         this.screen = 'home'
@@ -136,11 +138,13 @@ function app() {
     // NAVIGATION
     // ════════════════════════════════════════════════════════════════════════
     goTo(screen) {
-      // Radar pulse when returning home after a practice session
+      // Radar pulse + progress bar animation when returning home after a practice session
       if (screen === 'home' && this.screen === 'ueben' && this.session.aufgaben.length > 0) {
         this.radarPulse = false
+        this.zeitProzentAnimated = 0
         setTimeout(() => {
           this.radarPulse = true
+          this.zeitProzentAnimated = this.zeitProzent
           setTimeout(() => { this.radarPulse = false }, 1000)
         }, 300)
       }

@@ -186,13 +186,13 @@
       <div class="topbar-progress" x-show="lernstartDatum">
         <div class="topbar-progress__track">
           <div
-            class="topbar-progress__fill"
-            :style="`width: ${zeitProzent}%; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
+            class="topbar-progress__cover"
+            :style="`width: ${100 - zeitProzentAnimated}%;`"
           ></div>
         </div>
         <div class="topbar-progress__label">
           <span x-text="lernstartDatum ? fmt(lernstartDatum.toISOString()) : ''"></span>
-          <span x-text="zeitProzent + '% Lernzeit'"></span>
+          <span x-text="zeitProzentAnimated + '% Lernzeit'"></span>
           <span x-text="examFmt()"></span>
         </div>
       </div>
@@ -756,10 +756,10 @@
             <span x-show="!lernstartDatum">Noch keine Diagnose</span>
             <span>noch <strong x-text="verbleibeneTage"></strong> Tage</span>
           </div>
-          <div class="progress-bar" style="height: 10px; border-radius: 6px;">
+          <div class="progress-bar" style="height: 10px; border-radius: 6px; background: linear-gradient(to right, var(--c-success) 0%, var(--c-warn) 60%, var(--c-error) 100%); position: relative; overflow: hidden;">
             <div
-              class="progress-bar__fill"
-              :style="`width: ${zeitProzent}%; border-radius: 6px; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
+              style="position: absolute; top: 0; right: 0; bottom: 0; background: var(--c-light); transition: width 0.9s cubic-bezier(0.4,0,0.2,1);"
+              :style="`width: ${100 - zeitProzentAnimated}%;`"
             ></div>
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--c-muted); margin-top: 4px;">
