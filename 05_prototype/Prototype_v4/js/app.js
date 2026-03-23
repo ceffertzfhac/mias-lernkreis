@@ -66,6 +66,7 @@ function app() {
     editExamDate: false,
     editCountdown: false,
     zeitProzentAnimated: 0,
+    lernProzentAnimated: 0,
 
     // ════════════════════════════════════════════════════════════════════════
     // LIFECYCLE
@@ -97,7 +98,7 @@ function app() {
       this._initLiveScores()
       this._tryAutoLoad()
       this._resetAktDiagnose()
-      this.$nextTick(() => setTimeout(() => { this.zeitProzentAnimated = this.zeitProzent }, 120))
+      this.$nextTick(() => setTimeout(() => this._animateProgress(), 120))
 
       if (this.name) {
         this.screen = 'home'
@@ -142,9 +143,10 @@ function app() {
       if (screen === 'home' && this.screen === 'ueben' && this.session.aufgaben.length > 0) {
         this.radarPulse = false
         this.zeitProzentAnimated = 0
+        this.lernProzentAnimated = 0
         setTimeout(() => {
           this.radarPulse = true
-          this.zeitProzentAnimated = this.zeitProzent
+          this._animateProgress()
           setTimeout(() => { this.radarPulse = false }, 1000)
         }, 300)
       }
@@ -479,11 +481,22 @@ function app() {
     updateExamDate() {
       store.set('exam_date', new Date(this.examDateInput).toISOString())
       this.editExamDate = false
+      this._animateProgress()
     },
 
     saveCountdownDate() {
       store.set('exam_date', new Date(this.examDateInput).toISOString())
       this.editCountdown = false
+      this._animateProgress()
+    },
+
+    _animateProgress() {
+      this.zeitProzentAnimated = 0
+      this.lernProzentAnimated = 0
+      this.$nextTick(() => setTimeout(() => {
+        this.zeitProzentAnimated = this.zeitProzent
+        this.lernProzentAnimated = this.lernProzent
+      }, 50))
     },
 
     resetAll() {
@@ -511,6 +524,13 @@ function app() {
     get lernstartDatum() {
       if (!this.diagnosen.length) return null
       return new Date(this.diagnosen[0].datum)
+    },
+    get lernProzent() {
+      if (!this.hasDiagnose) return 0
+      const themen = this.kurs.themen
+      if (!themen.length) return 0
+      const avg = themen.reduce((sum, t) => sum + Math.min(this.liveScores[t.id] ?? 0, KLAUSUR_SCORE), 0) / themen.length
+      return Math.round((avg / KLAUSUR_SCORE) * 100)
     },
     get hasDeterministicContent() { return !!this.kursinhalt },
     get isMusterloesung()  { return this.ue.ergebnis === '__musterloesung__' },

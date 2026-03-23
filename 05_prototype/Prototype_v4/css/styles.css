@@ -28,7 +28,7 @@
   --r-field: 12px;
   /* Layout v4 */
   --sidebar-w: 200px;
-  --header-h:  56px;
+  --header-h:  64px;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -211,18 +211,42 @@ html, body {
   gap: 4px;
 }
 .topbar-progress__track {
-  height: 8px;
-  border-radius: 4px;
-  background: linear-gradient(to right, var(--c-success) 0%, var(--c-warn) 60%, var(--c-error) 100%);
+  height: 6px;
+  border-radius: 3px;
   overflow: hidden;
   position: relative;
+  flex: 1;
 }
-/* Cover: right-anchored mask that shrinks as time passes, revealing the gradient */
+.topbar-progress__track--zeit {
+  background: linear-gradient(to right, var(--c-success) 0%, var(--c-warn) 60%, var(--c-error) 100%);
+}
+.topbar-progress__track--lern {
+  background: linear-gradient(to right, var(--c-error) 0%, var(--c-warn) 50%, var(--c-success) 100%);
+}
+/* Cover: right-anchored mask that shrinks as value grows, revealing the gradient */
 .topbar-progress__cover {
   position: absolute;
   top: 0; right: 0; bottom: 0;
   background: var(--c-light);
   transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.topbar-progress__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.topbar-progress__row-label {
+  font-size: 10px;
+  color: var(--c-muted);
+  flex-shrink: 0;
+  width: 30px;
+}
+.topbar-progress__row-pct {
+  font-size: 10px;
+  color: var(--c-muted);
+  flex-shrink: 0;
+  width: 28px;
+  text-align: right;
 }
 
 @keyframes radar-pulse {

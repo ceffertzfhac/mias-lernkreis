@@ -182,17 +182,27 @@
         <div class="topbar__sub" x-text="kurs.name"></div>
       </div>
 
-      <!-- Middle: Lernzeit-Progress Bar -->
+      <!-- Middle: Doppel-Progress Bar -->
       <div class="topbar-progress" x-show="lernstartDatum">
-        <div class="topbar-progress__track">
-          <div
-            class="topbar-progress__cover"
-            :style="`width: ${100 - zeitProzentAnimated}%;`"
-          ></div>
+        <!-- Zeit -->
+        <div class="topbar-progress__row">
+          <span class="topbar-progress__row-label">Zeit</span>
+          <div class="topbar-progress__track topbar-progress__track--zeit">
+            <div class="topbar-progress__cover" :style="`width: ${100 - zeitProzentAnimated}%;`"></div>
+          </div>
+          <span class="topbar-progress__row-pct" x-text="zeitProzentAnimated + '%'"></span>
         </div>
-        <div class="topbar-progress__label">
+        <!-- Lern -->
+        <div class="topbar-progress__row">
+          <span class="topbar-progress__row-label">Lern</span>
+          <div class="topbar-progress__track topbar-progress__track--lern">
+            <div class="topbar-progress__cover" :style="`width: ${100 - lernProzentAnimated}%;`"></div>
+          </div>
+          <span class="topbar-progress__row-pct" x-text="lernProzentAnimated + '%'"></span>
+        </div>
+        <!-- Shared labels -->
+        <div class="topbar-progress__label" style="padding-left: 38px; padding-right: 36px;">
           <span x-text="lernstartDatum ? fmt(lernstartDatum.toISOString()) : ''"></span>
-          <span x-text="zeitProzentAnimated + '% Lernzeit'"></span>
           <span x-text="examFmt()"></span>
         </div>
       </div>
