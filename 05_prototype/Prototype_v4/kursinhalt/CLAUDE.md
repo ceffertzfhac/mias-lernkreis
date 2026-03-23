@@ -208,6 +208,25 @@ Coverage-Symbole:
 
 ---
 
+## Nomenklatur & Vektoren — KRITISCHER GRUNDSATZ
+
+**Formelzeichen exakt wie im Skript. Keine Eigenerfindungen.**
+
+Bevor du Aufgaben zu einem Thema generierst, prüfe welche Formelzeichen das Skript für jede Größe verwendet — und nutze genau diese. Wenn das Skript F_Z für die Zugkraft verwendet, dann ist T als Formelzeichen abgelehnt, auch wenn T in anderen Lehrbüchern üblich ist.
+
+**Konkretes Negativbeispiel:** Zugkraft im Skript = F_Z. Aufgabe mit „Die Zugkraft T beträgt …" → sofort abgelehnt.
+
+**Vektoren first:**
+Wenn eine physikalische Größe ein Vektor ist, muss sie als Vektor behandelt werden — Pfeilnotation, Richtungsangabe, kein stilles Umwandeln in Beträge ohne expliziten Hinweis.
+- Kraft ist ein Vektor: **F⃗**, nicht F
+- Geschwindigkeit ist ein Vektor: **v⃗**, nicht v
+- Beschleunigung ist ein Vektor: **a⃗**, nicht a
+- Ausnahme: wenn explizit nur der Betrag gefragt ist, klar kennzeichnen: „Berechne den Betrag der Kraft |F⃗| = …"
+
+**Regel:** Im Zweifel Skript aufschlagen (oder nachfragen) — nie raten, nie Konventionen anderer Bücher übernehmen.
+
+---
+
 ## Quellentreue — KRITISCHER GRUNDSATZ
 
 **Nichts hinzudichten. Nur was in den Quellen vorkommt.**

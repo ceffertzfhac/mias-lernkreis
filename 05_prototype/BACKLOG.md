@@ -20,6 +20,7 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 |---|---|---|
 | **H1** | Tagesziele & Wochenziele — basierend auf verbleibender Zeit bis Klausur und aktuellem Lernfortschritt (GAP-Modell): wie viele Aufgaben pro Tag/Woche nötig, um 100% zu erreichen | offen |
 | **I1** | Diagnose-Führung — Fortschrittsanzeige welche Themen bereits bewertet wurden; beim ersten Mal geführter Workflow mit „Später weitermachen"-Button; Wiedereinstieg greift offenen Stand auf | ✅ erledigt |
+| **J1** | Kontent-Prompt: Nomenklatur & Vektoren skripttreu — Formelzeichen exakt wie im Skript (Bsp: F_Z statt T für Zugkraft); Vektoren immer als Vektoren (Pfeil-Notation), nie als Skalar wenn die Größe ein Vektor ist | offen |
 | **A3** | Fortschritt: Diagnose-Verlauf — Zeitachse der letzten Diagnosen | offen |
 | **E1** | Radar-Icon in Sidebar anpassen — aktuell Hexagon, nicht passend | offen |
 | **E2** | UI/UX Datum ändern verbessern — funktional, aber unpolished | offen |
