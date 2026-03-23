@@ -61,6 +61,7 @@ function app() {
       taskReady: false, resultReady: false,
     },
     session: { aufgaben: [] },
+    heuteGeuebt: 0,   // persistent: alle Lernaktivitäten heute (Üben + Verifikation)
 
     // ── Fortschritt ───────────────────────────────────────────────────────────
     editName: false,
@@ -95,6 +96,10 @@ function app() {
       this.examDateInput = storedExam
         ? toDateInput(new Date(storedExam))
         : toDateInput(dateFromNow(this.kurs.defaultPrüfungstage))
+
+      // Restore today's activity counter (resets if it's a new day)
+      const todayLog = store.get('heute_log')
+      this.heuteGeuebt = (todayLog?.date === todayInput()) ? (todayLog.count ?? 0) : 0
 
       this._initLiveScores()
       this._tryAutoLoad()
@@ -327,10 +332,14 @@ function app() {
       }
     },
 
-    confirmVerifikation() { this.verifikation.aktiv = false },
+    confirmVerifikation() {
+      this._countActivity()
+      this.verifikation.aktiv = false
+    },
     lowerVerifikation() {
       const e = this.aktBewertungen.find(b => b.id === this.verifikation.themaId)
       if (e?.stufe > 1) e.stufe--
+      this._countActivity()
       this.verifikation.aktiv = false
     },
 
@@ -453,6 +462,11 @@ function app() {
       })
     },
 
+    _countActivity() {
+      this.heuteGeuebt++
+      store.set('heute_log', { date: todayInput(), count: this.heuteGeuebt })
+    },
+
     _applyTaskResult(korrekt) {
       const { genutzeTipps, themaId } = this.ue
       const currentScore = this.liveScores[themaId] ?? 0
@@ -468,6 +482,7 @@ function app() {
       else if (!korrekt || genutzeTipps >= 2) this.ue.schwierigkeit = Math.max(1, this.ue.schwierigkeit - 1)
 
       this.session.aufgaben.push({ korrekt, tipps: genutzeTipps, themaId })
+      this._countActivity()
       this._updateLiveRadar()
     },
 

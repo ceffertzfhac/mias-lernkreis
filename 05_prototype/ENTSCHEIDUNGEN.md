@@ -85,6 +85,16 @@ nicht absolut zum Score-Maximum.
 - Score unter Baseline: wird auf 0% geclampt (kein negativer Fortschritt)
 **Neue Computed:** `lernBasis` (Scores der ersten Diagnose), `lernProzent` (GAP-Formel).
 
+### E-013: „Heute geübt" — persistenter Tages-Counter
+**Entscheidung:** `heuteGeuebt` zählt alle Lernaktivitäten des Tages und wird in localStorage persistiert (`heute_log: { date, count }`).
+**Problem:** Alter `session.aufgaben.length`-Counter zählte nur Üben-Aufgaben, nicht Selbstdiagnose-Verifikationen. Außerdem ging der Stand bei jedem Reload verloren — unbrauchbar aus Nutzersicht.
+**Lösung:** Zentraler `_countActivity()` Helper wird aufgerufen bei:
+- `_applyTaskResult()` — jede bewertete Üben-Aufgabe
+- `confirmVerifikation()` — Verifikation bestätigt (✓ Ich kann das)
+- `lowerVerifikation()` — Stufe gesenkt (auch aktives Lernen)
+**Tages-Reset:** `init()` vergleicht gespeichertes Datum mit `todayInput()` — neuer Tag = count 0.
+**Konsequenz:** Zeigt nun korrekt, wie viel die Nutzerin *heute insgesamt* gelernt hat — nicht nur in der aktuellen Browser-Session.
+
 ### E-011: Dozenten-Prompt als kollaborativer Editor
 **Entscheidung:** Dozenten-Prompt v4 arbeitet schrittweise: Status-Analyse → Checkpoint →
 gezielte Generierung. Kein blindes Batch-Generieren.

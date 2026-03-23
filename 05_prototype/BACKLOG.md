@@ -1,6 +1,6 @@
 # Backlog — Mias Lernkreis Prototype_v4
 
-Letzte Aktualisierung: 2026-03-23
+Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 
 ---
 
@@ -50,6 +50,7 @@ Letzte Aktualisierung: 2026-03-23
 | **D2** | Musterlösung aktiv einblenden — erst nach Klick sichtbar | `a48a396` |
 | **E3** | Bug: „Invalid Date" in Einstellungen — examFmt Arrow-Function-Fix | `a48a396` |
 | **E4** | Namen anpassbar — Nutzername editierbar in Einstellungen, Enter + Speichern-Button | `ee159fd` |
+| **E7** | „Heute geübt" nutzerzentriert — persistent (localStorage), alle Aktivitäten (Üben + Verifikation), Tages-Reset | `pending` |
 | **E5** | Lernzeit-Progress Bar — von erstem Diagnose-Tag zur Klausur | `9c42f02` |
 | **E6** | Lernzeit-Progress Bar permanent im Topbar — Doppel-Bar Zeit + Lern | `1dacc5a` |
 | **F1** | Dozenten-Prompt v4 — kollaborativer Modus, Status-Analyse, {frage, musterloesung} | `0f2c759` |
