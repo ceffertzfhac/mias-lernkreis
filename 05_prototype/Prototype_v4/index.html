@@ -203,6 +203,14 @@
         <button class="btn btn--primary btn--sm" @click="saveCountdownDate()" type="button">OK</button>
         <button class="btn btn--outline btn--sm" @click="editCountdown = false" type="button">✕</button>
       </div>
+
+      <!-- Lernzeit-Progress Bar -->
+      <div x-show="lernstartDatum" class="topbar-progress">
+        <div
+          class="topbar-progress__fill"
+          :style="`width: ${zeitProzent}%; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
+        ></div>
+      </div>
     </header>
 
 
