@@ -727,15 +727,23 @@
           <button class="btn btn--primary btn--sm" @click="updateExamDate()" type="button">Speichern</button>
         </div>
         <div>
-          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--c-muted); margin-bottom: 4px;">
-            <span>Verbleibende Zeit</span>
-            <span x-text="verbleibeneTage + ' Tage'"></span>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--c-muted); margin-bottom: 6px;">
+            <span x-show="lernstartDatum">
+              Lernstart: <strong x-text="lernstartDatum ? fmt(lernstartDatum.toISOString()) : ''"></strong>
+            </span>
+            <span x-show="!lernstartDatum">Noch keine Diagnose</span>
+            <span>noch <strong x-text="verbleibeneTage"></strong> Tage</span>
           </div>
-          <div class="progress-bar">
+          <div class="progress-bar" style="height: 10px; border-radius: 6px;">
             <div
               class="progress-bar__fill"
-              :style="`width: ${zeitProzent}%; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
+              :style="`width: ${zeitProzent}%; border-radius: 6px; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
             ></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--c-muted); margin-top: 4px;">
+            <span x-text="lernstartDatum ? fmt(lernstartDatum.toISOString()) : '—'"></span>
+            <span x-text="zeitProzent + '% der Lernzeit verstrichen'"></span>
+            <span x-text="examFmt()"></span>
           </div>
         </div>
       </div>

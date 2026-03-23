@@ -496,7 +496,18 @@ function app() {
     get diagnoseKomplett() { return this.aktBewertungen.every(b => b.stufe !== null) },
     get bewerteteThemen()  { return this.aktBewertungen.filter(b => b.stufe !== null).length },
     get verbleibeneTage()  { return Math.max(0, Math.ceil((new Date(this.examDateInput) - new Date()) / 86400000)) },
-    get zeitProzent()      { return Math.min(100, Math.round((1 - this.verbleibeneTage / 90) * 100)) },
+    get zeitProzent() {
+      if (!this.diagnosen.length) return 0
+      const start  = new Date(this.diagnosen[0].datum)
+      const exam   = new Date(this.examDateInput)
+      const total  = exam - start
+      if (total <= 0) return 100
+      return Math.min(100, Math.max(0, Math.round(((new Date() - start) / total) * 100)))
+    },
+    get lernstartDatum() {
+      if (!this.diagnosen.length) return null
+      return new Date(this.diagnosen[0].datum)
+    },
     get hasDeterministicContent() { return !!this.kursinhalt },
     get isMusterloesung()  { return this.ue.ergebnis === '__musterloesung__' },
     get isSingleChoice()   { return this.ue.typ === 'single_choice' },
