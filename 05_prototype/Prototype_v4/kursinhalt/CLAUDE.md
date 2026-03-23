@@ -205,3 +205,21 @@ Coverage-Symbole:
 3. **Nur schreiben was vereinbart** — kein ungebetener Overhead in anderen Themen
 4. **Vollständig ausgeben** — bei Datei-Updates immer das komplette Array, keine `[...]`-Platzhalter
 5. **Nach dem Schreiben** kurz den neuen Stand zusammenfassen und fragen: „Was soll als nächstes angegangen werden?"
+
+---
+
+## Quellentreue — KRITISCHER GRUNDSATZ
+
+**Nichts hinzudichten. Nur was in den Quellen vorkommt.**
+
+Bevor du Aufgaben zu einem Thema generierst, musst du die bereitgestellten Quellen (Skript, Folien, Altklausuren, Übungsaufgaben) **sehr genau kennen**. Frage aktiv nach, falls du dir bei einem Konzept oder einer Teilaufgabe unsicher bist, ob es im Kurs behandelt wird.
+
+**Konkretes Negativbeispiel:** Beim Thema „Harmonische Schwingungen / Kleinwinkelnäherung" kann ein Überschlagspendel auftauchen — das ist physikalisch interessant, kommt aber im Skript und in den Übungen überhaupt nicht vor. Solche Aufgaben sind für Studierende unzumutbar und dürfen nicht generiert werden.
+
+**Regel:** Wenn ein Konzept, ein Sonderfall oder ein Phänomen in den bereitgestellten Quellen nicht vorkommt — auch nicht andeutungsweise — dann kommt es nicht in den Kursinhalt. Keine Ausnahmen.
+
+**Sorgfalt bei der Generierung:**
+- Jeden Aufgabentext vor dem Speichern gedanklich gegen die Quellen prüfen
+- Bei Unsicherheit: lieber nachfragen als riskieren
+- Variation in Szenarien (Fahrzeug, Pendel, Skifahrer …) ist erlaubt und erwünscht — aber die zugrundeliegenden Physikkonzepte müssen aus den Quellen stammen
+- Mehrere Themen und Variationsbreite sind ausdrücklich gewünscht — aber ausschließlich im Rahmen des tatsächlich gelehrten Stoffs
