@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_8_3_1",
+    "frage": "Welche der folgenden ist KEINE Laborordnungsregel am FB 8?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Massen sind vor Herabfallen zu sichern"
+      },
+      {
+        "key": "B",
+        "text": "Flucht- und Rettungswege freihalten"
+      },
+      {
+        "key": "C",
+        "text": "Bei bewegten Gegenständen Haarnetz tragen"
+      },
+      {
+        "key": "D",
+        "text": "Fenster stets geschlossen halten"
+      },
+      {
+        "key": "E",
+        "text": "Fußboden von Gegenständen freihalten"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C ist KEINE Regel: Haarnetz wird im FB8-Physikpraktikum nicht gefordert. A,B,D,E sind echte Regeln aus dem Praktikumsskript."
+  },
+  {
+    "id": "sc_8_3_2",
+    "frage": "Im Multimeter-Versuch wird der Schiebewiderstand verwendet als ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Spannungsquelle"
+      },
+      {
+        "key": "B",
+        "text": "Spannungsteiler / Strombegrenzer"
+      },
+      {
+        "key": "C",
+        "text": "Amperemeter"
+      },
+      {
+        "key": "D",
+        "text": "Kondensator"
+      },
+      {
+        "key": "E",
+        "text": "Kurzschluss"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Schiebewiderstand als Spannungsteiler/Strombegrenzer (aus Praktikumsskript, Multimeter-Versuch)."
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_5_1_1",
+    "frage": "J eines Vollzylinders (m,R) um Symmetrieachse:",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "mR²"
+      },
+      {
+        "key": "B",
+        "text": "½mR²"
+      },
+      {
+        "key": "C",
+        "text": "⅔mR²"
+      },
+      {
+        "key": "D",
+        "text": "⅖mR²"
+      },
+      {
+        "key": "E",
+        "text": "2mR²"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: J_VZ=½mR². A=Ring. C=Hohlkugel. D=Vollkugel. E=kein Standard."
+  },
+  {
+    "id": "sc_5_1_2",
+    "frage": "Winkelbeschleunigung hat die Einheit:",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "rad/s"
+      },
+      {
+        "key": "B",
+        "text": "rad/s²"
+      },
+      {
+        "key": "C",
+        "text": "N·m"
+      },
+      {
+        "key": "D",
+        "text": "kg·m²/s"
+      },
+      {
+        "key": "E",
+        "text": "m/s²"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: α=Δω/Δt → (rad/s)/s=rad/s². A=ω. C=Drehmoment. D=Drehimpuls. E=lineare a."
+  }
+]

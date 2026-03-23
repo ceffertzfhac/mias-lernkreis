@@ -1,0 +1,17 @@
+{
+  "1": [
+    "Erkläre in einem Satz, was eine harmonische Schwingung auszeichnet (Stichwort: rücktreibende Kraft)."
+  ],
+  "2": [
+    "Gib die Formeln für T bei Feder- und Fadenpendel an. Erkläre, warum T des Fadenpendels nicht von der Masse abhängt."
+  ],
+  "3": [
+    "Wie hängen E_pot, E_kin und E_ges beim Federpendel zusammen? Wo ist jeweils welche maximal?"
+  ],
+  "4": [
+    "Beim g-Bestimmungsversuch liefern sechs Pendel T-L-Wertepaare. Erkläre die Linearisierung T² = (4π²/g)·L und wie man g grafisch bestimmt."
+  ],
+  "5": [
+    "Nenne zwei Situationen, in denen die Kleinwinkelnäherung (sin φ ≈ φ) nicht mehr gilt. Was sind die Konsequenzen für die Schwingungsdauer?"
+  ]
+}

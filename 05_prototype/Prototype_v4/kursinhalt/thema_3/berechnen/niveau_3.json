@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_3_3_1",
+    "aufgabe": "Ein Block der Masse m = 4,0 kg gleitet mit der Anfangsgeschwindigkeit v₀ = 8,0 m/s auf eine Feder mit der Federkonstante k = 500 N/m zu. Der Gleitreibungskoeffizient zwischen Block und Fläche beträgt μ = 0,25. Berechnen Sie die maximale Federstauchung x, wenn der Block gegen die Feder stößt. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m = 4 kg, v₀ = 8 m/s, k = 500 N/m, μ = 0,25, g = 9,81 m/s². Gesucht: x. Energiebilanz: ½·m·v₀² = ½·k·x² + μ·m·g·x. 0,5·4·64 = 250x² + 0,25·4·9,81·x → 128 = 250x² + 9,81x. Quadratische Gleichung: 250x² + 9,81x − 128 = 0. x = (−9,81 + √(96,2 + 128000))/500 ≈ (−9,81 + 358,3)/500 ≈ 0,697 m.",
+    "tipps": [
+      "Stelle eine Energiebilanz auf: Die kinetische Energie des Blocks wird in Federenergie und Reibungsarbeit umgewandelt.",
+      "½·m·v₀² = ½·k·x² + μ·m·g·x. Das ergibt eine quadratische Gleichung in x.",
+      "250x² + 9,81x − 128 = 0 → x ≈ 0,70 m."
+    ]
+  },
+  {
+    "id": "do_b_3_3_2",
+    "aufgabe": "Ein Satellit der Masse m = 500 kg befindet sich auf einer kreisförmigen Erdumlaufbahn in der Höhe h = 600 km über der Erdoberfläche. Berechnen Sie (a) die Orbitalgeschwindigkeit v und (b) die Umlaufzeit T. (R_E = 6371 km, M_E = 5,972·10²⁴ kg, G = 6,674·10⁻¹¹ N·m²/kg²)",
+    "musterloesung": "Orbitradius: r = R_E + h = 6971 km = 6,971·10⁶ m. (a) Zentripetalkraft = Gravitationskraft: m·v²/r = G·M_E·m/r² → v = √(G·M_E/r) = √(6,674·10⁻¹¹·5,972·10²⁴/6,971·10⁶) ≈ 7558 m/s ≈ 7,56 km/s. (b) T = 2πr/v = 2π·6,971·10⁶/7558 ≈ 5795 s ≈ 96,6 min.",
+    "tipps": [
+      "Im Kreisorbital liefert die Gravitationskraft die Zentripetalkraft. Stelle diese Gleichgewichtsbedingung auf.",
+      "G·M_E·m/r² = m·v²/r → v = √(G·M_E/r). Umlaufzeit: T = 2πr/v.",
+      "r = 6,971·10⁶ m → v ≈ 7560 m/s → T ≈ 96,6 min."
+    ]
+  }
+]

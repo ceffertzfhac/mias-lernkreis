@@ -1,0 +1,17 @@
+{
+  "1": [
+    "Erkläre in einem Satz den Unterschied zwischen Spannung, Stromstärke und Widerstand."
+  ],
+  "2": [
+    "Nenne das Ohmsche Gesetz und erkläre, wie sich Widerstände bei Reihen- und Parallelschaltung verhalten."
+  ],
+  "3": [
+    "Erkläre den Unterschied zwischen Coulombkraft und Lorentzkraft. Welche Größen bestimmen jeweils ihre Stärke?"
+  ],
+  "4": [
+    "In einer Schaltung fließt bei geöffnetem Schalter I = 100 mA, bei geschlossenem I = 200 mA (U = 10 V). Wie groß ist der überbrückte Widerstand? Erkläre den Rechenweg."
+  ],
+  "5": [
+    "Warum wird Wechselstrom für die Energieübertragung bevorzugt? Erkläre die physikalischen Gründe und nenne eine technische Grenze."
+  ]
+}

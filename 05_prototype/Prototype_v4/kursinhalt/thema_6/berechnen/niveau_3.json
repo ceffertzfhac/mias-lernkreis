@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_6_3_1",
+    "aufgabe": "Ein Federpendel (k = 500 N/m, m = 0,80 kg) schwingt mit der Amplitude A = 10 cm. (a) Geben Sie die Auslenkung x(t) an, wenn zum Zeitpunkt t = 0 gilt: x = 0 und v = v_max. (b) Geben Sie x(t) an für den Anfangszustand x = A und v = 0.",
+    "musterloesung": "ω = √(k/m) = √625 = 25 rad/s. (a) x(0) = 0, v(0) = v_max = A·ω → Sinus-Ansatz: x(t) = A·sin(ωt) = 0,10·sin(25t) m. (b) x(0) = A, v(0) = 0 → Kosinus-Ansatz: x(t) = A·cos(ωt) = 0,10·cos(25t) m.",
+    "tipps": [
+      "Die allgemeine Lösung lautet x(t) = A·sin(ωt+φ). Die Anfangsbedingungen bestimmen den Phasenwinkel φ.",
+      "x(0) = 0 und v(0) > 0 → φ = 0 → x(t) = A·sin(ωt). x(0) = A und v(0) = 0 → φ = π/2 → x(t) = A·cos(ωt).",
+      "ω = 25 rad/s. (a) x(t) = 0,10·sin(25t). (b) x(t) = 0,10·cos(25t)."
+    ]
+  },
+  {
+    "id": "do_b_6_3_2",
+    "aufgabe": "Sechs Fadenpendel der Längen L = 200, 300, 400, 500, 600 und 800 mm wurden im Experiment vermessen. Die gemessenen Zeiten für jeweils 10 Perioden betrugen (in Sekunden): 8,96 — 10,96 — 12,72 — 14,10 — 15,50 — 17,94. Bestimmen Sie aus diesen Messdaten durch lineare Regression von T² über L den Wert der Erdbeschleunigung g. Vergleichen Sie mit g = 9,81 m/s².",
+    "musterloesung": "T = 2π√(L/g) → T² = 4π²/g · L. Steigung der Geraden T² über L: k = 4π²/g → g = 4π²/k. T-Werte: 0,896; 1,096; 1,272; 1,410; 1,550; 1,794 s. T²-Werte: 0,803; 1,201; 1,618; 1,988; 2,403; 3,218 s². Lineare Regression T² = k·L ergibt k ≈ 4,025 s²/m (grafisch abzulesen). g = 4π²/4,025 ≈ 9,79 m/s². Abweichung vom Literaturwert: ≈ 0,2 %.",
+    "tipps": [
+      "Linearisiere T² = (4π²/g)·L. Die Steigung der Geraden T² über L liefert g.",
+      "Berechne T = (Messwert)/10, dann T². Trage T² gegen L auf und bestimme die Steigung k. Dann g = 4π²/k.",
+      "k ≈ 4,03 s²/m → g = 4π²/4,03 ≈ 9,79 m/s²."
+    ]
+  }
+]

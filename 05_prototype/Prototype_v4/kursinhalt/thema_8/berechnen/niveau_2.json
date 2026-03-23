@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_8_2_1",
+    "aufgabe": "Im Fahrradfelgen-Versuch wird die Winkelbeschleunigung α aus der Bewegungsgleichung φ(t) = ½·α·t² bestimmt. Gemessen wurden: t in s und φ in rad. Messwerte: (1,0; 0,52), (2,0; 2,09), (3,0; 4,71), (4,0; 8,38). Berechnen Sie α aus jedem Messpunkt und bestimmen Sie den Mittelwert.",
+    "musterloesung": "α = 2φ/t². Für t=1,0 s: α = 2·0,52/1,0 = 1,04 rad/s². Für t=2,0 s: α = 2·2,09/4,0 = 1,045 rad/s². Für t=3,0 s: α = 2·4,71/9,0 = 1,047 rad/s². Für t=4,0 s: α = 2·8,38/16,0 = 1,048 rad/s². Mittelwert: ᾱ ≈ 1,045 rad/s².",
+    "tipps": [
+      "Forme φ = ½·α·t² nach α um.",
+      "α = 2φ/t². Berechne für jeden Messpunkt.",
+      "Alle vier Werte liegen sehr nah beieinander — das bestätigt die gleichmäßige Beschleunigung."
+    ]
+  },
+  {
+    "id": "do_b_8_2_2",
+    "aufgabe": "Beim spezifischen Widerstandsversuch wird R = ρ·l/A mit A = π·d²/4 verwendet. Bei konstantem Strom I = 1,0 A und Länge l = 1,0 m werden für drei Drähte gemessen: d = 0,10 mm → U = 2,23 V; d = 0,20 mm → U = 0,558 V; d = 0,40 mm → U = 0,139 V. Berechnen Sie den spezifischen Widerstand ρ aus jedem Messwert.",
+    "musterloesung": "R = U/I = U (da I=1 A). ρ = R·A/l = U·π·d²/4. d=0,10 mm: ρ = 2,23·π·(10⁻⁴)²/4 = 2,23·7,854·10⁻⁹ ≈ 1,751·10⁻⁸ Ω·m. d=0,20 mm: ρ = 0,558·π·(2·10⁻⁴)²/4 = 0,558·3,142·10⁻⁸ ≈ 1,753·10⁻⁸ Ω·m. d=0,40 mm: ρ = 0,139·π·(4·10⁻⁴)²/4 ≈ 1,749·10⁻⁸ Ω·m. Mittelwert: ρ̄ ≈ 1,75·10⁻⁸ Ω·m.",
+    "tipps": [
+      "Berechne R = U/I für jeden Draht, dann ρ = R·A/l mit A = πd²/4.",
+      "ρ = U·πd²/(4·I·l). Einheiten sorgfältig umrechnen (d in m).",
+      "Alle drei Werte liefern ρ ≈ 1,75·10⁻⁸ Ω·m (konsistentes Ergebnis)."
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_7_2_1",
+    "frage": "Kirchhoffsche Knotenregel besagt:",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Summe der Spannungen in einer Schleife = 0"
+      },
+      {
+        "key": "B",
+        "text": "Summe der Ströme am Knoten = 0"
+      },
+      {
+        "key": "C",
+        "text": "R=U/I"
+      },
+      {
+        "key": "D",
+        "text": "P=UI"
+      },
+      {
+        "key": "E",
+        "text": "Energie ist erhalten"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Knotenregel: ΣI=0 (Ladungserhaltung). A: Maschenregel. C: Ohm. D: Leistungsformel."
+  },
+  {
+    "id": "sc_7_2_2",
+    "frage": "Coulombkraft zwischen zwei gleichen Ladungen: Wenn Abstand verdoppelt wird, wird F ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "doppelt so groß"
+      },
+      {
+        "key": "B",
+        "text": "halb so groß"
+      },
+      {
+        "key": "C",
+        "text": "viermal so groß"
+      },
+      {
+        "key": "D",
+        "text": "ein Viertel so groß"
+      },
+      {
+        "key": "E",
+        "text": "gleich"
+      }
+    ],
+    "korrekt": "D",
+    "erklaerung": "D: F∝1/r². r→2r → F→F/4."
+  }
+]

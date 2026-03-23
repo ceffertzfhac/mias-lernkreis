@@ -1,0 +1,120 @@
+{
+  "version": "3.0",
+  "kurs": {
+    "id": "physik_fh_aachen_fb8_ws2526",
+    "name": "Physik — FH Aachen, FB 8",
+    "dozent": "Prof. Dr. Christian Effertz",
+    "modul": "8110218",
+    "semester": "WS 2025/26",
+    "defaultPruefungstage": null
+  },
+  "klausurprofil": {
+    "gesamtpunkte": 150,
+    "bestehensgrenze_punkte": 60,
+    "aufgaben_struktur": {
+      "aufgabe_1": {
+        "typ": "single_choice",
+        "anzahl_fragen": 8,
+        "punkte_gesamt": 40
+      },
+      "aufgaben_2_3_4": {
+        "typ": "berechnen",
+        "punkte_je": 26,
+        "punkte_gesamt": 78
+      },
+      "aufgabe_5": {
+        "typ": "grafisch_auswerten",
+        "punkte_gesamt": 32
+      }
+    },
+    "loesungsschema_pflicht": "Gegeben/Gesucht → Skizze → Formelzeichen-Rechnung → Lösungsformel → numerisches Ergebnis mit Einheit und signifikanten Stellen"
+  },
+  "niveaustufen": {
+    "1": "Grundlagen — Definitionen, direkte Formelanwendung, ein Rechenschritt",
+    "2": "Anwendung — Mehrschrittiges Vorgehen, typische Übungsaufgabe",
+    "3": "Klausur — Leichte bis mittlere Klausuraufgaben",
+    "4": "Experte — Schwerste Klausuraufgaben, Transfer, verkettete Schritte"
+  },
+  "themen": [
+    {
+      "id": 1,
+      "name": "Kinematik — Beschreibung von Bewegungen",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_1",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": true
+    },
+    {
+      "id": 2,
+      "name": "Dynamik — Kraft und Impuls",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_2",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": true
+    },
+    {
+      "id": 3,
+      "name": "Dynamik — Arbeit, Energie und Leistung",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_3",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": false
+    },
+    {
+      "id": 4,
+      "name": "Stöße",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_4",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": false
+    },
+    {
+      "id": 5,
+      "name": "Kreisbahn & Rotation, Rollbewegung & Bezugssysteme",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_5",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": false
+    },
+    {
+      "id": 6,
+      "name": "Harmonische Schwingungen",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_6",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": false
+    },
+    {
+      "id": 7,
+      "name": "Elektrizität, Elektrostatik & Magnetismus",
+      "typ": "sachthema",
+      "fragentypen": ["berechnen", "single_choice"],
+      "ordner": "thema_7",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": false
+    },
+    {
+      "id": 8,
+      "name": "Grafische Auswertung & Praktikum",
+      "typ": "praktikum",
+      "fragentypen": ["berechnen", "grafisch_auswerten", "single_choice"],
+      "ordner": "thema_8",
+      "haeufig": true,
+      "nur_skript": false,
+      "vollstaendig": false
+    }
+  ]
+}

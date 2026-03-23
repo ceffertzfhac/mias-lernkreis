@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_5_3_1",
+    "aufgabe": "Eine Vollkugel und eine Hohlkugel (jeweils Masse m = 250 g, Radius R = 95 mm) rollen gleichzeitig aus der Ruhe eine schiefe Ebene (Neigungswinkel α = 17,5°, Länge l = 75 cm) hinunter. Berechnen Sie die Geschwindigkeit jedes Körpers am Ende der Ebene und die Zeitdifferenz beim Auftreffen. (g = 9,81 m/s²)",
+    "musterloesung": "h = l·sinα = 0,75·0,301 = 0,226 m. Vollkugel (J = 2/5·mR²): mgh = ½mv² + ½·(2/5mR²)·(v/R)² = 7/10·mv² → v_V = √(10gh/7) = √(10·9,81·0,226/7) = √3,162 ≈ 1,778 m/s. Hohlkugel (J = 2/3·mR²): mgh = 5/6·mv² → v_H = √(6gh/5) = √(6·9,81·0,226/5) = √2,657 ≈ 1,630 m/s. Beschleunigungen: a_V = 5g·sinα/7 ≈ 1,209 m/s², a_H = 3g·sinα/5 ≈ 1,017 m/s². Zeiten: t_V = √(2l/a_V) ≈ 1,114 s, t_H = √(2l/a_H) ≈ 1,215 s. Differenz: Δt ≈ 0,10 s.",
+    "tipps": [
+      "Nutze für jeden Körper die Energieerhaltung mit dem jeweiligen Trägheitsmoment. Vollkugel: J = 2/5mR², Hohlkugel: J = 2/3mR².",
+      "Allgemeine Rollformel: v = √(2gh/(1+J/(mR²))). Zeiten: t = 2l/v (bei konstanter Beschleunigung aus Ruhe: t = √(2l/a)).",
+      "v_V ≈ 1,78 m/s, v_H ≈ 1,63 m/s. Zeitdifferenz: Δt ≈ 0,10 s."
+    ]
+  },
+  {
+    "id": "do_b_5_3_2",
+    "aufgabe": "Eine Atwood-Maschine auf schiefer Ebene (Neigungswinkel α = 30°) besteht aus zwei gleichen Massen m₁ = m₂ = 370 g, die über eine Vollzylinder-Rolle (Masse m_R = 50 g, Radius R = 72 mm) verbunden sind. Die Massen hängen auf beiden Seiten der Ebene. Berechnen Sie die Beschleunigung a des Systems sowie die Geschwindigkeit v nach dem Zurücklegen einer Strecke von s = 50 cm. (g = 9,81 m/s²)",
+    "musterloesung": "Antreibende Kraft: F = (m₁−m₂)·g·sin(α) = 0 (da m₁ = m₂). Warte — bei gleichen Massen auf einer schiefen Ebene ist das System im Gleichgewicht. Falls gemeint: eine Masse hängt senkrecht, andere auf Ebene. Dann: F_net = m₁g − m₂g·sin(α) = 0,37·9,81·(1−sin30°) = 0,37·9,81·0,5 = 1,814 N. Gesamtträgheit: m_ges = m₁+m₂+J_R/R² = 0,74+0,025 = 0,765 kg. a = F_net/m_ges = 1,814/0,765 = 2,37 m/s². v = √(2as) = √(2·2,37·0,5) = √2,37 ≈ 1,54 m/s.",
+    "tipps": [
+      "Addiere alle Trägheiten: die Massen und das rotatorische Trägheitsmoment der Rolle (J_R/R² als effektive Masse).",
+      "Antreibende Kraft: Differenz der tangentialen Gewichtskomponenten. Effektive Gesamtmasse: m₁+m₂+J_R/R². Dann a = F/m_eff.",
+      "m_eff = 0,765 kg, F_net = 1,814 N → a ≈ 2,37 m/s². v = √(2·2,37·0,5) ≈ 1,54 m/s."
+    ]
+  }
+]

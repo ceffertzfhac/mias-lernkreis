@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_6_1_1",
+    "frage": "Bei einer harmonischen Schwingung ist die kinetische Energie maximal ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "... am Umkehrpunkt."
+      },
+      {
+        "key": "B",
+        "text": "... im Gleichgewichtspunkt."
+      },
+      {
+        "key": "C",
+        "text": "... immer konstant."
+      },
+      {
+        "key": "D",
+        "text": "... wenn Epot maximal ist."
+      },
+      {
+        "key": "E",
+        "text": "... nie (Ekin=0)."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Im Gleichgewichtspunkt ist x=0, Epot=0, Ekin=E_ges=max. Am Umkehrpunkt: v=0, Ekin=0."
+  },
+  {
+    "id": "sc_6_1_2",
+    "frage": "Schwingungsdauer des Fadenpendels hängt ab von ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Masse und Länge"
+      },
+      {
+        "key": "B",
+        "text": "Nur der Länge (und g)"
+      },
+      {
+        "key": "C",
+        "text": "Nur der Masse"
+      },
+      {
+        "key": "D",
+        "text": "Amplitude"
+      },
+      {
+        "key": "E",
+        "text": "Anfangsgeschwindigkeit"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: T=2π√(l/g) — nur Fadenlänge und g. Massenunabhängig. A falsch. D/E falsch (für kleine Auslenkungen)."
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_4_1_1",
+    "frage": "Bei welchem Stoß ist kinetische Energie erhalten?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Vollkommen inelastisch"
+      },
+      {
+        "key": "B",
+        "text": "Vollkommen elastisch"
+      },
+      {
+        "key": "C",
+        "text": "Teilelastisch"
+      },
+      {
+        "key": "D",
+        "text": "Bei keinem"
+      },
+      {
+        "key": "E",
+        "text": "Bei allen"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Nur elastisch → Impuls UND Energie erhalten. A: max. Verlust. C: Impuls erhalten, Energie teilweise dissipiert."
+  },
+  {
+    "id": "sc_4_1_2",
+    "frage": "Gilt die Impulserhaltung beim vollkommen inelastischen Stoß?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Nein, weil Energie verloren geht."
+      },
+      {
+        "key": "B",
+        "text": "Ja, immer (keine externen Kräfte)."
+      },
+      {
+        "key": "C",
+        "text": "Nur bei gleichen Massen."
+      },
+      {
+        "key": "D",
+        "text": "Nur bei reibungsfreier Fläche."
+      },
+      {
+        "key": "E",
+        "text": "Nur bei elastischen Stößen."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Impulserhaltung gilt unabhängig vom Stoßtyp. Energieverlust betrifft nur Ekin, nicht den Impuls."
+  }
+]

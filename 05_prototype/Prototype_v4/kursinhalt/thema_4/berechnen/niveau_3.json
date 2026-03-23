@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_4_3_1",
+    "aufgabe": "Zwei Pendel stoßen elastisch zusammen. Pendel 1 hat die Masse m₁, Pendel 2 die Masse m₂ = m₁/3. Beide werden jeweils um den Winkel α = 20° ausgelenkt und bewegen sich aufeinander zu. Nach dem Stoß bleibt Pendel 1 in Ruhe. (a) Zeigen Sie, dass diese Bedingung physikalisch konsistent ist und berechnen Sie das Massenverhältnis. (b) Welche maximale Höhe erreicht Pendel 2 nach dem Stoß? (Pendellänge L, g bekannt)",
+    "musterloesung": "(a) Bei elastischem Stoß mit entgegenkommenden Massen gilt v₁ = 0 nach dem Stoß, wenn die Massen im Verhältnis m₁/m₂ = 3 stehen — was mit m₂ = m₁/3 übereinstimmt. (b) Geschwindigkeit von m₁ vor Stoß: v₁ = √(2gL(1−cos20°)). Geschwindigkeit von m₂ nach Stoß: v₂' = 2m₁/(m₁+m₂)·v₁ + (m₂−m₁)/(m₁+m₂)·(−v₁) = 4v₁/3·... Vollständige Lösung erfordert direkte Anwendung der Stoßformeln. Maximale Höhe: h₂ = v₂'²/(2g).",
+    "tipps": [
+      "Stelle die allgemeinen Stoßformeln für elastischen Stoß auf. Welche Bedingung muss gelten, damit v₁' = 0?",
+      "v₁' = 0 bei elastischem Stoß bedeutet: m₁ − m₂ = 0 (bei gleichem Vorzeichen) oder v₁ = v₂. Überprüfe das Massenverhältnis.",
+      "m₁/m₂ = 3 erfüllt die Bedingung. Berechne dann v₂' aus der Stoßformel und h₂ = v₂'²/(2g)."
+    ]
+  },
+  {
+    "id": "do_b_4_3_2",
+    "aufgabe": "Körper 1 der Masse m₁ = 2,0 kg bewegt sich mit v₁ = 8,0 m/s nach rechts. Körper 2 der Masse m₂ = 6,0 kg bewegt sich mit v₂ = 2,0 m/s nach links (entgegen der Richtung von Körper 1). Sie stoßen elastisch zusammen. Berechnen Sie die Geschwindigkeiten v₁' und v₂' nach dem Stoß und überprüfen Sie die Impuls- und Energieerhaltung.",
+    "musterloesung": "Vorzeichen: v₁ = +8 m/s, v₂ = −2 m/s. v₁' = ((m₁−m₂)·v₁ + 2m₂·v₂)/(m₁+m₂) = (−4·8+12·(−2))/8 = (−32−24)/8 = −7,0 m/s. v₂' = (2m₁·v₁ + (m₂−m₁)·v₂)/(m₁+m₂) = (4·8+4·(−2))/8 = (32−8)/8 = 3,0 m/s. Impuls: 2·8+6·(−2) = 4 = 2·(−7)+6·3 = −14+18 = 4 ✓. Energie: ½·2·64+½·6·4 = 64+12 = 76 J = ½·2·49+½·6·9 = 49+27 = 76 J ✓.",
+    "tipps": [
+      "Lege ein Vorzeichen für die Richtungen fest (z.B. rechts positiv). Trage v₂ als negativen Wert ein.",
+      "Stoßformeln: v₁' = ((m₁−m₂)v₁+2m₂v₂)/(m₁+m₂), v₂' = (2m₁v₁+(m₂−m₁)v₂)/(m₁+m₂).",
+      "v₁' = −7,0 m/s (kehrt um), v₂' = +3,0 m/s. Gesamtimpuls vorher und nachher: jeweils 4 kg·m/s ✓."
+    ]
+  }
+]

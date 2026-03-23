@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_7_4_1",
+    "frage": "Die Coulombkraft wirkt ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "nur wenn sich die Ladung bewegt."
+      },
+      {
+        "key": "B",
+        "text": "unabhängig von der Bewegung, entlang E⃗."
+      },
+      {
+        "key": "C",
+        "text": "senkrecht zur Geschwindigkeit."
+      },
+      {
+        "key": "D",
+        "text": "nur auf neutrale Teilchen."
+      },
+      {
+        "key": "E",
+        "text": "nur bei Kontakt."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Coulombkraft (E-Feld) ist bewegungsunabhängig, entlang E⃗. A: Lorentzkraft (B-Feld). C: Lorentzkraft. D/E falsch."
+  },
+  {
+    "id": "sc_7_4_2",
+    "frage": "Welche Aussage zu den Kirchhoffschen Regeln ist FALSCH?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Maschenregel: Summe der Spannungen in Schleife = 0"
+      },
+      {
+        "key": "B",
+        "text": "Knotenregel: Summe der Ströme am Knoten = 0"
+      },
+      {
+        "key": "C",
+        "text": "Sie sind Verhaltensregeln beim Arbeiten mit Starkstrom"
+      },
+      {
+        "key": "D",
+        "text": "Sie basieren auf Energie- und Ladungserhaltung"
+      },
+      {
+        "key": "E",
+        "text": "Sie gelten für lineare Schaltkreise"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C ist FALSCH: Kirchhoffsche Regeln sind physikalische Gesetze (Energie- und Ladungserhaltung), keine Sicherheitsregeln für Starkstrom. A,B,D,E korrekt."
+  }
+]

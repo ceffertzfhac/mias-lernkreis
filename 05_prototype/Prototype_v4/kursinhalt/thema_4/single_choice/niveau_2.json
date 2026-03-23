@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_4_2_1",
+    "frage": "m₁<m₂: m₁ stößt elastisch auf ruhendes m₂. Danach ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "m₁ bewegt sich weiter vorwärts"
+      },
+      {
+        "key": "B",
+        "text": "m₁ kehrt um"
+      },
+      {
+        "key": "C",
+        "text": "m₁ bleibt stehen"
+      },
+      {
+        "key": "D",
+        "text": "m₂ bleibt stehen"
+      },
+      {
+        "key": "E",
+        "text": "Beide stehen still"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: v₁'=v₀(m₁−m₂)/(m₁+m₂). m₁<m₂ → Zähler negativ → v₁'<0 (Umkehr). A gilt für m₁>m₂. C für m₁=m₂."
+  },
+  {
+    "id": "sc_4_2_2",
+    "frage": "Beim ballistischen Pendel wird v aus h bestimmt. Welche Erhaltungssätze werden in welcher Reihenfolge angewendet?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Energie beim Stoß, Impuls beim Aufstieg"
+      },
+      {
+        "key": "B",
+        "text": "Impuls beim Stoß, Energie beim Aufstieg"
+      },
+      {
+        "key": "C",
+        "text": "Beide beim Stoß"
+      },
+      {
+        "key": "D",
+        "text": "Beide beim Aufstieg"
+      },
+      {
+        "key": "E",
+        "text": "Nur Energie (elastisch)"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Stoß inelastisch → Impulserhaltung → v'. Aufstieg reibungsfrei → Energieerhaltung → h. Umgekehrt wäre falsch."
+  }
+]

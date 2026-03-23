@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_8_3_1",
+    "aufgabe": "Beim Fadenpendel-Versuch wurden zehn Messungen der Zeit für je 10 Schwingungen bei der Pendellänge L = 500 mm durchgeführt: 14,2 — 14,0 — 14,3 — 14,1 — 14,2 — 14,3 — 14,1 — 14,0 — 14,2 — 14,2 s. Berechnen Sie (a) den Mittelwert t̄ und die Standardabweichung s, (b) die Periode T mit Unsicherheit und (c) den daraus folgenden Wert von g mit Unsicherheit. (g-Formel: g = 4π²L/T²)",
+    "musterloesung": "(a) t̄ = (14,2+14,0+14,3+14,1+14,2+14,3+14,1+14,0+14,2+14,2)/10 = 141,6/10 = 14,16 s. s = √(Σ(tᵢ−t̄)²/9). Abweichungen²: 0,0016+0,0256+0,0196+0,0056+0,0016+0,0196+0,0056+0,0256+0,0016+0,0016 = 0,108. s = √(0,108/9) = √0,012 = 0,110 s. (b) T = t̄/10 = 1,416 s; ΔT = s/(10·√n) = 0,110/(10·√10) ≈ 0,0035 s. (c) g = 4π²·0,5/(1,416)² = 19,739/2,005 ≈ 9,844 m/s². Δg/g = 2·ΔT/T → Δg ≈ 0,049 m/s².",
+    "tipps": [
+      "Berechne zunächst Mittelwert und Standardabweichung. Teile dann durch 10 (Perioden) und √n (Messunsicherheit des Mittelwerts).",
+      "Standardabweichung: s = √(Σ(xᵢ−x̄)²/(n−1)). Unsicherheit des Mittelwerts: Δx̄ = s/√n. Fehlerfortpflanzung: Δg/g = 2·ΔT/T.",
+      "T = 1,416 s, ΔT ≈ 0,0035 s. g ≈ 9,84 m/s², Δg ≈ 0,05 m/s²."
+    ]
+  },
+  {
+    "id": "do_b_8_3_2",
+    "aufgabe": "Im Praktikum wurde die Kreisbewegung einer Fahrradfelge mit α = const. untersucht. Die Messwerte (t in s, φ in rad) wurden in einem φ-t²-Diagramm aufgetragen. Die Ausgleichsgerade hat die Steigung m = 0,524 rad/s² und den y-Achsenabschnitt b = 0,015 rad. Berechnen Sie (a) die Winkelbeschleunigung α und (b) das Drehmoment M, wenn das Trägheitsmoment J = 0,045 kg·m² beträgt. Welche physikalische Bedeutung hat der y-Achsenabschnitt b?",
+    "musterloesung": "(a) φ = ½·α·t² → Steigung im φ-t²-Diagramm: m = α/2 → α = 2·m = 2·0,524 = 1,048 rad/s². (b) M = J·α = 0,045·1,048 = 0,0472 N·m ≈ 47,2 mN·m. Der y-Achsenabschnitt b = 0,015 rad entspricht einem kleinen Anfangswinkel (Ableseungenauigkeit oder leichter Voranstoß beim Loslassen).",
+    "tipps": [
+      "Vergleiche die Gleichung φ = ½·α·t² mit der Geradengleichung y = m·x + b (mit x = t²). Was ist die Steigung?",
+      "Steigung m = α/2 → α = 2m. Drehmoment: M = J·α.",
+      "α = 2·0,524 = 1,048 rad/s². M = 0,045·1,048 ≈ 0,047 N·m."
+    ]
+  }
+]

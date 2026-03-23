@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_8_2_1",
+    "frage": "Linearisierung von φ=½αt² für den Fahrradfelgen-Versuch: Geplottet wird ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "φ gegen t"
+      },
+      {
+        "key": "B",
+        "text": "φ gegen t²"
+      },
+      {
+        "key": "C",
+        "text": "t gegen φ"
+      },
+      {
+        "key": "D",
+        "text": "φ² gegen t"
+      },
+      {
+        "key": "E",
+        "text": "√φ gegen t"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: φ=½α·t² → y=φ, x=t², Steigung=½α. A wäre eine Parabel, nicht linear."
+  },
+  {
+    "id": "sc_8_2_2",
+    "frage": "Wie wird im Praktikum FB8 die Steigung einer Ausgleichsgerade bestimmt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Aus zwei benachbarten Messpunkten"
+      },
+      {
+        "key": "B",
+        "text": "Aus den Endpunkten der Ausgleichsgerade (nicht Messpunkte)"
+      },
+      {
+        "key": "C",
+        "text": "Als Mittelwert aller Δy/Δx"
+      },
+      {
+        "key": "D",
+        "text": "Aus dem ersten und letzten Messpunkt"
+      },
+      {
+        "key": "E",
+        "text": "Mit einem Winkelmesser"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Steigung aus weit entfernten Punkten AUF DER GERADE (nicht Messpunkte!) für minimalen relativen Fehler. A/D falsch (Messpunkte, nicht Gerade). C ungenau."
+  }
+]

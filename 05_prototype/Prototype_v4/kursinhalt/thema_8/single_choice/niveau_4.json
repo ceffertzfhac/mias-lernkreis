@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_8_4_1",
+    "frage": "Im Fahrradfelgen-Versuch endet die beschleunigte Phase ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "mit dem Abfallen des Fadens"
+      },
+      {
+        "key": "B",
+        "text": "wenn ω=0"
+      },
+      {
+        "key": "C",
+        "text": "nach 10 s"
+      },
+      {
+        "key": "D",
+        "text": "wenn das Drehmoment maximal ist"
+      },
+      {
+        "key": "E",
+        "text": "Nie — sie ist kontinuierlich"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: Die beschleunigte Phase (durch angehängte Masse) endet mit Abfallen des Fadens. Danach: abgebremste Phase (nur Reibung)."
+  },
+  {
+    "id": "sc_8_4_2",
+    "frage": "Welche grafische Methode eignet sich für y=a·xⁿ mit unbekanntem n?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Normaler linearer Plot"
+      },
+      {
+        "key": "B",
+        "text": "Halblogarithmischer Plot"
+      },
+      {
+        "key": "C",
+        "text": "Doppellogarithmischer Plot"
+      },
+      {
+        "key": "D",
+        "text": "Wurzel-Plot"
+      },
+      {
+        "key": "E",
+        "text": "Kehrwert-Plot"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: log(y)=log(a)+n·log(x) → log-log-Plot gibt Gerade mit Steigung n. B: für Exponentialfunktionen. A: nur für lineare Zusammenhänge."
+  }
+]

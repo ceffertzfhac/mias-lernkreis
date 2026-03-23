@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_5_4_1",
+    "frage": "Welcher Körper rollt am schnellsten die schiefe Ebene hinunter?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Hohlzylinder (k=1)"
+      },
+      {
+        "key": "B",
+        "text": "Vollzylinder (k=0,5)"
+      },
+      {
+        "key": "C",
+        "text": "Hohlkugel (k=2/3)"
+      },
+      {
+        "key": "D",
+        "text": "Vollkugel (k=2/5)"
+      },
+      {
+        "key": "E",
+        "text": "Alle gleich schnell"
+      }
+    ],
+    "korrekt": "D",
+    "erklaerung": "D: a=gsinα/(1+k). Kleinstes k → größtes a → schnellste. k_Vollkugel=0,4 < alle anderen."
+  },
+  {
+    "id": "sc_5_4_2",
+    "frage": "Drehmoment M(t)=−M₀sin(ωt), L(0)=0. L(t) ist ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "konstant"
+      },
+      {
+        "key": "B",
+        "text": "linear wachsend"
+      },
+      {
+        "key": "C",
+        "text": "cosinusförmig (M₀/ω)(cosωt−1)"
+      },
+      {
+        "key": "D",
+        "text": "sinusförmig"
+      },
+      {
+        "key": "E",
+        "text": "immer null"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: L=∫M dt=(M₀/ω)(cosωt−1). Beginnt bei 0, variiert cosinusförmig. A falsch (M≠0). B nur für konstantes M."
+  }
+]

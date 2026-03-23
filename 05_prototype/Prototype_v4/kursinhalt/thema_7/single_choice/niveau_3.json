@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_7_3_1",
+    "frage": "Lorentzkraft auf bewegte Ladung: Abstand zum Leiter verdoppelt, Geschwindigkeit halbiert. FL wird ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "viermal so groß"
+      },
+      {
+        "key": "B",
+        "text": "verdoppelt"
+      },
+      {
+        "key": "C",
+        "text": "halbiert"
+      },
+      {
+        "key": "D",
+        "text": "geviertelt"
+      },
+      {
+        "key": "E",
+        "text": "null"
+      }
+    ],
+    "korrekt": "D",
+    "erklaerung": "D: FL∝v·B∝v/r. v→v/2, r→2r → FL∝(v/2)/(2r)=FL/4."
+  },
+  {
+    "id": "sc_7_3_2",
+    "frage": "Spezifischer Widerstand ρ: Draht doppelter Länge, gleicher Querschnitt. R wird ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "halb so groß"
+      },
+      {
+        "key": "B",
+        "text": "gleich"
+      },
+      {
+        "key": "C",
+        "text": "doppelt so groß"
+      },
+      {
+        "key": "D",
+        "text": "viermal so groß"
+      },
+      {
+        "key": "E",
+        "text": "√2× größer"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: R=ρl/A. l→2l → R→2R."
+  }
+]

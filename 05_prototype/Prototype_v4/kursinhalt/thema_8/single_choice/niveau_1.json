@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_8_1_1",
+    "frage": "Welche Konvention gilt für die Ausgleichsgerade im Praktikum FB 8?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Durch alle Messpunkte zeichnen"
+      },
+      {
+        "key": "B",
+        "text": "Nur durch die ersten und letzten Punkt"
+      },
+      {
+        "key": "C",
+        "text": "Bestmögliche Gerade durch alle Punkte (nicht zwingend durch Punkte)"
+      },
+      {
+        "key": "D",
+        "text": "Immer durch den Ursprung"
+      },
+      {
+        "key": "E",
+        "text": "Kurve durch alle Punkte"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Ausgleichsgerade = lineare Regression. Berücksichtigt Messfehler aller Punkte. Muss nicht durch Punkte gehen."
+  },
+  {
+    "id": "sc_8_1_2",
+    "frage": "Signifikante Stellen: 0,00340 hat ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "6"
+      },
+      {
+        "key": "B",
+        "text": "5"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      },
+      {
+        "key": "E",
+        "text": "1"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: 0,00340 → 3,40·10⁻³ → 3 signifikante Stellen. Führende Nullen zählen nicht. Die abschließende 0 nach dem Dezimalpunkt zählt."
+  }
+]

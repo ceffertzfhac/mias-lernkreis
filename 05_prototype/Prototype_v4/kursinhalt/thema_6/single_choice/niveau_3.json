@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_6_3_1",
+    "frage": "Gesamtenergie einer harmonischen Schwingung E=½kA². Was passiert wenn Amplitude verdoppelt wird?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "E verdoppelt sich"
+      },
+      {
+        "key": "B",
+        "text": "E vervierfacht sich"
+      },
+      {
+        "key": "C",
+        "text": "E halbiert sich"
+      },
+      {
+        "key": "D",
+        "text": "E bleibt gleich"
+      },
+      {
+        "key": "E",
+        "text": "E wird achtmal so groß"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: E∝A². 2A → (2A)²=4A² → E vervierfacht sich."
+  },
+  {
+    "id": "sc_6_3_2",
+    "frage": "Beim Fadenpendel: 2 Mal so langer Faden → Periode wird ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "doppelt so lang"
+      },
+      {
+        "key": "B",
+        "text": "√2 mal so lang"
+      },
+      {
+        "key": "C",
+        "text": "viermal so lang"
+      },
+      {
+        "key": "D",
+        "text": "gleich"
+      },
+      {
+        "key": "E",
+        "text": "√2 mal kürzer"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: T∝√l. l→2l → T→√2·T."
+  }
+]

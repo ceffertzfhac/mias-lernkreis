@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_8_1_1",
+    "aufgabe": "Aus einer Messreihe für ein Fadenpendel wurden folgende Wertepaare aufgezeichnet (Länge L in m, Periode T in s): (0,20; 0,897), (0,40; 1,269), (0,60; 1,555), (0,80; 1,795). Berechnen Sie aus jedem Messpunkt den Wert der Erdbeschleunigung g und geben Sie den Mittelwert an.",
+    "musterloesung": "T = 2π√(L/g) → g = 4π²·L/T². Für L=0,20: g = 4π²·0,20/0,804 = 7,896/0,804 ≈ 9,82 m/s². Für L=0,40: g = 4π²·0,40/1,610 ≈ 9,80 m/s². Für L=0,60: g = 4π²·0,60/2,418 ≈ 9,80 m/s². Für L=0,80: g = 4π²·0,80/3,222 ≈ 9,82 m/s². Mittelwert: g̅ ≈ 9,81 m/s².",
+    "tipps": [
+      "Forme die Formel T = 2π√(L/g) nach g um.",
+      "g = 4π²·L/T². Berechne T² für jeden Messpunkt.",
+      "Alle vier Werte liegen um 9,81 m/s². Mittelwert bilden."
+    ]
+  },
+  {
+    "id": "do_b_8_1_2",
+    "aufgabe": "Bei einem Versuch zur Bestimmung der Federkonstante wurden folgende Messwerte aufgenommen (Masse m in g, Auslenkung x in mm): (50; 10), (100; 20), (150; 30), (200; 40). Berechnen Sie die Federkonstante k aus jedem Messpunkt und geben Sie den Mittelwert an. (g = 9,81 m/s²)",
+    "musterloesung": "Hookesches Gesetz: F = k·x → k = m·g/x. Für m=50 g, x=10 mm: k = 0,050·9,81/0,010 = 49,05 N/m. Für m=100 g, x=20 mm: k = 0,100·9,81/0,020 = 49,05 N/m. Alle vier Messpunkte liefern k = 49,05 N/m. Mittelwert: k̅ = 49,1 N/m ≈ 49 N/m.",
+    "tipps": [
+      "Forme F = k·x nach k um. Die Kraft F ist das Gewicht der angehängten Masse.",
+      "k = m·g/x. Einheiten beachten: m in kg, x in m.",
+      "Alle Messpunkte liefern k ≈ 49 N/m — lineares Verhalten bestätigt."
+    ]
+  }
+]

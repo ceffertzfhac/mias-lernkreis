@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_5_2_1",
+    "aufgabe": "Ein Vollzylinder der Masse m = 2,0 kg und des Radius R = 0,15 m rollt ohne Gleiten eine schiefe Ebene mit dem Neigungswinkel α = 20° und der Länge l = 2,0 m hinunter. Er startet aus der Ruhe. Berechnen Sie mithilfe der Energieerhaltung die Geschwindigkeit v am Ende der Ebene. (g = 9,81 m/s²)",
+    "musterloesung": "Höhe: h = l·sin(20°) = 2,0·0,342 = 0,684 m. Energieerhaltung (Rollbedingung): m·g·h = ½·m·v² + ½·J·ω² = ½·m·v² + ½·(½mR²)·(v/R)² = ¾·m·v². v = √(4gh/3) = √(4·9,81·0,684/3) = √8,94 ≈ 2,99 m/s.",
+    "tipps": [
+      "Beim Rollen ohne Gleiten muss die Rotationsenergie berücksichtigt werden. Für den Vollzylinder gilt J = ½mR².",
+      "Energieerhaltung: mgh = ½mv² + ½Jω². Mit ω = v/R und J = ½mR² vereinfacht sich das zu mgh = ¾mv².",
+      "v = √(4gh/3) = √(4·9,81·0,684/3) ≈ 2,99 m/s."
+    ]
+  },
+  {
+    "id": "do_b_5_2_2",
+    "aufgabe": "Eine Person sitzt auf einem drehbaren Stuhl mit dem Gesamtträgheitsmoment J₁ = 3,0 kg·m² (Arme ausgestreckt) und dreht sich mit ω₁ = 4,0 rad/s. Sie zieht die Arme an, sodass das Trägheitsmoment auf J₂ = 1,0 kg·m² sinkt. Berechnen Sie die neue Winkelgeschwindigkeit ω₂.",
+    "musterloesung": "Drehimpulserhaltung (kein äußeres Drehmoment): J₁·ω₁ = J₂·ω₂ → ω₂ = J₁·ω₁/J₂ = 3,0·4,0/1,0 = 12 rad/s.",
+    "tipps": [
+      "Welche Erhaltungsgröße gilt, wenn kein äußeres Drehmoment wirkt?",
+      "Drehimpulserhaltung: J₁·ω₁ = J₂·ω₂ → ω₂ = J₁ω₁/J₂.",
+      "ω₂ = 3,0·4,0/1,0 = 12 rad/s."
+    ]
+  }
+]

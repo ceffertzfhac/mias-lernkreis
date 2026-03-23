@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_1_2_1",
+    "aufgabe": "Ein Fahrzeug fährt mit der Anfangsgeschwindigkeit v₀ = 25 m/s und bremst gleichmäßig mit der Verzögerung a = 4,0 m/s². Berechnen Sie den Bremsweg s bis zum Stillstand.",
+    "musterloesung": "Gegeben: v₀ = 25 m/s, v = 0, a = 4,0 m/s². Gesucht: s. Ansatz: v² = v₀² − 2·a·s → s = v₀²/(2·a) = 625/8,0 = 78,1 m.",
+    "tipps": [
+      "Welche kinematische Formel verknüpft Geschwindigkeit, Beschleunigung und Strecke — ohne die Zeit zu benötigen?",
+      "Nutze v² = v₀² − 2·a·s und setze v = 0 (Stillstand).",
+      "Umstellen nach s: s = v₀²/(2·a) = 625/8,0 = 78,1 m."
+    ]
+  },
+  {
+    "id": "do_b_1_2_2",
+    "aufgabe": "Ein Ball wird von einer Höhe h = 20 m horizontal mit der Anfangsgeschwindigkeit v₀ = 12 m/s abgeworfen. An welcher horizontalen Stelle x trifft er auf dem Boden auf? (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: h = 20 m, v₀ = 12 m/s, g = 9,81 m/s². Gesucht: x. Fallzeit: t = √(2h/g) = √(40/9,81) ≈ 2,02 s. Wurfweite: x = v₀·t = 12·2,02 ≈ 24,2 m.",
+    "tipps": [
+      "Trenne die Bewegung in horizontale (gleichförmig) und vertikale (freier Fall) Komponente. Die Fallhöhe liefert die Zeit.",
+      "Berechne die Fallzeit über t = √(2h/g), dann die Wurfweite x = v₀·t.",
+      "t = √(40/9,81) ≈ 2,02 s → x = 12·2,02 ≈ 24,2 m."
+    ]
+  },
+  {
+    "id": "do_b_1_2_3",
+    "aufgabe": "Ein Körper startet mit der Anfangsgeschwindigkeit v₀ = 4,0 m/s und wird gleichmäßig mit a = 3,0 m/s² beschleunigt. Nach welcher Zeit t hat er eine Strecke von s = 50 m zurückgelegt?",
+    "musterloesung": "Gegeben: v₀ = 4,0 m/s, a = 3,0 m/s², s = 50 m. Gesucht: t. Ansatz: s = v₀·t + ½·a·t² → 50 = 4,0·t + 1,5·t². Quadratische Gleichung: 1,5t² + 4t − 50 = 0. Mit der Lösungsformel: t = (−4 + √(16 + 300))/3 ≈ (−4 + 17,78)/3 ≈ 4,59 s.",
+    "tipps": [
+      "Stelle die Weg-Zeit-Formel für gleichmäßig beschleunigte Bewegung auf. Das führt auf eine quadratische Gleichung in t.",
+      "Nutze s = v₀·t + ½·a·t² und forme um: 1,5t² + 4t − 50 = 0. Wende die Lösungsformel an.",
+      "t = (−4 + √316)/3 ≈ 4,59 s. Die negative Lösung ist physikalisch sinnlos."
+    ]
+  },
+  {
+    "id": "do_b_1_2_4",
+    "aufgabe": "Ein Ball wird mit der Anfangsgeschwindigkeit v₀ = 18 m/s unter dem Winkel α = 35° zur Horizontalen abgeworfen. Berechnen Sie die maximale Höhe h_max und die Wurfweite R. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: v₀ = 18 m/s, α = 35°, g = 9,81 m/s². Gesucht: h_max, R. Vertikale Anfangsgeschwindigkeit: v₀y = v₀·sin(35°) = 18·0,574 = 10,33 m/s. h_max = v₀y²/(2g) = 106,7/19,62 = 5,44 m. Flugzeit: t_ges = 2·v₀y/g = 2,11 s. Wurfweite: R = v₀·cos(35°)·t_ges = 14,75·2,11 = 31,1 m.",
+    "tipps": [
+      "Zerlege v₀ in horizontale und vertikale Komponente. Die maximale Höhe folgt aus der vertikalen Bewegung.",
+      "h_max = v₀y²/(2g) mit v₀y = v₀·sin(α). Die Wurfweite ergibt sich aus Flugzeit mal horizontaler Geschwindigkeit.",
+      "v₀y = 10,33 m/s → h_max = 5,44 m. t_ges = 2,11 s → R = 31,1 m."
+    ]
+  }
+]

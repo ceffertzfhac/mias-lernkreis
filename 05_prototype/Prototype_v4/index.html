@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mias Lernkreis v4</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+
+  <!-- Local JS (must load before Alpine) -->
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/radar.js"></script>
+  <script src="./js/app.js"></script>
+
+  <!-- Alpine.js (defer — app() must be defined first) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body x-data="app()" x-init="init()" x-cloak>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SETUP SCREEN — full viewport, no sidebar
+════════════════════════════════════════════════════════════════════════ -->
+<div x-show="screen === 'setup'" class="setup-wrap">
+  <div class="setup-card" style="display: flex; flex-direction: column; gap: 24px;">
+
+    <!-- Brand header -->
+    <div style="text-align: center;">
+      <div style="font-size: 2.5rem; margin-bottom: 8px;">🎯</div>
+      <h1 style="font-size: 22px; font-weight: 700; color: var(--c-primary); margin: 0 0 4px;">Mias Lernkreis</h1>
+      <p style="font-size: 13px; color: var(--c-muted); margin: 0;">Solo-Lernbegleitung · Physik FH Aachen</p>
+    </div>
+
+    <!-- Name -->
+    <div>
+      <label class="field-label" for="nameInput">Dein Vorname</label>
+      <input
+        id="nameInput"
+        type="text"
+        class="field"
+        placeholder="z.B. Mia"
+        x-model="name"
+        @keydown.enter="startSolo()"
+        maxlength="40"
+        autofocus
+      />
+    </div>
+
+    <!-- Exam date -->
+    <div>
+      <label class="field-label" for="examDateSetup">Klausurdatum</label>
+      <input
+        id="examDateSetup"
+        type="date"
+        class="field"
+        x-model="examDateInput"
+        :min="todayMin()"
+      />
+      <p class="field-hint">Noch <strong x-text="verbleibeneTage"></strong> Tage bis zur Klausur</p>
+    </div>
+
+    <!-- Kurs (read-only) -->
+    <div>
+      <label class="field-label">Kurs</label>
+      <div class="field field--tinted" style="color: var(--c-muted);" x-text="kurs.name"></div>
+    </div>
+
+    <!-- CTA -->
+    <button
+      class="btn btn--primary btn--block"
+      @click="startSolo()"
+      :disabled="!name.trim()"
+      :aria-disabled="!name.trim()"
+      type="button"
+    >
+      Lernkreis starten →
+    </button>
+
+    <p style="font-size: 11px; color: var(--c-muted); text-align: center; margin: 0;">
+      Daten werden nur lokal in deinem Browser gespeichert.
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     APP SHELL — Sidebar + Main Area (shown on all screens except setup)
+════════════════════════════════════════════════════════════════════════ -->
+<div x-show="screen !== 'setup'" class="app-shell">
+
+  <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- Brand -->
+    <div class="sidebar-brand">
+      <div class="sidebar-brand__icon">ML</div>
+      <div>
+        <div class="sidebar-brand__name">Mias Lernkreis</div>
+        <div class="sidebar-brand__kurs" x-text="kurs.name.split(' — ')[1] ?? kurs.name"></div>
+      </div>
+    </div>
+
+    <!-- Primary Nav -->
+    <nav class="sidebar-nav">
+
+      <!-- Radar / Home -->
+      <button
+        class="sidebar-item"
+        :class="{ 'is-active': screen === 'home' }"
+        @click="goTo('home')"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="8.5" x2="22" y2="8.5"/><line x1="2" y1="15.5" x2="22" y2="15.5"/></svg>
+        Radar
+      </button>
+
+      <!-- Diagnose -->
+      <button
+        class="sidebar-item"
+        :class="{ 'is-active': screen === 'diagnose' }"
+        @click="goTo('diagnose')"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="7 12 10 15 17 9"/></svg>
+        Diagnose
+      </button>
+
+      <!-- Üben -->
+      <button
+        class="sidebar-item"
+        :class="{ 'is-active': screen === 'ueben' }"
+        @click="goTo('ueben')"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Üben
+      </button>
+
+      <!-- Fortschritt -->
+      <button
+        class="sidebar-item"
+        :class="{ 'is-active': screen === 'fortschritt' }"
+        @click="goTo('fortschritt')"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24"><rect x="3" y="10" width="4" height="11"/><rect x="10" y="6" width="4" height="15"/><rect x="17" y="3" width="4" height="18"/></svg>
+        Fortschritt
+      </button>
+
+    </nav>
+
+    <!-- Footer Nav -->
+    <div class="sidebar-footer">
+      <button
+        class="sidebar-item"
+        :class="{ 'is-active': screen === 'einstellungen' }"
+        @click="goTo('einstellungen')"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Einstellungen
+      </button>
+    </div>
+
+  </aside><!-- /sidebar -->
+
+
+  <!-- ── MAIN AREA ─────────────────────────────────────────────────────── -->
+  <div class="main-area">
+
+    <!-- TOPBAR -->
+    <header class="topbar" x-show="screen !== 'setup'">
+      <div>
+        <div class="topbar__title" x-text="screenTitle"></div>
+        <div class="topbar__sub" x-text="kurs.name"></div>
+      </div>
+      <div class="countdown-chip" :class="countdownClass()">
+        ⏱ <span x-text="verbleibeneTage"></span> Tage bis Klausur
+      </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCREEN: HOME — Radar Dashboard
+    ════════════════════════════════════════════════════════════════════ -->
+    <div x-show="screen === 'home'" class="screen-content screen-content--fill">
+      <div class="home-layout">
+
+        <!-- Left: Radar Hero -->
+        <div class="home-col-radar">
+          <div
+            class="card"
+            :class="radarPulse ? 'radar-pulse' : ''"
+            style="padding: 14px;"
+          >
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-shrink: 0;">
+              <span style="font-size: 13px; font-weight: 600; color: var(--c-primary);">Lernstand-Radar</span>
+              <span x-show="hasDiagnose" style="font-size: 12px; color: var(--c-muted);" x-text="radarDatum()"></span>
+              <span x-show="!hasDiagnose" class="badge badge--warn">Diagnose ausstehend</span>
+            </div>
+
+            <div x-show="hasDiagnose" class="radar-hero-canvas-wrap">
+              <canvas id="radarHome"></canvas>
+            </div>
+
+            <div x-show="!hasDiagnose" class="radar-empty-state">
+              <div style="font-size: 3rem; opacity: 0.5;">🕸️</div>
+              <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 8px 0 0;">Dein Radar wartet</p>
+              <p style="font-size: 12px; color: var(--c-muted); margin: 4px 0 0;">Starte die Diagnose, um deinen Lernstand zu sehen</p>
+            </div>
+
+            <!-- Footer actions -->
+            <div x-show="hasDiagnose" style="display: flex; gap: 8px; margin-top: 10px; flex-shrink: 0;">
+              <button
+                class="btn btn--sm btn--outline"
+                @click="toggleVerlauf()"
+                type="button"
+                :disabled="diagnosen.length < 2"
+                x-text="showVerlauf ? 'Verlauf: An' : 'Verlauf: Aus'"
+              ></button>
+              <button class="btn btn--sm btn--outline" @click="goTo('diagnose')" type="button">Diagnose →</button>
+            </div>
+          </div>
+        </div><!-- /home-col-radar -->
+
+        <!-- Right: Stats + Focus + CTAs -->
+        <div class="home-col-info">
+
+          <!-- Stat chips -->
+          <div x-show="hasDiagnose" style="display: flex; gap: 8px;">
+            <div class="stat-chip stat-chip--good" style="flex: 1;">
+              <span class="stat-chip__value" x-text="themenBereit()"></span>
+              <span class="stat-chip__label">Klausurbereit</span>
+            </div>
+            <div class="stat-chip stat-chip--warn" style="flex: 1;">
+              <span class="stat-chip__value" x-text="kurs.themen.length - themenBereit()"></span>
+              <span class="stat-chip__label">Noch offen</span>
+            </div>
+            <div class="stat-chip stat-chip--accent" style="flex: 1;">
+              <span class="stat-chip__value" x-text="session.aufgaben.length"></span>
+              <span class="stat-chip__label">Heute geübt</span>
+            </div>
+          </div>
+
+          <!-- Focus chips -->
+          <div x-show="schwächsteThemen().length > 0">
+            <p style="font-size: 11px; font-weight: 600; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">Fokus jetzt</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <template x-for="t in schwächsteThemen()" :key="t.id">
+                <button
+                  class="focus-chip"
+                  :style="`background: ${scoreConfig(t.score).bg}; color: ${scoreConfig(t.score).color};`"
+                  @click="ue.themaId = t.id; goTo('ueben')"
+                  type="button"
+                >
+                  <span x-text="shortName(t.name)"></span>
+                  <span x-text="Math.round(t.score) + '%'"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Improvements -->
+          <div x-show="verbesserungen().length > 0" class="card card--success" style="padding: 12px 14px;">
+            <p style="font-size: 12px; font-weight: 600; color: var(--c-success); margin: 0 0 4px;">Verbessert ↑</p>
+            <template x-for="t in verbesserungen()" :key="t.id">
+              <p style="font-size: 12px; color: var(--c-success); margin: 2px 0;" x-text="shortName(t.name)"></p>
+            </template>
+          </div>
+
+          <!-- No diagnosis yet -->
+          <div x-show="!hasDiagnose" class="card card--tinted" style="padding: 14px;">
+            <p style="font-size: 13px; font-weight: 600; color: var(--c-primary); margin: 0 0 4px;">Starte mit der Diagnose</p>
+            <p style="font-size: 12px; color: var(--c-muted); margin: 0;">Bewerte deinen Lernstand in jedem Thema, damit der Radar sich füllt.</p>
+          </div>
+
+          <!-- CTAs (always at bottom) -->
+          <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px;">
+            <button class="btn btn--primary btn--block" @click="goTo('ueben')" type="button">
+              Jetzt üben →
+            </button>
+            <button class="btn btn--outline btn--block" @click="goTo('diagnose')" type="button">
+              <span x-show="!hasDiagnose">Selbstdiagnose starten</span>
+              <span x-show="hasDiagnose">Neue Diagnose</span>
+            </button>
+          </div>
+
+        </div><!-- /home-col-info -->
+      </div><!-- /home-layout -->
+    </div><!-- /home screen -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCREEN: DIAGNOSE
+    ════════════════════════════════════════════════════════════════════ -->
+    <div x-show="screen === 'diagnose'" class="screen-content">
+
+      <!-- Legend -->
+      <div class="card" style="padding: 12px 16px; margin-bottom: 16px;">
+        <p style="font-size: 12px; font-weight: 600; color: var(--c-primary); margin: 0 0 8px;">Kompetenz-Skala</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <template x-for="s in [1,2,3,4,5]" :key="s">
+            <span
+              class="badge"
+              :style="`background: ${stufenCfg(s).bg}; color: ${stufenCfg(s).color};`"
+              x-text="`${s} – ${stufenCfg(s).label}`"
+            ></span>
+          </template>
+        </div>
+        <p style="font-size: 11px; color: var(--c-muted); margin: 6px 0 0;">Ziel: alle Themen auf Stufe 4 (Klausurniveau)</p>
+      </div>
+
+      <!-- Topic grid -->
+      <div class="themen-grid" style="margin-bottom: 16px;">
+        <template x-for="t in kurs.themen" :key="t.id">
+          <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
+              <p style="font-size: 13px; font-weight: 600; line-height: 1.35; margin: 0;" x-text="t.name"></p>
+              <span x-show="t.haeufig" class="badge badge--warn" style="flex-shrink: 0;">Prüfungsrelevant</span>
+            </div>
+
+            <!-- 5-star row -->
+            <div style="display: flex; gap: 4px;">
+              <template x-for="s in [1,2,3,4,5]" :key="s">
+                <button
+                  class="star-btn"
+                  :class="{ 'is-selected': aktBew(t.id) === s }"
+                  :data-stufe="s"
+                  @click="setBewertung(t.id, s)"
+                  type="button"
+                >
+                  <span class="star-btn__stars" x-text="'★'.repeat(s) + '☆'.repeat(5-s)"></span>
+                  <span class="star-btn__label" x-text="stufenCfg(s).label"></span>
+                </button>
+              </template>
+            </div>
+
+            <!-- Verification box -->
+            <div x-show="verifikation.aktiv && verifikation.themaId === t.id" class="verif-box">
+              <p style="font-size: 12px; font-weight: 600; color: var(--c-primary); margin: 0 0 4px;">
+                Kurze Verständnisfrage (Stufe <span x-text="verifikation.stufe"></span>)
+              </p>
+              <div x-show="verifikation.loading" style="font-size: 12px; color: var(--c-muted);">Frage wird geladen…</div>
+              <p
+                x-show="!verifikation.loading"
+                style="font-size: 13px; line-height: 1.5; margin: 0 0 10px;"
+                x-text="verifikation.frage"
+              ></p>
+              <div x-show="!verifikation.loading" style="display: flex; gap: 8px;">
+                <button class="btn btn--success btn--sm" style="flex: 1;" @click="confirmVerifikation()" type="button">
+                  Ich kann das ✓
+                </button>
+                <button class="btn btn--danger btn--sm" style="flex: 1;" @click="lowerVerifikation()" type="button">
+                  Eine Stufe tiefer
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Progress + finish -->
+      <div class="card" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--c-muted);">
+          <span>Bewertet</span>
+          <span x-text="`${bewerteteThemen} / ${kurs.themen.length}`"></span>
+        </div>
+        <div class="progress-bar">
+          <div
+            class="progress-bar__fill"
+            :style="`width: ${Math.round(bewerteteThemen / kurs.themen.length * 100)}%; background: var(--c-primary);`"
+          ></div>
+        </div>
+        <button
+          class="btn btn--primary btn--block"
+          @click="completeDiagnose()"
+          :disabled="!diagnoseKomplett || verifikation.aktiv"
+          :aria-disabled="!diagnoseKomplett || verifikation.aktiv"
+          type="button"
+        >
+          <span x-show="!diagnoseKomplett">Alle Themen bewerten, um fortzufahren</span>
+          <span x-show="diagnoseKomplett && verifikation.aktiv">Verifikation abschliessen</span>
+          <span x-show="diagnoseKomplett && !verifikation.aktiv">Diagnose abschliessen →</span>
+        </button>
+      </div>
+    </div><!-- /diagnose -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCREEN: ÜBEN — merged selector + split layout
+    ════════════════════════════════════════════════════════════════════ -->
+    <div x-show="screen === 'ueben'" class="screen-content screen-content--fill">
+
+      <!-- SELECTOR BAR -->
+      <div class="ueben-selector">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+
+          <!-- Thema -->
+          <select
+            class="field"
+            style="flex: 2; max-width: 280px; padding: 8px 12px; font-size: 13px;"
+            x-model.number="ue.themaId"
+          >
+            <template x-for="t in kurs.themen" :key="t.id">
+              <option :value="t.id" x-text="t.name"></option>
+            </template>
+          </select>
+
+          <!-- Typ buttons -->
+          <template x-for="typ in verfügbareTypen()" :key="typ">
+            <button
+              class="btn btn--sm"
+              :class="ue.typ === typ ? 'btn--primary' : 'btn--outline'"
+              @click="ue.typ = typ"
+              type="button"
+              x-text="typLabel(typ)"
+            ></button>
+          </template>
+
+          <!-- Niveau buttons -->
+          <template x-for="lvl in [1,2,3,4]" :key="lvl">
+            <button
+              class="btn btn--sm"
+              :class="ue.schwierigkeit === lvl ? 'btn--primary' : 'btn--outline'"
+              @click="ue.schwierigkeit = lvl"
+              type="button"
+              x-text="diffStr(lvl)"
+            ></button>
+          </template>
+
+          <!-- Generate -->
+          <button
+            class="btn btn--primary"
+            style="margin-left: auto; white-space: nowrap;"
+            @click="generateTask()"
+            :disabled="ue.loading"
+            :aria-disabled="ue.loading"
+            type="button"
+          >
+            <span x-show="ue.loading" style="opacity: 0.7;">Generiert…</span>
+            <span x-show="!ue.loading">Aufgabe generieren →</span>
+          </button>
+
+        </div>
+      </div><!-- /ueben-selector -->
+
+      <!-- SPLIT GRID -->
+      <div class="ueben-layout">
+
+        <!-- LEFT: Aufgabe + Tipps + Score-Indikator -->
+        <div class="ueben-left">
+
+          <!-- Empty state -->
+          <template x-if="!ue.taskReady">
+            <div class="card" style="flex: 1; display: flex; align-items: center; justify-content: center; opacity: 0.6; min-height: 200px;">
+              <div style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 8px;">📝</div>
+                <p style="font-size: 13px; color: var(--c-muted); margin: 0;">Wähle ein Thema und generiere eine Aufgabe</p>
+              </div>
+            </div>
+          </template>
+
+          <!-- Task ready -->
+          <template x-if="ue.taskReady">
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+
+              <!-- Aufgabe card -->
+              <div class="card card--accent-left">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                  <span
+                    class="badge"
+                    :style="isSingleChoice ? 'background: var(--c-amber-bg); color: var(--c-amber);' : 'background: var(--c-light); color: var(--c-primary);'"
+                    x-text="typLabel(ue.typ)"
+                  ></span>
+                  <span style="font-size: 12px; color: var(--c-muted);" x-text="niveauLabel(ue.schwierigkeit) + ' · ' + diffStr(ue.schwierigkeit)"></span>
+                </div>
+                <p style="font-size: 14px; line-height: 1.6; margin: 0;" x-text="ue.aufgabe"></p>
+              </div>
+
+              <!-- Revealed tips -->
+              <template x-for="(tipp, i) in ue.tippTexte" :key="i">
+                <div class="tipp-box">
+                  <p style="font-size: 11px; font-weight: 600; color: var(--c-primary); margin: 0 0 4px;">Tipp <span x-text="i + 1"></span></p>
+                  <p style="font-size: 13px; line-height: 1.5; margin: 0;" x-text="tipp"></p>
+                </div>
+              </template>
+
+              <!-- Next hint button (only when no result yet, not SC) -->
+              <button
+                class="btn btn--ghost"
+                @click="requestHint()"
+                :disabled="ue.genutzeTipps >= 3 || ue.loading || ue.resultReady"
+                x-show="ue.genutzeTipps < 3 && !ue.resultReady && !isSingleChoice"
+                type="button"
+              >
+                <span x-show="ue.loading && ue.genutzeTipps < 3">Tipp wird geladen…</span>
+                <span x-show="!ue.loading || ue.genutzeTipps >= 3">
+                  💡 Tipp <span x-text="ue.genutzeTipps + 1"></span> von 3
+                  <span style="font-size: 12px; color: var(--c-muted); margin-left: 4px;">(−20 Pkt.)</span>
+                </span>
+              </button>
+
+              <!-- Score indicator (visible when ≥ 1 tip used) -->
+              <div x-show="ue.genutzeTipps > 0" class="card" style="padding: 10px 14px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 11px; color: var(--c-muted); white-space: nowrap;">Kompetenz</span>
+                  <div class="progress-bar" style="flex: 1;">
+                    <div
+                      class="progress-bar__fill"
+                      :style="`width: ${kompScore()}%; background: ${kompScore() >= 80 ? 'var(--c-success)' : kompScore() >= 50 ? 'var(--c-amber)' : 'var(--c-error)'};`"
+                    ></div>
+                  </div>
+                  <span style="font-size: 12px; font-weight: 700; color: var(--c-primary); white-space: nowrap;" x-text="kompScore() + ' Pkt.'"></span>
+                </div>
+              </div>
+
+            </div>
+          </template>
+        </div><!-- /ueben-left -->
+
+
+        <!-- RIGHT: Antwort + Ergebnis -->
+        <div class="ueben-right">
+
+          <!-- Empty state -->
+          <template x-if="!ue.taskReady">
+            <div style="margin: auto; text-align: center; opacity: 0.4;">
+              <p style="font-size: 13px; color: var(--c-muted);">Aufgabe generieren um zu antworten</p>
+            </div>
+          </template>
+
+          <!-- Answer area (task ready, no result yet) -->
+          <template x-if="ue.taskReady && !ue.resultReady">
+            <div style="display: flex; flex-direction: column; height: 100%; gap: 12px;">
+
+              <!-- Single choice options -->
+              <template x-if="isSingleChoice && ue.aufgabeObj?.optionen">
+                <div class="card" style="display: flex; flex-direction: column; gap: 6px;">
+                  <template x-for="opt in ue.aufgabeObj.optionen" :key="opt.key">
+                    <label
+                      style="display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 10px; cursor: pointer; transition: background 0.1s;"
+                      :style="ue.scWahl === opt.key ? 'background: var(--c-light); border-left: 3px solid var(--c-primary);' : ''"
+                    >
+                      <input
+                        type="radio"
+                        :name="'sc_' + (ue.aufgabeObj?.id ?? 'q')"
+                        :value="opt.key"
+                        x-model="ue.scWahl"
+                        style="margin-top: 2px; flex-shrink: 0; accent-color: var(--c-primary);"
+                      />
+                      <span style="font-size: 13px; line-height: 1.5;">
+                        <strong x-text="opt.key + ')'"></strong>
+                        <span x-text="' ' + opt.text"></span>
+                      </span>
+                    </label>
+                  </template>
+                </div>
+              </template>
+
+              <!-- Doing: textarea -->
+              <template x-if="!isSingleChoice">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <label class="field-label" for="answerArea">Deine Antwort</label>
+                  <textarea
+                    id="answerArea"
+                    class="field"
+                    rows="10"
+                    placeholder="Schreib deine Antwort hier — Formeln in Textform sind ok."
+                    x-model="ue.antwort"
+                    style="flex: 1; resize: vertical; min-height: 200px;"
+                  ></textarea>
+                </div>
+              </template>
+
+              <button
+                class="btn btn--primary btn--block"
+                @click="submitAnswer()"
+                :disabled="isSingleChoice ? !ue.scWahl : (!ue.antwort.trim() || ue.loading)"
+                :aria-disabled="isSingleChoice ? !ue.scWahl : (!ue.antwort.trim() || ue.loading)"
+                type="button"
+              >
+                <span x-show="ue.loading" style="opacity: 0.7;">Wird ausgewertet…</span>
+                <span x-show="!ue.loading" x-text="isSingleChoice ? 'Antwort bestätigen →' : 'Antwort einreichen →'"></span>
+              </button>
+
+              <!-- Session counter -->
+              <div
+                x-show="session.aufgaben.length > 0"
+                class="card"
+                style="padding: 10px 14px; text-align: center; margin-top: auto;"
+              >
+                <span style="font-size: 12px; color: var(--c-muted);">
+                  Session: <strong style="color: var(--c-primary);" x-text="session.aufgaben.length"></strong> Aufgaben ·
+                  Richtig: <strong style="color: var(--c-success);" x-text="session.aufgaben.filter(a => a.korrekt).length"></strong>
+                </span>
+              </div>
+            </div>
+          </template>
+
+          <!-- Result area -->
+          <template x-if="ue.resultReady">
+            <div style="display: flex; flex-direction: column; gap: 14px; height: 100%;">
+
+              <!-- SC result -->
+              <template x-if="isSingleChoice">
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                  <div class="card text-center" :class="ue.scKorrekt ? 'card--success' : 'card--error'" style="padding: 20px; text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; margin-bottom: 4px;" x-text="ue.scKorrekt ? '✓ Richtig!' : '✗ Leider falsch'"></div>
+                    <div style="font-size: 13px;">
+                      Deine Wahl: <strong x-text="ue.scWahl"></strong>
+                      · Korrekt: <strong x-text="ue.aufgabeObj?.korrekt"></strong>
+                    </div>
+                  </div>
+                  <div class="card card--accent-left" style="display: flex; flex-direction: column; gap: 4px;">
+                    <p style="font-size: 12px; font-weight: 600; color: var(--c-primary); margin: 0;">Auflösung</p>
+                    <p style="font-size: 13px; line-height: 1.6; margin: 0;" x-text="ue.musterloesung"></p>
+                  </div>
+                  <button class="btn btn--primary btn--block" @click="clearTask()" type="button">Neue Aufgabe →</button>
+                  <div x-show="session.aufgaben.length > 0" class="card" style="padding: 10px 14px; text-align: center; margin-top: auto;">
+                    <span style="font-size: 12px; color: var(--c-muted);">
+                      Session: <strong style="color: var(--c-primary);" x-text="session.aufgaben.length"></strong> Aufgaben ·
+                      Richtig: <strong style="color: var(--c-success);" x-text="session.aufgaben.filter(a => a.korrekt).length"></strong>
+                    </span>
+                  </div>
+                </div>
+              </template>
+
+              <!-- Doing result: Musterlösung + Selbstbewertung -->
+              <template x-if="!isSingleChoice">
+                <div style="display: flex; flex-direction: column; gap: 12px; height: 100%;">
+                  <div class="card" style="display: flex; flex-direction: column; gap: 4px;">
+                    <p style="font-size: 12px; font-weight: 600; color: var(--c-muted); margin: 0;">Deine Antwort</p>
+                    <p style="font-size: 13px; line-height: 1.6; margin: 0;" x-text="ue.antwort"></p>
+                  </div>
+                  <div class="card card--accent-left" style="display: flex; flex-direction: column; gap: 4px;">
+                    <p style="font-size: 12px; font-weight: 600; color: var(--c-primary); margin: 0;">Musterlösung</p>
+                    <p style="font-size: 13px; line-height: 1.6; margin: 0;" x-text="ue.musterloesung"></p>
+                  </div>
+                  <div class="card" style="display: flex; flex-direction: column; gap: 10px;">
+                    <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Wie nah warst du?</p>
+                    <div style="display: flex; gap: 8px;">
+                      <button class="btn btn--success" style="flex: 1;" @click="selfAssess(true)" type="button">✓ Lag ich richtig</button>
+                      <button class="btn btn--danger"  style="flex: 1;" @click="selfAssess(false)" type="button">✗ Noch unsicher</button>
+                    </div>
+                  </div>
+                  <div x-show="session.aufgaben.length > 0" class="card" style="padding: 10px 14px; text-align: center; margin-top: auto;">
+                    <span style="font-size: 12px; color: var(--c-muted);">
+                      Session: <strong style="color: var(--c-primary);" x-text="session.aufgaben.length"></strong> Aufgaben ·
+                      Richtig: <strong style="color: var(--c-success);" x-text="session.aufgaben.filter(a => a.korrekt).length"></strong>
+                    </span>
+                  </div>
+                </div>
+              </template>
+
+            </div>
+          </template>
+
+        </div><!-- /ueben-right -->
+      </div><!-- /ueben-layout -->
+    </div><!-- /ueben screen -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCREEN: FORTSCHRITT
+    ════════════════════════════════════════════════════════════════════ -->
+    <div x-show="screen === 'fortschritt'" class="screen-content">
+
+      <!-- Exam date & countdown -->
+      <div class="card" style="margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Klausurdatum</p>
+            <p style="font-size: 13px; color: var(--c-muted); margin: 2px 0 0;" x-show="!editExamDate" x-text="examFmt()"></p>
+          </div>
+          <button
+            class="btn btn--sm btn--outline"
+            @click="editExamDate = !editExamDate"
+            type="button"
+            x-text="editExamDate ? 'Abbrechen' : 'Ändern'"
+          ></button>
+        </div>
+        <div x-show="editExamDate" style="display: flex; gap: 8px; align-items: center;">
+          <input type="date" class="field field--tinted" style="flex: 1;" x-model="examDateInput" :min="todayMin()" />
+          <button class="btn btn--primary btn--sm" @click="updateExamDate()" type="button">Speichern</button>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--c-muted); margin-bottom: 4px;">
+            <span>Verbleibende Zeit</span>
+            <span x-text="verbleibeneTage + ' Tage'"></span>
+          </div>
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill"
+              :style="`width: ${zeitProzent}%; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-col grid -->
+      <div class="fortschritt-grid">
+
+        <!-- Left: Score bars + actions -->
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+
+          <!-- Themen score bars -->
+          <div class="card" style="display: flex; flex-direction: column; gap: 18px;">
+            <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Themen-Lernstand</p>
+
+            <div x-show="!hasDiagnose" style="font-size: 13px; color: var(--c-muted);">
+              Noch keine Diagnose vorhanden.
+            </div>
+
+            <template x-for="t in themenMitStatus()" :key="t.id">
+              <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 2px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                  <span style="font-size: 12px; font-weight: 600;" x-text="shortName(t.name)"></span>
+                  <span
+                    class="badge"
+                    :style="`background: ${scoreConfig(t.score).bg}; color: ${scoreConfig(t.score).color};`"
+                    x-text="t.score !== null ? Math.round(t.score) + '%' : '—'"
+                  ></span>
+                </div>
+                <div class="score-bar">
+                  <div
+                    class="score-bar__fill"
+                    :style="`width: ${t.score ?? 0}%; background: ${scoreConfig(t.score).color};`"
+                  ></div>
+                  <div class="score-bar__marker"></div>
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <!-- Reset data -->
+          <div class="card" style="display: flex; flex-direction: column; gap: 8px;">
+            <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Daten zurücksetzen</p>
+            <p style="font-size: 12px; color: var(--c-muted); margin: 0;">Löscht alle gespeicherten Diagnosen, Einstellungen und deinen Namen.</p>
+            <button class="btn btn--danger btn--sm" @click="resetAll()" type="button">Alle Daten löschen</button>
+          </div>
+
+        </div><!-- /left col -->
+
+        <!-- Right: Radar Verlauf + Timeline -->
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+
+          <!-- Radar -->
+          <div class="card" x-show="hasDiagnose">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <p style="font-size: 13px; font-weight: 600; color: var(--c-primary); margin: 0;">Radar-Verlauf</p>
+              <button
+                class="btn btn--sm"
+                :class="showVerlauf ? 'btn--primary' : 'btn--outline'"
+                @click="toggleVerlauf()"
+                :disabled="diagnosen.length < 2"
+                type="button"
+                x-text="showVerlauf ? 'Verlauf: An' : 'Verlauf: Aus'"
+              ></button>
+            </div>
+            <canvas id="radarFortschritt"></canvas>
+          </div>
+
+          <!-- Improvements -->
+          <div class="card" x-show="verbesserungen().length > 0" style="display: flex; flex-direction: column; gap: 6px;">
+            <p style="font-size: 13px; font-weight: 600; color: var(--c-success); margin: 0;">Verbesserungen seit letzter Diagnose</p>
+            <template x-for="t in verbesserungen()" :key="t.id">
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px;">
+                <span style="color: var(--c-success);">↑</span>
+                <span x-text="t.name"></span>
+              </div>
+            </template>
+          </div>
+
+          <!-- Diagnose Timeline -->
+          <div class="card" x-show="hasDiagnose" style="display: flex; flex-direction: column; gap: 10px;">
+            <p style="font-size: 13px; font-weight: 600; color: var(--c-primary); margin: 0;">Diagnose-Verlauf</p>
+            <template x-for="p in diagnosePunkte()" :key="p.idx">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--c-primary); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" x-text="p.idx + 1"></div>
+                <div style="flex: 1;">
+                  <p style="font-size: 12px; font-weight: 600; margin: 0;">Diagnose <span x-text="p.idx + 1"></span></p>
+                  <p style="font-size: 11px; color: var(--c-muted); margin: 0;" x-text="p.datum"></p>
+                </div>
+                <span x-show="p.idx === diagnosen.length - 1" style="font-size: 11px; color: var(--c-muted);">(aktuell)</span>
+              </div>
+            </template>
+          </div>
+
+        </div><!-- /right col -->
+      </div><!-- /fortschritt-grid -->
+    </div><!-- /fortschritt -->
+
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SCREEN: EINSTELLUNGEN
+    ════════════════════════════════════════════════════════════════════ -->
+    <div x-show="screen === 'einstellungen'" class="screen-content">
+
+      <!-- Notice: KI not active -->
+      <div class="card card--tinted" style="margin-bottom: 16px; padding: 12px 16px;">
+        <p style="font-size: 13px; color: var(--c-muted); margin: 0;">
+          ℹ️ KI-Einbindung ist in dieser Version nicht aktiv. Die App läuft im deterministischen Modus mit vorgenerierten Kursinhalt-Dateien.
+        </p>
+      </div>
+
+      <!-- Kursinhalt laden -->
+      <div class="card" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Kursinhalt laden</p>
+        <p style="font-size: 12px; color: var(--c-muted); margin: 0;">
+          Vom Dozenten generierte JSON-Dateien. <strong>Automatisch:</strong> Dateien in den Unterordner <code>kursinhalt/</code> legen und via Live Server öffnen.
+        </p>
+
+        <div
+          x-show="hasDeterministicContent"
+          style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 10px; background: var(--c-success-bg); color: var(--c-success);"
+        >
+          <span style="font-size: 13px; font-weight: 600;" x-text="kursinhaltStatus.msg"></span>
+          <button class="btn btn--sm btn--danger" @click="removeKursinhalt()" type="button">Entfernen</button>
+        </div>
+
+        <div
+          x-show="!hasDeterministicContent"
+          style="padding: 10px 14px; border-radius: 10px; background: var(--c-warn-bg); color: var(--c-warn); font-size: 13px;"
+        >
+          Kein Kursinhalt geladen — App läuft im Demo-Modus.
+        </div>
+      </div>
+
+      <!-- KI-Verbindung (hidden — not active in this prototype) -->
+      <div x-show="false" class="card" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">KI-Verbindung</p>
+        <div>
+          <label class="field-label" for="settingsApiKey">API Key</label>
+          <input id="settingsApiKey" type="password" class="field" placeholder="Bearer Token" x-model="apiKey" />
+        </div>
+        <div>
+          <label class="field-label" for="settingsApiModel">Modell</label>
+          <input id="settingsApiModel" type="text" class="field" placeholder="gpt-5.2" x-model="apiModel" />
+        </div>
+        <button class="btn btn--outline btn--sm" @click="testApiConnection()" :disabled="!apiKey || apiTest.status === 'loading'" type="button">
+          <span x-show="apiTest.status !== 'loading'">Verbindung testen</span>
+          <span x-show="apiTest.status === 'loading'">Teste…</span>
+        </button>
+        <div x-show="apiTest.message" class="api-status" :class="{ 'api-status--ok': apiTest.status === 'ok', 'api-status--error': apiTest.status === 'error' }" x-text="apiTest.message"></div>
+        <button class="btn btn--primary btn--block" @click="saveSettings()" type="button">Speichern</button>
+      </div>
+
+    </div><!-- /einstellungen -->
+
+  </div><!-- /main-area -->
+</div><!-- /app-shell -->
+
+</body>
+</html>

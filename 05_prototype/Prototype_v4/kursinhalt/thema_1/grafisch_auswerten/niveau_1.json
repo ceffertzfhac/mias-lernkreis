@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_g_1_1_1",
+    "aufgabe": "Ein v-t-Diagramm zeigt eine Gerade von v = 0 bei t = 0 bis v = 10 m/s bei t = 5 s. (a) Lies die Beschleunigung ab. (b) Berechne die zurückgelegte Strecke aus der Fläche.",
+    "musterloesung": "(a) a = Δv/Δt = 10/5 = 2,0 m/s². (b) Fläche = Dreieck: s = ½·5·10 = 25 m.",
+    "tipps": [
+      "Die Steigung im v-t-Diagramm ist die Beschleunigung. Die Fläche ist die Strecke.",
+      "a = Δv/Δt; s = ½·t·v (Dreiecksformel).",
+      "a = 2,0 m/s²; s = 25 m."
+    ]
+  },
+  {
+    "id": "do_g_1_1_2",
+    "aufgabe": "Ein x-t-Diagramm zeigt für drei Körper: A eine Parabel, B eine Gerade mit positiver Steigung, C eine horizontale Linie. Beschreibe die Bewegung jedes Körpers.",
+    "musterloesung": "A: x ∝ t² → gleichmäßig beschleunigt (a = const ≠ 0). B: x ∝ t → gleichförmig (v = const, a = 0). C: x = const → Ruhe (v = 0).",
+    "tipps": [
+      "Steigung des x-t-Graphen = Geschwindigkeit. Krümmung zeigt Beschleunigung an.",
+      "Gerade: gleichförmig. Parabel: gleichmäßig beschleunigt. Horizontal: Ruhe.",
+      "A: beschleunigt, B: gleichförmig, C: ruhend."
+    ]
+  },
+  {
+    "id": "do_g_1_1_3",
+    "aufgabe": "Gegeben sind Messpunkte (t in s, x in m): (0;0), (1;2), (2;8), (3;18), (4;32). Zeichne x gegen t² auf, bestimme die Steigung und berechne a.",
+    "musterloesung": "x/t² = 2 m/s² = const → x = 2t² → ½·a = 2 → a = 4,0 m/s². Steigung des x-t²-Graphen = ½a.",
+    "tipps": [
+      "x = ½at² → x gegen t² aufgetragen ist eine Gerade mit Steigung ½a.",
+      "Berechne t² für jeden Punkt und trage x gegen t² auf.",
+      "Steigung = ½a = 2 m/s² → a = 4,0 m/s²."
+    ]
+  },
+  {
+    "id": "do_g_1_1_4",
+    "aufgabe": "Ein v-t-Diagramm zeigt: 0–3 s konstant v = 6 m/s, dann 3–7 s linearer Abfall auf v = 0. Berechne die Gesamtstrecke.",
+    "musterloesung": "Strecke 1 (Rechteck): s₁ = 6·3 = 18 m. Strecke 2 (Dreieck): s₂ = ½·4·6 = 12 m. Gesamt: s = 30 m.",
+    "tipps": [
+      "Strecke = Fläche unter dem v-t-Graphen.",
+      "Fläche 1: Rechteck (v·t). Fläche 2: Dreieck (½·Δt·v₀).",
+      "s = 18 + 12 = 30 m."
+    ]
+  }
+]

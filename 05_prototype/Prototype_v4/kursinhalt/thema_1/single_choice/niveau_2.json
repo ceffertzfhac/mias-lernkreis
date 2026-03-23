@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_1_2_1",
+    "frage": "Beim schrägen Wurf (keine Luftreibung): Wie verhält sich vx während des Fluges?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Nimmt stetig ab."
+      },
+      {
+        "key": "B",
+        "text": "Nimmt stetig zu."
+      },
+      {
+        "key": "C",
+        "text": "Bleibt konstant."
+      },
+      {
+        "key": "D",
+        "text": "Ist am höchsten Punkt null."
+      },
+      {
+        "key": "E",
+        "text": "Hängt von der Masse ab."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Keine Horizontalkraft → vx = v₀cos(α) = const. D gilt nur für vy. E falsch."
+  },
+  {
+    "id": "sc_1_2_2",
+    "frage": "Ball senkrecht nach oben geworfen: Welche Beschleunigung wirkt am höchsten Punkt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "a = 0"
+      },
+      {
+        "key": "B",
+        "text": "a = g nach unten"
+      },
+      {
+        "key": "C",
+        "text": "a = g nach oben"
+      },
+      {
+        "key": "D",
+        "text": "a ist minimal"
+      },
+      {
+        "key": "E",
+        "text": "a hängt von v₀ ab"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: g wirkt immer nach unten — auch am Umkehrpunkt wo v = 0. A ist der häufigste Irrtum."
+  },
+  {
+    "id": "sc_1_2_3",
+    "frage": "Zwei Bälle werden gleichzeitig vom gleichen Punkt geworfen: Ball 1 fällt senkrecht, Ball 2 wird horizontal abgeworfen. Wer landet zuerst?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Ball 1"
+      },
+      {
+        "key": "B",
+        "text": "Ball 2"
+      },
+      {
+        "key": "C",
+        "text": "Beide gleichzeitig"
+      },
+      {
+        "key": "D",
+        "text": "Hängt von der Abwurfgeschwindigkeit ab."
+      },
+      {
+        "key": "E",
+        "text": "Hängt von der Masse ab."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: Die vertikale Fallbewegung ist für beide identisch (gleiche h, gleiches g). Die Horizontalbewegung beeinflusst die Fallzeit nicht."
+  },
+  {
+    "id": "sc_1_2_4",
+    "frage": "Bei welchem Abwurfwinkel ist die Wurfweite maximal (Abwurf und Aufprall auf gleicher Höhe)?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "30°"
+      },
+      {
+        "key": "B",
+        "text": "45°"
+      },
+      {
+        "key": "C",
+        "text": "60°"
+      },
+      {
+        "key": "D",
+        "text": "90°"
+      },
+      {
+        "key": "E",
+        "text": "Hängt von v₀ ab."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: R = v₀²sin(2α)/g, maximal bei sin(2α)=1 → 2α=90° → α=45°. A und C liefern gleiche Weite (komplementär). D: Weite null. E: α = 45° ist immer optimal."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_2_4_1",
+    "aufgabe": "Ein Auto der Masse m = 1200 kg fährt mit der Geschwindigkeit v₀ = 120 km/h. Bei einer Vollbremsung blockieren alle Räder (Gleitreibungskoeffizient μ = 0,75). (a) Berechnen Sie den Bremsweg s. (b) Wie viel kürzer ist der Bremsweg bei einer Ausgangsgeschwindigkeit von v₀ = 60 km/h? (g = 9,81 m/s²)",
+    "musterloesung": "(a) Bremsverzögerung: a = μ·g = 0,75·9,81 = 7,358 m/s². v₀ = 120/3,6 = 33,33 m/s. Bremsweg: s₁ = v₀²/(2a) = 1111/14,72 = 75,5 m. (b) v₀ = 60/3,6 = 16,67 m/s. s₂ = v₀²/(2a) = 277,9/14,72 = 18,9 m. Differenz: 75,5 − 18,9 = 56,6 m. Hinweis: Halbierung der Geschwindigkeit → Viertelung des Bremswegs.",
+    "tipps": [
+      "Die Bremsverzögerung ergibt sich aus der Reibungskraft. Nutze dann die kinematische Formel für den Bremsweg.",
+      "a = μ·g. Bremsweg: s = v₀²/(2·a). Achte auf die Einheitenumrechnung km/h → m/s.",
+      "a = 7,36 m/s². s₁ = 75,5 m (120 km/h), s₂ = 18,9 m (60 km/h)."
+    ]
+  },
+  {
+    "id": "do_b_2_4_2",
+    "aufgabe": "Eine Rakete hat eine Startmasse von M = 500 kg, davon sind m_T = 200 kg Treibstoff. Die Ausstoßgeschwindigkeit beträgt v_e = 2500 m/s relativ zur Rakete. Der Treibstoff wird gleichmäßig in Δt = 30 s verbrannt. Berechnen Sie (a) die Schubkraft F, (b) die Beschleunigung a zu Beginn und (c) am Ende der Brennphase. (Schwerkraft vernachlässigen)",
+    "musterloesung": "(a) Massenstrom: ṁ = m_T/Δt = 200/30 = 6,67 kg/s. Schub: F = ṁ·v_e = 6,67·2500 = 16 667 N ≈ 16,7 kN. (b) a_Anfang = F/M = 16667/500 = 33,3 m/s². (c) Endmasse: M_end = 500 − 200 = 300 kg. a_Ende = F/M_end = 16667/300 = 55,6 m/s².",
+    "tipps": [
+      "Die Schubkraft ist das Produkt aus Massenstrom und Ausströmgeschwindigkeit. Die Beschleunigung nimmt zu, weil die Masse abnimmt.",
+      "F = ṁ·v_e mit ṁ = m_T/Δt. Dann a = F/m(t) für Anfangs- und Endmasse.",
+      "ṁ = 6,67 kg/s → F = 16,7 kN. a_Anfang = 33,3 m/s², a_Ende = 55,6 m/s²."
+    ]
+  },
+  {
+    "id": "do_b_2_4_3",
+    "aufgabe": "Eine Person der Masse m = 70 kg steht auf einer Personenwaage in einem Aufzug. Die Waage zeigt F₁ = 840 N an. (a) In welchem Bewegungszustand befindet sich der Aufzug und wie groß ist die Beschleunigung? (b) Nach 3 s zeigt die Waage F₂ = 686 N. Was geschieht jetzt? (g = 9,81 m/s²)",
+    "musterloesung": "(a) Gewicht: F_G = m·g = 70·9,81 = 686,7 N. F₁ = 840 N > F_G → Aufzug beschleunigt aufwärts. Newton 2: F₁ − F_G = m·a → a = (840−686,7)/70 = 2,19 m/s² aufwärts. (b) F₂ = 686 N ≈ F_G → a = 0. Der Aufzug fährt nun mit konstanter Geschwindigkeit.",
+    "tipps": [
+      "Die Waage misst die Normalkraft, nicht die Gewichtskraft. Vergleiche Waagenablesung mit m·g und schließe auf Richtung der Beschleunigung.",
+      "Newton 2: N − m·g = m·a → a = (N − m·g)/m. F₂ = m·g bedeutet a = 0.",
+      "(a) a = (840−687)/70 ≈ 2,19 m/s² aufwärts. (b) F₂ ≈ F_G → gleichförmige Fahrt."
+    ]
+  },
+  {
+    "id": "do_b_2_4_4",
+    "aufgabe": "Ein masseloses Seil ist in der Mitte mit einer Last F = 5000 N belastet und symmetrisch an zwei Punkten im gleichen Höhenniveau befestigt. Das Seil hat eine Gesamtlänge von l = 40 m und hängt in der Mitte um d = 1,0 m durch. Berechnen Sie die Seilkraft T. Hinweis: Der Durchhang ist sehr klein (kleiner Winkel).",
+    "musterloesung": "Halbwinkel: tan(θ) ≈ sin(θ) = d/(l/2) = 1,0/20 = 0,05. Gleichgewicht vertikal: 2·T·sin(θ) = F → T = F/(2·sin(θ)) = 5000/(2·0,05) = 50 000 N = 50 kN.",
+    "tipps": [
+      "Betrachte das Gleichgewicht am Lastpunkt. Die Vertikalkomponenten beider Seilhälften tragen die Last.",
+      "Für kleinen Winkel: sin(θ) ≈ tan(θ) = Durchhang/Halbspannweite. Gleichgewicht: 2·T·sin(θ) = F.",
+      "sin(θ) ≈ 1/20 = 0,05. T = 5000/(2·0,05) = 50 000 N."
+    ]
+  }
+]

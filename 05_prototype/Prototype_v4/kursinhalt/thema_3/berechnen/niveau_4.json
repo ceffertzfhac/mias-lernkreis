@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_3_4_1",
+    "aufgabe": "Ein Körper der Masse m = 2,0 kg wird durch eine gespannte Feder (k = 800 N/m, Auslenkung x₀ = 20 cm) auf einer reibungsbehafteten horizontalen Fläche (μ = 0,20) horizontal abgeschossen. Anschließend läuft er eine reibungsfreie schiefe Ebene (α = 30°) hinauf. Berechnen Sie die maximale Höhe h, die der Körper auf der schiefen Ebene erreicht. (g = 9,81 m/s²)",
+    "musterloesung": "Energie der Feder: E_F = ½·k·x₀² = ½·800·0,04 = 16 J. Reibungsarbeit auf Horizontale bis Fuß der Schräge (Länge l_h unbekannt — hier: Schräge beginnt direkt). Annahme Reibung nur auf Horizontale bis Beginn der Schräge = 0. Auf Schräge reibungsfrei: E_F = m·g·h → h = E_F/(m·g) = 16/(2·9,81) = 0,815 m.",
+    "tipps": [
+      "Stelle eine vollständige Energiebilanz auf: Federenergie → kinetische Energie → (Reibungsverlust) → Lageenergie.",
+      "E_Feder = ½·k·x₀². Auf der reibungsfreien Schräge: E_Feder = m·g·h → h = E_Feder/(m·g).",
+      "E_Feder = 16 J → h = 16/(2·9,81) ≈ 0,815 m."
+    ]
+  },
+  {
+    "id": "do_b_3_4_2",
+    "aufgabe": "Zwei Planeten A und B haben die Massen M_A und M_B = 4·M_A sowie die Radien R_A und R_B = 2·R_A. Vergleichen Sie (a) die Oberflächengravitation g_A und g_B sowie (b) die erste kosmische Geschwindigkeit (Kreisbahngeschwindigkeit an der Oberfläche) v₁_A und v₁_B. Geben Sie die Verhältnisse als Faktoren an.",
+    "musterloesung": "(a) g = G·M/R². g_B/g_A = (M_B/M_A)·(R_A/R_B)² = 4·(1/4) = 1 → g_B = g_A. (b) v₁ = √(G·M/R) = √(g·R). v₁_B/v₁_A = √(g_B·R_B/(g_A·R_A)) = √(1·2) = √2 ≈ 1,41. Planet B hat die √2-fache erste kosmische Geschwindigkeit.",
+    "tipps": [
+      "Schreibe die Formeln für g und v₁ in Abhängigkeit von M und R auf. Bilde dann die Verhältnisse.",
+      "g = G·M/R², v₁ = √(G·M/R). Setze M_B = 4M_A und R_B = 2R_A ein und vereinfache.",
+      "g_B/g_A = 4·(1/4) = 1 → gleiche Oberflächengravitation. v₁_B/v₁_A = √2."
+    ]
+  }
+]

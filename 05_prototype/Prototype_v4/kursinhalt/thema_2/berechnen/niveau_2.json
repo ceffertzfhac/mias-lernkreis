@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_2_2_1",
+    "aufgabe": "Ein Block der Masse m = 8,0 kg gleitet eine schiefe Ebene mit dem Neigungswinkel α = 30° und dem Gleitreibungskoeffizienten μ = 0,20 hinunter. Berechnen Sie die resultierende Kraft F_net auf den Block sowie seine Beschleunigung a. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m = 8,0 kg, α = 30°, μ = 0,20, g = 9,81 m/s². Gesucht: F_net, a. Hangabtriebskraft: F_H = m·g·sin(30°) = 39,24 N. Normalkraft: N = m·g·cos(30°) = 67,97 N. Reibungskraft: F_R = μ·N = 13,59 N. F_net = F_H − F_R = 25,65 N. a = F_net/m = 25,65/8,0 = 3,21 m/s².",
+    "tipps": [
+      "Zerlege die Gewichtskraft in Hang- und Normalkomponente. Die Reibungskraft wirkt der Bewegung entgegen.",
+      "F_H = m·g·sin(α), N = m·g·cos(α), F_R = μ·N. F_net = F_H − F_R.",
+      "F_net = 39,24 − 13,59 = 25,65 N → a = 3,21 m/s²."
+    ]
+  },
+  {
+    "id": "do_b_2_2_2",
+    "aufgabe": "Eine konstante Kraft F = 40 N wirkt für die Dauer Δt = 3,0 s auf einen anfangs ruhenden Körper der Masse m = 10 kg. Berechnen Sie (a) den Kraftstoß J, (b) den Impuls p nach der Krafteinwirkung und (c) die Endgeschwindigkeit v.",
+    "musterloesung": "Gegeben: F = 40 N, Δt = 3,0 s, m = 10 kg, v₀ = 0. (a) J = F·Δt = 40·3,0 = 120 N·s. (b) p = p₀ + J = 0 + 120 = 120 kg·m/s. (c) v = p/m = 120/10 = 12 m/s.",
+    "tipps": [
+      "Was ist der Kraftstoß, und wie hängt er mit der Impulsänderung zusammen?",
+      "J = F·Δt = Δp. Da v₀ = 0, gilt p = J. Dann v = p/m.",
+      "J = 120 N·s → p = 120 kg·m/s → v = 12 m/s."
+    ]
+  },
+  {
+    "id": "do_b_2_2_3",
+    "aufgabe": "Zwei Massen m₁ = 5,0 kg und m₂ = 3,0 kg sind über ein masseloses Seil und eine reibungsfreie Umlenkrolle verbunden (Atwood-Maschine). Berechnen Sie die Beschleunigung a des Systems sowie die Seilspannung T. (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: m₁ = 5,0 kg, m₂ = 3,0 kg, g = 9,81 m/s². Gesucht: a, T. a = (m₁ − m₂)·g/(m₁ + m₂) = 2·9,81/8 = 2,45 m/s². T = 2·m₁·m₂·g/(m₁ + m₂) = 2·15·9,81/8 = 36,8 N.",
+    "tipps": [
+      "Wende Newtons zweites Gesetz auf jede Masse separat an. Das Seil liefert dieselbe Spannung T für beide.",
+      "Für m₁: m₁·g − T = m₁·a. Für m₂: T − m₂·g = m₂·a. Addiere beide Gleichungen und löse nach a auf.",
+      "a = (m₁−m₂)·g/(m₁+m₂) = 2,45 m/s². T = m₂·(g+a) = 3·12,26 = 36,8 N."
+    ]
+  },
+  {
+    "id": "do_b_2_2_4",
+    "aufgabe": "Ein Ball der Masse m = 0,20 kg prallt mit der Geschwindigkeit v = 10 m/s senkrecht gegen eine Wand und kehrt mit der Geschwindigkeit v' = 7,0 m/s zurück. Der Aufprall dauert Δt = 0,015 s. Berechnen Sie die mittlere Kraft F, die die Wand auf den Ball ausübt.",
+    "musterloesung": "Gegeben: m = 0,20 kg, v = 10 m/s, v' = 7,0 m/s (entgegengesetzt), Δt = 0,015 s. Gesucht: F. Δp = m·(v' − (−v)) = 0,20·(7,0 + 10) = 3,4 kg·m/s. F = Δp/Δt = 3,4/0,015 ≈ 227 N.",
+    "tipps": [
+      "Beachte die Vorzeichen: Vor und nach dem Aufprall zeigen die Geschwindigkeiten in entgegengesetzte Richtungen.",
+      "Δp = m·|v' + v| (beide Vorzeichen beachten). F = |Δp|/Δt.",
+      "Δp = 0,20·17 = 3,4 kg·m/s → F = 3,4/0,015 ≈ 227 N."
+    ]
+  }
+]

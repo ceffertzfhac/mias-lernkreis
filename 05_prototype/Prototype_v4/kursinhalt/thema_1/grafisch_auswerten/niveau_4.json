@@ -1,0 +1,12 @@
+[
+  {
+    "id": "do_g_1_4_1",
+    "aufgabe": "In einem Fahrzeugtest werden folgende Werte gemessen: v (m/s): 0, 5, 10, 15, 20, 25; t (s): 0, 1,8, 4,2, 7,5, 12,0, 18,0. (a) Zeichne v-t-Diagramm. (b) Die Bewegung ist nicht gleichmäßig beschleunigt — wie erkennst du das? (c) Schätze die Strecke in den ersten 18 s durch Flächenapproximation.",
+    "musterloesung": "(b) Die Steigung Δv/Δt = 5/1,8 ≈ 2,78; 5/2,4 ≈ 2,08; 5/3,3 ≈ 1,52 m/s² — nimmt ab → Kurve, keine Gerade → nicht konstante Beschleunigung. (c) Trapezregel: s ≈ ½(0+5)·1,8 + ½(5+10)·2,4 + ½(10+15)·3,3 + ½(15+20)·4,5 + ½(20+25)·6,0 = 4,5+18+41,25+78,75+135 = 277,5 m.",
+    "tipps": [
+      "Nicht-konstante Beschleunigung → v-t-Graph ist Kurve, keine Gerade.",
+      "Fläche durch Trapezregel: s ≈ Σ ½(v_i+v_{i+1})·Δt_i.",
+      "s ≈ 277,5 m (näherungsweise)."
+    ]
+  }
+]

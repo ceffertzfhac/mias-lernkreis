@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_1_4_1",
+    "frage": "s(t) = (vRtcos(ωt), vRtsin(ωt), −vzt). Welche Beschleunigungskomponenten treten auf?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Tangential, radial und vertikal"
+      },
+      {
+        "key": "B",
+        "text": "Tangential und vertikal, aber keine radiale"
+      },
+      {
+        "key": "C",
+        "text": "Nur tangential"
+      },
+      {
+        "key": "D",
+        "text": "Nur radial"
+      },
+      {
+        "key": "E",
+        "text": "Keine Beschleunigung"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: Wachsender Radius (vRt) → tangentiale Beschleunigung. Kurvenrichtung → radiale Beschleunigung. vz = const → az = 0 (vertikal keine Beschl.). Entspricht Klausur Nr.1, Frage 1.7."
+  },
+  {
+    "id": "sc_1_4_2",
+    "frage": "Zwei Personen werfen Bälle mit v₀=25m/s: Person 1 unter 35°, Person 2 unter einem anderen Winkel — gleiche Wurfweite. Was gilt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "α₂ = 35°"
+      },
+      {
+        "key": "B",
+        "text": "α₂ = 55°"
+      },
+      {
+        "key": "C",
+        "text": "α₂ = 45°"
+      },
+      {
+        "key": "D",
+        "text": "α₂ = 70°"
+      },
+      {
+        "key": "E",
+        "text": "Keine zweite Lösung möglich."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: sin(2α₁) = sin(2α₂) → 2α₂ = 180°−2·35° = 110° → α₂ = 55°. Komplementärwinkel: 35°+55°=90°."
+  },
+  {
+    "id": "sc_1_4_3",
+    "frage": "Körper A und B starten gleichzeitig: A aus Ruhe mit a=2 m/s², B mit v=−10 m/s (entgegen, konstant) aus 100 m Abstand. Was bestimmt den Zeitpunkt der Begegnung?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Gleichsetzen der Ortsgleichungen → quadratische Gleichung"
+      },
+      {
+        "key": "B",
+        "text": "Gleichsetzen der Geschwindigkeiten"
+      },
+      {
+        "key": "C",
+        "text": "Energieerhaltung"
+      },
+      {
+        "key": "D",
+        "text": "Impulserhaltung"
+      },
+      {
+        "key": "E",
+        "text": "Addieren der Startgeschwindigkeiten"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: xA(t) = xB(t) → t² = 100−10t → t²+10t−100=0. Lösung: Begegnung bei t≈6,2 s. B gibt Zeitpunkt gleicher Geschwindigkeit, nicht Begegnung."
+  },
+  {
+    "id": "sc_1_4_4",
+    "frage": "Welches v-t-Diagramm beschreibt einen senkrecht nach oben und wieder herunter geworfenen Ball (Abwurf = Aufprall auf Bodenhöhe)?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Parabel"
+      },
+      {
+        "key": "B",
+        "text": "Gerade mit positivem Achsenabschnitt, dann abrupter Abfall auf 0"
+      },
+      {
+        "key": "C",
+        "text": "Gerade mit positivem Achsenabschnitt, die linear auf einen negativen Wert fällt"
+      },
+      {
+        "key": "D",
+        "text": "Konstante Linie"
+      },
+      {
+        "key": "E",
+        "text": "Sinuskurve"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: v(t) = v₀ − g·t — eine Gerade mit Steigung −g. Anfangs positiv (aufwärts), wird null am höchsten Punkt, dann negativ (abwärts). A wäre das x-t-Diagramm (Parabel). B falsch. D falsch. E falsch."
+  }
+]

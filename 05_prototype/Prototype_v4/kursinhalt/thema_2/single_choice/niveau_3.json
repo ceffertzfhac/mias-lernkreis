@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_2_3_1",
+    "frage": "Eine Rakete beschleunigt im reibungsfreien Weltraum. Welches Prinzip liegt zugrunde?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Energieerhaltung"
+      },
+      {
+        "key": "B",
+        "text": "3. Newtonsches Gesetz — Rückstoßprinzip / Impulserhaltung"
+      },
+      {
+        "key": "C",
+        "text": "2. Newtonsches Gesetz F=ma, keine Impulserhaltung"
+      },
+      {
+        "key": "D",
+        "text": "Gravitationsgesetz"
+      },
+      {
+        "key": "E",
+        "text": "Hookesches Gesetz"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Treibstoff erhält Impuls rückwärts → Rakete vorwärts (Impulserhaltung = 3. Newton in Systemperspektive). A nicht primär. C unvollständig. D/E irrelevant."
+  },
+  {
+    "id": "sc_2_3_2",
+    "frage": "Zwei Blöcke (m₁=2 kg, m₂=5 kg) stoßen sich mit Feder ab (beide zunächst in Ruhe). Danach bewegt sich m₁ mit v₁=5 m/s. Wie bewegt sich m₂?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "v₂ = 5 m/s (gleiche Richtung)"
+      },
+      {
+        "key": "B",
+        "text": "v₂ = 2 m/s (entgegengesetzt)"
+      },
+      {
+        "key": "C",
+        "text": "v₂ = 5 m/s (entgegengesetzt)"
+      },
+      {
+        "key": "D",
+        "text": "v₂ = 12,5 m/s (entgegengesetzt)"
+      },
+      {
+        "key": "E",
+        "text": "m₂ bleibt stehen."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: p_ges=0 → m₁v₁=−m₂v₂ → v₂=m₁v₁/m₂=2·5/5=2 m/s entgegengesetzt. A falsche Richtung. C/D falscher Betrag. E verletzt Impulserhaltung."
+  },
+  {
+    "id": "sc_2_3_3",
+    "frage": "Warum reibt sich eine Katze problemlos unter niedrigen Hindernissen durch, obwohl sie selbst fast so groß ist wie das Hindernis?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Die Normalkraft ist null, also auch die Reibung."
+      },
+      {
+        "key": "B",
+        "text": "Die Reibungskraft ist Schwerkraft entgegengerichtet."
+      },
+      {
+        "key": "C",
+        "text": "Katzen haben einen niedrigen Reibungskoeffizienten."
+      },
+      {
+        "key": "D",
+        "text": "Das Fell reduziert die Normalkraft und damit die Reibung."
+      },
+      {
+        "key": "E",
+        "text": "Physikalisch kein Unterschied zum Menschen."
+      }
+    ],
+    "korrekt": "D",
+    "erklaerung": "D: FR=μFN. Weiches Fell verteilt die Normalkraft und ermöglicht Anpassung — effektiv niedrigere FN als ein starrer Körper. Dies ist ein Modell-Beispiel für Normalkraft und Reibung. A/B falsch. C teilweise richtig aber nicht die Hauptursache."
+  },
+  {
+    "id": "sc_2_3_4",
+    "frage": "Auf einer schiefen Ebene (α=30°, μ_Haft=0,60) liegt ein Block. Rutscht er?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Ja, weil sin(30°)=0,5 > μ"
+      },
+      {
+        "key": "B",
+        "text": "Nein, weil tan(30°)≈0,577 < μ_Haft=0,60"
+      },
+      {
+        "key": "C",
+        "text": "Ja, weil cos(30°)>sin(30°)"
+      },
+      {
+        "key": "D",
+        "text": "Nein, wenn α < 45°"
+      },
+      {
+        "key": "E",
+        "text": "Hängt von der Masse ab."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Gleitbedingung: tan(α)>μ_Haft. tan(30°)≈0,577 < 0,60 → Block rutscht nicht. A vergleicht sin(α) mit μ falsch. C irrelevant. D falsche Faustregel. E falsch (massenunabhängig)."
+  }
+]

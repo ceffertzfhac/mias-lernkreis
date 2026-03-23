@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_4_2_1",
+    "aufgabe": "Ein Pendel der Masse m₁ = 0,40 kg wird um h = 12 cm angehoben und stößt elastisch mit einem ruhenden Körper der Masse m₂ = 0,60 kg zusammen. Berechnen Sie die Geschwindigkeiten v₁' und v₂' nach dem Stoß sowie die Höhe h₂, auf die Körper 2 ansteigt. (g = 9,81 m/s²)",
+    "musterloesung": "Geschwindigkeit vor Stoß: v₁ = √(2·g·h) = √(2·9,81·0,12) = 1,534 m/s. Nach elastischem Stoß: v₁' = (m₁−m₂)/(m₁+m₂)·v₁ = (−0,2/1,0)·1,534 = −0,307 m/s (prallt zurück). v₂' = 2m₁/(m₁+m₂)·v₁ = 0,8·1,534 = 1,227 m/s. Höhe m₂: h₂ = v₂'²/(2g) = 1,505/19,62 = 0,0767 m ≈ 7,7 cm.",
+    "tipps": [
+      "Berechne zunächst die Pendelgeschwindigkeit v₁ vor dem Stoß aus der Energieerhaltung. Dann wende die Stoßformeln für den elastischen Stoß an.",
+      "v₁ = √(2gh). Stoßformeln: v₁' = (m₁−m₂)/(m₁+m₂)·v₁, v₂' = 2m₁/(m₁+m₂)·v₁. Höhe: h₂ = v₂'²/(2g).",
+      "v₁ = 1,53 m/s → v₁' = −0,31 m/s, v₂' = 1,23 m/s → h₂ ≈ 7,7 cm."
+    ]
+  },
+  {
+    "id": "do_b_4_2_2",
+    "aufgabe": "Bei einem ballistischen Pendel wird eine Kugel der Masse m = 15 g mit unbekannter Geschwindigkeit v in einen ruhenden Block der Masse M = 985 g abgefeuert. Nach dem vollkommen unelastischen Stoß schwingt das System auf eine Höhe h = 8,0 cm. Berechnen Sie die Anfangsgeschwindigkeit v der Kugel. (g = 9,81 m/s²)",
+    "musterloesung": "Nach dem Stoß (Energieerhaltung): v' = √(2·g·h) = √(2·9,81·0,08) = 1,252 m/s. Vor dem Stoß (Impulserhaltung): m·v = (m+M)·v' → v = (m+M)·v'/m = 1,0·1,252/0,015 ≈ 83,5 m/s.",
+    "tipps": [
+      "Trenne das Problem in zwei Phasen: Stoß (Impulserhaltung) und Pendelschwingung (Energieerhaltung). Beginne mit der zweiten Phase.",
+      "Phase 2: (m+M)·v' = (m+M)·√(2gh) → v'. Phase 1: m·v = (m+M)·v' → v.",
+      "v' = 1,25 m/s → v = (1,0/0,015)·1,25 ≈ 83,5 m/s."
+    ]
+  }
+]

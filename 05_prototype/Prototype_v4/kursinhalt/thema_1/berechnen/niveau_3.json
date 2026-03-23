@@ -1,0 +1,42 @@
+[
+  {
+    "id": "do_b_1_3_1",
+    "aufgabe": "Ein Skifahrer der Masse m = 75 kg fährt einen Hang mit dem Neigungswinkel α = 30° hinunter. Seine Position in Abhängigkeit von der Zeit ist durch x(t) = 1,2 t² + 9,8 t beschrieben (x in Metern, t in Sekunden). (a) Nach welcher Zeit hat der Skifahrer eine Strecke von s = 120 m zurückgelegt? (b) Welche Geschwindigkeit v besitzt er in diesem Moment?",
+    "musterloesung": "Gegeben: x(t) = 1,2t² + 9,8t, s = 120 m. Gesucht: t, v. (a) 1,2t² + 9,8t − 120 = 0 → t = (−9,8 + √(96,04 + 576))/2,4 = (−9,8 + 25,92)/2,4 ≈ 6,72 s. (b) v(t) = x'(t) = 2,4t + 9,8 → v(6,72) = 2,4·6,72 + 9,8 = 16,13 + 9,8 ≈ 25,9 m/s.",
+    "tipps": [
+      "Stelle für (a) die Gleichung x(t) = 120 auf — das ergibt eine quadratische Gleichung in t. Für (b) leite x(t) ab.",
+      "Löse 1,2t² + 9,8t − 120 = 0 mit der Lösungsformel. Die Geschwindigkeit ist v(t) = x'(t) = 2,4t + 9,8.",
+      "t ≈ 6,72 s (negative Lösung verwerfen). v(6,72) = 2,4·6,72 + 9,8 ≈ 25,9 m/s."
+    ]
+  },
+  {
+    "id": "do_b_1_3_2",
+    "aufgabe": "Zwei Personen werfen Bälle jeweils mit der Anfangsgeschwindigkeit v₀ = 25 m/s schräg nach oben. Person 1 wirft unter dem Winkel α₁ = 35°. Person 2 will dieselbe Wurfweite erzielen und wählt einen anderen Winkel. (a) Unter welchem Winkel α₂ wirft Person 2? (b) Wer landet früher? (g = 9,81 m/s²)",
+    "musterloesung": "Gegeben: v₀ = 25 m/s, α₁ = 35°. Gesucht: α₂, Zeitdifferenz. Wurfweite: R = v₀²·sin(2α)/g. Gleiche Weite: sin(2α₂) = sin(2·35°) = sin(70°) → 2α₂ = 110° → α₂ = 55°. Flugzeiten: t₁ = 2v₀sin(35°)/g ≈ 2,93 s; t₂ = 2v₀sin(55°)/g ≈ 4,18 s. Person 1 landet 1,25 s früher.",
+    "tipps": [
+      "Gleiche Wurfweite bedeutet gleiches sin(2α). Welcher zweite Winkel liefert denselben Sinuswert?",
+      "R = v₀²·sin(2α)/g. Aus sin(2α₂) = sin(70°) folgt 2α₂ = 110°, also α₂ = 55°. Flugzeit: t = 2v₀sin(α)/g.",
+      "t₁ ≈ 2,93 s (α₁ = 35°), t₂ ≈ 4,18 s (α₂ = 55°) → Differenz ≈ 1,25 s."
+    ]
+  },
+  {
+    "id": "do_b_1_3_3",
+    "aufgabe": "Die Bewegung eines Teilchens wird durch den Ortsvektor r(t) = (3t², 5t − 2t², 0) beschrieben (Angaben in SI-Einheiten). Berechnen Sie zum Zeitpunkt t = 1 s: (a) den Betrag der Geschwindigkeit, (b) den Betrag der Beschleunigung sowie (c) den Winkel zwischen Beschleunigungsvektor und x-Achse.",
+    "musterloesung": "v(t) = r'(t) = (6t, 5 − 4t, 0). Bei t = 1 s: v = (6, 1, 0) m/s → |v| = √(36 + 1) ≈ 6,08 m/s. a(t) = r''(t) = (6, −4, 0) m/s². |a| = √(36 + 16) ≈ 7,21 m/s². Winkel: θ = arctan(−4/6) ≈ −33,7° (unterhalb der x-Achse).",
+    "tipps": [
+      "Bilde die erste Ableitung für v(t) und die zweite Ableitung für a(t). Die Beträge ergeben sich aus dem Pythagoras.",
+      "v(1) = (6, 1, 0) m/s → |v| = √37. a = (6, −4, 0) m/s² → |a| = √52. Der Winkel folgt aus arctan(ay/ax).",
+      "|v| ≈ 6,08 m/s, |a| ≈ 7,21 m/s², θ ≈ −33,7°."
+    ]
+  },
+  {
+    "id": "do_b_1_3_4",
+    "aufgabe": "Körper A startet zur Zeit t = 0 aus der Ruhe am Ort x_A = 0 und wird mit a_A = 2,0 m/s² gleichmäßig beschleunigt. Körper B befindet sich zur selben Zeit am Ort x_B = 80 m und bewegt sich mit konstanter Geschwindigkeit v_B = −8,0 m/s (entgegen der x-Richtung) auf Körper A zu. (a) Wann treffen sich beide Körper? (b) An welchem Ort findet die Begegnung statt?",
+    "musterloesung": "Gegeben: x_A(t) = ½·2t² = t². x_B(t) = 80 − 8t. Gesucht: t, x. Gleichsetzen: t² = 80 − 8t → t² + 8t − 80 = 0. t = (−8 + √(64 + 320))/2 = (−8 + √384)/2 ≈ (−8 + 19,6)/2 ≈ 5,8 s. Ort: x = (5,8)² ≈ 33,6 m.",
+    "tipps": [
+      "Stelle für beide Körper die Orts-Zeit-Gleichungen auf und setze sie gleich.",
+      "x_A(t) = t², x_B(t) = 80 − 8t. Gleichsetzen ergibt eine quadratische Gleichung in t.",
+      "t² + 8t − 80 = 0 → t ≈ 5,8 s. Ort: x = (5,8)² ≈ 33,6 m."
+    ]
+  }
+]

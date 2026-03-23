@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_3_3_1",
+    "frage": "Welche Aussage zur Orbitalgeschwindigkeit v=√(GM/r) ist korrekt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "v nimmt mit größerem r zu."
+      },
+      {
+        "key": "B",
+        "text": "v nimmt mit größerem r ab."
+      },
+      {
+        "key": "C",
+        "text": "v ist unabhängig von r."
+      },
+      {
+        "key": "D",
+        "text": "v hängt von der Satellitenmasse ab."
+      },
+      {
+        "key": "E",
+        "text": "v=0 im Perigäum."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: v∝1/√r — höhere Bahn → langsamere Geschwindigkeit. A falsch. C falsch. D falsch (m kürzt sich). E falsch (Perigäum = schnellster Punkt)."
+  },
+  {
+    "id": "sc_3_3_2",
+    "frage": "Auf dem Mond (g=1,62 m/s²) ist die Wurfweite beim schrägen Wurf im Vergleich zur Erde (gleiche v₀, α) …",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "gleich."
+      },
+      {
+        "key": "B",
+        "text": "ca. 6× kleiner."
+      },
+      {
+        "key": "C",
+        "text": "ca. 6× größer."
+      },
+      {
+        "key": "D",
+        "text": "36× größer."
+      },
+      {
+        "key": "E",
+        "text": "hängt vom Winkel ab."
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: R=v₀²sin(2α)/g ∝ 1/g. gErde/gMond≈6 → Mond-R ≈ 6× größer."
+  }
+]

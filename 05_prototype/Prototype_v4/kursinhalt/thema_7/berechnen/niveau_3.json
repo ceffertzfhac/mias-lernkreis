@@ -1,0 +1,22 @@
+[
+  {
+    "id": "do_b_7_3_1",
+    "aufgabe": "Im Praktikum wurde der spezifische Widerstand eines Drahtes bestimmt. Bei konstantem Strom I = 1,0 A und Länge l = 1,0 m wurden für drei verschiedene Drahtdurchmesser d folgende Spannungen gemessen: d = 0,05 mm → U = 8,91 V; d = 0,10 mm → U = 2,23 V; d = 0,20 mm → U = 0,56 V. Berechnen Sie aus jedem Messwert den spezifischen Widerstand ρ und geben Sie den Mittelwert an.",
+    "musterloesung": "R = U/I. ρ = R·A/l = (U/I)·(πd²/4)/l. Für d = 0,05 mm: ρ = 8,91·π·(5·10⁻⁵)²/(4·1,0) = 8,91·π·25·10⁻¹⁰/4 ≈ 1,75·10⁻⁸ Ω·m. Für d = 0,10 mm: ρ = 2,23·π·10⁻⁸/4 ≈ 1,75·10⁻⁸ Ω·m. Für d = 0,20 mm: ρ = 0,56·π·4·10⁻⁸/4 ≈ 1,76·10⁻⁸ Ω·m. Mittelwert: ρ̄ ≈ 1,75·10⁻⁸ Ω·m (entspricht Konstantan).",
+    "tipps": [
+      "Der Widerstand hängt quadratisch vom Durchmesser ab. Berechne für jeden Messwert R = U/I und dann ρ = R·A/l mit A = πd²/4.",
+      "ρ = U·π·d²/(4·I·l). Setze die Werte für jeden Durchmesser ein.",
+      "Alle drei Werte liefern ρ ≈ 1,75·10⁻⁸ Ω·m (konsistentes Ergebnis)."
+    ]
+  },
+  {
+    "id": "do_b_7_3_2",
+    "aufgabe": "Eine quadratische Leiterschleife (Seitenlänge a = 10 cm) wird von einem Strom I = 20 A durchflossen. Sie ist an ihrer Diagonalen aufgehängt und hängt in einem homogenen Magnetfeld B = 0,15 T. An der einen Seite der Waage hängt eine Masse m₁ = 150 g, an der anderen m₂ = 100 g. Die Schleife ist um 45° zur Horizontalen geneigt. Berechnen Sie das Magnetfeld B, das zum Gleichgewicht führt. (g = 9,81 m/s²)",
+    "musterloesung": "Gewichtsungleichgewicht: ΔF = (m₁−m₂)·g = 0,05·9,81 = 0,4905 N. Hebelarm: l = a/2·cos(45°) = 0,05·0,707 = 0,03535 m. Drehmoment der Gewichte: M_G = ΔF·l = 0,4905·0,03535 = 0,01734 N·m. Magnetisches Drehmoment: M_B = B·I·a²·sin(45°) = B·20·0,01·0,707 = 0,1414·B. Gleichgewicht: 0,1414·B = 0,01734 → B = 0,123 T.",
+    "tipps": [
+      "Stelle das Gleichgewicht der Drehmomente auf: Das Gewichtsungleichgewicht muss durch das magnetische Drehmoment kompensiert werden.",
+      "Gewichtsdrehmoment: ΔM_G = (m₁−m₂)·g·(a/2)·cos(45°). Magnetisches Drehmoment: M_B = B·I·A·sin(θ) mit A = a². Im Gleichgewicht: M_B = M_G.",
+      "M_G ≈ 0,0173 N·m. M_B = B·0,1414 = 0,0173 → B ≈ 0,123 T."
+    ]
+  }
+]

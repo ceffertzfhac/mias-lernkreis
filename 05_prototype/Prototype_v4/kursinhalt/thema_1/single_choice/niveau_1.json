@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sc_1_1_1",
+    "frage": "Was beschreibt die Beschleunigung physikalisch korrekt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Die Änderung des Ortes pro Zeiteinheit"
+      },
+      {
+        "key": "B",
+        "text": "Die Änderung der Geschwindigkeit pro Zeiteinheit"
+      },
+      {
+        "key": "C",
+        "text": "Die auf einen Körper wirkende Kraft"
+      },
+      {
+        "key": "D",
+        "text": "Das Produkt aus Masse und Geschwindigkeit"
+      },
+      {
+        "key": "E",
+        "text": "Die Strecke geteilt durch Zeit"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: a = Δv/Δt. A = Geschwindigkeit. C = Kraft. D = Impuls. E = Durchschnittsgeschwindigkeit."
+  },
+  {
+    "id": "sc_1_1_2",
+    "frage": "Welche Einheit hat die Beschleunigung?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "m/s"
+      },
+      {
+        "key": "B",
+        "text": "m/s²"
+      },
+      {
+        "key": "C",
+        "text": "kg·m/s"
+      },
+      {
+        "key": "D",
+        "text": "N"
+      },
+      {
+        "key": "E",
+        "text": "m²/s"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: a = Δv/Δt → (m/s)/s = m/s². A = Geschwindigkeit. C = Impuls. D = Kraft. E = keine Standardgröße."
+  },
+  {
+    "id": "sc_1_1_3",
+    "frage": "Ein Körper bewegt sich gleichförmig. Welche Aussage ist korrekt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Die Beschleunigung ist positiv."
+      },
+      {
+        "key": "B",
+        "text": "Die Nettokraft ist null."
+      },
+      {
+        "key": "C",
+        "text": "Er legt in gleichen Zeiten unterschiedliche Strecken zurück."
+      },
+      {
+        "key": "D",
+        "text": "Die Geschwindigkeit nimmt linear zu."
+      },
+      {
+        "key": "E",
+        "text": "Er braucht eine konstante Antriebskraft."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Gleichförmig → a = 0 → ΣF = 0 (1. Newtonsches Gesetz). A falsch. C falsch (gleiche Strecken). D beschreibt gleichm. Beschleunigung. E falsch (ohne Reibung kein Antrieb nötig)."
+  },
+  {
+    "id": "sc_1_1_4",
+    "frage": "Was ist der Unterschied zwischen Strecke und Verschiebung?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Beide sind identisch."
+      },
+      {
+        "key": "B",
+        "text": "Verschiebung ist der Vektor vom Start- zum Endpunkt; Strecke ist die gesamte Weglänge."
+      },
+      {
+        "key": "C",
+        "text": "Die Strecke ist immer kleiner als die Verschiebung."
+      },
+      {
+        "key": "D",
+        "text": "Nur die Strecke ist ein Vektor."
+      },
+      {
+        "key": "E",
+        "text": "Verschiebung hat keine Einheit."
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: Korrekte Definition. Bei geradliniger Einrichtungsbewegung sind beide gleich. A falsch. C falsch (umgekehrt: Strecke ≥ Verschiebung). D falsch — Verschiebung ist der Vektor. E falsch."
+  }
+]

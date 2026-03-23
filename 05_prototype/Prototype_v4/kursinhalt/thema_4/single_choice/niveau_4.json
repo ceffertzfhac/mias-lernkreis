@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_4_4_1",
+    "frage": "Warum werden in Kernreaktoren leichte Moderatoren (H₂O) eingesetzt?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Neutronen absorbieren"
+      },
+      {
+        "key": "B",
+        "text": "Wärme ableiten"
+      },
+      {
+        "key": "C",
+        "text": "Maximaler Energieübertrag: m_H≈m_n"
+      },
+      {
+        "key": "D",
+        "text": "Neutronen reflektieren"
+      },
+      {
+        "key": "E",
+        "text": "Keine Wirkung"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: m_H≈m_n → maximaler Energieübertrag 100% pro Stoß. Schwere Kerne (U-235): nur ~1,7%. A=Absorberstäbe (Bor). B=Kühlmittel."
+  },
+  {
+    "id": "sc_4_4_2",
+    "frage": "Stoßzahlkoeffizient k: k=1 entspricht ..., k=0 entspricht ...",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "k=1: inelastisch; k=0: elastisch"
+      },
+      {
+        "key": "B",
+        "text": "k=1: elastisch; k=0: vollkommen inelastisch"
+      },
+      {
+        "key": "C",
+        "text": "k=1 und k=0 sind gleich"
+      },
+      {
+        "key": "D",
+        "text": "k=0: elastisch"
+      },
+      {
+        "key": "E",
+        "text": "Hängt von den Massen ab"
+      }
+    ],
+    "korrekt": "B",
+    "erklaerung": "B: k=|v_rel_nach|/|v_rel_vor|. k=1: Relativgeschwindigkeit bleibt (elastisch). k=0: keine Relativbewegung (kleben=inelastisch)."
+  }
+]

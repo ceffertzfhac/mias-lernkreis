@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sc_5_2_1",
+    "frage": "Vollzylinder, Hohlzylinder, Hohlkugel (gleiche m,R) rollen schiefe Ebene hinunter. Wer kommt zuerst an? (J_Hohlkugel=2/3mR²)",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "Alle gleichzeitig"
+      },
+      {
+        "key": "B",
+        "text": "Hohlzylinder"
+      },
+      {
+        "key": "C",
+        "text": "Vollzylinder"
+      },
+      {
+        "key": "D",
+        "text": "Hohlkugel"
+      },
+      {
+        "key": "E",
+        "text": "Hängt von Massen ab"
+      }
+    ],
+    "korrekt": "C",
+    "erklaerung": "C: k_VZ=0,5 < k_HKugel=2/3 < k_HZyl=1 → a_VZ größte. Vollzylinder gewinnt. E falsch: massenunabhängig."
+  },
+  {
+    "id": "sc_5_2_2",
+    "frage": "Eine Eisläuferin zieht die Arme an. Was passiert mit ω und Erot?",
+    "optionen": [
+      {
+        "key": "A",
+        "text": "ω↑, Erot↑"
+      },
+      {
+        "key": "B",
+        "text": "ω↑, Erot↓"
+      },
+      {
+        "key": "C",
+        "text": "ω↓, Erot↑"
+      },
+      {
+        "key": "D",
+        "text": "Beide konstant"
+      },
+      {
+        "key": "E",
+        "text": "ω↑, Erot konstant"
+      }
+    ],
+    "korrekt": "A",
+    "erklaerung": "A: J↓→ω↑ (Drehimpulserhaltung). Erot=L²/(2J)→J↓→Erot↑. Mehrenergie aus Muskelarbeit."
+  }
+]
