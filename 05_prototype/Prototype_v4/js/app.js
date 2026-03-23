@@ -42,7 +42,7 @@ function app() {
     // v4 format: [{ datum: ISO, scores: [{id, score: 0–100}] }]
     diagnosen: [],
     aktBewertungen: [],
-    verifikation: { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', loading: false },
+    verifikation: { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', showMusterloesung: false, loading: false },
 
     // ── Live Scores (updated by each task result, base = last diagnosis) ──────
     liveScores: {},  // { [themaId]: score | null }
@@ -277,7 +277,7 @@ function app() {
     // ════════════════════════════════════════════════════════════════════════
     _resetAktDiagnose() {
       this.aktBewertungen = this.kurs.themen.map(t => ({ id: t.id, stufe: null }))
-      this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', loading: false }
+      this.verifikation = { aktiv: false, themaId: null, stufe: null, frage: '', musterloesung: '', showMusterloesung: false, loading: false }
     },
 
     aktBew(id) {
@@ -295,7 +295,7 @@ function app() {
 
     async _startVerifikation(id, stufe) {
       const thema = this.kurs.themen.find(t => t.id === id)
-      this.verifikation = { aktiv: true, themaId: id, stufe, frage: '', loading: true }
+      this.verifikation = { aktiv: true, themaId: id, stufe, frage: '', musterloesung: '', showMusterloesung: false, loading: true }
 
       if (this.kursinhalt) {
         const pool = this.kursinhalt?.verifikation?.[id]?.[stufe] ?? []
@@ -569,7 +569,7 @@ function app() {
     scoreConfig: s  => scoreConfig(s),
     stufenCfg:   s  => STUFEN[s] ?? { label: '—', color: '#7A6E8A', bg: '#F3F4F6' },
     fmt:         iso => new Date(iso).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: '2-digit' }),
-    examFmt:     ()  => new Date(this.examDateInput).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }),
+    examFmt()         { return new Date(this.examDateInput).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }) },
     todayMin:    ()  => todayInput(),
     themenName:  id  => this.kurs.themen.find(t => t.id == id)?.name ?? '',
     diffStr:     lvl => '●'.repeat(lvl) + '○'.repeat(4 - lvl),

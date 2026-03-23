@@ -371,12 +371,21 @@
                 <p style="font-size: 13px; line-height: 1.5; margin: 0 0 10px;" x-text="verifikation.frage"></p>
 
                 <!-- Musterlösung -->
-                <div
-                  x-show="verifikation.musterloesung"
-                  style="background: var(--c-bg); border-left: 3px solid var(--c-primary); border-radius: 0 8px 8px 0; padding: 8px 12px; margin-bottom: 10px;"
-                >
-                  <p style="font-size: 11px; font-weight: 700; color: var(--c-primary); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em;">Musterlösung</p>
-                  <p style="font-size: 12px; line-height: 1.55; color: var(--c-ink); margin: 0;" x-text="verifikation.musterloesung"></p>
+                <div x-show="verifikation.musterloesung" style="margin-bottom: 10px;">
+                  <button
+                    x-show="!verifikation.showMusterloesung"
+                    class="btn btn--outline btn--sm"
+                    @click="verifikation.showMusterloesung = true"
+                    type="button"
+                    style="width: 100%;"
+                  >Musterlösung anzeigen</button>
+                  <div
+                    x-show="verifikation.showMusterloesung"
+                    style="background: var(--c-bg); border-left: 3px solid var(--c-primary); border-radius: 0 8px 8px 0; padding: 8px 12px;"
+                  >
+                    <p style="font-size: 11px; font-weight: 700; color: var(--c-primary); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em;">Musterlösung</p>
+                    <p style="font-size: 12px; line-height: 1.55; color: var(--c-ink); margin: 0;" x-text="verifikation.musterloesung"></p>
+                  </div>
                 </div>
 
                 <div style="display: flex; gap: 8px;">
