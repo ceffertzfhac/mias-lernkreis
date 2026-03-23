@@ -175,11 +175,31 @@
 
     <!-- TOPBAR -->
     <header class="topbar" x-show="screen !== 'setup'">
-      <div>
+
+      <!-- Left: title -->
+      <div style="flex-shrink: 0;">
         <div class="topbar__title" x-text="screenTitle"></div>
         <div class="topbar__sub" x-text="kurs.name"></div>
       </div>
-      <!-- Countdown: normal view -->
+
+      <!-- Middle: Lernzeit-Progress Bar -->
+      <div class="topbar-progress" x-show="lernstartDatum">
+        <div class="topbar-progress__track">
+          <div
+            class="topbar-progress__fill"
+            :style="`width: ${zeitProzent}%; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
+          ></div>
+        </div>
+        <div class="topbar-progress__label">
+          <span x-text="lernstartDatum ? fmt(lernstartDatum.toISOString()) : ''"></span>
+          <span x-text="zeitProzent + '% Lernzeit'"></span>
+          <span x-text="examFmt()"></span>
+        </div>
+      </div>
+      <!-- Spacer wenn keine Diagnose -->
+      <div x-show="!lernstartDatum" style="flex: 1;"></div>
+
+      <!-- Right: Countdown (normal) -->
       <button
         x-show="!editCountdown"
         class="countdown-chip"
@@ -187,12 +207,13 @@
         @click="editCountdown = true"
         type="button"
         title="Klausurdatum anpassen"
+        style="flex-shrink: 0;"
       >
         ⏱ <span x-text="verbleibeneTage"></span> Tage bis Klausur
       </button>
 
-      <!-- Countdown: edit mode -->
-      <div x-show="editCountdown" style="display: flex; align-items: center; gap: 8px;">
+      <!-- Right: Countdown (edit mode) -->
+      <div x-show="editCountdown" style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
         <input
           type="date"
           class="field field--tinted"
@@ -204,13 +225,6 @@
         <button class="btn btn--outline btn--sm" @click="editCountdown = false" type="button">✕</button>
       </div>
 
-      <!-- Lernzeit-Progress Bar -->
-      <div x-show="lernstartDatum" class="topbar-progress">
-        <div
-          class="topbar-progress__fill"
-          :style="`width: ${zeitProzent}%; background: ${zeitProzent > 80 ? 'var(--c-error)' : zeitProzent > 50 ? 'var(--c-warn)' : 'var(--c-success)'};`"
-        ></div>
-      </div>
     </header>
 
 
