@@ -162,7 +162,7 @@ Die Topbar zeigt zwei übereinanderliegende Fortschrittsbars:
 | Bar | Bedeutung | Farbe | Berechnung |
 |---|---|---|---|
 | **Zeit** | Wie viel der Lernzeit ist verstrichen | grün → rot | `(heute - ersterDiagnosetag) / (Klausur - ersterDiagnosetag)` |
-| **Lern** | Wie nah der Ø-Score an Klausurniveau | rot → grün | `Ø min(score, 75) / 75` |
+| **Lern** | Relativer Fortschritt von Erster-Diagnose-Basis zu Klausurniveau | rot → grün | `Ø (aktuell - baseline) / (75 - baseline)` |
 
 **Animations-Pattern:**
 ```javascript

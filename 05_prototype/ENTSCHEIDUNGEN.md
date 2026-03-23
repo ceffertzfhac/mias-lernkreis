@@ -52,7 +52,7 @@ funktionieren weiterhin (zeigen nur keine Musterlösung).
 ### E-008: Doppel-Progress Bar im Topbar
 **Entscheidung:** Topbar zeigt zwei Bars: Zeitfortschritt + Lernfortschritt.
 **Zeit-Bar:** grün→rot, von erstem Diagnose-Tag bis Klausur.
-**Lern-Bar:** rot→grün, Ø-Score normiert auf Klausurniveau (75%).
+**Lern-Bar:** rot→grün, relativer Fortschritt von Basis zu Klausurniveau (siehe E-012).
 **Idee dahinter:** Ein Blick = zwei Informationen. Lern-Bar hinter Zeit-Bar = Handlungsbedarf.
 **Gradient-Technik:** Gradient auf Track, Cover-Maske von rechts — korrekte Farbe an
 jeder Füllposition ohne JS-Farbberechnung.
@@ -72,6 +72,18 @@ Wert gesetzt → CSS Transition animiert sauber von 0 zum Zielwert.
 **Entscheidung:** Verifikationsdaten direkt in `thema_X/verifikation.json`, kein `meta.json`.
 **Problem:** meta.json war ein unnötiger Umweg — die App lud `verifikation.json` direkt,
 meta.json wurde nicht genutzt.
+
+### E-012: Lernfortschritt relativ zur Basis (GAP-Modell)
+**Entscheidung:** `lernProzent` berechnet den Fortschritt relativ zur ersten Diagnose,
+nicht absolut zum Score-Maximum.
+**Problem:** Absolutes Modell (Score/75) zeigte sofort z.B. 67% wenn die erste Diagnose
+50% ergab — obwohl die Studentin noch nichts gelernt hatte.
+**Formel pro Thema:** `(aktuell - baseline) / (KLAUSUR_SCORE - baseline)`
+- 0% = Ausgangslage der ersten Diagnose
+- 100% = alle Themen auf Klausurniveau (75%)
+- Themen die bei der ersten Diagnose bereits ≥ 75% hatten: zählen als 100%
+- Score unter Baseline: wird auf 0% geclampt (kein negativer Fortschritt)
+**Neue Computed:** `lernBasis` (Scores der ersten Diagnose), `lernProzent` (GAP-Formel).
 
 ### E-011: Dozenten-Prompt als kollaborativer Editor
 **Entscheidung:** Dozenten-Prompt v4 arbeitet schrittweise: Status-Analyse → Checkpoint →

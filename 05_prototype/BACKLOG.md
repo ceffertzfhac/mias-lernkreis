@@ -11,7 +11,7 @@ Letzte Aktualisierung: 2026-03-23
 | **A2** | Radar-Screen mit Verlauf — showVerlauf-Modus, Legende, letzte 5 Diagnosen | offen |
 | **A5** | Empty States — Radar & Fortschritt ohne Diagnose: Onboarding-Hinweis statt leerem Chart | offen |
 | **B4** | Lernstand exportieren — JSON-Download aus Einstellungen | offen |
-| **G1** | Lernfortschritt-Logik überarbeiten — erster Diagnosestand = 0%, alles auf Klausurniveau = 100% | offen |
+| **G1** | Lernfortschritt-Logik überarbeiten — erster Diagnosestand = 0%, alles auf Klausurniveau = 100% | ✅ erledigt |
 
 ---
 
@@ -53,3 +53,4 @@ Letzte Aktualisierung: 2026-03-23
 | **E5** | Lernzeit-Progress Bar — von erstem Diagnose-Tag zur Klausur | `9c42f02` |
 | **E6** | Lernzeit-Progress Bar permanent im Topbar — Doppel-Bar Zeit + Lern | `1dacc5a` |
 | **F1** | Dozenten-Prompt v4 — kollaborativer Modus, Status-Analyse, {frage, musterloesung} | `0f2c759` |
+| **G1** | Lernfortschritt-Logik: GAP-Modell (0% = erste Diagnose, 100% = Klausurniveau) | `→ nächster commit` |

@@ -525,12 +525,35 @@ function app() {
       if (!this.diagnosen.length) return null
       return new Date(this.diagnosen[0].datum)
     },
+
+    // Baseline scores from first diagnosis — the "0% point"
+    get lernBasis() {
+      if (!this.diagnosen.length) return null
+      const first = this.diagnosen[0]
+      const basis = {}
+      this.kurs.themen.forEach(t => {
+        basis[t.id] = first.scores?.find(s => s.id === t.id)?.score ?? 0
+      })
+      return basis
+    },
+
+    // Relative progress: 0% = first diagnosis, 100% = all themes at Klausurniveau
     get lernProzent() {
-      if (!this.hasDiagnose) return 0
+      if (!this.hasDiagnose || !this.lernBasis) return 0
       const themen = this.kurs.themen
       if (!themen.length) return 0
-      const avg = themen.reduce((sum, t) => sum + Math.min(this.liveScores[t.id] ?? 0, KLAUSUR_SCORE), 0) / themen.length
-      return Math.round((avg / KLAUSUR_SCORE) * 100)
+      let total = 0
+      themen.forEach(t => {
+        const baseline = this.lernBasis[t.id] ?? 0
+        const current  = this.liveScores[t.id] ?? baseline
+        const gap = KLAUSUR_SCORE - baseline
+        if (gap <= 0) {
+          total += 100  // already at/above Klausurniveau at baseline
+        } else {
+          total += Math.max(0, Math.min(100, Math.round((current - baseline) / gap * 100)))
+        }
+      })
+      return Math.round(total / themen.length)
     },
     get hasDeterministicContent() { return !!this.kursinhalt },
     get isMusterloesung()  { return this.ue.ergebnis === '__musterloesung__' },
