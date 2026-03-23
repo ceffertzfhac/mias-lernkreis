@@ -10,7 +10,9 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 |---|---|---|
 | **A2** | Radar-Screen mit Verlauf — showVerlauf-Modus, Legende, letzte 5 Diagnosen | offen |
 | **A5** | Empty States — Radar & Fortschritt ohne Diagnose: Onboarding-Hinweis statt leerem Chart | ✅ erledigt |
-| **B4** | Lernstand exportieren — JSON-Download aus Einstellungen | offen |
+| **B4** | Lernstand exportieren — JSON-Download aus Einstellungen | ✅ erledigt |
+| **K1** | Neuen Nutzer anlegen — mehrere Profile auf einem Gerät (z.B. Lerngruppe) | offen |
+| **K2** | Nutzer löschen — einzelnes Profil entfernen ohne alle Daten zu löschen | offen |
 
 ---
 
@@ -58,3 +60,4 @@ Letzte Aktualisierung: 2026-03-23 (heute-geübt-fix)
 | **E6** | Lernzeit-Progress Bar permanent im Topbar — Doppel-Bar Zeit + Lern | `1dacc5a` |
 | **F1** | Dozenten-Prompt v4 — kollaborativer Modus, Status-Analyse, {frage, musterloesung} | `0f2c759` |
 | **G1** | Lernfortschritt-Logik: GAP-Modell (0% = erste Diagnose, 100% = Klausurniveau) | `1304b4f` |
+| **B4** | Lernstand exportieren — JSON-Download (Name, Diagnosen, Fortschritt) aus Einstellungen | `pending` |

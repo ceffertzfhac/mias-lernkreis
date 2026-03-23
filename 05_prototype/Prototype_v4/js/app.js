@@ -565,6 +565,25 @@ function app() {
       }, 50))
     },
 
+    exportLernstand() {
+      const data = {
+        export_version: '4',
+        export_datum: new Date().toISOString(),
+        name: this.name,
+        exam_date: store.get('exam_date'),
+        diagnosen: this.diagnosen,
+        diagnose_draft: store.get('diagnose_draft'),
+        heute_log: store.get('heute_log'),
+      }
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `mias-lernkreis-${todayInput()}.json`
+      a.click()
+      URL.revokeObjectURL(url)
+    },
+
     resetAll() {
       if (confirm('Alle Lernkreis-Daten löschen? Nicht rückgängig machbar.')) {
         store.clearAll(); location.reload()

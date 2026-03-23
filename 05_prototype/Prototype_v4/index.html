@@ -990,6 +990,17 @@
         </div>
       </div>
 
+      <!-- Lernstand exportieren -->
+      <div class="card" style="margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div>
+          <p style="font-size: 14px; font-weight: 600; color: var(--c-primary); margin: 0;">Lernstand exportieren</p>
+          <p style="font-size: 12px; color: var(--c-muted); margin: 2px 0 0;">Name, Diagnosen und Fortschritt als JSON-Datei speichern.</p>
+        </div>
+        <button class="btn btn--sm btn--outline" @click="exportLernstand()" :disabled="!hasDiagnose" type="button" style="flex-shrink: 0;">
+          Export ↓
+        </button>
+      </div>
+
       <!-- Notice: KI not active -->
       <div class="card card--tinted" style="margin-bottom: 16px; padding: 12px 16px;">
         <p style="font-size: 13px; color: var(--c-muted); margin: 0;">
