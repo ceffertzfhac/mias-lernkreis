@@ -267,14 +267,26 @@
               <p style="font-size: 12px; color: var(--c-muted); margin: 4px 0 0;">Starte die Diagnose, um deinen Lernstand zu sehen</p>
             </div>
 
+            <!-- Verlauf-Legende (Home) -->
+            <div x-show="hasDiagnose && showVerlauf && diagnosen.length > 1" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; flex-shrink: 0;">
+              <template x-for="l in verlaufLegende()" :key="l.idx">
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  <span :style="`width: 10px; height: 10px; border-radius: 50%; background: ${l.color}; display: inline-block; flex-shrink: 0;`"></span>
+                  <span style="font-size: 11px; color: var(--c-muted);" x-text="l.isLatest ? l.datum + ' (aktuell)' : l.datum"></span>
+                </div>
+              </template>
+            </div>
+
             <!-- Footer actions -->
             <div x-show="hasDiagnose" style="display: flex; gap: 8px; margin-top: 10px; flex-shrink: 0;">
               <button
-                class="btn btn--sm btn--outline"
+                class="btn btn--sm"
+                :class="showVerlauf && diagnosen.length > 1 ? 'btn--primary' : 'btn--outline'"
                 @click="toggleVerlauf()"
                 type="button"
                 :disabled="diagnosen.length < 2"
-                x-text="showVerlauf ? 'Verlauf: An' : 'Verlauf: Aus'"
+                :title="diagnosen.length < 2 ? 'Mindestens 2 Diagnosen nötig' : ''"
+                x-text="showVerlauf && diagnosen.length > 1 ? 'Verlauf: An' : 'Verlauf: Aus'"
               ></button>
               <button class="btn btn--sm btn--outline" @click="goTo('diagnose')" type="button">Diagnose →</button>
             </div>
@@ -913,19 +925,28 @@
           </div>
 
           <!-- Radar -->
-          <div class="card" x-show="hasDiagnose">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+          <div class="card" x-show="hasDiagnose" style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
               <p style="font-size: 13px; font-weight: 600; color: var(--c-primary); margin: 0;">Radar-Verlauf</p>
               <button
                 class="btn btn--sm"
-                :class="showVerlauf ? 'btn--primary' : 'btn--outline'"
+                :class="diagnosen.length > 1 ? 'btn--primary' : 'btn--outline'"
                 @click="toggleVerlauf()"
                 :disabled="diagnosen.length < 2"
                 type="button"
-                x-text="showVerlauf ? 'Verlauf: An' : 'Verlauf: Aus'"
+                x-text="diagnosen.length > 1 ? 'Verlauf: An' : 'Erst eine Diagnose'"
               ></button>
             </div>
             <canvas id="radarFortschritt"></canvas>
+            <!-- Verlauf-Legende (Fortschritt) -->
+            <div x-show="diagnosen.length > 1" style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 2px;">
+              <template x-for="l in verlaufLegende()" :key="l.idx">
+                <div style="display: flex; align-items: center; gap: 4px;">
+                  <span :style="`width: 10px; height: 10px; border-radius: 50%; background: ${l.color}; display: inline-block; flex-shrink: 0;`"></span>
+                  <span style="font-size: 11px; color: var(--c-muted);" x-text="l.isLatest ? l.datum + ' (aktuell)' : l.datum"></span>
+                </div>
+              </template>
+            </div>
           </div>
 
           <!-- Improvements -->

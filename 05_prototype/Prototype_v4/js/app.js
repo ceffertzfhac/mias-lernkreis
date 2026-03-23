@@ -718,6 +718,20 @@ function app() {
       return new Date(this.letzeDiagnose.datum).toLocaleDateString('de-DE', { day: '2-digit', month: 'short' })
     },
 
+    verlaufLegende() {
+      const snaps = this.diagnosen.slice(-5)
+      return snaps.map((d, i, arr) => {
+        const p        = (i + 1) / arr.length
+        const isLatest = i === arr.length - 1
+        return {
+          datum:    new Date(d.datum).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: '2-digit' }),
+          color:    isLatest ? '#4A2C6E' : `rgba(74,44,110,${Math.round((0.18 + 0.55 * p) * 100) / 100})`,
+          isLatest,
+          idx: i,
+        }
+      })
+    },
+
     // ════════════════════════════════════════════════════════════════════════
     // FORMATTERS
     // ════════════════════════════════════════════════════════════════════════

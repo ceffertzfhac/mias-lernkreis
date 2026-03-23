@@ -29,6 +29,7 @@ class RadarManager {
       const chart = this._instances[canvasId]
       chart.data.labels   = labels
       chart.data.datasets = datasets
+      chart.options.plugins.legend.display = showVerlauf && diagnosen.length > 1
       chart.update('active')
       return chart
     }
